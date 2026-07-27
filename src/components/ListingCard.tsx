@@ -98,7 +98,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [descriptionExpanded, setDescriptionExpanded] = useState(false)
   const isFeatured = isFeaturedHomepageListing(listing.id)
-  const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
+  const descriptionHasHuaHinLand = /hua-hin-land\.com/i.test(fullDescription)
   const safeIndex = photos.length ? Math.min(activeIndex, photos.length - 1) : 0
   const mainPhoto = photos[safeIndex] || photos[0]
   const showThumbStrip = photos.length > 1
@@ -343,7 +343,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
         ) : null}
 
         <div className="mt-auto">
-          {hasHuaHinLandLink ? (
+          {needsDescriptionToggle && !descriptionExpanded && descriptionHasHuaHinLand ? (
             <a
               href="https://www.hua-hin-land.com"
               target="_blank"
