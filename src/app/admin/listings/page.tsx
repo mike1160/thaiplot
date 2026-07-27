@@ -1,17 +1,17 @@
+import type { CSSProperties } from 'react'
 import { getSupabaseAdmin, type ListingRow } from '@/lib/supabase'
+import { adminListingsUrl, adminSecretsMatch } from '@/lib/admin'
 
 export const dynamic = 'force-dynamic'
 
 type Props = {
-  searchParams?: { secret?: string }
+  searchParams?: { secret?: string; flash?: string }
 }
 
-type ClickStat = {
-  listing_id: string | null
-  listing_location: string
-  clicks: number
-  last_clicked: string | null
-}
+type AdminListing = Pick<
+  ListingRow,
+  'id' | 'name' | 'email' | 'location' | 'property_type' | 'status' | 'created_at'
+>
 
 function statusColor(status: string) {
   if (status === 'approved') return '#16a34a'
@@ -19,180 +19,227 @@ function statusColor(status: string) {
   return '#C8973A'
 }
 
-async function fetchClickStats(): Promise<ClickStat[]> {
-  try {
-    const supabase = getSupabaseAdmin()
-    const since = new Date()
-    since.setDate(since.getDate() - 30)
+function actionButtonStyle(bg: string): CSSProperties {
+  return {
+    display: 'inline-block',
+    marginRight: 8,
+    marginBottom: 4,
+    padding: '6px 12px',
+    borderRadius: 8,
+    background: bg,
+    color: '#fff',
+    textDecoration: 'none',
+    fontSize: 13,
+    fontWeight: 600,
+  }
+}
 
-    const { data, error } = await supabase
-      .from('listing_clicks')
-      .select('listing_id, listing_location, clicked_at')
-      .gte('clicked_at', since.toISOString())
-
-    if (error) {
-      console.error(error)
-      return []
-    }
-
-    const map = new Map<string, ClickStat>()
-    for (const row of data || []) {
-      const key = row.listing_id || row.listing_location || 'unknown'
-      const existing = map.get(key)
-      const clickedAt = row.clicked_at as string | null
-      if (!existing) {
-        map.set(key, {
-          listing_id: row.listing_id,
-          listing_location: row.listing_location || '—',
-          clicks: 1,
-          last_clicked: clickedAt,
-        })
-      } else {
-        existing.clicks += 1
-        if (
-          clickedAt &&
-          (!existing.last_clicked || new Date(clickedAt) > new Date(existing.last_clicked))
-        ) {
-          existing.last_clicked = clickedAt
-        }
-      }
-    }
-
-    return Array.from(map.values()).sort((a, b) => b.clicks - a.clicks)
-  } catch (error) {
-    console.error(error)
-    return []
+function flashMessage(flash?: string): string | null {
+  switch (flash) {
+    case 'approved':
+      return 'Listing approved.'
+    case 'rejected':
+      return 'Listing rejected.'
+    case 'deleted':
+      return 'Listing deleted.'
+    case 'not_found':
+      return 'Listing not found.'
+    case 'delete_error':
+    case 'update_error':
+    case 'error':
+      return 'Action failed. Check server logs.'
+    default:
+      return null
   }
 }
 
 export default async function AdminListingsPage({ searchParams }: Props) {
   const secret = searchParams?.secret || ''
   const adminSecret = process.env.ADMIN_SECRET || ''
+  const flash = flashMessage(searchParams?.flash)
 
-  if (!adminSecret || secret !== adminSecret) {
+  if (!adminSecretsMatch(secret, adminSecret)) {
     return (
-      <main style={{ fontFamily: 'system-ui', padding: 40, background: '#FAF7F0', minHeight: '100vh' }}>
-        <h1>Unauthorized</h1>
-        <p>Pass ?secret=ADMIN_SECRET to access this page.</p>
+      <main
+        style={{
+          fontFamily: 'Inter, system-ui, sans-serif',
+          padding: 40,
+          background: '#FAF7F0',
+          minHeight: '100vh',
+          color: '#1A2744',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 480,
+            margin: '10vh auto 0',
+            background: '#fff',
+            border: '1px solid #E8E2D6',
+            borderRadius: 12,
+            padding: 32,
+          }}
+        >
+          <p style={{ color: '#C8973A', fontWeight: 600, margin: '0 0 8px' }}>403</p>
+          <h1 style={{ fontFamily: 'Playfair Display, serif', margin: '0 0 12px' }}>
+            Forbidden
+          </h1>
+          <p style={{ color: '#5C5247', margin: 0, lineHeight: 1.6 }}>
+            Pass a valid <code>?secret=…</code> query param matching{' '}
+            <code>ADMIN_SECRET</code>. If your secret contains <code>%</code>, encode it as{' '}
+            <code>%25</code> in the URL.
+          </p>
+        </div>
       </main>
     )
   }
 
-  let listings: ListingRow[] = []
+  let listings: AdminListing[] = []
+  let loadError: string | null = null
+
   try {
     const supabase = getSupabaseAdmin()
     const { data, error } = await supabase
       .from('listings')
-      .select('*')
+      .select('id, name, email, location, property_type, status, created_at')
       .order('created_at', { ascending: false })
+
     if (error) {
-      console.error(error)
+      console.error('[admin/listings]', error)
+      loadError = error.message
     } else {
-      listings = (data || []) as ListingRow[]
+      listings = (data || []) as AdminListing[]
     }
   } catch (error) {
-    console.error(error)
+    console.error('[admin/listings]', error)
+    loadError = error instanceof Error ? error.message : 'Failed to load listings'
   }
 
-  const clickStats = await fetchClickStats()
-  const enc = encodeURIComponent(secret)
+  const enc = encodeURIComponent(adminSecret)
 
   return (
-    <main style={{ fontFamily: 'system-ui', padding: 24, background: '#FAF7F0', minHeight: '100vh', color: '#1A2744' }}>
-      <h1 style={{ marginBottom: 8 }}>ThaiPlot Admin — Listings</h1>
-      <p style={{ color: '#5C5247', marginBottom: 24 }}>{listings.length} total listings</p>
+    <main
+      style={{
+        fontFamily: 'Inter, system-ui, sans-serif',
+        padding: 24,
+        background: '#FAF7F0',
+        minHeight: '100vh',
+        color: '#1A2744',
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <p style={{ color: '#C8973A', fontWeight: 600, margin: '0 0 8px', letterSpacing: '0.04em' }}>
+          ADMIN
+        </p>
+        <h1
+          style={{
+            fontFamily: 'Playfair Display, serif',
+            margin: '0 0 8px',
+            fontSize: 32,
+          }}
+        >
+          ThaiPlot — Listings
+        </h1>
+        <p style={{ color: '#5C5247', marginBottom: 16 }}>
+          {listings.length} total listings
+          {loadError ? ` · Load error: ${loadError}` : ''}
+        </p>
 
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', background: '#fff', border: '1px solid #E8E2D6' }}>
-          <thead>
-            <tr style={{ textAlign: 'left', background: '#1A2744', color: '#fff' }}>
-              <th style={{ padding: 10 }}>Name</th>
-              <th style={{ padding: 10 }}>Location</th>
-              <th style={{ padding: 10 }}>Category</th>
-              <th style={{ padding: 10 }}>Type</th>
-              <th style={{ padding: 10 }}>Status</th>
-              <th style={{ padding: 10 }}>Date</th>
-              <th style={{ padding: 10 }}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listings.map((row) => (
-              <tr key={row.id} style={{ borderTop: '1px solid #E8E2D6' }}>
-                <td style={{ padding: 10 }}>{row.name || '—'}</td>
-                <td style={{ padding: 10 }}>
-                  {row.location || '—'}
-                  {row.region ? ` (${row.region})` : ''}
-                </td>
-                <td style={{ padding: 10 }}>{row.category || 'Land & Property'}</td>
-                <td style={{ padding: 10 }}>{row.property_type || '—'}</td>
-                <td style={{ padding: 10, color: statusColor(row.status), fontWeight: 600 }}>
-                  {row.status}
-                </td>
-                <td style={{ padding: 10, whiteSpace: 'nowrap' }}>
-                  {row.created_at ? new Date(row.created_at).toLocaleDateString() : '—'}
-                </td>
-                <td style={{ padding: 10, whiteSpace: 'nowrap' }}>
-                  <a
-                    href={`/api/listing-action?id=${row.id}&action=approve&secret=${enc}`}
-                    style={{ marginRight: 8 }}
-                  >
-                    ✅ Approve
-                  </a>
-                  <a
-                    href={`/api/listing-action?id=${row.id}&action=reject&secret=${enc}`}
-                    style={{ marginRight: 8 }}
-                  >
-                    ❌ Reject
-                  </a>
-                  <a href={`/api/listing-action?id=${row.id}&action=delete&secret=${enc}`}>
-                    🗑️ Delete
-                  </a>
-                </td>
-              </tr>
-            ))}
-            {listings.length === 0 && (
-              <tr>
-                <td colSpan={7} style={{ padding: 20, textAlign: 'center', color: '#5C5247' }}>
-                  No listings found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+        {flash ? (
+          <p
+            style={{
+              marginBottom: 16,
+              padding: '10px 14px',
+              borderRadius: 8,
+              background: '#fff',
+              border: '1px solid #C8973A',
+              color: '#1A2744',
+              fontWeight: 500,
+            }}
+          >
+            {flash}
+          </p>
+        ) : null}
 
-      <h2 style={{ marginTop: 40, marginBottom: 8 }}>Click Analytics (last 30 days)</h2>
-      <p style={{ color: '#5C5247', marginBottom: 16 }}>
-        Contact-agent clicks from listing cards. Sorted by most clicked.
-      </p>
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', background: '#fff', border: '1px solid #E8E2D6' }}>
-          <thead>
-            <tr style={{ textAlign: 'left', background: '#1A2744', color: '#fff' }}>
-              <th style={{ padding: 10 }}>Location</th>
-              <th style={{ padding: 10 }}>Clicks</th>
-              <th style={{ padding: 10 }}>Last clicked</th>
-            </tr>
-          </thead>
-          <tbody>
-            {clickStats.map((row) => (
-              <tr key={`${row.listing_id || row.listing_location}-${row.clicks}`} style={{ borderTop: '1px solid #E8E2D6' }}>
-                <td style={{ padding: 10 }}>{row.listing_location}</td>
-                <td style={{ padding: 10, fontWeight: 600 }}>{row.clicks}</td>
-                <td style={{ padding: 10, whiteSpace: 'nowrap' }}>
-                  {row.last_clicked ? new Date(row.last_clicked).toLocaleString() : '—'}
-                </td>
+        <div
+          style={{
+            overflowX: 'auto',
+            background: '#fff',
+            border: '1px solid #E8E2D6',
+            borderRadius: 12,
+          }}
+        >
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ textAlign: 'left', background: '#1A2744', color: '#fff' }}>
+                <th style={{ padding: 12 }}>Name</th>
+                <th style={{ padding: 12 }}>Email</th>
+                <th style={{ padding: 12 }}>Location</th>
+                <th style={{ padding: 12 }}>Property type</th>
+                <th style={{ padding: 12 }}>Status</th>
+                <th style={{ padding: 12 }}>Created</th>
+                <th style={{ padding: 12 }}>Actions</th>
               </tr>
-            ))}
-            {clickStats.length === 0 && (
-              <tr>
-                <td colSpan={3} style={{ padding: 20, textAlign: 'center', color: '#5C5247' }}>
-                  No clicks in the last 30 days (or listing_clicks table not created yet).
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {listings.map((row) => (
+                <tr key={row.id} style={{ borderTop: '1px solid #E8E2D6' }}>
+                  <td style={{ padding: 12 }}>{row.name || '—'}</td>
+                  <td style={{ padding: 12 }}>{row.email || '—'}</td>
+                  <td style={{ padding: 12 }}>{row.location || '—'}</td>
+                  <td style={{ padding: 12 }}>{row.property_type || '—'}</td>
+                  <td
+                    style={{
+                      padding: 12,
+                      color: statusColor(row.status),
+                      fontWeight: 600,
+                      textTransform: 'capitalize',
+                    }}
+                  >
+                    {row.status}
+                  </td>
+                  <td style={{ padding: 12, whiteSpace: 'nowrap', color: '#5C5247' }}>
+                    {row.created_at ? new Date(row.created_at).toLocaleString() : '—'}
+                  </td>
+                  <td style={{ padding: 12, whiteSpace: 'nowrap' }}>
+                    <a
+                      href={`/api/listing-action?id=${row.id}&action=approve&secret=${enc}`}
+                      style={actionButtonStyle('#16a34a')}
+                    >
+                      Approve
+                    </a>
+                    <a
+                      href={`/api/listing-action?id=${row.id}&action=reject&secret=${enc}`}
+                      style={actionButtonStyle('#C8973A')}
+                    >
+                      Reject
+                    </a>
+                    <a
+                      href={`/api/listing-action?id=${row.id}&action=delete&secret=${enc}`}
+                      style={actionButtonStyle('#dc2626')}
+                    >
+                      Delete
+                    </a>
+                  </td>
+                </tr>
+              ))}
+              {listings.length === 0 && !loadError && (
+                <tr>
+                  <td
+                    colSpan={7}
+                    style={{ padding: 24, textAlign: 'center', color: '#5C5247' }}
+                  >
+                    No listings found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        <p style={{ marginTop: 16, color: '#5C5247', fontSize: 13 }}>
+          Bookmark:{' '}
+          <code style={{ color: '#1A2744' }}>{adminListingsUrl(adminSecret)}</code>
+        </p>
       </div>
     </main>
   )
