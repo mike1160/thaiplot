@@ -97,6 +97,41 @@ function mapRows(data: unknown[] | null): PublicListing[] {
   })
 }
 
+async function fetchListingsWithSelect(
+  url: string,
+  key: string,
+  select: string,
+  filters: ListingFilters
+): Promise<{ res: Response; raw: unknown }> {
+  const params = new URLSearchParams()
+  params.set('status', 'eq.approved')
+  params.set('select', select)
+  // Fetch oldest-first so we can re-sort in app (PostgREST has no CASE WHEN order)
+  params.set('order', 'created_at.asc')
+
+  if (filters.region && filters.region !== 'All') {
+    params.set('region', `eq.${filters.region}`)
+  }
+  if (filters.propertyType && filters.propertyType !== 'All') {
+    params.set('property_type', `eq.${filters.propertyType}`)
+  }
+
+  const endpoint = `${url.replace(/\/$/, '')}/rest/v1/listings?${params.toString()}`
+  const res = await fetch(endpoint, {
+    method: 'GET',
+    headers: {
+      apikey: key,
+      Authorization: `Bearer ${key}`,
+      Accept: 'application/json',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      Pragma: 'no-cache',
+    },
+    cache: 'no-store',
+  })
+  const raw = await res.json()
+  return { res, raw }
+}
+
 export async function fetchApprovedListings(
   filters: ListingFilters = {}
 ): Promise<PublicListing[]> {
@@ -118,42 +153,10 @@ export async function fetchApprovedListings(
   const limit = typeof filters.limit === 'number' ? filters.limit : undefined
 
   try {
-    const headers = {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      Accept: 'application/json',
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      Pragma: 'no-cache',
-    } as const
-
-    async function fetchWithSelect(select: string) {
-      const params = new URLSearchParams()
-      params.set('status', 'eq.approved')
-      params.set('select', select)
-      // Fetch oldest-first so we can re-sort in app (PostgREST has no CASE WHEN order)
-      params.set('order', 'created_at.asc')
-
-      if (filters.region && filters.region !== 'All') {
-        params.set('region', `eq.${filters.region}`)
-      }
-      if (filters.propertyType && filters.propertyType !== 'All') {
-        params.set('property_type', `eq.${filters.propertyType}`)
-      }
-
-      const endpoint = `${url!.replace(/\/$/, '')}/rest/v1/listings?${params.toString()}`
-      const res = await fetch(endpoint, {
-        method: 'GET',
-        headers,
-        cache: 'no-store',
-      })
-      const raw = await res.json()
-      return { res, raw }
-    }
-
     // Prefer marketplace columns; fall back if category not migrated yet
-    let { res, raw } = await fetchWithSelect(SELECT_WITH_CATEGORY)
+    let { res, raw } = await fetchListingsWithSelect(url, key, SELECT_WITH_CATEGORY, filters)
     if (!res.ok || !Array.isArray(raw)) {
-      ;({ res, raw } = await fetchWithSelect(SELECT_BASE))
+      ;({ res, raw } = await fetchListingsWithSelect(url, key, SELECT_BASE, filters))
     }
 
     console.log('[fetchApprovedListings] raw Supabase response', {
