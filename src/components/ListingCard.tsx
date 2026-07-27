@@ -213,10 +213,12 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
               <dd className="text-[#1A2744] font-medium text-right">{listing.size}</dd>
             </div>
           ) : null}
-          {listing.title_deed ? (
+          {(listing.title_deed || '').trim() ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">{listing.title_deed}</dd>
+              <dd className="text-[#1A2744] font-medium text-right">
+                {(listing.title_deed || '').trim()}
+              </dd>
             </div>
           ) : null}
           {listing.price ? (
