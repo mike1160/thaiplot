@@ -61,6 +61,13 @@ export async function POST(req: NextRequest) {
       photos,
       consent,
       turnstileToken,
+      slug,
+      contactPreferences,
+      lineId,
+      whatsapp,
+      lat,
+      lng,
+      referralSource,
     } = body
 
     const turnstile = await verifyTurnstileToken(turnstileToken, requestClientIp(req))
@@ -74,6 +81,14 @@ export async function POST(req: NextRequest) {
 
     if (!name || !email || !phone || !location || !consent) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+    }
+
+    // Soft Thai mobile validation on server too
+    const phoneClean = String(phone).replace(/[\s\-().]/g, '')
+    const phoneOk =
+      /^\+66[689]\d{8}$/.test(phoneClean) || /^0[689]\d{8}$/.test(phoneClean)
+    if (!phoneOk) {
+      return NextResponse.json({ error: 'Invalid Thai phone number' }, { status: 400 })
     }
 
     const adminSecret = process.env.ADMIN_SECRET
@@ -97,6 +112,26 @@ export async function POST(req: NextRequest) {
     let vehicleMileageValue: string | null = null
     let conditionValue: string | null = condition || null
     let regionValue = region || 'Other'
+
+    const prefs = Array.isArray(contactPreferences)
+      ? contactPreferences.map((p: unknown) => String(p || '').trim()).filter(Boolean)
+      : []
+    const slugValue = typeof slug === 'string' ? slug.trim().slice(0, 80) : ''
+    const lineIdValue = typeof lineId === 'string' ? lineId.trim() : ''
+    const whatsappValue = typeof whatsapp === 'string' ? whatsapp.trim() : ''
+    const referralValue = typeof referralSource === 'string' ? referralSource.trim() : ''
+    const latValue =
+      typeof lat === 'number' && Number.isFinite(lat)
+        ? lat
+        : typeof lat === 'string' && lat.trim()
+          ? Number(lat)
+          : null
+    const lngValue =
+      typeof lng === 'number' && Number.isFinite(lng)
+        ? lng
+        : typeof lng === 'string' && lng.trim()
+          ? Number(lng)
+          : null
 
     if (category === 'Vehicle') {
       propertyType = vehicleType || 'Vehicle'
@@ -158,6 +193,13 @@ export async function POST(req: NextRequest) {
       photo_3: photoList[2] || null,
       photo_4: photoList[3] || null,
       photo_5: photoList[4] || null,
+      lat: latValue,
+      lng: lngValue,
+      line_id: lineIdValue || null,
+      whatsapp: whatsappValue || null,
+      contact_preferences: prefs.length ? prefs : null,
+      referral_source: referralValue || null,
+      slug: slugValue || null,
     }
 
     const legacyRow = {
@@ -185,7 +227,12 @@ export async function POST(req: NextRequest) {
       .select('id')
       .single())
 
-    if (insertError && /(category|vehicle_|condition|photo_)/i.test(insertError.message || '')) {
+    if (
+      insertError &&
+      /(category|vehicle_|condition|photo_|lat|lng|line_id|whatsapp|contact_preferences|referral_source|slug)/i.test(
+        insertError.message || ''
+      )
+    ) {
       ;({ data: listing, error: insertError } = await supabase
         .from('listings')
         .insert(legacyRow)
@@ -244,6 +291,10 @@ export async function POST(req: NextRequest) {
             <tr><td style="padding: 8px 0; color: #94a3b8;">Transaction</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(transactionType)}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Region</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(regionValue)}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Location</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(location)}</td></tr>
+            <tr><td style="padding: 8px 0; color: #94a3b8;">Slug</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(slugValue) || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #94a3b8;">Coords</td><td style="padding: 8px 0; color: #f0f4ff;">${latValue != null && lngValue != null ? `${escapeHtml(latValue)}, ${escapeHtml(lngValue)}` : '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #94a3b8;">Referral</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(referralValue) || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #94a3b8;">Contact prefs</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(prefs.join(', ') || '—')}${lineIdValue ? ` · LINE: ${escapeHtml(lineIdValue)}` : ''}${whatsappValue ? ` · WA: ${escapeHtml(whatsappValue)}` : ''}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Size / length</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(sizeValue) || '—'}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Price</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(price) || '—'}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Title / reason</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(titleDeedValue) || '—'}</td></tr>

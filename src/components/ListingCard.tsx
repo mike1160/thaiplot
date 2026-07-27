@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { trackGaEvent } from '@/lib/ga'
-import { LINE_AGENT_URL } from '@/lib/contact'
+import { AGENT_NAME, LINE_AGENT_URL } from '@/lib/contact'
 import {
   isFeaturedHomepageListing,
   resolveListingPhotos,
@@ -70,12 +70,28 @@ function DescriptionWithLinks({
   )
 }
 
+function isAgentListing(name?: string | null): boolean {
+  return (name || '').trim().toLowerCase() === AGENT_NAME.toLowerCase()
+}
+
+function phoneToTelHref(phone: string): string {
+  const cleaned = phone.replace(/[^\d+]/g, '')
+  return cleaned ? `tel:${cleaned}` : ''
+}
+
+function emailToMailtoHref(email: string): string {
+  const trimmed = email.trim()
+  return trimmed.includes('@') ? `mailto:${trimmed}` : ''
+}
+
+const contactBtnClass =
+  'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors'
+
 export default function ListingCard({ listing, contactHref }: ListingCardProps) {
   const t = useTranslations('listings')
   const locale = useLocale()
   const badgeKey = transactionBadgeKey(listing.transaction_type)
   const fullDescription = (listing.description || '').trim()
-  const href = contactHref || LINE_AGENT_URL
   const photos = resolveListingPhotos(listing)
   const titleDeed = resolveListingTitleDeed(listing)
   const priceDisplay = resolveListingPriceDisplay(listing)
@@ -86,6 +102,10 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
   const mainPhoto = photos[activeIndex] || photos[0]
   const thumbnails = photos.length > 1 ? photos : []
+  const agentOwned = isAgentListing(listing.name)
+  const sellerPhoneHref = phoneToTelHref(listing.phone || '')
+  const sellerEmailHref = emailToMailtoHref(listing.email || '')
+  const agentHref = contactHref || LINE_AGENT_URL
 
   const needsDescriptionToggle = fullDescription.length > 120
   const descriptionForRender =
@@ -328,24 +348,52 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             </a>
           ) : null}
 
-          {href.startsWith('http') ? (
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={trackContactClick}
-              className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
-            >
-              {t('contact')}
-            </a>
+          {agentOwned ? (
+            agentHref.startsWith('http') ? (
+              <a
+                href={agentHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackContactClick}
+                className={contactBtnClass}
+              >
+                {t('contact')}
+              </a>
+            ) : (
+              <Link href={agentHref} onClick={trackContactClick} className={contactBtnClass}>
+                {t('contact')}
+              </Link>
+            )
           ) : (
-            <Link
-              href={href}
-              onClick={trackContactClick}
-              className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
-            >
-              {t('contact')}
-            </Link>
+            <div className="space-y-2">
+              {sellerPhoneHref ? (
+                <a
+                  href={sellerPhoneHref}
+                  onClick={trackContactClick}
+                  className={contactBtnClass}
+                >
+                  {t('contactCallSeller')}
+                </a>
+              ) : null}
+              {sellerEmailHref ? (
+                <a
+                  href={sellerEmailHref}
+                  onClick={trackContactClick}
+                  className={
+                    sellerPhoneHref
+                      ? 'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white transition-colors'
+                      : contactBtnClass
+                  }
+                >
+                  {t('contactEmailSeller')}
+                </a>
+              ) : null}
+              {!sellerPhoneHref && !sellerEmailHref ? (
+                <p className="text-sm text-[#5C5247] text-center py-2">
+                  {t('contactSellerUnavailable')}
+                </p>
+              ) : null}
+            </div>
           )}
 
           <p className="text-xs text-stone-400 leading-relaxed text-center mt-3">

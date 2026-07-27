@@ -213,7 +213,7 @@ export function normalizeListingCategory(category?: string | null): ListingCateg
 }
 
 const BOAT_PROPERTY_TYPES = new Set(['boat', 'boot', 'longtail', 'speedboat', 'yacht'])
-const LAND_PROPERTY_TYPES = new Set(['land', 'house', 'villa', 'condo', 'commercial'])
+const LAND_PROPERTY_TYPES = new Set(['land', 'house', 'villa', 'condo', 'apartment', 'commercial'])
 const VEHICLE_PROPERTY_TYPES = new Set(['car', 'motorcycle', 'truck', 'vehicle'])
 const BUSINESS_PROPERTY_TYPES = new Set(['business', 'commercial'])
 

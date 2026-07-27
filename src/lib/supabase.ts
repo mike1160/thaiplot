@@ -71,4 +71,11 @@ export type ListingRow = {
   vehicle_year: string | null
   vehicle_mileage: string | null
   condition: string | null
+  lat?: number | null
+  lng?: number | null
+  line_id?: string | null
+  whatsapp?: string | null
+  contact_preferences?: string[] | null
+  referral_source?: string | null
+  slug?: string | null
 }

@@ -7,6 +7,9 @@ export type PublicListing = Pick<
   | 'id'
   | 'created_at'
   | 'status'
+  | 'name'
+  | 'email'
+  | 'phone'
   | 'property_type'
   | 'transaction_type'
   | 'location'
@@ -39,9 +42,9 @@ export type ListingFilters = {
  * Prefer marketplace columns when present. Falls back if DB not migrated yet.
  */
 const SELECT_WITH_CATEGORY =
-  'id, created_at, name, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, category, photo_1, photo_2, photo_3, photo_4, photo_5, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition'
+  'id, created_at, name, email, phone, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, category, photo_1, photo_2, photo_3, photo_4, photo_5, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition'
 const SELECT_BASE =
-  'id, created_at, name, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
+  'id, created_at, name, email, phone, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
 
 type SortableRow = {
   id: string
@@ -76,25 +79,25 @@ export function sortListingsFeaturedThanathipFirst<T extends SortableRow>(rows: 
 }
 
 function mapRows(data: unknown[] | null): PublicListing[] {
-  return ((data || []) as (PublicListing & { name?: string | null })[]).map((row) => {
-    const { name: _name, ...rest } = row
-    return {
-      ...rest,
-      title_deed: resolveListingTitleDeed(rest),
-      region: rest.region || 'Hua Hin',
-      category: resolveListingCategory(rest),
-      vehicle_type: rest.vehicle_type ?? null,
-      vehicle_brand: rest.vehicle_brand ?? null,
-      vehicle_year: rest.vehicle_year ?? null,
-      vehicle_mileage: rest.vehicle_mileage ?? null,
-      condition: rest.condition ?? null,
-      photo_1: rest.photo_1 ?? null,
-      photo_2: rest.photo_2 ?? null,
-      photo_3: rest.photo_3 ?? null,
-      photo_4: rest.photo_4 ?? null,
-      photo_5: rest.photo_5 ?? null,
-    }
-  })
+  return ((data || []) as PublicListing[]).map((row) => ({
+    ...row,
+    name: row.name ?? null,
+    email: row.email ?? null,
+    phone: row.phone ?? null,
+    title_deed: resolveListingTitleDeed(row),
+    region: row.region || 'Hua Hin',
+    category: resolveListingCategory(row),
+    vehicle_type: row.vehicle_type ?? null,
+    vehicle_brand: row.vehicle_brand ?? null,
+    vehicle_year: row.vehicle_year ?? null,
+    vehicle_mileage: row.vehicle_mileage ?? null,
+    condition: row.condition ?? null,
+    photo_1: row.photo_1 ?? null,
+    photo_2: row.photo_2 ?? null,
+    photo_3: row.photo_3 ?? null,
+    photo_4: row.photo_4 ?? null,
+    photo_5: row.photo_5 ?? null,
+  }))
 }
 
 async function fetchListingsWithSelect(

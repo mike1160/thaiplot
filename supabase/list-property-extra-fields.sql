@@ -1,0 +1,8 @@
+-- Extra fields for smart list-property form
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS lat DECIMAL(10,8);
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS lng DECIMAL(11,8);
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS line_id TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS whatsapp TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS contact_preferences TEXT[];
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS referral_source TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS slug TEXT;
