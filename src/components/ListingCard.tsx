@@ -40,6 +40,7 @@ function DescriptionWithLinks({
       className={`text-[#5C5247] text-sm leading-relaxed whitespace-pre-line break-words ${
         clamped ? 'line-clamp-4' : ''
       } ${className}`.trim()}
+      style={{ overflowWrap: 'anywhere' }}
     >
       {parts.map((part, index) => {
         if (!part) return null
@@ -187,7 +188,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
 
   return (
     <article
-      className={`bg-white border rounded-[12px] overflow-hidden flex flex-col ${
+      className={`bg-white border rounded-[12px] overflow-hidden flex flex-col min-w-0 ${
         isFeatured ? 'border-amber-500 border-2' : 'border-[#E8E2D6]'
       }`}
     >
@@ -249,7 +250,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
         >
           <Link
             href={`/listings/${listing.id}`}
-            className="hover:text-[#C8973A] transition-colors"
+            className="hover:text-[#C8973A] transition-colors break-words"
           >
             {listing.vehicle_brand
               ? `${listing.vehicle_brand}${listing.vehicle_year ? ` (${listing.vehicle_year})` : ''}`
@@ -261,31 +262,31 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
           {listing.vehicle_type ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('propertyType')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">{listing.vehicle_type}</dd>
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>{listing.vehicle_type}</dd>
             </div>
           ) : null}
           {listing.vehicle_mileage ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('mileage')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">{listing.vehicle_mileage}</dd>
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>{listing.vehicle_mileage}</dd>
             </div>
           ) : null}
           {listing.condition ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('condition')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">{listing.condition}</dd>
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>{listing.condition}</dd>
             </div>
           ) : null}
           {listing.size ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('size')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">{listing.size}</dd>
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>{listing.size}</dd>
             </div>
           ) : null}
           {titleDeed ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right break-words">
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>
                 {titleDeed}
               </dd>
             </div>
@@ -293,7 +294,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
           {priceDisplay.raw ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247] shrink-0">{t('price')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right break-words">
+              <dd className="text-[#1A2744] font-medium text-right break-words" style={{ overflowWrap: 'anywhere' }}>
                 {priceDisplay.sub ? (
                   <div className="space-y-0.5">
                     <p className="text-base md:text-lg font-bold text-[#1A2744] leading-tight">
@@ -309,7 +310,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
                     ) : null}
                   </div>
                 ) : (
-                  <span className="whitespace-pre-wrap">{priceDisplay.main}</span>
+                  <span className="whitespace-pre-wrap break-words" style={{ overflowWrap: 'anywhere' }}>{priceDisplay.main}</span>
                 )}
               </dd>
             </div>

@@ -101,7 +101,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         </>
       ) : null}
       <HtmlLang />
-      {children}
+      <div className="w-full max-w-full overflow-x-hidden px-4 sm:px-0">
+        {children}
+      </div>
       <LegalFooterBar />
       <CookieConsent />
       <ConsentAnalytics />

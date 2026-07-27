@@ -73,7 +73,7 @@ export default function ListingsPageClient({
         </div>
       </section>
 
-      <section className="bg-[#FAF7F0] py-12 md:py-16 px-6">
+      <section className="bg-[#FAF7F0] py-12 md:py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 md:p-12 text-center">
@@ -95,7 +95,7 @@ export default function ListingsPageClient({
         </div>
       </section>
 
-      <div className="max-w-3xl mx-auto px-6 py-12">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 overflow-x-hidden">
         <DisclaimerFooter />
       </div>
     </main>

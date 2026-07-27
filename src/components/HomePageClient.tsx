@@ -64,7 +64,7 @@ export default function HomePageClient({ listings }: Props) {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.35)' }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center text-white animate-fade-in-up">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-white animate-fade-in-up">
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white/15 border border-white/25 backdrop-blur-sm mb-6">
             {t('eyebrow')}
           </span>
@@ -105,7 +105,7 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 px-6">
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-10"
@@ -175,7 +175,7 @@ export default function HomePageClient({ listings }: Props) {
               }}
             />
           </div>
-          <div className="order-2 flex flex-col justify-center text-center md:text-left px-6 py-14 md:py-16 md:pl-10 lg:pl-14 md:pr-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
+          <div className="order-2 flex flex-col justify-center text-center md:text-left px-4 sm:px-6 lg:px-8 py-14 md:py-16 md:pl-10 lg:pl-14 md:pr-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
             <p className="text-[#C8973A] text-sm md:text-base font-semibold tracking-wide mb-3">
               {t('donateSectionEyebrow')}
             </p>
@@ -201,7 +201,7 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="pb-8 px-6">
+      <section className="pb-8 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-3xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-8"
@@ -251,7 +251,7 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-10">
+      <section className="px-4 sm:px-6 lg:px-8 pb-10 overflow-x-hidden">
         <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[12px]">
           <img
             src={HERO_PHOTOS.homeCtaListProperty}
@@ -262,7 +262,7 @@ export default function HomePageClient({ listings }: Props) {
             className="absolute inset-0"
             style={{ background: 'rgba(26,39,68,0.82)' }}
           />
-          <div className="relative z-10 px-6 py-10 md:py-12 text-center text-white">
+          <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-10 md:py-12 text-center text-white">
             <h2
               className="text-2xl md:text-3xl font-bold mb-4"
               style={{ fontFamily: 'Playfair Display, serif' }}
@@ -281,7 +281,7 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-16">
+      <section className="px-4 sm:px-6 lg:px-8 pb-16 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
           <TitleVerifyCta />
         </div>

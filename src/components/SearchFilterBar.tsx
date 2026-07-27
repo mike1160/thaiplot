@@ -26,10 +26,10 @@ export default function SearchFilterBar({ value, onChange, onSearch, className =
 
   return (
     <div
-      className={`bg-white rounded-[12px] py-4 px-6 border border-[#E8E2D6] ${className}`}
+      className={`bg-white rounded-[12px] py-4 px-4 sm:px-6 border border-[#E8E2D6] max-w-full overflow-hidden ${className}`}
       style={{ boxShadow: '0 8px 24px rgba(26,39,68,0.08)' }}
     >
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex sm:flex-wrap gap-2 mb-4 overflow-x-auto pb-1">
         {CATEGORY_FILTERS.map((cat) => {
           const active = value.category === cat.value
           return (
@@ -60,7 +60,7 @@ export default function SearchFilterBar({ value, onChange, onSearch, className =
         })}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 items-end">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 items-end min-w-0">
         {showPropertyType ? (
           <label className="block min-w-0">
             <span className="block text-[11px] font-medium uppercase tracking-wider text-[#5C5247] mb-1.5">
