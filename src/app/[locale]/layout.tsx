@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import LegalFooterBar from '@/components/LegalFooterBar'
 import CookieConsent from '@/components/CookieConsent'
+import ConsentAnalytics from '@/components/ConsentAnalytics'
 import HtmlLang from '@/components/HtmlLang'
 import { routing } from '@/i18n/routing'
 import { localizedPath, SITE_URL } from '@/lib/seo'
@@ -78,7 +78,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       {children}
       <LegalFooterBar />
       <CookieConsent />
-      <Analytics />
+      <ConsentAnalytics />
     </NextIntlClientProvider>
   )
 }

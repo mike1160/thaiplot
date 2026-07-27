@@ -36,11 +36,13 @@
     "legalFooterDisclaimer": "Juridische disclaimer",
     "legalFooterPrivacy": "Privacybeleid",
     "disclaimerFooter": "De informatie op deze site is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel of fiscaal advies. Raadpleeg altijd onafhankelijk juridisch advies vóór een vastgoedtransactie in Thailand.",
-    "disclaimerFooterLink": "→ Lees onze volledige disclaimer"
+    "disclaimerFooterLink": "→ Lees onze volledige disclaimer",
+    "globalLegalBar": "Vastgoedinformatie wordt alleen voor algemene doeleinden verstrekt en vormt geen juridisch of financieel advies. Zoek altijd onafhankelijk juridisch advies vóór een vastgoedtransactie in Thailand.",
+    "globalLegalBarLink": "→ Lees de volledige disclaimer"
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "We gebruiken privacyvriendelijke analytics om te begrijpen hoe bezoekers de site gebruiken. Er worden geen persoonsgegevens verkocht.",
+    "text": "We gebruiken privacyvriendelijke analytics. Geen persoonsgegevens verkocht.",
     "accept": "Accepteren",
     "decline": "Weigeren",
     "privacy": "Privacybeleid →"
@@ -102,7 +104,9 @@
     "typeHouse": "Huis",
     "typeCondo": "Condo",
     "typeVilla": "Villa",
-    "typeCommercial": "Commercieel"
+    "typeCommercial": "Commercieel",
+    "cardLegalNote": "Informatie verstrekt door de aanbieder. Verifieer titelakte en details altijd zelfstandig vóór een vastgoedbeslissing.",
+    "cardLegalLink": "→ Disclaimer"
   },
   "listProperty": {
     "pageTitle": "Plaats je woning",
@@ -153,10 +157,92 @@
     "error": "Er ging iets mis. Probeer opnieuw of bereik ons via LINE."
   },
   "legal": {
+    "disclaimerMetaTitle": "Juridische disclaimer | ThaiPlot",
+    "disclaimerMetaDescription": "Juridische disclaimer voor ThaiPlot-aanbod en informatieve content over land kopen in Thailand.",
     "disclaimerTitle": "Juridische disclaimer",
-    "disclaimerBody": "De informatie op ThaiPlot is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel of fiscaal advies. Objectgegevens en titelakten moeten onafhankelijk worden geverifieerd. Raadpleeg altijd gekwalificeerd Thais juridisch advies vóór een vastgoedtransactie.",
+    "disclaimerIntro": "Lees deze disclaimer zorgvuldig voordat u thaiplot.com gebruikt of vertrouwt op informatie op deze website.",
+    "disclaimerSections": [
+      {
+        "title": "Algemeen",
+        "body": "Informatie op thaiplot.com is uitsluitend informatief en vormt geen juridisch, financieel, fiscaal of beleggingsadvies. ThaiPlot is een onafhankelijk listingplatform en geen advocatenkantoor, bank of vergunde financieel adviseur."
+      },
+      {
+        "title": "Vastgoedaanbod",
+        "body": "Wij verifiëren de juistheid van advertenties, prijzen, oppervlaktes, locaties, nutsvoorzieningen of titelakten niet. Content wordt aangeleverd door eigenaren, makelaars of andere inzenders. Verifieer elk detail zelfstandig bij het Land Office, een vergunde Thaise advocaat en via eigen due diligence vóór u een beslissing neemt."
+      },
+      {
+        "title": "Geen aansprakelijkheid",
+        "body": "ThaiPlot aanvaardt geen verantwoordelijkheid voor fouten, weglatingen, verouderde informatie, kapotte links of beslissingen gebaseerd op sitecontent. Voor zover wettelijk toegestaan zijn wij niet aansprakelijk voor schade door gebruik van deze website of vertrouwen op de inhoud."
+      },
+      {
+        "title": "Thais recht",
+        "body": "Vastgoedtransacties in Thailand vallen onder Thais recht, waaronder het Thai Civil and Commercial Code en gerelateerde landregelgeving. Raadpleeg altijd een vergunde Thaise advocaat vóór lease, aankoop, bedrijfsstructuur of overdracht van rechten."
+      },
+      {
+        "title": "Internationale kopers",
+        "body": "Wet- en belastingregels verschillen per nationaliteit en woonland. Zoek ook in uw thuisland onafhankelijk juridisch en fiscaal advies vóór een vastgoedtransactie."
+      },
+      {
+        "title": "Foto’s",
+        "body": "Foto’s geven mogelijk niet de actuele staat van een object weer. Beelden kunnen verouderd, selectief of door derden aangeleverd zijn. Inspecteer waar mogelijk het land of object ter plaatse."
+      },
+      {
+        "title": "Prijzen",
+        "body": "Prijzen kunnen zonder kennisgeving wijzigen en kunnen afwijken van het uiteindelijk overeengekomen bedrag. Beschikbaarheid van advertenties is niet gegarandeerd."
+      },
+      {
+        "title": "Valuta",
+        "body": "Alle prijzen staan in Thaise baht (THB), tenzij anders aangegeven. Wisselkoersen schommelen en kunnen de kostprijs in uw eigen valuta beïnvloeden."
+      },
+      {
+        "title": "Auteursrecht",
+        "body": "Alle content op thaiplot.com is © ThaiPlot 2026 tenzij anders vermeld. U mag sitecontent niet kopiëren, scrapen of herpubliceren zonder voorafgaande schriftelijke toestemming."
+      }
+    ],
+    "privacyMetaTitle": "Privacybeleid | ThaiPlot",
+    "privacyMetaDescription": "Privacybeleid van ThaiPlot: welke gegevens we verzamelen, hoe we ze gebruiken, opslag, cookies en uw rechten.",
     "privacyTitle": "Privacybeleid",
-    "privacyBody": "ThaiPlot verzamelt contactgegevens alleen wanneer je een listing of contactformulier indient. We gebruiken deze informatie om te reageren en, met jouw toestemming, listings te publiceren. We verkopen geen persoonsgegevens."
+    "privacyIntro": "Dit privacybeleid legt uit welke persoonsgegevens ThaiPlot verzamelt, waarom, en welke keuzes u heeft. Door deze website te gebruiken of een formulier te versturen, erkent u dit beleid.",
+    "privacySections": [
+      {
+        "title": "Welke gegevens we verzamelen",
+        "body": "We verzamelen informatie die u vrijwillig indient via contactformulieren en listing-aanvragen, zoals naam, e-mailadres, telefoonnummer, voorkeurstaal, objectgegevens en berichtinhoud. We kunnen ook technische gegevens verwerken die nodig zijn voor veilige werking (bijvoorbeeld bot-beschermingstokens)."
+      },
+      {
+        "title": "Hoe we uw gegevens gebruiken",
+        "body": "We gebruiken ingediende gegevens om vragen te beantwoorden, u waar relevant met onze agent te verbinden, listings te beoordelen en goed te keuren of af te wijzen, en de website te beheren en verbeteren. We gebruiken uw gegevens niet voor ongerelateerde marketing zonder rechtmatige grondslag."
+      },
+      {
+        "title": "Wij verkopen geen gegevens",
+        "body": "We verkopen geen persoonsgegevens aan derden."
+      },
+      {
+        "title": "Gegevensopslag (Supabase)",
+        "body": "Listing- en gerelateerde applicatiegegevens kunnen worden opgeslagen via Supabase. Waar geconfigureerd vindt verwerking plaats op EU-infrastructuur. Toegang is beperkt tot wat nodig is om ThaiPlot te laten werken."
+      },
+      {
+        "title": "E-mailbezorging (Resend)",
+        "body": "Transactionele e-mails (bijvoorbeeld formuliermeldingen) kunnen via Resend worden verzonden zodat we uw vraag of listing-aanvraag kunnen behandelen."
+      },
+      {
+        "title": "Analytics",
+        "body": "We kunnen privacyvriendelijke analytics gebruiken (inclusief Cloudflare analytics indien ingeschakeld). Deze tools geven anonieme of geaggregeerde gebruiks inzichten en worden niet gebruikt om persoonsgegevens te verkopen. Analytics laden alleen na cookie-acceptatie waar toestemming vereist is."
+      },
+      {
+        "title": "Cookiebeleid",
+        "body": "We tonen een toestemmingsbanner zodat u analytics-cookies kunt Accepteren of Weigeren. Essentiële cookies of lokale opslag voor basisfuncties (zoals het onthouden van uw cookiekeuze) kunnen nog steeds worden gebruikt. U kunt sitegegevens altijd in uw browser wissen."
+      },
+      {
+        "title": "Uw rechten en verwijdering",
+        "body": "Afhankelijk van toepasselijk recht (inclusief AVG/GDPR waar van toepassing) kunt u inzage, correctie of verwijdering van persoonsgegevens vragen. Mail info@thaiplot.com om verwijdering of privacyrechten uit te oefenen."
+      },
+      {
+        "title": "Bewaartermijn",
+        "body": "Formulierinzendingen en gerelateerde aanvraagrecords worden maximaal 2 jaar bewaard, tenzij een langere periode nodig is om juridische, beveiligings- of geschilredenen. Goedgekeurde publieke listingcontent kan gepubliceerd blijven tot verwijdering of update."
+      }
+    ],
+    "disclaimerBody": "Lees deze disclaimer zorgvuldig voordat u thaiplot.com gebruikt of vertrouwt op informatie op deze website.",
+    "privacyBody": "Dit privacybeleid legt uit welke persoonsgegevens ThaiPlot verzamelt, waarom, en welke keuzes u heeft. Door deze website te gebruiken of een formulier te versturen, erkent u dit beleid."
   },
   "thaiData": {
     "title": "🔍 Controleer Thaise land- en bedrijfsgegevens — gratis",

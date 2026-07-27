@@ -36,11 +36,13 @@
     "legalFooterDisclaimer": "法律免责声明",
     "legalFooterPrivacy": "隐私政策",
     "disclaimerFooter": "本网站信息仅供一般参考，不构成法律、财务或税务建议。在泰国进行任何房产交易前，请务必寻求独立的法律意见。",
-    "disclaimerFooterLink": "→ 阅读完整免责声明"
+    "disclaimerFooterLink": "→ 阅读完整免责声明",
+    "globalLegalBar": "房产信息仅供一般参考，不构成法律或财务建议。在泰国进行任何房产交易前，请务必寻求独立法律意见。",
+    "globalLegalBarLink": "→ 阅读完整免责声明"
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "我们使用注重隐私的分析工具，了解访客如何使用本网站。不会出售个人数据。",
+    "text": "我们使用注重隐私的分析工具。不会出售个人数据。",
     "accept": "接受",
     "decline": "拒绝",
     "privacy": "隐私政策 →"
@@ -102,7 +104,9 @@
     "typeHouse": "房屋",
     "typeCondo": "公寓",
     "typeVilla": "别墅",
-    "typeCommercial": "商业"
+    "typeCommercial": "商业",
+    "cardLegalNote": "信息由发布者提供。请在做出任何房产决定前独立核实地契与详情。",
+    "cardLegalLink": "→ 免责声明"
   },
   "listProperty": {
     "pageTitle": "发布您的房产",
@@ -153,10 +157,92 @@
     "error": "出现问题。请重试或通过 LINE 联系我们。"
   },
   "legal": {
+    "disclaimerMetaTitle": "法律免责声明 | ThaiPlot",
+    "disclaimerMetaDescription": "ThaiPlot 房产信息与购地内容的法律免责声明。",
     "disclaimerTitle": "法律免责声明",
-    "disclaimerBody": "ThaiPlot 上的信息仅供一般参考，不构成法律、财务或税务建议。房产详情、地契信息与市场数据应独立核实。在进行任何房产交易前，请务必咨询合格的泰国法律顾问。",
+    "disclaimerIntro": "使用 thaiplot.com 或依赖本网站任何信息前，请仔细阅读本声明。",
+    "disclaimerSections": [
+      {
+        "title": "总则",
+        "body": "thaiplot.com 上的信息仅供参考，不构成法律、财务、税务或投资建议。ThaiPlot 为独立信息平台，并非律师事务所、银行或持牌财务顾问。"
+      },
+      {
+        "title": "房源信息",
+        "body": "我们不核实房源、价格、面积、位置、配套或地契的准确性。内容由业主或中介提供。请在决策前通过土地局与持牌泰国律师独立核实。"
+      },
+      {
+        "title": "免责",
+        "body": "在法律允许范围内，ThaiPlot 对错误、遗漏、过时信息或基于网站内容做出的决定不承担责任。"
+      },
+      {
+        "title": "泰国法律",
+        "body": "泰国房产交易受泰国法律约束，包括民商法典及相关土地法规。签署任何租约、购买或转让前请咨询持牌泰国律师。"
+      },
+      {
+        "title": "国际买家",
+        "body": "法律与税务因国籍和居住国而异。请同时在本国寻求独立法律与税务建议。"
+      },
+      {
+        "title": "照片",
+        "body": "照片可能无法反映房产当前状况。请尽可能实地查看。"
+      },
+      {
+        "title": "价格",
+        "body": "价格可能随时变更，并可能与最终成交价不同。"
+      },
+      {
+        "title": "货币",
+        "body": "除非另有说明，所有价格以泰铢（THB）计。汇率会波动。"
+      },
+      {
+        "title": "版权",
+        "body": "除非另有说明，thaiplot.com 全部内容为 © ThaiPlot 2026。未经书面许可不得复制或转载。"
+      }
+    ],
+    "privacyMetaTitle": "隐私政策 | ThaiPlot",
+    "privacyMetaDescription": "ThaiPlot 隐私政策（符合 GDPR 原则）：收集、使用、存储、Cookie 与您的权利。",
     "privacyTitle": "隐私政策",
-    "privacyBody": "ThaiPlot 仅在您提交房源或联系表单时收集联系信息。我们用这些信息回复您的询问，并在您同意的情况下发布房源。我们不会出售个人数据。可能会以注重隐私的方式使用分析数据以改进网站。"
+    "privacyIntro": "本政策说明 ThaiPlot 收集哪些个人数据、用途以及您的选择。",
+    "privacySections": [
+      {
+        "title": "我们收集的数据",
+        "body": "您通过联系表单与发布表单自愿提交的信息，以及保障网站安全所需的技术数据。"
+      },
+      {
+        "title": "我们如何使用数据",
+        "body": "用于回复咨询、联系中介、审核房源以及运营与改进网站。"
+      },
+      {
+        "title": "我们不出售数据",
+        "body": "我们不会向第三方出售个人数据。"
+      },
+      {
+        "title": "数据存储（Supabase）",
+        "body": "相关数据可能通过 Supabase 存储，并在配置时于欧盟基础设施处理。"
+      },
+      {
+        "title": "邮件发送（Resend）",
+        "body": "交易类邮件可能通过 Resend 发送。"
+      },
+      {
+        "title": "分析",
+        "body": "可能使用注重隐私的分析（含已启用的 Cloudflare）。在需要同意时，仅在您接受 Cookie 后加载。"
+      },
+      {
+        "title": "Cookie 政策",
+        "body": "您可通过横幅接受或拒绝分析 Cookie。"
+      },
+      {
+        "title": "权利与删除",
+        "body": "可发送邮件至 info@thaiplot.com 申请查阅、更正或删除。"
+      },
+      {
+        "title": "保留期限",
+        "body": "表单提交最长保留 2 年，法律另有要求除外。"
+      }
+    ],
+    "disclaimerBody": "使用 thaiplot.com 或依赖本网站任何信息前，请仔细阅读本声明。",
+    "privacyBody": "本政策说明 ThaiPlot 收集哪些个人数据、用途以及您的选择。"
   },
   "thaiData": {
     "title": "🔍 免费核查泰国土地与公司记录",

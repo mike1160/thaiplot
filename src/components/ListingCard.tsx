@@ -233,6 +233,16 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             {t('contact')}
           </Link>
         )}
+
+        <p className="text-xs text-stone-400 leading-relaxed text-center mt-3">
+          {t('cardLegalNote')}{' '}
+          <Link
+            href="/legal/disclaimer"
+            className="underline underline-offset-2 hover:text-stone-500 transition-colors"
+          >
+            {t('cardLegalLink')}
+          </Link>
+        </p>
       </div>
 
       {lightboxOpen ? (

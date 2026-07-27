@@ -16,8 +16,6 @@ const ROUTES: Array<{
   { path: '/info/hua-hin-property-market', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/info/pranburi-property', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/info/visa-retirement-thailand', priority: 0.8, changeFrequency: 'weekly' },
-  { path: '/legal/disclaimer', priority: 0.6, changeFrequency: 'monthly' },
-  { path: '/legal/privacy', priority: 0.6, changeFrequency: 'monthly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

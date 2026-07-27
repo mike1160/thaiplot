@@ -36,11 +36,13 @@
     "legalFooterDisclaimer": "Legal Disclaimer",
     "legalFooterPrivacy": "Privacy Policy",
     "disclaimerFooter": "The information on this site is for general informational purposes only and does not constitute legal, financial, or tax advice. Always seek independent legal advice before any property transaction in Thailand.",
-    "disclaimerFooterLink": "→ Read our full disclaimer"
+    "disclaimerFooterLink": "→ Read our full disclaimer",
+    "globalLegalBar": "Property information is provided for general purposes only and does not constitute legal or financial advice. Always seek independent legal advice before any property transaction in Thailand.",
+    "globalLegalBarLink": "→ Read full disclaimer"
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "We use privacy-friendly analytics to understand how visitors use this site. No personal data is sold.",
+    "text": "We use privacy-friendly analytics. No personal data sold.",
     "accept": "Accept",
     "decline": "Decline",
     "privacy": "Privacy policy →"
@@ -102,7 +104,9 @@
     "typeHouse": "House",
     "typeCondo": "Condo",
     "typeVilla": "Villa",
-    "typeCommercial": "Commercial"
+    "typeCommercial": "Commercial",
+    "cardLegalNote": "Information provided by listing owner. Always verify title deed and details independently before making any property decision.",
+    "cardLegalLink": "→ Disclaimer"
   },
   "listProperty": {
     "pageTitle": "List Your Property",
@@ -153,10 +157,92 @@
     "error": "Something went wrong. Please try again or contact us on LINE."
   },
   "legal": {
+    "disclaimerMetaTitle": "Legal Disclaimer | ThaiPlot",
+    "disclaimerMetaDescription": "Legal disclaimer for ThaiPlot property listings and informational content about buying land in Thailand.",
     "disclaimerTitle": "Legal Disclaimer",
-    "disclaimerBody": "The information on ThaiPlot is provided for general informational purposes only and does not constitute legal, financial, or tax advice. Property details, title deed information, and market data should be independently verified. Always seek qualified Thai legal counsel before entering into any property transaction.",
+    "disclaimerIntro": "Please read this disclaimer carefully before using thaiplot.com or relying on any information published on this website.",
+    "disclaimerSections": [
+      {
+        "title": "General",
+        "body": "Information on thaiplot.com is provided for informational purposes only and does not constitute legal, financial, tax, or investment advice. ThaiPlot is an independent listing platform and is not a law firm, bank, or licensed financial adviser."
+      },
+      {
+        "title": "Property listings",
+        "body": "We do not verify the accuracy of listings, prices, sizes, locations, utilities, or title deeds. Listing content is provided by owners, agents, or other submitters. Always verify every detail independently with the Land Office, a licensed Thai lawyer, and your own due diligence before making any decision."
+      },
+      {
+        "title": "No liability",
+        "body": "ThaiPlot accepts no responsibility for errors, omissions, outdated information, broken links, or decisions made based on site content. To the fullest extent permitted by law, we are not liable for any loss or damage arising from use of this website or reliance on its content."
+      },
+      {
+        "title": "Thai law",
+        "body": "Property transactions in Thailand are governed by Thai law, including the Thai Civil and Commercial Code and related land regulations. Always consult a licensed Thai lawyer before entering into any lease, purchase, company structure, or transfer of rights."
+      },
+      {
+        "title": "International buyers",
+        "body": "Laws and tax rules vary by nationality and country of residence. Seek independent legal and tax advice in your home country as well as in Thailand before proceeding with any property transaction."
+      },
+      {
+        "title": "Photos",
+        "body": "Photos may not represent the current state of a property. Images can be outdated, selective, or provided by third parties. Always inspect the land or property in person where possible."
+      },
+      {
+        "title": "Prices",
+        "body": "Prices are subject to change without notice and may differ from the final negotiated amount. Availability of listings is not guaranteed."
+      },
+      {
+        "title": "Currency",
+        "body": "All prices are stated in Thai Baht (THB) unless otherwise indicated. Exchange rates fluctuate and may affect the cost in your home currency."
+      },
+      {
+        "title": "Copyright",
+        "body": "All content on thaiplot.com is © ThaiPlot 2026 unless otherwise stated. You may not copy, scrape, or republish site content without prior written permission."
+      }
+    ],
+    "privacyMetaTitle": "Privacy Policy | ThaiPlot",
+    "privacyMetaDescription": "GDPR-oriented privacy policy for ThaiPlot: data we collect, how we use it, storage, cookies, and your rights.",
     "privacyTitle": "Privacy Policy",
-    "privacyBody": "ThaiPlot collects contact details only when you submit a listing or contact form. We use this information to respond to your enquiry and, with your consent, to publish listings. We do not sell personal data. Analytics may be used in a privacy-friendly way to improve the site."
+    "privacyIntro": "This privacy policy explains what personal data ThaiPlot collects, why we collect it, and the choices you have. By using this website or submitting a form, you acknowledge this policy.",
+    "privacySections": [
+      {
+        "title": "What data we collect",
+        "body": "We collect information you voluntarily submit through contact forms and listing submissions, such as name, email address, phone number, preferred language, property details, and message content. We may also process technical data needed to operate the site securely (for example bot-protection tokens)."
+      },
+      {
+        "title": "How we use your data",
+        "body": "We use submitted data to respond to enquiries, connect you with our agent where relevant, review and approve or reject listing submissions, and operate and improve the website. We do not use your data for unrelated marketing without a lawful basis."
+      },
+      {
+        "title": "We do not sell data",
+        "body": "We do not sell personal data to third parties."
+      },
+      {
+        "title": "Data storage (Supabase)",
+        "body": "Listing and related application data may be stored using Supabase. Where configured, data is processed on EU-based infrastructure. Access is limited to what is needed to run ThaiPlot."
+      },
+      {
+        "title": "Email delivery (Resend)",
+        "body": "Transactional emails (for example form notifications) may be sent via Resend so we can receive and handle your enquiry or listing submission."
+      },
+      {
+        "title": "Analytics",
+        "body": "We may use privacy-friendly analytics (including Cloudflare analytics where enabled). These tools are intended to provide anonymous or aggregated usage insights and are not used to sell personal data. Analytics load only after you accept cookies where consent is required."
+      },
+      {
+        "title": "Cookie policy",
+        "body": "We use a consent banner so you can Accept or Decline analytics cookies. Essential cookies or local storage needed for basic site function (such as remembering your cookie choice) may still be used. You can clear site data in your browser at any time."
+      },
+      {
+        "title": "Your rights and deletion",
+        "body": "Depending on applicable law (including GDPR where it applies), you may request access, correction, or deletion of your personal data. To request deletion or exercise privacy rights, email info@thaiplot.com."
+      },
+      {
+        "title": "Data retention",
+        "body": "Form submissions and related enquiry records are kept for a maximum of 2 years, unless a longer period is required for legal, security, or dispute reasons. Approved public listing content may remain published until removed or updated."
+      }
+    ],
+    "disclaimerBody": "Please read this disclaimer carefully before using thaiplot.com or relying on any information published on this website.",
+    "privacyBody": "This privacy policy explains what personal data ThaiPlot collects, why we collect it, and the choices you have. By using this website or submitting a form, you acknowledge this policy."
   },
   "thaiData": {
     "title": "🔍 Verify Thai land & company records — free",

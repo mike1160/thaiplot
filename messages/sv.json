@@ -36,11 +36,13 @@
     "legalFooterDisclaimer": "Juridisk ansvarsfriskrivning",
     "legalFooterPrivacy": "Integritetspolicy",
     "disclaimerFooter": "Informationen på denna webbplats är endast av allmän informativ karaktär och utgör inte juridisk, finansiell eller skatterådgivning. Sök alltid oberoende juridisk rådgivning innan en fastighetstransaktion i Thailand.",
-    "disclaimerFooterLink": "→ Läs vår fullständiga ansvarsfriskrivning"
+    "disclaimerFooterLink": "→ Läs vår fullständiga ansvarsfriskrivning",
+    "globalLegalBar": "Fastighetsinformation lämnas endast i allmänna syften och utgör inte juridisk eller finansiell rådgivning. Sök alltid oberoende juridisk rådgivning före en fastighetstransaktion i Thailand.",
+    "globalLegalBarLink": "→ Läs fullständig ansvarsfriskrivning"
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Vi använder integritetsvänlig analys för att förstå hur besökare använder webbplatsen. Ingen personlig data säljs.",
+    "text": "Vi använder integritetsvänlig analys. Ingen personlig data säljs.",
     "accept": "Acceptera",
     "decline": "Avböj",
     "privacy": "Integritetspolicy →"
@@ -102,7 +104,9 @@
     "typeHouse": "Hus",
     "typeCondo": "Condo",
     "typeVilla": "Villa",
-    "typeCommercial": "Kommersiellt"
+    "typeCommercial": "Kommersiellt",
+    "cardLegalNote": "Information från annonsören. Verifiera alltid äganderättsbevis och detaljer självständigt före beslut.",
+    "cardLegalLink": "→ Ansvarsfriskrivning"
   },
   "listProperty": {
     "pageTitle": "Lägg ut din fastighet",
@@ -153,10 +157,92 @@
     "error": "Något gick fel. Försök igen eller kontakta oss via LINE."
   },
   "legal": {
+    "disclaimerMetaTitle": "Juridisk ansvarsfriskrivning | ThaiPlot",
+    "disclaimerMetaDescription": "Ansvarsfriskrivning för ThaiPlot-annonser och information om markköp i Thailand.",
     "disclaimerTitle": "Juridisk ansvarsfriskrivning",
-    "disclaimerBody": "Informationen på ThaiPlot tillhandahålls endast för allmän information och utgör inte juridisk, finansiell eller skatterådgivning. Fastighetsuppgifter, äganderättsbevis och marknadsdata bör verifieras oberoende. Sök alltid kvalificerad thailändsk juridisk rådgivning innan en fastighetstransaktion.",
+    "disclaimerIntro": "Läs denna text noga innan du använder thaiplot.com eller förlitar dig på webbplatsens innehåll.",
+    "disclaimerSections": [
+      {
+        "title": "Allmänt",
+        "body": "Information på thaiplot.com är endast informativ och utgör inte juridisk, finansiell, skatte- eller investeringsrådgivning. ThaiPlot är en oberoende plattform, inte en advokatbyrå, bank eller licensierad rådgivare."
+      },
+      {
+        "title": "Fastighetsannonser",
+        "body": "Vi verifierar inte riktigheten i annonser, priser, storlekar, lägen, utiliteter eller titelakter. Innehåll lämnas av ägare/mäklare. Verifiera alltid självständigt via Land Office och licensierad thailändsk jurist."
+      },
+      {
+        "title": "Inget ansvar",
+        "body": "ThaiPlot tar inget ansvar för fel, utelämnanden, inaktuell information eller beslut baserade på webbplatsens innehåll, i den mån lagen tillåter."
+      },
+      {
+        "title": "Thailändsk lag",
+        "body": "Fastighetstransaktioner i Thailand styrs av thailändsk lag, inklusive Civil and Commercial Code. Konsultera alltid licensierad thailändsk jurist."
+      },
+      {
+        "title": "Internationella köpare",
+        "body": "Lagar och skatteregler varierar med nationalitet och hemland. Sök även oberoende rådgivning i ditt hemland."
+      },
+      {
+        "title": "Foton",
+        "body": "Foton kanske inte visar aktuell status. Inspektera gärna på plats."
+      },
+      {
+        "title": "Priser",
+        "body": "Priser kan ändras utan föregående meddelande och kan skilja sig från slutligt belopp."
+      },
+      {
+        "title": "Valuta",
+        "body": "Alla priser i thailändska baht (THB) om inte annat anges. Växelkurser varierar."
+      },
+      {
+        "title": "Upphovsrätt",
+        "body": "Allt innehåll på thaiplot.com är © ThaiPlot 2026 om inte annat anges."
+      }
+    ],
+    "privacyMetaTitle": "Integritetspolicy | ThaiPlot",
+    "privacyMetaDescription": "Integritetspolicy för ThaiPlot enligt GDPR-inriktade principer.",
     "privacyTitle": "Integritetspolicy",
-    "privacyBody": "ThaiPlot samlar in kontaktuppgifter endast när du skickar in en annons eller ett kontaktformulär. Vi använder informationen för att besvara din förfrågan och, med ditt samtycke, för att publicera annonser. Vi säljer inte personuppgifter. Analys kan användas på ett integritetsvänligt sätt för att förbättra webbplatsen."
+    "privacyIntro": "Denna policy beskriver vilka personuppgifter ThaiPlot samlar in, varför, och dina val.",
+    "privacySections": [
+      {
+        "title": "Vilka uppgifter vi samlar in",
+        "body": "Uppgifter du frivilligt skickar via kontakt- och annonsformulär samt tekniska data för säker drift."
+      },
+      {
+        "title": "Hur vi använder uppgifterna",
+        "body": "För att besvara förfrågningar, kontakta agent, granska annonser och förbättra webbplatsen."
+      },
+      {
+        "title": "Vi säljer inte data",
+        "body": "Vi säljer inte personuppgifter till tredje part."
+      },
+      {
+        "title": "Lagring (Supabase)",
+        "body": "Data kan lagras via Supabase på EU-infrastruktur där så konfigurerats."
+      },
+      {
+        "title": "E-post (Resend)",
+        "body": "Transaktionsmail kan skickas via Resend."
+      },
+      {
+        "title": "Analys",
+        "body": "Integritetsvänlig analys (inkl. Cloudflare om aktiverat) laddas först efter cookie-acceptans där det krävs."
+      },
+      {
+        "title": "Cookiepolicy",
+        "body": "Du kan acceptera eller avböja analyscookies via bannern."
+      },
+      {
+        "title": "Rättigheter och radering",
+        "body": "Begär tillgång, rättelse eller radering via info@thaiplot.com."
+      },
+      {
+        "title": "Lagringstid",
+        "body": "Formuläruppgifter sparas max 2 år om inte längre tid krävs enligt lag."
+      }
+    ],
+    "disclaimerBody": "Läs denna text noga innan du använder thaiplot.com eller förlitar dig på webbplatsens innehåll.",
+    "privacyBody": "Denna policy beskriver vilka personuppgifter ThaiPlot samlar in, varför, och dina val."
   },
   "thaiData": {
     "title": "🔍 Kontrollera thailändska mark- och företagsregister — gratis",

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
-const CONSENT_KEY = 'thaiplot-cookie-consent'
+export const CONSENT_KEY = 'thaiplot-cookie-consent'
 
 type ConsentValue = 'accepted' | 'declined'
 
@@ -29,6 +29,7 @@ export default function CookieConsent() {
     } catch {
       // ignore
     }
+    window.dispatchEvent(new Event('thaiplot-cookie-consent'))
     setLeaving(true)
     window.setTimeout(() => {
       setVisible(false)

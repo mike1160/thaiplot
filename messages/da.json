@@ -36,11 +36,13 @@
     "legalFooterDisclaimer": "Juridisk ansvarsfraskrivelse",
     "legalFooterPrivacy": "Privatlivspolitik",
     "disclaimerFooter": "Oplysningerne på dette site er kun til generel information og udgør ikke juridisk, finansiel eller skatterådgivning. Søg altid uafhængig juridisk rådgivning før en ejendomshandel i Thailand.",
-    "disclaimerFooterLink": "→ Læs vores fulde ansvarsfraskrivelse"
+    "disclaimerFooterLink": "→ Læs vores fulde ansvarsfraskrivelse",
+    "globalLegalBar": "Ejendomsoplysninger gives kun til generelle formål og udgør ikke juridisk eller finansiel rådgivning. Søg altid uafhængig juridisk rådgivning før en ejendomshandel i Thailand.",
+    "globalLegalBarLink": "→ Læs fuld ansvarsfraskrivelse"
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Vi bruger privatlivsvenlig analyse til at forstå, hvordan besøgende bruger sitet. Ingen personlige data sælges.",
+    "text": "Vi bruger privatlivsvenlig analyse. Ingen personlige data sælges.",
     "accept": "Accepter",
     "decline": "Afvis",
     "privacy": "Privatlivspolitik →"
@@ -102,7 +104,9 @@
     "typeHouse": "Hus",
     "typeCondo": "Condo",
     "typeVilla": "Villa",
-    "typeCommercial": "Erhverv"
+    "typeCommercial": "Erhverv",
+    "cardLegalNote": "Oplysninger fra annoncøren. Verificér altid skøde og detaljer uafhængigt før beslutning.",
+    "cardLegalLink": "→ Ansvarsfraskrivelse"
   },
   "listProperty": {
     "pageTitle": "Annoncér din ejendom",
@@ -153,10 +157,92 @@
     "error": "Noget gik galt. Prøv igen, eller kontakt os på LINE."
   },
   "legal": {
+    "disclaimerMetaTitle": "Juridisk ansvarsfraskrivelse | ThaiPlot",
+    "disclaimerMetaDescription": "Ansvarsfraskrivelse for ThaiPlot-annoncer og information om jordkøb i Thailand.",
     "disclaimerTitle": "Juridisk ansvarsfraskrivelse",
-    "disclaimerBody": "Oplysningerne på ThaiPlot stilles kun til rådighed som generel information og udgør ikke juridisk, finansiel eller skatterådgivning. Ejendomsoplysninger, skødeinformation og markedsdata bør verificeres uafhængigt. Søg altid kvalificeret thailandsk juridisk rådgivning før en ejendomshandel.",
+    "disclaimerIntro": "Læs denne tekst nøje, før du bruger thaiplot.com eller stoler på indholdet.",
+    "disclaimerSections": [
+      {
+        "title": "Generelt",
+        "body": "Oplysninger på thaiplot.com er kun informative og udgør ikke juridisk, finansiel, skatte- eller investeringsrådgivning. ThaiPlot er en uafhængig platform."
+      },
+      {
+        "title": "Ejendomsannoncer",
+        "body": "Vi verificerer ikke nøjagtigheden af annoncer, priser, størrelser, beliggenhed, forsyning eller skøder. Verificér altid uafhængigt via Land Office og en autoriseret thailandsk advokat."
+      },
+      {
+        "title": "Intet ansvar",
+        "body": "ThaiPlot påtager sig intet ansvar for fejl, udeladelser, forældede oplysninger eller beslutninger baseret på indholdet, i det omfang loven tillader."
+      },
+      {
+        "title": "Thailandsk lov",
+        "body": "Ejendomshandler i Thailand er underlagt thailandsk lov, herunder Civil and Commercial Code. Konsultér altid en autoriseret thailandsk advokat."
+      },
+      {
+        "title": "Internationale købere",
+        "body": "Love og skatteregler varierer efter nationalitet og bopælsland. Søg også rådgivning i dit hjemland."
+      },
+      {
+        "title": "Fotos",
+        "body": "Fotos viser måske ikke den aktuelle tilstand. Besigtig gerne på stedet."
+      },
+      {
+        "title": "Priser",
+        "body": "Priser kan ændres uden varsel og kan afvige fra det endelige beløb."
+      },
+      {
+        "title": "Valuta",
+        "body": "Alle priser i thailandske baht (THB), medmindre andet er angivet. Valutakurser svinger."
+      },
+      {
+        "title": "Ophavsret",
+        "body": "Alt indhold på thaiplot.com er © ThaiPlot 2026, medmindre andet er angivet."
+      }
+    ],
+    "privacyMetaTitle": "Privatlivspolitik | ThaiPlot",
+    "privacyMetaDescription": "Privatlivspolitik for ThaiPlot med GDPR-orienterede principper.",
     "privacyTitle": "Privatlivspolitik",
-    "privacyBody": "ThaiPlot indsamler kun kontaktoplysninger, når du indsender en annonce eller en kontaktformular. Vi bruger oplysningerne til at besvare din henvendelse og, med dit samtykke, til at offentliggøre annoncer. Vi sælger ikke personlige data. Analyse kan bruges på en privatlivsvenlig måde for at forbedre sitet."
+    "privacyIntro": "Denne politik forklarer, hvilke personoplysninger ThaiPlot indsamler, hvorfor, og dine valg.",
+    "privacySections": [
+      {
+        "title": "Hvilke data vi indsamler",
+        "body": "Oplysninger, du frivilligt indsender via kontakt- og annonceformularer, samt tekniske data til sikker drift."
+      },
+      {
+        "title": "Hvordan vi bruger data",
+        "body": "Til at besvare henvendelser, kontakte agent, vurdere annoncer og forbedre websitet."
+      },
+      {
+        "title": "Vi sælger ikke data",
+        "body": "Vi sælger ikke personoplysninger til tredjeparter."
+      },
+      {
+        "title": "Lagring (Supabase)",
+        "body": "Data kan lagres via Supabase på EU-infrastruktur, hvor det er konfigureret."
+      },
+      {
+        "title": "E-mail (Resend)",
+        "body": "Transaktionsmails kan sendes via Resend."
+      },
+      {
+        "title": "Analyse",
+        "body": "Privatlivsvenlig analyse (inkl. Cloudflare hvis aktiveret) indlæses først efter cookie-accept, hvor påkrævet."
+      },
+      {
+        "title": "Cookiepolitik",
+        "body": "Du kan acceptere eller afvise analysecookies via banneret."
+      },
+      {
+        "title": "Rettigheder og sletning",
+        "body": "Anmod om adgang, rettelse eller sletning via info@thaiplot.com."
+      },
+      {
+        "title": "Opbevaring",
+        "body": "Formularindsendelser opbevares maks. 2 år, medmindre længere tid er påkrævet."
+      }
+    ],
+    "disclaimerBody": "Læs denne tekst nøje, før du bruger thaiplot.com eller stoler på indholdet.",
+    "privacyBody": "Denne politik forklarer, hvilke personoplysninger ThaiPlot indsamler, hvorfor, og dine valg."
   },
   "thaiData": {
     "title": "🔍 Tjek thailandske jord- og firmaregistre — gratis",
