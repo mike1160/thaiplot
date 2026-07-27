@@ -352,7 +352,81 @@
       }
     ],
     "aboutTitle": "Over ThaiPlot en onze agent",
-    "aboutBody": "ThaiPlot is een onafhankelijk listingplatform.\nWij zijn geen makelaarskantoor en verdienen geen commissie.\nOnze lokale agent Thanathip werkt onafhankelijk.\nWij werken niet met onbekende doorverkopers of sub-agenten.\nAlle advertenties op ThaiPlot worden rechtstreeks door eigenaren of agenten ingediend.\nThaiPlot garandeert de juistheid van geen enkele advertentie."
+    "aboutBody": "ThaiPlot is een onafhankelijk listingplatform.\nWij zijn geen makelaarskantoor en verdienen geen commissie.\nOnze lokale agent Thanathip werkt onafhankelijk.\nWij werken niet met onbekende doorverkopers of sub-agenten.\nAlle advertenties op ThaiPlot worden rechtstreeks door eigenaren of agenten ingediend.\nThaiPlot garandeert de juistheid van geen enkele advertentie.",
+    "govResourcesTitle": "Officiële Thaise instanties",
+    "govResourcesIntro": "Gebruik deze officiële .go.th-websites om landregisters, visa, belastingen en bedrijfsgegevens zelf te controleren. ThaiPlot is niet verbonden aan deze instanties.",
+    "govResourcesNote": "Alle links openen officiële Thaise overheidswebsites in een nieuw tabblad. Verifieer informatie altijd rechtstreeks bij de betreffende instantie.",
+    "govCategories": [
+      {
+        "title": "Land & vastgoed",
+        "icon": "land",
+        "links": [
+          {
+            "name": "Department of Lands",
+            "description": "Titelakten, eigendomsregistratie en Land Office-diensten (กรมที่ดิน).",
+            "href": "https://www.dol.go.th"
+          },
+          {
+            "name": "Land Development Department",
+            "description": "Bodem, landgebruik en landontwikkeling (กรมพัฒนาที่ดิน).",
+            "href": "https://www.ldd.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Immigratie & visa",
+        "icon": "visa",
+        "links": [
+          {
+            "name": "Thai Immigration Bureau",
+            "description": "Visumverlenging, 90-dagenmelding en immigratieregels.",
+            "href": "https://www.immigration.go.th"
+          },
+          {
+            "name": "Ministry of Foreign Affairs (eVisa)",
+            "description": "Officiële Thaise eVisa-aanvragen en ambassade-informatie.",
+            "href": "https://www.thaievisa.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Zakelijk & juridisch",
+        "icon": "business",
+        "links": [
+          {
+            "name": "Department of Business Development",
+            "description": "Bedrijfsregistratie, DBD-filings en handelsregisters.",
+            "href": "https://www.dbd.go.th"
+          },
+          {
+            "name": "Revenue Department",
+            "description": "Belastingen, btw/VAT en officiële fiscale informatie.",
+            "href": "https://www.rd.go.th"
+          },
+          {
+            "name": "BOI Thailand",
+            "description": "Board of Investment-stimulansen en investeringspromotie.",
+            "href": "https://www.boi.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Overig",
+        "icon": "other",
+        "links": [
+          {
+            "name": "Royal Thai Police",
+            "description": "Officiële politie-informatie en publieke diensten.",
+            "href": "https://www.royalthaipolice.go.th"
+          },
+          {
+            "name": "National Land Policy Committee",
+            "description": "Nationaal landbeleid en gerelateerde officiële richtlijnen.",
+            "href": "https://www.onlb.go.th"
+          }
+        ]
+      }
+    ]
   },
   "thaiData": {
     "title": "🔍 Controleer Thaise land- en bedrijfsgegevens — gratis",

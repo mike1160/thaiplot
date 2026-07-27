@@ -16,6 +16,8 @@ export const HERO_PHOTOS = {
   huaHinMarket: pexels('2070033/pexels-photo-2070033.jpeg'),
   pranburi: pexels('1174732/pexels-photo-1174732.jpeg'),
   visa: pexels('3889843/pexels-photo-3889843.jpeg'),
+  homeCtaListProperty: pexels('1029599/pexels-photo-1029599.jpeg'),
+  homeCtaVerifyTitle: pexels('4386431/pexels-photo-4386431.jpeg'),
 } as const
 
 export type HeroPhotoKey = keyof typeof HERO_PHOTOS

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { trackGaEvent } from '@/lib/ga'
 import { LINE_AGENT_URL } from '@/lib/contact'
-import { resolveListingPhotos } from '@/lib/listing-ui'
+import { resolveListingPhotos, resolveListingTitleDeed } from '@/lib/listing-ui'
 import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
 
 type ListingCardProps = {
@@ -53,6 +53,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const fullDescription = (listing.description || '').trim()
   const href = contactHref || LINE_AGENT_URL
   const photos = resolveListingPhotos(listing)
+  const titleDeed = resolveListingTitleDeed(listing)
   const [activeIndex, setActiveIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const isSoi112 = (listing.location || '').toLowerCase().includes('soi 112')
@@ -235,11 +236,11 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
               <dd className="text-[#1A2744] font-medium text-right">{listing.size}</dd>
             </div>
           ) : null}
-          {listing.title_deed != null && String(listing.title_deed).trim() !== '' ? (
+          {titleDeed ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
               <dd className="text-[#1A2744] font-medium text-right break-words">
-                {String(listing.title_deed)}
+                {titleDeed}
               </dd>
             </div>
           ) : null}

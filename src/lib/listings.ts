@@ -1,4 +1,5 @@
 import { getSupabaseAdmin, type ListingRow } from '@/lib/supabase'
+import { resolveListingTitleDeed } from '@/lib/listing-ui'
 
 export type PublicListing = Pick<
   ListingRow,
@@ -43,7 +44,7 @@ const BASE_SELECT =
 function mapRows(data: unknown[] | null): PublicListing[] {
   return ((data || []) as PublicListing[]).map((row) => ({
     ...row,
-    title_deed: row.title_deed ?? null,
+    title_deed: resolveListingTitleDeed(row),
     region: row.region || 'Hua Hin',
     category: row.category || 'Land & Property',
     vehicle_type: row.vehicle_type ?? null,

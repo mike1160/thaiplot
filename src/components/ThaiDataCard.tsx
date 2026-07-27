@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 const THAI_DATA_URL = 'https://data.hua-hin-land.com'
 
@@ -73,28 +74,37 @@ export function TitleVerifyCta({ className = '' }: { className?: string }) {
   const t = useTranslations('thaiData')
 
   return (
-    <div
-      className={`bg-[#1A2744] rounded-[12px] px-6 py-10 md:py-12 text-center text-white ${className}`}
-    >
-      <h2
-        className="text-2xl md:text-3xl font-bold mb-3"
-        style={{ fontFamily: 'Playfair Display, serif' }}
-      >
-        {t('verifyTitle')}
-      </h2>
-      <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6">
-        {t('verifyText')}
-      </p>
-      <a
-        href={THAI_DATA_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={trackVerifyTitleClick}
-        className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white transition-all hover:brightness-110"
-        style={{ background: '#C8973A' }}
-      >
-        {t('verifyButton')}
-      </a>
+    <div className={`relative overflow-hidden rounded-[12px] ${className}`}>
+      <img
+        src={HERO_PHOTOS.homeCtaVerifyTitle}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div
+        className="absolute inset-0"
+        style={{ background: 'rgba(26,39,68,0.82)' }}
+      />
+      <div className="relative z-10 px-6 py-10 md:py-12 text-center text-white">
+        <h2
+          className="text-2xl md:text-3xl font-bold mb-3"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          {t('verifyTitle')}
+        </h2>
+        <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6">
+          {t('verifyText')}
+        </p>
+        <a
+          href={THAI_DATA_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={trackVerifyTitleClick}
+          className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white transition-all hover:brightness-110"
+          style={{ background: '#C8973A' }}
+        >
+          {t('verifyButton')}
+        </a>
+      </div>
     </div>
   )
 }

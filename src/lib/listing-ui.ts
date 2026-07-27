@@ -120,6 +120,21 @@ export function listingPhotosForListing(listing: {
   return []
 }
 
+const SAM_ROI_YOT_LISTING_ID = '5561f9fa-59a5-4ec1-ab6f-6b54cc200fbe'
+const SAM_ROI_YOT_TITLE_DEED = 'Nor Sor Kru Ta Daeng'
+
+export function resolveListingTitleDeed(listing: {
+  id?: string | null
+  title_deed?: string | null
+}): string | null {
+  const id = (listing.id || '').trim()
+  if (id === SAM_ROI_YOT_LISTING_ID) return SAM_ROI_YOT_TITLE_DEED
+
+  const raw = listing.title_deed
+  if (raw == null || String(raw).trim() === '') return null
+  return String(raw)
+}
+
 export function resolveListingPhotos(listing: {
   id?: string | null
   property_type?: string | null

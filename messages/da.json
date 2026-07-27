@@ -352,7 +352,81 @@
       }
     ],
     "aboutTitle": "Om ThaiPlot og vores agent",
-    "aboutBody": "ThaiPlot er en uafhængig annonceplatform.\nVi er ikke et ejendomsmæglerfirma og tjener ikke kommission.\nVores lokale agent Thanathip arbejder uafhængigt.\nVi samarbejder ikke med skjulte videresælgere eller underagenter.\nAlle annoncer indsendes direkte af ejere eller agenter.\nThaiPlot garanterer ikke nøjagtigheden af nogen annonce."
+    "aboutBody": "ThaiPlot er en uafhængig annonceplatform.\nVi er ikke et ejendomsmæglerfirma og tjener ikke kommission.\nVores lokale agent Thanathip arbejder uafhængigt.\nVi samarbejder ikke med skjulte videresælgere eller underagenter.\nAlle annoncer indsendes direkte af ejere eller agenter.\nThaiPlot garanterer ikke nøjagtigheden af nogen annonce.",
+    "govResourcesTitle": "Official Thai Government Resources",
+    "govResourcesIntro": "Use these official .go.th websites to verify land records, visas, taxes and company information yourself. ThaiPlot is not affiliated with these agencies.",
+    "govResourcesNote": "All links open official Thai government websites in a new tab. Always verify information directly with the relevant authority.",
+    "govCategories": [
+      {
+        "title": "Land & Property",
+        "icon": "land",
+        "links": [
+          {
+            "name": "Department of Lands",
+            "description": "Land titles, ownership registration and Land Office services (กรมที่ดิน).",
+            "href": "https://www.dol.go.th"
+          },
+          {
+            "name": "Land Development Department",
+            "description": "Soil, land use and land development information (กรมพัฒนาที่ดิน).",
+            "href": "https://www.ldd.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Immigration & Visa",
+        "icon": "visa",
+        "links": [
+          {
+            "name": "Thai Immigration Bureau",
+            "description": "Visa extensions, 90-day reporting and immigration rules.",
+            "href": "https://www.immigration.go.th"
+          },
+          {
+            "name": "Ministry of Foreign Affairs (eVisa)",
+            "description": "Official Thai eVisa applications and embassy guidance.",
+            "href": "https://www.thaievisa.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Business & Legal",
+        "icon": "business",
+        "links": [
+          {
+            "name": "Department of Business Development",
+            "description": "Company registration, DBD filings and business records.",
+            "href": "https://www.dbd.go.th"
+          },
+          {
+            "name": "Revenue Department",
+            "description": "Taxes, VAT and official tax guidance for individuals and companies.",
+            "href": "https://www.rd.go.th"
+          },
+          {
+            "name": "BOI Thailand",
+            "description": "Board of Investment incentives and investment promotion.",
+            "href": "https://www.boi.go.th"
+          }
+        ]
+      },
+      {
+        "title": "Other",
+        "icon": "other",
+        "links": [
+          {
+            "name": "Royal Thai Police",
+            "description": "Official police information and public services.",
+            "href": "https://www.royalthaipolice.go.th"
+          },
+          {
+            "name": "National Land Policy Committee",
+            "description": "National land policy and related official guidance.",
+            "href": "https://www.onlb.go.th"
+          }
+        ]
+      }
+    ]
   },
   "thaiData": {
     "title": "🔍 Tjek thailandske jord- og firmaregistre — gratis",

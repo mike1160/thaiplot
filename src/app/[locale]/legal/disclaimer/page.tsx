@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import InfoHero from '@/components/InfoHero'
+import OfficialGovResources, {
+  type GovCategory,
+} from '@/components/OfficialGovResources'
 import { localizedPath, SITE_URL } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 
@@ -26,6 +29,7 @@ export default async function DisclaimerPage({ params }: Props) {
   const t = await getTranslations('legal')
   const sections = t.raw('disclaimerSections') as Array<{ title: string; body: string }>
   const warnings = t.raw('thailandWarnings') as Array<{ title: string; body: string }>
+  const govCategories = t.raw('govCategories') as GovCategory[]
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
@@ -38,7 +42,7 @@ export default async function DisclaimerPage({ params }: Props) {
         size="secondary"
       />
 
-      <section className="max-w-3xl mx-auto px-6 py-16">
+      <section className="max-w-4xl mx-auto px-6 py-16">
         <p className="text-[#5C5247] leading-relaxed mb-10">{t('disclaimerIntro')}</p>
 
         <div className="space-y-8 mb-14">
@@ -78,6 +82,13 @@ export default async function DisclaimerPage({ params }: Props) {
             ))}
           </div>
         </section>
+
+        <OfficialGovResources
+          title={t('govResourcesTitle')}
+          intro={t('govResourcesIntro')}
+          note={t('govResourcesNote')}
+          categories={govCategories}
+        />
 
         <section className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 mb-12">
           <h2

@@ -10,6 +10,7 @@ import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
 import { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 import type { PublicListing } from '@/lib/listings'
 import {
   DEFAULT_FILTERS,
@@ -153,19 +154,28 @@ export default function HomePageClient({ listings }: Props) {
 
       <section
         id="saved-souls"
-        className="w-full border-t-2 border-b-2 border-[#C8973A] bg-[#FAF7F0] py-14 md:py-20 px-6"
+        className="w-full border-t-2 border-b-2 border-[#C8973A] bg-[#FAF7F0] overflow-hidden"
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
-          <div className="order-1">
-            <div className="relative overflow-hidden rounded-[12px] shadow-[0_12px_40px_rgba(26,39,68,0.18)]">
-              <img
-                src="/dog-wheelchair-small.webp"
-                alt={t('donateSectionTitle')}
-                className="w-full h-auto min-h-[280px] md:min-h-[420px] max-h-[520px] object-cover object-center"
-              />
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.35fr)_minmax(320px,576px)] items-stretch md:min-h-[480px]">
+          <div className="order-1 relative min-h-[320px] md:min-h-[480px] h-full w-full overflow-hidden m-0 p-0">
+            <img
+              src="/dog-wheelchair-small.webp"
+              alt={t('donateSectionTitle')}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-10"
+              style={{
+                background: `
+                  linear-gradient(to right, transparent 45%, rgba(250,247,240,0.55) 72%, #FAF7F0 100%),
+                  linear-gradient(to top, rgba(250,247,240,0.85) 0%, transparent 16%),
+                  linear-gradient(to bottom, rgba(250,247,240,0.85) 0%, transparent 12%)
+                `,
+              }}
+            />
           </div>
-          <div className="order-2 text-center md:text-left">
+          <div className="order-2 flex flex-col justify-center text-center md:text-left px-6 py-14 md:py-16 md:pl-10 lg:pl-14 md:pr-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
             <p className="text-[#C8973A] text-sm md:text-base font-semibold tracking-wide mb-3">
               {t('donateSectionEyebrow')}
             </p>
@@ -182,7 +192,7 @@ export default function HomePageClient({ listings }: Props) {
               href="https://www.savedsouls-foundation.org/en/donate"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[56px] px-8 rounded-[12px] text-base font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-[0_8px_24px_rgba(217,119,6,0.35)]"
+              className="inline-flex items-center justify-center min-h-[56px] px-8 rounded-[12px] text-base font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-[0_8px_24px_rgba(217,119,6,0.35)] self-center md:self-start"
             >
               {t('donateSectionCta')}
             </a>
@@ -199,19 +209,27 @@ export default function HomePageClient({ listings }: Props) {
           >
             {t('agentTitle')}
           </h2>
-          <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-            <div className="w-20 h-20 rounded-full bg-[#E8E2D6] flex items-center justify-center flex-shrink-0">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <circle cx="12" cy="8" r="4" stroke="#1A2744" strokeWidth="1.5" />
-                <path
-                  d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"
-                  stroke="#1A2744"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+          <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] overflow-hidden grid grid-cols-1 sm:grid-cols-[220px_minmax(0,1fr)] items-stretch">
+            <div className="relative min-h-[220px] sm:min-h-full overflow-hidden">
+              <img
+                src="/thanathip-cropped.jpg"
+                alt={AGENT_NAME}
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: '50% 0%' }}
+              />
+              {/* Full-bleed portrait with a soft neck fade into the card */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background: `
+                    linear-gradient(to bottom, transparent 0%, transparent 74%, rgba(250,247,240,0.18) 84%, rgba(250,247,240,0.55) 94%, #FAF7F0 100%),
+                    linear-gradient(to right, transparent 48%, rgba(250,247,240,0.22) 76%, rgba(250,247,240,0.68) 100%)
+                  `,
+                }}
+              />
             </div>
-            <div className="text-center sm:text-left flex-1">
+            <div className="text-center sm:text-left flex-1 p-6 md:p-8">
               <h3
                 className="text-2xl font-bold text-[#1A2744] mb-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
@@ -234,21 +252,32 @@ export default function HomePageClient({ listings }: Props) {
       </section>
 
       <section className="px-6 pb-10">
-        <div className="max-w-5xl mx-auto bg-[#1A2744] rounded-[12px] px-6 py-10 md:py-12 text-center text-white">
-          <h2
-            className="text-2xl md:text-3xl font-bold mb-4"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('ctaBarTitle')}
-          </h2>
-          <Link
-            href="/list-property"
-            className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white mb-4 transition-all hover:brightness-110"
-            style={{ background: '#C8973A' }}
-          >
-            {t('ctaBarButton')}
-          </Link>
-          <p className="text-white/65 text-sm">{t('ctaBarNote')}</p>
+        <div className="relative max-w-5xl mx-auto overflow-hidden rounded-[12px]">
+          <img
+            src={HERO_PHOTOS.homeCtaListProperty}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'rgba(26,39,68,0.82)' }}
+          />
+          <div className="relative z-10 px-6 py-10 md:py-12 text-center text-white">
+            <h2
+              className="text-2xl md:text-3xl font-bold mb-4"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
+              {t('ctaBarTitle')}
+            </h2>
+            <Link
+              href="/list-property"
+              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white mb-4 transition-all hover:brightness-110"
+              style={{ background: '#C8973A' }}
+            >
+              {t('ctaBarButton')}
+            </Link>
+            <p className="text-white/65 text-sm">{t('ctaBarNote')}</p>
+          </div>
         </div>
       </section>
 
