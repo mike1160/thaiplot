@@ -2,6 +2,8 @@ import { setRequestLocale } from 'next-intl/server'
 import ListingsPageClient from '@/components/ListingsPageClient'
 import { fetchApprovedListings } from '@/lib/listings'
 
+export const dynamic = 'force-dynamic'
+
 type Props = {
   params: { locale: string }
   searchParams?: {

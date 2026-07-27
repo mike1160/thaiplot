@@ -235,12 +235,11 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
               <dd className="text-[#1A2744] font-medium text-right">{listing.size}</dd>
             </div>
           ) : null}
-          {(listing.title_deed || '').trim() &&
-          (!listing.category || listing.category === 'Land & Property') ? (
+          {listing.title_deed != null && String(listing.title_deed).trim() !== '' ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right">
-                {(listing.title_deed || '').trim()}
+              <dd className="text-[#1A2744] font-medium text-right break-words">
+                {String(listing.title_deed)}
               </dd>
             </div>
           ) : null}

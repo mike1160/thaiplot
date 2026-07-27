@@ -59,7 +59,7 @@ VALUES
 -- LISTING 6: Sam Roi Yot
 ('Thanathip', 'info@hua-hin-land.com', '065-901-2984', 'en', 'Land', 'For Sale',
 'Khao Lang Kan, Sam Roi Yot, Prachuap Khiri Khan', '3 Rai (4,800 m²)', '฿1,500,000/Rai — Total ฿4,500,000',
-'Chanote (Red Garuda) — Ready to transfer',
+'Nor Sor Kru Ta Daeng',
 'Spectacular 360-degree mountain views surrounded by nature. Only 2+ km from Sam Roi Yot Beach and National Park. Rare find combining mountain tranquility with easy beach access. Fresh air and peaceful atmosphere all year round. Ideal for private vacation villa, boutique resort, cafe or long-term investment.',
 'approved', 'Prachuap Khiri Khan', now(),
 '/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg', NULL),

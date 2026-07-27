@@ -78,63 +78,50 @@ export function listingPhotosFromColumns(listing: {
   ].filter((url): url is string => Boolean(url && url.trim()))
 }
 
-/** Map listing fields to local gallery photos (price / size / location). */
+/** Map listing to local gallery photos by stable listing id (preferred). */
 export function listingPhotosForListing(listing: {
+  id?: string | null
   location?: string | null
   size?: string | null
   price?: string | null
 }): string[] {
-  const loc = listing.location || ''
-  const locLower = loc.toLowerCase()
-  const price = listing.price || ''
-  const priceLower = price.toLowerCase()
-  const size = listing.size || ''
-  const sizeLower = size.toLowerCase()
+  const id = (listing.id || '').trim()
+  const locLower = (listing.location || '').toLowerCase()
 
-  if (locLower.includes('soi 112')) {
-    return ['/soi112-1.jpg', '/soi112-2.jpg', '/soi112-3.jpg', '/soi112-4.jpg', '/soi112-5.jpg']
-  }
-
-  if (
-    price.includes('10,000,000') ||
-    priceLower.includes('10m') ||
-    (sizeLower.includes('4 rai') && locLower.includes('khao tao'))
-  ) {
+  // Khao Tao 4 rai
+  if (id === '5ec523d2-9372-4770-baea-6afab15e7ba0') {
     return ['/khao-tao-1.jpg', '/khao-tao-2.jpg', '/khao-tao-3.jpg']
   }
-
-  // Soi 105 — two separate 2-rai listings distinguished by price
-  if (price.includes('2,500,000') && sizeLower.includes('2 rai')) {
+  // Soi 105 2 rai ฿2,500,000
+  if (id === 'f797ed07-6d97-4bfd-86c2-c12cf563b6b5') {
     return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
   }
-
-  if (price.includes('1,800,000') && sizeLower.includes('2 rai')) {
+  // Soi 105b 2 rai ฿1,800,000
+  if (id === '4dc2784c-ba89-47c5-ba07-bd17641a0e4a') {
     return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
   }
-
-  if (
-    price.includes('5,000,000') ||
-    priceLower.includes('5m')
-  ) {
-    return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
+  // Sam Roi Yot
+  if (id === '5561f9fa-59a5-4ec1-ab6f-6b54cc200fbe') {
+    return ['/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg']
   }
-
-  if (locLower.includes('pranburi') || locLower.includes('khao kra hok')) {
-    return ['/pranburi-1.jpg', '/pranburi-2.jpg']
-  }
-
-  if (locLower.includes('black mountain')) {
+  // Black Mountain
+  if (id === 'ffa4578f-3e68-4c54-86d7-9fd32df05cf3') {
     return ['/black-mountain-1.jpg', '/black-mountain-2.jpg', '/black-mountain-3.jpg']
   }
-
-  if (locLower.includes('sam roi yot')) {
-    return ['/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg']
+  // Pranburi Khao Kalok
+  if (id === 'c4ebd114-afc6-4d90-a3ed-0771c9a88dca') {
+    return ['/pranburi-1.jpg', '/pranburi-2.jpg']
+  }
+  // Soi 112 (both listings)
+  if (locLower.includes('soi 112')) {
+    return ['/soi112-1.jpg', '/soi112-2.jpg', '/soi112-3.jpg', '/soi112-4.jpg', '/soi112-5.jpg']
   }
 
   return []
 }
 
 export function resolveListingPhotos(listing: {
+  id?: string | null
   property_type?: string | null
   location?: string | null
   size?: string | null

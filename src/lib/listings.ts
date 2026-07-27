@@ -93,6 +93,8 @@ export async function fetchApprovedListings(
 
     return ((data || []) as unknown as PublicListing[]).map((row) => ({
       ...row,
+      // Always pass through Supabase title_deed as-is (no Chanote default/override)
+      title_deed: row.title_deed ?? null,
       region: row.region || 'Hua Hin',
       category: row.category || 'Land & Property',
       vehicle_type: row.vehicle_type ?? null,
