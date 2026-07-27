@@ -7,6 +7,7 @@ import { REGIONS } from '@/i18n/routing'
 export default function SiteFooter() {
   const t = useTranslations('homepage')
   const tn = useTranslations('navigation')
+  const td = useTranslations('thaiData')
 
   return (
     <footer>
@@ -29,7 +30,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="bg-[#1A2744] text-white overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="min-w-0">
             <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
               {t('footerExplore')}
@@ -50,6 +51,14 @@ export default function SiteFooter() {
                   {tn('contact')}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/info/buying-land-thailand"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guide')}
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -58,8 +67,8 @@ export default function SiteFooter() {
               {t('footerRegions')}
             </p>
             <ul className="space-y-2.5 text-sm">
-              {REGIONS.filter((r) =>
-                !['All', 'Other', 'Koh Phangan', 'Rayong', 'Cha-am', 'Krabi'].includes(r)
+              {REGIONS.filter(
+                (r) => !['All', 'Other', 'Koh Phangan', 'Rayong', 'Cha-am', 'Krabi'].includes(r)
               ).map((region) => (
                 <li key={region}>
                   <Link
@@ -96,6 +105,24 @@ export default function SiteFooter() {
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
                   Hua Hin Land
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="min-w-0">
+            <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
+              {td('footerTools')}
+            </p>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="https://data.hua-hin-land.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {td('footerVerify')}
                 </a>
               </li>
             </ul>

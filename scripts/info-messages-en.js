@@ -1,0 +1,271 @@
+/** @type {Record<string, unknown>} */
+module.exports = {
+  thaiData: {
+    title: '🔍 Verify Thai land & company records — free',
+    subtitle:
+      "ThaiData explains Thailand's public records in plain English. Check land ownership, title deeds, company registrations and more.",
+    button: 'Open ThaiData →',
+    verifyTitle: 'Verify any Thai title deed yourself — free',
+    verifyText:
+      'Use our free data tool to check land ownership, company records and legal status before you buy.',
+    verifyButton: 'Open verification tool →',
+    footerTools: 'Tools',
+    footerVerify: 'Verify title deed → data.hua-hin-land.com',
+  },
+  navigation: {
+    guide: 'Guide',
+    guideBuying: 'Buying land in Thailand',
+    guideChanote: 'Chanote title deed',
+    guideHuaHin: 'Hua Hin market 2026',
+    guidePranburi: 'Pranburi property',
+    guideVisa: 'Retirement visa',
+  },
+  breadcrumbPages: {
+    guide: 'Guide',
+    buyingLand: 'Buying land',
+    chanote: 'Chanote title',
+    huaHinMarket: 'Hua Hin market',
+    pranburi: 'Pranburi',
+    visa: 'Retirement visa',
+  },
+  infoBuying: {
+    metaTitle: 'How to Buy Land in Thailand as a Foreigner | ThaiPlot',
+    metaDescription:
+      'Guide for foreigners buying land in Thailand: ownership rules, leasehold, Thai companies, Chanote titles, due diligence, taxes and FAQ.',
+    title: 'How to Buy Land in Thailand as a Foreigner',
+    subtitle:
+      'A clear overview of legal options, title deeds, costs and checks before you buy land in Thailand.',
+    foreigners: {
+      title: 'Can foreigners own land?',
+      paras: [
+        'Foreigners generally cannot own freehold land in Thailand in their own name. Thai law reserves freehold land ownership for Thai nationals and certain Thai legal entities.',
+        'That does not mean foreigners cannot control or enjoy land. Common structures include long-term leasehold, ownership of a building on leased land, and — with careful legal advice — use of a Thai company where rules are followed correctly.',
+        'Always work with an independent Thai lawyer. Structures that look simple on paper can create serious risk if they are used incorrectly.',
+      ],
+    },
+    leasehold: {
+      title: 'Leasehold 30+30+30 years',
+      paras: [
+        'A registered lease is one of the most common ways for foreigners to secure long-term use of land. Leases are often structured as 30 years, with options to renew for additional 30-year periods (commonly described as 30+30+30).',
+        'Registration at the Land Office is essential. Unregistered lease arrangements provide weaker protection. Renewal options should be drafted carefully so they are as enforceable as possible under Thai law.',
+        'Leasehold can work well for villas and holiday homes, but terms on transfer, inheritance, building rights and early termination must be negotiated up front.',
+      ],
+    },
+    company: {
+      title: 'Thai company structure',
+      paras: [
+        'Some buyers use a Thai limited company to hold land. Thai companies can own land if they meet ownership and control requirements under Thai law.',
+        'Nominee arrangements that hide true foreign control are illegal and high-risk. A compliant structure needs real Thai shareholders with genuine economic interest, proper bookkeeping, and ongoing corporate filings.',
+        'Company ownership is not a shortcut. It requires tax compliance, annual accounts and specialist legal setup. Treat it as a long-term business structure, not a paperwork trick.',
+      ],
+    },
+    titles: {
+      title: 'Title deed types: Chanote, Nor Sor 3 Gor, Nor Sor 3',
+      paras: [
+        'Chanote (Nor Sor 4 Jor) is the strongest common title. Boundaries are precisely surveyed and ownership is clearly registered — preferred for most purchases.',
+        'Nor Sor 3 Gor can be upgraded toward Chanote and offers relatively strong rights, but may still involve boundary or upgrade steps. Nor Sor 3 is weaker and often needs more due diligence before any purchase.',
+        'Never rely on a photo of a title alone. Confirm the document type, owners, encumbrances and land location at the Land Office or with a qualified lawyer.',
+      ],
+    },
+    dueDiligence: {
+      title: 'Due diligence checklist',
+      paras: [
+        '1) Verify the title type, owner names and exact plot at the Land Office. 2) Check mortgages, liens, court orders and overlapping claims. 3) Confirm access roads, utilities and zoning or local restrictions.',
+        '4) Review building permits and any existing structures. 5) For company sellers, inspect company documents and authority to sell. 6) Walk the land with a surveyor when boundaries matter.',
+        '7) Use an escrow or staged payment plan where possible. 8) Translate and understand every contract before signing. 9) Budget for transfer fees, taxes and lawyer costs separately from the purchase price.',
+      ],
+    },
+    costs: {
+      title: 'Transfer costs and taxes',
+      paras: [
+        'Transfer fees and taxes depend on the transaction type, declared value and whether the seller is an individual or company. Common items include transfer fee, specific business tax or stamp duty, and withholding tax.',
+        'Who pays what is often negotiated in the sales contract. Do not assume Thai practice matches your home country. Ask your lawyer for a written cost estimate before you commit.',
+        'Under-declaring values to reduce tax is illegal and can create future problems when you sell or refinance.',
+      ],
+    },
+    faq: {
+      title: 'FAQ',
+      paras: [
+        'Q: Can I put land in my Thai spouse’s name? A: Possible in some cases, but marital property and divorce risk must be understood first — get independent advice.',
+        'Q: Is Chanote required? A: Not always, but it is usually the safest and most bankable title for serious purchases.',
+        'Q: How long does a transfer take? A: Straightforward deals can complete in days once documents are ready; complex company or financing cases take longer.',
+        'Q: Should I use ThaiData before buying? A: Yes — verify public records early, then confirm everything with a lawyer before you pay a deposit.',
+      ],
+    },
+  },
+  infoChanote: {
+    metaTitle: 'What is a Chanote Title Deed? | ThaiPlot',
+    metaDescription:
+      'Learn what a Chanote (NS4J) title deed is, why it is the safest land title in Thailand, how to verify it, and what the Red Garuda means.',
+    title: 'What is a Chanote Title Deed?',
+    subtitle:
+      'Chanote (Nor Sor 4 Jor) is the gold standard for land ownership documents in Thailand — here is what buyers need to know.',
+    what: {
+      title: 'What Chanote (NS4J) means',
+      paras: [
+        'A Chanote, formally Nor Sor 4 Jor (NS4J), is a full ownership title deed issued by the Thai Land Department. It confirms ownership rights and shows precisely surveyed boundaries.',
+        'Because the plot is measured with accurate GPS/survey methods, Chanote land is typically easier to transfer, finance and develop than land with weaker documents.',
+      ],
+    },
+    safest: {
+      title: 'Why Chanote is considered the safest',
+      paras: [
+        'Chanote provides the clearest evidence of ownership and plot limits. That reduces disputes about where the land starts and ends, and makes Land Office transfers more straightforward.',
+        'Banks and serious buyers usually prefer Chanote. Weaker titles can still be valuable, but they often need upgrades, extra surveys or higher legal risk buffers.',
+      ],
+    },
+    verify: {
+      title: 'How to verify a Chanote',
+      paras: [
+        'Ask for clear scans of every page, then confirm details at the local Land Office: title number, owner, area, location and any registrations against the land.',
+        'Cross-check the physical land against the title map. If something feels off — different owners, odd boundaries, missing pages — pause the deal.',
+        'You can start with public-record checks via ThaiData, then complete formal verification with a Thai property lawyer before paying a deposit.',
+      ],
+    },
+    garuda: {
+      title: 'What the Red Garuda means',
+      paras: [
+        'Many Chanote documents show the Garuda emblem associated with official Thai government paperwork. Buyers often call strong Chanote papers “Red Garuda” titles in everyday conversation.',
+        'The emblem itself is not a substitute for verification. Always confirm authenticity and current ownership through official channels, not by appearance alone.',
+      ],
+    },
+    compare: {
+      title: 'Comparison with other titles',
+      paras: [
+        'Chanote: strongest common freehold title, precise survey, preferred for purchase and lending.',
+        'Nor Sor 3 Gor: usable and often upgradeable, but may need more checks than Chanote.',
+        'Nor Sor 3 / weaker documents: higher uncertainty on boundaries and upgrade path — only proceed with specialist advice and thorough due diligence.',
+      ],
+    },
+  },
+  infoHuaHin: {
+    metaTitle: 'Hua Hin Property Market 2026 | ThaiPlot',
+    metaDescription:
+      'Hua Hin property market overview for 2026: price trends, best areas, why expats choose Hua Hin, and investment outlook.',
+    title: 'Hua Hin Property Market 2026',
+    subtitle:
+      'A practical look at demand, pricing and neighbourhoods for land and homes in Hua Hin.',
+    overview: {
+      title: 'Market overview',
+      paras: [
+        'Hua Hin remains one of Thailand’s most established lifestyle destinations for Thai families and international residents. Demand is supported by beach access, hospitals, international schools, golf and a calmer pace than Bangkok or Phuket.',
+        'The market mixes freehold condos, villas and land plots — including Chanote land popular with long-term buyers and villa developers.',
+      ],
+    },
+    prices: {
+      title: 'Price trends',
+      paras: [
+        'Land pricing varies widely by road access, views, utilities and distance to the beach or town. Prime plots near golf communities and well-connected sois command premiums.',
+        'In 2026, well-located Chanote land with road and utility access continues to attract attention, while remote or weakly titled plots trade more slowly and at discounts.',
+      ],
+    },
+    areas: {
+      title: 'Best areas',
+      paras: [
+        'Popular zones include areas near Black Mountain, Khao Tao / Soi 105 corridors, Thap Tai and established neighbourhoods with easy town access.',
+        'Buyers should weigh daily convenience (shops, hospitals, beach) against privacy, mountain views and plot size. Visit at different times of day before deciding.',
+      ],
+    },
+    expats: {
+      title: 'Why expats choose Hua Hin',
+      paras: [
+        'Expats value Hua Hin for healthcare, walkable town energy without mega-city intensity, golf lifestyle and a large international community.',
+        'Many combine a Hua Hin base with trips to Bangkok (roughly 3–4 hours by car/train) while keeping a quieter home environment.',
+      ],
+    },
+    outlook: {
+      title: 'Investment outlook',
+      paras: [
+        'Long-term interest is tied to lifestyle demand rather than pure short-term speculation. Quality land with clear title and access tends to hold attention better than speculative fringe plots.',
+        'As always, verify title, access and development rules before you buy — and model holding costs, not only purchase price.',
+      ],
+    },
+  },
+  infoPranburi: {
+    metaTitle: 'Pranburi Property Guide | ThaiPlot',
+    metaDescription:
+      'Pranburi property guide: beach areas, prices, growth drivers and how Pranburi compares with Hua Hin for land and homes.',
+    title: 'Pranburi Property Guide',
+    subtitle:
+      'South of Hua Hin, Pranburi offers beach lifestyle, nature and often more approachable land pricing.',
+    overview: {
+      title: 'Overview of Pranburi',
+      paras: [
+        'Pranburi sits south of Hua Hin in Prachuap Khiri Khan province. It is known for quieter beaches, seafood, pine coastal stretches and growing villa interest.',
+        'Buyers often look here for holiday homes, small resorts and land with a more relaxed feel than central Hua Hin.',
+      ],
+    },
+    beach: {
+      title: 'Beach areas',
+      paras: [
+        'Coastal pockets and areas toward Khao Kalok / Pak Nam attract buyers who want sea breeze and weekend hospitality potential.',
+        'Always confirm flood risk, road quality and setback rules for beach-adjacent land before offering.',
+      ],
+    },
+    prices: {
+      title: 'Prices',
+      paras: [
+        'Land and villa prices are often more accessible than comparable beach-adjacent inventory closer to Hua Hin town, though prime plots still command strong numbers.',
+        'Compare price per rai carefully against title quality, road frontage and utility readiness — not only distance to the sand.',
+      ],
+    },
+    growth: {
+      title: 'Why Pranburi is growing',
+      paras: [
+        'Improved road access, hospitality demand and buyers priced out of prime Hua Hin pockets all support interest in Pranburi.',
+        'Growth is uneven: well-connected Chanote land near amenities moves differently from remote agricultural plots.',
+      ],
+    },
+    compare: {
+      title: 'Comparison with Hua Hin',
+      paras: [
+        'Hua Hin: larger town services, hospitals, malls and a bigger year-round community.',
+        'Pranburi: quieter coastal lifestyle, nature feel, and frequently better value for land size — with fewer big-city conveniences on the doorstep.',
+        'Many buyers visit both markets in one trip before choosing where daily life will feel better.',
+      ],
+    },
+  },
+  infoVisa: {
+    metaTitle: 'Thailand Retirement Visa Guide | ThaiPlot',
+    metaDescription:
+      'Thailand retirement visa overview: OA visa, Elite visa, LTR visa, financial requirements and health insurance basics.',
+    title: 'Thailand Retirement Visa Guide',
+    subtitle:
+      'Key visa pathways often used by retirees and long-stay residents considering a home in Thailand.',
+    oa: {
+      title: 'Non-Immigrant OA (retirement) visa',
+      paras: [
+        'The OA retirement visa is commonly used by people aged 50+ who meet financial and documentation requirements set by Thai Immigration / embassies.',
+        'Rules can include bank deposit or income thresholds, criminal record checks and medical certificates. Confirm the latest requirements for your nationality before applying.',
+      ],
+    },
+    elite: {
+      title: 'Thailand Privilege (Elite) visa',
+      paras: [
+        'Thailand Privilege membership packages provide long-stay privileges for a membership fee, with different validity lengths and benefits depending on the tier.',
+        'It is a premium pathway rather than a classic retirement visa. Compare total cost against OA/LTR options and your travel plans.',
+      ],
+    },
+    ltr: {
+      title: 'Long-Term Resident (LTR) visa',
+      paras: [
+        'The LTR visa targets certain groups such as wealthy pensioners and other qualified categories defined by the government program.',
+        'Benefits and criteria differ from OA. If you may qualify, review official Board of Investment / LTR guidance or consult an immigration specialist.',
+      ],
+    },
+    finance: {
+      title: 'Financial requirements',
+      paras: [
+        'Most long-stay options require proof of funds or income. Exact numbers change over time and may differ by embassy or immigration office practice.',
+        'Keep bank letters, statements and translations organised. Underfunded applications are a common cause of delay.',
+      ],
+    },
+    insurance: {
+      title: 'Health insurance',
+      paras: [
+        'Health cover is increasingly important for visa and practical living reasons. Confirm whether your chosen visa category requires Thai or international insurance with minimum coverage.',
+        'Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living.',
+      ],
+    },
+  },
+}

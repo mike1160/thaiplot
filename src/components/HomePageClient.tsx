@@ -8,6 +8,7 @@ import ListingCard from '@/components/ListingCard'
 import LineButton from '@/components/LineButton'
 import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
+import ThaiDataCard, { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import type { PublicListing } from '@/lib/listings'
 import {
@@ -79,6 +80,13 @@ export default function HomePageClient({ listings }: Props) {
             onChange={setFilters}
             onSearch={() => setApplied(filters)}
           />
+        </div>
+      </section>
+
+      <section className="pt-10 md:pt-12 px-6">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <ThaiDataCard />
+          <TitleVerifyCta />
         </div>
       </section>
 

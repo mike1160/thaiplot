@@ -8,6 +8,7 @@ const nextConfig = {
     return [
       { source: '/', destination: '/en' },
       { source: '/legal/:path*', destination: '/en/legal/:path*' },
+      { source: '/info/:path*', destination: '/en/info/:path*' },
       { source: '/list-property', destination: '/en/list-property' },
       { source: '/listings', destination: '/en/listings' },
       { source: '/contact', destination: '/en/contact' },
@@ -17,6 +18,23 @@ const nextConfig = {
     return [
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/:path*', destination: '/:path*', permanent: true },
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'index, follow' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
     ]
   },
 }

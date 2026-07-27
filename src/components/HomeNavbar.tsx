@@ -1,18 +1,29 @@
 'use client'
 
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import LanguageSwitcher from './LanguageSwitcher'
+
+const GUIDE_LINKS = [
+  { href: '/info/buying-land-thailand', key: 'guideBuying' },
+  { href: '/info/chanote-title-deed', key: 'guideChanote' },
+  { href: '/info/hua-hin-property-market', key: 'guideHuaHin' },
+  { href: '/info/pranburi-property', key: 'guidePranburi' },
+  { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
+] as const
 
 export default function HomeNavbar() {
   const t = useTranslations('navigation')
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [guideOpen, setGuideOpen] = useState(false)
   const mobilePanelId = useId()
+  const guideRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setMenuOpen(false)
+    setGuideOpen(false)
   }, [pathname])
 
   useEffect(() => {
@@ -23,6 +34,14 @@ export default function HomeNavbar() {
       document.body.style.overflow = prev
     }
   }, [menuOpen])
+
+  useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (!guideRef.current?.contains(e.target as Node)) setGuideOpen(false)
+    }
+    document.addEventListener('mousedown', onDoc)
+    return () => document.removeEventListener('mousedown', onDoc)
+  }, [])
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -49,6 +68,39 @@ export default function HomeNavbar() {
             >
               {t('listings')}
             </Link>
+
+            <div ref={guideRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setGuideOpen((v) => !v)}
+                className="px-3 py-2 text-[13px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors duration-200 inline-flex items-center gap-1"
+                aria-expanded={guideOpen}
+                aria-haspopup="true"
+              >
+                {t('guide')}
+                <span className={`text-[9px] transition-transform ${guideOpen ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {guideOpen ? (
+                <div
+                  className="absolute top-full left-0 mt-2 min-w-[240px] bg-white rounded-[12px] py-2 z-50"
+                  style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
+                  role="menu"
+                >
+                  {GUIDE_LINKS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      role="menuitem"
+                      onClick={() => setGuideOpen(false)}
+                      className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                    >
+                      {t(item.key)}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+
             <Link
               href="/list-property"
               className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-all duration-200"
@@ -110,6 +162,19 @@ export default function HomeNavbar() {
           >
             {t('listings')}
           </Link>
+          <p className="px-6 pt-4 pb-2 text-[11px] uppercase tracking-wider text-[#C8973A] font-semibold">
+            {t('guide')}
+          </p>
+          {GUIDE_LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
+            >
+              {t(item.key)}
+            </Link>
+          ))}
           <Link
             href="/list-property"
             onClick={closeMenu}

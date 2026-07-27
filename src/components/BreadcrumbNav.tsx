@@ -3,12 +3,12 @@
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 
-const PAGE_TITLE_KEYS: Record<string, string> = {
-  listings: 'pages.listings',
-  'list-property': 'pages.listProperty',
-  contact: 'pages.contact',
-  privacy: 'pages.privacy',
-  disclaimer: 'pages.disclaimer',
+const INFO_PAGES: Record<string, string> = {
+  'buying-land-thailand': 'pages.buyingLand',
+  'chanote-title-deed': 'pages.chanote',
+  'hua-hin-property-market': 'pages.huaHinMarket',
+  'pranburi-property': 'pages.pranburi',
+  'visa-retirement-thailand': 'pages.visa',
 }
 
 function buildCrumbs(pathname: string) {
@@ -40,8 +40,14 @@ function buildCrumbs(pathname: string) {
     crumbs.push({ labelKey: 'pages.disclaimer' })
     return crumbs
   }
+  if (section === 'info') {
+    crumbs.push({ labelKey: 'pages.guide', href: '/info/buying-land-thailand' })
+    if (pageSlug && INFO_PAGES[pageSlug]) {
+      crumbs.push({ labelKey: INFO_PAGES[pageSlug] })
+    }
+    return crumbs
+  }
 
-  crumbs.push({ labelKey: PAGE_TITLE_KEYS[section] || section })
   return crumbs
 }
 

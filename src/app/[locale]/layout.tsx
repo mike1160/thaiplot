@@ -7,6 +7,7 @@ import LegalFooterBar from '@/components/LegalFooterBar'
 import CookieConsent from '@/components/CookieConsent'
 import HtmlLang from '@/components/HtmlLang'
 import { routing } from '@/i18n/routing'
+import { localizedPath, SITE_URL } from '@/lib/seo'
 
 type Props = {
   children: React.ReactNode
@@ -23,19 +24,40 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: 'Metadata' })
+  const title = t('title')
+  const description = t('description')
+  const canonical = localizedPath(params.locale, '/')
+  const languages: Record<string, string> = {}
+  for (const loc of routing.locales) {
+    languages[loc] = localizedPath(loc, '/')
+  }
+
   return {
-    title: t('title'),
-    description: t('description'),
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
     keywords:
-      'Thailand land for sale, Chanote, Hua Hin, Phuket, property marketplace, ThaiPlot',
+      'land for sale Thailand, Hua Hin property, chanote land, buy land Thailand foreigner, Pranburi land, Thailand real estate',
+    alternates: {
+      canonical,
+      languages,
+    },
     openGraph: {
-      title: t('title'),
-      description: t('description'),
+      title,
+      description,
+      url: canonical,
+      siteName: 'ThaiPlot',
+      locale: params.locale === 'zh' ? 'zh_CN' : params.locale,
       type: 'website',
-      url: 'https://www.thaiplot.com',
     },
     twitter: {
       card: 'summary_large_image',
+      title,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
