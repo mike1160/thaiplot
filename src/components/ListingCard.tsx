@@ -56,7 +56,6 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const isSoi112 = (listing.location || '').toLowerCase().includes('soi 112')
   const isFeatured = isSoi112
   const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
-  const hasRealPhotos = !photos[0]?.includes('pexels.com')
   const mainPhoto = photos[activeIndex] || photos[0]
   const thumbnails = photos.length > 1 ? photos : []
 
@@ -147,11 +146,6 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
               {t(badgeKey)}
             </span>
           </div>
-          {!hasRealPhotos ? (
-            <span className="absolute bottom-2 right-2 text-[10px] text-white/90 bg-black/40 px-1.5 py-0.5 rounded">
-              Photo: Pexels
-            </span>
-          ) : null}
         </button>
 
         {thumbnails.length > 0 ? (

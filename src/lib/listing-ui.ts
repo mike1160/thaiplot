@@ -37,38 +37,7 @@ export const DEFAULT_FILTERS: ListingFiltersState = {
   transaction: 'For Sale',
 }
 
-const LAND_PHOTO =
-  'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800'
-const SOI_112_FALLBACK =
-  'https://images.pexels.com/photos/4388164/pexels-photo-4388164.jpeg?auto=compress&cs=tinysrgb&w=800'
-const VILLA_PHOTO =
-  'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&w=800'
-const CONDO_PHOTO =
-  'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=800'
-
-/** Local gallery fallbacks keyed by listing location (used until photo_* columns are set). */
-const PHOTOS_BY_LOCATION: Array<{ match: (loc: string) => boolean; photos: string[] }> = [
-  {
-    match: (loc) => loc.includes('soi 112'),
-    photos: ['/soi112-1.jpg', '/soi112-2.jpg', '/soi112-3.jpg', '/soi112-4.jpg', '/soi112-5.jpg'],
-  },
-  {
-    match: (loc) => loc.includes('wang phong'),
-    photos: ['/khao-tao-1.jpg', '/khao-tao-2.jpg', '/khao-tao-3.jpg'],
-  },
-  {
-    match: (loc) => loc.includes('black mountain'),
-    photos: ['/black-mountain-1.jpg', '/black-mountain-2.jpg'],
-  },
-  {
-    match: (loc) => loc.includes('khao kalok') || loc.includes('pranburi'),
-    photos: ['/pranburi-1.jpg', '/pranburi-2.jpg'],
-  },
-  {
-    match: (loc) => loc.includes('sam roi yot') || loc.includes('khao lang kan'),
-    photos: ['/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg'],
-  },
-]
+const HERO_FALLBACK = '/hero.jpg'
 
 export function listingPhotosFromColumns(listing: {
   photo_1?: string | null
@@ -86,28 +55,57 @@ export function listingPhotosFromColumns(listing: {
   ].filter((url): url is string => Boolean(url && url.trim()))
 }
 
-export function listingPhotosForLocation(
-  location?: string | null,
+/** Map listing fields to local gallery photos (price / size / location). */
+export function listingPhotosForListing(listing: {
+  location?: string | null
   size?: string | null
-): string[] {
-  const loc = (location || '').toLowerCase()
-  const sizeText = (size || '').toLowerCase()
+  price?: string | null
+}): string[] {
+  const loc = listing.location || ''
+  const locLower = loc.toLowerCase()
+  const price = listing.price || ''
+  const priceLower = price.toLowerCase()
+  const size = listing.size || ''
+  const sizeLower = size.toLowerCase()
 
-  // Distinguish the two Soi 105 plots by price/size cue in seed data
-  if (loc.includes('soi 105') && !loc.includes('wang phong')) {
-    if (sizeText.includes('1,800') || sizeText.includes('3,600,000') || sizeText.includes('฿1,800')) {
-      return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
-    }
-    // Prefer size for the ฿2.5M/rai plot; also handle via price in callers
-    if (sizeText.includes('2 rai')) {
-      return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
-    }
+  if (locLower.includes('soi 112')) {
+    return ['/soi112-1.jpg', '/soi112-2.jpg', '/soi112-3.jpg', '/soi112-4.jpg', '/soi112-5.jpg']
+  }
+
+  if (
+    price.includes('10,000,000') ||
+    priceLower.includes('10m') ||
+    (sizeLower.includes('4 rai') && locLower.includes('khao tao'))
+  ) {
+    return ['/khao-tao-1.jpg', '/khao-tao-2.jpg', '/khao-tao-3.jpg']
+  }
+
+  if (
+    price.includes('5,000,000') ||
+    priceLower.includes('5m') ||
+    (sizeLower.includes('2 rai') &&
+      locLower.includes('soi 105') &&
+      !locLower.includes('soi105b'))
+  ) {
     return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
   }
 
-  for (const entry of PHOTOS_BY_LOCATION) {
-    if (entry.match(loc)) return entry.photos
+  if (locLower.includes('pranburi') || locLower.includes('khao kra hok')) {
+    return ['/pranburi-1.jpg', '/pranburi-2.jpg']
   }
+
+  if (locLower.includes('black mountain')) {
+    return ['/black-mountain-1.jpg', '/black-mountain-2.jpg', '/black-mountain-3.jpg']
+  }
+
+  if (locLower.includes('sam roi yot')) {
+    return ['/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg']
+  }
+
+  if (locLower.includes('thap tai') && !locLower.includes('soi 112')) {
+    return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
+  }
+
   return []
 }
 
@@ -125,44 +123,19 @@ export function resolveListingPhotos(listing: {
   const fromColumns = listingPhotosFromColumns(listing)
   if (fromColumns.length > 0) return fromColumns
 
-  const price = (listing.price || '').toLowerCase()
-  const loc = (listing.location || '').toLowerCase()
-  if (loc.includes('soi 105') && !loc.includes('wang phong')) {
-    if (price.includes('1,800,000') || price.includes('3,600,000')) {
-      return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
-    }
-    if (price.includes('2,500,000') || price.includes('5,000,000')) {
-      return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
-    }
-  }
+  const mapped = listingPhotosForListing(listing)
+  if (mapped.length > 0) return mapped
 
-  const byLocation = listingPhotosForLocation(listing.location, listing.size)
-  if (byLocation.length > 0) return byLocation
-
-  return [listingPhotoUrl(listing.property_type, listing.location)]
+  return [HERO_FALLBACK]
 }
 
 export function listingPhotoUrl(
-  propertyType: string | null | undefined,
+  _propertyType?: string | null,
   location?: string | null
 ): string {
-  const type = (propertyType || '').toLowerCase()
-  const loc = (location || '').toLowerCase()
-
-  if (loc.includes('soi 112')) {
-    return '/soi112-1.jpg'
-  }
-  if (type.includes('villa')) {
-    return VILLA_PHOTO
-  }
-  if (type.includes('condo')) {
-    return CONDO_PHOTO
-  }
-  return LAND_PHOTO
+  const mapped = listingPhotosForListing({ location })
+  return mapped[0] || HERO_FALLBACK
 }
-
-/** Fallback if hero image is unavailable for Soi 112 */
-export const SOI_112_PHOTO_FALLBACK = SOI_112_FALLBACK
 
 export function matchesListingFilters<
   T extends {
