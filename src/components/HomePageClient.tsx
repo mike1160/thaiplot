@@ -154,37 +154,42 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="w-full border-t border-b border-[#C8973A]/40 bg-[#FAF7F0] py-12 md:py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section
+        id="saved-souls"
+        className="w-full border-t-2 border-b-2 border-[#C8973A] bg-[#FAF7F0] py-14 md:py-20 px-6"
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
           <div className="order-1">
-            <img
-              src="/dog-wheelchair-small.webp"
-              alt={t('donateSectionTitle')}
-              className="w-full rounded-[12px] object-cover max-h-[320px]"
-            />
+            <div className="relative overflow-hidden rounded-[12px] shadow-[0_12px_40px_rgba(26,39,68,0.18)]">
+              <img
+                src="/dog-wheelchair-small.webp"
+                alt={t('donateSectionTitle')}
+                className="w-full h-auto min-h-[280px] md:min-h-[420px] max-h-[520px] object-cover object-center"
+              />
+            </div>
           </div>
           <div className="order-2 text-center md:text-left">
-            <p className="text-[#C8973A] text-xs md:text-sm font-medium uppercase tracking-wider mb-3">
+            <p className="text-[#C8973A] text-sm md:text-base font-semibold tracking-wide mb-3">
               {t('donateSectionEyebrow')}
             </p>
             <h2
-              className="text-3xl md:text-4xl font-bold text-[#1A2744] mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1A2744] mb-5 leading-tight"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               {t('donateSectionTitle')}
             </h2>
-            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6 whitespace-pre-line">
+            <p className="text-[#5C5247] text-base md:text-lg leading-relaxed mb-8 whitespace-pre-line max-w-xl md:max-w-none mx-auto md:mx-0">
               {t('donateSectionBody')}
             </p>
             <a
               href="https://www.savedsouls-foundation.org/en/donate"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors"
+              className="inline-flex items-center justify-center min-h-[56px] px-8 rounded-[12px] text-base font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-[0_8px_24px_rgba(217,119,6,0.35)]"
             >
               {t('donateSectionCta')}
             </a>
-            <p className="mt-3 text-xs text-[#5C5247]">{t('donateSectionNote')}</p>
+            <p className="mt-4 text-sm text-[#5C5247]">{t('donateSectionNote')}</p>
           </div>
         </div>
       </section>

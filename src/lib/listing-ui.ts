@@ -103,12 +103,18 @@ export function listingPhotosForListing(listing: {
     return ['/khao-tao-1.jpg', '/khao-tao-2.jpg', '/khao-tao-3.jpg']
   }
 
+  // Soi 105 — two separate 2-rai listings distinguished by price
+  if (price.includes('2,500,000') && sizeLower.includes('2 rai')) {
+    return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
+  }
+
+  if (price.includes('1,800,000') && sizeLower.includes('2 rai')) {
+    return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
+  }
+
   if (
     price.includes('5,000,000') ||
-    priceLower.includes('5m') ||
-    (sizeLower.includes('2 rai') &&
-      locLower.includes('soi 105') &&
-      !locLower.includes('soi105b'))
+    priceLower.includes('5m')
   ) {
     return ['/soi105-1.jpg', '/soi105-2.jpg', '/soi105-3.jpg']
   }
@@ -123,10 +129,6 @@ export function listingPhotosForListing(listing: {
 
   if (locLower.includes('sam roi yot')) {
     return ['/sam-roi-yot-1.jpg', '/sam-roi-yot-2.jpg', '/sam-roi-yot-3.jpg', '/sam-roi-yot-4.jpg']
-  }
-
-  if (locLower.includes('thap tai') && !locLower.includes('soi 112')) {
-    return ['/soi105b-1.jpg', '/soi105b-2.jpg', '/soi105b-3.jpg']
   }
 
   return []
