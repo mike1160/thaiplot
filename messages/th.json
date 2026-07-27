@@ -299,6 +299,12 @@
         "body": "อาจใช้การวิเคราะห์ที่คำนึงถึงความเป็นส่วนตัว รวมถึง Cloudflare หากเปิดใช้ โหลดหลังยอมรับคุกกี้เท่านั้น"
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "เว็บไซต์นี้ใช้ Cloudflare Turnstile เพื่อปกป้องแบบฟอร์มจากสแปมและการใช้งานในทางที่ผิด Turnstile ทำงานแบบมองไม่เห็นในพื้นหลัง ข้อมูลที่ Turnstile เก็บรวบรวมจะได้รับการประมวลผลตาม Cloudflare Turnstile Privacy Addendum",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "นโยบายคุกกี้",
         "body": "คุณสามารถยอมรับหรือปฏิเสธคุกกี้การวิเคราะห์ผ่านแบนเนอร์"
       },

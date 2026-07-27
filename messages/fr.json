@@ -299,6 +299,12 @@
         "body": "Des analyses respectueuses de la vie privée (y compris Cloudflare si activé) ne se chargent qu’après acceptation des cookies lorsque le consentement est requis."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "Ce site utilise Cloudflare Turnstile pour protéger les formulaires contre le spam et les abus. Turnstile fonctionne de manière invisibleible en arrière-plan. Les données collectées par Turnstile sont traitées conformément au Cloudflare Turnstile Privacy Addendum.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Politique cookies",
         "body": "Vous pouvez accepter ou refuser les cookies d’analyse via la bannière."
       },

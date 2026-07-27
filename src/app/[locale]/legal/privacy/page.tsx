@@ -24,7 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PrivacyPage({ params }: Props) {
   setRequestLocale(params.locale)
   const t = await getTranslations('legal')
-  const sections = t.raw('privacySections') as Array<{ title: string; body: string }>
+  const sections = t.raw('privacySections') as Array<{
+    title: string
+    body: string
+    linkUrl?: string
+    linkLabel?: string
+  }>
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
@@ -50,6 +55,18 @@ export default async function PrivacyPage({ params }: Props) {
                 {section.title}
               </h2>
               <p className="text-[#5C5247] leading-relaxed text-sm md:text-base">{section.body}</p>
+              {section.linkUrl ? (
+                <p className="mt-2 text-sm md:text-base">
+                  <a
+                    href={section.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#C8973A] font-medium underline underline-offset-2 hover:opacity-80 transition-opacity"
+                  >
+                    {section.linkLabel || section.linkUrl}
+                  </a>
+                </p>
+              ) : null}
             </div>
           ))}
         </div>

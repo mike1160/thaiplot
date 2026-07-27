@@ -299,6 +299,12 @@
         "body": "We may use privacy-friendly analytics (including Cloudflare analytics where enabled). These tools are intended to provide anonymous or aggregated usage insights and are not used to sell personal data. Analytics load only after you accept cookies where consent is required."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "This site uses Cloudflare Turnstile to protect forms against spam and abuse. Turnstile operates invisibly in the background. Data collected by Turnstile is processed according to the Cloudflare Turnstile Privacy Addendum.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookie policy",
         "body": "We use a consent banner so you can Accept or Decline analytics cookies. Essential cookies or local storage needed for basic site function (such as remembering your cookie choice) may still be used. You can clear site data in your browser at any time."
       },

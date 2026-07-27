@@ -299,6 +299,12 @@
         "body": "Конфиденциальная аналитика (включая Cloudflare при включении) загружается только после согласия на cookies, где это требуется."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "Этот сайт использует Cloudflare Turnstile для защиты форм от спама и злоупотреблений. Turnstile работает незаметно в фоновом режиме. Данные, собираемые Turnstile, обрабатываются в соответствии с Cloudflare Turnstile Privacy Addendum.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Политика cookies",
         "body": "Вы можете принять или отклонить аналитические cookies через баннер."
       },

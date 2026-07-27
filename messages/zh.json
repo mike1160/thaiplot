@@ -299,6 +299,12 @@
         "body": "可能使用注重隐私的分析（含已启用的 Cloudflare）。在需要同意时，仅在您接受 Cookie 后加载。"
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "本网站使用 Cloudflare Turnstile 保护表单免受垃圾信息和滥用。Turnstile 在后台以不可见方式运行。Turnstile 收集的数据按照 Cloudflare Turnstile Privacy Addendum 进行处理。",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookie 政策",
         "body": "您可通过横幅接受或拒绝分析 Cookie。"
       },

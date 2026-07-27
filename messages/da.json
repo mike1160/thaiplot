@@ -299,6 +299,12 @@
         "body": "Privatlivsvenlig analyse (inkl. Cloudflare hvis aktiveret) indlæses først efter cookie-accept, hvor påkrævet."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "Dette website bruger Cloudflare Turnstile til at beskytte formularer mod spam og misbrug. Turnstile kører usynligt i baggrunden. Data indsamlet af Turnstile behandles i henhold til Cloudflare Turnstile Privacy Addendum.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookiepolitik",
         "body": "Du kan acceptere eller afvise analysecookies via banneret."
       },

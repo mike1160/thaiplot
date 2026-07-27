@@ -299,6 +299,12 @@
         "body": "Wir können datenschutzfreundliche Analysen nutzen (inkl. Cloudflare, falls aktiv). Laden nur nach Cookie-Zustimmung, wo erforderlich."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "Diese Website verwendet Cloudflare Turnstile, um Formulare vor Spam und Missbrauch zu schützen. Turnstile arbeitet unsichtbar im Hintergrund. Die von Turnstile erhobenen Daten werden gemäß dem Cloudflare Turnstile Privacy Addendum verarbeitet.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookie-Richtlinie",
         "body": "Über das Banner können Sie Analysen akzeptieren oder ablehnen. Essenzielle Speicherung für die Cookie-Wahl kann weiterhin genutzt werden."
       },

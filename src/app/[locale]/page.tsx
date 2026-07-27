@@ -2,7 +2,6 @@ import { unstable_noStore as noStore } from 'next/cache'
 import { setRequestLocale } from 'next-intl/server'
 import HomePageClient from '@/components/HomePageClient'
 import { fetchApprovedListings } from '@/lib/listings'
-import { orderListingsForHomepage } from '@/lib/listing-ui'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -15,7 +14,8 @@ type Props = {
 export default async function HomePage({ params }: Props) {
   noStore()
   setRequestLocale(params.locale)
-  const listings = orderListingsForHomepage(await fetchApprovedListings())
+  // Featured first, then Thanathip (created_at ASC), then new listings — max 50
+  const listings = await fetchApprovedListings({ limit: 50 })
   console.log('[HomePage] listings fetched', {
     count: listings.length,
     ids: listings.map((l) => l.id),

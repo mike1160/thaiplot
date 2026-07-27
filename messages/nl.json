@@ -299,6 +299,12 @@
         "body": "We kunnen privacyvriendelijke analytics gebruiken (inclusief Cloudflare analytics indien ingeschakeld). Deze tools geven anonieme of geaggregeerde gebruiks inzichten en worden niet gebruikt om persoonsgegevens te verkopen. Analytics laden alleen na cookie-acceptatie waar toestemming vereist is."
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "Deze site gebruikt Cloudflare Turnstile om formulieren te beschermen tegen spam en misbruik. Turnstile werkt onzichtbaar op de achtergrond. Gegevens die door Turnstile worden verwerkt vallen onder de Cloudflare Turnstile Privacy Addendum.",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookiebeleid",
         "body": "We tonen een toestemmingsbanner zodat u analytics-cookies kunt Accepteren of Weigeren. Essentiële cookies of lokale opslag voor basisfuncties (zoals het onthouden van uw cookiekeuze) kunnen nog steeds worden gebruikt. U kunt sitegegevens altijd in uw browser wissen."
       },

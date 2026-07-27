@@ -44,8 +44,8 @@ export default function HomePageClient({ listings }: Props) {
   const router = useRouter()
   const [filters, setFilters] = useState<ListingFiltersState>(DEFAULT_FILTERS)
 
-  // Homepage preview: show latest listings as fetched — do not hide them behind filters
-  const preview = useMemo(() => listings.slice(0, 6), [listings])
+  // Homepage: show up to 50 listings in featured → Thanathip → newest-others order
+  const preview = useMemo(() => listings.slice(0, 50), [listings])
 
   function goToListings(next?: ListingFiltersState) {
     const target = next ?? filters

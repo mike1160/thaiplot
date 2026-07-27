@@ -132,28 +132,6 @@ export function isFeaturedHomepageListing(id?: string | null): boolean {
   return (id || '').trim() === FEATURED_HOMEPAGE_LISTING_ID
 }
 
-const HIDDEN_ON_HOMEPAGE = new Set([
-  '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
-])
-
-export function orderListingsForHomepage<T extends { id: string }>(listings: T[]): T[] {
-  const visible = listings.filter((l) => !HIDDEN_ON_HOMEPAGE.has(l.id))
-  return orderListingsFeaturedFirst(visible)
-}
-
-const LAST_ON_LISTINGS_PAGE = new Set([
-  '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
-])
-
-export function orderListingsFeaturedFirst<T extends { id: string }>(listings: T[]): T[] {
-  const featured = listings.filter((l) => isFeaturedHomepageListing(l.id))
-  const last = listings.filter((l) => LAST_ON_LISTINGS_PAGE.has(l.id))
-  const rest = listings.filter(
-    (l) => !isFeaturedHomepageListing(l.id) && !LAST_ON_LISTINGS_PAGE.has(l.id)
-  )
-  return [...featured, ...rest, ...last]
-}
-
 export function resolveListingTitleDeed(listing: {
   id?: string | null
   title_deed?: string | null
@@ -234,6 +212,62 @@ export function normalizeListingCategory(category?: string | null): ListingCateg
   return 'Land & Property'
 }
 
+const BOAT_PROPERTY_TYPES = new Set(['boat', 'boot', 'longtail', 'speedboat', 'yacht'])
+const LAND_PROPERTY_TYPES = new Set(['land', 'house', 'villa', 'condo', 'commercial'])
+const VEHICLE_PROPERTY_TYPES = new Set(['car', 'motorcycle', 'truck', 'vehicle'])
+const BUSINESS_PROPERTY_TYPES = new Set(['business', 'commercial'])
+
+function propertyTypeKey(propertyType?: string | null): string {
+  return (propertyType || '').trim().toLowerCase()
+}
+
+/**
+ * Category pills filter on `property_type` (category column is not available in DB).
+ */
+export function resolveListingCategory(listing: {
+  category?: string | null
+  property_type?: string | null
+}): ListingCategory {
+  const type = propertyTypeKey(listing.property_type)
+  if (BOAT_PROPERTY_TYPES.has(type)) return 'Boat'
+  if (VEHICLE_PROPERTY_TYPES.has(type)) return 'Vehicle'
+  if (type === 'business') return 'Business'
+  if (LAND_PROPERTY_TYPES.has(type)) return 'Land & Property'
+  return 'Other'
+}
+
+function matchesCategoryPill(
+  propertyType: string | null | undefined,
+  filterCategory: string
+): boolean {
+  if (filterCategory === 'All') return true
+
+  const type = propertyTypeKey(propertyType)
+
+  if (filterCategory === 'Boat') {
+    return BOAT_PROPERTY_TYPES.has(type)
+  }
+  if (filterCategory === 'Land & Property') {
+    return LAND_PROPERTY_TYPES.has(type)
+  }
+  if (filterCategory === 'Vehicle') {
+    return VEHICLE_PROPERTY_TYPES.has(type)
+  }
+  if (filterCategory === 'Business') {
+    return BUSINESS_PROPERTY_TYPES.has(type)
+  }
+  if (filterCategory === 'Other') {
+    return (
+      !BOAT_PROPERTY_TYPES.has(type) &&
+      !LAND_PROPERTY_TYPES.has(type) &&
+      !VEHICLE_PROPERTY_TYPES.has(type) &&
+      !BUSINESS_PROPERTY_TYPES.has(type)
+    )
+  }
+
+  return true
+}
+
 export function matchesListingFilters<
   T extends {
     category?: string | null
@@ -243,9 +277,7 @@ export function matchesListingFilters<
     transaction_type?: string | null
   },
 >(listing: T, filters: ListingFiltersState): boolean {
-  const listingCategory = normalizeListingCategory(listing.category)
-  const categoryOk =
-    filters.category === 'All' || listingCategory === filters.category
+  const categoryOk = matchesCategoryPill(listing.property_type, filters.category)
 
   const typeOk =
     filters.propertyType === 'All' ||
@@ -253,7 +285,7 @@ export function matchesListingFilters<
     filters.category === 'Boat' ||
     filters.category === 'Business' ||
     filters.category === 'Other' ||
-    (listing.property_type || '').toLowerCase() === filters.propertyType.toLowerCase()
+    propertyTypeKey(listing.property_type) === filters.propertyType.toLowerCase()
 
   const regionOk =
     filters.region === 'All' ||

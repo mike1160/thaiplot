@@ -299,6 +299,12 @@
         "body": "プライバシーに配慮した分析（有効時は Cloudflare 含む）は、必要な場合同意後にのみ読み込みます。"
       },
       {
+        "title": "Cloudflare Turnstile",
+        "body": "当サイトは、フォームをスパムや不正利用から保護するために Cloudflare Turnstile を使用しています。Turnstile はバックグラウンドで不可視に動作します。Turnstile が収集するデータは、Cloudflare Turnstile Privacy Addendum に従って処理されます。",
+        "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
+        "linkLabel": "Cloudflare Turnstile Privacy Addendum"
+      },
+      {
         "title": "Cookie ポリシー",
         "body": "バナーで分析 Cookie に同意または拒否できます。"
       },
