@@ -144,7 +144,7 @@ export default function ContactPage() {
                 </p>
               )}
 
-              <TurnstileWidget onToken={onToken} />
+              <TurnstileWidget onToken={onToken} onError={() => setSecurityError(true)} />
 
               <button
                 type="submit"

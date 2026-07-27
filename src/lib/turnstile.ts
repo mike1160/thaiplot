@@ -3,7 +3,8 @@
  * Same pattern as hua-hin-land.com.
  */
 export async function verifyTurnstileToken(
-  token: unknown
+  token: unknown,
+  remoteip?: string | null
 ): Promise<{ ok: true } | { ok: false; error: string }> {
   if (!token || typeof token !== 'string') {
     return { ok: false, error: 'Security check failed' }
@@ -24,11 +25,19 @@ export async function verifyTurnstileToken(
         body: JSON.stringify({
           secret,
           response: token,
+          ...(remoteip ? { remoteip } : {}),
         }),
+        cache: 'no-store',
       }
     )
     const turnstileData = await turnstileResponse.json()
     if (!turnstileData.success) {
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Turnstile verification failed', {
+          codes: turnstileData['error-codes'],
+          hostname: turnstileData.hostname,
+        })
+      }
       return { ok: false, error: 'Security check failed' }
     }
     return { ok: true }
@@ -36,4 +45,12 @@ export async function verifyTurnstileToken(
     console.error(error)
     return { ok: false, error: 'Security check failed' }
   }
+}
+
+export function requestClientIp(req: Request): string | undefined {
+  return (
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    req.headers.get('x-real-ip') ||
+    undefined
+  )
 }

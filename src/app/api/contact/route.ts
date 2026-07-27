@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { verifyTurnstileToken } from '@/lib/turnstile'
+import { requestClientIp, verifyTurnstileToken } from '@/lib/turnstile'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, message, turnstileToken } = await req.json()
 
-    const turnstile = await verifyTurnstileToken(turnstileToken)
+    const turnstile = await verifyTurnstileToken(turnstileToken, requestClientIp(req))
     if (!turnstile.ok) {
       return NextResponse.json({ error: 'Security check failed' }, { status: 400 })
     }

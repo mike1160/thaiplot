@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { getSupabaseAdmin } from '@/lib/supabase'
-import { verifyTurnstileToken } from '@/lib/turnstile'
+import { requestClientIp, verifyTurnstileToken } from '@/lib/turnstile'
 import { LISTING_CATEGORIES, type ListingCategory } from '@/lib/listing-ui'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       turnstileToken,
     } = body
 
-    const turnstile = await verifyTurnstileToken(turnstileToken)
+    const turnstile = await verifyTurnstileToken(turnstileToken, requestClientIp(req))
     if (!turnstile.ok) {
       return NextResponse.json({ error: 'Security check failed' }, { status: 400 })
     }

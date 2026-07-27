@@ -1,11 +1,25 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
+const SCRIPT_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+const SCRIPT_ID = 'cf-turnstile-script'
 
 declare global {
   interface Window {
-    turnstileCallback?: (token: string) => void
-    turnstileErrorCallback?: () => void
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string
+          theme?: 'light' | 'dark' | 'auto'
+          callback?: (token: string) => void
+          'error-callback'?: () => void
+          'expired-callback'?: () => void
+        }
+      ) => string
+      remove: (widgetId: string) => void
+    }
   }
 }
 
@@ -15,56 +29,89 @@ type TurnstileWidgetProps = {
   className?: string
 }
 
+function loadTurnstileScript(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (window.turnstile) {
+      resolve()
+      return
+    }
+
+    const existing = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null
+    if (existing) {
+      existing.addEventListener('load', () => resolve(), { once: true })
+      existing.addEventListener('error', () => reject(new Error('Failed to load Turnstile')), {
+        once: true,
+      })
+      return
+    }
+
+    const script = document.createElement('script')
+    script.id = SCRIPT_ID
+    script.src = SCRIPT_SRC
+    script.async = true
+    script.defer = true
+    script.onload = () => resolve()
+    script.onerror = () => reject(new Error('Failed to load Turnstile'))
+    document.head.appendChild(script)
+  })
+}
+
 /** Same managed/light Turnstile pattern as hua-hin-land.com */
 export default function TurnstileWidget({
   onToken,
   onError,
   className = '',
 }: TurnstileWidgetProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const widgetIdRef = useRef<string>()
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+
   useEffect(() => {
-    window.turnstileCallback = (token: string) => {
-      onToken(token)
-    }
-    window.turnstileErrorCallback = () => {
-      onToken('')
-      onError?.()
-      const el = document.querySelector('.cf-turnstile') as HTMLElement | null
-      if (el) el.style.visibility = 'hidden'
-    }
+    if (!siteKey || !containerRef.current) return
 
-    const existing = document.querySelector(
-      'script[src="https://challenges.cloudflare.com/turnstile/v0/api.js"]'
-    ) as HTMLScriptElement | null
+    let cancelled = false
 
-    if (!existing) {
-      const script = document.createElement('script')
-      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
-      script.async = true
-      document.head.appendChild(script)
+    loadTurnstileScript()
+      .then(() => {
+        if (cancelled || !containerRef.current || !window.turnstile) return
 
-      return () => {
-        if (script.parentNode) script.parentNode.removeChild(script)
-        delete window.turnstileCallback
-        delete window.turnstileErrorCallback
-      }
-    }
+        widgetIdRef.current = window.turnstile.render(containerRef.current, {
+          sitekey: siteKey,
+          theme: 'light',
+          callback: (token: string) => {
+            onToken(token)
+          },
+          'error-callback': () => {
+            onToken('')
+            onError?.()
+          },
+          'expired-callback': () => {
+            onToken('')
+          },
+        })
+      })
+      .catch(() => {
+        onToken('')
+        onError?.()
+      })
 
     return () => {
-      delete window.turnstileCallback
-      delete window.turnstileErrorCallback
+      cancelled = true
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current)
+        widgetIdRef.current = undefined
+      }
     }
-  }, [onToken, onError])
+  }, [siteKey, onToken, onError])
 
-  const siteKey =
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAADwcB6k73kTycYDr'
+  if (!siteKey) {
+    return (
+      <p className="text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-[12px] px-4 py-3">
+        Security check not configured. Add NEXT_PUBLIC_TURNSTILE_SITE_KEY and
+        TURNSTILE_SECRET_KEY to .env.local, then restart the dev server.
+      </p>
+    )
+  }
 
-  return (
-    <div
-      className={`cf-turnstile ${className}`}
-      data-sitekey={siteKey}
-      data-callback="turnstileCallback"
-      data-error-callback="turnstileErrorCallback"
-      data-theme="light"
-    />
-  )
+  return <div ref={containerRef} className={className} />
 }

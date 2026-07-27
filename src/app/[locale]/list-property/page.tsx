@@ -699,7 +699,7 @@ export default function ListPropertyPage() {
                   </p>
                 )}
 
-                <TurnstileWidget onToken={onToken} />
+                <TurnstileWidget onToken={onToken} onError={() => setSecurityError(true)} />
 
                 <button
                   type="submit"
