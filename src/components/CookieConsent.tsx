@@ -1,24 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-
-export const CONSENT_KEY = 'thaiplot-cookie-consent'
-
-type ConsentValue = 'accepted' | 'declined'
-
-function readStoredConsent(): ConsentValue | null {
-  try {
-    const stored = localStorage.getItem(CONSENT_KEY)
-    if (stored === 'accepted' || stored === 'declined') return stored
-    return null
-  } catch {
-    // Private mode / blocked storage → treat as no consent
-    return null
-  }
-}
+import {
+  readCookieConsent,
+  writeCookieConsent,
+  type ConsentValue,
+} from '@/lib/cookie-consent'
 
 export default function CookieConsent() {
   const t = useTranslations('cookieConsent')
@@ -29,18 +18,13 @@ export default function CookieConsent() {
   useEffect(() => {
     setMounted(true)
     // First visit, cleared storage, or private/incognito session → show banner
-    if (!readStoredConsent()) {
+    if (!readCookieConsent()) {
       setVisible(true)
     }
   }, [])
 
   const dismiss = (value: ConsentValue) => {
-    try {
-      localStorage.setItem(CONSENT_KEY, value)
-    } catch {
-      // Still dismiss UI even if storage is blocked
-    }
-    window.dispatchEvent(new Event('thaiplot-cookie-consent'))
+    writeCookieConsent(value)
     setLeaving(true)
     window.setTimeout(() => {
       setVisible(false)
@@ -48,9 +32,10 @@ export default function CookieConsent() {
     }, 320)
   }
 
+  // Wait for client mount so localStorage + portal target exist
   if (!mounted || !visible) return null
 
-  const banner = (
+  return (
     <div
       className={`fixed bottom-0 inset-x-0 z-[9999] ${leaving ? 'cookie-banner-out' : 'cookie-banner-in'}`}
       role="dialog"
@@ -95,7 +80,7 @@ export default function CookieConsent() {
             </button>
             <button
               type="button"
-              onClick={() => dismiss('declined')}
+              onClick={() => dismiss('rejected')}
               className="min-h-[40px] px-5 rounded-[10px] text-sm font-semibold text-[#1A2744] bg-white border border-[#1A2744] hover:bg-[#1A2744] hover:text-white transition-all"
             >
               {t('decline')}
@@ -123,6 +108,4 @@ export default function CookieConsent() {
       `}</style>
     </div>
   )
-
-  return createPortal(banner, document.body)
 }
