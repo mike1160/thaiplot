@@ -1,0 +1,143 @@
+{
+  "Metadata": {
+    "title": "ThaiPlot — ตลาดที่ดินและอสังหาริมทรัพย์อิสระของประเทศไทย",
+    "description": "ค้นหาที่ดิน วิลล่า และคอนโดทั่วประเทศไทย โฉนดที่ดินจากเจ้าของและนายหน้า — จากหัวหินถึงภูเก็ต"
+  },
+  "navigation": {
+    "brandTitle": "ThaiPlot",
+    "brandSubtitle": "Thailand Property",
+    "listings": "รายการ",
+    "listProperty": "ลงประกาศ",
+    "contact": "ติดต่อ",
+    "webdesignBy": "Webdesign by Allesis.nl",
+    "webdesignTag": "websites · SEO · apps"
+  },
+  "languages": {
+    "en": "English",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "th": "ภาษาไทย"
+  },
+  "common": {
+    "lineAgent": "💬 LINE Agent",
+    "contactThanathip": "ติดต่อ Thanathip",
+    "legalFooterDisclaimer": "ข้อจำกัดความรับผิดชอบ",
+    "legalFooterPrivacy": "นโยบายความเป็นส่วนตัว",
+    "disclaimerFooter": "ข้อมูลบนเว็บไซต์นี้มีไว้เพื่อข้อมูลทั่วไปเท่านั้น ไม่ใช่คำแนะนำทางกฎหมาย การเงิน หรือภาษี โปรดขอคำปรึกษาทางกฎหมายที่เป็นอิสระก่อนทำธุรกรรมอสังหาริมทรัพย์ในประเทศไทย",
+    "disclaimerFooterLink": "→ อ่านข้อจำกัดความรับผิดชอบฉบับเต็ม"
+  },
+  "cookieConsent": {
+    "title": "คุกกี้",
+    "text": "เราใช้การวิเคราะห์ที่คำนึงถึงความเป็นส่วนตัวเพื่อเข้าใจการใช้งานเว็บไซต์ ไม่มีการขายข้อมูลส่วนบุคคล",
+    "accept": "ยอมรับ",
+    "decline": "ปฏิเสธ",
+    "privacy": "นโยบายความเป็นส่วนตัว →"
+  },
+  "breadcrumb": {
+    "home": "หน้าแรก",
+    "pages": {
+      "listings": "รายการ",
+      "listProperty": "ลงประกาศ",
+      "contact": "ติดต่อ",
+      "privacy": "ความเป็นส่วนตัว",
+      "disclaimer": "ข้อจำกัดความรับผิดชอบ"
+    }
+  },
+  "homepage": {
+    "eyebrow": "🇹🇭 อิสระ · ตรวจสอบแล้ว · โดยตรง",
+    "heroTitle": "ค้นหาที่ดินและอสังหาริมทรัพย์ทั่วไทย",
+    "heroSubtitle": "จากหัวหินถึงภูเก็ต — ที่ดินโฉนด วิลล่า และคอนโดจากเจ้าของและนายหน้า",
+    "ctaBrowse": "ดูรายการ",
+    "ctaList": "ลงประกาศทรัพย์",
+    "filterAll": "ทั้งหมด",
+    "featuredTitle": "ทรัพย์ที่ลงประกาศอยู่",
+    "contactAgent": "ติดต่อนายหน้า",
+    "agentTitle": "ผู้เชี่ยวชาญที่ดินท้องถิ่นของเรา",
+    "agentRole": "นายหน้าที่ดินไทย — หัวหินและพื้นที่ใกล้เคียง",
+    "agentListingsTitle": "ทรัพย์ของ Thanathip",
+    "ctaBarTitle": "มีทรัพย์สินที่ต้องการลงประกาศ?",
+    "ctaBarButton": "ลงประกาศทรัพย์ →",
+    "ctaBarNote": "ลงฟรี · เข้าถึงผู้ซื้อต่างชาติ · คุณควบคุมเอง",
+    "footerExplore": "สำรวจ",
+    "footerRegions": "ภูมิภาค",
+    "footerResources": "ข้อมูล",
+    "footerCopyright": "© 2026 ThaiPlot · รายการอสังหาริมทรัพย์อิสระในประเทศไทย",
+    "donateTitle": "🐾 ให้ความหวังกับสุนัขจรจัดในไทย",
+    "donateText": "สนับสนุน Saved Souls Foundation — ทุกการบริจาคมีความหมาย",
+    "donateCta": "❤️ บริจาคเลย"
+  },
+  "listings": {
+    "pageTitle": "รายการอสังหาริมทรัพย์",
+    "pageSubtitle": "ทรัพย์ขายหรือให้เช่าทั่วไทย จากเจ้าของและนายหน้า",
+    "empty": "ยังไม่มีรายการในพื้นที่นี้ เป็นคนแรก →",
+    "badgeSale": "ขาย",
+    "badgeRent": "เช่า",
+    "badgeBoth": "ขายหรือเช่า",
+    "contact": "ติดต่อนายหน้า",
+    "titleDeed": "โฉนด",
+    "size": "ขนาด",
+    "price": "ราคา / ค่าเช่า",
+    "region": "ภูมิภาค",
+    "propertyType": "ประเภททรัพย์",
+    "filterAll": "ทั้งหมด",
+    "typeLand": "ที่ดิน",
+    "typeHouse": "บ้าน",
+    "typeCondo": "คอนโด",
+    "typeVilla": "วิลล่า",
+    "typeCommercial": "เชิงพาณิชย์"
+  },
+  "listProperty": {
+    "pageTitle": "ลงประกาศทรัพย์",
+    "pageSubtitle": "เข้าถึงผู้ซื้อต่างชาติที่กำลังหาที่ดิน บ้าน และคอนโดในประเทศไทย",
+    "sectionContact": "ข้อมูลติดต่อของคุณ",
+    "name": "ชื่อ-นามสกุล",
+    "email": "อีเมล",
+    "phone": "WhatsApp / โทรศัพท์",
+    "language": "ภาษาที่ต้องการ",
+    "sectionProperty": "รายละเอียดทรัพย์",
+    "type": "ประเภททรัพย์",
+    "typeLand": "ที่ดิน",
+    "typeHouse": "บ้าน",
+    "typeCondo": "คอนโด",
+    "typeVilla": "วิลล่า",
+    "typeCommercial": "เชิงพาณิชย์",
+    "transaction": "ขายหรือเช่า?",
+    "transactionSale": "ขาย",
+    "transactionRent": "เช่า",
+    "transactionBoth": "ทั้งสอง",
+    "region": "ภูมิภาค",
+    "location": "ทำเล / พื้นที่",
+    "size": "ขนาด (ตร.ม. หรือ ไร่)",
+    "price": "ราคาหรือค่าเช่า (ไม่บังคับ)",
+    "titleDeed": "ประเภทโฉนด",
+    "titleChanote": "โฉนด",
+    "titleNorSor": "น.ส.3 ก.",
+    "titleOther": "อื่นๆ",
+    "titleUnknown": "ไม่ทราบ",
+    "description": "คำอธิบายสั้นๆ (สูงสุด 500 ตัวอักษร)",
+    "consent": "ฉันยินยอมให้ประกาศของฉันเผยแพร่บน thaiplot.com",
+    "submit": "ส่งประกาศ",
+    "submitting": "กำลังส่ง...",
+    "successTitle": "ขอบคุณ!",
+    "successMessage": "เราได้รับประกาศของคุณแล้ว และจะติดต่อกลับเร็วๆ นี้",
+    "errorMessage": "เกิดข้อผิดพลาด กรุณาลองใหม่หรืออีเมลหาเราโดยตรง"
+  },
+  "contact": {
+    "pageTitle": "ติดต่อ",
+    "pageSubtitle": "ติดต่อ Thanathip หรือฝากข้อความ — เราตอบภายใน 24 ชั่วโมง",
+    "name": "ชื่อ",
+    "email": "อีเมล",
+    "phone": "โทรศัพท์ / WhatsApp",
+    "message": "ข้อความ",
+    "send": "ส่งข้อความ",
+    "sending": "กำลังส่ง...",
+    "sent": "ขอบคุณ — เราจะติดต่อกลับเร็วๆ นี้",
+    "error": "เกิดข้อผิดพลาด กรุณาลองใหม่หรือติดต่อทาง LINE"
+  },
+  "legal": {
+    "disclaimerTitle": "ข้อจำกัดความรับผิดชอบ",
+    "disclaimerBody": "ข้อมูลบน ThaiPlot มีไว้เพื่อข้อมูลทั่วไปเท่านั้น ไม่ใช่คำแนะนำทางกฎหมาย การเงิน หรือภาษี รายละเอียดทรัพย์และโฉนดควรตรวจสอบอย่างอิสระ โปรดขอคำปรึกษาทางกฎหมายไทยที่มีคุณสมบัติก่อนทำธุรกรรม",
+    "privacyTitle": "นโยบายความเป็นส่วนตัว",
+    "privacyBody": "ThaiPlot เก็บข้อมูลติดต่อเฉพาะเมื่อคุณส่งประกาศหรือแบบฟอร์มติดต่อ เราใช้ข้อมูลนี้เพื่อตอบกลับ และด้วยความยินยอมของคุณ เพื่อเผยแพร่ประกาศ เราไม่ขายข้อมูลส่วนบุคคล"
+  }
+}

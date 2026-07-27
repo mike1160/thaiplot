@@ -1,0 +1,143 @@
+{
+  "Metadata": {
+    "title": "ThaiPlot — Unabhängiger Marktplatz für Land & Immobilien in Thailand",
+    "description": "Finden Sie Land, Villen und Condos in ganz Thailand. Chanote-Grundstücke von Eigentümern und Maklern — von Hua Hin bis Phuket."
+  },
+  "navigation": {
+    "brandTitle": "ThaiPlot",
+    "brandSubtitle": "Thailand Property",
+    "listings": "Angebote",
+    "listProperty": "Objekt inserieren",
+    "contact": "Kontakt",
+    "webdesignBy": "Webdesign by Allesis.nl",
+    "webdesignTag": "websites · SEO · apps"
+  },
+  "languages": {
+    "en": "English",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "th": "ภาษาไทย"
+  },
+  "common": {
+    "lineAgent": "💬 LINE Agent",
+    "contactThanathip": "Thanathip kontaktieren",
+    "legalFooterDisclaimer": "Rechtlicher Hinweis",
+    "legalFooterPrivacy": "Datenschutz",
+    "disclaimerFooter": "Die Informationen auf dieser Website dienen nur allgemeinen Informationszwecken und stellen keine Rechts-, Finanz- oder Steuerberatung dar. Holen Sie vor jeder Immobilientransaktion in Thailand unabhängigen Rechtsrat ein.",
+    "disclaimerFooterLink": "→ Vollständigen Hinweis lesen"
+  },
+  "cookieConsent": {
+    "title": "Cookies",
+    "text": "Wir nutzen datenschutzfreundliche Analytics, um die Nutzung der Website zu verstehen. Es werden keine personenbezogenen Daten verkauft.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "privacy": "Datenschutz →"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "pages": {
+      "listings": "Angebote",
+      "listProperty": "Objekt inserieren",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "disclaimer": "Hinweis"
+    }
+  },
+  "homepage": {
+    "eyebrow": "🇹🇭 Unabhängig · Geprüft · Direkt",
+    "heroTitle": "Land & Immobilien in ganz Thailand finden",
+    "heroSubtitle": "Von Hua Hin bis Phuket — Chanote-Grundstücke, Villen und Condos von Eigentümern und Maklern.",
+    "ctaBrowse": "Angebote ansehen",
+    "ctaList": "Objekt inserieren",
+    "filterAll": "Alle",
+    "featuredTitle": "Aktuelle Angebote",
+    "contactAgent": "Makler kontaktieren",
+    "agentTitle": "Unser lokaler Landspezialist",
+    "agentRole": "Thailändischer Landmakler — Hua Hin & Umgebung",
+    "agentListingsTitle": "Angebote von Thanathip",
+    "ctaBarTitle": "Haben Sie ein Objekt zu verkaufen?",
+    "ctaBarButton": "Objekt inserieren →",
+    "ctaBarNote": "Kostenloses Inserat · Internationale Käufer · Sie behalten die Kontrolle",
+    "footerExplore": "Entdecken",
+    "footerRegions": "Regionen",
+    "footerResources": "Ressourcen",
+    "footerCopyright": "© 2026 ThaiPlot · Unabhängige Thailand-Immobilienangebote",
+    "donateTitle": "🐾 Hoffnung für Straßenhunde in Thailand",
+    "donateText": "Unterstützen Sie Saved Souls Foundation — jede Spende hilft",
+    "donateCta": "❤️ Jetzt spenden"
+  },
+  "listings": {
+    "pageTitle": "Immobilienangebote",
+    "pageSubtitle": "Objekte zum Kauf oder zur Miete in Thailand, von Eigentümern und Maklern.",
+    "empty": "Noch keine Angebote in dieser Region. Seien Sie der Erste →",
+    "badgeSale": "Zu verkaufen",
+    "badgeRent": "Zu vermieten",
+    "badgeBoth": "Kauf oder Miete",
+    "contact": "Makler kontaktieren",
+    "titleDeed": "Titel",
+    "size": "Größe",
+    "price": "Preis / Miete",
+    "region": "Region",
+    "propertyType": "Objekttyp",
+    "filterAll": "Alle",
+    "typeLand": "Land",
+    "typeHouse": "Haus",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Gewerbe"
+  },
+  "listProperty": {
+    "pageTitle": "Objekt inserieren",
+    "pageSubtitle": "Erreichen Sie internationale Käufer für Land, Häuser und Condos in Thailand.",
+    "sectionContact": "Ihre Kontaktdaten",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "WhatsApp / Telefon",
+    "language": "Bevorzugte Sprache",
+    "sectionProperty": "Objektdetails",
+    "type": "Objekttyp",
+    "typeLand": "Land",
+    "typeHouse": "Haus",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Gewerbe",
+    "transaction": "Verkauf oder Miete?",
+    "transactionSale": "Zu verkaufen",
+    "transactionRent": "Zu vermieten",
+    "transactionBoth": "Beides",
+    "region": "Region",
+    "location": "Lage / Gebiet",
+    "size": "Größe (m² oder Rai)",
+    "price": "Preis oder Miete (optional)",
+    "titleDeed": "Titelart",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Andere",
+    "titleUnknown": "Unbekannt",
+    "description": "Kurzbeschreibung (max. 500 Zeichen)",
+    "consent": "Ich stimme zu, dass mein Inserat auf thaiplot.com veröffentlicht werden darf",
+    "submit": "Inserat absenden",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Vielen Dank!",
+    "successMessage": "Wir haben Ihr Inserat erhalten und melden uns bald.",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder uns direkt mailen."
+  },
+  "contact": {
+    "pageTitle": "Kontakt",
+    "pageSubtitle": "Erreichen Sie Thanathip oder hinterlassen Sie eine Nachricht — Antwort innerhalb von 24 Stunden.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon / WhatsApp",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "sent": "Danke — wir melden uns bald.",
+    "error": "Etwas ist schiefgelaufen. Bitte erneut versuchen oder uns über LINE kontaktieren."
+  },
+  "legal": {
+    "disclaimerTitle": "Rechtlicher Hinweis",
+    "disclaimerBody": "Die Informationen auf ThaiPlot dienen nur allgemeinen Informationszwecken und stellen keine Rechts-, Finanz- oder Steuerberatung dar. Objektdaten und Titelinformationen sollten unabhängig geprüft werden. Holen Sie vor jeder Immobilientransaktion qualifizierten thailändischen Rechtsrat ein.",
+    "privacyTitle": "Datenschutz",
+    "privacyBody": "ThaiPlot erhebt Kontaktdaten nur, wenn Sie ein Inserat oder Kontaktformular absenden. Wir verwenden diese Daten zur Beantwortung und — mit Ihrer Zustimmung — zur Veröffentlichung von Inseraten. Wir verkaufen keine personenbezogenen Daten."
+  }
+}

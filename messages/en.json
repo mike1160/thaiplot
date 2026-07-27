@@ -1,0 +1,143 @@
+{
+  "Metadata": {
+    "title": "ThaiPlot — Thailand's independent land & property marketplace",
+    "description": "Find land, villas and condos across Thailand. Chanote plots listed by owners and agents — from Hua Hin to Phuket."
+  },
+  "navigation": {
+    "brandTitle": "ThaiPlot",
+    "brandSubtitle": "Thailand Property",
+    "listings": "Listings",
+    "listProperty": "List Property",
+    "contact": "Contact",
+    "webdesignBy": "Webdesign by Allesis.nl",
+    "webdesignTag": "websites · SEO · apps"
+  },
+  "languages": {
+    "en": "English",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "th": "ภาษาไทย"
+  },
+  "common": {
+    "lineAgent": "💬 LINE Agent",
+    "contactThanathip": "Contact Thanathip",
+    "legalFooterDisclaimer": "Legal Disclaimer",
+    "legalFooterPrivacy": "Privacy Policy",
+    "disclaimerFooter": "The information on this site is for general informational purposes only and does not constitute legal, financial, or tax advice. Always seek independent legal advice before any property transaction in Thailand.",
+    "disclaimerFooterLink": "→ Read our full disclaimer"
+  },
+  "cookieConsent": {
+    "title": "Cookies",
+    "text": "We use privacy-friendly analytics to understand how visitors use this site. No personal data is sold.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacy": "Privacy policy →"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "pages": {
+      "listings": "Listings",
+      "listProperty": "List Property",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "homepage": {
+    "eyebrow": "🇹🇭 Independent · Verified · Direct",
+    "heroTitle": "Find land & property across Thailand",
+    "heroSubtitle": "From Hua Hin to Phuket — chanote plots, villas, and condos listed by owners and agents.",
+    "ctaBrowse": "Browse listings",
+    "ctaList": "List your property",
+    "filterAll": "All",
+    "featuredTitle": "Properties currently listed",
+    "contactAgent": "Contact agent",
+    "agentTitle": "Our local land specialist",
+    "agentRole": "Thai land agent — Hua Hin & surroundings",
+    "agentListingsTitle": "Properties by Thanathip",
+    "ctaBarTitle": "Have a property to list?",
+    "ctaBarButton": "List your property →",
+    "ctaBarNote": "Free listing · Reach international buyers · You stay in control",
+    "footerExplore": "Explore",
+    "footerRegions": "Regions",
+    "footerResources": "Resources",
+    "footerCopyright": "© 2026 ThaiPlot · Independent Thailand property listings",
+    "donateTitle": "🐾 Give hope to street dogs in Thailand",
+    "donateText": "Support Saved Souls Foundation — every donation makes a difference",
+    "donateCta": "❤️ Donate now"
+  },
+  "listings": {
+    "pageTitle": "Property Listings",
+    "pageSubtitle": "Properties for sale or rent across Thailand, submitted by owners and agents.",
+    "empty": "No listings yet in this area. Be the first →",
+    "badgeSale": "For Sale",
+    "badgeRent": "For Rent",
+    "badgeBoth": "Sale or Rent",
+    "contact": "Contact agent",
+    "titleDeed": "Title deed",
+    "size": "Size",
+    "price": "Price / Rent",
+    "region": "Region",
+    "propertyType": "Property type",
+    "filterAll": "All",
+    "typeLand": "Land",
+    "typeHouse": "House",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercial"
+  },
+  "listProperty": {
+    "pageTitle": "List Your Property",
+    "pageSubtitle": "Reach international buyers looking for land, homes and condos across Thailand.",
+    "sectionContact": "Your contact details",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "WhatsApp / Phone",
+    "language": "Preferred language",
+    "sectionProperty": "Property details",
+    "type": "Property type",
+    "typeLand": "Land",
+    "typeHouse": "House",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercial",
+    "transaction": "For sale or rent?",
+    "transactionSale": "For Sale",
+    "transactionRent": "For Rent",
+    "transactionBoth": "Both",
+    "region": "Region",
+    "location": "Location / area",
+    "size": "Size (m² or Rai)",
+    "price": "Asking price or rent (optional)",
+    "titleDeed": "Title deed type",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Other",
+    "titleUnknown": "Unknown",
+    "description": "Short description (max 500 characters)",
+    "consent": "I agree that my listing may be published on thaiplot.com",
+    "submit": "Submit listing",
+    "submitting": "Sending...",
+    "successTitle": "Thank you!",
+    "successMessage": "We received your listing and will be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again or email us directly."
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "pageSubtitle": "Reach Thanathip or leave a message — we reply within 24 hours.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "sent": "Thank you — we will be in touch soon.",
+    "error": "Something went wrong. Please try again or contact us on LINE."
+  },
+  "legal": {
+    "disclaimerTitle": "Legal Disclaimer",
+    "disclaimerBody": "The information on ThaiPlot is provided for general informational purposes only and does not constitute legal, financial, or tax advice. Property details, title deed information, and market data should be independently verified. Always seek qualified Thai legal counsel before entering into any property transaction.",
+    "privacyTitle": "Privacy Policy",
+    "privacyBody": "ThaiPlot collects contact details only when you submit a listing or contact form. We use this information to respond to your enquiry and, with your consent, to publish listings. We do not sell personal data. Analytics may be used in a privacy-friendly way to improve the site."
+  }
+}

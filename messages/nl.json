@@ -1,0 +1,143 @@
+{
+  "Metadata": {
+    "title": "ThaiPlot — Onafhankelijke land- & vastgoedmarktplaats in Thailand",
+    "description": "Vind land, villa's en condo's in heel Thailand. Chanote-percelen van eigenaren en makelaars — van Hua Hin tot Phuket."
+  },
+  "navigation": {
+    "brandTitle": "ThaiPlot",
+    "brandSubtitle": "Thailand Property",
+    "listings": "Aanbod",
+    "listProperty": "Plaats advertentie",
+    "contact": "Contact",
+    "webdesignBy": "Webdesign by Allesis.nl",
+    "webdesignTag": "websites · SEO · apps"
+  },
+  "languages": {
+    "en": "English",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "th": "ภาษาไทย"
+  },
+  "common": {
+    "lineAgent": "💬 LINE Agent",
+    "contactThanathip": "Contact Thanathip",
+    "legalFooterDisclaimer": "Juridische disclaimer",
+    "legalFooterPrivacy": "Privacybeleid",
+    "disclaimerFooter": "De informatie op deze site is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel of fiscaal advies. Raadpleeg altijd onafhankelijk juridisch advies vóór een vastgoedtransactie in Thailand.",
+    "disclaimerFooterLink": "→ Lees onze volledige disclaimer"
+  },
+  "cookieConsent": {
+    "title": "Cookies",
+    "text": "We gebruiken privacyvriendelijke analytics om te begrijpen hoe bezoekers de site gebruiken. Er worden geen persoonsgegevens verkocht.",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "privacy": "Privacybeleid →"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "pages": {
+      "listings": "Aanbod",
+      "listProperty": "Plaats advertentie",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "disclaimer": "Disclaimer"
+    }
+  },
+  "homepage": {
+    "eyebrow": "🇹🇭 Onafhankelijk · Geverifieerd · Direct",
+    "heroTitle": "Vind land & vastgoed in heel Thailand",
+    "heroSubtitle": "Van Hua Hin tot Phuket — chanote-percelen, villa's en condo's van eigenaren en makelaars.",
+    "ctaBrowse": "Bekijk aanbod",
+    "ctaList": "Plaats je woning",
+    "filterAll": "Alles",
+    "featuredTitle": "Huidig aanbod",
+    "contactAgent": "Contact agent",
+    "agentTitle": "Onze lokale landspecialist",
+    "agentRole": "Thaise landagent — Hua Hin & omgeving",
+    "agentListingsTitle": "Aanbod van Thanathip",
+    "ctaBarTitle": "Heb je een object te koop?",
+    "ctaBarButton": "Plaats je woning →",
+    "ctaBarNote": "Gratis listing · Bereik internationale kopers · Jij blijft in controle",
+    "footerExplore": "Ontdekken",
+    "footerRegions": "Regio's",
+    "footerResources": "Resources",
+    "footerCopyright": "© 2026 ThaiPlot · Onafhankelijke Thailand vastgoedlistings",
+    "donateTitle": "🐾 Geef hoop aan straathonden in Thailand",
+    "donateText": "Steun Saved Souls Foundation — elke donatie helpt",
+    "donateCta": "❤️ Doneer nu"
+  },
+  "listings": {
+    "pageTitle": "Vastgoedaanbod",
+    "pageSubtitle": "Objecten te koop of te huur in Thailand, geplaatst door eigenaren en makelaars.",
+    "empty": "Nog geen listings in dit gebied. Wees de eerste →",
+    "badgeSale": "Te koop",
+    "badgeRent": "Te huur",
+    "badgeBoth": "Koop of huur",
+    "contact": "Contact agent",
+    "titleDeed": "Titelakte",
+    "size": "Oppervlakte",
+    "price": "Prijs / Huur",
+    "region": "Regio",
+    "propertyType": "Type object",
+    "filterAll": "Alles",
+    "typeLand": "Land",
+    "typeHouse": "Huis",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercieel"
+  },
+  "listProperty": {
+    "pageTitle": "Plaats je woning",
+    "pageSubtitle": "Bereik internationale kopers die land, huizen en condo's zoeken in Thailand.",
+    "sectionContact": "Jouw contactgegevens",
+    "name": "Volledige naam",
+    "email": "E-mailadres",
+    "phone": "WhatsApp / Telefoon",
+    "language": "Voorkeurstaal",
+    "sectionProperty": "Objectgegevens",
+    "type": "Type object",
+    "typeLand": "Land",
+    "typeHouse": "Huis",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercieel",
+    "transaction": "Te koop of te huur?",
+    "transactionSale": "Te koop",
+    "transactionRent": "Te huur",
+    "transactionBoth": "Beide",
+    "region": "Regio",
+    "location": "Locatie / gebied",
+    "size": "Oppervlakte (m² of Rai)",
+    "price": "Vraagprijs of huur (optioneel)",
+    "titleDeed": "Type titelakte",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Anders",
+    "titleUnknown": "Onbekend",
+    "description": "Korte beschrijving (max 500 tekens)",
+    "consent": "Ik ga ermee akkoord dat mijn listing op thaiplot.com mag worden gepubliceerd",
+    "submit": "Listing indienen",
+    "submitting": "Verzenden...",
+    "successTitle": "Bedankt!",
+    "successMessage": "We hebben je listing ontvangen en nemen snel contact op.",
+    "errorMessage": "Er ging iets mis. Probeer opnieuw of mail ons direct."
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "pageSubtitle": "Bereik Thanathip of laat een bericht achter — we reageren binnen 24 uur.",
+    "name": "Naam",
+    "email": "E-mail",
+    "phone": "Telefoon / WhatsApp",
+    "message": "Bericht",
+    "send": "Verstuur bericht",
+    "sending": "Verzenden...",
+    "sent": "Bedankt — we nemen snel contact op.",
+    "error": "Er ging iets mis. Probeer opnieuw of bereik ons via LINE."
+  },
+  "legal": {
+    "disclaimerTitle": "Juridische disclaimer",
+    "disclaimerBody": "De informatie op ThaiPlot is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel of fiscaal advies. Objectgegevens en titelakten moeten onafhankelijk worden geverifieerd. Raadpleeg altijd gekwalificeerd Thais juridisch advies vóór een vastgoedtransactie.",
+    "privacyTitle": "Privacybeleid",
+    "privacyBody": "ThaiPlot verzamelt contactgegevens alleen wanneer je een listing of contactformulier indient. We gebruiken deze informatie om te reageren en, met jouw toestemming, listings te publiceren. We verkopen geen persoonsgegevens."
+  }
+}
