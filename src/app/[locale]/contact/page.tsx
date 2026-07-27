@@ -1,10 +1,11 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useCallback, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import LineButton from '@/components/LineButton'
+import TurnstileWidget from '@/components/TurnstileWidget'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
@@ -16,10 +17,22 @@ const labelClass = 'block text-sm font-medium text-[#1A2744] mb-2'
 export default function ContactPage() {
   const t = useTranslations('contact')
   const [status, setStatus] = useState<FormStatus>('idle')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const [securityError, setSecurityError] = useState(false)
+
+  const onToken = useCallback((token: string) => {
+    setTurnstileToken(token)
+    if (token) setSecurityError(false)
+  }, [])
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (!turnstileToken) {
+      setSecurityError(true)
+      return
+    }
     setStatus('loading')
+    setSecurityError(false)
     const form = e.currentTarget
     const data = new FormData(form)
 
@@ -32,15 +45,20 @@ export default function ContactPage() {
           email: String(data.get('email') || '').trim(),
           phone: String(data.get('phone') || '').trim(),
           message: String(data.get('message') || '').trim(),
+          turnstileToken,
         }),
       })
       const json = await res.json()
       if (!res.ok || !json.success) {
+        if (json?.error === 'Security check failed') {
+          setSecurityError(true)
+        }
         setStatus('error')
         return
       }
       setStatus('success')
       form.reset()
+      setTurnstileToken('')
     } catch {
       setStatus('error')
     }
@@ -124,11 +142,13 @@ export default function ContactPage() {
                 />
               </div>
 
-              {status === 'error' && (
+              {(status === 'error' || securityError) && (
                 <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                  {t('error')}
+                  {securityError ? 'Security check failed' : t('error')}
                 </p>
               )}
+
+              <TurnstileWidget onToken={onToken} />
 
               <button
                 type="submit"

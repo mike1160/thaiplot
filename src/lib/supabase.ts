@@ -54,4 +54,9 @@ export type ListingRow = {
   region: string | null
   approved_at: string | null
   rejected_at: string | null
+  photo_1: string | null
+  photo_2: string | null
+  photo_3: string | null
+  photo_4: string | null
+  photo_5: string | null
 }

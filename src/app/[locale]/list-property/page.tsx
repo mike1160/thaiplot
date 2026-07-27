@@ -1,9 +1,10 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, useCallback, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import TurnstileWidget from '@/components/TurnstileWidget'
 import { LIST_REGIONS } from '@/i18n/routing'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
@@ -31,10 +32,22 @@ export default function ListPropertyPage() {
   const t = useTranslations('listProperty')
   const [status, setStatus] = useState<FormStatus>('idle')
   const [description, setDescription] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const [securityError, setSecurityError] = useState(false)
+
+  const onToken = useCallback((token: string) => {
+    setTurnstileToken(token)
+    if (token) setSecurityError(false)
+  }, [])
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (!turnstileToken) {
+      setSecurityError(true)
+      return
+    }
     setStatus('loading')
+    setSecurityError(false)
 
     const form = e.currentTarget
     const data = new FormData(form)
@@ -53,6 +66,7 @@ export default function ListPropertyPage() {
       titleDeed: String(data.get('titleDeed') || ''),
       description: String(data.get('description') || '').trim().slice(0, 500),
       consent: data.get('consent') === 'on',
+      turnstileToken,
     }
 
     try {
@@ -63,12 +77,16 @@ export default function ListPropertyPage() {
       })
       const json = await res.json()
       if (!res.ok || !json.success) {
+        if (json?.error === 'Security check failed') {
+          setSecurityError(true)
+        }
         setStatus('error')
         return
       }
       setStatus('success')
       form.reset()
       setDescription('')
+      setTurnstileToken('')
     } catch {
       setStatus('error')
     }
@@ -271,11 +289,13 @@ export default function ListPropertyPage() {
                   <span className="text-sm text-[#1A2744] leading-relaxed">{t('consent')}</span>
                 </label>
 
-                {status === 'error' && (
+                {(status === 'error' || securityError) && (
                   <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                    {t('errorMessage')}
+                    {securityError ? 'Security check failed' : t('errorMessage')}
                   </p>
                 )}
+
+                <TurnstileWidget onToken={onToken} />
 
                 <button
                   type="submit"

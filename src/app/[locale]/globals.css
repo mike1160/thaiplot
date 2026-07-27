@@ -86,3 +86,10 @@ body {
 .animate-stagger > *:nth-child(7) { animation-delay: 0.35s; }
 .animate-stagger > *:nth-child(8) { animation-delay: 0.40s; }
 .animate-stagger > *:nth-child(9) { animation-delay: 0.45s; }
+
+/* Hide Cloudflare Turnstile error/debug "Troubleshoot" link from visitors */
+a[href*="developers.cloudflare.com/turnstile"],
+a[href*="cloudflare.com"][href*="troubleshoot"],
+.cf-turnstile ~ a[href*="cloudflare"] {
+  display: none !important;
+}

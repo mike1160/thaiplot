@@ -25,6 +25,11 @@ CREATE TABLE IF NOT EXISTS listings (
 );
 
 ALTER TABLE listings ADD COLUMN IF NOT EXISTS region TEXT DEFAULT 'Hua Hin';
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS photo_1 TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS photo_2 TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS photo_3 TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS photo_4 TEXT;
+ALTER TABLE listings ADD COLUMN IF NOT EXISTS photo_5 TEXT;
 
 CREATE INDEX IF NOT EXISTS listings_status_approved_at_idx
   ON listings (status, approved_at DESC);

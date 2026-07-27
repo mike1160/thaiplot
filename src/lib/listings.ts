@@ -14,6 +14,11 @@ export type PublicListing = Pick<
   | 'description'
   | 'region'
   | 'approved_at'
+  | 'photo_1'
+  | 'photo_2'
+  | 'photo_3'
+  | 'photo_4'
+  | 'photo_5'
 >
 
 export type ListingFilters = {
@@ -28,9 +33,11 @@ export async function fetchApprovedListings(
   try {
     const supabase = getSupabasePublic()
     const selectWithRegion =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
+      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
     const selectWithoutRegion =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, approved_at'
+      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
+    const selectWithoutPhotos =
+      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
 
     const runQuery = async (select: string, useRegionFilter: boolean) => {
       let query = supabase
@@ -56,6 +63,11 @@ export async function fetchApprovedListings(
 
     let { data, error } = await runQuery(selectWithRegion, true)
 
+    // Fallback if photo columns are not migrated yet
+    if (error && /photo_/i.test(error.message || '')) {
+      ;({ data, error } = await runQuery(selectWithoutPhotos, true))
+    }
+
     // Fallback if region column is not migrated yet
     if (error && /region/i.test(error.message || '')) {
       ;({ data, error } = await runQuery(selectWithoutRegion, false))
@@ -69,6 +81,11 @@ export async function fetchApprovedListings(
     return ((data || []) as unknown as PublicListing[]).map((row) => ({
       ...row,
       region: row.region || 'Hua Hin',
+      photo_1: row.photo_1 ?? null,
+      photo_2: row.photo_2 ?? null,
+      photo_3: row.photo_3 ?? null,
+      photo_4: row.photo_4 ?? null,
+      photo_5: row.photo_5 ?? null,
     }))
   } catch (error) {
     console.error(error)
