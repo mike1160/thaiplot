@@ -1,6 +1,5 @@
 import { type ReactNode } from 'react'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
-import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import InfoHero from '@/components/InfoHero'
 
@@ -14,6 +13,7 @@ type InfoPageShellProps = {
   subtitle?: string
   sections: InfoSection[]
   bottomSlot?: ReactNode
+  heroImage?: string
 }
 
 export default function InfoPageShell({
@@ -21,12 +21,12 @@ export default function InfoPageShell({
   subtitle,
   sections,
   bottomSlot,
+  heroImage,
 }: InfoPageShellProps) {
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
-      <BackButton />
-      <InfoHero title={title} subtitle={subtitle} />
+      <InfoHero title={title} subtitle={subtitle} image={heroImage} size="secondary" />
 
       <article className="max-w-3xl mx-auto px-6 py-12 md:py-16 space-y-10">
         {sections.map((section) => (

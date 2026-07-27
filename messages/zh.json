@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — 泰国独立土地与房产交易平台",
-    "description": "在泰国各地寻找土地、别墅与公寓。由业主与中介发布的 Chanote 地块——从华欣到普吉。"
+    "title": "ThaiPlot — 泰国独立市场平台",
+    "description": "泰国独立市场平台 — 土地、房产、车辆等。由业主和经纪人发布。"
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
-    "brandSubtitle": "Thailand Property",
+    "brandSubtitle": "泰国市场",
     "listings": "房源",
-    "listProperty": "发布房源",
+    "listProperty": "在 ThaiPlot 发布",
     "contact": "联系我们",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
@@ -51,7 +51,7 @@
     "home": "首页",
     "pages": {
       "listings": "房源",
-      "listProperty": "发布房源",
+      "listProperty": "在 ThaiPlot 发布",
       "contact": "联系我们",
       "privacy": "隐私",
       "disclaimer": "免责声明",
@@ -65,30 +65,37 @@
   },
   "homepage": {
     "eyebrow": "🇹🇭 独立 · 已核实 · 直连",
-    "heroTitle": "在泰国各地寻找土地与房产",
-    "heroSubtitle": "从华欣到普吉——由业主与中介发布的 Chanote 地块、别墅与公寓。",
+    "heroTitle": "在泰国寻找土地、房产等",
+    "heroSubtitle": "土地、房产、车辆等 — 由泰国各地业主发布。",
     "ctaBrowse": "浏览房源",
-    "ctaList": "发布您的房产",
+    "ctaList": "在 ThaiPlot 发布",
     "filterAll": "全部",
-    "featuredTitle": "当前上线房源",
+    "featuredTitle": "当前列表",
     "contactAgent": "联系中介",
     "agentTitle": "我们的本地土地专家",
     "agentRole": "泰国土地中介 — 华欣及周边",
     "agentListingsTitle": "Thanathip 的房源",
-    "ctaBarTitle": "有房产要发布吗？",
-    "ctaBarButton": "发布您的房产 →",
+    "ctaBarTitle": "有东西要发布？",
+    "ctaBarButton": "在 ThaiPlot 发布 →",
     "ctaBarNote": "免费刊登 · 触达国际买家 · 您保持掌控",
     "footerExplore": "探索",
     "footerRegions": "地区",
     "footerResources": "资源",
-    "footerCopyright": "© 2026 ThaiPlot · 独立的泰国房产信息平台",
+    "footerCopyright": "© 2026 ThaiPlot · 泰国独立市场平台",
     "donateTitle": "🐾 为泰国流浪狗带去希望",
     "donateText": "支持 Saved Souls Foundation — 每一笔捐赠都很重要",
-    "donateCta": "❤️ 立即捐赠"
+    "donateCta": "❤️ 立即捐赠",
+    "donateSectionEyebrow": "Saved Souls Foundation · Thailand",
+    "donateSectionTitle": "为泰国流浪狗带去希望",
+    "donateSectionBody": "成千上万的狗在泰国街头生活，没有照料或庇护。\nSaved Souls Foundation 救助、治疗并为它们寻找新家。\n每一笔捐赠都直接产生影响。",
+    "donateSectionCta": "立即捐赠 → savedsouls.org",
+    "donateSectionNote": "非营利 · 在泰国注册 · 100%用于狗狗",
+    "viewAllListings": "查看全部列表 →",
+    "featuredEmpty": "预览中暂无列表。查看完整列表页 →"
   },
   "listings": {
-    "pageTitle": "房产列表",
-    "pageSubtitle": "泰国各地待售或待租房产，由业主与中介提交。",
+    "pageTitle": "列表",
+    "pageSubtitle": "土地、房产、车辆等 — 由业主和经纪人在泰国发布。",
     "empty": "该地区暂无房源。成为第一个发布者 →",
     "badgeSale": "出售",
     "badgeRent": "出租",
@@ -106,11 +113,24 @@
     "typeVilla": "别墅",
     "typeCommercial": "商业",
     "cardLegalNote": "信息由发布者提供。请在做出任何房产决定前独立核实地契与详情。",
-    "cardLegalLink": "→ 免责声明"
+    "cardLegalLink": "→ 免责声明",
+    "heroEyebrow": "房源",
+    "catAll": "全部",
+    "catLandProperty": "土地与房产",
+    "catVehicles": "车辆",
+    "catBoats": "船只",
+    "catBusinesses": "生意",
+    "catOther": "其他",
+    "filterAllTypes": "所有类型",
+    "filterAllRegions": "所有地区",
+    "filterTransaction": "交易类型",
+    "searchButton": "搜索列表 →",
+    "mileage": "里程",
+    "condition": "成色"
   },
   "listProperty": {
-    "pageTitle": "发布您的房产",
-    "pageSubtitle": "触达正在寻找泰国土地、住宅与公寓的国际买家。",
+    "pageTitle": "在泰国发布任何商品",
+    "pageSubtitle": "土地、房产、车辆、船只、生意等 — 触达泰国各地国际买家。",
     "sectionContact": "您的联系方式",
     "name": "全名",
     "email": "电子邮箱",
@@ -142,7 +162,53 @@
     "submitting": "提交中...",
     "successTitle": "谢谢！",
     "successMessage": "我们已收到您的房源，稍后会与您联系。",
-    "errorMessage": "出现问题。请重试或直接发邮件给我们。"
+    "errorMessage": "出现问题。请重试或直接发邮件给我们。",
+    "heroEyebrow": "在 ThaiPlot 发布",
+    "sectionCategory": "您要发布什么？",
+    "category": "类别",
+    "catLandProperty": "土地与房产",
+    "catVehicle": "车辆",
+    "catBoat": "船只",
+    "catBusiness": "生意",
+    "catOther": "其他",
+    "sectionVehicle": "车辆详情",
+    "sectionBoat": "船只详情",
+    "sectionBusiness": "生意详情",
+    "sectionOther": "物品详情",
+    "vehicleType": "车辆类型",
+    "vehicleTypeCar": "汽车",
+    "vehicleTypeMotorcycle": "摩托车",
+    "vehicleTypeTruck": "卡车",
+    "vehicleTypeVan": "面包车",
+    "vehicleTypeOther": "其他",
+    "vehicleBrand": "品牌与型号",
+    "vehicleYear": "年份",
+    "vehicleMileage": "里程",
+    "condition": "成色",
+    "conditionNew": "全新",
+    "conditionLikeNew": "几乎全新",
+    "conditionGood": "良好",
+    "conditionFair": "一般",
+    "priceRequired": "价格",
+    "locationThailand": "泰国所在地",
+    "photos": "照片（最多5张）",
+    "photosHint": "可选照片网址。提交后也可发送照片。",
+    "photoUrlPlaceholder": "照片 {n} 网址",
+    "boatType": "船只类型",
+    "boatTypeSpeedboat": "快艇",
+    "boatTypeLongtail": "长尾船",
+    "boatTypeYacht": "游艇",
+    "boatTypeFishing": "渔船",
+    "boatTypeOther": "其他",
+    "boatLength": "长度（米）",
+    "engineType": "发动机类型",
+    "locationMooring": "地点 / 泊位",
+    "businessType": "生意类型",
+    "annualRevenue": "年收入（可选）",
+    "askingPrice": "要价",
+    "reasonForSelling": "出售原因",
+    "itemName": "物品名称",
+    "otherCategory": "类别（自由文本）"
   },
   "contact": {
     "pageTitle": "联系我们",
@@ -154,12 +220,13 @@
     "send": "发送消息",
     "sending": "发送中...",
     "sent": "谢谢——我们很快会与您联系。",
-    "error": "出现问题。请重试或通过 LINE 联系我们。"
+    "error": "出现问题。请重试或通过 LINE 联系我们。",
+    "heroEyebrow": "联系"
   },
   "legal": {
     "disclaimerMetaTitle": "法律免责声明 | ThaiPlot",
     "disclaimerMetaDescription": "ThaiPlot 房产信息与购地内容的法律免责声明。",
-    "disclaimerTitle": "法律免责声明",
+    "disclaimerTitle": "免责声明与重要须知",
     "disclaimerIntro": "使用 thaiplot.com 或依赖本网站任何信息前，请仔细阅读本声明。",
     "disclaimerSections": [
       {
@@ -242,15 +309,58 @@
       }
     ],
     "disclaimerBody": "使用 thaiplot.com 或依赖本网站任何信息前，请仔细阅读本声明。",
-    "privacyBody": "本政策说明 ThaiPlot 收集哪些个人数据、用途以及您的选择。"
+    "privacyBody": "本政策说明 ThaiPlot 收集哪些个人数据、用途以及您的选择。",
+    "disclaimerEyebrow": "法律",
+    "disclaimerHeroTitle": "免责声明与重要须知",
+    "disclaimerHeroSubtitle": "使用本网站前请仔细阅读",
+    "privacyEyebrow": "法律",
+    "privacyHeroTitle": "隐私政策",
+    "privacyHeroSubtitle": "我们如何处理您的数据",
+    "warningsTitle": "在泰国需注意的常见做法",
+    "thailandWarnings": [
+      {
+        "title": "地契欺诈",
+        "body": "部分卖家出示伪造或有争议的地契。付款前请务必在当地土地局（กรมที่ดิน）核验原始 Chanote。"
+      },
+      {
+        "title": "口头协议",
+        "body": "口头协议在泰国房产法中没有法律效力。务必要求经持牌律师审阅的书面合同。"
+      },
+      {
+        "title": "无牌中介",
+        "body": "泰国有许多无牌房产中介。请始终索要身份证明。ThaiPlot 仅与已确认身份的中介合作 — Thanathip 独立、透明开展工作。"
+      },
+      {
+        "title": "定金陷阱",
+        "body": "没有正规合同切勿支付定金。在泰国法律下定金通常不可退还。请使用托管或持牌律师处理定金。"
+      },
+      {
+        "title": "公司架构风险",
+        "body": "部分中介推动外国买家用泰国公司“拥有”土地。若公司无真实业务，可能违法。请咨询独立律师 — 而非卖方推荐的律师。"
+      },
+      {
+        "title": "外国人所有权限制",
+        "body": "外国人不能直接拥有泰国土地。公寓可持有（每栋楼外资配额最高 49%）。30 年可续期租赁权是最常见的合法结构。"
+      },
+      {
+        "title": "货币与转账风险",
+        "body": "房产付款请始终使用官方银行转账。切勿现金支付，并索取正式收据。"
+      },
+      {
+        "title": "改建与建筑许可",
+        "body": "无许可施工很常见但属违法。购买拟建土地前请核实建筑许可。"
+      }
+    ],
+    "aboutTitle": "关于 ThaiPlot 与我们的中介",
+    "aboutBody": "ThaiPlot 是独立房源平台。\n我们不是房产中介公司，也不收取佣金。\n本地中介 Thanathip 独立运营。\n我们不与未披露的转售方或下级中介合作。\n所有房源均由业主或中介直接提交。\nThaiPlot 不保证任何房源信息的准确性。"
   },
   "thaiData": {
     "title": "🔍 免费核查泰国土地与公司记录",
     "subtitle": "ThaiData 用通俗语言解释泰国公共记录。核查土地所有权、地契、公司注册等。",
     "button": "打开 ThaiData →",
-    "verifyTitle": "免费自行核查任何泰国地契",
-    "verifyText": "使用我们的免费数据工具，在购买前核查土地所有权、公司记录与法律状态。",
-    "verifyButton": "打开核查工具 →",
+    "verifyTitle": "🔍 免费核查任何泰国地契或公司",
+    "verifyText": "ThaiData 用通俗语言解释泰国公共记录。土地所有权、公司注册、法院记录。",
+    "verifyButton": "打开 ThaiData →",
     "footerTools": "工具",
     "footerVerify": "核查地契 → data.hua-hin-land.com"
   },

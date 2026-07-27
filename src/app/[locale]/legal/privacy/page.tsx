@@ -2,7 +2,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/InfoHero'
 import { localizedPath, SITE_URL } from '@/lib/seo'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
@@ -27,13 +29,15 @@ export default async function PrivacyPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
+      <InfoHero
+        eyebrow={t('privacyEyebrow')}
+        title={t('privacyHeroTitle')}
+        subtitle={t('privacyHeroSubtitle')}
+        image={HERO_PHOTOS.privacy}
+        size="secondary"
+      />
+
       <section className="max-w-3xl mx-auto px-6 py-16">
-        <h1
-          className="text-3xl md:text-4xl font-bold mb-4"
-          style={{ fontFamily: 'Playfair Display, serif' }}
-        >
-          {t('privacyTitle')}
-        </h1>
         <p className="text-[#5C5247] leading-relaxed mb-10">{t('privacyIntro')}</p>
 
         <div className="space-y-8">

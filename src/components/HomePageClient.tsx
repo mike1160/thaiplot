@@ -2,13 +2,13 @@
 
 import { useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+import { Link, useRouter } from '@/i18n/navigation'
 import HomeNavbar from '@/components/HomeNavbar'
 import ListingCard from '@/components/ListingCard'
 import LineButton from '@/components/LineButton'
 import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
-import ThaiDataCard, { TitleVerifyCta } from '@/components/ThaiDataCard'
+import { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import type { PublicListing } from '@/lib/listings'
 import {
@@ -21,15 +21,39 @@ type Props = {
   listings: PublicListing[]
 }
 
+function listingsHref(filters: ListingFiltersState): string {
+  const params = new URLSearchParams()
+  if (filters.category && filters.category !== 'All') {
+    params.set('category', filters.category)
+  }
+  if (filters.propertyType && filters.propertyType !== 'All') {
+    params.set('type', filters.propertyType)
+  }
+  if (filters.region && filters.region !== 'All') {
+    params.set('region', filters.region)
+  }
+  if (filters.transaction && filters.transaction !== 'For Sale') {
+    params.set('transaction', filters.transaction)
+  }
+  const query = params.toString()
+  return query ? `/listings?${query}` : '/listings'
+}
+
 export default function HomePageClient({ listings }: Props) {
   const t = useTranslations('homepage')
+  const router = useRouter()
   const [filters, setFilters] = useState<ListingFiltersState>(DEFAULT_FILTERS)
-  const [applied, setApplied] = useState<ListingFiltersState>(DEFAULT_FILTERS)
 
-  const filtered = useMemo(
-    () => listings.filter((item) => matchesListingFilters(item, applied)),
-    [listings, applied]
+  const preview = useMemo(
+    () => listings.filter((item) => matchesListingFilters(item, filters)).slice(0, 6),
+    [listings, filters]
   )
+
+  function goToListings(next?: ListingFiltersState) {
+    const target = next ?? filters
+    setFilters(target)
+    router.push(listingsHref(target))
+  }
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
@@ -78,12 +102,12 @@ export default function HomePageClient({ listings }: Props) {
           <SearchFilterBar
             value={filters}
             onChange={setFilters}
-            onSearch={() => setApplied(filters)}
+            onSearch={(next) => goToListings(next)}
           />
         </div>
       </section>
 
-      <section id="listings" className="py-16 md:py-20 px-6">
+      <section className="py-16 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-bold text-center mb-10"
@@ -92,23 +116,76 @@ export default function HomePageClient({ listings }: Props) {
             {t('featuredTitle')}
           </h2>
 
-          {filtered.length === 0 ? (
+          {preview.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-10 text-center">
-              <p className="text-[#5C5247] mb-5">No listings yet in this area. Be the first →</p>
-              <Link
-                href="/list-property"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
-              >
-                {t('ctaList')}
-              </Link>
+              <p className="text-[#5C5247] mb-5">{t('featuredEmpty')}</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href="/listings"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-[12px] text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors"
+                >
+                  {t('viewAllListings')}
+                </Link>
+                <Link
+                  href="/list-property"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
+                >
+                  {t('ctaList')}
+                </Link>
+              </div>
             </div>
           ) : (
-            <div className="grid gap-6 grid-cols-1 md:grid-cols-3 animate-stagger">
-              {filtered.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
-              ))}
-            </div>
+            <>
+              <div className="grid gap-6 grid-cols-1 md:grid-cols-3 animate-stagger">
+                {preview.map((listing) => (
+                  <ListingCard key={listing.id} listing={listing} />
+                ))}
+              </div>
+              <div className="mt-10 text-center">
+                <Link
+                  href="/listings"
+                  className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
+                >
+                  {t('viewAllListings')}
+                </Link>
+              </div>
+            </>
           )}
+        </div>
+      </section>
+
+      <section className="w-full border-t border-b border-[#C8973A]/40 bg-[#FAF7F0] py-12 md:py-16 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="order-1">
+            <img
+              src="/dog-wheelchair-small.webp"
+              alt={t('donateSectionTitle')}
+              className="w-full rounded-[12px] object-cover max-h-[320px]"
+            />
+          </div>
+          <div className="order-2 text-center md:text-left">
+            <p className="text-[#C8973A] text-xs md:text-sm font-medium uppercase tracking-wider mb-3">
+              {t('donateSectionEyebrow')}
+            </p>
+            <h2
+              className="text-3xl md:text-4xl font-bold text-[#1A2744] mb-4"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
+              {t('donateSectionTitle')}
+            </h2>
+            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6 whitespace-pre-line">
+              {t('donateSectionBody')}
+            </p>
+            <a
+              href="https://www.savedsouls-foundation.org/en/donate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors"
+            >
+              {t('donateSectionCta')}
+            </a>
+            <p className="mt-3 text-xs text-[#5C5247]">{t('donateSectionNote')}</p>
+          </div>
         </div>
       </section>
 
@@ -174,8 +251,7 @@ export default function HomePageClient({ listings }: Props) {
       </section>
 
       <section className="px-6 pb-16">
-        <div className="max-w-5xl mx-auto space-y-6">
-          <ThaiDataCard compact />
+        <div className="max-w-5xl mx-auto">
           <TitleVerifyCta />
         </div>
       </section>

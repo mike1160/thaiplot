@@ -7,6 +7,27 @@ export const PROPERTY_TYPES = [
   'Commercial',
 ] as const
 
+/** Stored category values on listings.category */
+export const LISTING_CATEGORIES = [
+  'Land & Property',
+  'Vehicle',
+  'Boat',
+  'Business',
+  'Other',
+] as const
+
+export type ListingCategory = (typeof LISTING_CATEGORIES)[number]
+
+/** Filter pills: All | Land & Property | Vehicles | Boats | Businesses | Other */
+export const CATEGORY_FILTERS = [
+  { value: 'All', labelKey: 'catAll' as const },
+  { value: 'Land & Property', labelKey: 'catLandProperty' as const },
+  { value: 'Vehicle', labelKey: 'catVehicles' as const },
+  { value: 'Boat', labelKey: 'catBoats' as const },
+  { value: 'Business', labelKey: 'catBusinesses' as const },
+  { value: 'Other', labelKey: 'catOther' as const },
+] as const
+
 export const FILTER_REGIONS = [
   'All',
   'Pranburi',
@@ -26,12 +47,14 @@ export const FILTER_REGIONS = [
 export const TRANSACTIONS = ['For Sale', 'For Rent', 'Both'] as const
 
 export type ListingFiltersState = {
+  category: string
   propertyType: string
   region: string
   transaction: string
 }
 
 export const DEFAULT_FILTERS: ListingFiltersState = {
+  category: 'All',
   propertyType: 'All',
   region: 'All',
   transaction: 'For Sale',
@@ -137,16 +160,33 @@ export function listingPhotoUrl(
   return mapped[0] || HERO_FALLBACK
 }
 
+export function normalizeListingCategory(category?: string | null): ListingCategory {
+  const value = (category || '').trim()
+  if (LISTING_CATEGORIES.includes(value as ListingCategory)) {
+    return value as ListingCategory
+  }
+  return 'Land & Property'
+}
+
 export function matchesListingFilters<
   T extends {
+    category?: string | null
     property_type?: string | null
     region?: string | null
     location?: string | null
     transaction_type?: string | null
   },
 >(listing: T, filters: ListingFiltersState): boolean {
+  const listingCategory = normalizeListingCategory(listing.category)
+  const categoryOk =
+    filters.category === 'All' || listingCategory === filters.category
+
   const typeOk =
     filters.propertyType === 'All' ||
+    filters.category === 'Vehicle' ||
+    filters.category === 'Boat' ||
+    filters.category === 'Business' ||
+    filters.category === 'Other' ||
     (listing.property_type || '').toLowerCase() === filters.propertyType.toLowerCase()
 
   const regionOk =
@@ -164,5 +204,5 @@ export function matchesListingFilters<
     transactionOk = true
   }
 
-  return typeOk && regionOk && transactionOk
+  return categoryOk && typeOk && regionOk && transactionOk
 }

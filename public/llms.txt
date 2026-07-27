@@ -1,14 +1,15 @@
 # ThaiPlot
-> Thailand's independent land and property marketplace
+> Thailand's independent marketplace — land, property, vehicles and more
 
-ThaiPlot.com connects international buyers with verified land
-and property listings across Thailand. We specialize in Hua Hin,
-Pranburi, Phuket and surrounding areas.
+ThaiPlot.com connects international buyers with verified listings
+across Thailand: land & property, vehicles, boats, businesses and
+other items. Listed by owners and agents.
 
 ## What we offer
 - Land for sale with Chanote title deeds
 - Villas, condos and commercial property
-- Free property listing for owners and agents
+- Vehicles, boats and businesses
+- Free listing for owners and agents
 - Title deed verification tool at data.hua-hin-land.com
 - Guides on buying property in Thailand as a foreigner
 
@@ -25,7 +26,7 @@ Hua Hin, Pranburi, Sam Roi Yod, Prachuap Khiri Khan, Phuket
 
 ## Links
 - Listings: https://www.thaiplot.com/listings
-- List property: https://www.thaiplot.com/list-property
+- List on ThaiPlot: https://www.thaiplot.com/list-property
 - Buying guide: https://www.thaiplot.com/info/buying-land-thailand
 - Title deed info: https://www.thaiplot.com/info/chanote-title-deed
 - Verify title: https://data.hua-hin-land.com

@@ -19,6 +19,12 @@ export type PublicListing = Pick<
   | 'photo_3'
   | 'photo_4'
   | 'photo_5'
+  | 'category'
+  | 'vehicle_type'
+  | 'vehicle_brand'
+  | 'vehicle_year'
+  | 'vehicle_mileage'
+  | 'condition'
 >
 
 export type ListingFilters = {
@@ -32,6 +38,8 @@ export async function fetchApprovedListings(
 ): Promise<PublicListing[]> {
   try {
     const supabase = getSupabasePublic()
+    const selectWithCategory =
+      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5, category, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition'
     const selectWithRegion =
       'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
     const selectWithoutRegion =
@@ -61,7 +69,12 @@ export async function fetchApprovedListings(
       return query
     }
 
-    let { data, error } = await runQuery(selectWithRegion, true)
+    let { data, error } = await runQuery(selectWithCategory, true)
+
+    // Fallback if marketplace columns are not migrated yet
+    if (error && /(category|vehicle_|condition)/i.test(error.message || '')) {
+      ;({ data, error } = await runQuery(selectWithRegion, true))
+    }
 
     // Fallback if photo columns are not migrated yet
     if (error && /photo_/i.test(error.message || '')) {
@@ -81,6 +94,12 @@ export async function fetchApprovedListings(
     return ((data || []) as unknown as PublicListing[]).map((row) => ({
       ...row,
       region: row.region || 'Hua Hin',
+      category: row.category || 'Land & Property',
+      vehicle_type: row.vehicle_type ?? null,
+      vehicle_brand: row.vehicle_brand ?? null,
+      vehicle_year: row.vehicle_year ?? null,
+      vehicle_mileage: row.vehicle_mileage ?? null,
+      condition: row.condition ?? null,
       photo_1: row.photo_1 ?? null,
       photo_2: row.photo_2 ?? null,
       photo_3: row.photo_3 ?? null,

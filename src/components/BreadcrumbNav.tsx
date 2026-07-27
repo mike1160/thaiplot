@@ -56,7 +56,6 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
   const tn = useTranslations('navigation')
   const pathname = usePathname()
   const crumbs = buildCrumbs(pathname)
-  const parent = crumbs.length >= 2 ? crumbs[crumbs.length - 2] : crumbs[0]
 
   return (
     <nav
@@ -72,7 +71,7 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
           {tn('brandTitle')}
         </Link>
 
-        <ol className="hidden sm:flex items-center gap-1.5 text-xs text-stone-500 min-w-0 flex-wrap justify-end">
+        <ol className="flex items-center gap-1.5 text-xs text-stone-500 min-w-0 flex-wrap justify-end">
           {crumbs.map((crumb, index) => {
             const isLast = index === crumbs.length - 1
             const label = t(crumb.labelKey)
@@ -99,14 +98,6 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
             )
           })}
         </ol>
-
-        <Link
-          href={parent.href || '/'}
-          className="sm:hidden inline-flex items-center gap-1.5 text-xs text-stone-500 hover:text-amber-600 transition-colors"
-        >
-          <span aria-hidden>←</span>
-          <span className="truncate max-w-[50vw]">{t(parent.labelKey)}</span>
-        </Link>
       </div>
     </nav>
   )

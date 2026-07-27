@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — Thailands oberoende marknadsplats för mark & fastigheter",
-    "description": "Hitta mark, villor och condos i hela Thailand. Chanote-tomter från ägare och mäklare — från Hua Hin till Phuket."
+    "title": "ThaiPlot — Thailands oberoende marknadsplats",
+    "description": "Thailands oberoende marknadsplats — mark, fastigheter, fordon och mer. Listat av ägare och mäklare."
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
-    "brandSubtitle": "Thailand Property",
+    "brandSubtitle": "Thailand Marketplace",
     "listings": "Objekt",
-    "listProperty": "Lägg ut objekt",
+    "listProperty": "Lista på ThaiPlot",
     "contact": "Kontakt",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
@@ -51,7 +51,7 @@
     "home": "Hem",
     "pages": {
       "listings": "Objekt",
-      "listProperty": "Lägg ut objekt",
+      "listProperty": "Lista på ThaiPlot",
       "contact": "Kontakt",
       "privacy": "Integritet",
       "disclaimer": "Ansvarsfriskrivning",
@@ -65,30 +65,37 @@
   },
   "homepage": {
     "eyebrow": "🇹🇭 Oberoende · Verifierat · Direkt",
-    "heroTitle": "Hitta mark & fastigheter i hela Thailand",
-    "heroSubtitle": "Från Hua Hin till Phuket — chanote-tomter, villor och condos från ägare och mäklare.",
+    "heroTitle": "Hitta mark, fastigheter & mer i Thailand",
+    "heroSubtitle": "Mark, fastigheter, fordon och mer — listat av ägare i hela Thailand.",
     "ctaBrowse": "Bläddra bland objekt",
-    "ctaList": "Lägg ut din fastighet",
+    "ctaList": "Lista på ThaiPlot",
     "filterAll": "Alla",
-    "featuredTitle": "Aktuella objekt",
+    "featuredTitle": "Aktuella annonser",
     "contactAgent": "Kontakta mäklare",
     "agentTitle": "Vår lokala markspecialist",
     "agentRole": "Thailändsk markmäklare — Hua Hin & omnejd",
     "agentListingsTitle": "Objekt via Thanathip",
-    "ctaBarTitle": "Har du en fastighet att lägga ut?",
-    "ctaBarButton": "Lägg ut din fastighet →",
+    "ctaBarTitle": "Har du något att lista?",
+    "ctaBarButton": "Lista på ThaiPlot →",
     "ctaBarNote": "Gratis annons · Nå internationella köpare · Du behåller kontrollen",
     "footerExplore": "Utforska",
     "footerRegions": "Regioner",
     "footerResources": "Resurser",
-    "footerCopyright": "© 2026 ThaiPlot · Oberoende fastighetsannonser i Thailand",
+    "footerCopyright": "© 2026 ThaiPlot · Oberoende Thailand-marknadsplats",
     "donateTitle": "🐾 Ge hopp till gatuhundar i Thailand",
     "donateText": "Stöd Saved Souls Foundation — varje donation gör skillnad",
-    "donateCta": "❤️ Donera nu"
+    "donateCta": "❤️ Donera nu",
+    "donateSectionEyebrow": "Saved Souls Foundation · Thailand",
+    "donateSectionTitle": "Ge hopp till gatuhundar i Thailand",
+    "donateSectionBody": "Tusentals hundar lever på thailändska gator utan vård eller skydd.\nSaved Souls Foundation räddar, behandlar och omplacerar dem.\nVarje donation gör direkt skillnad.",
+    "donateSectionCta": "Donera nu → savedsouls.org",
+    "donateSectionNote": "Ideell · Registrerad i Thailand · 100% går till hundarna",
+    "viewAllListings": "Visa alla objekt →",
+    "featuredEmpty": "Inga objekt i den här förhandsvisningen. Gå till hela listan →"
   },
   "listings": {
-    "pageTitle": "Fastighetsobjekt",
-    "pageSubtitle": "Fastigheter till salu eller uthyrning i hela Thailand, inskickade av ägare och mäklare.",
+    "pageTitle": "Annonser",
+    "pageSubtitle": "Mark, fastigheter, fordon och mer — listat av ägare och mäklare i Thailand.",
     "empty": "Inga objekt ännu i detta område. Bli den första →",
     "badgeSale": "Till salu",
     "badgeRent": "Att hyra",
@@ -106,11 +113,24 @@
     "typeVilla": "Villa",
     "typeCommercial": "Kommersiellt",
     "cardLegalNote": "Information från annonsören. Verifiera alltid äganderättsbevis och detaljer självständigt före beslut.",
-    "cardLegalLink": "→ Ansvarsfriskrivning"
+    "cardLegalLink": "→ Ansvarsfriskrivning",
+    "heroEyebrow": "Objekt",
+    "catAll": "Alla",
+    "catLandProperty": "Mark & fastigheter",
+    "catVehicles": "Fordon",
+    "catBoats": "Båtar",
+    "catBusinesses": "Företag",
+    "catOther": "Övrigt",
+    "filterAllTypes": "Alla typer",
+    "filterAllRegions": "Alla regioner",
+    "filterTransaction": "Transaktion",
+    "searchButton": "Sök annonser →",
+    "mileage": "Mätarställning",
+    "condition": "Skick"
   },
   "listProperty": {
-    "pageTitle": "Lägg ut din fastighet",
-    "pageSubtitle": "Nå internationella köpare som söker mark, bostäder och condos i hela Thailand.",
+    "pageTitle": "Lista vad som helst i Thailand",
+    "pageSubtitle": "Mark, fastigheter, fordon, båtar, företag och mer — nå internationella köpare i Thailand.",
     "sectionContact": "Dina kontaktuppgifter",
     "name": "Fullständigt namn",
     "email": "E-postadress",
@@ -142,7 +162,53 @@
     "submitting": "Skickar...",
     "successTitle": "Tack!",
     "successMessage": "Vi har mottagit din annons och hör av oss snart.",
-    "errorMessage": "Något gick fel. Försök igen eller mejla oss direkt."
+    "errorMessage": "Något gick fel. Försök igen eller mejla oss direkt.",
+    "heroEyebrow": "Lista på ThaiPlot",
+    "sectionCategory": "Vad vill du lista?",
+    "category": "Kategori",
+    "catLandProperty": "Mark & fastigheter",
+    "catVehicle": "Fordon",
+    "catBoat": "Båt",
+    "catBusiness": "Företag",
+    "catOther": "Övrigt",
+    "sectionVehicle": "Fordonsuppgifter",
+    "sectionBoat": "Båtuppgifter",
+    "sectionBusiness": "Företagsuppgifter",
+    "sectionOther": "Artikeluppgifter",
+    "vehicleType": "Fordonstyp",
+    "vehicleTypeCar": "Bil",
+    "vehicleTypeMotorcycle": "Motorcykel",
+    "vehicleTypeTruck": "Lastbil",
+    "vehicleTypeVan": "Skåpbil",
+    "vehicleTypeOther": "Övrigt",
+    "vehicleBrand": "Märke & modell",
+    "vehicleYear": "Årsmodell",
+    "vehicleMileage": "Mätarställning",
+    "condition": "Skick",
+    "conditionNew": "Ny",
+    "conditionLikeNew": "Som ny",
+    "conditionGood": "Bra",
+    "conditionFair": "Acceptabel",
+    "priceRequired": "Pris",
+    "locationThailand": "Plats i Thailand",
+    "photos": "Foton (upp till 5)",
+    "photosHint": "Valfria foto-URL:er. Du kan också skicka foton efter inlämning.",
+    "photoUrlPlaceholder": "Foto {n} URL",
+    "boatType": "Båttyp",
+    "boatTypeSpeedboat": "Speedbåt",
+    "boatTypeLongtail": "Longtail",
+    "boatTypeYacht": "Yacht",
+    "boatTypeFishing": "Fiskebåt",
+    "boatTypeOther": "Övrigt",
+    "boatLength": "Längd (meter)",
+    "engineType": "Motortyp",
+    "locationMooring": "Plats / förtöjning",
+    "businessType": "Företagstyp",
+    "annualRevenue": "Årsomsättning (valfritt)",
+    "askingPrice": "Utropspris",
+    "reasonForSelling": "Anledning till försäljning",
+    "itemName": "Artikelnamn",
+    "otherCategory": "Kategori (fritext)"
   },
   "contact": {
     "pageTitle": "Kontakt",
@@ -154,12 +220,13 @@
     "send": "Skicka meddelande",
     "sending": "Skickar...",
     "sent": "Tack — vi hör av oss snart.",
-    "error": "Något gick fel. Försök igen eller kontakta oss via LINE."
+    "error": "Något gick fel. Försök igen eller kontakta oss via LINE.",
+    "heroEyebrow": "Kontakt"
   },
   "legal": {
     "disclaimerMetaTitle": "Juridisk ansvarsfriskrivning | ThaiPlot",
     "disclaimerMetaDescription": "Ansvarsfriskrivning för ThaiPlot-annonser och information om markköp i Thailand.",
-    "disclaimerTitle": "Juridisk ansvarsfriskrivning",
+    "disclaimerTitle": "Ansvarsfriskrivning & viktiga meddelanden",
     "disclaimerIntro": "Läs denna text noga innan du använder thaiplot.com eller förlitar dig på webbplatsens innehåll.",
     "disclaimerSections": [
       {
@@ -242,15 +309,58 @@
       }
     ],
     "disclaimerBody": "Läs denna text noga innan du använder thaiplot.com eller förlitar dig på webbplatsens innehåll.",
-    "privacyBody": "Denna policy beskriver vilka personuppgifter ThaiPlot samlar in, varför, och dina val."
+    "privacyBody": "Denna policy beskriver vilka personuppgifter ThaiPlot samlar in, varför, och dina val.",
+    "disclaimerEyebrow": "Juridiskt",
+    "disclaimerHeroTitle": "Ansvarsfriskrivning & viktiga meddelanden",
+    "disclaimerHeroSubtitle": "Läs noga innan du använder webbplatsen",
+    "privacyEyebrow": "Juridiskt",
+    "privacyHeroTitle": "Integritetspolicy",
+    "privacyHeroSubtitle": "Hur vi hanterar dina uppgifter",
+    "warningsTitle": "Vanliga praktiker att känna till i Thailand",
+    "thailandWarnings": [
+      {
+        "title": "Bedrägeri med äganderättsbevis",
+        "body": "Vissa säljare visar falska eller omtvistade titelakter. Verifiera alltid original-Chanote på lokala Land Office (กรมที่ดิน) före betalning."
+      },
+      {
+        "title": "Muntliga avtal",
+        "body": "Muntliga avtal saknar rättsverkan i thailändsk fastighetsrätt. Kräv alltid skriftliga kontrakt granskade av licensierad jurist."
+      },
+      {
+        "title": "Olicensierade mäklare",
+        "body": "Thailand har många olicensierade mäklare. Begär alltid legitimation. ThaiPlot arbetar endast med identifierade agenter — Thanathip arbetar oberoende och transparent."
+      },
+      {
+        "title": "Depositionfällor",
+        "body": "Betala aldrig deposition utan korrekt kontrakt. Depositioner är ofta icke-återbetalningsbara. Använd escrow eller licensierad jurist."
+      },
+      {
+        "title": "Risker med bolagsstrukturer",
+        "body": "Vissa agenter driver utländska köpare mot thailändska bolag för att ”äga” mark. Det kan vara olagligt utan verklig verksamhet. Konsultera oberoende jurist — inte säljarens."
+      },
+      {
+        "title": "Begränsningar för utländskt ägande",
+        "body": "Utlänningar kan inte äga mark direkt. Condo kan ägas (upp till 49 % utländsk kvot). Leasehold (30 år, förnybart) är vanligast. Påståenden om direkt ägande är vilseledande."
+      },
+      {
+        "title": "Valuta- och överföringsrisker",
+        "body": "Använd alltid officiella banköverföringar. Betala aldrig kontant. Begär officiella kvitton."
+      },
+      {
+        "title": "Bygg- och renoveringstillstånd",
+        "body": "Bygge utan tillstånd är vanligt men olagligt. Kontrollera bygglov innan köp av mark för byggande."
+      }
+    ],
+    "aboutTitle": "Om ThaiPlot och vår agent",
+    "aboutBody": "ThaiPlot är en oberoende listningsplattform.\nVi är inte en mäklarfirma och tar ingen provision.\nVår lokala agent Thanathip arbetar oberoende.\nVi samarbetar inte med dolda återförsäljare eller underagenter.\nAlla annonser skickas in direkt av ägare eller agenter.\nThaiPlot garanterar inte riktigheten i någon annons."
   },
   "thaiData": {
     "title": "🔍 Kontrollera thailändska mark- och företagsregister — gratis",
     "subtitle": "ThaiData förklarar Thailands offentliga register på klar engelska. Kontrollera ägande, titelakter, bolagsregistreringar med mera.",
     "button": "Öppna ThaiData →",
-    "verifyTitle": "Verifiera vilken thailändsk titelakt som helst själv — gratis",
-    "verifyText": "Använd vårt gratis dataverktyg för att kontrollera ägande, företagsregister och juridisk status innan du köper.",
-    "verifyButton": "Öppna verifieringsverktyg →",
+    "verifyTitle": "🔍 Verifiera vilken thailändsk titelakt eller företag som helst — gratis",
+    "verifyText": "ThaiData förklarar Thailands offentliga register på klar engelska. Markägande, bolagsregistrering, domstolshandlingar.",
+    "verifyButton": "Öppna ThaiData →",
     "footerTools": "Verktyg",
     "footerVerify": "Verifiera titelakt → data.hua-hin-land.com"
   },

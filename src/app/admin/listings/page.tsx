@@ -108,6 +108,7 @@ export default async function AdminListingsPage({ searchParams }: Props) {
             <tr style={{ textAlign: 'left', background: '#1A2744', color: '#fff' }}>
               <th style={{ padding: 10 }}>Name</th>
               <th style={{ padding: 10 }}>Location</th>
+              <th style={{ padding: 10 }}>Category</th>
               <th style={{ padding: 10 }}>Type</th>
               <th style={{ padding: 10 }}>Status</th>
               <th style={{ padding: 10 }}>Date</th>
@@ -122,6 +123,7 @@ export default async function AdminListingsPage({ searchParams }: Props) {
                   {row.location || '—'}
                   {row.region ? ` (${row.region})` : ''}
                 </td>
+                <td style={{ padding: 10 }}>{row.category || 'Land & Property'}</td>
                 <td style={{ padding: 10 }}>{row.property_type || '—'}</td>
                 <td style={{ padding: 10, color: statusColor(row.status), fontWeight: 600 }}>
                   {row.status}
@@ -150,7 +152,7 @@ export default async function AdminListingsPage({ searchParams }: Props) {
             ))}
             {listings.length === 0 && (
               <tr>
-                <td colSpan={6} style={{ padding: 20, textAlign: 'center', color: '#5C5247' }}>
+                <td colSpan={7} style={{ padding: 20, textAlign: 'center', color: '#5C5247' }}>
                   No listings found.
                 </td>
               </tr>

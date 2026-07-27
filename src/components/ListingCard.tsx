@@ -197,23 +197,46 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
 
       <div className="p-5 md:p-6 flex flex-col flex-1">
         <p className="text-[#C8973A] text-xs font-medium uppercase tracking-wider mb-1">
-          {listing.region || listing.location || 'Thailand'}
+          {[listing.category && listing.category !== 'Land & Property' ? listing.category : null, listing.region || listing.location || 'Thailand']
+            .filter(Boolean)
+            .join(' · ')}
         </p>
         <h3
           className="text-lg md:text-xl font-bold text-[#1A2744] mb-3"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          {listing.location || 'Thailand'}
+          {listing.vehicle_brand
+            ? `${listing.vehicle_brand}${listing.vehicle_year ? ` (${listing.vehicle_year})` : ''}`
+            : listing.location || 'Thailand'}
         </h3>
 
         <dl className="space-y-2 text-sm mb-3">
+          {listing.vehicle_type ? (
+            <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
+              <dt className="text-[#5C5247]">{t('propertyType')}</dt>
+              <dd className="text-[#1A2744] font-medium text-right">{listing.vehicle_type}</dd>
+            </div>
+          ) : null}
+          {listing.vehicle_mileage ? (
+            <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
+              <dt className="text-[#5C5247]">{t('mileage')}</dt>
+              <dd className="text-[#1A2744] font-medium text-right">{listing.vehicle_mileage}</dd>
+            </div>
+          ) : null}
+          {listing.condition ? (
+            <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
+              <dt className="text-[#5C5247]">{t('condition')}</dt>
+              <dd className="text-[#1A2744] font-medium text-right">{listing.condition}</dd>
+            </div>
+          ) : null}
           {listing.size ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('size')}</dt>
               <dd className="text-[#1A2744] font-medium text-right">{listing.size}</dd>
             </div>
           ) : null}
-          {(listing.title_deed || '').trim() ? (
+          {(listing.title_deed || '').trim() &&
+          (!listing.category || listing.category === 'Land & Property') ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
               <dd className="text-[#1A2744] font-medium text-right">
@@ -225,6 +248,12 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('price')}</dt>
               <dd className="text-[#1A2744] font-medium text-right">{listing.price}</dd>
+            </div>
+          ) : null}
+          {listing.vehicle_brand && listing.location ? (
+            <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
+              <dt className="text-[#5C5247]">{t('region')}</dt>
+              <dd className="text-[#1A2744] font-medium text-right">{listing.location}</dd>
             </div>
           ) : null}
         </dl>
@@ -269,7 +298,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
         <p className="text-xs text-stone-400 leading-relaxed text-center mt-3">
           {t('cardLegalNote')}{' '}
           <Link
-            href="/legal/disclaimer"
+            href="/legal/disclaimer#warnings"
             className="underline underline-offset-2 hover:text-stone-500 transition-colors"
           >
             {t('cardLegalLink')}

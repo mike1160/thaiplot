@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import { buildPageMetadata } from '@/lib/seo'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
@@ -35,6 +36,7 @@ export default async function VisaRetirementPage({ params }: Props) {
     <InfoPageShell
       title={t('title')}
       subtitle={t('subtitle')}
+      heroImage={HERO_PHOTOS.visa}
       sections={[
         section('oa'),
         section('elite'),

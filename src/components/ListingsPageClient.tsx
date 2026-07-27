@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/InfoHero'
 import ListingCard from '@/components/ListingCard'
 import SearchFilterBar from '@/components/SearchFilterBar'
 import type { PublicListing } from '@/lib/listings'
@@ -13,19 +14,33 @@ import {
   matchesListingFilters,
   type ListingFiltersState,
 } from '@/lib/listing-ui'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = {
   listings: PublicListing[]
   initialRegion?: string
+  initialPropertyType?: string
+  initialCategory?: string
+  initialTransaction?: string
 }
 
-export default function ListingsPageClient({ listings, initialRegion = 'All' }: Props) {
+export default function ListingsPageClient({
+  listings,
+  initialRegion = 'All',
+  initialPropertyType = 'All',
+  initialCategory = 'All',
+  initialTransaction = 'For Sale',
+}: Props) {
   const t = useTranslations('listings')
   const tn = useTranslations('navigation')
 
   const initial: ListingFiltersState = {
     ...DEFAULT_FILTERS,
     region: initialRegion && initialRegion !== 'All' ? initialRegion : 'All',
+    propertyType:
+      initialPropertyType && initialPropertyType !== 'All' ? initialPropertyType : 'All',
+    category: initialCategory && initialCategory !== 'All' ? initialCategory : 'All',
+    transaction: initialTransaction || 'For Sale',
   }
 
   const [filters, setFilters] = useState<ListingFiltersState>(initial)
@@ -40,26 +55,20 @@ export default function ListingsPageClient({ listings, initialRegion = 'All' }: 
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
 
-      <section className="bg-[#1A2744] py-16 md:py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1
-            className="text-white text-3xl md:text-5xl font-bold leading-tight mb-4"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('pageTitle')}
-          </h1>
-          <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            {t('pageSubtitle')}
-          </p>
-        </div>
-      </section>
+      <InfoHero
+        eyebrow={t('heroEyebrow')}
+        title={t('pageTitle')}
+        subtitle={t('pageSubtitle')}
+        image={HERO_PHOTOS.listings}
+        size="main"
+      />
 
       <section className="px-4 sm:px-6 -mt-8 relative z-10 mb-4">
         <div className="max-w-5xl mx-auto">
           <SearchFilterBar
             value={filters}
             onChange={setFilters}
-            onSearch={() => setApplied(filters)}
+            onSearch={(next) => setApplied(next ?? filters)}
           />
         </div>
       </section>

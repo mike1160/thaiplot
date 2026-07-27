@@ -59,4 +59,10 @@ export type ListingRow = {
   photo_3: string | null
   photo_4: string | null
   photo_5: string | null
+  category: string | null
+  vehicle_type: string | null
+  vehicle_brand: string | null
+  vehicle_year: string | null
+  vehicle_mileage: string | null
+  condition: string | null
 }

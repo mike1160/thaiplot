@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — Marché indépendant de terrains & biens en Thaïlande",
-    "description": "Trouvez terrains, villas et condos partout en Thaïlande. Parcelles Chanote proposées par propriétaires et agents — de Hua Hin à Phuket."
+    "title": "ThaiPlot — Place de marché indépendante en Thaïlande",
+    "description": "Place de marché indépendante en Thaïlande — terrains, biens, véhicules et plus. Proposé par propriétaires et agents."
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
-    "brandSubtitle": "Thailand Property",
+    "brandSubtitle": "Marketplace Thaïlande",
     "listings": "Annonces",
-    "listProperty": "Publier une annonce",
+    "listProperty": "Publier sur ThaiPlot",
     "contact": "Contact",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
@@ -51,7 +51,7 @@
     "home": "Accueil",
     "pages": {
       "listings": "Annonces",
-      "listProperty": "Publier une annonce",
+      "listProperty": "Publier sur ThaiPlot",
       "contact": "Contact",
       "privacy": "Confidentialité",
       "disclaimer": "Avertissement",
@@ -65,30 +65,37 @@
   },
   "homepage": {
     "eyebrow": "🇹🇭 Indépendant · Vérifié · Direct",
-    "heroTitle": "Trouvez terrains & biens partout en Thaïlande",
-    "heroSubtitle": "De Hua Hin à Phuket — parcelles Chanote, villas et condos proposés par propriétaires et agents.",
+    "heroTitle": "Trouvez terrains, biens & plus en Thaïlande",
+    "heroSubtitle": "Terrains, biens, véhicules et plus — proposés par des propriétaires partout en Thaïlande.",
     "ctaBrowse": "Parcourir les annonces",
-    "ctaList": "Publier votre bien",
+    "ctaList": "Publier sur ThaiPlot",
     "filterAll": "Tous",
-    "featuredTitle": "Biens actuellement en ligne",
+    "featuredTitle": "Annonces actuelles",
     "contactAgent": "Contacter l'agent",
     "agentTitle": "Notre spécialiste local des terrains",
     "agentRole": "Agent foncier thaïlandais — Hua Hin & environs",
     "agentListingsTitle": "Biens via Thanathip",
-    "ctaBarTitle": "Vous avez un bien à publier ?",
-    "ctaBarButton": "Publier votre bien →",
+    "ctaBarTitle": "Quelque chose à publier ?",
+    "ctaBarButton": "Publier sur ThaiPlot →",
     "ctaBarNote": "Annonce gratuite · Atteignez des acheteurs internationaux · Vous gardez le contrôle",
     "footerExplore": "Explorer",
     "footerRegions": "Régions",
     "footerResources": "Ressources",
-    "footerCopyright": "© 2026 ThaiPlot · Annonces immobilières indépendantes en Thaïlande",
+    "footerCopyright": "© 2026 ThaiPlot · Place de marché indépendante en Thaïlande",
     "donateTitle": "🐾 Donnez de l'espoir aux chiens des rues en Thaïlande",
     "donateText": "Soutenez Saved Souls Foundation — chaque don compte",
-    "donateCta": "❤️ Faire un don"
+    "donateCta": "❤️ Faire un don",
+    "donateSectionEyebrow": "Saved Souls Foundation · Thailand",
+    "donateSectionTitle": "Donnez de l'espoir aux chiens des rues en Thaïlande",
+    "donateSectionBody": "Des milliers de chiens vivent dans les rues thaïlandaises sans soins ni abri.\nSaved Souls Foundation les sauve, les soigne et les recueille.\nChaque don fait une différence directe.",
+    "donateSectionCta": "Faire un don → savedsouls.org",
+    "donateSectionNote": "À but non lucratif · Enregistrée en Thaïlande · 100 % pour les chiens",
+    "viewAllListings": "Voir toutes les annonces →",
+    "featuredEmpty": "Aucune annonce dans cet aperçu. Voir la page complète →"
   },
   "listings": {
-    "pageTitle": "Annonces immobilières",
-    "pageSubtitle": "Biens à vendre ou à louer partout en Thaïlande, soumis par propriétaires et agents.",
+    "pageTitle": "Annonces",
+    "pageSubtitle": "Terrains, biens, véhicules et plus — proposés par propriétaires et agents en Thaïlande.",
     "empty": "Aucune annonce dans cette zone pour le moment. Soyez le premier →",
     "badgeSale": "À vendre",
     "badgeRent": "À louer",
@@ -106,11 +113,24 @@
     "typeVilla": "Villa",
     "typeCommercial": "Commercial",
     "cardLegalNote": "Informations fournies par l’annonceur. Vérifiez toujours le titre et les détails de façon indépendante avant toute décision.",
-    "cardLegalLink": "→ Avertissement"
+    "cardLegalLink": "→ Avertissement",
+    "heroEyebrow": "Annonces",
+    "catAll": "Tout",
+    "catLandProperty": "Terrains & biens",
+    "catVehicles": "Véhicules",
+    "catBoats": "Bateaux",
+    "catBusinesses": "Entreprises",
+    "catOther": "Autre",
+    "filterAllTypes": "Tous les types",
+    "filterAllRegions": "Toutes les régions",
+    "filterTransaction": "Transaction",
+    "searchButton": "Rechercher →",
+    "mileage": "Kilométrage",
+    "condition": "État"
   },
   "listProperty": {
-    "pageTitle": "Publier votre bien",
-    "pageSubtitle": "Atteignez des acheteurs internationaux à la recherche de terrains, maisons et condos en Thaïlande.",
+    "pageTitle": "Publiez n'importe quoi en Thaïlande",
+    "pageSubtitle": "Terrains, biens, véhicules, bateaux, entreprises et plus — touchez des acheteurs internationaux en Thaïlande.",
     "sectionContact": "Vos coordonnées",
     "name": "Nom complet",
     "email": "Adresse e-mail",
@@ -142,7 +162,53 @@
     "submitting": "Envoi...",
     "successTitle": "Merci !",
     "successMessage": "Nous avons bien reçu votre annonce et vous recontacterons bientôt.",
-    "errorMessage": "Une erreur s'est produite. Veuillez réessayer ou nous écrire directement."
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer ou nous écrire directement.",
+    "heroEyebrow": "Publier sur ThaiPlot",
+    "sectionCategory": "Que souhaitez-vous publier ?",
+    "category": "Catégorie",
+    "catLandProperty": "Terrains & biens",
+    "catVehicle": "Véhicule",
+    "catBoat": "Bateau",
+    "catBusiness": "Entreprise",
+    "catOther": "Autre",
+    "sectionVehicle": "Détails du véhicule",
+    "sectionBoat": "Détails du bateau",
+    "sectionBusiness": "Détails de l'entreprise",
+    "sectionOther": "Détails de l'article",
+    "vehicleType": "Type de véhicule",
+    "vehicleTypeCar": "Voiture",
+    "vehicleTypeMotorcycle": "Moto",
+    "vehicleTypeTruck": "Camion",
+    "vehicleTypeVan": "Fourgon",
+    "vehicleTypeOther": "Autre",
+    "vehicleBrand": "Marque & modèle",
+    "vehicleYear": "Année",
+    "vehicleMileage": "Kilométrage",
+    "condition": "État",
+    "conditionNew": "Neuf",
+    "conditionLikeNew": "Comme neuf",
+    "conditionGood": "Bon",
+    "conditionFair": "Correct",
+    "priceRequired": "Prix",
+    "locationThailand": "Lieu en Thaïlande",
+    "photos": "Photos (jusqu'à 5)",
+    "photosHint": "URLs de photos optionnelles. Vous pouvez aussi envoyer des photos après soumission.",
+    "photoUrlPlaceholder": "URL photo {n}",
+    "boatType": "Type de bateau",
+    "boatTypeSpeedboat": "Hors-bord",
+    "boatTypeLongtail": "Longtail",
+    "boatTypeYacht": "Yacht",
+    "boatTypeFishing": "Pêche",
+    "boatTypeOther": "Autre",
+    "boatLength": "Longueur (mètres)",
+    "engineType": "Type de moteur",
+    "locationMooring": "Lieu / amarrage",
+    "businessType": "Type d'entreprise",
+    "annualRevenue": "Chiffre d'affaires annuel (optionnel)",
+    "askingPrice": "Prix demandé",
+    "reasonForSelling": "Raison de la vente",
+    "itemName": "Nom de l'article",
+    "otherCategory": "Catégorie (texte libre)"
   },
   "contact": {
     "pageTitle": "Contact",
@@ -154,12 +220,13 @@
     "send": "Envoyer le message",
     "sending": "Envoi...",
     "sent": "Merci — nous vous recontacterons bientôt.",
-    "error": "Une erreur s'est produite. Réessayez ou contactez-nous sur LINE."
+    "error": "Une erreur s'est produite. Réessayez ou contactez-nous sur LINE.",
+    "heroEyebrow": "Contact"
   },
   "legal": {
     "disclaimerMetaTitle": "Avertissement juridique | ThaiPlot",
     "disclaimerMetaDescription": "Avertissement juridique pour les annonces ThaiPlot et l’achat de terrains en Thaïlande.",
-    "disclaimerTitle": "Avertissement juridique",
+    "disclaimerTitle": "Avertissement & notices importantes",
     "disclaimerIntro": "Veuillez lire attentivement cet avertissement avant d’utiliser thaiplot.com ou de vous fier à son contenu.",
     "disclaimerSections": [
       {
@@ -242,15 +309,58 @@
       }
     ],
     "disclaimerBody": "Veuillez lire attentivement cet avertissement avant d’utiliser thaiplot.com ou de vous fier à son contenu.",
-    "privacyBody": "Cette politique explique quelles données personnelles ThaiPlot collecte, pourquoi, et vos choix."
+    "privacyBody": "Cette politique explique quelles données personnelles ThaiPlot collecte, pourquoi, et vos choix.",
+    "disclaimerEyebrow": "Juridique",
+    "disclaimerHeroTitle": "Avertissement & notices importantes",
+    "disclaimerHeroSubtitle": "Veuillez lire attentivement avant d’utiliser ce site",
+    "privacyEyebrow": "Juridique",
+    "privacyHeroTitle": "Politique de confidentialité",
+    "privacyHeroSubtitle": "Comment nous traitons vos données",
+    "warningsTitle": "Pratiques courantes à connaître en Thaïlande",
+    "thailandWarnings": [
+      {
+        "title": "Fraude aux titres de propriété",
+        "body": "Certains vendeurs présentent de faux titres ou litigieux. Vérifiez toujours le Chanote original au Land Office local (กรมที่ดิน) avant tout paiement."
+      },
+      {
+        "title": "Accords verbaux",
+        "body": "Les accords verbaux n’ont aucune valeur en droit immobilier thaïlandais. Exigez toujours des contrats écrits examinés par un avocat agréé."
+      },
+      {
+        "title": "Agents non licenciés",
+        "body": "La Thaïlande compte de nombreux agents non licenciés. Demandez toujours une identification. ThaiPlot ne travaille qu’avec des agents identifiés — Thanathip opère de façon indépendante et transparente."
+      },
+      {
+        "title": "Pièges des acomptes",
+        "body": "Ne versez jamais d’acompte sans contrat approprié. Les acomptes sont souvent non remboursables. Utilisez un séquestre ou un avocat agréé."
+      },
+      {
+        "title": "Risques des structures sociétaires",
+        "body": "Certains agents poussent les acheteurs étrangers vers des sociétés thaïlandaises pour « posséder » un terrain. Cela peut être illégal sans activité réelle. Consultez un avocat indépendant — pas celui du vendeur."
+      },
+      {
+        "title": "Limites de propriété étrangère",
+        "body": "Les étrangers ne peuvent pas posséder de terrain directement. Les condos peuvent l’être (quota étranger jusqu’à 49 %). Le bail emphytéotique (30 ans, renouvelable) est la structure la plus courante."
+      },
+      {
+        "title": "Risques de devise et de transfert",
+        "body": "Utilisez toujours des virements bancaires officiels. Ne payez jamais en espèces. Exigez des reçus officiels."
+      },
+      {
+        "title": "Permis de construire et de rénovation",
+        "body": "Construire sans permis est courant mais illégal. Vérifiez les permis avant d’acheter un terrain à bâtir."
+      }
+    ],
+    "aboutTitle": "À propos de ThaiPlot et de notre agent",
+    "aboutBody": "ThaiPlot est une plateforme d’annonces indépendante.\nNous ne sommes pas une agence immobilière et ne percevons pas de commission.\nNotre agent local Thanathip opère de façon indépendante.\nNous ne travaillons pas avec des revendeurs ou sous-agents non divulgués.\nToutes les annonces sont soumises directement par des propriétaires ou agents.\nThaiPlot ne garantit pas l’exactitude des annonces."
   },
   "thaiData": {
     "title": "🔍 Vérifiez les registres fonciers et sociétés thaïlandais — gratuit",
     "subtitle": "ThaiData explique les registres publics thaïlandais en anglais clair. Vérifiez propriété, titres, sociétés et plus.",
     "button": "Ouvrir ThaiData →",
-    "verifyTitle": "Vérifiez vous-même tout titre de propriété thaï — gratuit",
-    "verifyText": "Utilisez notre outil gratuit pour vérifier propriété, sociétés et statut juridique avant d’acheter.",
-    "verifyButton": "Ouvrir l’outil de vérification →",
+    "verifyTitle": "🔍 Vérifiez tout titre ou société thaï — gratuit",
+    "verifyText": "ThaiData explique les registres publics thaïlandais en anglais clair. Propriété foncière, sociétés, dossiers judiciaires.",
+    "verifyButton": "Ouvrir ThaiData →",
     "footerTools": "Outils",
     "footerVerify": "Vérifier un titre → data.hua-hin-land.com"
   },

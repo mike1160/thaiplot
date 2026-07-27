@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — タイの独立した土地・不動産マーケットプレイス",
-    "description": "タイ全国の土地、ヴィラ、コンドを探せます。所有者やエージェントによるチャノート区画——フアヒンからプーケットまで。"
+    "title": "ThaiPlot — タイの独立マーケットプレイス",
+    "description": "タイの独立マーケットプレイス — 土地・不動産・車両など。オーナーとエージェントによる掲載。"
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
-    "brandSubtitle": "Thailand Property",
+    "brandSubtitle": "タイマーケット",
     "listings": "物件一覧",
-    "listProperty": "物件を掲載",
+    "listProperty": "ThaiPlotに掲載",
     "contact": "お問い合わせ",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
@@ -51,7 +51,7 @@
     "home": "ホーム",
     "pages": {
       "listings": "物件一覧",
-      "listProperty": "物件を掲載",
+      "listProperty": "ThaiPlotに掲載",
       "contact": "お問い合わせ",
       "privacy": "プライバシー",
       "disclaimer": "免責事項",
@@ -65,30 +65,37 @@
   },
   "homepage": {
     "eyebrow": "🇹🇭 独立 · 確認済み · 直接",
-    "heroTitle": "タイ全国の土地と不動産を探す",
-    "heroSubtitle": "フアヒンからプーケットまで——所有者やエージェントによるチャノート区画、ヴィラ、コンド。",
+    "heroTitle": "タイ全土の土地・不動産などを探す",
+    "heroSubtitle": "土地、不動産、車両など — タイ全土のオーナーが掲載。",
     "ctaBrowse": "物件を見る",
-    "ctaList": "物件を掲載する",
+    "ctaList": "ThaiPlotに掲載",
     "filterAll": "すべて",
-    "featuredTitle": "掲載中の物件",
+    "featuredTitle": "現在の掲載",
     "contactAgent": "エージェントに連絡",
     "agentTitle": "現地の土地スペシャリスト",
     "agentRole": "タイの土地エージェント — フアヒン＆周辺",
     "agentListingsTitle": "Thanathip の物件",
-    "ctaBarTitle": "掲載したい物件がありますか？",
-    "ctaBarButton": "物件を掲載する →",
+    "ctaBarTitle": "掲載したいものはありますか？",
+    "ctaBarButton": "ThaiPlotに掲載 →",
     "ctaBarNote": "無料掲載 · 海外の買い手にリーチ · あなたが管理を維持",
     "footerExplore": "探す",
     "footerRegions": "地域",
     "footerResources": "リソース",
-    "footerCopyright": "© 2026 ThaiPlot · タイの独立した不動産リスティング",
+    "footerCopyright": "© 2026 ThaiPlot · タイ独立マーケットプレイス",
     "donateTitle": "🐾 タイの野良犬に希望を",
     "donateText": "Saved Souls Foundation を支援 — すべての寄付が力になります",
-    "donateCta": "❤️ 今すぐ寄付"
+    "donateCta": "❤️ 今すぐ寄付",
+    "donateSectionEyebrow": "Saved Souls Foundation · Thailand",
+    "donateSectionTitle": "タイの野良犬に希望を",
+    "donateSectionBody": "何千もの犬がタイの路上で世話や保護もなく暮らしています。\nSaved Souls Foundation は保護・治療・新しい家族探しを行います。\nすべての寄付が直接役立ちます。",
+    "donateSectionCta": "今すぐ寄付 → savedsouls.org",
+    "donateSectionNote": "非営利 · タイ登録 · 100%犬のために",
+    "viewAllListings": "すべての掲載を見る →",
+    "featuredEmpty": "このプレビューに掲載がありません。一覧ページへ →"
   },
   "listings": {
-    "pageTitle": "物件一覧",
-    "pageSubtitle": "所有者やエージェントが投稿した、タイ全国の売買・賃貸物件。",
+    "pageTitle": "掲載一覧",
+    "pageSubtitle": "土地、不動産、車両など — タイ全土のオーナーとエージェントによる掲載。",
     "empty": "このエリアにはまだ物件がありません。最初の投稿者になりましょう →",
     "badgeSale": "売却",
     "badgeRent": "賃貸",
@@ -106,11 +113,24 @@
     "typeVilla": "ヴィラ",
     "typeCommercial": "商業用",
     "cardLegalNote": "情報は掲載者から提供されています。判断前に権利証と詳細を必ず独自に確認してください。",
-    "cardLegalLink": "→ 免責事項"
+    "cardLegalLink": "→ 免責事項",
+    "heroEyebrow": "物件一覧",
+    "catAll": "すべて",
+    "catLandProperty": "土地・不動産",
+    "catVehicles": "車両",
+    "catBoats": "ボート",
+    "catBusinesses": "ビジネス",
+    "catOther": "その他",
+    "filterAllTypes": "すべてのタイプ",
+    "filterAllRegions": "すべての地域",
+    "filterTransaction": "取引",
+    "searchButton": "掲載を検索 →",
+    "mileage": "走行距離",
+    "condition": "状態"
   },
   "listProperty": {
-    "pageTitle": "物件を掲載する",
-    "pageSubtitle": "タイ全国の土地・住宅・コンドを探す海外の買い手にリーチできます。",
+    "pageTitle": "タイで何でも掲載",
+    "pageSubtitle": "土地、不動産、車両、ボート、ビジネスなど — タイ全土の国際バイヤーにリーチ。",
     "sectionContact": "連絡先",
     "name": "氏名",
     "email": "メールアドレス",
@@ -142,7 +162,53 @@
     "submitting": "送信中...",
     "successTitle": "ありがとうございます！",
     "successMessage": "物件を受け取りました。近日中にご連絡します。",
-    "errorMessage": "問題が発生しました。もう一度お試しいただくか、直接メールしてください。"
+    "errorMessage": "問題が発生しました。もう一度お試しいただくか、直接メールしてください。",
+    "heroEyebrow": "ThaiPlotに掲載",
+    "sectionCategory": "何を掲載しますか？",
+    "category": "カテゴリー",
+    "catLandProperty": "土地・不動産",
+    "catVehicle": "車両",
+    "catBoat": "ボート",
+    "catBusiness": "ビジネス",
+    "catOther": "その他",
+    "sectionVehicle": "車両の詳細",
+    "sectionBoat": "ボートの詳細",
+    "sectionBusiness": "ビジネスの詳細",
+    "sectionOther": "アイテムの詳細",
+    "vehicleType": "車両タイプ",
+    "vehicleTypeCar": "車",
+    "vehicleTypeMotorcycle": "バイク",
+    "vehicleTypeTruck": "トラック",
+    "vehicleTypeVan": "バン",
+    "vehicleTypeOther": "その他",
+    "vehicleBrand": "ブランドとモデル",
+    "vehicleYear": "年式",
+    "vehicleMileage": "走行距離",
+    "condition": "状態",
+    "conditionNew": "新品",
+    "conditionLikeNew": "ほぼ新品",
+    "conditionGood": "良好",
+    "conditionFair": "可",
+    "priceRequired": "価格",
+    "locationThailand": "タイ国内の場所",
+    "photos": "写真（最大5枚）",
+    "photosHint": "任意の写真URL。送信後に写真を送ることもできます。",
+    "photoUrlPlaceholder": "写真 {n} のURL",
+    "boatType": "ボートタイプ",
+    "boatTypeSpeedboat": "スピードボート",
+    "boatTypeLongtail": "ロングテール",
+    "boatTypeYacht": "ヨット",
+    "boatTypeFishing": "漁船",
+    "boatTypeOther": "その他",
+    "boatLength": "全長（メートル）",
+    "engineType": "エンジンタイプ",
+    "locationMooring": "場所 / 係留",
+    "businessType": "ビジネスタイプ",
+    "annualRevenue": "年間売上（任意）",
+    "askingPrice": "希望価格",
+    "reasonForSelling": "売却理由",
+    "itemName": "アイテム名",
+    "otherCategory": "カテゴリー（自由記述）"
   },
   "contact": {
     "pageTitle": "お問い合わせ",
@@ -154,12 +220,13 @@
     "send": "メッセージを送信",
     "sending": "送信中...",
     "sent": "ありがとうございます — 近日中にご連絡します。",
-    "error": "問題が発生しました。もう一度お試しいただくか、LINE でご連絡ください。"
+    "error": "問題が発生しました。もう一度お試しいただくか、LINE でご連絡ください。",
+    "heroEyebrow": "お問い合わせ"
   },
   "legal": {
     "disclaimerMetaTitle": "法的免責事項 | ThaiPlot",
     "disclaimerMetaDescription": "ThaiPlot の掲載情報およびタイでの土地購入に関する法的免責事項。",
-    "disclaimerTitle": "法的免責事項",
+    "disclaimerTitle": "免責事項と重要なお知らせ",
     "disclaimerIntro": "thaiplot.com を利用する前、または本サイトの情報に依拠する前に、本免責事項をよくお読みください。",
     "disclaimerSections": [
       {
@@ -242,15 +309,58 @@
       }
     ],
     "disclaimerBody": "thaiplot.com を利用する前、または本サイトの情報に依拠する前に、本免責事項をよくお読みください。",
-    "privacyBody": "本ポリシーは ThaiPlot が収集する個人データ、目的、および選択肢を説明します。"
+    "privacyBody": "本ポリシーは ThaiPlot が収集する個人データ、目的、および選択肢を説明します。",
+    "disclaimerEyebrow": "法的情報",
+    "disclaimerHeroTitle": "免責事項と重要なお知らせ",
+    "disclaimerHeroSubtitle": "本サイトをご利用前に必ずお読みください",
+    "privacyEyebrow": "法的情報",
+    "privacyHeroTitle": "プライバシーポリシー",
+    "privacyHeroSubtitle": "データの取り扱いについて",
+    "warningsTitle": "タイで注意すべき一般的な慣行",
+    "thailandWarnings": [
+      {
+        "title": "権利証詐欺",
+        "body": "偽または争議のある権利証を提示する売主がいます。支払い前に必ず現地の Land Office（กรมที่ดิน）で原本の Chanote を確認してください。"
+      },
+      {
+        "title": "口頭合意",
+        "body": "口頭合意はタイ不動産法で法的効力を持ちません。資格のある弁護士が確認した書面契約を必ず求めてください。"
+      },
+      {
+        "title": "無許可エージェント",
+        "body": "タイには無許可の不動産エージェントが多くいます。必ず身分証明を求めてください。ThaiPlot は身元が確認できるエージェントのみと取引します — Thanathip は独立・透明に活動します。"
+      },
+      {
+        "title": "手付金の罠",
+        "body": "適切な契約なしに手付金を支払わないでください。タイ法では手付金は返還されないことが多いです。エスクローまたは資格のある弁護士を利用してください。"
+      },
+      {
+        "title": "会社スキームのリスク",
+        "body": "一部エージェントは外国人にタイ会社で土地を「所有」させようとします。実体のない事業だと違法になり得ます。売主推奨ではなく独立した弁護士に相談してください。"
+      },
+      {
+        "title": "外国人所有の制限",
+        "body": "外国人はタイで土地を直接所有できません。コンドは可能（建物ごとに外資枠最大49%）。30年更新可能な借地権が最も一般的な合法構造です。"
+      },
+      {
+        "title": "通貨・送金リスク",
+        "body": "不動産支払いには必ず公式銀行送金を使い、現金支払いは避け、公式領収書を受け取ってください。"
+      },
+      {
+        "title": "改修・建築許可",
+        "body": "許可なしの建築はよくありますが違法です。建築予定の土地購入前に建築許可を確認してください。"
+      }
+    ],
+    "aboutTitle": "ThaiPlot とエージェントについて",
+    "aboutBody": "ThaiPlot は独立した掲載プラットフォームです。\n不動産会社ではなく、手数料も得ません。\n現地エージェント Thanathip は独立して活動します。\n非開示の転売業者や下請けエージェントとは協力しません。\n掲載はすべて所有者またはエージェントから直接提出されます。\nThaiPlot は掲載内容の正確性を保証しません。"
   },
   "thaiData": {
     "title": "🔍 タイの土地・会社記録を無料で確認",
     "subtitle": "ThaiData はタイの公的記録をわかりやすく説明します。所有権、権利証、会社登記などを確認できます。",
     "button": "ThaiData を開く →",
-    "verifyTitle": "タイの権利証を自分で無料確認",
-    "verifyText": "購入前に、無料データツールで土地所有、会社記録、法的状況を確認しましょう。",
-    "verifyButton": "確認ツールを開く →",
+    "verifyTitle": "🔍 タイの権利証や会社を無料で確認",
+    "verifyText": "ThaiData はタイの公的記録をわかりやすく説明します。土地所有、会社登記、裁判記録。",
+    "verifyButton": "ThaiData を開く →",
     "footerTools": "ツール",
     "footerVerify": "権利証を確認 → data.hua-hin-land.com"
   },

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import ThaiDataCard, { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { buildPageMetadata } from '@/lib/seo'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
@@ -36,6 +37,7 @@ export default async function ChanotePage({ params }: Props) {
     <InfoPageShell
       title={t('title')}
       subtitle={t('subtitle')}
+      heroImage={HERO_PHOTOS.chanote}
       sections={[
         section('what'),
         section('safest'),

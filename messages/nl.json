@@ -1,13 +1,13 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — Onafhankelijke land- & vastgoedmarktplaats in Thailand",
-    "description": "Vind land, villa's en condo's in heel Thailand. Chanote-percelen van eigenaren en makelaars — van Hua Hin tot Phuket."
+    "title": "ThaiPlot — Onafhankelijke marketplace in Thailand",
+    "description": "Onafhankelijke marketplace in Thailand — land, vastgoed, voertuigen en meer. Aangeboden door eigenaren en agenten."
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
-    "brandSubtitle": "Thailand Property",
+    "brandSubtitle": "Thailand Marketplace",
     "listings": "Aanbod",
-    "listProperty": "Plaats advertentie",
+    "listProperty": "Plaats op ThaiPlot",
     "contact": "Contact",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
@@ -51,7 +51,7 @@
     "home": "Home",
     "pages": {
       "listings": "Aanbod",
-      "listProperty": "Plaats advertentie",
+      "listProperty": "Plaats op ThaiPlot",
       "contact": "Contact",
       "privacy": "Privacy",
       "disclaimer": "Disclaimer",
@@ -65,30 +65,37 @@
   },
   "homepage": {
     "eyebrow": "🇹🇭 Onafhankelijk · Geverifieerd · Direct",
-    "heroTitle": "Vind land & vastgoed in heel Thailand",
-    "heroSubtitle": "Van Hua Hin tot Phuket — chanote-percelen, villa's en condo's van eigenaren en makelaars.",
+    "heroTitle": "Vind land, vastgoed & meer in Thailand",
+    "heroSubtitle": "Land, vastgoed, voertuigen en meer — aangeboden door eigenaren in heel Thailand.",
     "ctaBrowse": "Bekijk aanbod",
-    "ctaList": "Plaats je woning",
+    "ctaList": "Plaats op ThaiPlot",
     "filterAll": "Alles",
-    "featuredTitle": "Huidig aanbod",
+    "featuredTitle": "Nu te koop",
     "contactAgent": "Contact agent",
     "agentTitle": "Onze lokale landspecialist",
     "agentRole": "Thaise landagent — Hua Hin & omgeving",
     "agentListingsTitle": "Aanbod van Thanathip",
-    "ctaBarTitle": "Heb je een object te koop?",
-    "ctaBarButton": "Plaats je woning →",
+    "ctaBarTitle": "Iets te plaatsen?",
+    "ctaBarButton": "Plaats op ThaiPlot →",
     "ctaBarNote": "Gratis listing · Bereik internationale kopers · Jij blijft in controle",
     "footerExplore": "Ontdekken",
     "footerRegions": "Regio's",
     "footerResources": "Resources",
-    "footerCopyright": "© 2026 ThaiPlot · Onafhankelijke Thailand vastgoedlistings",
+    "footerCopyright": "© 2026 ThaiPlot · Onafhankelijke Thailand marketplace",
     "donateTitle": "🐾 Geef hoop aan straathonden in Thailand",
     "donateText": "Steun Saved Souls Foundation — elke donatie helpt",
-    "donateCta": "❤️ Doneer nu"
+    "donateCta": "❤️ Doneer nu",
+    "donateSectionEyebrow": "Saved Souls Foundation · Thailand",
+    "donateSectionTitle": "Geef hoop aan straathonden in Thailand",
+    "donateSectionBody": "Duizenden honden leven op Thaise straten zonder zorg of onderdak.\nSaved Souls Foundation redt, behandelt en herplaatst ze.\nElke donatie maakt direct verschil.",
+    "donateSectionCta": "Doneer nu → savedsouls.org",
+    "donateSectionNote": "Non-profit · Geregistreerd in Thailand · 100% gaat naar de honden",
+    "viewAllListings": "Bekijk alle aanbod →",
+    "featuredEmpty": "Geen aanbod in dit overzicht. Bekijk de volledige listingspagina →"
   },
   "listings": {
-    "pageTitle": "Vastgoedaanbod",
-    "pageSubtitle": "Objecten te koop of te huur in Thailand, geplaatst door eigenaren en makelaars.",
+    "pageTitle": "Advertenties",
+    "pageSubtitle": "Land, vastgoed, voertuigen en meer — aangeboden door eigenaren en agenten in Thailand.",
     "empty": "Nog geen listings in dit gebied. Wees de eerste →",
     "badgeSale": "Te koop",
     "badgeRent": "Te huur",
@@ -106,11 +113,24 @@
     "typeVilla": "Villa",
     "typeCommercial": "Commercieel",
     "cardLegalNote": "Informatie verstrekt door de aanbieder. Verifieer titelakte en details altijd zelfstandig vóór een vastgoedbeslissing.",
-    "cardLegalLink": "→ Disclaimer"
+    "cardLegalLink": "→ Disclaimer",
+    "heroEyebrow": "Aanbod",
+    "catAll": "Alles",
+    "catLandProperty": "Land & vastgoed",
+    "catVehicles": "Voertuigen",
+    "catBoats": "Boten",
+    "catBusinesses": "Bedrijven",
+    "catOther": "Overig",
+    "filterAllTypes": "Alle types",
+    "filterAllRegions": "Alle regio's",
+    "filterTransaction": "Transactie",
+    "searchButton": "Zoek advertenties →",
+    "mileage": "Kilometerstand",
+    "condition": "Conditie"
   },
   "listProperty": {
-    "pageTitle": "Plaats je woning",
-    "pageSubtitle": "Bereik internationale kopers die land, huizen en condo's zoeken in Thailand.",
+    "pageTitle": "Plaats alles in Thailand",
+    "pageSubtitle": "Land, vastgoed, voertuigen, boten, bedrijven en meer — bereik internationale kopers in heel Thailand.",
     "sectionContact": "Jouw contactgegevens",
     "name": "Volledige naam",
     "email": "E-mailadres",
@@ -142,7 +162,53 @@
     "submitting": "Verzenden...",
     "successTitle": "Bedankt!",
     "successMessage": "We hebben je listing ontvangen en nemen snel contact op.",
-    "errorMessage": "Er ging iets mis. Probeer opnieuw of mail ons direct."
+    "errorMessage": "Er ging iets mis. Probeer opnieuw of mail ons direct.",
+    "heroEyebrow": "Plaats op ThaiPlot",
+    "sectionCategory": "Wat wil je plaatsen?",
+    "category": "Categorie",
+    "catLandProperty": "Land & vastgoed",
+    "catVehicle": "Voertuig",
+    "catBoat": "Boot",
+    "catBusiness": "Bedrijf",
+    "catOther": "Overig",
+    "sectionVehicle": "Voertuiggegevens",
+    "sectionBoat": "Bootgegevens",
+    "sectionBusiness": "Bedrijfsgegevens",
+    "sectionOther": "Itemgegevens",
+    "vehicleType": "Type voertuig",
+    "vehicleTypeCar": "Auto",
+    "vehicleTypeMotorcycle": "Motor",
+    "vehicleTypeTruck": "Vrachtwagen",
+    "vehicleTypeVan": "Bestelwagen",
+    "vehicleTypeOther": "Anders",
+    "vehicleBrand": "Merk & model",
+    "vehicleYear": "Bouwjaar",
+    "vehicleMileage": "Kilometerstand",
+    "condition": "Conditie",
+    "conditionNew": "Nieuw",
+    "conditionLikeNew": "Als nieuw",
+    "conditionGood": "Goed",
+    "conditionFair": "Redelijk",
+    "priceRequired": "Prijs",
+    "locationThailand": "Locatie in Thailand",
+    "photos": "Foto's (max. 5)",
+    "photosHint": "Optionele foto-URL's. Je kunt foto's ook na inzending sturen.",
+    "photoUrlPlaceholder": "Foto {n} URL",
+    "boatType": "Type boot",
+    "boatTypeSpeedboat": "Speedboot",
+    "boatTypeLongtail": "Longtail",
+    "boatTypeYacht": "Yacht",
+    "boatTypeFishing": "Vissersboot",
+    "boatTypeOther": "Anders",
+    "boatLength": "Lengte (meters)",
+    "engineType": "Motortype",
+    "locationMooring": "Locatie / ligplaats",
+    "businessType": "Type bedrijf",
+    "annualRevenue": "Jaaromzet (optioneel)",
+    "askingPrice": "Vraagprijs",
+    "reasonForSelling": "Reden van verkoop",
+    "itemName": "Naam van het item",
+    "otherCategory": "Categorie (vrije tekst)"
   },
   "contact": {
     "pageTitle": "Contact",
@@ -154,12 +220,13 @@
     "send": "Verstuur bericht",
     "sending": "Verzenden...",
     "sent": "Bedankt — we nemen snel contact op.",
-    "error": "Er ging iets mis. Probeer opnieuw of bereik ons via LINE."
+    "error": "Er ging iets mis. Probeer opnieuw of bereik ons via LINE.",
+    "heroEyebrow": "Contact"
   },
   "legal": {
     "disclaimerMetaTitle": "Juridische disclaimer | ThaiPlot",
     "disclaimerMetaDescription": "Juridische disclaimer voor ThaiPlot-aanbod en informatieve content over land kopen in Thailand.",
-    "disclaimerTitle": "Juridische disclaimer",
+    "disclaimerTitle": "Disclaimer & belangrijke mededelingen",
     "disclaimerIntro": "Lees deze disclaimer zorgvuldig voordat u thaiplot.com gebruikt of vertrouwt op informatie op deze website.",
     "disclaimerSections": [
       {
@@ -242,15 +309,58 @@
       }
     ],
     "disclaimerBody": "Lees deze disclaimer zorgvuldig voordat u thaiplot.com gebruikt of vertrouwt op informatie op deze website.",
-    "privacyBody": "Dit privacybeleid legt uit welke persoonsgegevens ThaiPlot verzamelt, waarom, en welke keuzes u heeft. Door deze website te gebruiken of een formulier te versturen, erkent u dit beleid."
+    "privacyBody": "Dit privacybeleid legt uit welke persoonsgegevens ThaiPlot verzamelt, waarom, en welke keuzes u heeft. Door deze website te gebruiken of een formulier te versturen, erkent u dit beleid.",
+    "disclaimerEyebrow": "Juridisch",
+    "disclaimerHeroTitle": "Disclaimer & belangrijke mededelingen",
+    "disclaimerHeroSubtitle": "Lees dit zorgvuldig voordat u deze site gebruikt",
+    "privacyEyebrow": "Juridisch",
+    "privacyHeroTitle": "Privacybeleid",
+    "privacyHeroSubtitle": "Hoe we met uw gegevens omgaan",
+    "warningsTitle": "Veelvoorkomende praktijken om op te letten in Thailand",
+    "thailandWarnings": [
+      {
+        "title": "Fraude met titelakten",
+        "body": "Sommige verkopers tonen valse of betwiste titelakten. Verifieer altijd het originele Chanote bij het lokale Land Office (กรมที่ดิน) vóór enige betaling."
+      },
+      {
+        "title": "Mondelinge afspraken",
+        "body": "Mondelinge afspraken hebben geen juridische status in het Thaise vastgoedrecht. Eis altijd schriftelijke contracten die door een vergunde advocaat zijn beoordeeld."
+      },
+      {
+        "title": "Ongelicenseerde makelaars",
+        "body": "Thailand kent veel ongelicenseerde vastgoedmakelaars. Vraag altijd om identificatie en credentials. ThaiPlot werkt alleen met geïdentificeerde agenten — onze agent Thanathip werkt onafhankelijk en transparant."
+      },
+      {
+        "title": "Depositovallen",
+        "body": "Betaal nooit een deposito zonder behoorlijk contract. Deposito’s zijn onder Thais recht vaak niet-restitueerbaar. Gebruik altijd een escrow-dienst of vergunde advocaat voor deposito’s."
+      },
+      {
+        "title": "Risico’s van bedrijfsstructuren",
+        "body": "Sommige agenten duwen buitenlandse kopers naar Thaise bedrijfsstructuren om land te “bezitten”. Dit kan illegaal zijn als het bedrijf geen reëel bedrijfsdoel heeft. Raadpleeg altijd een onafhankelijke advocaat — niet iemand die door de verkoper wordt aangeraden."
+      },
+      {
+        "title": "Beperkingen voor buitenlands eigendom",
+        "body": "Buitenlanders kunnen in Thailand geen land rechtstreeks bezitten. Condo’s kunnen wel (tot 49% buitenlands quotum per gebouw). Erfpacht/leasehold (30 jaar, verlengbaar) is de meest gangbare legale structuur. Elke agent die beweert dat buitenlanders land rechtstreeks kunnen “bezitten”, misleidt u."
+      },
+      {
+        "title": "Valuta- en overdrachtsrisico’s",
+        "body": "Gebruik altijd officiële bankoverschrijvingen voor vastgoedbetalingen. Betaal nooit contant. Vraag voor alles officiële ontvangstbewijzen."
+      },
+      {
+        "title": "Renovatie- en bouwvergunningen",
+        "body": "Bouwen zonder juiste vergunningen komt vaak voor, maar is illegaal. Verifieer altijd dat bouwvergunningen aanwezig zijn vóór aankoop van bouwgrond."
+      }
+    ],
+    "aboutTitle": "Over ThaiPlot en onze agent",
+    "aboutBody": "ThaiPlot is een onafhankelijk listingplatform.\nWij zijn geen makelaarskantoor en verdienen geen commissie.\nOnze lokale agent Thanathip werkt onafhankelijk.\nWij werken niet met onbekende doorverkopers of sub-agenten.\nAlle advertenties op ThaiPlot worden rechtstreeks door eigenaren of agenten ingediend.\nThaiPlot garandeert de juistheid van geen enkele advertentie."
   },
   "thaiData": {
     "title": "🔍 Controleer Thaise land- en bedrijfsgegevens — gratis",
     "subtitle": "ThaiData legt Thaise openbare registers uit in begrijpelijke taal. Check eigendom, titelakten, bedrijfsregistraties en meer.",
     "button": "Open ThaiData →",
-    "verifyTitle": "Controleer zelf elke Thaise titelakte — gratis",
-    "verifyText": "Gebruik onze gratis datatool om eigendom, bedrijfsgegevens en juridische status te checken vóór je koopt.",
-    "verifyButton": "Open verificatietool →",
+    "verifyTitle": "🔍 Controleer elke Thaise titelakte of bedrijf — gratis",
+    "verifyText": "ThaiData legt Thaise openbare registers uit in begrijpelijke taal. Grondeigendom, bedrijfsregistratie, gerechtelijke dossiers.",
+    "verifyButton": "Open ThaiData →",
     "footerTools": "Tools",
     "footerVerify": "Titelakte verifiëren → data.hua-hin-land.com"
   },

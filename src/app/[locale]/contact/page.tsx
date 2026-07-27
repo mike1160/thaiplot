@@ -4,9 +4,11 @@ import { FormEvent, useCallback, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/InfoHero'
 import LineButton from '@/components/LineButton'
 import TurnstileWidget from '@/components/TurnstileWidget'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -68,19 +70,13 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
 
-      <section className="bg-[#1A2744] py-16 md:py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1
-            className="text-white text-3xl md:text-5xl font-bold leading-tight mb-4"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('pageTitle')}
-          </h1>
-          <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            {t('pageSubtitle')}
-          </p>
-        </div>
-      </section>
+      <InfoHero
+        eyebrow={t('heroEyebrow')}
+        title={t('pageTitle')}
+        subtitle={t('pageSubtitle')}
+        image={HERO_PHOTOS.contact}
+        size="secondary"
+      />
 
       <section className="py-12 md:py-20 px-6">
         <div className="max-w-3xl mx-auto grid gap-8">
