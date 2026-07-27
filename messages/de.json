@@ -238,7 +238,7 @@
     "photosHelper": "Laden Sie Ihre Fotos bei Google Drive, Dropbox oder ImgBB (imgbb.com) hoch und fügen Sie hier die direkte Bild-URL ein",
     "photosHostingLink": "Kostenloses Foto-Hosting → imgbb.com",
     "photosUrlRule": "Direkte Bild-URLs müssen auf .jpg, .jpeg, .png oder .webp enden",
-    "photosInvalid": "Eine oder mehrere Foto-URLs sind ungültig. Verwenden Sie einen direkten Bildlink mit .jpg, .jpeg, .png oder .webp.",
+    "photosInvalid": "Bitte Foto-Fehler beheben vor dem Absenden.",
     "contactPreferences": "Kontaktpräferenzen",
     "contactViaPhone": "Kontakt per Telefon",
     "contactViaEmail": "Kontakt per E-Mail",
@@ -269,7 +269,15 @@
     "phoneHint": "Thai-Handy: beginnt mit 06, 08, 09 oder +66",
     "previewTitle": "Live-Inserat-Vorschau",
     "previewSubtitle": "So erscheint Ihr Inserat auf ThaiPlot.",
-    "whatsappNumber": "WhatsApp-Nummer"
+    "whatsappNumber": "WhatsApp-Nummer",
+    "photosDropzone": "Fotos hierher ziehen oder klicken zum Hochladen",
+    "photosUploadHint": "Bis zu 5 Fotos (JPG, PNG, WebP). Max. 5MB je Foto.",
+    "photosRemove": "Foto entfernen",
+    "photosTooLarge": "Jedes Foto darf maximal 5MB groß sein.",
+    "photosTypeInvalid": "Nur JPG, JPEG, PNG und WebP sind erlaubt.",
+    "photosUploadFailed": "Upload fehlgeschlagen. Bitte erneut versuchen.",
+    "photosMax": "Sie können maximal 5 Fotos hochladen.",
+    "photosStillUploading": "Bitte warten, bis alle Fotos fertig hochgeladen sind."
   },
   "contact": {
     "pageTitle": "Kontakt",

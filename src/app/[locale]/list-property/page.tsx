@@ -14,14 +14,14 @@ import {
   composeSizeValue,
   defaultSizeUnit,
   formatPriceInput,
-  isDirectImageUrl,
   isValidThaiPhone,
   LIST_PROPERTY_DRAFT_KEY,
   slugifyListing,
 } from '@/lib/list-property-form'
-import { THAI_PROVINCE_GROUPS } from '@/lib/thai-provinces'
 import LocationMapPicker from '@/components/LocationMapPicker'
 import ListingCard from '@/components/ListingCard'
+import ProvinceSelect from '@/components/ProvinceSelect'
+import PhotoUploader from '@/components/PhotoUploader'
 import type { PublicListing } from '@/lib/listings'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
@@ -169,7 +169,8 @@ export default function ListPropertyPage() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [region, setRegion] = useState('')
-  const [photoUrls, setPhotoUrls] = useState(['', '', '', '', ''])
+  const [photoUrls, setPhotoUrls] = useState<string[]>([])
+  const [photosUploading, setPhotosUploading] = useState(false)
 
   const listingSlug = useMemo(
     () => slugifyListing(location, propertyType),
@@ -262,7 +263,10 @@ export default function ListPropertyPage() {
       if (typeof draft.lng === 'number') setLng(draft.lng)
       if (Array.isArray(draft.photoUrls)) {
         setPhotoUrls(
-          [0, 1, 2, 3, 4].map((i) => String((draft.photoUrls as string[])[i] || ''))
+          (draft.photoUrls as unknown[])
+            .map((u) => String(u || '').trim())
+            .filter(Boolean)
+            .slice(0, 5)
         )
       }
       if (typeof draft.category === 'string') setCategory(draft.category as ListingCategory)
@@ -369,7 +373,8 @@ export default function ListPropertyPage() {
     setName('')
     setEmail('')
     setRegion('')
-    setPhotoUrls(['', '', '', '', ''])
+    setPhotoUrls([])
+    setPhotosUploading(false)
     setTurnstileToken('')
     setPhotoError(false)
     localStorage.removeItem(LIST_PROPERTY_DRAFT_KEY)
@@ -389,6 +394,12 @@ export default function ListPropertyPage() {
       return
     }
 
+    if (photosUploading) {
+      setPhotoError(true)
+      setStatus('error')
+      return
+    }
+
     setStatus('loading')
     setSecurityError(false)
     setPhotoError(false)
@@ -397,17 +408,7 @@ export default function ListPropertyPage() {
     const form = e.currentTarget
     const data = new FormData(form)
 
-    const photos = photoUrls.map((u) => u.trim()).filter(Boolean)
-    const formPhotos = [1, 2, 3, 4, 5]
-      .map((n) => String(data.get(`photo${n}`) || '').trim())
-      .filter(Boolean)
-    const finalPhotos = photos.length ? photos : formPhotos
-
-    if (finalPhotos.some((url) => !isDirectImageUrl(url))) {
-      setPhotoError(true)
-      setStatus('error')
-      return
-    }
+    const finalPhotos = photoUrls.map((u) => u.trim()).filter(Boolean).slice(0, 5)
 
     const sizeRaw = sizeValue || String(data.get('size') || '').trim()
     const sizeUnitValue = String(data.get('sizeUnit') || sizeUnit)
@@ -770,32 +771,12 @@ export default function ListPropertyPage() {
                     </select>
                   </div>
 
-                  <div>
-                    <label htmlFor="region" className={labelClass}>
-                      {t('region')} *
-                    </label>
-                    <select
-                      id="region"
-                      name="region"
-                      value={region}
-                      onChange={(e) => setRegion(e.target.value)}
-                      required
-                      className={inputClass}
-                    >
-                      <option value="" disabled>
-                        {t('regionPlaceholder')}
-                      </option>
-                      {THAI_PROVINCE_GROUPS.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.provinces.map((province) => (
-                            <option key={province} value={province}>
-                              {province}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
+                  <ProvinceSelect
+                    value={region}
+                    onChange={setRegion}
+                    label={t('region')}
+                    placeholder={t('regionPlaceholder')}
+                  />
 
                   <div>
                     <label htmlFor="location" className={labelClass}>
@@ -965,34 +946,23 @@ export default function ListPropertyPage() {
                   </div>
 
                   <div className="space-y-3 border-t border-[#E8E2D6] pt-5">
-                    <p className={labelClass}>{t('photos')}</p>
-                    <p className="text-sm text-[#5C5247] leading-relaxed">{t('photosHelper')}</p>
-                    <a
-                      href="https://imgbb.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex text-sm font-medium text-[#C8973A] hover:underline"
-                    >
-                      {t('photosHostingLink')}
-                    </a>
-                    <p className="text-xs text-[#5C5247]">{t('photosUrlRule')}</p>
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <input
-                        key={i}
-                        name={`photo${i + 1}`}
-                        type="url"
-                        value={photoUrls[i]}
-                        onChange={(e) => {
-                          const next = [...photoUrls]
-                          next[i] = e.target.value
-                          setPhotoUrls(next)
-                        }}
-                        placeholder={t('photoUrlPlaceholder', { n: i + 1 })}
-                        className={inputClass}
-                      />
-                    ))}
+                    <PhotoUploader
+                      value={photoUrls}
+                      onChange={setPhotoUrls}
+                      onUploadingChange={setPhotosUploading}
+                      label={t('photos')}
+                      dropzoneText={t('photosDropzone')}
+                      hint={t('photosUploadHint')}
+                      removeLabel={t('photosRemove')}
+                      errorTooLarge={t('photosTooLarge')}
+                      errorType={t('photosTypeInvalid')}
+                      errorUpload={t('photosUploadFailed')}
+                      errorMax={t('photosMax')}
+                    />
                     {photoError ? (
-                      <p className="text-sm text-red-700">{t('photosInvalid')}</p>
+                      <p className="text-sm text-red-700">
+                        {photosUploading ? t('photosStillUploading') : t('photosInvalid')}
+                      </p>
                     ) : null}
                   </div>
                 </div>
@@ -1061,25 +1031,12 @@ export default function ListPropertyPage() {
                     <input id="price" name="price" type="text" required className={inputClass} />
                   </div>
 
-                  <div>
-                    <label htmlFor="region" className={labelClass}>
-                      {t('region')} *
-                    </label>
-                    <select id="region" name="region" defaultValue="" required className={inputClass}>
-                      <option value="" disabled>
-                        {t('regionPlaceholder')}
-                      </option>
-                      {THAI_PROVINCE_GROUPS.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.provinces.map((province) => (
-                            <option key={province} value={province}>
-                              {province}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
+                  <ProvinceSelect
+                    value={region}
+                    onChange={setRegion}
+                    label={t('region')}
+                    placeholder={t('regionPlaceholder')}
+                  />
 
                   <div>
                     <label htmlFor="location" className={labelClass}>
@@ -1107,28 +1064,23 @@ export default function ListPropertyPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <p className={labelClass}>{t('photos')}</p>
-                    <p className="text-sm text-[#5C5247] leading-relaxed">{t('photosHelper')}</p>
-                    <a
-                      href="https://imgbb.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex text-sm font-medium text-[#C8973A] hover:underline"
-                    >
-                      {t('photosHostingLink')}
-                    </a>
-                    <p className="text-xs text-[#5C5247]">{t('photosUrlRule')}</p>
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <input
-                        key={n}
-                        name={`photo${n}`}
-                        type="url"
-                        placeholder={t('photoUrlPlaceholder', { n })}
-                        className={inputClass}
-                      />
-                    ))}
+                    <PhotoUploader
+                      value={photoUrls}
+                      onChange={setPhotoUrls}
+                      onUploadingChange={setPhotosUploading}
+                      label={t('photos')}
+                      dropzoneText={t('photosDropzone')}
+                      hint={t('photosUploadHint')}
+                      removeLabel={t('photosRemove')}
+                      errorTooLarge={t('photosTooLarge')}
+                      errorType={t('photosTypeInvalid')}
+                      errorUpload={t('photosUploadFailed')}
+                      errorMax={t('photosMax')}
+                    />
                     {photoError ? (
-                      <p className="text-sm text-red-700">{t('photosInvalid')}</p>
+                      <p className="text-sm text-red-700">
+                        {photosUploading ? t('photosStillUploading') : t('photosInvalid')}
+                      </p>
                     ) : null}
                   </div>
                 </div>
@@ -1197,25 +1149,12 @@ export default function ListPropertyPage() {
                     <input id="price" name="price" type="text" required className={inputClass} />
                   </div>
 
-                  <div>
-                    <label htmlFor="region" className={labelClass}>
-                      {t('region')} *
-                    </label>
-                    <select id="region" name="region" defaultValue="" required className={inputClass}>
-                      <option value="" disabled>
-                        {t('regionPlaceholder')}
-                      </option>
-                      {THAI_PROVINCE_GROUPS.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.provinces.map((province) => (
-                            <option key={province} value={province}>
-                              {province}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
+                  <ProvinceSelect
+                    value={region}
+                    onChange={setRegion}
+                    label={t('region')}
+                    placeholder={t('regionPlaceholder')}
+                  />
 
                   <div>
                     <label htmlFor="location" className={labelClass}>
@@ -1241,6 +1180,20 @@ export default function ListPropertyPage() {
                       {t('charsRemaining', { count: descriptionRemaining })}
                     </p>
                   </div>
+
+                  <PhotoUploader
+                    value={photoUrls}
+                    onChange={setPhotoUrls}
+                    onUploadingChange={setPhotosUploading}
+                    label={t('photos')}
+                    dropzoneText={t('photosDropzone')}
+                    hint={t('photosUploadHint')}
+                    removeLabel={t('photosRemove')}
+                    errorTooLarge={t('photosTooLarge')}
+                    errorType={t('photosTypeInvalid')}
+                    errorUpload={t('photosUploadFailed')}
+                    errorMax={t('photosMax')}
+                  />
                 </div>
               )}
 
@@ -1274,25 +1227,12 @@ export default function ListPropertyPage() {
                     <input id="price" name="price" type="text" required className={inputClass} />
                   </div>
 
-                  <div>
-                    <label htmlFor="region" className={labelClass}>
-                      {t('region')} *
-                    </label>
-                    <select id="region" name="region" defaultValue="" required className={inputClass}>
-                      <option value="" disabled>
-                        {t('regionPlaceholder')}
-                      </option>
-                      {THAI_PROVINCE_GROUPS.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.provinces.map((province) => (
-                            <option key={province} value={province}>
-                              {province}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
+                  <ProvinceSelect
+                    value={region}
+                    onChange={setRegion}
+                    label={t('region')}
+                    placeholder={t('regionPlaceholder')}
+                  />
 
                   <div>
                     <label htmlFor="location" className={labelClass}>
@@ -1325,6 +1265,20 @@ export default function ListPropertyPage() {
                       {t('charsRemaining', { count: descriptionRemaining })}
                     </p>
                   </div>
+
+                  <PhotoUploader
+                    value={photoUrls}
+                    onChange={setPhotoUrls}
+                    onUploadingChange={setPhotosUploading}
+                    label={t('photos')}
+                    dropzoneText={t('photosDropzone')}
+                    hint={t('photosUploadHint')}
+                    removeLabel={t('photosRemove')}
+                    errorTooLarge={t('photosTooLarge')}
+                    errorType={t('photosTypeInvalid')}
+                    errorUpload={t('photosUploadFailed')}
+                    errorMax={t('photosMax')}
+                  />
                 </div>
               )}
 
@@ -1358,25 +1312,12 @@ export default function ListPropertyPage() {
                     <input id="price" name="price" type="text" required className={inputClass} />
                   </div>
 
-                  <div>
-                    <label htmlFor="region" className={labelClass}>
-                      {t('region')} *
-                    </label>
-                    <select id="region" name="region" defaultValue="" required className={inputClass}>
-                      <option value="" disabled>
-                        {t('regionPlaceholder')}
-                      </option>
-                      {THAI_PROVINCE_GROUPS.map((group) => (
-                        <optgroup key={group.label} label={group.label}>
-                          {group.provinces.map((province) => (
-                            <option key={province} value={province}>
-                              {province}
-                            </option>
-                          ))}
-                        </optgroup>
-                      ))}
-                    </select>
-                  </div>
+                  <ProvinceSelect
+                    value={region}
+                    onChange={setRegion}
+                    label={t('region')}
+                    placeholder={t('regionPlaceholder')}
+                  />
 
                   <div>
                     <label htmlFor="location" className={labelClass}>
@@ -1402,6 +1343,20 @@ export default function ListPropertyPage() {
                       {t('charsRemaining', { count: descriptionRemaining })}
                     </p>
                   </div>
+
+                  <PhotoUploader
+                    value={photoUrls}
+                    onChange={setPhotoUrls}
+                    onUploadingChange={setPhotosUploading}
+                    label={t('photos')}
+                    dropzoneText={t('photosDropzone')}
+                    hint={t('photosUploadHint')}
+                    removeLabel={t('photosRemove')}
+                    errorTooLarge={t('photosTooLarge')}
+                    errorType={t('photosTypeInvalid')}
+                    errorUpload={t('photosUploadFailed')}
+                    errorMax={t('photosMax')}
+                  />
                 </div>
               )}
 
@@ -1481,7 +1436,7 @@ export default function ListPropertyPage() {
                   </button>
                   <button
                     type="submit"
-                    disabled={status === 'loading'}
+                    disabled={status === 'loading' || photosUploading}
                     className="w-full sm:w-auto min-w-[200px] px-6 py-3 rounded-[12px] text-[15px] font-semibold bg-amber-600 hover:bg-amber-700 disabled:opacity-60 disabled:cursor-not-allowed text-white transition-colors duration-200"
                   >
                     {status === 'loading' ? t('submitting') : t('submit')}

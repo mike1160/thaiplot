@@ -238,7 +238,7 @@
     "photosHelper": "Upload je foto's naar Google Drive, Dropbox of ImgBB (imgbb.com) en plak hier de directe afbeeldings-URL",
     "photosHostingLink": "Gratis foto-hosting → imgbb.com",
     "photosUrlRule": "Directe afbeeldings-URL's moeten eindigen op .jpg, .jpeg, .png of .webp",
-    "photosInvalid": "Eén of meer foto-URL's zijn ongeldig. Gebruik een directe link die eindigt op .jpg, .jpeg, .png of .webp.",
+    "photosInvalid": "Los fotofouten op voordat je indient.",
     "contactPreferences": "Contactvoorkeuren",
     "contactViaPhone": "Contact via telefoon",
     "contactViaEmail": "Contact via e-mail",
@@ -269,7 +269,15 @@
     "phoneHint": "Thais mobiel: begint met 06, 08, 09 of +66",
     "previewTitle": "Live advertentie-preview",
     "previewSubtitle": "Zo ziet jouw advertentie eruit op ThaiPlot.",
-    "whatsappNumber": "WhatsApp-nummer"
+    "whatsappNumber": "WhatsApp-nummer",
+    "photosDropzone": "Sleep foto's hierheen of klik om te uploaden",
+    "photosUploadHint": "Maximaal 5 foto's (JPG, PNG, WebP). Max 5MB per foto.",
+    "photosRemove": "Foto verwijderen",
+    "photosTooLarge": "Elke foto mag maximaal 5MB zijn.",
+    "photosTypeInvalid": "Alleen JPG, JPEG, PNG en WebP zijn toegestaan.",
+    "photosUploadFailed": "Upload mislukt. Probeer opnieuw.",
+    "photosMax": "Je kunt maximaal 5 foto's uploaden.",
+    "photosStillUploading": "Wacht tot alle foto's klaar zijn met uploaden."
   },
   "contact": {
     "pageTitle": "Contact",

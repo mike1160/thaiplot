@@ -49,9 +49,12 @@ export default function LocationMapPicker({ lat, lng, onChange, label, hint }: P
       const startLng = lng ?? DEFAULT_LNG
 
       const map = L.map(containerRef.current).setView([startLat, startLng], ZOOM)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap',
-        maxZoom: 19,
+      // Carto Voyager: English place names (standard OSM tiles localize to Thai in Thailand)
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20,
       }).addTo(map)
 
       const marker = L.marker([startLat, startLng], { draggable: true }).addTo(map)

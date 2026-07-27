@@ -238,7 +238,7 @@
     "photosHelper": "Upload your photos to Google Drive, Dropbox, or ImgBB (imgbb.com) and paste the direct image URL here",
     "photosHostingLink": "Free photo hosting → imgbb.com",
     "photosUrlRule": "Direct image URLs must end in .jpg, .jpeg, .png or .webp",
-    "photosInvalid": "One or more photo URLs are invalid. Use a direct image link ending in .jpg, .jpeg, .png or .webp.",
+    "photosInvalid": "Please fix photo upload errors before submitting.",
     "contactPreferences": "Contact preferences",
     "contactViaPhone": "Contact via phone",
     "contactViaEmail": "Contact via email",
@@ -269,7 +269,15 @@
     "phoneHint": "Thai mobile: starts with 06, 08, 09 or +66",
     "previewTitle": "Live listing preview",
     "previewSubtitle": "This is how your listing will appear on ThaiPlot.",
-    "whatsappNumber": "WhatsApp number"
+    "whatsappNumber": "WhatsApp number",
+    "photosDropzone": "Drag photos here or click to upload",
+    "photosUploadHint": "Up to 5 photos (JPG, PNG, WebP). Max 5MB each.",
+    "photosRemove": "Remove photo",
+    "photosTooLarge": "Each photo must be 5MB or smaller.",
+    "photosTypeInvalid": "Only JPG, JPEG, PNG and WebP files are allowed.",
+    "photosUploadFailed": "Upload failed. Please try again.",
+    "photosMax": "You can upload a maximum of 5 photos.",
+    "photosStillUploading": "Please wait until all photos finished uploading."
   },
   "contact": {
     "pageTitle": "Contact",
