@@ -21,7 +21,10 @@ function buildCrumbs(pathname: string) {
   const pageSlug = rest[0] || section
 
   if (section === 'listings') {
-    crumbs.push({ labelKey: 'pages.listings' })
+    crumbs.push({ labelKey: 'pages.listings', href: '/listings' })
+    if (rest[0]) {
+      crumbs.push({ labelKey: 'pages.listingDetail' })
+    }
     return crumbs
   }
   if (section === 'list-property') {

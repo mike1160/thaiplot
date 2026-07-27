@@ -7,11 +7,12 @@ import { trackGaEvent } from '@/lib/ga'
 import { AGENT_NAME, LINE_AGENT_URL } from '@/lib/contact'
 import {
   isFeaturedHomepageListing,
+  listingPhotosFromColumns,
   resolveListingPhotos,
   resolveListingPriceDisplay,
   resolveListingTitleDeed,
 } from '@/lib/listing-ui'
-import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
+import { transactionBadgeKey, type PublicListing } from '@/lib/listings'
 
 type ListingCardProps = {
   listing: PublicListing
@@ -27,25 +28,18 @@ function hrefFromMatch(match: string): string {
 function DescriptionWithLinks({
   text,
   className = '',
-  expanded = false,
+  clamped = false,
 }: {
   text: string
   className?: string
-  expanded?: boolean
+  clamped?: boolean
 }) {
   const parts = text.split(URL_REGEX)
   return (
     <p
-      className={`text-[#5C5247] text-sm leading-relaxed whitespace-pre-line break-words ${className}`.trim()}
-      style={
-        expanded
-          ? {
-              overflow: 'visible',
-              maxHeight: 'none',
-              WebkitLineClamp: 'unset',
-            }
-          : undefined
-      }
+      className={`text-[#5C5247] text-sm leading-relaxed whitespace-pre-line break-words ${
+        clamped ? 'line-clamp-4' : ''
+      } ${className}`.trim()}
     >
       {parts.map((part, index) => {
         if (!part) return null
@@ -92,7 +86,11 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const locale = useLocale()
   const badgeKey = transactionBadgeKey(listing.transaction_type)
   const fullDescription = (listing.description || '').trim()
-  const photos = resolveListingPhotos(listing)
+  // Prefer uploaded photo_* URLs; never pad with empty placeholders
+  const uploadedPhotos = listingPhotosFromColumns(listing)
+  const photos = (
+    uploadedPhotos.length > 0 ? uploadedPhotos : resolveListingPhotos(listing)
+  ).filter((url) => typeof url === 'string' && url.trim().length > 0)
   const titleDeed = resolveListingTitleDeed(listing)
   const priceDisplay = resolveListingPriceDisplay(listing)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -100,18 +98,16 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const [descriptionExpanded, setDescriptionExpanded] = useState(false)
   const isFeatured = isFeaturedHomepageListing(listing.id)
   const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
-  const mainPhoto = photos[activeIndex] || photos[0]
-  const thumbnails = photos.length > 1 ? photos : []
+  const safeIndex = photos.length ? Math.min(activeIndex, photos.length - 1) : 0
+  const mainPhoto = photos[safeIndex] || photos[0]
+  const showThumbStrip = photos.length > 1
   const agentOwned = isAgentListing(listing.name)
   const sellerPhoneHref = phoneToTelHref(listing.phone || '')
   const sellerEmailHref = emailToMailtoHref(listing.email || '')
   const agentHref = contactHref || LINE_AGENT_URL
 
+  // All listings (agent + form sellers): show toggle when description is long
   const needsDescriptionToggle = fullDescription.length > 120
-  const descriptionForRender =
-    descriptionExpanded || !needsDescriptionToggle
-      ? fullDescription
-      : truncateText(fullDescription, 120)
 
   useEffect(() => {
     if (!lightboxOpen) return
@@ -222,15 +218,15 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
           </div>
         </button>
 
-        {thumbnails.length > 0 ? (
+        {showThumbStrip ? (
           <div className="flex gap-1.5 px-2 py-2 bg-[#F7F4EE] overflow-x-auto">
-            {thumbnails.map((photo, index) => (
+            {photos.map((photo, index) => (
               <button
                 key={`${photo}-${index}`}
                 type="button"
                 onClick={() => selectPhoto(index)}
                 className={`relative shrink-0 h-[60px] w-[80px] overflow-hidden rounded-md border-2 transition-colors ${
-                  index === activeIndex ? 'border-amber-500' : 'border-transparent'
+                  index === safeIndex ? 'border-amber-500' : 'border-transparent'
                 }`}
                 aria-label={`Show photo ${index + 1}`}
               >
@@ -251,9 +247,14 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
           className="text-lg md:text-xl font-bold text-[#1A2744] mb-3"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          {listing.vehicle_brand
-            ? `${listing.vehicle_brand}${listing.vehicle_year ? ` (${listing.vehicle_year})` : ''}`
-            : listing.location || 'Thailand'}
+          <Link
+            href={`/listings/${listing.id}`}
+            className="hover:text-[#C8973A] transition-colors"
+          >
+            {listing.vehicle_brand
+              ? `${listing.vehicle_brand}${listing.vehicle_year ? ` (${listing.vehicle_year})` : ''}`
+              : listing.location || 'Thailand'}
+          </Link>
         </h3>
 
         <dl className="space-y-2 text-sm mb-3">
@@ -323,12 +324,16 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
 
         {fullDescription ? (
           <div className="mb-3">
-            <DescriptionWithLinks text={descriptionForRender} expanded={descriptionExpanded} />
+            <DescriptionWithLinks
+              text={fullDescription}
+              clamped={needsDescriptionToggle && !descriptionExpanded}
+            />
             {needsDescriptionToggle ? (
               <button
                 type="button"
                 onClick={() => setDescriptionExpanded((open) => !open)}
-                className="mt-1.5 text-sm text-[#C8973A] cursor-pointer no-underline bg-transparent border-0 p-0 hover:opacity-80 transition-opacity"
+                aria-expanded={descriptionExpanded}
+                className="mt-1.5 inline-flex text-sm font-medium text-[#C8973A] cursor-pointer no-underline bg-transparent border-0 p-0 hover:opacity-80 transition-opacity"
               >
                 {descriptionExpanded ? t('readLess') : t('readMore')}
               </button>

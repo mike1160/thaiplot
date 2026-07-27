@@ -16,7 +16,10 @@
     "guideChanote": "チャノート権利証",
     "guideHuaHin": "フアヒン市場 2026",
     "guidePranburi": "プランブリー物件",
-    "guideVisa": "退職ビザ"
+    "guideVisa": "退職ビザ",
+    "pages": {
+      "listingDetail": "物件"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "プライバシーに配慮した分析を使用します。個人データは販売しません。",
+    "text": "機能的：Cloudflare Turnstile（スパム対策、Cookie なし）。分析的：Google Analytics GA4（G-LR89JN9T3L）— 同意後のみ。広告 Cookie なし。個人データは販売しません。",
     "accept": "同意する",
     "decline": "拒否する",
-    "privacy": "プライバシーポリシー →"
+    "privacy": "プライバシーポリシー →",
+    "categoriesLabel": "Cookie カテゴリ",
+    "catFunctional": "機能的：Cloudflare Turnstile（スパム対策、Cookie なし）",
+    "catAnalytics": "分析的：Google Analytics GA4（G-LR89JN9T3L）",
+    "catAds": "なし：広告 Cookie"
   },
   "breadcrumb": {
     "home": "ホーム",
@@ -361,18 +368,18 @@
         "body": "トランザクションメールは Resend 経由で送信される場合があります。"
       },
       {
-        "title": "分析",
-        "body": "プライバシーに配慮した分析（有効時は Cloudflare 含む）は、必要な場合同意後にのみ読み込みます。"
+        "title": "アナリティクス",
+        "body": "匿名／集計のサイト統計のために Google Analytics GA4（測定 ID G-LR89JN9T3L）を使用します。アナリティクスは Cookie バナーでの同意後にのみ読み込まれます。個人データを販売することはありません。"
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "当サイトは、フォームをスパムや不正利用から保護するために Cloudflare Turnstile を使用しています。Turnstile はバックグラウンドで不可視に動作します。Turnstile が収集するデータは、Cloudflare Turnstile Privacy Addendum に従って処理されます。",
+        "title": "セキュリティ",
+        "body": "フォームのスパム対策として Cloudflare Turnstile（非表示モード）を使用しています。Turnstile は Cloudflare Turnstile Privacy Addendum に従ってデータを処理します。Turnstile は Cookie を設置しません。",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Cookie ポリシー",
-        "body": "バナーで分析 Cookie に同意または拒否できます。"
+        "body": "次のカテゴリを区別します。\n\n機能的：Cloudflare Turnstile（スパム対策、Cookie なし）— フォーム保護に必要。マーケティングでもアナリティクスでもありません。\n\n分析的：Google Analytics GA4（G-LR89JN9T3L）— バナーでの同意後のみ。\n\nなし：広告 Cookie — ThaiPlot は広告 Cookie を設置しません。\n\nCookie 選択の記憶に必要なローカルストレージを使用する場合があります。ブラウザでサイトデータをいつでも削除できます。"
       },
       {
         "title": "権利と削除",

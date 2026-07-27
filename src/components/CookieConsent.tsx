@@ -53,7 +53,23 @@ export default function CookieConsent() {
           <p className="text-[#C8973A] text-[11px] uppercase tracking-[0.2em] font-medium mb-2">
             🍪 {t('title')}
           </p>
-          <p className="text-[#1A2744] text-sm leading-relaxed max-w-2xl mb-4">{t('text')}</p>
+          <p className="text-[#1A2744] text-sm leading-relaxed max-w-2xl mb-3">{t('text')}</p>
+          <div className="mb-4 max-w-2xl">
+            <p className="text-[11px] uppercase tracking-wide text-[#5C5247] font-medium mb-1.5">
+              {t('categoriesLabel')}
+            </p>
+            <ul className="space-y-1 text-xs text-[#5C5247] leading-relaxed">
+              <li>
+                <span className="font-semibold text-[#1A2744]">{t('catFunctional')}</span>
+              </li>
+              <li>
+                <span className="font-semibold text-[#1A2744]">{t('catAnalytics')}</span>
+              </li>
+              <li>
+                <span className="font-semibold text-[#1A2744]">{t('catAds')}</span>
+              </li>
+            </ul>
+          </div>
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <button
               type="button"

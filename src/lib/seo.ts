@@ -12,6 +12,14 @@ export function localizedPath(locale: string, path: string): string {
   return clean ? `${SITE_URL}/${locale}${clean}` : `${SITE_URL}/${locale}`
 }
 
+/** Make image URLs absolute for Open Graph / Twitter cards. */
+export function absoluteAssetUrl(pathOrUrl: string): string {
+  const value = (pathOrUrl || '').trim()
+  if (!value) return `${SITE_URL}/hero.jpg`
+  if (/^https?:\/\//i.test(value)) return value
+  return `${SITE_URL}${value.startsWith('/') ? value : `/${value}`}`
+}
+
 export async function buildPageMetadata({
   locale,
   namespace,

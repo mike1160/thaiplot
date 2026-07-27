@@ -16,7 +16,10 @@
     "guideChanote": "Титул Chanote",
     "guideHuaHin": "Рынок Хуа Хина 2026",
     "guidePranburi": "Недвижимость Прабури",
-    "guideVisa": "Пенсионная виза"
+    "guideVisa": "Пенсионная виза",
+    "pages": {
+      "listingDetail": "Объявление"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Мы используем конфиденциальную аналитику. Персональные данные не продаются.",
+    "text": "Функциональные: Cloudflare Turnstile (защита от спама, без cookie). Аналитические: Google Analytics GA4 (G-LR89JN9T3L) — только с согласия. Без рекламных cookies. Персональные данные не продаются.",
     "accept": "Принять",
     "decline": "Отклонить",
-    "privacy": "Политика конфиденциальности →"
+    "privacy": "Политика конфиденциальности →",
+    "categoriesLabel": "Категории cookies",
+    "catFunctional": "Функциональные: Cloudflare Turnstile (защита от спама, без cookie)",
+    "catAnalytics": "Аналитические: Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "Нет: рекламные cookies"
   },
   "breadcrumb": {
     "home": "Главная",
@@ -362,17 +369,17 @@
       },
       {
         "title": "Аналитика",
-        "body": "Конфиденциальная аналитика (включая Cloudflare при включении) загружается только после согласия на cookies, где это требуется."
+        "body": "Мы используем Google Analytics GA4 (идентификатор G-LR89JN9T3L) для анонимной/агрегированной статистики сайта. Аналитика загружается только после вашего согласия через баннер cookie. Мы не продаём персональные данные."
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "Этот сайт использует Cloudflare Turnstile для защиты форм от спама и злоупотреблений. Turnstile работает незаметно в фоновом режиме. Данные, собираемые Turnstile, обрабатываются в соответствии с Cloudflare Turnstile Privacy Addendum.",
+        "title": "Безопасность",
+        "body": "Мы используем Cloudflare Turnstile (невидимый режим) для защиты форм от спама. Turnstile обрабатывает данные в соответствии с Cloudflare Turnstile Privacy Addendum. Turnstile не устанавливает cookie.",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Политика cookies",
-        "body": "Вы можете принять или отклонить аналитические cookies через баннер."
+        "body": "Мы различаем следующие категории:\n\nФункциональные: Cloudflare Turnstile (защита от спама, без cookie) — необходимо для защиты форм; это не маркетинг и не аналитика.\n\nАналитические: Google Analytics GA4 (G-LR89JN9T3L) — только после согласия через баннер.\n\nНет: рекламные cookies — ThaiPlot не устанавливает рекламные cookies.\n\nНеобходимое локальное хранилище может использоваться для запоминания вашего выбора cookie. Вы можете очистить данные сайта в браузере в любое время."
       },
       {
         "title": "Права и удаление",

@@ -16,7 +16,10 @@
     "guideChanote": "โฉนด Chanote",
     "guideHuaHin": "ตลาดหัวหิน 2026",
     "guidePranburi": "อสังหาฯ ปราณบุรี",
-    "guideVisa": "วีซ่าเกษียณ"
+    "guideVisa": "วีซ่าเกษียณ",
+    "pages": {
+      "listingDetail": "ประกาศ"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "คุกกี้",
-    "text": "เราใช้การวิเคราะห์ที่คำนึงถึงความเป็นส่วนตัว ไม่มีการขายข้อมูลส่วนบุคคล",
+    "text": "ฟังก์ชัน: Cloudflare Turnstile (ป้องกันสแปม ไม่มีคุกกี้) การวิเคราะห์: Google Analytics GA4 (G-LR89JN9T3L) — เฉพาะเมื่อยินยอม ไม่มีคุกกี้โฆษณา ไม่ขายข้อมูลส่วนบุคคล",
     "accept": "ยอมรับ",
     "decline": "ปฏิเสธ",
-    "privacy": "นโยบายความเป็นส่วนตัว →"
+    "privacy": "นโยบายความเป็นส่วนตัว →",
+    "categoriesLabel": "ประเภทคุกกี้",
+    "catFunctional": "ฟังก์ชัน: Cloudflare Turnstile (ป้องกันสแปม ไม่มีคุกกี้)",
+    "catAnalytics": "การวิเคราะห์: Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "ไม่มี: คุกกี้โฆษณา"
   },
   "breadcrumb": {
     "home": "หน้าแรก",
@@ -362,17 +369,17 @@
       },
       {
         "title": "การวิเคราะห์",
-        "body": "อาจใช้การวิเคราะห์ที่คำนึงถึงความเป็นส่วนตัว รวมถึง Cloudflare หากเปิดใช้ โหลดหลังยอมรับคุกกี้เท่านั้น"
+        "body": "เราใช้ Google Analytics GA4 (รหัสวัดผล G-LR89JN9T3L) สำหรับสถิติเว็บไซต์แบบไม่ระบุตัวตน/รวมกลุ่ม การวิเคราะห์จะโหลดหลังคุณยินยอมผ่านแบนเนอร์คุกกี้เท่านั้น เราไม่ขายข้อมูลส่วนบุคคล"
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "เว็บไซต์นี้ใช้ Cloudflare Turnstile เพื่อปกป้องแบบฟอร์มจากสแปมและการใช้งานในทางที่ผิด Turnstile ทำงานแบบมองไม่เห็นในพื้นหลัง ข้อมูลที่ Turnstile เก็บรวบรวมจะได้รับการประมวลผลตาม Cloudflare Turnstile Privacy Addendum",
+        "title": "ความปลอดภัย",
+        "body": "เราใช้ Cloudflare Turnstile (โหมดมองไม่เห็น) เพื่อป้องกันสแปมในแบบฟอร์ม Turnstile ประมวลผลข้อมูลตาม Cloudflare Turnstile Privacy Addendum และไม่ตั้งค่าคุกกี้",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "นโยบายคุกกี้",
-        "body": "คุณสามารถยอมรับหรือปฏิเสธคุกกี้การวิเคราะห์ผ่านแบนเนอร์"
+        "body": "เราแยกประเภทดังนี้:\n\nฟังก์ชัน: Cloudflare Turnstile (ป้องกันสแปม ไม่มีคุกกี้) — จำเป็นเพื่อปกป้องแบบฟอร์ม ไม่ใช่การตลาดและไม่ใช่การวิเคราะห์\n\nการวิเคราะห์: Google Analytics GA4 (G-LR89JN9T3L) — เฉพาะหลังยินยอมผ่านแบนเนอร์\n\nไม่มี: คุกกี้โฆษณา — ThaiPlot ไม่วางคุกกี้โฆษณา\n\nอาจใช้ที่เก็บข้อมูลท้องถิ่นที่จำเป็นเพื่อจำตัวเลือกคุกกี้ของคุณ คุณล้างข้อมูลไซต์ในเบราว์เซอร์ได้ทุกเมื่อ"
       },
       {
         "title": "สิทธิและการลบ",

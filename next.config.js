@@ -10,6 +10,7 @@ const nextConfig = {
       { source: '/legal/:path*', destination: '/en/legal/:path*' },
       { source: '/info/:path*', destination: '/en/info/:path*' },
       { source: '/list-property', destination: '/en/list-property' },
+      { source: '/listings/:id', destination: '/en/listings/:id' },
       { source: '/listings', destination: '/en/listings' },
       { source: '/contact', destination: '/en/contact' },
     ]

@@ -16,7 +16,10 @@
     "guideChanote": "Chanote 地契",
     "guideHuaHin": "华欣市场 2026",
     "guidePranburi": "班武里房产",
-    "guideVisa": "退休签证"
+    "guideVisa": "退休签证",
+    "pages": {
+      "listingDetail": "房源"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "我们使用注重隐私的分析工具。不会出售个人数据。",
+    "text": "功能性：Cloudflare Turnstile（垃圾信息防护，无 cookie）。分析性：Google Analytics GA4（G-LR89JN9T3L）— 仅在同意后。无广告 cookie。不出售个人数据。",
     "accept": "接受",
     "decline": "拒绝",
-    "privacy": "隐私政策 →"
+    "privacy": "隐私政策 →",
+    "categoriesLabel": "Cookie 类别",
+    "catFunctional": "功能性：Cloudflare Turnstile（垃圾信息防护，无 cookie）",
+    "catAnalytics": "分析性：Google Analytics GA4（G-LR89JN9T3L）",
+    "catAds": "无：广告 cookie"
   },
   "breadcrumb": {
     "home": "首页",
@@ -362,17 +369,17 @@
       },
       {
         "title": "分析",
-        "body": "可能使用注重隐私的分析（含已启用的 Cloudflare）。在需要同意时，仅在您接受 Cookie 后加载。"
+        "body": "我们使用 Google Analytics GA4（衡量 ID G-LR89JN9T3L）获取匿名/汇总的网站统计。仅在您通过 cookie 横幅同意后才会加载分析。我们不出售个人数据。"
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "本网站使用 Cloudflare Turnstile 保护表单免受垃圾信息和滥用。Turnstile 在后台以不可见方式运行。Turnstile 收集的数据按照 Cloudflare Turnstile Privacy Addendum 进行处理。",
+        "title": "安全",
+        "body": "我们使用 Cloudflare Turnstile（不可见模式）对表单进行垃圾信息防护。Turnstile 按照 Cloudflare Turnstile Privacy Addendum 处理数据。Turnstile 不会设置 cookie。",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Cookie 政策",
-        "body": "您可通过横幅接受或拒绝分析 Cookie。"
+        "body": "我们区分以下类别：\n\n功能性：Cloudflare Turnstile（垃圾信息防护，无 cookie）— 用于保护表单；不属于营销，也不属于分析。\n\n分析性：Google Analytics GA4（G-LR89JN9T3L）— 仅在通过横幅同意后启用。\n\n无：广告 cookie — ThaiPlot 不放置广告 cookie。\n\n可能会使用必要的本地存储来记住您的 cookie 选择。您可随时在浏览器中清除网站数据。"
       },
       {
         "title": "权利与删除",

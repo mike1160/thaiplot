@@ -71,7 +71,11 @@ export function listingPhotosFromColumns(listing: {
 }): string[] {
   return [listing.photo_1, listing.photo_2, listing.photo_3, listing.photo_4, listing.photo_5]
     .map((url) => (typeof url === 'string' ? url.trim() : ''))
-    .filter((url): url is string => Boolean(url))
+    .filter((url): url is string => {
+      if (!url) return false
+      const lower = url.toLowerCase()
+      return lower !== 'null' && lower !== 'undefined'
+    })
 }
 
 /** Map listing to local gallery photos by stable listing id (preferred). */

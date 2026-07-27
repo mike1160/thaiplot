@@ -16,7 +16,10 @@
     "guideChanote": "Chanote-titelakt",
     "guideHuaHin": "Hua Hin-marknaden 2026",
     "guidePranburi": "Pranburi fastigheter",
-    "guideVisa": "Pensionsvisum"
+    "guideVisa": "Pensionsvisum",
+    "pages": {
+      "listingDetail": "Annons"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Vi använder integritetsvänlig analys. Ingen personlig data säljs.",
+    "text": "Funktionell: Cloudflare Turnstile (spamskydd, ingen cookie). Analytisk: Google Analytics GA4 (G-LR89JN9T3L) — endast med samtycke. Inga annonscookies. Inga personuppgifter säljs.",
     "accept": "Acceptera",
     "decline": "Avböj",
-    "privacy": "Integritetspolicy →"
+    "privacy": "Integritetspolicy →",
+    "categoriesLabel": "Cookiekategorier",
+    "catFunctional": "Funktionell: Cloudflare Turnstile (spamskydd, ingen cookie)",
+    "catAnalytics": "Analytisk: Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "Inga: annonscookies"
   },
   "breadcrumb": {
     "home": "Hem",
@@ -365,14 +372,14 @@
         "body": "Integritetsvänlig analys (inkl. Cloudflare om aktiverat) laddas först efter cookie-acceptans där det krävs."
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "Denna webbplats använder Cloudflare Turnstile för att skydda formulär mot spam och missbruk. Turnstile arbetar osynligt i bakgrunden. Uppgifter som samlas in av Turnstile behandlas enligt Cloudflare Turnstile Privacy Addendum.",
+        "title": "Säkerhet",
+        "body": "Vi använder Cloudflare Turnstile (invisible mode) för spamskydd på formulär. Turnstile behandlar uppgifter enligt Cloudflare Turnstile Privacy Addendum. Turnstile sätter inga cookies.",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Cookiepolicy",
-        "body": "Du kan acceptera eller avböja analyscookies via bannern."
+        "body": "Vi skiljer på följande kategorier:\n\nFunktionell: Cloudflare Turnstile (spamskydd, ingen cookie) — krävs för att skydda formulär; detta är inte marknadsföring och inte analytics.\n\nAnalytisk: Google Analytics GA4 (G-LR89JN9T3L) — endast efter samtycke via bannern.\n\nInga: annonscookies — ThaiPlot sätter inga annonscookies.\n\nNödvändig lokal lagring kan användas för att komma ihåg ditt cookie-val. Du kan rensa webbplatsdata i din webbläsare när som helst."
       },
       {
         "title": "Rättigheter och radering",

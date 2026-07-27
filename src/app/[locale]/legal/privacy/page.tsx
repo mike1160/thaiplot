@@ -54,7 +54,9 @@ export default async function PrivacyPage({ params }: Props) {
               >
                 {section.title}
               </h2>
-              <p className="text-[#5C5247] leading-relaxed text-sm md:text-base">{section.body}</p>
+              <p className="text-[#5C5247] leading-relaxed text-sm md:text-base whitespace-pre-line">
+                {section.body}
+              </p>
               {section.linkUrl ? (
                 <p className="mt-2 text-sm md:text-base">
                   <a

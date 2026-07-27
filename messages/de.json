@@ -16,7 +16,10 @@
     "guideChanote": "Chanote-Titel",
     "guideHuaHin": "Hua-Hin-Markt 2026",
     "guidePranburi": "Pranburi Immobilien",
-    "guideVisa": "Ruhestandsvisum"
+    "guideVisa": "Ruhestandsvisum",
+    "pages": {
+      "listingDetail": "Inserat"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Wir nutzen datenschutzfreundliche Analysen. Keine Verkauf personenbezogener Daten.",
+    "text": "Funktional: Cloudflare Turnstile (Spamschutz, kein Cookie). Analytisch: Google Analytics GA4 (G-LR89JN9T3L) — nur mit Zustimmung. Keine Werbe-Cookies. Keine personenbezogenen Daten verkauft.",
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
-    "privacy": "Datenschutz →"
+    "privacy": "Datenschutz →",
+    "categoriesLabel": "Cookie-Kategorien",
+    "catFunctional": "Funktional: Cloudflare Turnstile (Spamschutz, kein Cookie)",
+    "catAnalytics": "Analytisch: Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "Keine: Werbe-Cookies"
   },
   "breadcrumb": {
     "home": "Home",
@@ -365,14 +372,14 @@
         "body": "Wir können datenschutzfreundliche Analysen nutzen (inkl. Cloudflare, falls aktiv). Laden nur nach Cookie-Zustimmung, wo erforderlich."
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "Diese Website verwendet Cloudflare Turnstile, um Formulare vor Spam und Missbrauch zu schützen. Turnstile arbeitet unsichtbar im Hintergrund. Die von Turnstile erhobenen Daten werden gemäß dem Cloudflare Turnstile Privacy Addendum verarbeitet.",
+        "title": "Sicherheit",
+        "body": "Wir verwenden Cloudflare Turnstile (Invisible Mode) zum Spamschutz bei Formularen. Turnstile verarbeitet Daten gemäß dem Cloudflare Turnstile Privacy Addendum. Turnstile setzt keine Cookies.",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Cookie-Richtlinie",
-        "body": "Über das Banner können Sie Analysen akzeptieren oder ablehnen. Essenzielle Speicherung für die Cookie-Wahl kann weiterhin genutzt werden."
+        "body": "Wir unterscheiden folgende Kategorien:\n\nFunktional: Cloudflare Turnstile (Spamschutz, kein Cookie) — erforderlich zum Schutz von Formularen; dies ist kein Marketing und keine Analytics.\n\nAnalytisch: Google Analytics GA4 (G-LR89JN9T3L) — nur nach Zustimmung über das Banner.\n\nKeine: Werbe-Cookies — ThaiPlot setzt keine Werbe-Cookies.\n\nEssentieller lokaler Speicher kann verwendet werden, um Ihre Cookie-Wahl zu speichern. Sie können Website-Daten jederzeit in Ihrem Browser löschen."
       },
       {
         "title": "Rechte und Löschung",

@@ -231,6 +231,113 @@ export async function fetchApprovedListings(
   }
 }
 
+export type ListingSitemapRow = {
+  id: string
+  slug: string | null
+  approved_at: string | null
+  created_at: string
+}
+
+/** Lightweight rows for sitemap URL generation. */
+export async function fetchApprovedListingsForSitemap(): Promise<ListingSitemapRow[]> {
+  noStore()
+  try {
+    const supabase = getSupabaseAdmin()
+    const withSlug = await supabase
+      .from('listings')
+      .select('id, slug, approved_at, created_at')
+      .eq('status', 'approved')
+      .order('created_at', { ascending: false })
+
+    if (!withSlug.error && Array.isArray(withSlug.data)) {
+      return withSlug.data.map((row) => ({
+        id: row.id,
+        slug: (row as { slug?: string | null }).slug ?? null,
+        approved_at: row.approved_at ?? null,
+        created_at: row.created_at,
+      }))
+    }
+
+    const base = await supabase
+      .from('listings')
+      .select('id, approved_at, created_at')
+      .eq('status', 'approved')
+      .order('created_at', { ascending: false })
+
+    if (base.error || !base.data) {
+      console.error('[fetchApprovedListingsForSitemap]', base.error?.message || withSlug.error?.message)
+      return []
+    }
+
+    return base.data.map((row) => ({
+      id: row.id,
+      slug: null,
+      approved_at: row.approved_at ?? null,
+      created_at: row.created_at,
+    }))
+  } catch (error) {
+    console.error('[fetchApprovedListingsForSitemap]', error)
+    return []
+  }
+}
+
+/** Public listing by id or slug (approved only). */
+export async function getListing(idOrSlug: string): Promise<PublicListing | null> {
+  noStore()
+  const key = (idOrSlug || '').trim()
+  if (!key) return null
+
+  try {
+    const supabase = getSupabaseAdmin()
+
+    const byId = await supabase
+      .from('listings')
+      .select(SELECT_WITH_CATEGORY)
+      .eq('status', 'approved')
+      .eq('id', key)
+      .maybeSingle()
+
+    if (!byId.error && byId.data) {
+      return mapRows([byId.data as unknown as PublicListing])[0] || null
+    }
+
+    // Retry without marketplace-only columns
+    if (byId.error) {
+      const byIdBase = await supabase
+        .from('listings')
+        .select(SELECT_BASE)
+        .eq('status', 'approved')
+        .eq('id', key)
+        .maybeSingle()
+      if (!byIdBase.error && byIdBase.data) {
+        return mapRows([byIdBase.data as unknown as PublicListing])[0] || null
+      }
+    }
+
+    // Optional slug lookup (column may not exist yet)
+    const bySlug = await supabase
+      .from('listings')
+      .select(SELECT_WITH_CATEGORY)
+      .eq('status', 'approved')
+      .eq('slug', key)
+      .maybeSingle()
+
+    if (!bySlug.error && bySlug.data) {
+      return mapRows([bySlug.data as unknown as PublicListing])[0] || null
+    }
+
+    return null
+  } catch (error) {
+    console.error('[getListing]', error)
+    return null
+  }
+}
+
+export function listingPublicPath(listing: { id: string; slug?: string | null }): string {
+  const slug = (listing.slug || '').trim()
+  return `/listings/${slug || listing.id}`
+}
+
 export function truncateText(value: string | null | undefined, max: number): string {
   const text = (value || '').trim()
   if (!text) return ''

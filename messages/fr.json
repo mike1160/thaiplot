@@ -16,7 +16,10 @@
     "guideChanote": "Titre Chanote",
     "guideHuaHin": "Marché Hua Hin 2026",
     "guidePranburi": "Immobilier Pranburi",
-    "guideVisa": "Visa retraite"
+    "guideVisa": "Visa retraite",
+    "pages": {
+      "listingDetail": "Annonce"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Nous utilisons des analyses respectueuses de la vie privée. Aucune donnée personnelle n’est vendue.",
+    "text": "Fonctionnel : Cloudflare Turnstile (anti-spam, aucun cookie). Analytique : Google Analytics GA4 (G-LR89JN9T3L) — uniquement avec consentement. Aucun cookie publicitaire. Aucune donnée personnelle vendue.",
     "accept": "Accepter",
     "decline": "Refuser",
-    "privacy": "Politique de confidentialité →"
+    "privacy": "Politique de confidentialité →",
+    "categoriesLabel": "Catégories de cookies",
+    "catFunctional": "Fonctionnel : Cloudflare Turnstile (anti-spam, aucun cookie)",
+    "catAnalytics": "Analytique : Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "Aucun : cookies publicitaires"
   },
   "breadcrumb": {
     "home": "Accueil",
@@ -365,14 +372,14 @@
         "body": "Des analyses respectueuses de la vie privée (y compris Cloudflare si activé) ne se chargent qu’après acceptation des cookies lorsque le consentement est requis."
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "Ce site utilise Cloudflare Turnstile pour protéger les formulaires contre le spam et les abus. Turnstile fonctionne de manière invisibleible en arrière-plan. Les données collectées par Turnstile sont traitées conformément au Cloudflare Turnstile Privacy Addendum.",
+        "title": "Sécurité",
+        "body": "Nous utilisons Cloudflare Turnstile (mode invisible) pour la protection anti-spam des formulaires. Turnstile traite les données conformément au Cloudflare Turnstile Privacy Addendum. Turnstile ne dépose aucun cookie.",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Politique cookies",
-        "body": "Vous pouvez accepter ou refuser les cookies d’analyse via la bannière."
+        "body": "Nous distinguons les catégories suivantes :\n\nFonctionnel : Cloudflare Turnstile (protection anti-spam, aucun cookie) — nécessaire pour protéger les formulaires ; ce n’est ni du marketing ni de l’analytics.\n\nAnalytique : Google Analytics GA4 (G-LR89JN9T3L) — uniquement après consentement via la bannière.\n\nAucun : cookies publicitaires — ThaiPlot ne dépose pas de cookies publicitaires.\n\nUn stockage local essentiel peut servir à mémoriser votre choix cookies. Vous pouvez effacer les données du site dans votre navigateur à tout moment."
       },
       {
         "title": "Droits et suppression",

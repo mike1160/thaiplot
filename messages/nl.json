@@ -16,7 +16,10 @@
     "guideChanote": "Chanote-titelakte",
     "guideHuaHin": "Hua Hin markt 2026",
     "guidePranburi": "Pranburi vastgoed",
-    "guideVisa": "Pensioenvisa"
+    "guideVisa": "Pensioenvisa",
+    "pages": {
+      "listingDetail": "Advertentie"
+    }
   },
   "languages": {
     "en": "English",
@@ -42,10 +45,14 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "We gebruiken privacyvriendelijke analytics. Geen persoonsgegevens verkocht.",
+    "text": "Functioneel: Cloudflare Turnstile (spambeveiliging, geen cookie). Analytisch: Google Analytics GA4 (G-LR89JN9T3L) — alleen met toestemming. Geen advertentiecookies. Geen persoonsgegevens verkocht.",
     "accept": "Accepteren",
     "decline": "Weigeren",
-    "privacy": "Privacybeleid →"
+    "privacy": "Privacybeleid →",
+    "categoriesLabel": "Cookiecategorieën",
+    "catFunctional": "Functioneel: Cloudflare Turnstile (spambeveiliging, geen cookie)",
+    "catAnalytics": "Analytisch: Google Analytics GA4 (G-LR89JN9T3L)",
+    "catAds": "Geen: advertentiecookies"
   },
   "breadcrumb": {
     "home": "Home",
@@ -362,17 +369,17 @@
       },
       {
         "title": "Analytics",
-        "body": "We kunnen privacyvriendelijke analytics gebruiken (inclusief Cloudflare analytics indien ingeschakeld). Deze tools geven anonieme of geaggregeerde gebruiks inzichten en worden niet gebruikt om persoonsgegevens te verkopen. Analytics laden alleen na cookie-acceptatie waar toestemming vereist is."
+        "body": "We gebruiken Google Analytics GA4 (meet-ID G-LR89JN9T3L) voor anonieme/geaggregeerde website-statistieken. Analytics laden alleen na uw toestemming via de cookiebanner. We verkopen geen persoonsgegevens."
       },
       {
-        "title": "Cloudflare Turnstile",
-        "body": "Deze site gebruikt Cloudflare Turnstile om formulieren te beschermen tegen spam en misbruik. Turnstile werkt onzichtbaar op de achtergrond. Gegevens die door Turnstile worden verwerkt vallen onder de Cloudflare Turnstile Privacy Addendum.",
+        "title": "Beveiliging",
+        "body": "Wij gebruiken Cloudflare Turnstile (invisible mode) voor spambeveiliging op formulieren. Turnstile verwerkt gegevens conform de Cloudflare Turnstile Privacy Addendum. Er worden geen cookies geplaatst door Turnstile.",
         "linkUrl": "https://www.cloudflare.com/turnstile-privacy-addendum/",
         "linkLabel": "Cloudflare Turnstile Privacy Addendum"
       },
       {
         "title": "Cookiebeleid",
-        "body": "We tonen een toestemmingsbanner zodat u analytics-cookies kunt Accepteren of Weigeren. Essentiële cookies of lokale opslag voor basisfuncties (zoals het onthouden van uw cookiekeuze) kunnen nog steeds worden gebruikt. U kunt sitegegevens altijd in uw browser wissen."
+        "body": "We onderscheiden de volgende categorieën:\n\nFunctioneel: Cloudflare Turnstile (spambeveiliging, geen cookie) — nodig om formulieren te beschermen; dit is geen marketing en geen analytics.\n\nAnalytisch: Google Analytics GA4 (G-LR89JN9T3L) — alleen na toestemming via de banner.\n\nGeen: advertentiecookies — ThaiPlot plaatst geen advertentiecookies.\n\nEssentiële lokale opslag kan worden gebruikt om uw cookiekeuze te onthouden. U kunt sitegegevens altijd in uw browser wissen."
       },
       {
         "title": "Uw rechten en verwijdering",
