@@ -126,7 +126,10 @@
     "filterTransaction": "Transaktion",
     "searchButton": "Angebote suchen →",
     "mileage": "Kilometerstand",
-    "condition": "Zustand"
+    "condition": "Zustand",
+    "pricePerRaiFootnote": "Pro Rai auf Anfrage zu einem anderen Preis verfügbar",
+    "readMore": "Mehr lesen →",
+    "readLess": "← Weniger"
   },
   "listProperty": {
     "pageTitle": "Alles in Thailand inserieren",

@@ -126,7 +126,10 @@
     "filterTransaction": "Transaction",
     "searchButton": "Rechercher →",
     "mileage": "Kilométrage",
-    "condition": "État"
+    "condition": "État",
+    "pricePerRaiFootnote": "Disponible au Rai sur demande à un prix différent",
+    "readMore": "Lire plus →",
+    "readLess": "← Moins"
   },
   "listProperty": {
     "pageTitle": "Publiez n'importe quoi en Thaïlande",

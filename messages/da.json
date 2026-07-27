@@ -126,7 +126,10 @@
     "filterTransaction": "Transaktion",
     "searchButton": "Søg annoncer →",
     "mileage": "Kilometertal",
-    "condition": "Stand"
+    "condition": "Stand",
+    "pricePerRaiFootnote": "Per Rai tilgængelig på forespørgsel til anden pris",
+    "readMore": "Læs mere →",
+    "readLess": "← Mindre"
   },
   "listProperty": {
     "pageTitle": "Annoncér hvad som helst i Thailand",

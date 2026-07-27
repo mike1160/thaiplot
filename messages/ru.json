@@ -126,7 +126,10 @@
     "filterTransaction": "Сделка",
     "searchButton": "Искать объявления →",
     "mileage": "Пробег",
-    "condition": "Состояние"
+    "condition": "Состояние",
+    "pricePerRaiFootnote": "Продажа по рай доступна по запросу по другой цене",
+    "readMore": "Читать далее →",
+    "readLess": "← Свернуть"
   },
   "listProperty": {
     "pageTitle": "Разместите что угодно в Таиланде",

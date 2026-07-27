@@ -5,7 +5,11 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { trackGaEvent } from '@/lib/ga'
 import { LINE_AGENT_URL } from '@/lib/contact'
-import { resolveListingPhotos, resolveListingTitleDeed } from '@/lib/listing-ui'
+import {
+  resolveListingPhotos,
+  resolveListingPriceDisplay,
+  resolveListingTitleDeed,
+} from '@/lib/listing-ui'
 import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
 
 type ListingCardProps = {
@@ -19,22 +23,41 @@ function hrefFromMatch(match: string): string {
   return match.startsWith('http') ? match : `https://${match}`
 }
 
-function DescriptionWithLinks({ text }: { text: string }) {
+function DescriptionWithLinks({
+  text,
+  className = '',
+  expanded = false,
+}: {
+  text: string
+  className?: string
+  expanded?: boolean
+}) {
   const parts = text.split(URL_REGEX)
   return (
-    <p className="text-[#5C5247] text-sm leading-relaxed mb-3 flex-1">
+    <p
+      className={`text-[#5C5247] text-sm leading-relaxed whitespace-pre-line break-words ${className}`.trim()}
+      style={
+        expanded
+          ? {
+              overflow: 'visible',
+              maxHeight: 'none',
+              WebkitLineClamp: 'unset',
+            }
+          : undefined
+      }
+    >
       {parts.map((part, index) => {
         if (!part) return null
         if (/^(https?:\/\/|www\.)/i.test(part)) {
           const href = hrefFromMatch(part)
-          const label = part.replace(/^https?:\/\//i, '')
+          const label = part.replace(/^https?:\/\//i, '').replace(/\/$/, '')
           return (
             <a
               key={`${part}-${index}`}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#C8973A] font-medium hover:underline"
+              className="text-blue-600 font-medium hover:underline"
             >
               {label}
             </a>
@@ -54,19 +77,21 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const href = contactHref || LINE_AGENT_URL
   const photos = resolveListingPhotos(listing)
   const titleDeed = resolveListingTitleDeed(listing)
+  const priceDisplay = resolveListingPriceDisplay(listing)
   const [activeIndex, setActiveIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false)
   const isSoi112 = (listing.location || '').toLowerCase().includes('soi 112')
   const isFeatured = isSoi112
   const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
   const mainPhoto = photos[activeIndex] || photos[0]
   const thumbnails = photos.length > 1 ? photos : []
 
-  const urls = fullDescription.match(URL_REGEX) || []
-  const plain = fullDescription.replace(URL_REGEX, ' ').replace(/\s+/g, ' ').trim()
-  const truncatedPlain = truncateText(plain, 80)
+  const needsDescriptionToggle = fullDescription.length > 120
   const descriptionForRender =
-    urls.length > 0 ? `${truncatedPlain}${truncatedPlain ? ' ' : ''}${urls.join(' ')}` : truncatedPlain
+    descriptionExpanded || !needsDescriptionToggle
+      ? fullDescription
+      : truncateText(fullDescription, 120)
 
   useEffect(() => {
     if (!lightboxOpen) return
@@ -244,11 +269,27 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
               </dd>
             </div>
           ) : null}
-          {listing.price ? (
+          {priceDisplay.raw ? (
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247] shrink-0">{t('price')}</dt>
-              <dd className="text-[#1A2744] font-medium text-right break-words whitespace-pre-wrap">
-                {listing.price}
+              <dd className="text-[#1A2744] font-medium text-right break-words">
+                {priceDisplay.sub ? (
+                  <div className="space-y-0.5">
+                    <p className="text-base md:text-lg font-bold text-[#1A2744] leading-tight">
+                      {priceDisplay.main}
+                    </p>
+                    <p className="text-xs md:text-sm text-[#5C5247] font-medium">
+                      {priceDisplay.sub}
+                    </p>
+                    {priceDisplay.footnote ? (
+                      <p className="text-[11px] italic text-[#5C5247]/85 leading-snug pt-0.5">
+                        {priceDisplay.footnote}
+                      </p>
+                    ) : null}
+                  </div>
+                ) : (
+                  <span className="whitespace-pre-wrap">{priceDisplay.main}</span>
+                )}
               </dd>
             </div>
           ) : null}
@@ -260,52 +301,63 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
           ) : null}
         </dl>
 
-        {descriptionForRender ? (
-          <DescriptionWithLinks text={descriptionForRender} />
-        ) : (
-          <div className="flex-1" />
-        )}
-
-        {hasHuaHinLandLink ? (
-          <a
-            href="https://www.hua-hin-land.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C8973A] hover:underline mb-5"
-          >
-            🌐 www.hua-hin-land.com
-          </a>
+        {fullDescription ? (
+          <div className="mb-3">
+            <DescriptionWithLinks text={descriptionForRender} expanded={descriptionExpanded} />
+            {needsDescriptionToggle ? (
+              <button
+                type="button"
+                onClick={() => setDescriptionExpanded((open) => !open)}
+                className="mt-1.5 text-sm text-[#C8973A] cursor-pointer no-underline bg-transparent border-0 p-0 hover:opacity-80 transition-opacity"
+              >
+                {descriptionExpanded ? t('readLess') : t('readMore')}
+              </button>
+            ) : null}
+          </div>
         ) : null}
 
-        {href.startsWith('http') ? (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={trackContactClick}
-            className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors mt-auto"
-          >
-            {t('contact')}
-          </a>
-        ) : (
-          <Link
-            href={href}
-            onClick={trackContactClick}
-            className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors mt-auto"
-          >
-            {t('contact')}
-          </Link>
-        )}
+        <div className="mt-auto">
+          {hasHuaHinLandLink ? (
+            <a
+              href="https://www.hua-hin-land.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:underline mb-5"
+            >
+              🌐 www.hua-hin-land.com
+            </a>
+          ) : null}
 
-        <p className="text-xs text-stone-400 leading-relaxed text-center mt-3">
-          {t('cardLegalNote')}{' '}
-          <Link
-            href="/legal/disclaimer#warnings"
-            className="underline underline-offset-2 hover:text-stone-500 transition-colors"
-          >
-            {t('cardLegalLink')}
-          </Link>
-        </p>
+          {href.startsWith('http') ? (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackContactClick}
+              className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
+            >
+              {t('contact')}
+            </a>
+          ) : (
+            <Link
+              href={href}
+              onClick={trackContactClick}
+              className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
+            >
+              {t('contact')}
+            </Link>
+          )}
+
+          <p className="text-xs text-stone-400 leading-relaxed text-center mt-3">
+            {t('cardLegalNote')}{' '}
+            <Link
+              href="/legal/disclaimer#warnings"
+              className="underline underline-offset-2 hover:text-stone-500 transition-colors"
+            >
+              {t('cardLegalLink')}
+            </Link>
+          </p>
+        </div>
       </div>
 
       {lightboxOpen ? (

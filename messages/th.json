@@ -126,7 +126,10 @@
     "filterTransaction": "ประเภทธุรกรรม",
     "searchButton": "ค้นหาประกาศ →",
     "mileage": "เลขไมล์",
-    "condition": "สภาพ"
+    "condition": "สภาพ",
+    "pricePerRaiFootnote": "ขายเป็นไร่ได้ตามคำขอในราคาที่แตกต่าง",
+    "readMore": "อ่านเพิ่ม →",
+    "readLess": "← น้อยลง"
   },
   "listProperty": {
     "pageTitle": "ลงประกาศอะไรก็ได้ในไทย",

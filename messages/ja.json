@@ -126,7 +126,10 @@
     "filterTransaction": "取引",
     "searchButton": "掲載を検索 →",
     "mileage": "走行距離",
-    "condition": "状態"
+    "condition": "状態",
+    "pricePerRaiFootnote": "1ライ単位での販売は別価格で応相談",
+    "readMore": "続きを読む →",
+    "readLess": "← 閉じる"
   },
   "listProperty": {
     "pageTitle": "タイで何でも掲載",

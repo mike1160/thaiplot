@@ -122,6 +122,10 @@ export function listingPhotosForListing(listing: {
 
 const SAM_ROI_YOT_LISTING_ID = '5561f9fa-59a5-4ec1-ab6f-6b54cc200fbe'
 const SAM_ROI_YOT_TITLE_DEED = 'Nor Sor Kru Ta Daeng'
+const FEATURED_SOI112_LISTING_IDS = new Set([
+  'fbd0d273-fada-4f4f-8341-09d5237ec12d',
+  '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
+])
 
 export function resolveListingTitleDeed(listing: {
   id?: string | null
@@ -133,6 +137,37 @@ export function resolveListingTitleDeed(listing: {
   const raw = listing.title_deed
   if (raw == null || String(raw).trim() === '') return null
   return String(raw)
+}
+
+export function resolveListingPriceDisplay(listing: {
+  id?: string | null
+  price?: string | null
+}): {
+  main: string | null
+  sub: string | null
+  footnote: string | null
+  raw: string | null
+} {
+  const raw = listing.price == null ? null : String(listing.price).trim()
+  if (!raw) {
+    return { main: null, sub: null, footnote: null, raw: null }
+  }
+
+  if (FEATURED_SOI112_LISTING_IDS.has((listing.id || '').trim())) {
+    return {
+      main: '฿10,350,000',
+      sub: '฿2,300,000/Rai',
+      footnote: 'Per Rai available on request at a different price',
+      raw,
+    }
+  }
+
+  return {
+    main: raw,
+    sub: null,
+    footnote: null,
+    raw,
+  }
 }
 
 export function resolveListingPhotos(listing: {

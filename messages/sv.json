@@ -126,7 +126,10 @@
     "filterTransaction": "Transaktion",
     "searchButton": "Sök annonser →",
     "mileage": "Mätarställning",
-    "condition": "Skick"
+    "condition": "Skick",
+    "pricePerRaiFootnote": "Per Rai tillgängligt på begäran till annat pris",
+    "readMore": "Läs mer →",
+    "readLess": "← Mindre"
   },
   "listProperty": {
     "pageTitle": "Lista vad som helst i Thailand",

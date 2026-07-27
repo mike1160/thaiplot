@@ -126,7 +126,10 @@
     "filterTransaction": "交易类型",
     "searchButton": "搜索列表 →",
     "mileage": "里程",
-    "condition": "成色"
+    "condition": "成色",
+    "pricePerRaiFootnote": "可按莱出售，价格另议",
+    "readMore": "阅读更多 →",
+    "readLess": "← 收起"
   },
   "listProperty": {
     "pageTitle": "在泰国发布任何商品",
