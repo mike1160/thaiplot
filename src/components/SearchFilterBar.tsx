@@ -77,7 +77,16 @@ export default function SearchFilterBar({ value, onChange, onSearch, className =
 
         <button
           type="button"
-          onClick={onSearch}
+          onClick={() => {
+            if (typeof window !== 'undefined' && window.gtag) {
+              window.gtag('event', 'listing_filter', {
+                property_type: value.propertyType,
+                region: value.region,
+                transaction: value.transaction,
+              })
+            }
+            onSearch?.()
+          }}
           className="w-full min-h-[44px] rounded-[12px] text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors"
         >
           Search listings →

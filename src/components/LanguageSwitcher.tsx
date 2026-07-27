@@ -53,6 +53,12 @@ export default function LanguageSwitcher({
   const select = (next: AppLocale) => {
     setOpen(false)
     if (next === locale) return
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'language_switch', {
+        from_locale: locale,
+        to_locale: next,
+      })
+    }
     router.replace(pathname, { locale: next })
   }
 
