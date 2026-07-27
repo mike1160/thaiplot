@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from 'next/cache'
 import { getSupabaseAdmin, type ListingRow } from '@/lib/supabase'
 import { resolveListingTitleDeed } from '@/lib/listing-ui'
 
@@ -63,6 +64,7 @@ function mapRows(data: unknown[] | null): PublicListing[] {
 export async function fetchApprovedListings(
   filters: ListingFilters = {}
 ): Promise<PublicListing[]> {
+  noStore()
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -101,6 +103,8 @@ export async function fetchApprovedListings(
         apikey: key,
         Authorization: `Bearer ${key}`,
         Accept: 'application/json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        Pragma: 'no-cache',
       },
       cache: 'no-store',
     })

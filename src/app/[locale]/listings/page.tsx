@@ -1,6 +1,7 @@
 import { setRequestLocale } from 'next-intl/server'
 import ListingsPageClient from '@/components/ListingsPageClient'
 import { fetchApprovedListings } from '@/lib/listings'
+import { orderListingsFeaturedFirst } from '@/lib/listing-ui'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,7 +17,7 @@ type Props = {
 
 export default async function ListingsPage({ params, searchParams }: Props) {
   setRequestLocale(params.locale)
-  const listings = await fetchApprovedListings()
+  const listings = orderListingsFeaturedFirst(await fetchApprovedListings())
 
   return (
     <ListingsPageClient

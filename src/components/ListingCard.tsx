@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation'
 import { trackGaEvent } from '@/lib/ga'
 import { LINE_AGENT_URL } from '@/lib/contact'
 import {
+  isFeaturedHomepageListing,
   resolveListingPhotos,
   resolveListingPriceDisplay,
   resolveListingTitleDeed,
@@ -81,8 +82,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const [activeIndex, setActiveIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [descriptionExpanded, setDescriptionExpanded] = useState(false)
-  const isSoi112 = (listing.location || '').toLowerCase().includes('soi 112')
-  const isFeatured = isSoi112
+  const isFeatured = isFeaturedHomepageListing(listing.id)
   const hasHuaHinLandLink = /www\.hua-hin-land\.com/i.test(fullDescription)
   const mainPhoto = photos[activeIndex] || photos[0]
   const thumbnails = photos.length > 1 ? photos : []

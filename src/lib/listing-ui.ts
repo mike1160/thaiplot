@@ -122,10 +122,30 @@ export function listingPhotosForListing(listing: {
 
 const SAM_ROI_YOT_LISTING_ID = '5561f9fa-59a5-4ec1-ab6f-6b54cc200fbe'
 const SAM_ROI_YOT_TITLE_DEED = 'Nor Sor Kru Ta Daeng'
+export const FEATURED_HOMEPAGE_LISTING_ID = 'fbd0d273-fada-4f4f-8341-09d5237ec12d'
 const FEATURED_SOI112_LISTING_IDS = new Set([
-  'fbd0d273-fada-4f4f-8341-09d5237ec12d',
+  FEATURED_HOMEPAGE_LISTING_ID,
   '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
 ])
+
+export function isFeaturedHomepageListing(id?: string | null): boolean {
+  return (id || '').trim() === FEATURED_HOMEPAGE_LISTING_ID
+}
+
+const HIDDEN_ON_HOMEPAGE = new Set([
+  '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
+])
+
+export function orderListingsForHomepage<T extends { id: string }>(listings: T[]): T[] {
+  const visible = listings.filter((l) => !HIDDEN_ON_HOMEPAGE.has(l.id))
+  return orderListingsFeaturedFirst(visible)
+}
+
+export function orderListingsFeaturedFirst<T extends { id: string }>(listings: T[]): T[] {
+  const featured = listings.filter((l) => isFeaturedHomepageListing(l.id))
+  const rest = listings.filter((l) => !isFeaturedHomepageListing(l.id))
+  return [...featured, ...rest]
+}
 
 export function resolveListingTitleDeed(listing: {
   id?: string | null
