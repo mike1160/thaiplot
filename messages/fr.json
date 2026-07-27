@@ -98,7 +98,9 @@
     "donateSectionCta": "Faire un don → savedsouls.org",
     "donateSectionNote": "À but non lucratif · Enregistrée en Thaïlande · 100 % pour les chiens",
     "viewAllListings": "Voir toutes les annonces →",
-    "featuredEmpty": "Aucune annonce dans cet aperçu. Voir la page complète →"
+    "featuredEmpty": "Aucune annonce dans cet aperçu. Voir la page complète →",
+    "footerPartner": "Site partenaire",
+    "footerPartnerHuaHinLand": "Hua Hin Land"
   },
   "listings": {
     "pageTitle": "Annonces",
@@ -749,5 +751,18 @@
         "Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living."
       ]
     }
+  },
+  "partnerLinks": {
+    "title": "Plus d'informations",
+    "cta": "En savoir plus sur Hua Hin Land →",
+    "europeanRetirees": "Retiring here — Europeans",
+    "usaRetirees": "Retiring here — Americans",
+    "foreignBuyers": "Foreign buyers guide",
+    "chanote": "Titre Chanote expliqué",
+    "homepage": "Hua Hin Land homepage",
+    "furtherReadingTitle": "Pour aller plus loin sur Hua Hin Land",
+    "dutch": "Voor Nederlanders",
+    "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
+    "faq": "FAQ"
   }
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
@@ -8,17 +9,27 @@ export const CONSENT_KEY = 'thaiplot-cookie-consent'
 
 type ConsentValue = 'accepted' | 'declined'
 
+function readStoredConsent(): ConsentValue | null {
+  try {
+    const stored = localStorage.getItem(CONSENT_KEY)
+    if (stored === 'accepted' || stored === 'declined') return stored
+    return null
+  } catch {
+    // Private mode / blocked storage → treat as no consent
+    return null
+  }
+}
+
 export default function CookieConsent() {
   const t = useTranslations('cookieConsent')
+  const [mounted, setMounted] = useState(false)
   const [visible, setVisible] = useState(false)
   const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(CONSENT_KEY) as ConsentValue | null
-      if (stored === 'accepted' || stored === 'declined') return
-      setVisible(true)
-    } catch {
+    setMounted(true)
+    // First visit, cleared storage, or private/incognito session → show banner
+    if (!readStoredConsent()) {
       setVisible(true)
     }
   }, [])
@@ -27,7 +38,7 @@ export default function CookieConsent() {
     try {
       localStorage.setItem(CONSENT_KEY, value)
     } catch {
-      // ignore
+      // Still dismiss UI even if storage is blocked
     }
     window.dispatchEvent(new Event('thaiplot-cookie-consent'))
     setLeaving(true)
@@ -37,16 +48,19 @@ export default function CookieConsent() {
     }, 320)
   }
 
-  if (!visible) return null
+  if (!mounted || !visible) return null
 
-  return (
+  const banner = (
     <div
-      className={`fixed bottom-0 inset-x-0 z-[60] ${leaving ? 'cookie-banner-out' : 'cookie-banner-in'}`}
+      className={`fixed bottom-0 inset-x-0 z-[9999] ${leaving ? 'cookie-banner-out' : 'cookie-banner-in'}`}
       role="dialog"
+      aria-modal="true"
       aria-label={t('title')}
+      data-cookie-consent="true"
     >
       <div className="flex flex-col sm:flex-row w-full min-h-[120px] shadow-[0_-8px_32px_rgba(26,39,68,0.18)] overflow-hidden">
         <div className="relative w-full sm:w-[30%] h-24 sm:h-auto sm:min-h-[120px] flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/hero.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
         <div className="flex-1 bg-[#FAF7F0] px-5 py-5 sm:px-8 sm:py-6 flex flex-col justify-center">
@@ -87,7 +101,10 @@ export default function CookieConsent() {
               {t('decline')}
             </button>
           </div>
-          <Link href="/legal/privacy" className="text-[#5C5247] text-xs hover:text-[#C8973A] transition-colors w-fit">
+          <Link
+            href="/legal/privacy"
+            className="text-[#5C5247] text-xs hover:text-[#C8973A] transition-colors w-fit"
+          >
             {t('privacy')}
           </Link>
         </div>
@@ -106,4 +123,6 @@ export default function CookieConsent() {
       `}</style>
     </div>
   )
+
+  return createPortal(banner, document.body)
 }

@@ -98,7 +98,9 @@
     "donateSectionCta": "Donér nu → savedsouls.org",
     "donateSectionNote": "Non-profit · Registreret i Thailand · 100% går til hundene",
     "viewAllListings": "Se alle annoncer →",
-    "featuredEmpty": "Ingen annoncer i denne forhåndsvisning. Se den fulde liste →"
+    "featuredEmpty": "Ingen annoncer i denne forhåndsvisning. Se den fulde liste →",
+    "footerPartner": "Partnersite",
+    "footerPartnerHuaHinLand": "Hua Hin Land"
   },
   "listings": {
     "pageTitle": "Annoncer",
@@ -749,5 +751,18 @@
         "Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living."
       ]
     }
+  },
+  "partnerLinks": {
+    "title": "Mere information",
+    "cta": "Læs mere på Hua Hin Land →",
+    "europeanRetirees": "Retiring here — Europeans",
+    "usaRetirees": "Retiring here — Americans",
+    "foreignBuyers": "Foreign buyers guide",
+    "chanote": "Chanote-skøde forklaret",
+    "homepage": "Hua Hin Land homepage",
+    "furtherReadingTitle": "Læs mere på Hua Hin Land",
+    "dutch": "Voor Nederlanders",
+    "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
+    "faq": "FAQ"
   }
 }

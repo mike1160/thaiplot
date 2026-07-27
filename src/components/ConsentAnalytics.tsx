@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 
 const CONSENT_KEY = 'thaiplot-cookie-consent'
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
 /** Loads analytics only after cookie consent is accepted. */
 export default function ConsentAnalytics() {
@@ -43,5 +45,27 @@ export default function ConsentAnalytics() {
   }, [allowed])
 
   if (!allowed) return null
-  return <Analytics />
+
+  return (
+    <>
+      {GA_ID ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `}
+          </Script>
+        </>
+      ) : null}
+      <Analytics />
+    </>
+  )
 }

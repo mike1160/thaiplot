@@ -1,8 +1,10 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
+import PartnerLinks from '@/components/PartnerLinks'
 import ThaiDataCard, { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
+import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
 
 type Props = { params: { locale: string } }
 
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function ChanotePage({ params }: Props) {
   setRequestLocale(params.locale)
   const t = await getTranslations('infoChanote')
+  const tp = await getTranslations('partnerLinks')
 
   const section = (key: string) => ({
     title: t(`${key}.title`),
@@ -47,6 +50,19 @@ export default async function ChanotePage({ params }: Props) {
       ]}
       bottomSlot={
         <div className="space-y-6">
+          <PartnerLinks
+            title={tp('furtherReadingTitle')}
+            links={[
+              {
+                href: hhlUrl(HHL_PATHS.chanote, params.locale),
+                label: tp('chanote'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
+                label: tp('foreignBuyers'),
+              },
+            ]}
+          />
           <TitleVerifyCta />
           <ThaiDataCard />
         </div>

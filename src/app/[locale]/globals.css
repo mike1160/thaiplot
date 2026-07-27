@@ -15,7 +15,8 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* clip avoids creating a scrollport that breaks position:fixed banners */
+  overflow-x: clip;
   max-width: 100%;
 }
 
@@ -23,9 +24,9 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--cream);
   color: var(--navy);
-  overflow-x: hidden;
   max-width: 100%;
   width: 100%;
+  overflow-x: clip;
 }
 
 .font-display {

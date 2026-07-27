@@ -88,6 +88,8 @@
     "footerExplore": "Ontdekken",
     "footerRegions": "Regio's",
     "footerResources": "Resources",
+    "footerPartner": "Partner site",
+    "footerPartnerHuaHinLand": "Hua Hin Land",
     "footerCopyright": "© 2026 ThaiPlot · Onafhankelijke Thailand marketplace",
     "donateTitle": "🐾 Geef hoop aan straathonden in Thailand",
     "donateText": "Steun Saved Souls Foundation — elke donatie helpt",
@@ -519,6 +521,19 @@
     "verifyButton": "Open ThaiData →",
     "footerTools": "Tools",
     "footerVerify": "Titelakte verifiëren → data.hua-hin-land.com"
+  },
+  "partnerLinks": {
+    "title": "Meer informatie",
+    "cta": "Meer lezen op Hua Hin Land →",
+    "europeanRetirees": "Retiring here — Europeans",
+    "usaRetirees": "Retiring here — Americans",
+    "foreignBuyers": "Foreign buyers guide",
+    "chanote": "Chanote-titelakte uitgelegd",
+    "homepage": "Hua Hin Land homepage",
+    "furtherReadingTitle": "Verder lezen op Hua Hin Land",
+    "dutch": "Voor Nederlanders",
+    "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
+    "faq": "FAQ"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",

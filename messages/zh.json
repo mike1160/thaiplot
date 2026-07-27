@@ -98,7 +98,9 @@
     "donateSectionCta": "立即捐赠 → savedsouls.org",
     "donateSectionNote": "非营利 · 在泰国注册 · 100%用于狗狗",
     "viewAllListings": "查看全部列表 →",
-    "featuredEmpty": "预览中暂无列表。查看完整列表页 →"
+    "featuredEmpty": "预览中暂无列表。查看完整列表页 →",
+    "footerPartner": "合作网站",
+    "footerPartnerHuaHinLand": "Hua Hin Land"
   },
   "listings": {
     "pageTitle": "列表",
@@ -749,5 +751,18 @@
         "Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living."
       ]
     }
+  },
+  "partnerLinks": {
+    "title": "更多信息",
+    "cta": "在 Hua Hin Land 阅读更多 →",
+    "europeanRetirees": "Retiring here — Europeans",
+    "usaRetirees": "Retiring here — Americans",
+    "foreignBuyers": "Foreign buyers guide",
+    "chanote": "Chanote 地契说明",
+    "homepage": "Hua Hin Land homepage",
+    "furtherReadingTitle": "在 Hua Hin Land 继续阅读",
+    "dutch": "Voor Nederlanders",
+    "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
+    "faq": "FAQ"
   }
 }

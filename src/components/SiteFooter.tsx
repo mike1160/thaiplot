@@ -30,7 +30,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="bg-[#1A2744] text-white overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="min-w-0">
             <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
               {t('footerExplore')}
@@ -97,6 +97,14 @@ export default function SiteFooter() {
                   Privacy
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          <div className="min-w-0">
+            <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
+              {t('footerPartner')}
+            </p>
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <a
                   href="https://www.hua-hin-land.com"
@@ -104,7 +112,7 @@ export default function SiteFooter() {
                   rel="noopener noreferrer"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
-                  Hua Hin Land
+                  {t('footerPartnerHuaHinLand')}
                 </a>
               </li>
             </ul>

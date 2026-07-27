@@ -88,6 +88,8 @@
     "footerExplore": "Explore",
     "footerRegions": "Regions",
     "footerResources": "Resources",
+    "footerPartner": "Partner site",
+    "footerPartnerHuaHinLand": "Hua Hin Land",
     "footerCopyright": "© 2026 ThaiPlot · Independent Thailand marketplace",
     "donateTitle": "🐾 Give hope to street dogs in Thailand",
     "donateText": "Support Saved Souls Foundation — every donation makes a difference",
@@ -519,6 +521,19 @@
     "verifyButton": "Open ThaiData →",
     "footerTools": "Tools",
     "footerVerify": "Verify title deed → data.hua-hin-land.com"
+  },
+  "partnerLinks": {
+    "title": "More information",
+    "cta": "Read more on Hua Hin Land →",
+    "europeanRetirees": "Retiring here — Europeans",
+    "usaRetirees": "Retiring here — Americans",
+    "foreignBuyers": "Foreign buyers guide",
+    "chanote": "Chanote title deed explained",
+    "homepage": "Hua Hin Land homepage",
+    "furtherReadingTitle": "Further reading on Hua Hin Land",
+    "dutch": "Voor Nederlanders",
+    "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
+    "faq": "FAQ"
   },
   "infoBuying": {
     "metaTitle": "How to Buy Land in Thailand as a Foreigner | ThaiPlot",

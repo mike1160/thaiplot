@@ -1,7 +1,9 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
+import PartnerLinks from '@/components/PartnerLinks'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
+import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
 
 type Props = { params: { locale: string } }
 
@@ -26,6 +28,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function PranburiPage({ params }: Props) {
   setRequestLocale(params.locale)
   const t = await getTranslations('infoPranburi')
+  const tp = await getTranslations('partnerLinks')
 
   const section = (key: string) => ({
     title: t(`${key}.title`),
@@ -44,6 +47,21 @@ export default async function PranburiPage({ params }: Props) {
         section('growth'),
         section('compare'),
       ]}
+      bottomSlot={
+        <PartnerLinks
+          title={tp('furtherReadingTitle')}
+          links={[
+            {
+              href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
+              label: tp('foreignBuyers'),
+            },
+            {
+              href: hhlUrl(HHL_PATHS.faq, params.locale),
+              label: tp('faq'),
+            },
+          ]}
+        />
+      }
     />
   )
 }
