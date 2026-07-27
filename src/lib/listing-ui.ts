@@ -141,10 +141,17 @@ export function orderListingsForHomepage<T extends { id: string }>(listings: T[]
   return orderListingsFeaturedFirst(visible)
 }
 
+const LAST_ON_LISTINGS_PAGE = new Set([
+  '074685e5-8bdf-43b7-b5ef-8ca4634b1b5b',
+])
+
 export function orderListingsFeaturedFirst<T extends { id: string }>(listings: T[]): T[] {
   const featured = listings.filter((l) => isFeaturedHomepageListing(l.id))
-  const rest = listings.filter((l) => !isFeaturedHomepageListing(l.id))
-  return [...featured, ...rest]
+  const last = listings.filter((l) => LAST_ON_LISTINGS_PAGE.has(l.id))
+  const rest = listings.filter(
+    (l) => !isFeaturedHomepageListing(l.id) && !LAST_ON_LISTINGS_PAGE.has(l.id)
+  )
+  return [...featured, ...rest, ...last]
 }
 
 export function resolveListingTitleDeed(listing: {
@@ -173,7 +180,7 @@ export function resolveListingPriceDisplay(listing: {
     return { main: null, sub: null, footnote: null, raw: null }
   }
 
-  if (FEATURED_SOI112_LISTING_IDS.has((listing.id || '').trim())) {
+  if ((listing.id || '').trim() === FEATURED_HOMEPAGE_LISTING_ID) {
     return {
       main: '฿10,350,000',
       sub: '฿2,300,000/Rai',
