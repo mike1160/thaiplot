@@ -1,4 +1,4 @@
-import { getSupabasePublic, type ListingRow } from '@/lib/supabase'
+import { getSupabaseAdmin, getSupabasePublic, type ListingRow } from '@/lib/supabase'
 
 export type PublicListing = Pick<
   ListingRow,
@@ -33,83 +33,89 @@ export type ListingFilters = {
   limit?: number
 }
 
+/** Columns that exist on the live listings table today. */
+const BASE_SELECT =
+  'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
+
+const SELECT_WITH_PHOTOS = `${BASE_SELECT}, photo_1, photo_2, photo_3, photo_4, photo_5`
+const SELECT_WITH_MARKETPLACE = `${SELECT_WITH_PHOTOS}, category, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition`
+
+function mapRows(data: unknown[] | null): PublicListing[] {
+  return ((data || []) as unknown as PublicListing[]).map((row) => ({
+    ...row,
+    title_deed: row.title_deed ?? null,
+    region: row.region || 'Hua Hin',
+    category: row.category || 'Land & Property',
+    vehicle_type: row.vehicle_type ?? null,
+    vehicle_brand: row.vehicle_brand ?? null,
+    vehicle_year: row.vehicle_year ?? null,
+    vehicle_mileage: row.vehicle_mileage ?? null,
+    condition: row.condition ?? null,
+    photo_1: row.photo_1 ?? null,
+    photo_2: row.photo_2 ?? null,
+    photo_3: row.photo_3 ?? null,
+    photo_4: row.photo_4 ?? null,
+    photo_5: row.photo_5 ?? null,
+  }))
+}
+
 export async function fetchApprovedListings(
   filters: ListingFilters = {}
 ): Promise<PublicListing[]> {
   try {
-    const supabase = getSupabasePublic()
-    const selectWithCategory =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5, category, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition'
-    const selectWithRegion =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
-    const selectWithoutRegion =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
-    const selectWithoutPhotos =
-      'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
+    // Prefer anon (RLS); fall back to service role on server if needed
+    const clients = [getSupabasePublic, getSupabaseAdmin]
 
-    const runQuery = async (select: string, useRegionFilter: boolean) => {
-      let query = supabase
-        .from('listings')
-        .select(select)
-        .eq('status', 'approved')
-        .order('approved_at', { ascending: false })
+    for (const getClient of clients) {
+      const supabase = getClient()
+      const selects = [SELECT_WITH_MARKETPLACE, SELECT_WITH_PHOTOS, BASE_SELECT]
 
-      if (useRegionFilter && filters.region && filters.region !== 'All') {
-        query = query.eq('region', filters.region)
+      for (const select of selects) {
+        let query = supabase
+          .from('listings')
+          .select(select)
+          .eq('status', 'approved')
+          .order('approved_at', { ascending: false })
+
+        if (filters.region && filters.region !== 'All') {
+          query = query.eq('region', filters.region)
+        }
+
+        if (filters.propertyType && filters.propertyType !== 'All') {
+          query = query.eq('property_type', filters.propertyType)
+        }
+
+        if (typeof filters.limit === 'number') {
+          query = query.limit(filters.limit)
+        }
+
+        const { data, error } = await query
+
+        // Temporary debug — remove after listings are confirmed live again
+        console.log('[fetchApprovedListings] raw Supabase response', {
+          client: getClient === getSupabasePublic ? 'anon' : 'admin',
+          select,
+          filters,
+          error: error
+            ? { message: error.message, code: error.code, details: error.details }
+            : null,
+          count: Array.isArray(data) ? data.length : null,
+          sample: Array.isArray(data) && data[0] ? data[0] : null,
+        })
+
+        if (error) {
+          // Try next leaner select / client
+          continue
+        }
+
+        return mapRows(data as unknown[] | null)
       }
-
-      if (filters.propertyType && filters.propertyType !== 'All') {
-        query = query.eq('property_type', filters.propertyType)
-      }
-
-      if (typeof filters.limit === 'number') {
-        query = query.limit(filters.limit)
-      }
-
-      return query
     }
 
-    let { data, error } = await runQuery(selectWithCategory, true)
-
-    // Fallback if marketplace columns are not migrated yet
-    if (error && /(category|vehicle_|condition)/i.test(error.message || '')) {
-      ;({ data, error } = await runQuery(selectWithRegion, true))
-    }
-
-    // Fallback if photo columns are not migrated yet
-    if (error && /photo_/i.test(error.message || '')) {
-      ;({ data, error } = await runQuery(selectWithoutPhotos, true))
-    }
-
-    // Fallback if region column is not migrated yet
-    if (error && /region/i.test(error.message || '')) {
-      ;({ data, error } = await runQuery(selectWithoutRegion, false))
-    }
-
-    if (error) {
-      console.error(error)
-      return []
-    }
-
-    return ((data || []) as unknown as PublicListing[]).map((row) => ({
-      ...row,
-      // Always pass through Supabase title_deed as-is (no Chanote default/override)
-      title_deed: row.title_deed ?? null,
-      region: row.region || 'Hua Hin',
-      category: row.category || 'Land & Property',
-      vehicle_type: row.vehicle_type ?? null,
-      vehicle_brand: row.vehicle_brand ?? null,
-      vehicle_year: row.vehicle_year ?? null,
-      vehicle_mileage: row.vehicle_mileage ?? null,
-      condition: row.condition ?? null,
-      photo_1: row.photo_1 ?? null,
-      photo_2: row.photo_2 ?? null,
-      photo_3: row.photo_3 ?? null,
-      photo_4: row.photo_4 ?? null,
-      photo_5: row.photo_5 ?? null,
-    }))
+    console.error('[fetchApprovedListings] all query attempts failed')
+    return []
   } catch (error) {
-    console.error(error)
+    console.error('[fetchApprovedListings] exception', error)
     return []
   }
 }
