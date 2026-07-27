@@ -66,7 +66,7 @@ export async function fetchApprovedListings(
       return []
     }
 
-    return ((data || []) as PublicListing[]).map((row) => ({
+    return ((data || []) as unknown as PublicListing[]).map((row) => ({
       ...row,
       region: row.region || 'Hua Hin',
     }))
