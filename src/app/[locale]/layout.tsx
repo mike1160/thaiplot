@@ -44,6 +44,12 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages,
+      types: {
+        'text/plain': `${SITE_URL}/llms.txt`,
+      },
+    },
+    other: {
+      'llms-txt': `${SITE_URL}/llms.txt`,
     },
     openGraph: {
       title,
