@@ -78,10 +78,28 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/listings?region=Prachuap%20Khiri%20Khan"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  Prachuap Khiri Khan
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/black-mountain"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
                   Land near Black Mountain
+                </Link>
+              </li>
+              <li>
+                <Link href="/phuket" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  Property in Phuket
+                </Link>
+              </li>
+              <li>
+                <Link href="/bangkok" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  Property in Bangkok
                 </Link>
               </li>
             </ul>

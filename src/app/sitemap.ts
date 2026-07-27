@@ -27,6 +27,8 @@ const STATIC_ROUTES: Array<{
   { path: '/hua-hin', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/pranburi', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/black-mountain', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/phuket', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/bangkok', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/legal/privacy', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/legal/disclaimer', priority: 0.3, changeFrequency: 'yearly' },
 ]

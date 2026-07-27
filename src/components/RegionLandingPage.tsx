@@ -24,6 +24,8 @@ export type RegionPageContent = {
   bullets?: RegionBullet[]
   listingsHeading: string
   emptyText: string
+  emptyCtaHref?: string
+  emptyCtaLabel?: string
   buyingHeading?: string
   buyingBody?: string
   buyingLinkHref?: string
@@ -172,7 +174,15 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
 
           {listings.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 text-center">
-              <p className="text-[#5C5247] text-sm md:text-base">{content.emptyText}</p>
+              <p className="text-[#5C5247] text-sm md:text-base mb-4">{content.emptyText}</p>
+              {content.emptyCtaHref && content.emptyCtaLabel ? (
+                <Link
+                  href={content.emptyCtaHref}
+                  className="inline-flex text-sm font-semibold text-[#C8973A] hover:underline underline-offset-2"
+                >
+                  {content.emptyCtaLabel}
+                </Link>
+              ) : null}
             </div>
           ) : (
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

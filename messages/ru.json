@@ -70,7 +70,9 @@
       "visa": "Пенсионная виза",
       "huaHinRegion": "Hua Hin",
       "pranburiRegion": "Pranburi",
-      "blackMountainRegion": "Black Mountain"
+      "blackMountainRegion": "Black Mountain",
+      "phuketRegion": "Phuket",
+      "bangkokRegion": "Bangkok"
     }
   },
   "homepage": {

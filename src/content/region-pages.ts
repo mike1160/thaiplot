@@ -172,3 +172,157 @@ export const BLACK_MOUNTAIN_CONTENT: RegionPageContent = {
     { href: '/info/buying-land-thailand', label: 'Guide to buying land →' },
   ],
 }
+
+export const PHUKET_CONTENT: RegionPageContent = {
+  path: '/phuket',
+  metaTitle: 'Land & Property for Sale in Phuket, Thailand | ThaiPlot',
+  metaDescription:
+    'Browse land, villas and property for sale in Phuket, Thailand. Chanote title deeds, freehold and leasehold. Listed by owners and agents on ThaiPlot.',
+  title: 'Land & Property for Sale in Phuket, Thailand',
+  intro:
+    "Phuket is Thailand's largest island and its most internationally recognised property market. Located in the Andaman Sea, connected to the mainland by the Sarasin Bridge, Phuket attracts buyers from Europe, Russia, China, Australia and the Middle East. The island offers everything from beachfront condos in Patong and Kamala to hillside villa plots in Rawai and Chalong. Foreign buyers most commonly purchase via leasehold (30 years renewable) or condominium freehold (up to 49% foreign quota per building). Land with Chanote title deed is available across the island but supply is increasingly limited — particularly in the west coast areas of Bang Tao, Surin and Layan, where prices have risen sharply since 2022.",
+  areasHeading: 'Popular areas for property in Phuket',
+  areas: [
+    {
+      heading: 'Bang Tao / Laguna',
+      body: 'Bang Tao and the Laguna complex form Phuket’s luxury resort spine, with names like Banyan Tree, Angsana and Cassia. European and Russian buyers favour the zone for villa living near Boat Avenue shopping and Laguna golf — a polished west-coast lifestyle with strong holiday-rental demand.',
+    },
+    {
+      heading: 'Rawai / Nai Harn',
+      body: 'In the south of the island, Rawai and Nai Harn keep a more local atmosphere and attract long-term expats. Hillside plots often offer better value than the west coast, with Promthep Cape nearby and a quieter daily rhythm than Patong or Kamala.',
+    },
+    {
+      heading: 'Kamala',
+      body: 'Mid-west coast Kamala sits quieter than Patong yet remains firmly on the tourist map. The Andara and Keemala resort zone supports villa development and short-stay demand, with hillside sites looking over the bay and easy access to neighbouring beaches.',
+    },
+    {
+      heading: 'Chalong',
+      body: 'Chalong is an inland hub with easy access across the island, popular for land investment near Phuket Town and the Big Buddha. Buyers who want connectivity without west-coast premiums often start here when comparing buildable plots and longer-term holds.',
+    },
+    {
+      heading: 'Cherng Talay / Surin',
+      body: 'Cherng Talay and Surin are upmarket west-coast addresses around Surin Beach and Porto de Phuket. High-net-worth buyers compete for limited supply, driving premium pricing for villas and land with road access and resort-grade amenities.',
+    },
+  ],
+  listingsHeading: 'Currently listed in Phuket',
+  emptyText:
+    'No listings currently available in Phuket. Check back soon or list your property here.',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  buyingHeading: 'Buying property in Phuket as a foreigner',
+  buyingBody:
+    'Foreigners cannot own land directly in Thailand. In Phuket the most common structures are condominium freehold — foreigners can own up to 49% of units in any building outright; leasehold — a 30-year lease registered at the Land Office, commonly structured with renewals of 30+30 years; and a Thai company — possible but increasingly scrutinised following the 2026 nominee crackdown. Always use an independent Thai lawyer. Never rely on the seller’s lawyer alone for due diligence or contract review.',
+  buyingLinkHref: '/info/buying-land-thailand',
+  buyingLinkLabel: 'Read the full guide to buying property in Thailand →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Can foreigners buy land in Phuket?',
+      answer:
+        'Foreigners cannot directly own land in Thailand including Phuket. The most common legal options are leasehold (30 years, typically renewable), condominium freehold ownership, or a Thai registered company. Always consult an independent lawyer before any transaction.',
+    },
+    {
+      question: 'How much does land cost in Phuket?',
+      answer:
+        'Phuket land prices vary significantly by location. West coast areas like Bang Tao and Surin: ฿10–40M per rai. Rawai and Chalong: ฿3–8M per rai. Prices have increased substantially since 2022 due to strong demand from international buyers.',
+    },
+    {
+      question: 'What is the best area to buy in Phuket?',
+      answer:
+        'Depends on your goal. For rental yield: Bang Tao and Kamala have highest tourist demand. For value and lifestyle: Rawai and Nai Harn. For investment potential: Chalong and Cherng Talay are still growing. Always visit before buying.',
+    },
+    {
+      question: 'Is Phuket a good property investment?',
+      answer:
+        'Phuket has one of Asia’s strongest short-term rental markets. Holiday villa rental yields of 8–12% are achievable in high-demand areas. However prices are high and legal structures for foreigners are complex — always take independent legal advice.',
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/hua-hin', label: 'Land for sale in Hua Hin →' },
+    { href: '/pranburi', label: 'Land for sale in Pranburi →' },
+    { href: '/info/buying-land-thailand', label: 'Guide to buying property in Thailand →' },
+    {
+      href: 'https://data.hua-hin-land.com',
+      label: 'Verify a Thai title deed →',
+      external: true,
+    },
+  ],
+}
+
+export const BANGKOK_CONTENT: RegionPageContent = {
+  path: '/bangkok',
+  metaTitle: 'Property & Condos for Sale in Bangkok, Thailand | ThaiPlot',
+  metaDescription:
+    'Browse condos, houses and commercial property for sale in Bangkok, Thailand. Freehold and leasehold. Listed by owners and agents on ThaiPlot.',
+  title: 'Property for Sale in Bangkok, Thailand',
+  intro:
+    "Bangkok is Thailand's capital and its largest property market. The city offers an enormous range of property types — from studio condos near BTS Skytrain stations to luxury penthouses in Sukhumvit and Silom, commercial shophouses in Chinatown, and suburban houses in Nonthaburi and Samut Prakan. Foreign buyers most commonly purchase condominiums, which can be owned freehold up to the 49% foreign quota per building. Bangkok's property market is driven by strong domestic demand, a large expat population, and growing interest from Chinese, Japanese, Korean and European investors. The BTS and MRT networks make location relative to transit lines one of the most important factors in Bangkok property investment.",
+  areasHeading: 'Popular areas for property in Bangkok',
+  areas: [
+    {
+      heading: 'Sukhumvit',
+      body: 'Sukhumvit is Bangkok’s main expat hub, with dense BTS access, international restaurants and nightlife. On Nut and Ekkamai attract mid-range condo buyers, while Thonglor and nearby pockets push into luxury — a corridor where rental demand from foreigners stays consistently strong.',
+    },
+    {
+      heading: 'Silom / Sathorn',
+      body: 'Silom and Sathorn form the CBD and financial district, popular with professionals who want to live near work. Lumpini Park sits close by, and corporate tenants drive reliable rental demand for well-located condos above the traffic.',
+    },
+    {
+      heading: 'Rama 9 / RCA',
+      body: 'Rama 9 and RCA are an emerging CBD around the Grand Rama 9 development, drawing younger buyers and investors who want better value than Sukhumvit. New towers, retail and transit links continue to reshape the area’s investment profile.',
+    },
+    {
+      heading: 'Riverside / Charoennakorn',
+      body: 'The riverside and Charoennakorn stretch deliver luxury waterfront living near ICONSIAM and projects such as The Residences at Mandarin Oriental. Dramatic Chao Phraya views and branded residences pull high-end buyers seeking a quieter alternative to Sukhumvit towers.',
+    },
+    {
+      heading: 'Lat Phrao / Chatuchak',
+      body: 'Northern Bangkok around Lat Phrao and Chatuchak offers MRT access and prices that appeal to Thai families and budget-conscious foreign buyers. Proximity to Chatuchak Weekend Market and growing condo supply make it a practical entry point into the capital.',
+    },
+  ],
+  listingsHeading: 'Currently listed in Bangkok',
+  emptyText:
+    'No listings currently available in Bangkok. Check back soon or list your property here.',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  buyingHeading: 'Buying property in Bangkok as a foreigner',
+  buyingBody:
+    'Foreigners can own condominium units in Bangkok outright (freehold) up to the 49% foreign quota per building — this is the most straightforward path for foreign buyers. Land and houses cannot be owned directly. Leasehold (30 years registered at the Land Office) is common for landed property. Bangkok has many established international law firms specialising in property transactions — always use one independent from the seller or developer. Always verify the title deed (Chanote or Nor Sor 3 Gor) and check for any encumbrances before signing anything.',
+  buyingLinkHref: '/info/buying-land-thailand',
+  buyingLinkLabel: 'Read the full guide to buying property in Thailand →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Can foreigners buy a condo in Bangkok?',
+      answer:
+        'Yes — foreigners can own condominium units in Bangkok outright (freehold) provided the foreign quota for that building (49% of total units) has not been exceeded. This is the most common and legally straightforward route for foreign buyers in Bangkok.',
+    },
+    {
+      question: 'Can foreigners buy a house in Bangkok?',
+      answer:
+        'Foreigners cannot own land or houses directly in Thailand. Options include leasehold (30 years, typically renewable), purchasing via a Thai spouse, or a registered Thai company. Each option carries different legal risks — always consult an independent Thai lawyer.',
+    },
+    {
+      question: 'What is the average condo price in Bangkok?',
+      answer:
+        'Prices vary widely. Central Sukhumvit and Silom: ฿150,000–300,000 per sqm. Emerging areas like Rama 9 and Lat Phrao: ฿80,000–150,000 per sqm. Studio condos near BTS from ฿2–4M. Luxury penthouses in prime locations from ฿20M+.',
+    },
+    {
+      question: 'Which BTS or MRT stations are best for investment?',
+      answer:
+        'Asok (interchange BTS/MRT), Phrom Phong, Thonglor and Ekkamai consistently show strong rental demand from expats. On Nut offers better value with good BTS access. For MRT: Phetchaburi (Airport Rail Link interchange) and Rama 9 are growing fast.',
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/phuket', label: 'Property for sale in Phuket →' },
+    { href: '/hua-hin', label: 'Land for sale in Hua Hin →' },
+    { href: '/info/buying-land-thailand', label: 'Guide to buying property in Thailand →' },
+    {
+      href: 'https://data.hua-hin-land.com',
+      label: 'Verify a Thai title deed →',
+      external: true,
+    },
+  ],
+}

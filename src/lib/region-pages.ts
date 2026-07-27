@@ -1,7 +1,12 @@
 import type { PublicListing } from '@/lib/listings'
 import { fetchApprovedListings } from '@/lib/listings'
 
-export type RegionPageId = 'hua-hin' | 'pranburi' | 'black-mountain'
+export type RegionPageId =
+  | 'hua-hin'
+  | 'pranburi'
+  | 'black-mountain'
+  | 'phuket'
+  | 'bangkok'
 
 function textBlob(listing: PublicListing): string {
   return [listing.location, listing.description, listing.region, listing.title_deed]
@@ -17,6 +22,12 @@ export async function fetchRegionListings(page: RegionPageId): Promise<PublicLis
   }
   if (page === 'pranburi') {
     return fetchApprovedListings({ region: 'Pranburi', limit: 50 })
+  }
+  if (page === 'phuket') {
+    return fetchApprovedListings({ region: 'Phuket', limit: 50 })
+  }
+  if (page === 'bangkok') {
+    return fetchApprovedListings({ region: 'Bangkok', limit: 50 })
   }
 
   // title/location contains "Black Mountain" OR region = "Hua Hin" (BM matches first)
