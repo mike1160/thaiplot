@@ -103,8 +103,8 @@ export default function HomePageClient({ listings }: Props) {
             </div>
           ) : (
             <div className="grid gap-6 grid-cols-1 md:grid-cols-3 animate-stagger">
-              {filtered.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
+              {filtered.map((listing, index) => (
+                <ListingCard key={listing.id} listing={listing} index={index} />
               ))}
             </div>
           )}

@@ -38,18 +38,35 @@ export const DEFAULT_FILTERS: ListingFiltersState = {
   transaction: 'For Sale',
 }
 
-export function listingPhotoUrl(propertyType: string | null | undefined): string {
+export const LAND_PHOTOS = [
+  'https://images.pexels.com/photos/4388164/pexels-photo-4388164.jpeg',
+  'https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg',
+  'https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg',
+  'https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg',
+  'https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg',
+  'https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg',
+]
+
+const VILLA_PHOTO = 'https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg'
+const CONDO_PHOTO = 'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg'
+
+function withPhotoParams(url: string): string {
+  return `${url}?auto=compress&w=800`
+}
+
+export function listingPhotoUrl(
+  propertyType: string | null | undefined,
+  index = 0
+): string {
   const type = (propertyType || '').toLowerCase()
-  if (type.includes('land')) {
-    return 'https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=800'
-  }
   if (type.includes('villa')) {
-    return 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800'
+    return withPhotoParams(VILLA_PHOTO)
   }
   if (type.includes('condo')) {
-    return 'https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&w=800'
+    return withPhotoParams(CONDO_PHOTO)
   }
-  return 'https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=800'
+  // Land, house, commercial, default — rotate Thailand land photos by index
+  return withPhotoParams(LAND_PHOTOS[index % LAND_PHOTOS.length])
 }
 
 export function matchesListingFilters<

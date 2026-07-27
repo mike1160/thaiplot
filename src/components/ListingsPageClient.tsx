@@ -78,8 +78,8 @@ export default function ListingsPageClient({ listings, initialRegion = 'All' }: 
             </div>
           ) : (
             <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
+              {filtered.map((listing, index) => (
+                <ListingCard key={listing.id} listing={listing} index={index} />
               ))}
             </div>
           )}
