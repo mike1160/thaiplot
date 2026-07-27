@@ -40,11 +40,12 @@ export type ListingFilters = {
 
 /**
  * Prefer marketplace columns when present. Falls back if DB not migrated yet.
+ * photo_1–photo_5 are always requested so uploaded listing photos are never dropped.
  */
-const SELECT_WITH_CATEGORY =
-  'id, created_at, name, email, phone, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, category, photo_1, photo_2, photo_3, photo_4, photo_5, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition'
 const SELECT_BASE =
-  'id, created_at, name, email, phone, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
+  'id, created_at, name, email, phone, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at, photo_1, photo_2, photo_3, photo_4, photo_5'
+const SELECT_WITH_CATEGORY =
+  `${SELECT_BASE}, category, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition`
 
 type SortableRow = {
   id: string
@@ -177,7 +178,7 @@ export async function fetchApprovedListings(
         const supabase = getSupabaseAdmin()
         let query = supabase
           .from('listings')
-          .select(SELECT_BASE)
+          .select(SELECT_WITH_CATEGORY)
           .eq('status', 'approved')
           .order('created_at', { ascending: true })
 
@@ -188,7 +189,23 @@ export async function fetchApprovedListings(
           query = query.eq('property_type', filters.propertyType)
         }
 
-        const { data, error } = await query
+        let { data, error } = await query
+        if (error) {
+          let baseQuery = supabase
+            .from('listings')
+            .select(SELECT_BASE)
+            .eq('status', 'approved')
+            .order('created_at', { ascending: true })
+          if (filters.region && filters.region !== 'All') {
+            baseQuery = baseQuery.eq('region', filters.region)
+          }
+          if (filters.propertyType && filters.propertyType !== 'All') {
+            baseQuery = baseQuery.eq('property_type', filters.propertyType)
+          }
+          const baseResult = await baseQuery
+          data = baseResult.data as typeof data
+          error = baseResult.error
+        }
         console.log('[fetchApprovedListings] admin fallback', {
           error: error?.message,
           count: data?.length ?? null,

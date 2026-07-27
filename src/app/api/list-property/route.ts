@@ -216,6 +216,11 @@ export async function POST(req: NextRequest) {
       title_deed: titleDeedValue,
       description: descriptionValue || null,
       region: regionValue,
+      photo_1: photoList[0] || null,
+      photo_2: photoList[1] || null,
+      photo_3: photoList[2] || null,
+      photo_4: photoList[3] || null,
+      photo_5: photoList[4] || null,
     }
 
     let listing: { id: string } | null = null
@@ -229,13 +234,24 @@ export async function POST(req: NextRequest) {
 
     if (
       insertError &&
-      /(category|vehicle_|condition|photo_|lat|lng|line_id|whatsapp|contact_preferences|referral_source|slug)/i.test(
+      /(category|vehicle_|condition|lat|lng|line_id|whatsapp|contact_preferences|referral_source|slug)/i.test(
         insertError.message || ''
       )
     ) {
       ;({ data: listing, error: insertError } = await supabase
         .from('listings')
         .insert(legacyRow)
+        .select('id')
+        .single())
+    }
+
+    // Last resort: no photo columns yet
+    if (insertError && /photo_/i.test(insertError.message || '')) {
+      const { photo_1: _p1, photo_2: _p2, photo_3: _p3, photo_4: _p4, photo_5: _p5, ...withoutPhotos } =
+        legacyRow
+      ;({ data: listing, error: insertError } = await supabase
+        .from('listings')
+        .insert(withoutPhotos)
         .select('id')
         .single())
     }

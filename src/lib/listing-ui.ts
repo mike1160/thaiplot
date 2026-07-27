@@ -69,13 +69,9 @@ export function listingPhotosFromColumns(listing: {
   photo_4?: string | null
   photo_5?: string | null
 }): string[] {
-  return [
-    listing.photo_1,
-    listing.photo_2,
-    listing.photo_3,
-    listing.photo_4,
-    listing.photo_5,
-  ].filter((url): url is string => Boolean(url && url.trim()))
+  return [listing.photo_1, listing.photo_2, listing.photo_3, listing.photo_4, listing.photo_5]
+    .map((url) => (typeof url === 'string' ? url.trim() : ''))
+    .filter((url): url is string => Boolean(url))
 }
 
 /** Map listing to local gallery photos by stable listing id (preferred). */
@@ -175,6 +171,14 @@ export function resolveListingPriceDisplay(listing: {
   }
 }
 
+/**
+ * Gallery photos for a listing.
+ * 1) DB columns photo_1–photo_5 (uploaded via list-property / Storage)
+ * 2) Hardcoded location/id mapping for seeded listings
+ * 3) Hero fallback
+ *
+ * If photo_1 (or any photo_* column) has a value, never fall through to location mapping.
+ */
 export function resolveListingPhotos(listing: {
   id?: string | null
   property_type?: string | null
@@ -188,7 +192,9 @@ export function resolveListingPhotos(listing: {
   photo_5?: string | null
 }): string[] {
   const fromColumns = listingPhotosFromColumns(listing)
-  if (fromColumns.length > 0) return fromColumns
+  if (fromColumns.length > 0) {
+    return fromColumns
+  }
 
   const mapped = listingPhotosForListing(listing)
   if (mapped.length > 0) return mapped
@@ -197,9 +203,19 @@ export function resolveListingPhotos(listing: {
 }
 
 export function listingPhotoUrl(
-  _propertyType?: string | null,
-  location?: string | null
+  propertyType?: string | null,
+  location?: string | null,
+  photos?: {
+    photo_1?: string | null
+    photo_2?: string | null
+    photo_3?: string | null
+    photo_4?: string | null
+    photo_5?: string | null
+  }
 ): string {
+  if (photos && listingPhotosFromColumns(photos).length > 0) {
+    return resolveListingPhotos({ property_type: propertyType, location, ...photos })[0]
+  }
   const mapped = listingPhotosForListing({ location })
   return mapped[0] || HERO_FALLBACK
 }
