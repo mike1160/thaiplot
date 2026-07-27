@@ -11,6 +11,12 @@ const flags: Record<AppLocale, string> = {
   nl: '🇳🇱',
   de: '🇩🇪',
   th: '🇹🇭',
+  sv: '🇸🇪',
+  da: '🇩🇰',
+  fr: '🇫🇷',
+  ru: '🇷🇺',
+  zh: '🇨🇳',
+  ja: '🇯🇵',
 }
 
 type LanguageSwitcherProps = {

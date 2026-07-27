@@ -9,7 +9,7 @@ import { LIST_REGIONS } from '@/i18n/routing'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
-const LANG_OPTIONS = ['EN', 'NL', 'DE', 'TH'] as const
+const LANG_OPTIONS = ['EN', 'NL', 'DE', 'TH', 'SV', 'DA', 'FR', 'RU', 'ZH', 'JA'] as const
 const TYPE_KEYS = [
   { value: 'Land', labelKey: 'typeLand' as const },
   { value: 'House', labelKey: 'typeHouse' as const },
