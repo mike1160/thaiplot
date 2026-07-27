@@ -83,13 +83,6 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="pt-10 md:pt-12 px-6">
-        <div className="max-w-5xl mx-auto space-y-6">
-          <ThaiDataCard />
-          <TitleVerifyCta />
-        </div>
-      </section>
-
       <section id="listings" className="py-16 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2
@@ -161,7 +154,7 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      <section className="px-6 pb-16">
+      <section className="px-6 pb-10">
         <div className="max-w-5xl mx-auto bg-[#1A2744] rounded-[12px] px-6 py-10 md:py-12 text-center text-white">
           <h2
             className="text-2xl md:text-3xl font-bold mb-4"
@@ -177,6 +170,13 @@ export default function HomePageClient({ listings }: Props) {
             {t('ctaBarButton')}
           </Link>
           <p className="text-white/65 text-sm">{t('ctaBarNote')}</p>
+        </div>
+      </section>
+
+      <section className="px-6 pb-16">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <ThaiDataCard compact />
+          <TitleVerifyCta />
         </div>
       </section>
 

@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
+import { trackGaEvent } from '@/components/GoogleAnalytics'
 import { LINE_AGENT_URL } from '@/lib/contact'
 import { resolveListingPhotos } from '@/lib/listing-ui'
 import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
@@ -47,6 +48,7 @@ function DescriptionWithLinks({ text }: { text: string }) {
 
 export default function ListingCard({ listing, contactHref }: ListingCardProps) {
   const t = useTranslations('listings')
+  const locale = useLocale()
   const badgeKey = transactionBadgeKey(listing.transaction_type)
   const fullDescription = (listing.description || '').trim()
   const href = contactHref || LINE_AGENT_URL
@@ -59,7 +61,6 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const mainPhoto = photos[activeIndex] || photos[0]
   const thumbnails = photos.length > 1 ? photos : []
 
-  // Keep URLs readable: truncate plain text, then re-attach any www/http matches from full text
   const urls = fullDescription.match(URL_REGEX) || []
   const plain = fullDescription.replace(URL_REGEX, ' ').replace(/\s+/g, ' ').trim()
   const truncatedPlain = truncateText(plain, 80)
@@ -91,6 +92,33 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
 
   function trackPhotoClick(photoIndex: number) {
     console.log('photo_clicked', listing.id, photoIndex)
+    trackGaEvent('listing_photo_click', {
+      listing_id: listing.id,
+      photo_index: photoIndex,
+    })
+  }
+
+  function trackContactClick() {
+    trackGaEvent('listing_click', {
+      listing_id: listing.id,
+      listing_location: listing.location,
+      listing_price: listing.price,
+      listing_size: listing.size,
+      click_time: new Date().toISOString(),
+    })
+
+    void fetch('/api/track-click', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        listing_id: listing.id,
+        listing_location: listing.location,
+        locale,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      // non-blocking
+    })
   }
 
   function selectPhoto(photoIndex: number) {
@@ -221,6 +249,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             href={href}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackContactClick}
             className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors mt-auto"
           >
             {t('contact')}
@@ -228,6 +257,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
         ) : (
           <Link
             href={href}
+            onClick={trackContactClick}
             className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors mt-auto"
           >
             {t('contact')}
