@@ -31,6 +31,10 @@ function htmlPage(title: string, message: string, ok: boolean) {
 </html>`
 }
 
+function looksLikeEmail(value: string | null | undefined): boolean {
+  return !!value && value.includes('@')
+}
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const id = searchParams.get('id')
@@ -45,7 +49,7 @@ export async function GET(req: NextRequest) {
     })
   }
 
-  if (!id || (action !== 'approve' && action !== 'reject')) {
+  if (!id || (action !== 'approve' && action !== 'reject' && action !== 'delete')) {
     return new NextResponse(htmlPage('Invalid', '❌ Invalid request.', false), {
       status: 400,
       headers: { 'Content-Type': 'text/html; charset=utf-8' },
@@ -67,6 +71,21 @@ export async function GET(req: NextRequest) {
       })
     }
 
+    if (action === 'delete') {
+      const { error: deleteError } = await supabase.from('listings').delete().eq('id', id)
+      if (deleteError) {
+        console.error(deleteError)
+        return new NextResponse(htmlPage('Error', '❌ Failed to delete listing.', false), {
+          status: 500,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        })
+      }
+      return new NextResponse(htmlPage('Done', '✅ Listing deleted.', true), {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' },
+      })
+    }
+
     const now = new Date().toISOString()
     const updates =
       action === 'approve'
@@ -83,11 +102,11 @@ export async function GET(req: NextRequest) {
       })
     }
 
-    if (listing.email) {
+    if (looksLikeEmail(listing.email)) {
       const isApprove = action === 'approve'
       await resend.emails.send({
         from: 'ThaiPlot <noreply@hua-hin-land.com>',
-        to: listing.email,
+        to: listing.email!,
         subject: isApprove
           ? 'Your listing has been accepted — ThaiPlot'
           : 'Update on your listing submission — ThaiPlot',

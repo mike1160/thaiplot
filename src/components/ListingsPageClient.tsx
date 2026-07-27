@@ -6,10 +6,13 @@ import { Link } from '@/i18n/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import ListingCard from '@/components/ListingCard'
+import SearchFilterBar from '@/components/SearchFilterBar'
 import type { PublicListing } from '@/lib/listings'
-import { REGIONS } from '@/i18n/routing'
-
-const PROPERTY_TYPES = ['All', 'Land', 'House', 'Condo', 'Villa', 'Commercial'] as const
+import {
+  DEFAULT_FILTERS,
+  matchesListingFilters,
+  type ListingFiltersState,
+} from '@/lib/listing-ui'
 
 type Props = {
   listings: PublicListing[]
@@ -19,33 +22,19 @@ type Props = {
 export default function ListingsPageClient({ listings, initialRegion = 'All' }: Props) {
   const t = useTranslations('listings')
   const tn = useTranslations('navigation')
-  const [region, setRegion] = useState(initialRegion || 'All')
-  const [propertyType, setPropertyType] = useState('All')
 
-  const filtered = useMemo(() => {
-    return listings.filter((item) => {
-      const regionOk =
-        region === 'All' ||
-        (item.region || '').toLowerCase() === region.toLowerCase() ||
-        (item.location || '').toLowerCase().includes(region.toLowerCase())
-      const typeOk =
-        propertyType === 'All' ||
-        (item.property_type || '').toLowerCase() === propertyType.toLowerCase()
-      return regionOk && typeOk
-    })
-  }, [listings, region, propertyType])
-
-  const typeLabel = (value: string) => {
-    if (value === 'All') return t('filterAll')
-    const map: Record<string, string> = {
-      Land: t('typeLand'),
-      House: t('typeHouse'),
-      Condo: t('typeCondo'),
-      Villa: t('typeVilla'),
-      Commercial: t('typeCommercial'),
-    }
-    return map[value] || value
+  const initial: ListingFiltersState = {
+    ...DEFAULT_FILTERS,
+    region: initialRegion && initialRegion !== 'All' ? initialRegion : 'All',
   }
+
+  const [filters, setFilters] = useState<ListingFiltersState>(initial)
+  const [applied, setApplied] = useState<ListingFiltersState>(initial)
+
+  const filtered = useMemo(
+    () => listings.filter((item) => matchesListingFilters(item, applied)),
+    [listings, applied]
+  )
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
@@ -65,61 +54,17 @@ export default function ListingsPageClient({ listings, initialRegion = 'All' }: 
         </div>
       </section>
 
-      <section className="bg-white border-b border-[#E8E2D6] px-6 py-5">
-        <div className="max-w-6xl mx-auto space-y-4">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[#5C5247] mb-2">
-              {t('region')}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {REGIONS.map((item) => {
-                const active = region === item
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => setRegion(item)}
-                    className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      active
-                        ? 'bg-[#1A2744] text-white'
-                        : 'bg-[#FAF7F0] text-[#5C5247] border border-[#E8E2D6] hover:border-[#C8973A]'
-                    }`}
-                  >
-                    {item === 'All' ? t('filterAll') : item}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-[#5C5247] mb-2">
-              {t('propertyType')}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {PROPERTY_TYPES.map((item) => {
-                const active = propertyType === item
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => setPropertyType(item)}
-                    className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      active
-                        ? 'bg-[#1A2744] text-white'
-                        : 'bg-[#FAF7F0] text-[#5C5247] border border-[#E8E2D6] hover:border-[#C8973A]'
-                    }`}
-                  >
-                    {typeLabel(item)}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
+      <section className="px-4 sm:px-6 -mt-8 relative z-10 mb-4">
+        <div className="max-w-5xl mx-auto">
+          <SearchFilterBar
+            value={filters}
+            onChange={setFilters}
+            onSearch={() => setApplied(filters)}
+          />
         </div>
       </section>
 
-      <section className="bg-[#FAF7F0] py-12 md:py-20 px-6">
+      <section className="bg-[#FAF7F0] py-12 md:py-16 px-6">
         <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 md:p-12 text-center">

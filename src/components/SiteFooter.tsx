@@ -58,7 +58,9 @@ export default function SiteFooter() {
               {t('footerRegions')}
             </p>
             <ul className="space-y-2.5 text-sm">
-              {REGIONS.filter((r) => r !== 'All').map((region) => (
+              {REGIONS.filter((r) =>
+                !['All', 'Other', 'Koh Phangan', 'Rayong', 'Cha-am', 'Krabi'].includes(r)
+              ).map((region) => (
                 <li key={region}>
                   <Link
                     href={`/listings?region=${encodeURIComponent(region)}`}

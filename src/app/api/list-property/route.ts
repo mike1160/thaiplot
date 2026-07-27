@@ -93,6 +93,7 @@ export async function POST(req: NextRequest) {
     const base = siteBaseUrl()
     const approveUrl = `${base}/api/listing-action?id=${listing.id}&action=approve&secret=${encodeURIComponent(adminSecret)}`
     const rejectUrl = `${base}/api/listing-action?id=${listing.id}&action=reject&secret=${encodeURIComponent(adminSecret)}`
+    const deleteUrl = `${base}/api/listing-action?id=${listing.id}&action=delete&secret=${encodeURIComponent(adminSecret)}`
 
     await resend.emails.send({
       from: 'ThaiPlot <noreply@hua-hin-land.com>',
@@ -127,6 +128,7 @@ export async function POST(req: NextRequest) {
           <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
             <a href="${approveUrl}" style="display: inline-block; padding: 14px 22px; background: #16a34a; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">✅ APPROVE</a>
             <a href="${rejectUrl}" style="display: inline-block; padding: 14px 22px; background: #dc2626; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">❌ REJECT</a>
+            <a href="${deleteUrl}" style="display: inline-block; padding: 14px 22px; background: #64748b; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">🗑️ DELETE</a>
           </div>
 
           <div style="margin-top: 24px; padding: 16px; background: #1e2a4a; border-radius: 8px;">

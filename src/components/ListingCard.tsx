@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { LINE_AGENT_URL } from '@/lib/contact'
+import { listingPhotoUrl } from '@/lib/listing-ui'
 import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
 
 type ListingCardProps = {
@@ -15,14 +16,15 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   const badgeKey = transactionBadgeKey(listing.transaction_type)
   const description = truncateText(listing.description, 80)
   const href = contactHref || LINE_AGENT_URL
+  const photo = listingPhotoUrl(listing.property_type)
 
   return (
     <article className="bg-white border border-[#E8E2D6] rounded-[12px] overflow-hidden flex flex-col">
-      <div className="relative h-44 bg-[#E8E2D6]">
+      <div className="relative h-[180px] bg-[#E8E2D6]">
         <img
-          src="/listing-placeholder.jpg"
+          src={photo}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-t-[12px]"
         />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">
           <span className="inline-flex px-2.5 py-1 rounded-md text-xs font-semibold bg-[#1A2744] text-white">
@@ -32,6 +34,9 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             {t(badgeKey)}
           </span>
         </div>
+        <span className="absolute bottom-2 right-2 text-[10px] text-white/90 bg-black/40 px-1.5 py-0.5 rounded">
+          Photo: Pexels
+        </span>
       </div>
 
       <div className="p-5 md:p-6 flex flex-col flex-1">
@@ -56,6 +61,12 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
             <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
               <dt className="text-[#5C5247]">{t('titleDeed')}</dt>
               <dd className="text-[#1A2744] font-medium text-right">{listing.title_deed}</dd>
+            </div>
+          ) : null}
+          {listing.price ? (
+            <div className="flex justify-between gap-4 border-b border-[#E8E2D6] pb-2">
+              <dt className="text-[#5C5247]">{t('price')}</dt>
+              <dd className="text-[#1A2744] font-medium text-right">{listing.price}</dd>
             </div>
           ) : null}
         </dl>

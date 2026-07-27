@@ -6,14 +6,15 @@ import { Link } from '@/i18n/navigation'
 import HomeNavbar from '@/components/HomeNavbar'
 import ListingCard from '@/components/ListingCard'
 import LineButton from '@/components/LineButton'
+import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
-import {
-  AGENT_NAME,
-  AGENT_PHONE_DISPLAY,
-  THANATHIP_LISTINGS,
-} from '@/lib/contact'
+import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import type { PublicListing } from '@/lib/listings'
-import { REGIONS } from '@/i18n/routing'
+import {
+  DEFAULT_FILTERS,
+  matchesListingFilters,
+  type ListingFiltersState,
+} from '@/lib/listing-ui'
 
 type Props = {
   listings: PublicListing[]
@@ -21,22 +22,18 @@ type Props = {
 
 export default function HomePageClient({ listings }: Props) {
   const t = useTranslations('homepage')
-  const tc = useTranslations('common')
-  const [region, setRegion] = useState<string>('All')
+  const [filters, setFilters] = useState<ListingFiltersState>(DEFAULT_FILTERS)
+  const [applied, setApplied] = useState<ListingFiltersState>(DEFAULT_FILTERS)
 
-  const filtered = useMemo(() => {
-    if (region === 'All') return listings
-    return listings.filter((item) => {
-      const r = (item.region || item.location || '').toLowerCase()
-      return r.includes(region.toLowerCase())
-    })
-  }, [listings, region])
+  const filtered = useMemo(
+    () => listings.filter((item) => matchesListingFilters(item, applied)),
+    [listings, applied]
+  )
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <HomeNavbar />
 
-      {/* Hero */}
       <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
         <img
           src="/hero.jpg"
@@ -75,33 +72,16 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      {/* Location filter bar */}
-      <section className="bg-white border-b border-[#E8E2D6]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 overflow-x-auto">
-          <div className="flex items-center gap-2 min-w-max">
-            {REGIONS.map((item) => {
-              const active = region === item
-              const label = item === 'All' ? t('filterAll') : item
-              return (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => setRegion(item)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
-                    active
-                      ? 'bg-[#1A2744] text-white'
-                      : 'bg-[#FAF7F0] text-[#5C5247] border border-[#E8E2D6] hover:border-[#C8973A] hover:text-[#1A2744]'
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
+      <section className="relative z-20 -mt-8 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <SearchFilterBar
+            value={filters}
+            onChange={setFilters}
+            onSearch={() => setApplied(filters)}
+          />
         </div>
       </section>
 
-      {/* Featured listings */}
       <section id="listings" className="py-16 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2
@@ -131,7 +111,6 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      {/* Featured agent */}
       <section className="pb-8 px-6">
         <div className="max-w-3xl mx-auto">
           <h2
@@ -174,55 +153,6 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
-      {/* Thanathip featured listings */}
-      <section className="py-12 md:py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-center mb-10"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('agentListingsTitle')}
-          </h2>
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 animate-stagger">
-            {THANATHIP_LISTINGS.map((item) => (
-              <article
-                key={item.id}
-                className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 flex flex-col"
-              >
-                <p className="text-2xl mb-3" aria-hidden>
-                  {item.emoji}
-                </p>
-                <h3
-                  className="text-lg font-bold text-[#1A2744] mb-3 leading-snug"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
-                  {item.title}
-                </h3>
-                <ul className="space-y-1.5 text-sm text-[#5C5247] mb-5 flex-1">
-                  {item.details.map((detail) => (
-                    <li key={detail}>· {detail}</li>
-                  ))}
-                  {item.href ? (
-                    <li>
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#C8973A] hover:underline"
-                      >
-                        {item.href.replace(/^https?:\/\//, '')}
-                      </a>
-                    </li>
-                  ) : null}
-                </ul>
-                <LineButton size="sm" label={tc('contactThanathip')} className="w-full" />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA bar */}
       <section className="px-6 pb-16">
         <div className="max-w-5xl mx-auto bg-[#1A2744] rounded-[12px] px-6 py-10 md:py-12 text-center text-white">
           <h2
