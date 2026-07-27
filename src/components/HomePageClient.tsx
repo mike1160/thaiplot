@@ -13,7 +13,6 @@ import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import type { PublicListing } from '@/lib/listings'
 import {
   DEFAULT_FILTERS,
-  matchesListingFilters,
   type ListingFiltersState,
 } from '@/lib/listing-ui'
 
@@ -44,10 +43,8 @@ export default function HomePageClient({ listings }: Props) {
   const router = useRouter()
   const [filters, setFilters] = useState<ListingFiltersState>(DEFAULT_FILTERS)
 
-  const preview = useMemo(
-    () => listings.filter((item) => matchesListingFilters(item, filters)).slice(0, 6),
-    [listings, filters]
-  )
+  // Homepage preview: show latest listings as fetched — do not hide them behind filters
+  const preview = useMemo(() => listings.slice(0, 6), [listings])
 
   function goToListings(next?: ListingFiltersState) {
     const target = next ?? filters

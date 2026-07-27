@@ -1,4 +1,4 @@
-import { getSupabaseAdmin, getSupabasePublic, type ListingRow } from '@/lib/supabase'
+import { getSupabaseAdmin, type ListingRow } from '@/lib/supabase'
 
 export type PublicListing = Pick<
   ListingRow,
@@ -33,15 +33,15 @@ export type ListingFilters = {
   limit?: number
 }
 
-/** Columns that exist on the live listings table today. */
+/**
+ * Only columns that exist on the live `listings` table.
+ * (category / photo_* / vehicle_* are not migrated yet)
+ */
 const BASE_SELECT =
   'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, region, approved_at'
 
-const SELECT_WITH_PHOTOS = `${BASE_SELECT}, photo_1, photo_2, photo_3, photo_4, photo_5`
-const SELECT_WITH_MARKETPLACE = `${SELECT_WITH_PHOTOS}, category, vehicle_type, vehicle_brand, vehicle_year, vehicle_mileage, condition`
-
 function mapRows(data: unknown[] | null): PublicListing[] {
-  return ((data || []) as unknown as PublicListing[]).map((row) => ({
+  return ((data || []) as PublicListing[]).map((row) => ({
     ...row,
     title_deed: row.title_deed ?? null,
     region: row.region || 'Hua Hin',
@@ -62,58 +62,93 @@ function mapRows(data: unknown[] | null): PublicListing[] {
 export async function fetchApprovedListings(
   filters: ListingFilters = {}
 ): Promise<PublicListing[]> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  const key = serviceKey || anonKey
+
+  if (!url || !key) {
+    console.error('[fetchApprovedListings] missing env', {
+      hasUrl: Boolean(url),
+      hasServiceKey: Boolean(serviceKey),
+      hasAnonKey: Boolean(anonKey),
+    })
+    return []
+  }
+
   try {
-    // Prefer anon (RLS); fall back to service role on server if needed
-    const clients = [getSupabasePublic, getSupabaseAdmin]
+    // Direct REST call — avoids supabase-js + Next fetch cache pitfalls
+    const params = new URLSearchParams()
+    params.set('status', 'eq.approved')
+    params.set('select', BASE_SELECT)
+    params.set('order', 'approved_at.desc.nullslast')
 
-    for (const getClient of clients) {
-      const supabase = getClient()
-      const selects = [SELECT_WITH_MARKETPLACE, SELECT_WITH_PHOTOS, BASE_SELECT]
+    if (filters.region && filters.region !== 'All') {
+      params.set('region', `eq.${filters.region}`)
+    }
+    if (filters.propertyType && filters.propertyType !== 'All') {
+      params.set('property_type', `eq.${filters.propertyType}`)
+    }
+    if (typeof filters.limit === 'number') {
+      params.set('limit', String(filters.limit))
+    }
 
-      for (const select of selects) {
+    const endpoint = `${url.replace(/\/$/, '')}/rest/v1/listings?${params.toString()}`
+    const res = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        Accept: 'application/json',
+      },
+      cache: 'no-store',
+    })
+
+    const raw = await res.json()
+
+    console.log('[fetchApprovedListings] raw Supabase response', {
+      ok: res.ok,
+      status: res.status,
+      using: serviceKey ? 'service_role' : 'anon',
+      count: Array.isArray(raw) ? raw.length : null,
+      error: !Array.isArray(raw) ? raw : null,
+      sample: Array.isArray(raw) && raw[0] ? raw[0] : null,
+    })
+
+    if (!res.ok || !Array.isArray(raw)) {
+      // Last resort: supabase-js admin client
+      try {
+        const supabase = getSupabaseAdmin()
         let query = supabase
           .from('listings')
-          .select(select)
+          .select(BASE_SELECT)
           .eq('status', 'approved')
           .order('approved_at', { ascending: false })
 
         if (filters.region && filters.region !== 'All') {
           query = query.eq('region', filters.region)
         }
-
         if (filters.propertyType && filters.propertyType !== 'All') {
           query = query.eq('property_type', filters.propertyType)
         }
-
         if (typeof filters.limit === 'number') {
           query = query.limit(filters.limit)
         }
 
         const { data, error } = await query
-
-        // Temporary debug — remove after listings are confirmed live again
-        console.log('[fetchApprovedListings] raw Supabase response', {
-          client: getClient === getSupabasePublic ? 'anon' : 'admin',
-          select,
-          filters,
-          error: error
-            ? { message: error.message, code: error.code, details: error.details }
-            : null,
-          count: Array.isArray(data) ? data.length : null,
-          sample: Array.isArray(data) && data[0] ? data[0] : null,
+        console.log('[fetchApprovedListings] admin fallback', {
+          error: error?.message,
+          count: data?.length ?? null,
         })
-
-        if (error) {
-          // Try next leaner select / client
-          continue
-        }
-
-        return mapRows(data as unknown[] | null)
+        if (error || !data) return []
+        return mapRows(data as unknown as unknown[])
+      } catch (fallbackError) {
+        console.error('[fetchApprovedListings] admin fallback failed', fallbackError)
+        return []
       }
     }
 
-    console.error('[fetchApprovedListings] all query attempts failed')
-    return []
+    return mapRows(raw)
   } catch (error) {
     console.error('[fetchApprovedListings] exception', error)
     return []

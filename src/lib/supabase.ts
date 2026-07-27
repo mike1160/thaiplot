@@ -8,6 +8,10 @@ function requireEnv(name: string): string {
   return value
 }
 
+/** Next.js caches fetch by default — always bypass for Supabase. */
+const noStoreFetch: typeof fetch = (input, init) =>
+  fetch(input, { ...init, cache: 'no-store' })
+
 /** Service-role client — server/API only. Bypasses RLS. Never expose to the browser. */
 export function getSupabaseAdmin(): SupabaseClient {
   return createClient(
@@ -18,6 +22,7 @@ export function getSupabaseAdmin(): SupabaseClient {
         persistSession: false,
         autoRefreshToken: false,
       },
+      global: { fetch: noStoreFetch },
     }
   )
 }
@@ -32,6 +37,7 @@ export function getSupabasePublic(): SupabaseClient {
         persistSession: false,
         autoRefreshToken: false,
       },
+      global: { fetch: noStoreFetch },
     }
   )
 }
