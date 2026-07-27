@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import LegalFooterBar from '@/components/LegalFooterBar'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAnalytics from '@/components/ConsentAnalytics'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
 import HtmlLang from '@/components/HtmlLang'
 import { routing } from '@/i18n/routing'
 import { localizedPath, SITE_URL } from '@/lib/seo'
@@ -14,6 +14,8 @@ type Props = {
   children: React.ReactNode
   params: { locale: string }
 }
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -75,12 +77,28 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      {GA_ID ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `}
+          </Script>
+        </>
+      ) : null}
       <HtmlLang />
       {children}
       <LegalFooterBar />
       <CookieConsent />
       <ConsentAnalytics />
-      <GoogleAnalytics />
     </NextIntlClientProvider>
   )
 }

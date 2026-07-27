@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { trackGaEvent } from '@/components/GoogleAnalytics'
+import { trackGaEvent } from '@/lib/ga'
 import { LINE_AGENT_URL } from '@/lib/contact'
 import { resolveListingPhotos } from '@/lib/listing-ui'
 import { truncateText, transactionBadgeKey, type PublicListing } from '@/lib/listings'
@@ -99,13 +99,13 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
   }
 
   function trackContactClick() {
-    trackGaEvent('listing_click', {
-      listing_id: listing.id,
-      listing_location: listing.location,
-      listing_price: listing.price,
-      listing_size: listing.size,
-      click_time: new Date().toISOString(),
-    })
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'listing_contact_click', {
+        listing_id: listing.id,
+        listing_location: listing.location,
+        listing_price: listing.price,
+      })
+    }
 
     void fetch('/api/track-click', {
       method: 'POST',
