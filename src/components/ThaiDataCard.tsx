@@ -9,6 +9,24 @@ type ThaiDataCardProps = {
   compact?: boolean
 }
 
+function trackThaiDataClick() {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'thaidata_click', {
+      source_page: window.location.pathname,
+      click_time: new Date().toISOString(),
+    })
+  }
+}
+
+function trackVerifyTitleClick() {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'verify_title_click', {
+      source_page: window.location.pathname,
+      click_time: new Date().toISOString(),
+    })
+  }
+}
+
 export default function ThaiDataCard({ className = '', compact = false }: ThaiDataCardProps) {
   const t = useTranslations('thaiData')
 
@@ -39,6 +57,7 @@ export default function ThaiDataCard({ className = '', compact = false }: ThaiDa
             href={THAI_DATA_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackThaiDataClick}
             className="inline-flex items-center justify-center min-h-[48px] px-6 rounded-[12px] text-sm font-semibold text-white transition-all hover:brightness-110"
             style={{ background: '#C8973A' }}
           >
@@ -70,6 +89,7 @@ export function TitleVerifyCta({ className = '' }: { className?: string }) {
         href={THAI_DATA_URL}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={trackVerifyTitleClick}
         className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white transition-all hover:brightness-110"
         style={{ background: '#C8973A' }}
       >
