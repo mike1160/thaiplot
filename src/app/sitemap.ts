@@ -24,6 +24,9 @@ const STATIC_ROUTES: Array<{
   { path: '/info/hua-hin-property-market', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/pranburi-property', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/visa-retirement-thailand', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/hua-hin', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/pranburi', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/black-mountain', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/legal/privacy', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/legal/disclaimer', priority: 0.3, changeFrequency: 'yearly' },
 ]

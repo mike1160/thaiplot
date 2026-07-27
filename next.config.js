@@ -13,6 +13,9 @@ const nextConfig = {
       { source: '/listings/:id', destination: '/en/listings/:id' },
       { source: '/listings', destination: '/en/listings' },
       { source: '/contact', destination: '/en/contact' },
+      { source: '/hua-hin', destination: '/en/hua-hin' },
+      { source: '/pranburi', destination: '/en/pranburi' },
+      { source: '/black-mountain', destination: '/en/black-mountain' },
     ]
   },
   async redirects() {

@@ -11,6 +11,12 @@ const INFO_PAGES: Record<string, string> = {
   'visa-retirement-thailand': 'pages.visa',
 }
 
+const REGION_PAGES: Record<string, string> = {
+  'hua-hin': 'pages.huaHinRegion',
+  pranburi: 'pages.pranburiRegion',
+  'black-mountain': 'pages.blackMountainRegion',
+}
+
 function buildCrumbs(pathname: string) {
   const segments = pathname.split('/').filter(Boolean)
   const crumbs: { labelKey: string; href?: string }[] = [{ labelKey: 'home', href: '/' }]
@@ -48,6 +54,10 @@ function buildCrumbs(pathname: string) {
     if (pageSlug && INFO_PAGES[pageSlug]) {
       crumbs.push({ labelKey: INFO_PAGES[pageSlug] })
     }
+    return crumbs
+  }
+  if (REGION_PAGES[section]) {
+    crumbs.push({ labelKey: REGION_PAGES[section] })
     return crumbs
   }
 

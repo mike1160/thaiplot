@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { REGIONS } from '@/i18n/routing'
 
 export default function SiteFooter() {
   const t = useTranslations('homepage')
@@ -67,18 +66,24 @@ export default function SiteFooter() {
               {t('footerRegions')}
             </p>
             <ul className="space-y-2.5 text-sm">
-              {REGIONS.filter(
-                (r) => !['All', 'Other', 'Koh Phangan', 'Rayong', 'Cha-am', 'Krabi'].includes(r)
-              ).map((region) => (
-                <li key={region}>
-                  <Link
-                    href={`/listings?region=${encodeURIComponent(region)}`}
-                    className="text-white/70 hover:text-[#C8973A] transition-colors"
-                  >
-                    {region}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/hua-hin" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  Land in Hua Hin
+                </Link>
+              </li>
+              <li>
+                <Link href="/pranburi" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  Land in Pranburi
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/black-mountain"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  Land near Black Mountain
+                </Link>
+              </li>
             </ul>
           </div>
 

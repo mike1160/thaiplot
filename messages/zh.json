@@ -67,7 +67,10 @@
       "chanote": "Chanote 地契",
       "huaHinMarket": "华欣市场",
       "pranburi": "班武里",
-      "visa": "退休签证"
+      "visa": "退休签证",
+      "huaHinRegion": "Hua Hin",
+      "pranburiRegion": "Pranburi",
+      "blackMountainRegion": "Black Mountain"
     }
   },
   "homepage": {
@@ -764,5 +767,54 @@
     "dutch": "Voor Nederlanders",
     "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
     "faq": "FAQ"
+  },
+  "regionHuaHin": {
+    "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
+    "metaDescription": "Browse Chanote land and plots for sale in Hua Hin. Independent listings near the beach, golf courses, hospitals and the Soi 112 corridor.",
+    "title": "Land for Sale in Hua Hin, Thailand",
+    "intro": "Hua Hin remains one of Thailand’s most practical places to buy land if you want beach access, healthcare and an established expat community without Bangkok density.",
+    "paras": [
+      "Hua Hin sits on the Gulf of Thailand in Prachuap Khiri Khan province, roughly 200 km southwest of Bangkok. The drive from the capital takes about three hours on a good day, and Hua Hin Airport plus train links keep weekend and long-stay travel realistic for buyers who split time between cities. That accessibility is a major reason European and Scandinavian retirees have treated Hua Hin as a second-home base for decades.",
+      "For land buyers, the town mixes lifestyle amenity with development potential. You are close to a proper beachfront, Bluport and Market Village shopping, Bangkok Hospital Hua Hin, San Paolo Hospital, and multiple golf courses within a short drive. Evening markets, jazz bars and seafood restaurants give the social life that many inland provinces lack — while still feeling calmer than Phuket or Pattaya.",
+      "Popular buying corridors include Soi 112 / Thap Tai, Khao Tao and the wider southern approach toward Pak Nam Pran. Plots with a full Chanote title deed are the strongest option for transfer and financing discussions. Flat, buildable parcels with road access and water already on site reduce surprise construction costs. Always verify ownership, boundaries and zoning with an independent Thai lawyer and the Land Office before you commit.",
+      "Foreign buyers generally cannot hold freehold land in their own name, so structures such as long-term leasehold or carefully structured Thai companies are common — never casual nominee arrangements. ThaiPlot lists land and property from owners and agents across Hua Hin so you can compare size, title type and asking price in one place, then contact sellers directly.",
+      "Whether you want a villa plot near the coast, a larger parcel for boutique development, or a quieter inland site with mountain views, Hua Hin offers a rare balance of infrastructure and lifestyle. Explore the current Hua Hin listings below, or browse the full ThaiPlot marketplace for land across Thailand."
+    ],
+    "listingsHeading": "Current Hua Hin listings",
+    "empty": "No Hua Hin listings are live right now. Browse all listings or check back soon.",
+    "viewAll": "View all listings →"
+  },
+  "regionPranburi": {
+    "metaTitle": "Land for Sale in Pranburi, Thailand | ThaiPlot",
+    "metaDescription": "Find land for sale in Pranburi and Khao Kalok — quieter beach living south of Hua Hin with Chanote plots and Gulf access.",
+    "title": "Land for Sale in Pranburi, Thailand",
+    "intro": "Pranburi and the Khao Kalok coastline offer a quieter alternative to central Hua Hin — still close enough for hospitals, shopping and golf, but with a stronger beach-village feel.",
+    "paras": [
+      "Pranburi sits just south of Hua Hin in Prachuap Khiri Khan province, along a stretch of Gulf coastline known for pine-lined beaches, fishing villages and the dramatic limestone of Khao Kalok. Many buyers discover the area after visiting Hua Hin and deciding they want more space, quieter nights and easier sea access without giving up regional amenities.",
+      "From Pranburi you can reach Hua Hin beach and Bluport in roughly 20–30 minutes depending on traffic, while Sam Roi Yot National Park and quieter coves are close for weekends. The area attracts villa builders, long-stay expats and investors who prefer a residential rhythm over a tourist strip. Seafood restaurants, small resorts and local markets define daily life more than malls or nightlife.",
+      "Land around Pak Nam Pran, Khao Kalok and the inland roads toward the hills varies widely in size and readiness. Look carefully at flood history, road quality, electricity and water connections, and whether the title is Chanote or a lesser deed type. Sea-breeze locations and elevated plots with mountain or water views tend to hold buyer interest, especially for pool-villa projects aimed at rental or personal use.",
+      "As elsewhere in Thailand, foreigners should plan ownership structures with specialist legal advice. Leasehold and compliant company structures are common paths; shortcuts that hide foreign control create serious risk. Due diligence at the Land Office — confirming the seller, plot boundaries and encumbrances — is non-negotiable before any deposit.",
+      "ThaiPlot highlights Pranburi and Khao Kalok listings alongside the wider Hua Hin corridor so you can compare coastal and near-coast options in one marketplace. Browse the Pranburi plots below, or open the full listings page to filter by size, title deed and price across Thailand."
+    ],
+    "listingsHeading": "Current Pranburi listings",
+    "empty": "No Pranburi listings are live right now. Browse all listings or check back soon.",
+    "viewAll": "View all listings →"
+  },
+  "regionBlackMountain": {
+    "metaTitle": "Land for Sale near Black Mountain, Hua Hin | ThaiPlot",
+    "metaDescription": "Explore land for sale near Black Mountain Golf Course in Hua Hin — a premium residential zone with golf, schools and resort amenities.",
+    "title": "Land for Sale near Black Mountain, Hua Hin",
+    "intro": "The Black Mountain zone is one of Hua Hin’s most recognised residential addresses — anchored by championship golf, an international school catchment and a polished resort-lifestyle setting.",
+    "paras": [
+      "Black Mountain sits inland from Hua Hin’s beach strip, yet remains a short drive from town centre, hospitals and shopping. The area is defined by Black Mountain Golf Club, water-park amenities and a cluster of villas and residential developments that attract golfers, families and investors who want a managed neighbourhood feel rather than a raw roadside plot.",
+      "Buyers looking near Black Mountain often prioritise privacy, road quality and proximity to leisure infrastructure. Plots here can support luxury pool villas aimed at owner-occupiers or high-end holiday lets. The international school presence adds demand from expat families, while golf membership culture supports year-round activity and a ready social network for newcomers.",
+      "Because this is a prestige corridor, due diligence matters even more. Confirm Chanote (or other deed) status, exact boundaries, access rights and whether utilities are already connected. Compare asking prices per rai against recent sales and construction budgets — finishing a villa to Black Mountain standards is a different cost profile than a simple holiday bungalow further south.",
+      "Foreign purchasers still face Thailand’s land-ownership rules. Work with an independent lawyer on leasehold terms or a compliant Thai company structure, and avoid nominee arrangements. A clear title search and site survey protect you in a zone where unfinished projects and optimistic marketing can confuse first-time buyers.",
+      "ThaiPlot surfaces land listed in and around the Black Mountain zone so you can review size, title type and location details before contacting the seller. See current Black Mountain–area listings below, or continue to the full marketplace for Hua Hin and Thailand-wide inventory.",
+      "If you are comparing inland prestige plots with beach-adjacent land farther south, use Black Mountain listings as a benchmark for infrastructure quality and asking prices in Hua Hin’s upper residential segment."
+    ],
+    "listingsHeading": "Current Black Mountain listings",
+    "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
+    "viewAll": "View all listings →"
   }
 }
