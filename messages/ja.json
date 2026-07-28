@@ -72,7 +72,11 @@
       "pranburiRegion": "Pranburi",
       "blackMountainRegion": "Black Mountain",
       "phuketRegion": "Phuket",
-      "bangkokRegion": "Bangkok"
+      "bangkokRegion": "Bangkok",
+      "hinLekFaiRegion": "Hin Lek Fai",
+      "villasHuaHinRegion": "Villas Hua Hin",
+      "resortHuaHinRegion": "Resorts & Farms",
+      "kohSamuiRegion": "Koh Samui"
     }
   },
   "homepage": {

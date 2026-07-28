@@ -326,3 +326,240 @@ export const BANGKOK_CONTENT: RegionPageContent = {
     },
   ],
 }
+
+export const HIN_LEK_FAI_CONTENT: RegionPageContent = {
+  path: '/hin-lek-fai',
+  metaTitle: 'Land for Sale in Hin Lek Fai, Hua Hin | ThaiPlot',
+  metaDescription:
+    'Browse land and property for sale in Hin Lek Fai, Hua Hin. Established villa zone near Black Mountain Golf Course. Chanote title deeds. Listed by owners and agents on ThaiPlot.',
+  title: 'Land for Sale in Hin Lek Fai, Hua Hin',
+  intro:
+    "Hin Lek Fai is one of Hua Hin's most established and sought-after residential zones, situated on the western hillside of the city between the town centre and Black Mountain Golf Course. The area is characterised by quiet residential roads, mountain views, and a mix of luxury villas and undeveloped land plots. It attracts buyers from Europe, Scandinavia and Australia who want hillside living within easy reach of Hua Hin's amenities. Land in Hin Lek Fai typically carries Chanote title deeds and prices range from ฿2–5M per rai depending on plot size, road access and proximity to the golf course. There are currently over 100 plots listed across major portals — demand is consistent and supply is tightening.",
+  whyHeading: 'Why buyers choose Hin Lek Fai',
+  bullets: [
+    {
+      title: 'Location',
+      body: 'Hin Lek Fai sits about 10 minutes from Hua Hin town centre, 15 minutes from the beach and roughly 5 minutes from Black Mountain Golf Course — hillside living without giving up everyday amenities.',
+    },
+    {
+      title: 'Views',
+      body: 'Hillside plots open onto mountain and valley views, with cooler evenings than the flat coastal plain. Buyers who want privacy and outlook without leaving Hua Hin concentrate here.',
+    },
+    {
+      title: 'Established neighbourhood',
+      body: 'Luxury villas are already built across quiet residential roads with low through-traffic, including communities such as Cloud 2 Village. The streetscape feels finished rather than speculative.',
+    },
+    {
+      title: 'Title deeds',
+      body: 'The majority of plots carry Chanote title deeds — GPS-surveyed and registered at the Land Office — the strongest form of land title for transfer and financing discussions.',
+    },
+    {
+      title: 'Price range',
+      body: 'Expect roughly ฿2–5M per rai depending on size, access and golf proximity — generally more accessible than the Soi 112 luxury corridor while remaining a prestige hillside address.',
+    },
+  ],
+  listingsHeading: 'Currently listed in Hin Lek Fai',
+  emptyText: 'No listings currently in Hin Lek Fai. Check back soon or list your property →',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Where exactly is Hin Lek Fai?',
+      answer:
+        'Hin Lek Fai is a residential area on the western hillside of Hua Hin, approximately 10 minutes from Hua Hin town centre and 5 minutes from Black Mountain Golf Course. It sits between the main Petchkasem Road and the Black Mountain development zone.',
+    },
+    {
+      question: 'How much does land cost in Hin Lek Fai?',
+      answer:
+        'Prices typically range from ฿2,000,000 to ฿5,000,000 per rai depending on plot size, road access, views and proximity to Black Mountain Golf Course. Smaller plots near the golf course can reach ฿6,000,000+ per rai.',
+    },
+    {
+      question: 'Is Hin Lek Fai good for building a villa?',
+      answer:
+        "Yes — Hin Lek Fai is one of Hua Hin's most popular areas for private villa construction. The hillside setting offers mountain views, cooler air, and privacy. Multiple luxury villas have already been built in the area, and utilities are well established.",
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/black-mountain', label: 'Land near Black Mountain →' },
+    { href: '/hua-hin', label: 'Land in Hua Hin →' },
+    { href: '/info/buying-land-thailand', label: 'Guide to buying land →' },
+  ],
+}
+
+export const VILLAS_HUA_HIN_CONTENT: RegionPageContent = {
+  path: '/villas-for-sale-hua-hin',
+  metaTitle: 'Villas for Sale in Hua Hin, Thailand | ThaiPlot',
+  metaDescription:
+    'Browse pool villas and houses for sale in Hua Hin, Thailand. Thap Tai, Hin Lek Fai, Black Mountain and more. Listed by owners and agents on ThaiPlot.',
+  title: 'Villas for Sale in Hua Hin, Thailand',
+  intro:
+    "Hua Hin has one of Thailand's most active villa markets outside of Phuket and Koh Samui. The city offers a wide range of villa types — from affordable 2-bedroom homes under ฿3M in Thap Tai to luxury 5-bedroom pool villas at ฿20M+ in Hin Lek Fai and Black Mountain. The most popular areas for villa buyers are Thap Tai (114 listings), Hin Lek Fai (105 listings) and Nong Kae (101 listings). Average price for a 3-bedroom villa in Hua Hin is approximately ฿10.4M — but budget options exist from ฿2.7M and luxury options reach ฿65M+. Rental yields for holiday villas average 6–10% per year, making Hua Hin attractive for investment buyers as well as lifestyle purchases.",
+  areasHeading: 'Popular villa areas in Hua Hin',
+  areas: [
+    {
+      heading: 'Thap Tai / Soi 112',
+      body: 'Thap Tai and Soi 112 hold the largest supply of villas in Hua Hin, with mountain views and a luxury corridor that includes Botanica and La Felice. Most sites sit 10–15 minutes from the beach while remaining connected to town amenities.',
+    },
+    {
+      heading: 'Hin Lek Fai',
+      body: 'Hin Lek Fai is a hillside neighbourhood near Black Mountain Golf, popular with European buyers who want cooler air, privacy and an established villa streetscape rather than a raw development plot.',
+    },
+    {
+      heading: 'Nong Kae',
+      body: 'Nong Kae sits closer to the beach with a mix of Thai and foreign buyers and good access to Hua Hin town centre. It suits villa buyers who prioritise coastal convenience over hillside prestige.',
+    },
+    {
+      heading: 'Black Mountain zone',
+      body: 'The Black Mountain zone is Hua Hin’s premium golf address, with the highest villa prices, golf-course frontage and an international school nearby — aimed at luxury lifestyle and high-end holiday lets.',
+    },
+  ],
+  listingsHeading: 'Currently listed — villas & houses',
+  emptyText: 'No villa or house listings are live right now. Check back soon or list your property →',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Can foreigners buy a villa in Hua Hin?',
+      answer:
+        'Foreigners cannot own land or houses directly in Thailand. The most common options are leasehold (30 years, typically renewable), purchasing via a Thai spouse, or a registered Thai company. Always consult an independent Thai lawyer before signing anything.',
+    },
+    {
+      question: 'How much does a villa cost in Hua Hin?',
+      answer:
+        'Prices range from ฿2,700,000 for a basic 2-bedroom to ฿65,000,000+ for a large luxury pool villa. The average 3-bedroom villa sells for approximately ฿10,400,000. Budget options exist in Thap Tai and Nong Kae; premium options in Hin Lek Fai and Black Mountain.',
+    },
+    {
+      question: 'What rental yield can I expect from a villa in Hua Hin?',
+      answer:
+        'Holiday villa rental yields in Hua Hin typically range from 6–10% per year depending on location, size, pool, and management quality. Villas near golf courses or with mountain views tend to achieve higher occupancy rates.',
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/hua-hin', label: 'Land for sale in Hua Hin →' },
+    { href: '/black-mountain', label: 'Land near Black Mountain →' },
+    { href: '/hin-lek-fai', label: 'Land in Hin Lek Fai →' },
+  ],
+}
+
+export const RESORT_HUA_HIN_CONTENT: RegionPageContent = {
+  path: '/resort-for-sale-hua-hin',
+  metaTitle: 'Resort & Farm for Sale in Hua Hin, Thailand | ThaiPlot',
+  metaDescription:
+    'Browse resorts, farms and commercial land for sale in Hua Hin and surroundings. Large plots, Chanote title deeds. Listed by owners on ThaiPlot.',
+  title: 'Resort & Farm for Sale in Hua Hin, Thailand',
+  intro:
+    'Hua Hin and the surrounding Prachuap Khiri Khan province attract buyers looking for larger commercial land plots — resorts, farms, boutique hotels and eco-retreats. The region offers relatively affordable large land plots compared to Phuket or Koh Samui, with Chanote title deeds available and growing tourist demand year-round. Popular locations for resort and farm development include Thap Tai (golf corridor, mountain views), Sam Roi Yot (national park border, eco-tourism potential) and the Pranburi coastline (beach access, lower prices). Rental yields for well-managed boutique resorts in Hua Hin average 8–12% per year. Foreign buyers most commonly develop via Thai company or long-term leasehold structures — always take independent legal advice.',
+  areasHeading: 'Types of commercial property available',
+  areas: [
+    {
+      heading: 'Boutique resort plots',
+      body: 'Plots of roughly 2–10 rai with road access and utilities suit 5–20 room boutique resorts. Thap Tai and Pranburi remain the most popular corridors for hospitality projects that need mountain or coastal character.',
+    },
+    {
+      heading: 'Farm land',
+      body: 'Larger farms from 5–50 rai appear along the Sam Roi Yot and Prachuap corridor, often with Nor Sor 3 Gor or Chanote title. Organic farming and agritourism are a growing use case for these parcels.',
+    },
+    {
+      heading: 'Cafe and restaurant plots',
+      body: 'Smaller roadside plots with tourist footfall work for cafes and restaurants. Soi 112 and the Black Mountain zone draw hospitality operators who want lifestyle traffic without a full resort footprint.',
+    },
+    {
+      heading: 'Eco-resort and glamping',
+      body: 'National-park border areas around Sam Roi Yot and Khao Kalok suit eco-resorts and glamping aimed at Thai domestic tourists as well as international guests seeking nature stays.',
+    },
+  ],
+  listingsHeading: 'Currently listed — larger plots & commercial',
+  emptyText: 'No large-plot or commercial listings are live right now. Check back soon or list your property →',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Can foreigners own a resort in Thailand?',
+      answer:
+        'Foreigners cannot own land in Thailand directly. Resort operations are most commonly structured via a registered Thai company (which holds the land) or a long-term leasehold. The hospitality business itself can be foreign-owned. Always use an independent Thai lawyer and accountant.',
+    },
+    {
+      question: 'How much land do I need for a boutique resort in Hua Hin?',
+      answer:
+        'A 5–10 room boutique resort typically requires 2–4 rai (3,200–6,400 sqm) minimum for comfortable layout with pool, garden and parking. Larger resorts with 15–30 rooms typically need 5–15 rai. Check local zoning regulations with an independent lawyer before purchasing.',
+    },
+    {
+      question: 'What is the average yield for a resort in Hua Hin?',
+      answer:
+        'Well-managed boutique resorts in Hua Hin can achieve 8–12% annual yield. Hua Hin has year-round tourism from Bangkok weekenders and international visitors. Peak seasons are November–February and Thai public holidays.',
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/hua-hin', label: 'Land in Hua Hin →' },
+    { href: '/pranburi', label: 'Land in Pranburi →' },
+    { href: '/pranburi', label: 'Large plots near Sam Roi Yot →' },
+  ],
+}
+
+export const KOH_SAMUI_CONTENT: RegionPageContent = {
+  path: '/koh-samui',
+  metaTitle: 'Land & Property for Sale in Koh Samui, Thailand | ThaiPlot',
+  metaDescription:
+    'Browse land, villas and property for sale in Koh Samui, Thailand. Chanote title deeds, leasehold and freehold options. Listed by owners on ThaiPlot.',
+  title: 'Land & Property for Sale in Koh Samui, Thailand',
+  intro:
+    "Koh Samui is Thailand's second-largest island and one of Asia's most established luxury property markets. Located in the Gulf of Thailand off the coast of Surat Thani, the island attracts buyers from Europe, Russia, China and the Middle East seeking beachfront villas, hillside retreats and investment properties. Popular areas include Bophut and Bangrak in the north, Chaweng for tourism and rental yield, Lamai for value, and Choeng Mon for quiet luxury. Land with Chanote title is available but increasingly scarce — most hillside plots carry Nor Sor 3 Gor or Sor Kor 1 titles which require careful legal review. Leasehold (30 years) is the most common structure for foreign buyers on Koh Samui.",
+  areasHeading: 'Popular areas for property in Koh Samui',
+  areas: [
+    {
+      heading: 'Chaweng',
+      body: 'Chaweng on the east coast is Samui’s busiest tourist strip, with the strongest short-term rental yield along Beach Road. Condo and villa investors concentrate here for occupancy, nightlife and walkable beach access.',
+    },
+    {
+      heading: 'Bophut / Bangrak',
+      body: 'The north coast around Bophut and Bangrak centres on Fisherman’s Village — quieter than Chaweng, popular with European long-stay buyers, and well served by restaurants and ferry links.',
+    },
+    {
+      heading: 'Lamai',
+      body: 'Lamai is Samui’s second beach resort on the south-east coast, generally more affordable than Chaweng with a growing expat community and a broader mix of hillside and beachside inventory.',
+    },
+    {
+      heading: 'Choeng Mon',
+      body: 'Choeng Mon in the north-east is a quiet luxury pocket of boutique resorts and private villas, favoured by high-net-worth buyers who want calm beaches without Chaweng intensity.',
+    },
+    {
+      heading: 'Maenam',
+      body: 'Maenam’s long north-coast beach stays very quiet, with budget-friendlier land prices and privacy that appeals to buyers building retreats away from the main tourist strips.',
+    },
+  ],
+  listingsHeading: 'Currently listed in Koh Samui',
+  emptyText: 'No listings currently in Koh Samui. Check back soon or list your property →',
+  emptyCtaHref: '/list-property',
+  emptyCtaLabel: 'List your property →',
+  faqHeading: 'Frequently asked questions',
+  faqs: [
+    {
+      question: 'Can foreigners buy land on Koh Samui?',
+      answer:
+        'Foreigners cannot own land directly in Thailand. On Koh Samui, leasehold (30 years registered at Land Office) is the most common structure for foreign buyers. Thai company ownership is possible but increasingly scrutinised. Always use an independent Thai lawyer familiar with Samui property law.',
+    },
+    {
+      question: 'What title deeds are available on Koh Samui?',
+      answer:
+        'Koh Samui has a mix of title deeds. Chanote (NS.4J) is strongest and preferred. Nor Sor 3 Gor is common on hillside plots and is transferable but requires careful verification. Avoid Sor Kor 1 and Por Bor Tor 5 — these offer very limited rights. Always verify the title deed at the local Land Office.',
+    },
+    {
+      question: 'How much does land cost on Koh Samui?',
+      answer:
+        'Beachfront and Chaweng area: ฿10–50M+ per rai. Hillside plots in Lamai and Maenam: ฿2–8M per rai. Choeng Mon luxury zone: ฿8–20M per rai. Prices have risen significantly since 2022 driven by strong demand from Russian and European buyers.',
+    },
+  ],
+  links: [
+    { href: '/listings', label: 'View all listings →' },
+    { href: '/phuket', label: 'Property in Phuket →' },
+    { href: '/hua-hin', label: 'Land in Hua Hin →' },
+    { href: '/info/buying-land-thailand', label: 'Guide to buying property in Thailand →' },
+  ],
+}
+

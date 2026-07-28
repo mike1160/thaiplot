@@ -29,6 +29,10 @@ const STATIC_ROUTES: Array<{
   { path: '/black-mountain', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/phuket', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/bangkok', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/hin-lek-fai', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/villas-for-sale-hua-hin', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/resort-for-sale-hua-hin', priority: 0.85, changeFrequency: 'weekly' },
+  { path: '/koh-samui', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/legal/privacy', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/legal/disclaimer', priority: 0.3, changeFrequency: 'yearly' },
 ]

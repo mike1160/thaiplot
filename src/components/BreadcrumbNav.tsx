@@ -17,6 +17,10 @@ const REGION_PAGES: Record<string, string> = {
   'black-mountain': 'pages.blackMountainRegion',
   phuket: 'pages.phuketRegion',
   bangkok: 'pages.bangkokRegion',
+  'hin-lek-fai': 'pages.hinLekFaiRegion',
+  'villas-for-sale-hua-hin': 'pages.villasHuaHinRegion',
+  'resort-for-sale-hua-hin': 'pages.resortHuaHinRegion',
+  'koh-samui': 'pages.kohSamuiRegion',
 }
 
 function buildCrumbs(pathname: string) {

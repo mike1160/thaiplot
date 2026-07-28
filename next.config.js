@@ -18,6 +18,10 @@ const nextConfig = {
       { source: '/black-mountain', destination: '/en/black-mountain' },
       { source: '/phuket', destination: '/en/phuket' },
       { source: '/bangkok', destination: '/en/bangkok' },
+      { source: '/hin-lek-fai', destination: '/en/hin-lek-fai' },
+      { source: '/villas-for-sale-hua-hin', destination: '/en/villas-for-sale-hua-hin' },
+      { source: '/resort-for-sale-hua-hin', destination: '/en/resort-for-sale-hua-hin' },
+      { source: '/koh-samui', destination: '/en/koh-samui' },
     ]
   },
   async redirects() {

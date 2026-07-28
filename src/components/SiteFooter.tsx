@@ -102,6 +102,35 @@ export default function SiteFooter() {
                   Property in Bangkok
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/hin-lek-fai"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  Land in Hin Lek Fai
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/villas-for-sale-hua-hin"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  Villas in Hua Hin
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resort-for-sale-hua-hin"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  Resorts & Farms
+                </Link>
+              </li>
+              <li>
+                <Link href="/koh-samui" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  Property in Koh Samui
+                </Link>
+              </li>
             </ul>
           </div>
 
