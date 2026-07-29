@@ -63,8 +63,23 @@ export default function HomePageClient({ listings }: Props) {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.35)' }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-white animate-fade-in-up">
+        {/* Top gradient — header readability */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.10) 35%, rgba(0, 0, 0, 0.00) 60%)',
+          }}
+        />
+        {/* Bottom gradient — text readability */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.20) 50%, rgba(0, 0, 0, 0.00) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 text-center text-white animate-fade-in-up">
           <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white/15 border border-white/25 backdrop-blur-sm mb-6">
             {t('eyebrow')}
           </span>
@@ -74,7 +89,18 @@ export default function HomePageClient({ listings }: Props) {
           >
             {t('heroTitle')}
           </h1>
-          <p className="text-white/85 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p
+            className="inline-block text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8"
+            style={{
+              color: '#F0E2C0',
+              background: 'rgba(0, 0, 0, 0.28)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              borderRadius: '999px',
+              padding: '10px 22px',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+            }}
+          >
             {t('heroSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

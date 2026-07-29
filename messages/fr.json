@@ -19,7 +19,8 @@
     "guideVisa": "Visa retraite",
     "pages": {
       "listingDetail": "Annonce"
-    }
+    },
+    "myAccount": "Mon compte"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "Vous n'avez pas trouvé ce que vous cherchiez ?",
+    "subtext": "Laissez une demande de recherche GRATUITE à notre agent — nous la trouverons pour vous.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre adresse e-mail",
+    "descriptionLabel": "Que recherchez-vous ?",
+    "descriptionPlaceholder": "Ex. : terrain près de la mer, min. 1 rai, avec électricité",
+    "regionLabel": "Région (facultatif)",
+    "budgetLabel": "Budget (facultatif)",
+    "submitButton": "Envoyer la demande",
+    "submitting": "Envoi...",
+    "successHeading": "Merci !",
+    "successText": "Nous avons reçu votre demande et vous recontacterons bientôt.",
+    "close": "Fermer"
   }
 }

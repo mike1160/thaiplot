@@ -19,7 +19,8 @@
     "guideVisa": "Pensioenvisa",
     "pages": {
       "listingDetail": "Advertentie"
-    }
+    },
+    "myAccount": "Mijn account"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Huidig aanbod bij Black Mountain",
     "empty": "Er staan nu geen Black Mountain-listings live. Bekijk alle listings of kom later terug.",
     "viewAll": "Bekijk alle listings →"
+  },
+  "exitIntent": {
+    "heading": "Niet gevonden wat u zocht?",
+    "subtext": "Laat een GRATIS zoekopdracht achter bij onze Agent en wij vinden het voor u.",
+    "namePlaceholder": "Uw naam",
+    "emailPlaceholder": "Uw e-mailadres",
+    "descriptionLabel": "Waar bent u naar op zoek?",
+    "descriptionPlaceholder": "Bijv. perceel land aan zee, min. 1 rai, met elektriciteit",
+    "regionLabel": "Regio (optioneel)",
+    "budgetLabel": "Budget (optioneel)",
+    "submitButton": "Zoekopdracht versturen",
+    "submitting": "Versturen...",
+    "successHeading": "Bedankt!",
+    "successText": "We hebben uw verzoek ontvangen en nemen spoedig contact met u op.",
+    "close": "Sluiten"
   }
 }

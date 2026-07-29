@@ -19,7 +19,8 @@
     "guideVisa": "Пенсионная виза",
     "pages": {
       "listingDetail": "Объявление"
-    }
+    },
+    "myAccount": "Мой аккаунт"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "Не нашли то, что искали?",
+    "subtext": "Оставьте БЕСПЛАТНЫЙ запрос на поиск нашему агенту — мы найдём это для вас.",
+    "namePlaceholder": "Ваше имя",
+    "emailPlaceholder": "Ваш адрес электронной почты",
+    "descriptionLabel": "Что вы ищете?",
+    "descriptionPlaceholder": "Напр.: участок у моря, мин. 1 рай, с электричеством",
+    "regionLabel": "Регион (необязательно)",
+    "budgetLabel": "Бюджет (необязательно)",
+    "submitButton": "Отправить запрос",
+    "submitting": "Отправка...",
+    "successHeading": "Спасибо!",
+    "successText": "Мы получили ваш запрос и скоро свяжемся с вами.",
+    "close": "Закрыть"
   }
 }

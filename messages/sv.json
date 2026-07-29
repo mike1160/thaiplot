@@ -19,7 +19,8 @@
     "guideVisa": "Pensionsvisum",
     "pages": {
       "listingDetail": "Annons"
-    }
+    },
+    "myAccount": "Mitt konto"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "Hittade du inte det du letade efter?",
+    "subtext": "Lämna en GRATIS sökförfrågan till vår agent så hittar vi det åt dig.",
+    "namePlaceholder": "Ditt namn",
+    "emailPlaceholder": "Din e-postadress",
+    "descriptionLabel": "Vad letar du efter?",
+    "descriptionPlaceholder": "T.ex. tomt nära havet, minst 1 rai, med el",
+    "regionLabel": "Region (valfritt)",
+    "budgetLabel": "Budget (valfritt)",
+    "submitButton": "Skicka sökförfrågan",
+    "submitting": "Skickar...",
+    "successHeading": "Tack!",
+    "successText": "Vi har mottagit din förfrågan och återkommer snart.",
+    "close": "Stäng"
   }
 }

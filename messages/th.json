@@ -19,7 +19,8 @@
     "guideVisa": "วีซ่าเกษียณ",
     "pages": {
       "listingDetail": "ประกาศ"
-    }
+    },
+    "myAccount": "บัญชีของฉัน"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "ยังไม่เจอสิ่งที่คุณกำลังมองหา?",
+    "subtext": "ฝากคำขอค้นหาฟรีกับเอเจนต์ของเรา แล้วเราจะช่วยหาให้คุณ",
+    "namePlaceholder": "ชื่อของคุณ",
+    "emailPlaceholder": "อีเมลของคุณ",
+    "descriptionLabel": "คุณกำลังมองหาอะไร?",
+    "descriptionPlaceholder": "เช่น ที่ดินใกล้ทะเล อย่างน้อย 1 ไร่ มีไฟฟ้า",
+    "regionLabel": "ภูมิภาค (ไม่บังคับ)",
+    "budgetLabel": "งบประมาณ (ไม่บังคับ)",
+    "submitButton": "ส่งคำขอค้นหา",
+    "submitting": "กำลังส่ง...",
+    "successHeading": "ขอบคุณ!",
+    "successText": "เราได้รับคำขอของคุณแล้ว และจะติดต่อกลับเร็วๆ นี้",
+    "close": "ปิด"
   }
 }

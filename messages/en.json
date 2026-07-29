@@ -19,7 +19,8 @@
     "guideVisa": "Retirement visa",
     "pages": {
       "listingDetail": "Listing"
-    }
+    },
+    "myAccount": "My account"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "Didn't find what you were looking for?",
+    "subtext": "Leave a FREE search request with our Agent and we will find it for you.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email address",
+    "descriptionLabel": "What are you looking for?",
+    "descriptionPlaceholder": "E.g. land plot near the sea, min 1 rai, with electricity",
+    "regionLabel": "Region (optional)",
+    "budgetLabel": "Budget (optional)",
+    "submitButton": "Send search request",
+    "submitting": "Sending...",
+    "successHeading": "Thank you!",
+    "successText": "We have received your request and will get back to you soon.",
+    "close": "Close"
   }
 }

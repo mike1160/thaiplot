@@ -19,7 +19,8 @@
     "guideVisa": "退休签证",
     "pages": {
       "listingDetail": "房源"
-    }
+    },
+    "myAccount": "我的账户"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "没找到您要找的内容？",
+    "subtext": "向我们的经纪人提交免费搜索请求，我们会帮您寻找。",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "您的电子邮箱",
+    "descriptionLabel": "您在寻找什么？",
+    "descriptionPlaceholder": "例如：靠近海边的土地，至少1莱，有电力",
+    "regionLabel": "地区（可选）",
+    "budgetLabel": "预算（可选）",
+    "submitButton": "发送搜索请求",
+    "submitting": "发送中...",
+    "successHeading": "谢谢！",
+    "successText": "我们已收到您的请求，稍后会与您联系。",
+    "close": "关闭"
   }
 }

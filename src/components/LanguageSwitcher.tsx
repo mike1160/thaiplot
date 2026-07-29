@@ -22,11 +22,14 @@ const flags: Record<AppLocale, string> = {
 type LanguageSwitcherProps = {
   className?: string
   align?: 'left' | 'right'
+  /** solid = light header; ghost = over dark hero */
+  variant?: 'solid' | 'ghost'
 }
 
 export default function LanguageSwitcher({
   className = '',
   align = 'right',
+  variant = 'solid',
 }: LanguageSwitcherProps) {
   const t = useTranslations('languages')
   const locale = useLocale() as AppLocale
@@ -67,13 +70,23 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium text-[#1A2744] bg-white border border-[#E8E2D6] rounded-[12px] hover:border-[#C8973A]/50 transition-colors"
+        className={`flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium rounded-[12px] transition-all duration-[350ms] ease-[ease] ${
+          variant === 'ghost'
+            ? 'text-white bg-white/10 border border-white/30 hover:bg-white/20'
+            : 'text-[#1A2744] bg-white border border-[#E8E2D6] hover:border-[#C8973A]/50'
+        }`}
         aria-expanded={open}
         aria-haspopup="listbox"
       >
         <span aria-hidden="true">{current.flag}</span>
         <span>{current.code.toUpperCase()}</span>
-        <span className={`text-[9px] text-[#5C5247] transition-transform ${open ? 'rotate-180' : ''}`}>▾</span>
+        <span
+          className={`text-[9px] transition-transform ${open ? 'rotate-180' : ''} ${
+            variant === 'ghost' ? 'text-white/80' : 'text-[#5C5247]'
+          }`}
+        >
+          ▾
+        </span>
       </button>
 
       {open && (

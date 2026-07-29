@@ -19,7 +19,8 @@
     "guideVisa": "退職ビザ",
     "pages": {
       "listingDetail": "物件"
-    }
+    },
+    "myAccount": "マイアカウント"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "お探しのものが見つかりませんでしたか？",
+    "subtext": "エージェントに無料の検索リクエストを残していただければ、代わりに見つけます。",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "メールアドレス",
+    "descriptionLabel": "何をお探しですか？",
+    "descriptionPlaceholder": "例：海の近くの土地、最低1ライ、電気あり",
+    "regionLabel": "地域（任意）",
+    "budgetLabel": "予算（任意）",
+    "submitButton": "検索リクエストを送信",
+    "submitting": "送信中...",
+    "successHeading": "ありがとうございます！",
+    "successText": "リクエストを受け付けました。まもなくご連絡いたします。",
+    "close": "閉じる"
   }
 }

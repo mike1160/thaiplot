@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import LegalFooterBar from '@/components/LegalFooterBar'
 import CookieConsent from '@/components/CookieConsent'
 import ConsentAnalytics from '@/components/ConsentAnalytics'
+import ExitIntentPopup from '@/components/ExitIntentPopup'
 import HtmlLang from '@/components/HtmlLang'
 import { routing } from '@/i18n/routing'
 import { localizedPath, SITE_URL } from '@/lib/seo'
@@ -87,6 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <LegalFooterBar />
       <CookieConsent />
       <ConsentAnalytics />
+      <ExitIntentPopup locale={locale} />
     </NextIntlClientProvider>
   )
 }

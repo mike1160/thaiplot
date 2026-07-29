@@ -19,7 +19,8 @@
     "guideVisa": "Pensionsvisum",
     "pages": {
       "listingDetail": "Annonce"
-    }
+    },
+    "myAccount": "Min konto"
   },
   "languages": {
     "en": "English",
@@ -822,5 +823,20 @@
     "listingsHeading": "Current Black Mountain listings",
     "empty": "No Black Mountain listings are live right now. Browse all listings or check back soon.",
     "viewAll": "View all listings →"
+  },
+  "exitIntent": {
+    "heading": "Fandt du ikke det, du ledte efter?",
+    "subtext": "Efterlad en GRATIS søgeanmodning hos vores agent – vi finder det for dig.",
+    "namePlaceholder": "Dit navn",
+    "emailPlaceholder": "Din e-mailadresse",
+    "descriptionLabel": "Hvad leder du efter?",
+    "descriptionPlaceholder": "F.eks. grund tæt på havet, min. 1 rai, med el",
+    "regionLabel": "Region (valgfrit)",
+    "budgetLabel": "Budget (valgfrit)",
+    "submitButton": "Send søgeanmodning",
+    "submitting": "Sender...",
+    "successHeading": "Tak!",
+    "successText": "Vi har modtaget din anmodning og vender snart tilbage.",
+    "close": "Luk"
   }
 }

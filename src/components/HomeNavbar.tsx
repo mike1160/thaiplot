@@ -3,7 +3,9 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
+import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from './LanguageSwitcher'
+import PortalAccountLink from './PortalAccountLink'
 
 const GUIDE_LINKS = [
   { href: '/info/buying-land-thailand', key: 'guideBuying' },
@@ -13,6 +15,8 @@ const GUIDE_LINKS = [
   { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
 ] as const
 
+const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
+
 export default function HomeNavbar() {
   const t = useTranslations('navigation')
   const pathname = usePathname()
@@ -20,6 +24,7 @@ export default function HomeNavbar() {
   const [guideOpen, setGuideOpen] = useState(false)
   const mobilePanelId = useId()
   const guideRef = useRef<HTMLDivElement>(null)
+  const scrolled = useScrolledHeader()
 
   useEffect(() => {
     setMenuOpen(false)
@@ -44,19 +49,38 @@ export default function HomeNavbar() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
+  // Light frosted header after scroll, or while mobile menu is open
+  const solid = scrolled || menuOpen
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#FAF7F0]/95 border-b border-black/5 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="group flex-shrink-0 leading-tight" onClick={closeMenu}>
+    <nav
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] ${
+        solid
+          ? 'bg-[rgba(255,255,255,0.93)] border-b border-black/5 shadow-[0_1px_12px_rgba(0,0,0,0.08)] backdrop-blur-[14px]'
+          : 'bg-[rgba(0,0,0,0.30)] border-b border-transparent shadow-none backdrop-blur-[10px]'
+      }`}
+      style={{
+        WebkitBackdropFilter: solid ? 'blur(14px)' : 'blur(10px)',
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-3 sm:px-6">
+        <div className={`${HEADER_HEIGHT_CLASS} flex items-center justify-between gap-2 sm:gap-4`}>
+          <Link href="/" className="group flex-shrink-0 leading-tight min-w-0" onClick={closeMenu}>
             <span
-              className="block text-[18px] font-semibold tracking-wide text-[#1A2744] group-hover:text-[#C8973A] transition-colors"
+              className={`block text-[16px] sm:text-[18px] font-semibold tracking-wide transition-colors duration-[350ms] ease-[ease] ${
+                solid
+                  ? 'text-[#1A2744] group-hover:text-[#C8973A]'
+                  : 'text-white group-hover:text-white/85'
+              }`}
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               {t('brandTitle')}
             </span>
-            <span className="block text-[10px] text-[#5C5247] tracking-wider uppercase mt-0.5">
+            <span
+              className={`hidden sm:block text-[10px] tracking-wider uppercase mt-0.5 transition-colors duration-[350ms] ease-[ease] ${
+                solid ? 'text-[#5C5247]' : 'text-white/80'
+              }`}
+            >
               {t('brandSubtitle')}
             </span>
           </Link>
@@ -64,7 +88,11 @@ export default function HomeNavbar() {
           <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             <Link
               href="/listings"
-              className="px-3 py-2 text-[13px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors duration-200"
+              className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
+                solid
+                  ? 'text-[#5C5247] hover:text-[#1A2744]'
+                  : 'text-white hover:text-white/85'
+              }`}
             >
               {t('listings')}
             </Link>
@@ -73,12 +101,18 @@ export default function HomeNavbar() {
               <button
                 type="button"
                 onClick={() => setGuideOpen((v) => !v)}
-                className="px-3 py-2 text-[13px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors duration-200 inline-flex items-center gap-1"
+                className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] inline-flex items-center gap-1 ${
+                  solid
+                    ? 'text-[#5C5247] hover:text-[#1A2744]'
+                    : 'text-white hover:text-white/85'
+                }`}
                 aria-expanded={guideOpen}
                 aria-haspopup="true"
               >
                 {t('guide')}
-                <span className={`text-[9px] transition-transform ${guideOpen ? 'rotate-180' : ''}`}>▾</span>
+                <span className={`text-[9px] transition-transform ${guideOpen ? 'rotate-180' : ''}`}>
+                  ▾
+                </span>
               </button>
               {guideOpen ? (
                 <div
@@ -103,34 +137,61 @@ export default function HomeNavbar() {
 
             <Link
               href="/list-property"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-all duration-200"
+              className={`ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border transition-all duration-[350ms] ease-[ease] ${
+                solid
+                  ? 'border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white'
+                  : 'border-white text-white hover:bg-white/15'
+              }`}
             >
               {t('listProperty')}
             </Link>
             <Link
               href="/contact"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-200"
+              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-[350ms] ease-[ease]"
             >
               {t('contact')}
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             <div className="hidden md:flex flex-col items-end leading-tight">
               <a
                 href="https://allesis.nl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[10px] text-[#5C5247] hover:text-[#C8973A] transition-colors"
+                className={`text-[10px] transition-colors duration-[350ms] ease-[ease] ${
+                  solid ? 'text-[#5C5247] hover:text-[#C8973A]' : 'text-white/80 hover:text-white'
+                }`}
               >
                 {t('webdesignBy')}
               </a>
-              <span className="text-[9px] text-[#5C5247]">{t('webdesignTag')}</span>
+              <span
+                className={`text-[9px] transition-colors duration-[350ms] ease-[ease] ${
+                  solid ? 'text-[#5C5247]' : 'text-white/70'
+                }`}
+              >
+                {t('webdesignTag')}
+              </span>
             </div>
-            <LanguageSwitcher />
+            <PortalAccountLink solid={solid} />
+            <div className="hidden sm:block">
+              <LanguageSwitcher variant={solid ? 'solid' : 'ghost'} />
+            </div>
+            {/* Always-visible Contact on smaller screens when nav collapses */}
+            <Link
+              href="/contact"
+              className="lg:hidden inline-flex items-center justify-center min-h-[36px] px-3 rounded-lg text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744]"
+              onClick={closeMenu}
+            >
+              {t('contact')}
+            </Link>
             <button
               type="button"
-              className="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-[#1A2744] hover:bg-black/5 transition-colors"
+              className={`lg:hidden inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-lg transition-colors duration-[350ms] ease-[ease] ${
+                solid
+                  ? 'text-[#1A2744] hover:bg-black/5'
+                  : 'text-white hover:bg-white/10'
+              }`}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls={mobilePanelId}
@@ -138,11 +199,21 @@ export default function HomeNavbar() {
             >
               {menuOpen ? (
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path
+                    d="M6 6l12 12M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
               ) : (
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path
+                    d="M4 7h16M4 12h16M4 17h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
               )}
             </button>
@@ -153,7 +224,7 @@ export default function HomeNavbar() {
       {menuOpen && (
         <div
           id={mobilePanelId}
-          className="lg:hidden border-t border-black/5 bg-[#FAF7F0] max-h-[calc(100dvh-4rem)] overflow-y-auto"
+          className="lg:hidden border-t border-black/5 bg-[rgba(255,255,255,0.96)] backdrop-blur-[14px] max-h-[calc(100dvh-4rem)] overflow-y-auto"
         >
           <Link
             href="/listings"
@@ -175,6 +246,16 @@ export default function HomeNavbar() {
               {t(item.key)}
             </Link>
           ))}
+          <div className="px-4 pt-3 sm:hidden">
+            <LanguageSwitcher variant="solid" />
+          </div>
+          <div className="px-6 py-3 border-b border-[#E8E2D6]">
+            <PortalAccountLink
+              solid
+              onNavigate={closeMenu}
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#1A2744]"
+            />
+          </div>
           <Link
             href="/list-property"
             onClick={closeMenu}

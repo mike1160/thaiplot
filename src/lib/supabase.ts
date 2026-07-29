@@ -37,7 +37,6 @@ export function getSupabasePublic(): SupabaseClient {
         persistSession: false,
         autoRefreshToken: false,
       },
-      global: { fetch: noStoreFetch },
     }
   )
 }
@@ -78,4 +77,13 @@ export type ListingRow = {
   contact_preferences?: string[] | null
   referral_source?: string | null
   slug?: string | null
+  user_id?: string | null
+}
+
+export type ProfileRow = {
+  id: string
+  email: string
+  full_name: string | null
+  role: 'admin' | 'client' | string
+  created_at: string
 }

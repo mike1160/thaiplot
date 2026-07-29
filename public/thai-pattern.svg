@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <!-- Subtle Thai diamond / lotus tile  gold at very low opacity -->
+  <g stroke="#C8973A" stroke-width="1" fill="none" opacity="0.12">
+    <!-- Center diamond -->
+    <path d="M40 18 L52 40 L40 62 L28 40 Z"/>
+    <!-- Inner diamond -->
+    <path d="M40 28 L46 40 L40 52 L34 40 Z"/>
+    <!-- Corner diamonds (half tiles for seamless repeat) -->
+    <path d="M0 0 L10 0 L0 10 Z"/>
+    <path d="M80 0 L70 0 L80 10 Z"/>
+    <path d="M0 80 L10 80 L0 70 Z"/>
+    <path d="M80 80 L70 80 L80 70 Z"/>
+    <!-- Edge mid diamonds -->
+    <path d="M40 0 L48 8 L40 16 L32 8 Z"/>
+    <path d="M40 64 L48 72 L40 80 L32 72 Z"/>
+    <path d="M0 40 L8 32 L16 40 L8 48 Z"/>
+    <path d="M64 40 L72 32 L80 40 L72 48 Z"/>
+  </g>
+  <!-- Soft lotus petal accents -->
+  <g fill="#C8973A" opacity="0.08">
+    <circle cx="40" cy="40" r="2.5"/>
+    <ellipse cx="40" cy="32" rx="3" ry="5"/>
+    <ellipse cx="40" cy="48" rx="3" ry="5"/>
+    <ellipse cx="32" cy="40" rx="5" ry="3"/>
+    <ellipse cx="48" cy="40" rx="5" ry="3"/>
+  </g>
+</svg>

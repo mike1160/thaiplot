@@ -28,7 +28,14 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      <div className="bg-[#1A2744] text-white overflow-hidden">
+      <div
+        className="bg-[#1A2744] text-white overflow-hidden"
+        style={{
+          backgroundImage: `url('/thai-pattern.svg')`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '80px 80px',
+        }}
+      >
         <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="min-w-0">
             <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
