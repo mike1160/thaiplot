@@ -10,6 +10,14 @@ const INFO_PAGES: Record<string, string> = {
   'hua-hin-property-market': 'pages.huaHinMarket',
   'pranburi-property': 'pages.pranburi',
   'visa-retirement-thailand': 'pages.visa',
+  'drinking-water-thailand': 'pages.drinkWater',
+}
+
+const DRINK_WATER_SUBPAGES: Record<string, string> = {
+  options: 'pages.drinkWaterOptions',
+  vending: 'pages.drinkWaterVending',
+  costs: 'pages.drinkWaterCosts',
+  advice: 'pages.drinkWaterAdvice',
 }
 
 const REGION_PAGES: Record<string, string> = {
@@ -58,6 +66,17 @@ function buildCrumbs(pathname: string) {
   }
   if (section === 'info') {
     crumbs.push({ labelKey: 'pages.guide', href: '/info/buying-land-thailand' })
+    if (pageSlug === 'drinking-water-thailand') {
+      crumbs.push({
+        labelKey: 'pages.drinkWater',
+        href: '/info/drinking-water-thailand',
+      })
+      const sub = rest[1]
+      if (sub && DRINK_WATER_SUBPAGES[sub]) {
+        crumbs.push({ labelKey: DRINK_WATER_SUBPAGES[sub] })
+      }
+      return crumbs
+    }
     if (pageSlug && INFO_PAGES[pageSlug]) {
       crumbs.push({ labelKey: INFO_PAGES[pageSlug] })
     }

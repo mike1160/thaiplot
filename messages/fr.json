@@ -20,7 +20,8 @@
     "pages": {
       "listingDetail": "Annonce"
     },
-    "myAccount": "Mon compte"
+    "myAccount": "Mon compte",
+    "guideDrinkWater": "Eau potable Comment ?"
   },
   "languages": {
     "en": "English",
@@ -77,7 +78,12 @@
       "hinLekFaiRegion": "Hin Lek Fai",
       "villasHuaHinRegion": "Villas Hua Hin",
       "resortHuaHinRegion": "Resorts & Farms",
-      "kohSamuiRegion": "Koh Samui"
+      "kohSamuiRegion": "Koh Samui",
+      "drinkWater": "Eau potable",
+      "drinkWaterOptions": "Options & risques",
+      "drinkWaterVending": "Distributeurs",
+      "drinkWaterCosts": "Comparaison des coûts",
+      "drinkWaterAdvice": "Conseils"
     }
   },
   "homepage": {
@@ -838,5 +844,27 @@
     "successHeading": "Merci !",
     "successText": "Nous avons reçu votre demande et vous recontacterons bientôt.",
     "close": "Fermer"
+  },
+  "infoDrinkWater": {
+    "metaTitle": "Eau potable sûre en Thaïlande | ThaiPlot",
+    "metaDescription": "Que boire en toute sécurité en Thaïlande : risques du robinet, filtres RO, distributeurs, bonbonnes, coûts et conseils.",
+    "eyebrow": "Guide pratique",
+    "title": "L’eau en Thaïlande — que boire en sécurité ?",
+    "subtitle": "La situation en Thaïlande diffère fondamentalement de l’Europe de l’Ouest. Options, risques et coûts.",
+    "footerSources": "D’après : MWA Consumer Confidence Report 2025, Public Health of Indonesia (étude Bangkok 2020), Columbia University 2024, ExpatInsurance.com, JourneyBloom, WaterWell Thailand Guide 2025.",
+    "footerNote": "À titre informatif uniquement — pas un avis médical.",
+    "tabs": {
+      "navLabel": "Sections eau potable",
+      "situation": "Situation en Thaïlande",
+      "options": "Options & risques",
+      "vending": "Distributeurs",
+      "costs": "Comparaison des coûts",
+      "advice": "Conseils"
+    },
+    "table": {
+      "option": "Option",
+      "cost": "Coût",
+      "safety": "Sécurité"
+    }
   }
 }

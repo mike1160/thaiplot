@@ -20,7 +20,8 @@
     "pages": {
       "listingDetail": "物件"
     },
-    "myAccount": "マイアカウント"
+    "myAccount": "マイアカウント",
+    "guideDrinkWater": "飲料水はどうする？"
   },
   "languages": {
     "en": "English",
@@ -77,7 +78,12 @@
       "hinLekFaiRegion": "Hin Lek Fai",
       "villasHuaHinRegion": "Villas Hua Hin",
       "resortHuaHinRegion": "Resorts & Farms",
-      "kohSamuiRegion": "Koh Samui"
+      "kohSamuiRegion": "Koh Samui",
+      "drinkWater": "飲料水",
+      "drinkWaterOptions": "選択肢とリスク",
+      "drinkWaterVending": "給水機",
+      "drinkWaterCosts": "費用比較",
+      "drinkWaterAdvice": "アドバイス"
     }
   },
   "homepage": {
@@ -838,5 +844,27 @@
     "successHeading": "ありがとうございます！",
     "successText": "リクエストを受け付けました。まもなくご連絡いたします。",
     "close": "閉じる"
+  },
+  "infoDrinkWater": {
+    "metaTitle": "タイで安全な飲料水 | ThaiPlot",
+    "metaDescription": "タイで安全に飲む方法：水道水のリスク、ROフィルター、給水機、ガロン配達、費用と実践アドバイス。",
+    "eyebrow": "実践ガイド",
+    "title": "タイの水——何を安全に飲める？",
+    "subtitle": "タイの状況は西ヨーロッパと根本的に異なります。選択肢・リスク・費用の事実ガイド。",
+    "footerSources": "出典：MWA Consumer Confidence Report 2025、Public Health of Indonesia（バンコク調査 2020）、Columbia University 2024、ExpatInsurance.com、JourneyBloom、WaterWell Thailand Guide 2025。",
+    "footerNote": "情報提供のみ——医療アドバイスではありません。",
+    "tabs": {
+      "navLabel": "飲料水のセクション",
+      "situation": "タイの状況",
+      "options": "選択肢とリスク",
+      "vending": "給水機",
+      "costs": "費用比較",
+      "advice": "アドバイス"
+    },
+    "table": {
+      "option": "選択肢",
+      "cost": "費用",
+      "safety": "安全性"
+    }
   }
 }

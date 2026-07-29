@@ -20,7 +20,8 @@
     "pages": {
       "listingDetail": "Listing"
     },
-    "myAccount": "My account"
+    "myAccount": "My account",
+    "guideDrinkWater": "Drinking Water How?"
   },
   "languages": {
     "en": "English",
@@ -77,7 +78,12 @@
       "hinLekFaiRegion": "Hin Lek Fai",
       "villasHuaHinRegion": "Villas Hua Hin",
       "resortHuaHinRegion": "Resorts & Farms",
-      "kohSamuiRegion": "Koh Samui"
+      "kohSamuiRegion": "Koh Samui",
+      "drinkWater": "Drinking water",
+      "drinkWaterOptions": "Options & risks",
+      "drinkWaterVending": "Vending machines",
+      "drinkWaterCosts": "Cost comparison",
+      "drinkWaterAdvice": "Advice"
     }
   },
   "homepage": {
@@ -838,5 +844,27 @@
     "successHeading": "Thank you!",
     "successText": "We have received your request and will get back to you soon.",
     "close": "Close"
+  },
+  "infoDrinkWater": {
+    "metaTitle": "Safe Drinking Water in Thailand | ThaiPlot",
+    "metaDescription": "What to drink safely in Thailand: tap water risks, RO filters, vending machines, jug delivery, costs and practical advice.",
+    "eyebrow": "Practical guide",
+    "title": "Water in Thailand — what can you drink safely?",
+    "subtitle": "The situation in Thailand is fundamentally different from Western Europe. A factual overview of options, risks and costs.",
+    "footerSources": "Based on: MWA Consumer Confidence Report 2025, Public Health of Indonesia (Bangkok study 2020), Columbia University 2024, ExpatInsurance.com, JourneyBloom, WaterWell Thailand Guide 2025.",
+    "footerNote": "Informational only — not medical advice.",
+    "tabs": {
+      "navLabel": "Drinking water sections",
+      "situation": "Situation in Thailand",
+      "options": "Options & risks",
+      "vending": "Vending machines",
+      "costs": "Cost comparison",
+      "advice": "Advice"
+    },
+    "table": {
+      "option": "Option",
+      "cost": "Cost",
+      "safety": "Safety"
+    }
   }
 }

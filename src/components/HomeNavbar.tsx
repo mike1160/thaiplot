@@ -13,6 +13,7 @@ const GUIDE_LINKS = [
   { href: '/info/hua-hin-property-market', key: 'guideHuaHin' },
   { href: '/info/pranburi-property', key: 'guidePranburi' },
   { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
+  { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' },
 ] as const
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
