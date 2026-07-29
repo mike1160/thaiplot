@@ -8,9 +8,16 @@ type Props = {
   solid: boolean
   onNavigate?: () => void
   className?: string
+  /** When true, always show the label text (e.g. mobile menu). */
+  alwaysShowLabel?: boolean
 }
 
-export default function PortalAccountLink({ solid, onNavigate, className }: Props) {
+export default function PortalAccountLink({
+  solid,
+  onNavigate,
+  className,
+  alwaysShowLabel = false,
+}: Props) {
   const t = useTranslations('navigation')
   const [href, setHref] = useState('/portal/login')
 
@@ -18,9 +25,9 @@ export default function PortalAccountLink({ solid, onNavigate, className }: Prop
     const supabase = getSupabaseBrowser()
     let cancelled = false
 
-    supabase.auth.getUser().then(({ data: { user } }) => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
       if (!cancelled) {
-        setHref(user ? '/portal/dashboard' : '/portal/login')
+        setHref(session?.user ? '/portal/dashboard' : '/portal/login')
       }
     })
 
@@ -42,7 +49,7 @@ export default function PortalAccountLink({ solid, onNavigate, className }: Prop
       onClick={onNavigate}
       className={
         className ||
-        `inline-flex items-center gap-1.5 px-2 py-1.5 text-[12px] sm:text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
+        `inline-flex items-center gap-1.5 px-2 py-1.5 text-[12px] sm:text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] flex-shrink-0 ${
           solid
             ? 'text-[#5C5247] hover:text-[#C8973A]'
             : 'text-white/85 hover:text-white'
@@ -60,7 +67,7 @@ export default function PortalAccountLink({ solid, onNavigate, className }: Prop
           strokeLinecap="round"
         />
       </svg>
-      <span className="hidden sm:inline">{t('myAccount')}</span>
+      <span className={alwaysShowLabel ? 'inline' : 'hidden sm:inline'}>{t('myAccount')}</span>
     </a>
   )
 }

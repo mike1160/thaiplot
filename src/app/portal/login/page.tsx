@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useState, type CSSProperties } from 'react'
+import { FormEvent, useEffect, useState, type CSSProperties } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { getSupabaseBrowser } from '@/lib/supabase-browser'
@@ -29,6 +29,13 @@ export default function PortalLoginPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('error') === 'disabled') {
+      setError('Uw account is gedeactiveerd. Neem contact op met ThaiPlot.')
+    }
+  }, [])
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()

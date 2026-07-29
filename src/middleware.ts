@@ -86,6 +86,18 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/portal/login', request.url))
     }
 
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('disabled')
+      .eq('id', user.id)
+      .maybeSingle()
+
+    // If column missing or query fails, do not block portal access
+    if (profile && profile.disabled === true) {
+      await supabase.auth.signOut()
+      return NextResponse.redirect(new URL('/portal/login?error=disabled', request.url))
+    }
+
     return response
   }
 

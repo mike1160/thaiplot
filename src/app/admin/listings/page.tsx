@@ -1,56 +1,14 @@
 import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { getProfile } from '@/lib/auth'
-import { getSupabaseAdmin, type ListingRow } from '@/lib/supabase'
+import { getSupabaseAdmin } from '@/lib/supabase'
 import { adminListingsUrl, adminSecretsMatch } from '@/lib/admin'
+import AdminListingsTable, { type AdminListingRow } from '@/components/admin/AdminListingsTable'
 
 export const dynamic = 'force-dynamic'
 
 type Props = {
-  searchParams?: { secret?: string; flash?: string }
-}
-
-type AdminListing = Pick<
-  ListingRow,
-  | 'id'
-  | 'name'
-  | 'email'
-  | 'location'
-  | 'property_type'
-  | 'status'
-  | 'created_at'
-  | 'price'
-  | 'region'
-  | 'user_id'
-  | 'slug'
-  | 'photo_1'
-  | 'photo_2'
-  | 'photo_3'
-  | 'photo_4'
-  | 'photo_5'
-> & {
-  owner_name?: string | null
-}
-
-function statusColor(status: string) {
-  if (status === 'approved') return '#16a34a'
-  if (status === 'rejected') return '#dc2626'
-  return '#C8973A'
-}
-
-function actionButtonStyle(bg: string): CSSProperties {
-  return {
-    display: 'inline-block',
-    marginRight: 8,
-    marginBottom: 4,
-    padding: '6px 12px',
-    borderRadius: 8,
-    background: bg,
-    color: '#fff',
-    textDecoration: 'none',
-    fontSize: 13,
-    fontWeight: 600,
-  }
+  searchParams?: { secret?: string; flash?: string; user_id?: string; status?: string }
 }
 
 function flashMessage(flash?: string): string | null {
@@ -72,12 +30,26 @@ function flashMessage(flash?: string): string | null {
   }
 }
 
-function photoCount(row: AdminListing) {
-  return [row.photo_1, row.photo_2, row.photo_3, row.photo_4, row.photo_5].filter(Boolean).length
+function tabStyle(active: boolean): CSSProperties {
+  return {
+    display: 'inline-block',
+    padding: '8px 14px',
+    borderRadius: 8,
+    background: active ? '#1A2744' : '#fff',
+    color: active ? '#fff' : '#1A2744',
+    border: active ? '1px solid #1A2744' : '1px solid #E8E2D6',
+    textDecoration: 'none',
+    fontSize: 13,
+    fontWeight: 600,
+    marginRight: 8,
+    marginBottom: 8,
+  }
 }
 
 export default async function AdminListingsPage({ searchParams }: Props) {
   const secret = searchParams?.secret || ''
+  const userId = searchParams?.user_id || ''
+  const statusFilter = (searchParams?.status || 'alle').toLowerCase()
   const adminSecret = process.env.ADMIN_SECRET || ''
   const flash = flashMessage(searchParams?.flash)
   const profile = await getProfile()
@@ -116,23 +88,40 @@ export default async function AdminListingsPage({ searchParams }: Props) {
     )
   }
 
-  let listings: AdminListing[] = []
+  let listings: AdminListingRow[] = []
   let loadError: string | null = null
+  let filterUserName: string | null = null
 
   try {
     const supabase = getSupabaseAdmin()
-    const { data, error } = await supabase
+    let query = supabase
       .from('listings')
       .select(
         'id, name, email, location, property_type, status, created_at, price, region, user_id, slug, photo_1, photo_2, photo_3, photo_4, photo_5'
       )
       .order('created_at', { ascending: false })
 
+    if (userId) {
+      query = query.eq('user_id', userId)
+      const { data: owner } = await supabase
+        .from('profiles')
+        .select('full_name, email')
+        .eq('id', userId)
+        .maybeSingle()
+      filterUserName = owner?.full_name || owner?.email || userId
+    }
+
+    if (['pending', 'approved', 'rejected'].includes(statusFilter)) {
+      query = query.eq('status', statusFilter)
+    }
+
+    const { data, error } = await query
+
     if (error) {
       console.error('[admin/listings]', error)
       loadError = error.message
     } else {
-      listings = (data || []) as AdminListing[]
+      listings = (data || []) as AdminListingRow[]
 
       const userIds = Array.from(
         new Set(listings.map((l) => l.user_id).filter(Boolean) as string[])
@@ -161,7 +150,25 @@ export default async function AdminListingsPage({ searchParams }: Props) {
   }
 
   const enc = encodeURIComponent(adminSecret)
+  const qs = new URLSearchParams()
+  if (secret) qs.set('secret', secret)
+  if (userId) qs.set('user_id', userId)
+  const baseQs = qs.toString()
+  const withStatus = (status: string) => {
+    const p = new URLSearchParams(qs)
+    if (status !== 'alle') p.set('status', status)
+    else p.delete('status')
+    const s = p.toString()
+    return s ? `?${s}` : ''
+  }
   const secretQs = secret ? `?secret=${encodeURIComponent(secret)}` : ''
+  const clearUserHref = (() => {
+    const p = new URLSearchParams()
+    if (secret) p.set('secret', secret)
+    if (statusFilter !== 'alle') p.set('status', statusFilter)
+    const s = p.toString()
+    return `/admin/listings${s ? `?${s}` : ''}`
+  })()
 
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#1A2744', maxWidth: 1200, margin: '0 auto' }}>
@@ -174,10 +181,42 @@ export default async function AdminListingsPage({ searchParams }: Props) {
       >
         ThaiPlot — Listings
       </h1>
+      {userId ? (
+        <p style={{ color: '#5C5247', margin: '0 0 8px' }}>
+          Listings van <strong>{filterUserName}</strong>{' '}
+          <Link href={clearUserHref} style={{ color: '#C8973A', fontWeight: 600 }}>
+            Toon alle listings
+          </Link>
+        </p>
+      ) : null}
       <p style={{ color: '#5C5247', marginBottom: 16 }}>
-        {listings.length} total listings
+        {listings.length} listings
         {loadError ? ` · Load error: ${loadError}` : ''}
       </p>
+
+      <div style={{ marginBottom: 8 }}>
+        <Link href={`/admin/listings${withStatus('alle')}`} style={tabStyle(statusFilter === 'alle')}>
+          Alle
+        </Link>
+        <Link
+          href={`/admin/listings${withStatus('pending')}`}
+          style={tabStyle(statusFilter === 'pending')}
+        >
+          Pending
+        </Link>
+        <Link
+          href={`/admin/listings${withStatus('approved')}`}
+          style={tabStyle(statusFilter === 'approved')}
+        >
+          Approved
+        </Link>
+        <Link
+          href={`/admin/listings${withStatus('rejected')}`}
+          style={tabStyle(statusFilter === 'rejected')}
+        >
+          Rejected
+        </Link>
+      </div>
 
       {flash ? (
         <p
@@ -195,99 +234,16 @@ export default async function AdminListingsPage({ searchParams }: Props) {
         </p>
       ) : null}
 
-      <div
-        style={{
-          overflowX: 'auto',
-          background: '#fff',
-          border: '1px solid #E8E2D6',
-          borderRadius: 12,
-        }}
-      >
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ textAlign: 'left', background: '#1A2744', color: '#fff' }}>
-              <th style={{ padding: 12 }}>Name</th>
-              <th style={{ padding: 12 }}>Email</th>
-              <th style={{ padding: 12 }}>Location</th>
-              <th style={{ padding: 12 }}>Property type</th>
-              <th style={{ padding: 12 }}>Price</th>
-              <th style={{ padding: 12 }}>Region</th>
-              <th style={{ padding: 12 }}>Owner</th>
-              <th style={{ padding: 12 }}>Photos</th>
-              <th style={{ padding: 12 }}>Status</th>
-              <th style={{ padding: 12 }}>Created</th>
-              <th style={{ padding: 12 }}>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listings.map((row) => (
-              <tr key={row.id} style={{ borderTop: '1px solid #E8E2D6' }}>
-                <td style={{ padding: 12 }}>{row.name || '—'}</td>
-                <td style={{ padding: 12 }}>{row.email || '—'}</td>
-                <td style={{ padding: 12 }}>{row.location || '—'}</td>
-                <td style={{ padding: 12 }}>{row.property_type || '—'}</td>
-                <td style={{ padding: 12 }}>{row.price || '—'}</td>
-                <td style={{ padding: 12 }}>{row.region || '—'}</td>
-                <td style={{ padding: 12 }}>{row.owner_name || 'Onbekend'}</td>
-                <td style={{ padding: 12 }}>{photoCount(row)}</td>
-                <td
-                  style={{
-                    padding: 12,
-                    color: statusColor(row.status),
-                    fontWeight: 600,
-                    textTransform: 'capitalize',
-                  }}
-                >
-                  {row.status}
-                </td>
-                <td style={{ padding: 12, whiteSpace: 'nowrap', color: '#5C5247' }}>
-                  {row.created_at ? new Date(row.created_at).toLocaleString() : '—'}
-                </td>
-                <td style={{ padding: 12, whiteSpace: 'nowrap' }}>
-                  <Link
-                    href={`/admin/listings/${row.id}${secretQs}`}
-                    style={actionButtonStyle('#1A2744')}
-                  >
-                    Detail
-                  </Link>
-                  <a
-                    href={`/api/listing-action?id=${row.id}&action=approve&secret=${enc}`}
-                    style={actionButtonStyle('#16a34a')}
-                  >
-                    Approve
-                  </a>
-                  <a
-                    href={`/api/listing-action?id=${row.id}&action=reject&secret=${enc}`}
-                    style={actionButtonStyle('#C8973A')}
-                  >
-                    Reject
-                  </a>
-                  <a
-                    href={`/api/listing-action?id=${row.id}&action=delete&secret=${enc}`}
-                    style={actionButtonStyle('#dc2626')}
-                  >
-                    Delete
-                  </a>
-                </td>
-              </tr>
-            ))}
-            {listings.length === 0 && !loadError && (
-              <tr>
-                <td
-                  colSpan={11}
-                  style={{ padding: 24, textAlign: 'center', color: '#5C5247' }}
-                >
-                  No listings found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+      <AdminListingsTable
+        listings={listings}
+        secretQs={secretQs}
+        approveBase={`/api/listing-action?secret=${enc}`}
+      />
 
       <p style={{ marginTop: 16, color: '#5C5247', fontSize: 13 }}>
         Bookmark:{' '}
         <code style={{ color: '#1A2744' }}>{adminListingsUrl(adminSecret)}</code>
+        {baseQs ? ` · filter: ${baseQs}` : ''}
       </p>
     </div>
   )

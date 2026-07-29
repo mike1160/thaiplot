@@ -86,4 +86,5 @@ export type ProfileRow = {
   full_name: string | null
   role: 'admin' | 'client' | string
   created_at: string
+  disabled?: boolean | null
 }

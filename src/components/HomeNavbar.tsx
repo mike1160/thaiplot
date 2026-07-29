@@ -252,6 +252,7 @@ export default function HomeNavbar() {
           <div className="px-6 py-3 border-b border-[#E8E2D6]">
             <PortalAccountLink
               solid
+              alwaysShowLabel
               onNavigate={closeMenu}
               className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#1A2744]"
             />
