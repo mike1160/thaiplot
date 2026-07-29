@@ -8,20 +8,59 @@ type Props = {
   children: ReactNode
 }
 
+async function fetchHeroPhoto() {
+  const key = process.env.NEXT_PUBLIC_PEXELS_API_KEY
+  if (!key) return null
+  try {
+    const res = await fetch(
+      'https://api.pexels.com/v1/search?query=Phuket+water+tropical&per_page=5&orientation=landscape',
+      {
+        headers: { Authorization: key },
+        next: { revalidate: 86400 },
+      }
+    )
+    const data = await res.json()
+    if (!data.photos?.length) return null
+    const photo = data.photos[Math.floor(Math.random() * Math.min(3, data.photos.length))]
+    return {
+      url: photo.src.large2x as string,
+      photographer: photo.photographer as string,
+      link: photo.url as string,
+    }
+  } catch {
+    return null
+  }
+}
+
 export default async function DrinkWaterShell({ children }: Props) {
   const t = await getTranslations('infoDrinkWater')
+  const photo = await fetchHeroPhoto()
 
   return (
     <main className="min-h-screen bg-[#F5F0E8] text-[#1A2933]">
       <BreadcrumbNav />
 
       <section className="relative overflow-hidden text-white">
+
+        {/* Achtergrond: Pexels foto of fallback gradient */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={
+            photo
+              ? { backgroundImage: `url(${photo.url})` }
+              : { background: 'linear-gradient(160deg, #0A3D5C 0%, #1A7BA4 55%, #1A2744 100%)' }
+          }
+        />
+
+        {/* Donkere overlay zodat tekst altijd leesbaar is */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(160deg, #0A3D5C 0%, #1A7BA4 55%, #1A2744 100%)',
+            background:
+              'linear-gradient(160deg, rgba(10,61,92,0.82) 0%, rgba(26,123,164,0.58) 100%)',
           }}
         />
+
         <div className="relative z-10 max-w-3xl mx-auto px-6 pt-20 pb-14 md:pt-24 md:pb-16 text-center">
           <p className="text-[#8DB4C8] text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-4">
             {t('eyebrow')}
@@ -36,6 +75,19 @@ export default async function DrinkWaterShell({ children }: Props) {
             {t('subtitle')}
           </p>
         </div>
+
+        {/* Pexels fotocredit */}
+        {photo && (
+          <a
+            href={photo.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-12 right-3 z-10 text-[0.65rem] text-white/50 hover:text-white/80 transition-colors"
+          >
+            📷 {photo.photographer} via Pexels
+          </a>
+        )}
+
         <svg
           className="relative block w-full h-10 md:h-12"
           viewBox="0 0 1200 50"
