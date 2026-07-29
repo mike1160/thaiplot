@@ -8,19 +8,31 @@ export default function AdminLoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState('')
+  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setError(null)
+    setSubmitted(true)
+
+    const formData = new FormData(e.currentTarget)
+    const emailValue = String(formData.get('email') || email).trim()
+    const passwordValue = String(formData.get('password') || password)
+
+    if (!emailValue || !passwordValue) {
+      setError('Vul uw e-mail en wachtwoord in')
+      return
+    }
+
+    setError('')
     setLoading(true)
 
     try {
       const supabase = getSupabaseBrowser()
       const { error: signInError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
+        email: emailValue,
+        password: passwordValue,
       })
 
       if (signInError) {
@@ -108,7 +120,7 @@ export default function AdminLoginPage() {
           Log in to manage listings and search requests.
         </p>
 
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 16 }}>
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 16 }} noValidate>
           <div>
             <label
               htmlFor="admin-email"
@@ -118,11 +130,14 @@ export default function AdminLoginPage() {
             </label>
             <input
               id="admin-email"
+              name="email"
               type="email"
-              required
               autoComplete="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                setError('')
+              }}
               style={{
                 width: '100%',
                 borderRadius: 12,
@@ -144,11 +159,14 @@ export default function AdminLoginPage() {
             </label>
             <input
               id="admin-password"
+              name="password"
               type="password"
-              required
               autoComplete="current-password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value)
+                setError('')
+              }}
               style={{
                 width: '100%',
                 borderRadius: 12,
@@ -161,7 +179,7 @@ export default function AdminLoginPage() {
             />
           </div>
 
-          {error ? (
+          {submitted && error ? (
             <p
               style={{
                 margin: 0,

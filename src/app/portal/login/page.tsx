@@ -27,26 +27,40 @@ export default function PortalLoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState('')
+  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [accountDisabled, setAccountDisabled] = useState(false)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.get('error') === 'disabled') {
-      setError('Uw account is gedeactiveerd. Neem contact op met ThaiPlot.')
+      setAccountDisabled(true)
     }
   }, [])
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setError(null)
+    setSubmitted(true)
+
+    // Prefer FormData so browser autofill values are included even if React state lags
+    const formData = new FormData(e.currentTarget)
+    const emailValue = String(formData.get('email') || email).trim()
+    const passwordValue = String(formData.get('password') || password)
+
+    if (!emailValue || !passwordValue) {
+      setError('Vul uw e-mail en wachtwoord in')
+      return
+    }
+
+    setError('')
     setLoading(true)
 
     try {
       const supabase = getSupabaseBrowser()
       const { error: signInError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
+        email: emailValue,
+        password: passwordValue,
       })
 
       if (signInError) {
@@ -112,18 +126,37 @@ export default function PortalLoginPage() {
           Log in om uw aanbod en zoekopdrachten te bekijken.
         </p>
 
-        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 16 }}>
+        {accountDisabled ? (
+          <p
+            style={{
+              margin: '0 0 16px',
+              padding: '10px 12px',
+              borderRadius: 8,
+              background: '#FEF2F2',
+              border: '1px solid #FECACA',
+              color: '#B91C1C',
+              fontSize: 13,
+            }}
+          >
+            Uw account is gedeactiveerd. Neem contact op met ThaiPlot.
+          </p>
+        ) : null}
+
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 16 }} noValidate>
           <div>
             <label htmlFor="portal-email" style={labelStyle}>
               E-mail
             </label>
             <input
               id="portal-email"
+              name="email"
               type="email"
-              required
               autoComplete="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                setError('')
+              }}
               style={inputStyle}
             />
           </div>
@@ -134,16 +167,19 @@ export default function PortalLoginPage() {
             </label>
             <input
               id="portal-password"
+              name="password"
               type="password"
-              required
               autoComplete="current-password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value)
+                setError('')
+              }}
               style={inputStyle}
             />
           </div>
 
-          {error ? (
+          {submitted && error ? (
             <p
               style={{
                 margin: 0,
