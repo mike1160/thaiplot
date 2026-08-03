@@ -59,7 +59,7 @@ export default function HomePageClient({ listings }: Props) {
 
       <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
         <img
-          src="/hero.jpg"
+          src={HERO_PHOTOS.home}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
