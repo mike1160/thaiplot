@@ -5,7 +5,7 @@ function pexels(idPath: string): string {
 }
 
 export const HERO_PHOTOS = {
-  home: '/th=pl-5.JPG',
+  home: '/th-pl-1.JPG',
   listings: pexels('1031659/pexels-photo-1031659.jpeg'),
   listProperty: pexels('2166559/pexels-photo-2166559.jpeg'),
   contact: pexels('1659438/pexels-photo-1659438.jpeg'),

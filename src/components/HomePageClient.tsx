@@ -61,7 +61,7 @@ export default function HomePageClient({ listings }: Props) {
         <img
           src={HERO_PHOTOS.home}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
         />
         {/* Top gradient — header readability */}
         <div
