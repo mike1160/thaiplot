@@ -59,6 +59,14 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/info/official-thai-downloads"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideOfficialDownloads')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/info/paperwork-thailand"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >

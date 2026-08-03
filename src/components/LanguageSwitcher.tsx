@@ -24,12 +24,15 @@ type LanguageSwitcherProps = {
   align?: 'left' | 'right'
   /** solid = light header; ghost = over dark hero */
   variant?: 'solid' | 'ghost'
+  /** Compact control for tight mobile headers */
+  compact?: boolean
 }
 
 export default function LanguageSwitcher({
   className = '',
   align = 'right',
   variant = 'solid',
+  compact = false,
 }: LanguageSwitcherProps) {
   const t = useTranslations('languages')
   const locale = useLocale() as AppLocale
@@ -70,23 +73,28 @@ export default function LanguageSwitcher({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className={`flex items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium rounded-[12px] transition-all duration-[350ms] ease-[ease] ${
+        className={`flex items-center font-medium rounded-[12px] transition-all duration-[350ms] ease-[ease] flex-shrink-0 ${
+          compact ? 'gap-1 px-2 py-1 text-[12px] min-h-[36px]' : 'gap-1.5 px-3 py-1.5 text-[13px]'
+        } ${
           variant === 'ghost'
             ? 'text-white bg-white/10 border border-white/30 hover:bg-white/20'
             : 'text-[#1A2744] bg-white border border-[#E8E2D6] hover:border-[#C8973A]/50'
         }`}
         aria-expanded={open}
         aria-haspopup="listbox"
+        aria-label={t(current.code)}
       >
         <span aria-hidden="true">{current.flag}</span>
         <span>{current.code.toUpperCase()}</span>
-        <span
-          className={`text-[9px] transition-transform ${open ? 'rotate-180' : ''} ${
-            variant === 'ghost' ? 'text-white/80' : 'text-[#5C5247]'
-          }`}
-        >
-          ▾
-        </span>
+        {!compact ? (
+          <span
+            className={`text-[9px] transition-transform ${open ? 'rotate-180' : ''} ${
+              variant === 'ghost' ? 'text-white/80' : 'text-[#5C5247]'
+            }`}
+          >
+            ▾
+          </span>
+        ) : null}
       </button>
 
       {open && (

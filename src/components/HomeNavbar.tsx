@@ -14,6 +14,7 @@ const GUIDE_LINKS = [
   { href: '/info/pranburi-property', key: 'guidePranburi' },
   { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
   { href: '/info/paperwork-thailand', key: 'guidePaperwork' },
+  { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' },
   { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' },
 ] as const
 
@@ -149,6 +150,17 @@ export default function HomeNavbar() {
             </Link>
 
             <Link
+              href="/info/official-thai-downloads"
+              className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
+                solid
+                  ? 'text-[#5C5247] hover:text-[#1A2744]'
+                  : 'text-white hover:text-white/85'
+              }`}
+            >
+              {t('guideOfficialDownloads')}
+            </Link>
+
+            <Link
               href="/list-property"
               className={`ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border transition-all duration-[350ms] ease-[ease] ${
                 solid
@@ -186,18 +198,26 @@ export default function HomeNavbar() {
                 {t('webdesignTag')}
               </span>
             </div>
-            <PortalAccountLink solid={solid} />
             <div className="hidden sm:block">
+              <PortalAccountLink solid={solid} />
+            </div>
+            {/* Mobile header: language + contact side by side */}
+            <div className="lg:hidden flex items-center gap-1.5">
+              <LanguageSwitcher
+                compact
+                variant={solid ? 'solid' : 'ghost'}
+              />
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center min-h-[36px] px-3 rounded-lg text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744]"
+                onClick={closeMenu}
+              >
+                {t('contact')}
+              </Link>
+            </div>
+            <div className="hidden lg:block">
               <LanguageSwitcher variant={solid ? 'solid' : 'ghost'} />
             </div>
-            {/* Always-visible Contact on smaller screens when nav collapses */}
-            <Link
-              href="/contact"
-              className="lg:hidden inline-flex items-center justify-center min-h-[36px] px-3 rounded-lg text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744]"
-              onClick={closeMenu}
-            >
-              {t('contact')}
-            </Link>
             <button
               type="button"
               className={`lg:hidden inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-lg transition-colors duration-[350ms] ease-[ease] ${
@@ -253,10 +273,19 @@ export default function HomeNavbar() {
           >
             {t('guidePaperwork')}
           </Link>
+          <Link
+            href="/info/official-thai-downloads"
+            onClick={closeMenu}
+            className="flex items-center w-full px-6 min-h-[48px] text-[15px] font-semibold text-[#1A2744] border-b border-[#E8E2D6]"
+          >
+            {t('guideOfficialDownloads')}
+          </Link>
           <p className="px-6 pt-4 pb-2 text-[11px] uppercase tracking-wider text-[#C8973A] font-semibold">
             {t('guide')}
           </p>
-          {GUIDE_LINKS.filter((item) => item.key !== 'guidePaperwork').map((item) => (
+          {GUIDE_LINKS.filter(
+            (item) => item.key !== 'guidePaperwork' && item.key !== 'guideOfficialDownloads'
+          ).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -266,9 +295,6 @@ export default function HomeNavbar() {
               {t(item.key)}
             </Link>
           ))}
-          <div className="px-4 pt-3 sm:hidden">
-            <LanguageSwitcher variant="solid" />
-          </div>
           <div className="px-6 py-3 border-b border-[#E8E2D6]">
             <PortalAccountLink
               solid

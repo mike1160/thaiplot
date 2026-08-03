@@ -22,7 +22,8 @@
     },
     "myAccount": "Mijn account",
     "guideDrinkWater": "Drinkwater Hoe?",
-    "guidePaperwork": "Papieren"
+    "guidePaperwork": "Papieren",
+    "guideOfficialDownloads": "Officiële Thaise websites"
   },
   "languages": {
     "en": "English",
@@ -85,7 +86,8 @@
       "drinkWaterVending": "Waterautomaat",
       "drinkWaterCosts": "Kostenvergelijk",
       "drinkWaterAdvice": "Advies",
-      "paperwork": "Papieren"
+      "paperwork": "Papieren",
+      "officialDownloads": "Officiële Thaise websites"
     }
   },
   "homepage": {
@@ -954,6 +956,109 @@
         "7) Bij vastgoed: verifieer Chanote bij het Land Office met een advocaat — vertrouw niet op WhatsApp-foto’s van een blauwe kaft. 8) Bij rijbewijs: check of je buitenlandse rijbewijs omgewisseld kan worden vóór je een volledig examen leert. 9) Bij roze ID: alleen Immigratie-PR-goedkeuring is het echte pad.",
         "Deze pagina is algemene informatie, geen juridisch of immigratieadvies. Eisen verschillen per nationaliteit, provincie en jaar. Twijfel je: check aan het officiële loket of bij een bevoegde Thaise advocaat of immigratiespecialist."
       ]
+    }
+  },
+  "infoOfficialDownloads": {
+    "metaTitle": "Officiële Thaise websites & downloads | ThaiPlot",
+    "metaDescription": "Links en placeholders naar officiële Thaise overheidswebsites en downloads voor buitenlanders. ThaiPlot is niet verantwoordelijk voor externe sites.",
+    "eyebrow": "Hulpmiddelen",
+    "title": "Officiële Thaise websites & downloads",
+    "subtitle": "Overzichtelijk directory van officiële portalen die buitenlanders vaak nodig hebben — met placeholders waar URL’s nog bevestigd moeten worden. Check altijd het overheidsdomein.",
+    "disclaimerLabel": "Disclaimer",
+    "disclaimerTitle": "ThaiPlot is niet verantwoordelijk",
+    "disclaimerParas": [
+      "ThaiPlot biedt deze links en placeholders alleen ter algemene informatie. Wij zijn niet verbonden aan Thaise overheidsinstanties en beheren, hosten of controleren geen officiële formulieren, apps of downloadbestanden.",
+      "Wij zijn niet verantwoordelijk voor de juistheid, beschikbaarheid, inhoud, kosten, malware-risico of gevolgen van enige externe website of download. Overheids-URL’s, formulieren en procedures wijzigen zonder aankondiging.",
+      "Vul nooit wachtwoorden of paspoortgegevens in op sites zonder officieel .go.th-domein (of een duidelijk geverifieerd domein). Twijfel je: vraag aan het loket of bij een bevoegde advocaat — niet via een willekeurige social-media-“agent”."
+    ],
+    "photoCaption": "Beelden uit Thailand — sfeer, geen officiële formulieren.",
+    "placeholderBadge": "Placeholder",
+    "officialBadge": "Officieel",
+    "placeholderUrl": "URL TBD — bevestig op de site / aan het loket",
+    "comingSoon": "Binnenkort",
+    "openLink": "Open →",
+    "howToTitle": "Hoe gebruik je deze pagina",
+    "howToItems": [
+      "Gebruik bij voorkeur links met Officieel — die gaan naar bekende overheidsdomeinen.",
+      "Placeholder-rijen zijn gereserveerd voor formulieren of portalen die we nog moeten verifiëren; behandel ze niet als live downloads.",
+      "Download alleen vanaf de officiële site nadat je daar bent — ThaiPlot host geen PDF-formulieren.",
+      "Bewaar zelf offline kopieën van bewijzen en aanvraagnummers."
+    ],
+    "categories": {
+      "immigration": {
+        "title": "Immigratie & visa",
+        "intro": "Inreis, verlengingen, meldingen en long-stay programma’s."
+      },
+      "land": {
+        "title": "Grond & titels",
+        "intro": "Department of Lands en titelgerelateerde portalen."
+      },
+      "transport": {
+        "title": "Rijden & transport",
+        "intro": "Department of Land Transport — rijbewijzen en voertuigen."
+      },
+      "tax": {
+        "title": "Belasting",
+        "intro": "Revenue Department voor tax ID en aangiften."
+      },
+      "digital": {
+        "title": "Digitale overheid",
+        "intro": "Digitale ID en e-overheid (check actuele apps)."
+      },
+      "other": {
+        "title": "Overige officiële portalen",
+        "intro": "Buitenlandse zaken en andere diensten die buitenlanders vaak nodig hebben."
+      }
+    },
+    "links": {
+      "immigration": {
+        "name": "Immigration Bureau",
+        "desc": "Hoofdportaal immigratie — kantoren, nieuws en diensten."
+      },
+      "evisa": {
+        "name": "Thai e-Visa",
+        "desc": "Officieel elektronisch visa-aanvraagsysteem."
+      },
+      "tm30": {
+        "name": "TM30 adresmelding",
+        "desc": "Placeholder voor het actuele kanaal voor adresmelding door verhuurder in jouw regio."
+      },
+      "landDept": {
+        "name": "Department of Lands",
+        "desc": "Grondtitels, Chanote-informatie en provinciale landkantoren."
+      },
+      "dlt": {
+        "name": "Department of Land Transport (DLT)",
+        "desc": "Rijbewijzen, examens en voertuigregistratie."
+      },
+      "revenue": {
+        "name": "Revenue Department",
+        "desc": "Belastingidentificatie en e-filing."
+      },
+      "boiLtr": {
+        "name": "LTR-visum (BOI)",
+        "desc": "Informatie over het Long-Term Resident programma."
+      },
+      "mfa": {
+        "name": "Ministry of Foreign Affairs",
+        "desc": "Consulaire informatie en MFA-diensten."
+      },
+      "thaid": {
+        "name": "ThaID / digitale ID-app",
+        "desc": "Placeholder — bevestig de actuele officiële app-store listing vóór installatie."
+      },
+      "digitalGov": {
+        "name": "Digital Government Development Agency",
+        "desc": "Digitale overheidsprogramma’s en gerelateerde diensten."
+      },
+      "policeClearance": {
+        "name": "VOG / police clearance",
+        "desc": "Placeholder voor het officiële kanaal voor strafbladverklaringen in visumdossiers."
+      },
+      "ssf": {
+        "name": "Sociale zekerheid / overige formulieren",
+        "desc": "Placeholder voor extra downloadbare formulieren die werkgevers of kantoren soms vragen."
+      }
     }
   }
 }

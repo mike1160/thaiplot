@@ -1,8 +1,19 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.thaiplot.com/sitemap.xml
-# LLM / AI crawlers — site summary
+
+# LLM / AI discovery
 # https://www.thaiplot.com/llms.txt
+
+# Key guide pages (also in sitemap.xml)
+# /en/info/paperwork-thailand — Thai paperwork for foreigners (Papieren)
+# /en/info/official-thai-downloads — Official Thai websites & downloads (disclaimer)
+# /en/info/buying-land-thailand
+# /en/info/chanote-title-deed
+# /en/info/visa-retirement-thailand
+# /en/info/drinking-water-thailand
+# /en/info/hua-hin-property-market
+# /en/info/pranburi-property
 
 User-agent: GPTBot
 Allow: /

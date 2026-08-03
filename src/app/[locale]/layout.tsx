@@ -38,7 +38,7 @@ export async function generateMetadata({
     title,
     description,
     keywords:
-      'land for sale Thailand, Hua Hin property, chanote land, buy land Thailand foreigner, Pranburi land, Thailand real estate',
+      'land for sale Thailand, Hua Hin property, chanote land, buy land Thailand foreigner, Pranburi land, Thailand real estate, Thai paperwork foreigners, Papieren Thailand',
     alternates: {
       canonical,
       languages,

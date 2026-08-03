@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 const INFO_PAGES: Record<string, string> = {
   'buying-land-thailand': 'pages.buyingLand',
@@ -11,6 +12,7 @@ const INFO_PAGES: Record<string, string> = {
   'pranburi-property': 'pages.pranburi',
   'visa-retirement-thailand': 'pages.visa',
   'paperwork-thailand': 'pages.paperwork',
+  'official-thai-downloads': 'pages.officialDownloads',
   'drinking-water-thailand': 'pages.drinkWater',
 }
 
@@ -111,7 +113,7 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
             : 'bg-stone-50 border-stone-200 shadow-none'
         } ${className}`}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between gap-4">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between gap-3">
           <Link
             href="/"
             className="flex-shrink-0 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#1A2744] hover:text-amber-600 transition-colors"
@@ -120,33 +122,36 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
             {tn('brandTitle')}
           </Link>
 
-          <ol className="flex items-center gap-1.5 text-xs text-stone-500 min-w-0 flex-wrap justify-end">
-            {crumbs.map((crumb, index) => {
-              const isLast = index === crumbs.length - 1
-              const label = t(crumb.labelKey)
-              return (
-                <li key={`${crumb.labelKey}-${index}`} className="flex items-center gap-1.5 min-w-0">
-                  {index > 0 && (
-                    <span className="text-stone-300 select-none" aria-hidden>
-                      ›
-                    </span>
-                  )}
-                  {isLast || !crumb.href ? (
-                    <span
-                      className={`truncate ${isLast ? 'text-stone-700 font-medium' : 'text-stone-500'}`}
-                      aria-current={isLast ? 'page' : undefined}
-                    >
-                      {label}
-                    </span>
-                  ) : (
-                    <Link href={crumb.href} className="truncate hover:text-amber-600 transition-colors">
-                      {label}
-                    </Link>
-                  )}
-                </li>
-              )
-            })}
-          </ol>
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <ol className="hidden sm:flex items-center gap-1.5 text-xs text-stone-500 min-w-0 flex-wrap justify-end">
+              {crumbs.map((crumb, index) => {
+                const isLast = index === crumbs.length - 1
+                const label = t(crumb.labelKey)
+                return (
+                  <li key={`${crumb.labelKey}-${index}`} className="flex items-center gap-1.5 min-w-0">
+                    {index > 0 && (
+                      <span className="text-stone-300 select-none" aria-hidden>
+                        ›
+                      </span>
+                    )}
+                    {isLast || !crumb.href ? (
+                      <span
+                        className={`truncate ${isLast ? 'text-stone-700 font-medium' : 'text-stone-500'}`}
+                        aria-current={isLast ? 'page' : undefined}
+                      >
+                        {label}
+                      </span>
+                    ) : (
+                      <Link href={crumb.href} className="truncate hover:text-amber-600 transition-colors">
+                        {label}
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
+            </ol>
+            <LanguageSwitcher variant="solid" />
+          </div>
         </div>
       </nav>
     </>

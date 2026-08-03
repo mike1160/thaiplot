@@ -22,7 +22,8 @@
     },
     "myAccount": "Mitt konto",
     "guideDrinkWater": "Dricksvatten Hur?",
-    "guidePaperwork": "Pappersarbete"
+    "guidePaperwork": "Pappersarbete",
+    "guideOfficialDownloads": "Officiella thailändska webbplatser"
   },
   "languages": {
     "en": "English",
@@ -85,7 +86,8 @@
       "drinkWaterVending": "Vattenautomater",
       "drinkWaterCosts": "Kostnadsjämförelse",
       "drinkWaterAdvice": "Råd",
-      "paperwork": "Pappersarbete"
+      "paperwork": "Pappersarbete",
+      "officialDownloads": "Officiella thailändska webbplatser"
     }
   },
   "homepage": {
@@ -954,6 +956,109 @@
         "7) For property: verify Chanote at the Land Office with a lawyer — do not rely on WhatsApp photos of a blue cover. 8) For driving: confirm whether your foreign licence can be exchanged before studying for a full exam. 9) For pink ID: treat only Immigration PR approval as the real path.",
         "This page is general information, not legal or immigration advice. Requirements differ by nationality, province and year. When in doubt, confirm at the official counter or with a licensed Thai lawyer or immigration specialist."
       ]
+    }
+  },
+  "infoOfficialDownloads": {
+    "metaTitle": "Officiella thailändska webbplatser & nedladdningar | ThaiPlot",
+    "metaDescription": "Länkar och platshållare till officiella thailändska myndighetssajter. ThaiPlot ansvarar inte för tredjepartssajter.",
+    "eyebrow": "Resources",
+    "title": "Officiella thailändska webbplatser & nedladdningar",
+    "subtitle": "Tydlig katalog över officiella portaler — med platshållare där URL:er fortfarande ska bekräftas.",
+    "disclaimerLabel": "Disclaimer",
+    "disclaimerTitle": "ThaiPlot ansvarar inte",
+    "disclaimerParas": [
+      "ThaiPlot provides these links and placeholders for general information only. We are not affiliated with Thai government agencies and do not operate, host or control any official forms, apps or download files.",
+      "We are not responsible for the accuracy, availability, content, fees, malware risk or outcomes of any external website or download. Government URLs, forms and procedures change without notice.",
+      "Never enter passwords or passport data on sites that do not use an official .go.th (or clearly verified) domain. When in doubt, ask at the office counter or a licensed lawyer — not a random social-media “agent”."
+    ],
+    "photoCaption": "Visuals from Thailand — atmosphere, not official forms.",
+    "placeholderBadge": "Placeholder",
+    "officialBadge": "Official",
+    "placeholderUrl": "URL TBD — confirm on site / at the office",
+    "comingSoon": "Soon",
+    "openLink": "Open →",
+    "howToTitle": "How to use this page",
+    "howToItems": [
+      "Prefer links marked Official — they point to known government domains.",
+      "Placeholder rows are reserved for forms or portals we still need to verify; do not treat them as live downloads.",
+      "Download only from the official site after you land there — ThaiPlot does not host PDF forms.",
+      "Keep offline copies of receipts and application numbers yourself."
+    ],
+    "categories": {
+      "immigration": {
+        "title": "Immigration & visum",
+        "intro": "Entry, extensions, notifications and long-stay programmes."
+      },
+      "land": {
+        "title": "Mark & titlar",
+        "intro": "Department of Lands and title-related portals."
+      },
+      "transport": {
+        "title": "Körning & transport",
+        "intro": "Department of Land Transport — licences and vehicle matters."
+      },
+      "tax": {
+        "title": "Skatt",
+        "intro": "Revenue Department services used for tax ID and filings."
+      },
+      "digital": {
+        "title": "Digital förvaltning",
+        "intro": "Digital ID and e-government entry points (confirm current apps)."
+      },
+      "other": {
+        "title": "Övriga officiella portaler",
+        "intro": "Foreign affairs and additional services often requested of foreigners."
+      }
+    },
+    "links": {
+      "immigration": {
+        "name": "Immigration Bureau",
+        "desc": "Main immigration portal — offices, news and service information."
+      },
+      "evisa": {
+        "name": "Thai e-Visa",
+        "desc": "Official electronic visa application system."
+      },
+      "tm30": {
+        "name": "TM30 address notification",
+        "desc": "Placeholder for the current landlord/address notification channel used in your area."
+      },
+      "landDept": {
+        "name": "Department of Lands",
+        "desc": "Land titles, Chanote information and provincial land offices."
+      },
+      "dlt": {
+        "name": "Department of Land Transport (DLT)",
+        "desc": "Driving licences, tests and vehicle registration."
+      },
+      "revenue": {
+        "name": "Revenue Department",
+        "desc": "Tax identification and e-filing entry points."
+      },
+      "boiLtr": {
+        "name": "LTR visa (BOI)",
+        "desc": "Long-Term Resident programme information."
+      },
+      "mfa": {
+        "name": "Ministry of Foreign Affairs",
+        "desc": "Consular information and MFA services."
+      },
+      "thaid": {
+        "name": "ThaID / digital ID app",
+        "desc": "Placeholder — confirm the current official app store listing before installing."
+      },
+      "digitalGov": {
+        "name": "Digital Government Development Agency",
+        "desc": "Digital government programmes and related services."
+      },
+      "policeClearance": {
+        "name": "Police clearance / certificate",
+        "desc": "Placeholder for the official channel for criminal-record certificates used in visa files."
+      },
+      "ssf": {
+        "name": "Social Security / other forms",
+        "desc": "Placeholder for additional downloadable forms sometimes requested by employers or offices."
+      }
     }
   }
 }
