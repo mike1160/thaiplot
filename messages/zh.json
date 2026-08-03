@@ -21,7 +21,8 @@
       "listingDetail": "房源"
     },
     "myAccount": "我的账户",
-    "guideDrinkWater": "饮用水怎么做？"
+    "guideDrinkWater": "饮用水怎么做？",
+    "guidePaperwork": "文件手续"
   },
   "languages": {
     "en": "English",
@@ -83,7 +84,8 @@
       "drinkWaterOptions": "选项与风险",
       "drinkWaterVending": "自动售水机",
       "drinkWaterCosts": "费用对比",
-      "drinkWaterAdvice": "建议"
+      "drinkWaterAdvice": "建议",
+      "paperwork": "文件手续"
     }
   },
   "homepage": {
@@ -865,6 +867,93 @@
       "option": "选项",
       "cost": "费用",
       "safety": "安全性"
+    }
+  },
+  "infoPaperwork": {
+    "metaTitle": "外国人在泰国的文件手续 | ThaiPlot",
+    "metaDescription": "外国人泰国行政指南：蓝色地契、黄本户口、粉红身份证、驾照、考试、TM30。",
+    "title": "外国人在泰国的文件手续",
+    "subtitle": "长期居留外国人会遇到的泰国行政系统实用指南——什么是真的、去哪里办、能拿到什么、拿不到什么。",
+    "overview": {
+      "title": "泰国行政对外国人如何运作",
+      "paras": [
+        "Thailand runs on paper, stamps and office visits. For foreigners the key offices are Immigration, the Amphoe (district office), the Land Office, and the Department of Land Transport (DLT). Each document has a colour, a Thai name and a purpose — mix them up and you waste days.",
+        "Your visa status decides almost everything. A tourist stamp opens almost no doors. A Non-Immigrant visa (retirement OA/O, marriage, business B, education ED) unlocks house registration, bank accounts and a driving licence path. Permanent residence and Thai citizenship sit at the far end of the ladder.",
+        "Rules and fees change. Always confirm at the counter for your province and bring a Thai-speaking helper if your Thai is limited. Agents and lawyers can queue and translate, but you usually still sign and appear in person for ID photos and biometrics."
+      ]
+    },
+    "reality": {
+      "title": "什么是真的——去哪里办——能拿到 / 拿不到什么",
+      "paras": [
+        "Real documents come from government offices, with holograms, serial numbers and often an online verification trail. Fake “pink cards”, fake Chanotes and fake licences circulate in tourist areas. Never buy “official papers” from a soi shop or Facebook seller.",
+        "Where to ask: Immigration Bureau (visa, 90-day report, re-entry); Amphoe / District Office (Tabien Baan house book, some ID processes); Provincial Land Office (title deeds, Chanote); Department of Land Transport (driving licence); hospitals or clinics approved for medical certificates for licences.",
+        "What foreigners usually can get with a valid long-stay visa: yellow house book entry (Tabien Baan), Thai driving licence, SIM registration, bank account (bank-dependent), TM30 notification for your address, and in some cases a work permit if employment rules are met.",
+        "What foreigners generally do not get: freehold land in their own name (with rare exceptions), a blue Thai national ID card, a blue Tabien Baan like Thai citizens, voting rights, or a pink PR ID without going through the official permanent-residence process. A lease, company structure or building ownership is not the same as a Chanote in your passport name."
+      ]
+    },
+    "blueChanote": {
+      "title": "什么是蓝色 Chanote 地契？",
+      "paras": [
+        "A Chanote (Nor Sor 4 Jor) is Thailand’s strongest land title deed. The booklet is often referred to as the “blue book” or blue Chanote because of its traditional blue cover. It confirms surveyed boundaries, ownership and the right to transfer, mortgage and develop within zoning rules.",
+        "Weaker titles exist (Nor Sor 3, Nor Sor 3 Gor, etc.). They are not the same as Chanote. For buying or long leases, lawyers prefer Chanote because the Land Office map and coordinates are clearer and financing or resale is easier.",
+        "Foreigners almost never hold freehold Chanote land in their own name. You may still see Chanote documents when leasing land, buying a condo (condominium title is separate), or buying a building on leased land. Always have an independent lawyer check the deed number at the Land Office — colour of the cover alone proves nothing if the copy is forged.",
+        "Related paperwork at the Land Office can include power of attorney, company documents, lease registration (leases over three years should be registered) and tax receipts. Keep certified copies of everything you sign."
+      ]
+    },
+    "yellowBook": {
+      "title": "什么是黄本（Tabien Baan）？",
+      "paras": [
+        "Tabien Baan is the house registration book. Thai nationals usually receive a blue book. Foreigners who register at an address typically receive a yellow book (or a yellow insert / foreigner section, depending on office practice). It records who lives at that property.",
+        "Why it matters: banks, the DLT driving-licence office, some schools and many long-stay processes ask for proof of address. The yellow book plus your passport and visa is the standard stack. Without address registration, simple tasks become hard.",
+        "How to get it: the property owner or building manager usually starts the process at the Amphoe (district office), after Immigration address rules (including TM30) are followed. You appear with passport, visa/extension, photos and often a rental contract or owner consent. Practices vary by district — Hua Hin / Cha-am / Pranburi offices can differ slightly from Bangkok.",
+        "What it is not: the yellow book is not citizenship, not a work permit, and not land ownership. Being listed at an address does not give you freehold rights to that land. If you move, update or move your registration promptly so your licence and bank records stay consistent."
+      ]
+    },
+    "pinkId": {
+      "title": "如何办理粉红色身份证？",
+      "paras": [
+        "The pink card people mean is usually the Alien Identity Card issued to foreigners who hold permanent residence (PR) in Thailand. It is not a casual long-stay perk and not the same as a visa sticker or yellow house book.",
+        "Typical path: live in Thailand for the required years under qualifying visas, meet income / tax / conduct criteria, apply for permanent residence through Immigration (quotas and categories apply), wait for approval, then complete alien registration so the pink ID can be issued. Exact year counts, fees and document lists change — use current Immigration guidance or a specialist lawyer.",
+        "What the pink ID helps with: stronger proof of status, some banking and administrative processes, and a clearer long-term footprint. It still does not automatically equal Thai citizenship or freehold land rights.",
+        "What you do not get from “shortcuts”: social-media offers of a quick pink card are almost always illegal or fake. Temporary historical “coloured cards” in border contexts are a different system and not a substitute for PR. If someone promises a pink ID in days for cash, walk away."
+      ]
+    },
+    "drivingWhere": {
+      "title": "去哪里申请驾照？",
+      "paras": [
+        "Thai driving licences are issued by the Department of Land Transport (DLT) — in Thai often called the transport office or “rot yon”. Apply at a DLT branch that serves your province (for the Hua Hin area this is typically within Prachuap Khiri Khan / nearby DLT offices — confirm the branch that accepts foreigner applications).",
+        "Usual documents for a first Thai licence: passport + visa/extension, proof of address (yellow book / residence evidence), medical certificate from an approved clinic/hospital, application forms, photos, and fees. If you hold a valid foreign licence, many offices allow an exchange path with translation/legalisation rules that depend on your country — ask the branch before you queue.",
+        "Categories matter: car (private car), motorcycle, and sometimes combined testing. Bring the correct medical form for the category you want. Cash or PromptPay is commonly used for fees; bring your phone and patience for queue tickets.",
+        "An international driving permit alone is not a long-term solution for residents. For stays beyond tourist driving rules, get a Thai licence. Police checkpoints expect a Thai licence for residents."
+      ]
+    },
+    "drivingExam": {
+      "title": "驾考怎么进行？",
+      "paras": [
+        "Most first-time applicants take a colour-blindness / physical check, a theory test (road signs and rules, often on a computer, available in several languages at many offices), and a practical test on a closed course — not open city traffic for the basic car test.",
+        "Theory: study Thai road signs, right-of-way, speed and alcohol rules. Fail rates are real if you guess. Official booklets and reputable prep apps/schools help. You can usually retake after a waiting period if you fail.",
+        "Practical (car): expect tasks such as reverse parking, hill start (where fitted), zigzag or lane control, and smooth stopping. Motorcycle tests focus on balance, slalom and control at low speed. Examiners watch for hitting cones, stalling repeatedly or unsafe clutch use.",
+        "Tips: book early morning, bring water, wear closed shoes, and do not argue with examiners. Driving schools near DLT offices often include paperwork help, mock tests and a vehicle for the exam — useful if you are new to left-hand traffic or manual gearboxes. After you pass, collect the licence card and check expiry; renewals are simpler than the first issue but still need valid stay documents."
+      ]
+    },
+    "otherDocs": {
+      "title": "外国人常遇到的其他文件",
+      "paras": [
+        "TM30: your landlord or hotel must notify Immigration when you stay at an address. Keep a copy or screenshot of the TM30 receipt; banks and DLT offices sometimes ask for it.",
+        "90-day report: many long-stay visa holders must report their address to Immigration every 90 days (online or in person, depending on current rules). Missing it can cause fines and hassle at extension time.",
+        "Re-entry permit: if you leave Thailand and want the same visa to remain valid on return, get a re-entry permit before you fly (or confirm multiple re-entry is already endorsed).",
+        "Work permit: separate from a visa. A Non-B or other work-eligible status plus a licensed employer is usually required. Teaching, diving and remote-work myths aside — working without a permit is a serious offence.",
+        "Bank letters, tax ID (if applicable), marriage certificates (translated/legalised), and police clearance for some visa types round out the stack. Store scanned PDFs of every stamp and receipt in cloud storage."
+      ]
+    },
+    "checklist": {
+      "title": "排队前的实用清单",
+      "paras": [
+        "1) Know your goal document (yellow book, licence, land check, PR) and which office owns it. 2) Check opening days — many Amphoe and DLT offices close early and skip some weekdays. 3) Photocopy passport bio page, visa page and last entry stamp; bring originals.",
+        "4) Add Thai phone number and address in Thai script on forms. 5) Budget for medical certificates, photos, translations and agent fees. 6) Never hand your passport to an unverified “runner” overnight.",
+        "7) For property: verify Chanote at the Land Office with a lawyer — do not rely on WhatsApp photos of a blue cover. 8) For driving: confirm whether your foreign licence can be exchanged before studying for a full exam. 9) For pink ID: treat only Immigration PR approval as the real path.",
+        "This page is general information, not legal or immigration advice. Requirements differ by nationality, province and year. When in doubt, confirm at the official counter or with a licensed Thai lawyer or immigration specialist."
+      ]
     }
   }
 }

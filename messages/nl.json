@@ -21,7 +21,8 @@
       "listingDetail": "Advertentie"
     },
     "myAccount": "Mijn account",
-    "guideDrinkWater": "Drinkwater Hoe?"
+    "guideDrinkWater": "Drinkwater Hoe?",
+    "guidePaperwork": "Papieren"
   },
   "languages": {
     "en": "English",
@@ -83,7 +84,8 @@
       "drinkWaterOptions": "Opties & risico’s",
       "drinkWaterVending": "Waterautomaat",
       "drinkWaterCosts": "Kostenvergelijk",
-      "drinkWaterAdvice": "Advies"
+      "drinkWaterAdvice": "Advies",
+      "paperwork": "Papieren"
     }
   },
   "homepage": {
@@ -865,6 +867,93 @@
       "option": "Optie",
       "cost": "Kosten",
       "safety": "Veiligheid"
+    }
+  },
+  "infoPaperwork": {
+    "metaTitle": "Thaise papieren voor buitenlanders | ThaiPlot",
+    "metaDescription": "Gids Thaise administratie voor buitenlanders: blauwe Chanote, geel huisboek, roze ID, rijbewijs, examens, TM30 en wat je wel en niet krijgt.",
+    "title": "Papieren in Thailand voor buitenlanders",
+    "subtitle": "Praktische gids over de Thaise administratie die je als long-stay buitenlander tegenkomt — wat klopt, waar vraag je het aan, en wat krijg je wel of niet.",
+    "overview": {
+      "title": "Hoe de Thaise administratie werkt voor buitenlanders",
+      "paras": [
+        "Thailand draait op papier, stempels en loketten. Voor buitenlanders zijn de belangrijkste kantoren Immigratie, het Amphoe (districtskantoor), het Land Office en het Department of Land Transport (DLT). Elk document heeft een kleur, een Thaise naam en een doel — haal je die door elkaar, dan ben je dagen kwijt.",
+        "Je visumstatus bepaalt bijna alles. Een toeristenstempel opent nauwelijks deuren. Een Non-Immigrant visum (pensioen OA/O, huwelijk, business B, studie ED) opent huisregistratie, bankzaken en het traject voor een rijbewijs. Permanente verblijfsvergunning en Thais staatsburgerschap zitten helemaal aan het eind van de ladder.",
+        "Regels en tarieven wijzigen. Check altijd aan het loket in jouw provincie en neem iemand mee die Thai spreekt als jouw Thai beperkt is. Agenten en advocaten kunnen wachten en vertalen, maar voor foto’s en biometrie moet je meestal zelf verschijnen."
+      ]
+    },
+    "reality": {
+      "title": "Wat is er waar — waar vraag je het aan — wat krijg je wel / niet",
+      "paras": [
+        "Echte documenten komen van overheidsinstanties, met hologrammen, serienummers en vaak een online check. Valse “roze kaarten”, valse Chanotes en valse rijbewijzen circuleren in toeristische gebieden. Koop nooit “officiële papieren” in een soi-winkeltje of via Facebook.",
+        "Waar aanvragen: Immigratie (visum, 90-dagenmelding, re-entry); Amphoe / districtskantoor (Tabien Baan huisboek, sommige ID-processen); provinciaal Land Office (eigendomsaktes, Chanote); Department of Land Transport (rijbewijs); goedgekeurde klinieken/ziekenhuizen voor medische verklaringen.",
+        "Wat buitenlanders met een geldig long-stay visum meestal wél kunnen krijgen: inschrijving in het gele huisboek (Tabien Baan), Thais rijbewijs, SIM-registratie, bankrekening (afhankelijk van de bank), TM30-adresmelding, en in sommige gevallen een work permit als de werkregels kloppen.",
+        "Wat buitenlanders in de regel níet krijgen: freehold-grond op eigen naam (met zeldzame uitzonderingen), een blauwe Thaise nationale ID-kaart, een blauw Tabien Baan zoals Thaise burgers, stemrecht, of een roze PR-ID zonder het officiële permanente-verblijfstraject. Een lease, bedrijfsstructuur of gebouweigendom is niet hetzelfde als een Chanote op jouw paspoortnaam."
+      ]
+    },
+    "blueChanote": {
+      "title": "Wat is een blauwe Chanote?",
+      "paras": [
+        "Een Chanote (Nor Sor 4 Jor) is de sterkste grondakte in Thailand. Het boekje heet vaak “blue book” of blauwe Chanote vanwege de traditioneel blauwe kaft. Het bevestigt opgemeten grenzen, eigendom en het recht om over te dragen, te belenen en (binnen zoning) te ontwikkelen.",
+        "Zwakkere titels bestaan ook (Nor Sor 3, Nor Sor 3 Gor, enz.). Die zijn niet hetzelfde als Chanote. Bij koop of lange lease verkiezen advocaten Chanote omdat de Land Office-kaart en coördinaten duidelijker zijn en financiering of doorverkoop makkelijker is.",
+        "Buitenlanders houden vrijwel nooit freehold Chanote-grond op eigen naam. Je ziet Chanote-stukken wél bij lease van grond, condo-koop (condo-titel is apart), of koop van een gebouw op geleasede grond. Laat een onafhankelijke advocaat het aktnummer altijd bij het Land Office checken — alleen de kleur van de kaft bewijst niets bij een vervalsing.",
+        "Bijbehorende papieren bij het Land Office: volmacht, bedrijfsdocumenten, registratie van lease (leases langer dan drie jaar horen geregistreerd te worden) en belastingbewijzen. Bewaar gewaarmerkte kopieën van alles wat je tekent."
+      ]
+    },
+    "yellowBook": {
+      "title": "Wat is het gele boekje (Tabien Baan)?",
+      "paras": [
+        "Tabien Baan is het huisregistratieboek. Thaise staatsburgers krijgen meestal een blauw boek. Buitenlanders die zich op een adres inschrijven krijgen typisch een geel boek (of een gele bijlage / buitenlanderssectie, afhankelijk van het kantoor). Het registreert wie op dat pand woont.",
+        "Waarom het telt: banken, het DLT-rijbewijskantoor, sommige scholen en veel long-stay processen vragen adresbewijs. Het gele boek plus paspoort en visum is de standaardset. Zonder adresregistratie worden simpele zaken lastig.",
+        "Hoe aanvragen: de eigenaar of gebouwbeheerder start meestal bij het Amphoe (districtskantoor), nadat Immigratie-adresregels (inclusief TM30) zijn gevolgd. Jij komt met paspoort, visum/verlenging, foto’s en vaak een huurcontract of toestemming van de eigenaar. Praktijk verschilt per district — Hua Hin / Cha-am / Pranburi kan net anders zijn dan Bangkok.",
+        "Wat het niet is: het gele boek is geen staatsburgerschap, geen work permit en geen grondeigendom. Op een adres staan geeft je geen freehold-rechten op die grond. Verhuis je, werk dan je inschrijving bij zodat rijbewijs en bankgegevens kloppen."
+      ]
+    },
+    "pinkId": {
+      "title": "Hoe krijg je een roze ID-kaart?",
+      "paras": [
+        "Met de roze kaart bedoelen mensen meestal de Alien Identity Card voor buitenlanders met permanente verblijfsvergunning (PR) in Thailand. Dat is geen casual long-stay voordeel en niet hetzelfde als een visumsticker of geel huisboek.",
+        "Typisch traject: jaren in Thailand wonen op kwalificerende visa, voldoen aan inkomen- / belasting- / gedragsvoorwaarden, PR aanvragen via Immigratie (quota’s en categorieën gelden), goedkeuring afwachten, daarna alien registration afronden zodat de roze ID kan worden uitgegeven. Exacte termijnen, kosten en documentlijsten wijzigen — check actuele Immigratie-info of een specialist.",
+        "Waar de roze ID bij helpt: sterker statusbewijs, sommige bank- en administratieprocessen, en een duidelijkere langetermijnpositie. Het is nog steeds niet automatisch Thais staatsburgerschap of freehold-grondrechten.",
+        "Wat je niet krijgt via “shortcuts”: social-media-aanbiedingen van een snelle roze kaart zijn bijna altijd illegaal of vals. Historische “kleurenkaarten” in grenscontext zijn een ander systeem en geen vervanging van PR. Belooft iemand een roze ID in een paar dagen tegen cash: weglopen."
+      ]
+    },
+    "drivingWhere": {
+      "title": "Waar vraag je een rijbewijs aan?",
+      "paras": [
+        "Thaise rijbewijzen komen van het Department of Land Transport (DLT) — in de volksmond vaak het transportkantoor of “rot yon”. Je vraagt aan bij een DLT-vestiging in jouw provincie (rond Hua Hin meestal in Prachuap Khiri Khan / nabije DLT-kantoren — check welke vestiging buitenlanders aanneemt).",
+        "Gebruikelijke stukken voor een eerste Thais rijbewijs: paspoort + visum/verlenging, adresbewijs (geel boek / verblijfsbewijs), medische verklaring van goedgekeurde kliniek/ziekenhuis, formulieren, foto’s en leges. Heb je een geldig buitenlands rijbewijs, dan bieden veel kantoren een omwisseltraject met vertaling/legalisatie afhankelijk van je land — vraag het vóór je in de rij gaat staan.",
+        "Categorieën: auto, motor, soms gecombineerd. Neem het juiste medische formulier mee. Contant of PromptPay is gebruikelijk; neem telefoon en geduld mee voor nummertjes.",
+        "Alleen een internationaal rijbewijs is voor bewoners geen langetermijnoplossing. Blijf je langer dan toeristische regels toestaan, regel een Thais rijbewijs. Bij politiecontroles verwachten ze dat van residents."
+      ]
+    },
+    "drivingExam": {
+      "title": "Hoe doen rijexamens?",
+      "paras": [
+        "De meeste beginners doen een kleurenzien- / medische check, een theorietoets (borden en regels, vaak op computer, op veel kantoren in meerdere talen) en een praktijkexamen op een afgesloten terrein — niet in het stadsverkeer voor het basis-auto-examen.",
+        "Theorie: leer Thaise verkeersborden, voorrangsregels, snelheid en alcoholregels. Zakken is reëel als je gokt. Officiële boekjes en goede prep-apps/scholen helpen. Bij zakken kun je meestal na een wachttijd herkansen.",
+        "Praktijk (auto): verwacht taken als achteruit inparkeren, hellingproef (waar aanwezig), zigzag of rijstrookcontrole en gecontroleerd stoppen. Motorexamens draaien om balans, slalom en lage snelheid. Examens kijken naar pionnen raken, herhaaldelijk afslaan of onveilig koppelingsgebruik.",
+        "Tips: kom ’s ochtends vroeg, neem water mee, draag dichte schoenen, discussieer niet met examinatoren. Rijscholen bij DLT-kantoren regelen vaak papieren, oefenexamens en een lesauto — handig bij links rijden of handgeschakeld. Na slagen: check de geldigheid van de kaart; verlengen is eenvoudiger dan de eerste keer, maar je hebt nog steeds geldige verblijfsdocumenten nodig."
+      ]
+    },
+    "otherDocs": {
+      "title": "Andere papieren die buitenlanders vaak zien",
+      "paras": [
+        "TM30: je verhuurder of hotel moet Immigratie melden dat je op een adres verblijft. Bewaar een kopie of screenshot van het TM30-bewijs; banken en DLT vragen er soms om.",
+        "90-dagenmelding: veel long-stay visumhouders moeten elke 90 dagen hun adres melden bij Immigratie (online of ter plaatse, afhankelijk van actuele regels). Missen betekent boetes en gedoe bij verlenging.",
+        "Re-entry permit: vertrek je uit Thailand en wil je dat hetzelfde visum bij terugkeer geldig blijft, regel dan vóór vertrek een re-entry (of check of multiple re-entry al is bijgeschreven).",
+        "Work permit: los van het visum. Meestal Non-B of andere werk-geschikte status plus een erkende werkgever. Werken zonder permit is een ernstige overtreding — ook bij “remote work”-mythen.",
+        "Bankbrieven, tax ID (indien van toepassing), huwelijksaktes (vertaald/gelegaliseerd) en soms een VOG voor visa maken de set compleet. Bewaar scans van elke stempel en bon in de cloud."
+      ]
+    },
+    "checklist": {
+      "title": "Praktische checklist vóór je in de rij gaat",
+      "paras": [
+        "1) Weet welk document je wilt (geel boek, rijbewijs, grondcheck, PR) en welk kantoor het afgeeft. 2) Check openingstijden — Amphoe en DLT sluiten vaak vroeg. 3) Kopieer paspoort-biopagina, visumpagina en laatste instempel; neem originelen mee.",
+        "4) Zet Thais telefoonnummer en adres in Thais schrift op formulieren. 5) Budgetteer medische verklaring, foto’s, vertalingen en agentkosten. 6) Geef je paspoort nooit ’s nachts mee aan een ongeverifieerde “runner”.",
+        "7) Bij vastgoed: verifieer Chanote bij het Land Office met een advocaat — vertrouw niet op WhatsApp-foto’s van een blauwe kaft. 8) Bij rijbewijs: check of je buitenlandse rijbewijs omgewisseld kan worden vóór je een volledig examen leert. 9) Bij roze ID: alleen Immigratie-PR-goedkeuring is het echte pad.",
+        "Deze pagina is algemene informatie, geen juridisch of immigratieadvies. Eisen verschillen per nationaliteit, provincie en jaar. Twijfel je: check aan het officiële loket of bij een bevoegde Thaise advocaat of immigratiespecialist."
+      ]
     }
   }
 }

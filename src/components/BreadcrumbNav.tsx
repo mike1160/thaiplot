@@ -10,6 +10,7 @@ const INFO_PAGES: Record<string, string> = {
   'hua-hin-property-market': 'pages.huaHinMarket',
   'pranburi-property': 'pages.pranburi',
   'visa-retirement-thailand': 'pages.visa',
+  'paperwork-thailand': 'pages.paperwork',
   'drinking-water-thailand': 'pages.drinkWater',
 }
 

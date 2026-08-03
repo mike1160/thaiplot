@@ -24,6 +24,7 @@ const STATIC_ROUTES: Array<{
   { path: '/info/hua-hin-property-market', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/pranburi-property', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/visa-retirement-thailand', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/info/paperwork-thailand', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/options', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/vending', priority: 0.5, changeFrequency: 'monthly' },
