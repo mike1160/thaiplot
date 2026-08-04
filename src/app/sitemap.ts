@@ -30,6 +30,8 @@ const STATIC_ROUTES: Array<{
   { path: '/info/thailand-digital-arrival-card', priority: 0.85, changeFrequency: 'weekly' },
   { path: '/info/drinking-water-thailand', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/info/health-accidents-thailand', priority: 0.75, changeFrequency: 'monthly' },
+  { path: '/info/transport-thailand', priority: 0.75, changeFrequency: 'monthly' },
+  { path: '/info/living-thailand', priority: 0.75, changeFrequency: 'monthly' },
   { path: '/info/food-thailand', priority: 0.75, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/options', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/vending', priority: 0.5, changeFrequency: 'monthly' },

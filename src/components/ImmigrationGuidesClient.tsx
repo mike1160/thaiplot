@@ -29,7 +29,7 @@ export function ThimGuideClient() {
   const tp = useTranslations('partnerLinks')
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
       <InfoHero
         eyebrow={t('eyebrow')}
@@ -38,7 +38,16 @@ export function ThimGuideClient() {
         image={TH_PL_PHOTOS[2]}
       />
 
-      <div className="mx-auto max-w-3xl space-y-12 px-6 py-12 md:py-16">
+      <div className="relative mx-auto max-w-3xl space-y-12 px-6 py-12 md:py-16">
+        <div
+          className="pointer-events-none absolute inset-x-3 top-6 bottom-6 -z-10 rounded-[20px] md:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.45) 100%)',
+            boxShadow: '0 20px 60px rgba(20,32,56,0.05)',
+          }}
+          aria-hidden
+        />
         <div className="space-y-8">
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:gap-8">
             <a
@@ -185,7 +194,7 @@ export function TdacGuideClient() {
   const tp = useTranslations('partnerLinks')
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
       <InfoHero
         eyebrow={t('eyebrow')}
@@ -194,7 +203,16 @@ export function TdacGuideClient() {
         image={TH_PL_PHOTOS[6]}
       />
 
-      <div className="mx-auto max-w-3xl space-y-12 px-6 py-12 md:py-16">
+      <div className="relative mx-auto max-w-3xl space-y-12 px-6 py-12 md:py-16">
+        <div
+          className="pointer-events-none absolute inset-x-3 top-6 bottom-6 -z-10 rounded-[20px] md:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.45) 100%)',
+            boxShadow: '0 20px 60px rgba(20,32,56,0.05)',
+          }}
+          aria-hidden
+        />
         <div className="tp-body space-y-3">
           {(t.raw('intro') as string[]).map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>

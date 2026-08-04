@@ -87,12 +87,7 @@ export default function OfficialGovResources({ title, intro, note, categories }:
         <p className="text-[#C8973A] text-xs font-semibold uppercase tracking-[0.18em] mb-3">
           .go.th
         </p>
-        <h2
-          className="text-2xl md:text-3xl font-bold text-[#1A2744] mb-3"
-          style={{ fontFamily: 'Playfair Display, serif' }}
-        >
-          {title}
-        </h2>
+        <h2 className="tp-section-title mb-3">{title}</h2>
         <p className="text-[#5C5247] leading-relaxed text-sm md:text-base max-w-2xl">
           {intro}
         </p>

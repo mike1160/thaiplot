@@ -145,6 +145,8 @@ export default async function HealthAccidentsPage({ params }: Props) {
               title={tp('relatedOnThaiPlot')}
               links={[
                 { href: '/info/food-thailand', label: tp('linkFood') },
+                { href: '/info/transport-thailand', label: tp('linkTransport') },
+                { href: '/info/living-thailand', label: tp('linkLiving') },
                 { href: '/info/drinking-water-thailand', label: tp('linkDrinkWater') },
                 { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
                 { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },

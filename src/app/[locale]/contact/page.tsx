@@ -67,7 +67,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
 
       <InfoHero
@@ -80,12 +80,9 @@ export default function ContactPage() {
 
       <section className="py-12 md:py-20 px-6">
         <div className="max-w-3xl mx-auto grid gap-8">
-          <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] p-6 md:p-8 text-center sm:text-left flex flex-col sm:flex-row gap-5 items-center">
+          <div className="rounded-[14px] border border-white/70 bg-white/55 p-6 md:p-8 text-center sm:text-left flex flex-col sm:flex-row gap-5 items-center shadow-[0_12px_32px_rgba(20,32,56,0.06)] backdrop-blur-md">
             <div className="flex-1">
-              <h2
-                className="text-2xl font-bold mb-1"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              >
+              <h2 className="tp-section-title mb-2 text-left sm:text-left">
                 {AGENT_NAME}
               </h2>
               <a

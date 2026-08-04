@@ -103,12 +103,20 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
   const pageUrl = localizedPath(locale, content.path)
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
       <FaqJsonLd faqs={content.faqs} pageUrl={pageUrl} />
       <InfoHero title={content.title} subtitle={content.intro} image="/hero.jpg" />
 
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-12">
+      <article className="relative max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-12">
+        <div
+          className="pointer-events-none absolute inset-x-2 top-6 bottom-6 -z-10 rounded-[20px] sm:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.45) 100%)',
+          }}
+          aria-hidden
+        />
 
         {content.areas && content.areas.length > 0 ? (
           <section>
@@ -149,9 +157,9 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
         ) : null}
       </article>
 
-      <section className="border-y border-[#E8E2D6] bg-[#FAF7F0] py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-[#E8E2D6]/80 py-12 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="tp-section-title mb-8 border-0 pb-0">{content.listingsHeading}</h2>
+          <h2 className="tp-section-title mb-8 max-w-xl">{content.listingsHeading}</h2>
 
           {listings.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 text-center">
@@ -175,7 +183,15 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
         </div>
       </section>
 
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-12">
+      <article className="relative max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-12">
+        <div
+          className="pointer-events-none absolute inset-x-2 top-6 bottom-6 -z-10 rounded-[20px] sm:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.45) 100%)',
+          }}
+          aria-hidden
+        />
         {content.buyingBody ? (
           <section>
             <SectionHeading>{content.buyingHeading || 'Buying land as a foreigner'}</SectionHeading>

@@ -27,7 +27,10 @@
     "guideThim": "App THIM",
     "guideTdac": "Thailand Digital Arrival Card (TDAC)",
     "guideHealth": "Health & accidents",
-    "guideFood": "Food & drink"
+    "guideFood": "Food & drink",
+    "guideThaiData": "ThaiData — registres publics",
+    "guideTransport": "Transport & circulation",
+    "guideLiving": "Vivre: coûts & banque"
   },
   "languages": {
     "en": "English",
@@ -95,7 +98,9 @@
       "thimApp": "App THIM",
       "tdac": "TDAC",
       "health": "Health & accidents",
-      "food": "Food in Thailand"
+      "food": "Food in Thailand",
+      "transport": "Transport",
+      "living": "Vivre en Thaïlande"
     }
   },
   "homepage": {
@@ -613,6 +618,14 @@
         "Q: How long does a transfer take? A: Straightforward deals can complete in days once documents are ready; complex company or financing cases take longer.",
         "Q: Should I use ThaiData before buying? A: Yes — verify public records early, then confirm everything with a lawyer before you pay a deposit."
       ]
+    },
+    "livingAfter": {
+      "title": "After purchase: living, tax & annual costs",
+      "paras": [
+        "Purchase price is the start. Then budget maintenance, common fees, garden/pool, periodic charges, property insurance, and — if you live there — monthly living costs and health cover.",
+        "Tax effects of owning, renting out or later selling belong with an adviser, not a listings page. Our Living in Thailand guide outlines taxes, banking and schools at a high level.",
+        "Families: check travel time to international schools before buying a remote plot. Commuting in the heat is a different reality than a Sunday viewing."
+      ]
     }
   },
   "infoChanote": {
@@ -780,6 +793,14 @@
         "Health cover is increasingly important for visa and practical living reasons. Confirm whether your chosen visa category requires Thai or international insurance with minimum coverage.",
         "Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living."
       ]
+    },
+    "bankingLiving": {
+      "title": "Bank letters, deposits & living costs",
+      "paras": [
+        "Many long-stay and retirement routes ask for financial evidence: bank balances, monthly income, or combinations. Exact amounts and acceptance rules change — confirm with Immigration or a specialist for your nationality and visa type.",
+        "A Thai bank account helps with local payments and sometimes with showing funds, but “having an account” is not the same as meeting Immigration requirements. Book bank appointments before your extension date.",
+        "For more: cost of living, taxes, schools and driving are covered in our Living in Thailand guide. Pair this with health insurance (health guide) so your annual budget is realistic."
+      ]
     }
   },
   "partnerLinks": {
@@ -805,7 +826,9 @@
     "linkHuaHin": "Hua Hin property market",
     "linkPranburi": "Pranburi property",
     "linkHealth": "Health, accidents & insurance",
-    "linkFood": "Food, vegetarian & nightlife tips"
+    "linkFood": "Food, vegetarian & nightlife tips",
+    "linkTransport": "Transport, circulation & voyages",
+    "linkLiving": "Vivre: coûts, impôts, banque, écoles"
   },
   "regionHuaHin": {
     "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
@@ -900,7 +923,7 @@
   },
   "infoPaperwork": {
     "metaTitle": "Paperasserie thaïlandaise pour étrangers | ThaiPlot",
-    "metaDescription": "Guide administratif thaïlandais pour étrangers : Chanote bleue, livret jaune, carte rose, permis, examens, TM30.",
+    "metaDescription": "Guide de l’administration thaïlandaise pour les étrangers : Chanote rouge, livret bleu/jaune, ID rose, permis, examens, TM30 et ce que vous obtenez ou non.",
     "title": "Paperasserie en Thaïlande pour les étrangers",
     "subtitle": "Guide pratique des administrations thaïlandaises pour les longs séjours — ce qui est vrai, où demander, ce que vous obtenez ou non.",
     "overview": {
@@ -918,15 +941,6 @@
         "Where to ask: Immigration Bureau (visa, 90-day report, re-entry); Amphoe / District Office (Tabien Baan house book, some ID processes); Provincial Land Office (title deeds, Chanote); Department of Land Transport (driving licence); hospitals or clinics approved for medical certificates for licences.",
         "What foreigners usually can get with a valid long-stay visa: yellow house book entry (Tabien Baan), Thai driving licence, SIM registration, bank account (bank-dependent), TM30 notification for your address, and in some cases a work permit if employment rules are met.",
         "What foreigners generally do not get: freehold land in their own name (with rare exceptions), a blue Thai national ID card, a blue Tabien Baan like Thai citizens, voting rights, or a pink PR ID without going through the official permanent-residence process. A lease, company structure or building ownership is not the same as a Chanote in your passport name."
-      ]
-    },
-    "blueChanote": {
-      "title": "Qu’est-ce qu’une Chanote bleue ?",
-      "paras": [
-        "A Chanote (Nor Sor 4 Jor) is Thailand’s strongest land title deed. The booklet is often referred to as the “blue book” or blue Chanote because of its traditional blue cover. It confirms surveyed boundaries, ownership and the right to transfer, mortgage and develop within zoning rules.",
-        "Weaker titles exist (Nor Sor 3, Nor Sor 3 Gor, etc.). They are not the same as Chanote. For buying or long leases, lawyers prefer Chanote because the Land Office map and coordinates are clearer and financing or resale is easier.",
-        "Foreigners almost never hold freehold Chanote land in their own name. You may still see Chanote documents when leasing land, buying a condo (condominium title is separate), or buying a building on leased land. Always have an independent lawyer check the deed number at the Land Office — colour of the cover alone proves nothing if the copy is forged.",
-        "Related paperwork at the Land Office can include power of attorney, company documents, lease registration (leases over three years should be registered) and tax receipts. Keep certified copies of everything you sign."
       ]
     },
     "yellowBook": {
@@ -980,21 +994,47 @@
       "paras": [
         "1) Know your goal document (yellow book, licence, land check, PR) and which office owns it. 2) Check opening days — many Amphoe and DLT offices close early and skip some weekdays. 3) Photocopy passport bio page, visa page and last entry stamp; bring originals.",
         "4) Add Thai phone number and address in Thai script on forms. 5) Budget for medical certificates, photos, translations and agent fees. 6) Never hand your passport to an unverified “runner” overnight.",
-        "7) For property: verify Chanote at the Land Office with a lawyer — do not rely on WhatsApp photos of a blue cover. 8) For driving: confirm whether your foreign licence can be exchanged before studying for a full exam. 9) For pink ID: treat only Immigration PR approval as the real path.",
+        "7) For property: verify the red Chanote at the Land Office with a lawyer — do not rely on WhatsApp photos of a blue booklet. 8) For driving: confirm whether your foreign licence can be exchanged before studying for a full exam. 9) For pink ID: treat only Immigration PR approval as the real path.",
         "This page is general information, not legal or immigration advice. Requirements differ by nationality, province and year. When in doubt, confirm at the official counter or with a licensed Thai lawyer or immigration specialist."
       ]
     },
     "visuals": {
-      "blueChanoteAlt": "Illustrative blue Chanote title deed pages",
-      "blueChanoteCaption": "Illustration — blue Chanote title deed (Nor Sor 4 Jor). Not an official scan.",
+      "redChanoteAlt": "Illustrative red Chanote title deed",
+      "redChanoteCaption": "Illustration — red Chanote (Nor Sor 4 Jor) with red Garuda. Not an official scan.",
+      "blueBookAlt": "Illustrative blue Tabien Baan house book",
+      "blueBookCaption": "Illustration — blue house book (Tabien Baan) for Thai citizens. Not a Chanote.",
       "yellowBookAlt": "Illustrative yellow house registration book",
-      "yellowBookCaption": "Illustration — yellow house book (Tabien Baan). Not an official scan.",
+      "yellowBookCaption": "Illustration — yellow house book (Tabien Baan) for foreigners. Not an official scan.",
       "pinkIdAlt": "Illustrative pink foreigner ID card",
       "pinkIdCaption": "Illustration — pink ID card for foreigners. Not a real ID.",
       "drivingAlt": "Illustrative Thai driving licence",
-      "drivingCaption": "Illustration — Thai driving licence. Not a real licence.",
-      "chanoteBookAlt": "Illustrative Chanote booklet cover",
-      "chanoteBookCaption": "Illustration — Chanote booklet style cover. For orientation only."
+      "drivingCaption": "Illustration — Thai driving licence. Not a real licence."
+    },
+    "redChanote": {
+      "title": "Qu’est-ce qu’un Chanote rouge ?",
+      "paras": [
+        "A Chanote (Nor Sor 4 Jor) is Thailand’s strongest land title deed. People often call it a “red Chanote” or “Red Garuda” title because of the red Garuda (Krut) at the top of the document — not because of a blue cover. It is a Land Office title sheet with surveyed boundaries, ownership and the right to transfer, mortgage and develop within zoning rules.",
+        "Do not confuse it with the blue house registration book (Tabien Baan) for Thai citizens, or with weaker titles such as Nor Sor 3 / Nor Sor 3 Gor (which may show a blue Garuda). Only the red Chanote is the full freehold title deed (NS4J).",
+        "Foreigners almost never hold freehold Chanote land in their own name. You may still see Chanote documents when leasing land, buying a condo (condominium title is separate), or buying a building on leased land. Always have an independent lawyer check the deed number at the Land Office — a photo colour alone proves nothing if the copy is forged.",
+        "Related paperwork at the Land Office can include power of attorney, company documents, lease registration (leases over three years should be registered) and tax receipts. Keep certified copies of everything you sign."
+      ]
+    },
+    "blueBook": {
+      "title": "Qu’est-ce que le livret bleu ?",
+      "paras": [
+        "The blue booklet is the house registration book (Tabien Baan) for Thai nationals — not the Chanote land title. It records who lives at an address. The Chanote is a separate Land Office document (usually with a red Garuda).",
+        "Foreigners who register at an address typically receive a yellow book (or yellow insert), not a blue one. See the yellow-book section below. A blue Tabien Baan like Thai citizens get is generally not available to foreigners.",
+        "Why the distinction matters: agents or sellers who show a blue booklet as “proof of ownership” confuse (or mix) house registration with land title. For a purchase, always verify the Chanote at the Land Office — not only a house book.",
+        "Both documents can be forged. For land, demand the original plus a Land Office check; for address proof at banks or DLT, foreigners usually need the yellow book plus passport and visa."
+      ]
+    },
+    "bankingSchoolDrive": {
+      "title": "Banking, school & driving — what paperwork unlocks",
+      "paras": [
+        "A yellow house book and valid visa are often the key to a bank account, school admin and a DLT driving licence. Without address registration, counters stay hard.",
+        "Licence application and exams are covered above; how Thailand drives (left side, risks, Grab vs self-drive) is in the transport and living guides.",
+        "For costs, tax and school choice: see Living in Thailand. For medical costs after accidents: the health guide."
+      ]
     }
   },
   "infoOfficialDownloads": {
@@ -1690,5 +1730,362 @@
       }
     ],
     "foodNote": "General information only — not medical, nutritional or legal advice. Food safety, allergy risks and drug laws change. Verify with clinics, restaurants and official Thai sources. ThaiPlot lists property and publishes practical guides."
+  },
+  "infoTransport": {
+    "metaTitle": "Transport & circulation | ThaiPlot",
+    "metaDescription": "Clear guide to transport in Thailand: road deaths, accidents, car, motorcycle, scooter, taxi, Grab, Bolt, bus, minivan, train, BTS, metro, domestic flights, boats, ferries and booking sites (without Booking.com).",
+    "eyebrow": "Transport & circulation",
+    "title": "Transport in Thailand — clear, safer, smoother",
+    "subtitle": "From BTS to ferries, Grab to domestic flights: how Thai transport really works, where the risks sit, and where to book without the chaos.",
+    "hook": {
+      "eyebrow": "One guide. Every mode.",
+      "title": "Thailand moves in layers — learn them, and travel feels light.",
+      "body": "Bangkok breathes metro and BTS. The coast runs on minivans and ferries. Islands need boats. The north loves overnight trains. Choose deliberately, book smart, ride carefully — and Thailand stays a treat instead of a stress story."
+    },
+    "overview": {
+      "title": "Why this guide matters",
+      "paras": [
+        "Thailand is easy to travel — and easy to underestimate. Traffic speed, motorcycles, rain and night rides create a different risk profile than Western Europe. At the same time there are excellent options: BTS/MRT in Bangkok, cheap domestic flights, island ferries, and apps like Grab and Bolt.",
+        "This page is for visitors, long-stay expats and property buyers who want clarity: what is safer, what is convenient, what costs time, and where to book. ThaiPlot is a marketplace — not a transport company. Prices, routes and rules change; always confirm with the operator.",
+        "We deliberately leave Booking.com out here. For transport, local apps, airline sites, 12Go, SRT and flight comparators are usually clearer for trains, buses, ferries and flights."
+      ]
+    },
+    "mortality": {
+      "title": "Mortality & road safety — honest context",
+      "lead": "Not a scare piece — honest context so you make better choices.",
+      "paras": [
+        "Thailand has long ranked among countries with relatively high road-traffic deaths per capita. Motorcycles and scooters account for a large share of serious crashes. Alcohol, speed, poor lighting, rain and riding without a helmet or valid licence raise risk sharply.",
+        "For foreigners the key point is this: a “short scooter hire” feels like holiday fun but is statistically one of the riskiest choices. Hospital and evacuation costs after major trauma can be huge — link this to our health guide and your insurance.",
+        "Exact rankings and rates vary by source and year (WHO, Thai authorities, safety studies). Use official updates when you need precise current statistics. For practical safety: helmet, sober, daylight, defensive riding — or simply do not self-drive."
+      ],
+      "items": [
+        "Motorcycle/scooter: high share of serious injuries — helmet always, including as passenger",
+        "Night + rain + weak road markings = extra risk",
+        "Alcohol and driving mix badly — police checks are real",
+        "No Thai licence / no cover = claim problems after a crash",
+        "Children: proper seats/helmets; never “just on the lap” on a bike"
+      ]
+    },
+    "traffic": {
+      "title": "Traffic & accidents — how Thailand drives",
+      "lead": "Drive on the left, fast scooters, sudden U-turns, songthaews stopping wherever they like.",
+      "paras": [
+        "Cities mean congestion; provincial roads can mean high speed. Expect bikes filtering between cars, oncoming traffic on left turns, and less “Dutch courtesy”. Cameras and police checks exist — especially alcohol and speed.",
+        "After a crash: safety first, call 1669 (medical) or 191 (police) where relevant, document with photos, call your insurer/assistance line, and go to a capable (private) hospital if in doubt. Do not sign unclear settlements while injured.",
+        "As a passenger in a taxi, Grab or minivan: seatbelt when available, helmets on GrabBike, and get out if driving is clearly unsafe. Your ride is not an obligation to be a hero."
+      ]
+    },
+    "road": {
+      "title": "Road — car, bike, bus & apps",
+      "lead": "Thailand’s backbone. Pick mode by distance, luggage, weather and alcohol plans."
+    },
+    "rail": {
+      "title": "Train, BTS & metro",
+      "lead": "In Bangkok, rail often beats the car. Nationwide, trains are slow but atmospheric."
+    },
+    "air": {
+      "title": "Air — domestic flights & terminals",
+      "lead": "Thailand is built on short hops. Book early in high season."
+    },
+    "water": {
+      "title": "Water — boats, ferries & piers",
+      "lead": "Islands and rivers: check weather, season and official piers."
+    },
+    "modes": {
+      "car": {
+        "title": "Car",
+        "body": "Useful outside Bangkok, with kids or luggage. Rent from known brands; check insurance, excess and whether your international/Thai licence is accepted. Left-hand traffic + bikes need adjustment."
+      },
+      "motorcycle": {
+        "title": "Motorcycle",
+        "body": "Fast in the city, statistically risky. Only with experience, a valid licence, helmet, and cover that does not exclude motorcycle accidents. At night or in rain: better not."
+      },
+      "scooter": {
+        "title": "Scooter",
+        "body": "Popular with tourists — and a classic injury source. No “just practising” on busy roads. Helmets matter; passport as rental deposit is common but risky — use a copy where possible."
+      },
+      "taxi": {
+        "title": "Taxis",
+        "body": "In Bangkok: meter on (or a clear fixed price). Airport taxis via official stands. Refuse vague no-meter deals. Remember or photo the plate."
+      },
+      "grabBolt": {
+        "title": "Grab & Bolt",
+        "body": "The comfort default for many expats: in-app price, tracking, often cleaner cars. GrabBike for short hops. Cash or app pay. Surge pricing in rain and rush hour."
+      },
+      "minivan": {
+        "title": "Minivans",
+        "body": "Intercity classic (e.g. Bangkok–Hua Hin). Fast and cheap, sometimes aggressive driving. Prefer reputable operators via 12Go or station desks; belt on, label bags."
+      },
+      "bus": {
+        "title": "Public bus",
+        "body": "City buses and long-distance coaches (Bangkok Bus Terminal / provincial stations). Cheap, slower, mixed comfort. VIP/express coaches are better for night travel."
+      },
+      "train": {
+        "title": "Train (SRT)",
+        "body": "State Railway of Thailand: overnight trains north/south, daytime coastal runs. Book sleepers early. Check live schedules — works happen."
+      },
+      "bts": {
+        "title": "BTS Skytrain",
+        "body": "Bangkok’s elevated rail — above the traffic. Rabbit Card or tickets. Ideal for Sukhumvit, Silom, Siam. Combine with MRT for deeper neighbourhoods."
+      },
+      "metro": {
+        "title": "MRT / metro & Airport Rail Link",
+        "body": "MRT Blue/Purple and Airport Rail Link connect terminals, districts and BTS. Air-con, punctual, tourist-friendly. Check end stations before transferring with luggage."
+      },
+      "domestic": {
+        "title": "Domestic flights",
+        "body": "AirAsia, Thai Airways, Bangkok Airways, Nok Air and others link Bangkok, Chiang Mai, Phuket, Samui, Krabi, Hat Yai… Often cheaper/faster than a 10-hour bus. Watch baggage limits and airport choice (DMK vs BKK)."
+      },
+      "terminals": {
+        "title": "Airport terminals",
+        "body": "Suvarnabhumi (BKK), Don Mueang (DMK), Phuket, Chiang Mai, Samui, Krabi… Confirm which terminal your ticket uses. BKK↔DMK transfers eat time in rush hour. Arrive early in peak season."
+      },
+      "boats": {
+        "title": "Boats & longtails",
+        "body": "Island hopping, canals, fishing piers. Wear a life jacket when offered; avoid overloaded boats and storms. Agree price before private longtail trips."
+      },
+      "ferries": {
+        "title": "Ferries & piers",
+        "body": "To Samui, Phangan, Tao, Phi Phi, Phuket side… Book via 12Go or the operator; check pier names (Lomprayah, Seatran, Raja…). Seasonal seas can cancel sailings — build buffer time."
+      }
+    },
+    "booking": {
+      "title": "Booking — sites & apps that help",
+      "lead": "Pick the channel that matches the mode. We deliberately leave Booking.com off this transport page.",
+      "note": "Tip: for hotels you can use Agoda or hotel sites; for trains/buses/ferries/flights the channels below are more relevant. ThaiPlot is not affiliated with these services.",
+      "links": {
+        "twelveGo": "12Go — train, bus, ferry, some flights",
+        "grab": "Grab — car, bike, delivery",
+        "bolt": "Bolt — city rides",
+        "srt": "SRT — State Railway of Thailand",
+        "btsSite": "BTS Skytrain (official)",
+        "mrtSite": "MRT Bangkok (official)",
+        "airasia": "AirAsia",
+        "thaiAirways": "Thai Airways",
+        "bangkokAir": "Bangkok Airways",
+        "nokAir": "Nok Air",
+        "skyscanner": "Skyscanner — flight compare",
+        "googleFlights": "Google Flights",
+        "rome2rio": "Rome2Rio — route planner"
+      },
+      "footer": "Always compare price + baggage + transfer time. For island ferries: check if hotel transfer is included. For apps: update to the latest version and keep offline tickets/QR."
+    },
+    "checklist": {
+      "title": "Checklist before you go",
+      "items": [
+        "Passport + digital copies; check Thai or international driving-licence rules",
+        "Travel/health insurance reviewed for accidents / motorcycle exclusions",
+        "Helmet, seatbelt, sober policy — non-negotiable",
+        "Tickets: note exact pier/airport/station names",
+        "Grab/Bolt installed + local SIM or eSIM with data",
+        "Night travel? Prefer sleeper train or morning flight over a tired minivan",
+        "Luggage: waterproof for ferries; labelled for bus/minivan",
+        "Emergency numbers: 1669 medical, 191 police; insurer hotline"
+      ]
+    },
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Is renting a scooter in Thailand safe?",
+        "a": "For many visitors it is one of the riskiest choices. Only with experience, a helmet, a valid licence and insurance that covers motorcycle accidents. If unsure: Grab, taxi or bus."
+      },
+      {
+        "q": "Grab or a street taxi?",
+        "a": "Grab/Bolt give a fixed price and tracking. Metered taxis can be cheaper in light traffic, but meter/route arguments happen. Airports: use official stands."
+      },
+      {
+        "q": "How do I book a train or ferry?",
+        "a": "12Go is popular for trains, buses and ferries. SRT has its own channel for trains. Always check the departure pier or station on your confirmation."
+      },
+      {
+        "q": "Why is Booking.com not listed?",
+        "a": "A deliberate choice on this transport page. For getting around, airline sites, 12Go, SRT and ride apps are more relevant. Hotel booking can use whatever channel you prefer."
+      },
+      {
+        "q": "BKK or DMK for domestic flights?",
+        "a": "Both are used. Low-cost often flies Don Mueang (DMK); many full-service and international use Suvarnabhumi (BKK). Check your ticket — transfers between them take time."
+      }
+    ],
+    "disclaimer": "General information only — not legal, medical or safety advice. Traffic statistics, routes, fares and app coverage change. Confirm with operators, official sites and your insurer. ThaiPlot is not a carrier."
+  },
+  "infoLiving": {
+    "metaTitle": "Vivre: coûts & banque | ThaiPlot",
+    "metaDescription": "Practical living guide for Thailand: cost of living, taxes for foreigners, opening a bank account, international schools, driving and licences — alongside visas, health and property.",
+    "eyebrow": "Vivre: coûts & banque",
+    "title": "Living in Thailand — costs, tax, banking, schools & driving",
+    "subtitle": "The layers under the holiday feeling: what it really costs, how tax works, how to open an account, where kids go to school, and how to drive safely on the left.",
+    "hook": {
+      "eyebrow": "Not just a house. A life.",
+      "title": "Property is one puzzle piece — living is the rest of the board.",
+      "body": "Anyone who buys or plans a long stay soon hits rent-vs-buy, baht budgets, bank letters for visas, school choice and left-hand driving. This guide lays those pieces out clearly — modern, honest, without legal promises."
+    },
+    "overview": {
+      "title": "How to use this guide",
+      "paras": [
+        "ThaiPlot is a property marketplace. This page fills gaps buyers and long-stay residents search for most: cost of living, taxes, banking, schools and driving — topics that were not yet live as their own guide.",
+        "Figures are indicative in Thai baht and differ by city (Bangkok ≠ Hua Hin ≠ islands). FX, inflation and school fees change. Always confirm with banks, the Revenue Department, schools or DLT.",
+        "Combine with our guides on visas, health, paperwork, transport and buying land. For official checks: Revenue Department, Bank of Thailand, DLT and school sites."
+      ]
+    },
+    "topics": {
+      "cost": {
+        "nav": "Cost of living",
+        "title": "Cost of living",
+        "lead": "Comfortable living can be cheaper than Western Europe — luxury expat style is not automatically cheap.",
+        "paras": [
+          "Big items: housing (rent or condo/villa upkeep + service), food (street vs international), transport (Grab vs own car), health insurance, school fees, and trips home.",
+          "Hua Hin / Cha-am / Pranburi: often calmer and cheaper than central Bangkok or Phuket hotspots, but international goods and schools still price at “expat rates”.",
+          "Build a buffer for visa extensions, medical surprises, air-con repairs in hot season, and baht swings vs euro/dollar."
+        ],
+        "items": [
+          "Studio/1-bed condo rent outside central Bangkok: often ฿15,000–฿40,000+/month depending on location",
+          "Pool villa: rent or owner costs + garden/pool upkeep add up fast",
+          "Eating local: cheap daily; Western groceries and wine: noticeably pricier",
+          "Utilities: air-con is the electricity hog — budget power realistically",
+          "Health insurance: see our health guide — often the biggest “hidden” annual cost",
+          "SIM/data, gym, golf, household help: optional but common in expat budgets"
+        ]
+      },
+      "taxes": {
+        "nav": "Taxes",
+        "title": "Taxes for foreigners (high level)",
+        "lead": "Not a substitute for a tax adviser — a map of the terrain.",
+        "paras": [
+          "Thai income tax, withholding, VAT-style charges and local property-related fees (where applicable) are separate worlds. Whether you are tax-resident in Thailand depends on days present, income types, home-country treaties and current Revenue Department rules.",
+          "On property: transfer fees, specific business tax or stamp duty, withholding on sale/transfer — see also our buying guide. Under-declaring values to cut tax is illegal and risky later.",
+          "Pensions, rental income, crypto, remote work and company profits can be treated differently. Rules and enforcement evolve — check current RD guidance and a licensed Thai + home-country adviser.",
+          "Official starting point: Revenue Department (rd.go.th) for tax ID (where needed) and filing information. ThaiPlot does not give tax advice."
+        ],
+        "items": [
+          "Ask whether you need a tax ID before setting up Thai structures or rental income",
+          "Keep all land-transfer and rental receipts",
+          "Check double-tax treaties with your passport country",
+          "Thai company structures: annual compliance is not a “paperwork trick”",
+          "When unsure: Thai CPA/lawyer + home-country adviser — not Facebook groups alone"
+        ]
+      },
+      "banking": {
+        "nav": "Banking",
+        "title": "Bank accounts & money",
+        "lead": "An account opens doors — but banks choose whom they onboard.",
+        "paras": [
+          "Major banks (Bangkok Bank, Kasikorn, SCB, Krungsri/BAY, Krungthai and others) vary by branch in how easily they help foreigners. Long-stay visa, address proof (yellow book), phone number and sometimes an introduction letter or employer/lawyer help.",
+          "Tourists often cannot open a full account. Retirement or Non-Immigrant status makes it more realistic. Bring passport, visa/extension, TM30/address proof and sometimes home-bank letters.",
+          "PromptPay, mobile banking and QR payments are standard. International transfers: watch FX, limits and AML questions. Large property payments: prefer traceable bank transfers over cash.",
+          "Visa financial rules (deposits, monthly income) are Immigration rules — not the same as “having an account”. Align bank letters with current Immigration requirements (see retirement visa guide)."
+        ],
+        "items": [
+          "Ask which branch onboards foreigners before you queue",
+          "Enable app banking and 2FA; do not store PINs in your phone case",
+          "Compare FX on large transfers (bank vs specialist services)",
+          "Rent/purchase: always get an official receipt",
+          "Dormant accounts / expired visas: banks may restrict access — plan extensions"
+        ]
+      },
+      "schools": {
+        "nav": "Schools",
+        "title": "Schools & education",
+        "lead": "International schools are a lifestyle — and budget — choice.",
+        "paras": [
+          "Expat families often choose international schools (British, IB, American curriculum) in Bangkok, Phuket, Chiang Mai, Hua Hin and other hubs. Tuition, enrollment and bus fees are high versus local Thai schools.",
+          "Thai government schools and bilingual programmes are cheaper but usually need strong Thai and a different rhythm. Some families mix: early years local, later international.",
+          "Around Hua Hin / Cha-am, international options affect property demand (families want short school runs). Visit schools, check accreditation, waitlists and what is “all-in” (uniform, lunch, trips).",
+          "Homeschooling / online curricula exist in niches but have visa and oversight frameworks — check current rules before building on them."
+        ],
+        "items": [
+          "Budget: annual tuition + enrollment + transport + activities",
+          "Location vs home = daily traffic or calm",
+          "Language: English vs Thai vs bilingual — friends and onward study",
+          "Special needs / extra support: ask explicitly about capacity",
+          "School calendar (northern vs tropical) affects trips to Europe"
+        ]
+      },
+      "driving": {
+        "nav": "Driving",
+        "title": "Driving in Thailand",
+        "lead": "Left-hand traffic, bikes everywhere, and paperwork that matches.",
+        "paras": [
+          "You drive on the left. Scooters filter between cars; European courtesy is often missing. Speed on provincial roads + rain + weak markings = risk. See also our transport guide for modes and accident context.",
+          "Licence: for long stays a Thai licence via DLT is usually the right path (exchange or test). An International Driving Permit alone is not a long-term resident solution. Details: paperwork guide (DLT, exams).",
+          "Car hire: known brands, check full insurance + excess, and whether your licence is accepted. Motorcycle/scooter: statistically risky — helmet, sober, experience, insurance without bike exclusions.",
+          "Parking, Bangkok-area tolls, and alcohol checks are real. After a crash: safety, 1669/191, document, call insurer — see transport and health guides."
+        ],
+        "items": [
+          "Never drink and drive",
+          "Helmet on motorcycle/scooter — including as passenger",
+          "Night + rain: prefer Grab/taxi",
+          "Child seats where possible",
+          "Keep digital + paper copies of licence and insurance"
+        ]
+      }
+    },
+    "budget": {
+      "title": "Example budget layers (indicative)",
+      "lead": "Not a promise — a sense of monthly order-of-magnitude for one household, excluding school fees and major medical surprises.",
+      "cards": [
+        {
+          "title": "Lean local",
+          "body": "Local food, modest rent/condo, little Grab, limited nightlife. Often workable for frugal singles/couples outside the priciest districts — as long as health insurance is not “forgotten”."
+        },
+        {
+          "title": "Comfort expat",
+          "body": "Good condo/villa rent or owner costs, mix of local/Western food, Grab plus occasional domestic trips, solid insurance. Typical “long-stay comfort” in Hua Hin / similar towns."
+        },
+        {
+          "title": "Family + school",
+          "body": "International school fees dominate the year. Home closer to school, larger car or driver, higher medical cover. Plan this before buying a remote plot."
+        },
+        {
+          "title": "Property owner",
+          "body": "Beyond living costs: maintenance, garden/pool, common fees, periodic taxes/fees, vacancy risk if renting. Purchase price ≠ total cost of ownership."
+        }
+      ]
+    },
+    "official": {
+      "title": "Official starting points",
+      "lead": "Always verify the .go.th domain. ThaiPlot is not affiliated with these agencies.",
+      "links": {
+        "revenue": "Revenue Department — taxes",
+        "bot": "Bank of Thailand",
+        "dlt": "Department of Land Transport — licences",
+        "moe": "Ministry of Education"
+      }
+    },
+    "checklist": {
+      "title": "Checklist before you plan “forever”",
+      "items": [
+        "Monthly baht budget including insurance and trips home",
+        "Visa path + bank letters / deposits lined up",
+        "Schools visited (or consciously no children relocating)",
+        "Driving strategy: Thai licence vs Grab-first",
+        "Tax question raised with advisers (Thai + home country)",
+        "Emergency fund for medical/visa surprises",
+        "Property: total ownership costs, not only price per sqm"
+      ]
+    },
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Is Thailand cheap to live in?",
+        "a": "Local living can be affordable. Expat comfort, international schools and solid health insurance quickly push costs toward Western European levels — sometimes higher on specific items."
+      },
+      {
+        "q": "Do I have to pay tax in Thailand?",
+        "a": "It depends on your situation, stay and income types. Use the Revenue Department and a qualified adviser — not a generic blog promise."
+      },
+      {
+        "q": "Can I open a bank account as a tourist?",
+        "a": "Usually difficult to impossible at major banks. Long-stay documents improve your odds a lot; policy varies by branch."
+      },
+      {
+        "q": "Are there international schools outside Bangkok?",
+        "a": "Yes, in several hubs including the wider Hua Hin area. Capacity, fees and curriculum differ — visit and compare."
+      },
+      {
+        "q": "Do I need a Thai driving licence?",
+        "a": "For residents, usually yes over time. See the paperwork guide (DLT) and transport guide for motorcycle/scooter risks."
+      }
+    ],
+    "disclaimer": "General information only — not tax, legal, financial, education or safety advice. Rules, fees and bank policies change. Confirm with official agencies and licensed professionals. ThaiPlot is a marketplace."
   }
 }

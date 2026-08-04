@@ -72,23 +72,25 @@ function PhotoBand({
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(to top, rgba(26,39,68,0.55) 0%, rgba(26,39,68,0.15) 50%, rgba(26,39,68,0.25) 100%)',
+            'linear-gradient(115deg, rgba(20,32,56,0.75) 0%, rgba(20,32,56,0.4) 50%, rgba(20,32,56,0.7) 100%)',
         }}
       />
       <CloudFade position="top" />
       <CloudFade position="bottom" />
       <div className="relative z-[11] h-full flex flex-col justify-center items-center text-center px-6">
-        {eyebrow ? (
-          <p className="text-[#C8973A] text-[11px] md:text-xs font-medium uppercase tracking-[0.2em] mb-2">
-            {eyebrow}
-          </p>
-        ) : null}
-        <h2
-          className="text-white text-2xl md:text-4xl font-bold drop-shadow-sm"
-          style={{ fontFamily: 'Playfair Display, serif' }}
-        >
-          {title}
-        </h2>
+        <div className="tp-hero-glass text-center" style={{ maxWidth: '36rem' }}>
+          {eyebrow ? (
+            <p className="relative z-[1] mb-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+              {eyebrow}
+            </p>
+          ) : null}
+          <h2
+            className="relative z-[1] text-white text-2xl md:text-4xl font-bold"
+            style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+          >
+            {title}
+          </h2>
+        </div>
       </div>
     </div>
   )
@@ -99,7 +101,7 @@ export default function OfficialDownloadsClient() {
   const tp = useTranslations('partnerLinks')
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
 
       <InfoHero
@@ -109,7 +111,15 @@ export default function OfficialDownloadsClient() {
         image={TH_PL_PHOTOS[6]}
       />
 
-      <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
+      <div className="relative max-w-4xl mx-auto px-6 py-10 md:py-12">
+        <div
+          className="pointer-events-none absolute inset-x-3 top-4 bottom-4 -z-10 rounded-[20px] md:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.4) 100%)',
+          }}
+          aria-hidden
+        />
         <aside
           className="border border-[#C0392B]/35 bg-[#FFF8F6] px-5 py-5 md:px-7 md:py-6 rounded-[4px]"
           role="note"
@@ -310,12 +320,7 @@ export default function OfficialDownloadsClient() {
 
       <div className="max-w-4xl mx-auto px-6 py-10 md:py-14 space-y-10">
         <section>
-          <h2
-            className="text-xl md:text-2xl font-bold mb-3"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('howToTitle')}
-          </h2>
+          <h2 className="tp-section-title mb-3">{t('howToTitle')}</h2>
           <ul className="space-y-2 text-sm md:text-[15px] text-[#5C5247] leading-relaxed list-disc pl-5">
             {(t.raw('howToItems') as string[]).map((item) => (
               <li key={item.slice(0, 48)}>{item}</li>

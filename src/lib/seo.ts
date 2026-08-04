@@ -9,7 +9,7 @@ const DEFAULT_KEYWORDS =
 
 const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
   infoPaperwork:
-    'Thai paperwork foreigners, Tabien Baan yellow book, blue Chanote, pink ID Thailand, Thai driving licence, TM30, 90 day report Thailand, Papieren Thailand',
+    'Thai paperwork foreigners, Tabien Baan yellow book blue book, red Chanote, pink ID Thailand, Thai driving licence, TM30, 90 day report Thailand, Papieren Thailand',
   infoThim:
     'THIM app, THIM Thailand, Thailand Immigration Management, Thai Immigration app, THIM download, THIM Google Play, TDAC THIM, Royal Thai Police THIM',
   infoTdac:
@@ -30,6 +30,10 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
     'health insurance Thailand, medical costs Thailand, hospital Thailand foreigners, accident insurance Thailand, OTC medicine Thailand, pharmacy Thailand, worldwide health insurance Thailand, IPMI Thailand, zorgverzekering Thailand, medische kosten Thailand, ongevallen Thailand, apotheek Thailand',
   infoFood:
     'food Thailand, Thai street food, vegetarian Thailand, vegan Thailand, gluten free Thailand, Thai restaurant phrases, alcohol Thailand, cannabis Thailand law, eten Thailand, vegetarisch Thailand, glutenvrij Thailand',
+  infoTransport:
+    'transport Thailand, traffic accidents Thailand, motorcycle safety Thailand, Grab Bolt taxi Thailand, BTS MRT Bangkok, domestic flights Thailand, ferry Thailand, 12Go Thailand, verkeersveiligheid Thailand, vervoer Thailand',
+  infoLiving:
+    'cost of living Thailand, taxes Thailand foreigners, open bank account Thailand, international schools Thailand, driving in Thailand, levensonderhoud Thailand, belasting Thailand, bankrekening Thailand, scholen Thailand',
 }
 
 export function localizedPath(locale: string, path: string): string {

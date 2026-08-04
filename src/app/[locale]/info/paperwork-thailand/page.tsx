@@ -52,16 +52,17 @@ export default async function PaperworkThailandPage({ params }: Props) {
       subtitle={t('subtitle')}
       heroImage={HERO_PHOTOS.paperwork}
       sections={[
-        section('overview', {
-          image: '/paperwork/paperwork-chanote.png',
-          altKey: 'visuals.chanoteBookAlt',
-          captionKey: 'visuals.chanoteBookCaption',
-        }),
+        section('overview'),
         section('reality'),
-        section('blueChanote', {
-          image: '/paperwork/paperwork-blue-deed.png',
-          altKey: 'visuals.blueChanoteAlt',
-          captionKey: 'visuals.blueChanoteCaption',
+        section('redChanote', {
+          image: '/paperwork/paperwork-red-chanote.png',
+          altKey: 'visuals.redChanoteAlt',
+          captionKey: 'visuals.redChanoteCaption',
+        }),
+        section('blueBook', {
+          image: '/paperwork/paperwork-blue-book.png',
+          altKey: 'visuals.blueBookAlt',
+          captionKey: 'visuals.blueBookCaption',
         }),
         section('yellowBook', {
           image: '/paperwork/paperwork-yellow-book.png',
@@ -80,6 +81,7 @@ export default async function PaperworkThailandPage({ params }: Props) {
         }),
         section('drivingExam'),
         section('otherDocs'),
+        section('bankingSchoolDrive'),
         section('checklist'),
       ]}
       bottomSlot={
@@ -90,6 +92,7 @@ export default async function PaperworkThailandPage({ params }: Props) {
               { href: '/info/buying-land-thailand', label: tp('linkBuying') },
               { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
               { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/living-thailand', label: tp('linkLiving') },
               { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
             ]}
           />

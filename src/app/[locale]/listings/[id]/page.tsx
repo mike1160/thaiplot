@@ -100,21 +100,26 @@ export default async function ListingDetailPage({ params }: Props) {
   const location = listing.location || 'Thailand'
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
 
       <section className="px-4 sm:px-6 pt-8 pb-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="relative max-w-3xl mx-auto">
+          <div
+            className="pointer-events-none absolute inset-x-0 -top-2 -bottom-2 -z-10 rounded-[20px]"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(239,230,214,0.4) 100%)',
+            }}
+            aria-hidden
+          />
           <Link
             href="/listings"
             className="inline-flex text-sm font-medium text-[#C8973A] hover:underline mb-4"
           >
             ← {t('pageTitle')}
           </Link>
-          <h1
-            className="text-2xl md:text-3xl font-bold text-[#1A2744] mb-6"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
+          <h1 className="tp-section-title mb-6">
             {location}
             {listing.size ? ` — ${listing.size}` : ''}
           </h1>

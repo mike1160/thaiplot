@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Props) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#FAF7F0] text-[#1A2744] antialiased">
+      <body className="min-h-screen text-[#142038] antialiased">
         {children}
         <Analytics />
       </body>

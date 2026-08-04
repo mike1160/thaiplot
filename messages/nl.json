@@ -27,7 +27,10 @@
     "guideThim": "THIM-app",
     "guideTdac": "Thailand Digital Arrival Card (TDAC)",
     "guideHealth": "Gezondheid & ongevallen",
-    "guideFood": "Eten & drinken"
+    "guideFood": "Eten & drinken",
+    "guideThaiData": "ThaiData — openbare registers",
+    "guideTransport": "Vervoer & verkeer",
+    "guideLiving": "Wonen: kosten & bank"
   },
   "languages": {
     "en": "English",
@@ -95,7 +98,9 @@
       "thimApp": "THIM-app",
       "tdac": "TDAC",
       "health": "Gezondheid & ongevallen",
-      "food": "Eten in Thailand"
+      "food": "Eten in Thailand",
+      "transport": "Vervoer",
+      "living": "Wonen in Thailand"
     }
   },
   "homepage": {
@@ -575,7 +580,9 @@
     "linkHuaHin": "Hua Hin vastgoedmarkt",
     "linkPranburi": "Pranburi vastgoed",
     "linkHealth": "Gezondheid, ongevallen & verzekeringen",
-    "linkFood": "Eten, vegetarisch & nightlife"
+    "linkFood": "Eten, vegetarisch & nightlife",
+    "linkTransport": "Vervoer, verkeer & reizen",
+    "linkLiving": "Wonen: kosten, belasting, bank, school"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -637,6 +644,14 @@
         "Q: Is Chanote required? A: Not always, but it is usually the safest and most bankable title for serious purchases.",
         "Q: How long does a transfer take? A: Straightforward deals can complete in days once documents are ready; complex company or financing cases take longer.",
         "Q: Should I use ThaiData before buying? A: Yes — verify public records early, then confirm everything with a lawyer before you pay a deposit."
+      ]
+    },
+    "livingAfter": {
+      "title": "Na de koop: wonen, belasting & jaarkosten",
+      "paras": [
+        "De koopprijs is het begin. Reken daarna onderhoud, common fees, tuin/pool, periodieke heffingen, verzekering van het pand, en — als je er woont — je maandelijkse levensonderhoud en zorgpolis.",
+        "Fiscale gevolgen van bezit, verhuur of latere verkoop horen bij een adviseur, niet bij een listingpagina. Onze gids Wonen in Thailand schetst belastingen, bankzaken en schoolkeuze op hoofdlijnen.",
+        "Gezinnen: check reistijd naar internationale scholen vóór je een afgelegen perceel koopt. Forenzen in de hitte is een andere realiteit dan de bezichtiging op zondagmiddag."
       ]
     }
   },
@@ -805,6 +820,14 @@
         "Health cover is increasingly important for visa and practical living reasons. Confirm whether your chosen visa category requires Thai or international insurance with minimum coverage.",
         "Private hospitals in Hua Hin and Bangkok are a major reason many retirees settle on the Eastern Gulf — budget insurance premiums into your annual cost of living."
       ]
+    },
+    "bankingLiving": {
+      "title": "Bankbrieven, deposito’s & wonen",
+      "paras": [
+        "Veel long-stay- en pensioenroutes vragen financiële bewijzen: banktegoeden, maandelijkse inkomsten of combinaties daarvan. Exacte bedragen en acceptatieregels wijzigen — check Immigratie of een specialist voor jouw nationaliteit en visumtype.",
+        "Een Thaise bankrekening helpt bij lokale betalingen en soms bij het tonen van tegoeden, maar “een rekening hebben” is niet hetzelfde als voldoen aan Immigratie-eisen. Plan bankafspraken vóór je verlengingsdatum.",
+        "Uitgebreider: kosten van levensonderhoud, belastingen, scholen en rijden staan in onze gids Wonen in Thailand. Koppel dit aan zorgverzekering (gezondheidsgids) zodat je jaarbudget klopt."
+      ]
     }
   },
   "regionHuaHin": {
@@ -900,7 +923,7 @@
   },
   "infoPaperwork": {
     "metaTitle": "Thaise papieren voor buitenlanders | ThaiPlot",
-    "metaDescription": "Gids Thaise administratie voor buitenlanders: blauwe Chanote, geel huisboek, roze ID, rijbewijs, examens, TM30 en wat je wel en niet krijgt.",
+    "metaDescription": "Gids Thaise administratie voor buitenlanders: rode Chanote, blauw/geel huisboek, roze ID, rijbewijs, examens, TM30 en wat je wel en niet krijgt.",
     "title": "Papieren in Thailand voor buitenlanders",
     "subtitle": "Praktische gids over de Thaise administratie die je als long-stay buitenlander tegenkomt — wat klopt, waar vraag je het aan, en wat krijg je wel of niet.",
     "overview": {
@@ -920,13 +943,22 @@
         "Wat buitenlanders in de regel níet krijgen: freehold-grond op eigen naam (met zeldzame uitzonderingen), een blauwe Thaise nationale ID-kaart, een blauw Tabien Baan zoals Thaise burgers, stemrecht, of een roze PR-ID zonder het officiële permanente-verblijfstraject. Een lease, bedrijfsstructuur of gebouweigendom is niet hetzelfde als een Chanote op jouw paspoortnaam."
       ]
     },
-    "blueChanote": {
-      "title": "Wat is een blauwe Chanote?",
+    "redChanote": {
+      "title": "Wat is een rode Chanote?",
       "paras": [
-        "Een Chanote (Nor Sor 4 Jor) is de sterkste grondakte in Thailand. Het boekje heet vaak “blue book” of blauwe Chanote vanwege de traditioneel blauwe kaft. Het bevestigt opgemeten grenzen, eigendom en het recht om over te dragen, te belenen en (binnen zoning) te ontwikkelen.",
-        "Zwakkere titels bestaan ook (Nor Sor 3, Nor Sor 3 Gor, enz.). Die zijn niet hetzelfde als Chanote. Bij koop of lange lease verkiezen advocaten Chanote omdat de Land Office-kaart en coördinaten duidelijker zijn en financiering of doorverkoop makkelijker is.",
-        "Buitenlanders houden vrijwel nooit freehold Chanote-grond op eigen naam. Je ziet Chanote-stukken wél bij lease van grond, condo-koop (condo-titel is apart), of koop van een gebouw op geleasede grond. Laat een onafhankelijke advocaat het aktnummer altijd bij het Land Office checken — alleen de kleur van de kaft bewijst niets bij een vervalsing.",
+        "Een Chanote (Nor Sor 4 Jor) is de sterkste grondakte in Thailand. Mensen noemen hem vaak “rode Chanote” of “Red Garuda”-titel vanwege de rode Garuda (Krut) bovenaan het document — niet vanwege een blauwe kaft. Het is een akteblad van het Land Office met opgemeten grenzen, eigendom en het recht om over te dragen, te belenen en (binnen zoning) te ontwikkelen.",
+        "Verwar dit niet met het blauwe huisboek (Tabien Baan) van Thaise burgers, of met zwakkere titels zoals Nor Sor 3 / Nor Sor 3 Gor (die soms een blauwe Garuda tonen). Alleen de rode Chanote is de volledige freehold-titelakte (NS4J).",
+        "Buitenlanders houden vrijwel nooit freehold Chanote-grond op eigen naam. Je ziet Chanote-stukken wél bij lease van grond, condo-koop (condo-titel is apart), of koop van een gebouw op geleasede grond. Laat een onafhankelijke advocaat het aktnummer altijd bij het Land Office checken — alleen de kleur van een foto bewijst niets bij een vervalsing.",
         "Bijbehorende papieren bij het Land Office: volmacht, bedrijfsdocumenten, registratie van lease (leases langer dan drie jaar horen geregistreerd te worden) en belastingbewijzen. Bewaar gewaarmerkte kopieën van alles wat je tekent."
+      ]
+    },
+    "blueBook": {
+      "title": "Wat is het blauwe boekje?",
+      "paras": [
+        "Het blauwe boekje is het huisregistratieboek (Tabien Baan) voor Thaise staatsburgers — niet de Chanote-grondakte. Het registreert wie op een adres woont. De Chanote is een apart document bij het Land Office (meestal met rode Garuda).",
+        "Buitenlanders krijgen bij inschrijving typisch een geel boekje (of gele bijlage), geen blauw. Zie de sectie over het gele boekje hieronder. Een blauw Tabien Baan zoals Thai krijgen, is voor buitenlanders in de regel niet beschikbaar.",
+        "Waarom dit onderscheid telt: makelaars of verkopers die een blauw boekje tonen als “bewijs van eigendom” verwarren (of mengen) huisregistratie met grondeigendom. Voor koop check je altijd de Chanote bij het Land Office — niet alleen een huisboek.",
+        "Beide documenten kunnen vervalst worden. Vraag origineel + Land Office-check voor grond; voor adresbewijs bij bank of DLT volstaat voor buitenlanders meestal het gele boek plus paspoort en visum."
       ]
     },
     "yellowBook": {
@@ -980,21 +1012,29 @@
       "paras": [
         "1) Weet welk document je wilt (geel boek, rijbewijs, grondcheck, PR) en welk kantoor het afgeeft. 2) Check openingstijden — Amphoe en DLT sluiten vaak vroeg. 3) Kopieer paspoort-biopagina, visumpagina en laatste instempel; neem originelen mee.",
         "4) Zet Thais telefoonnummer en adres in Thais schrift op formulieren. 5) Budgetteer medische verklaring, foto’s, vertalingen en agentkosten. 6) Geef je paspoort nooit ’s nachts mee aan een ongeverifieerde “runner”.",
-        "7) Bij vastgoed: verifieer Chanote bij het Land Office met een advocaat — vertrouw niet op WhatsApp-foto’s van een blauwe kaft. 8) Bij rijbewijs: check of je buitenlandse rijbewijs omgewisseld kan worden vóór je een volledig examen leert. 9) Bij roze ID: alleen Immigratie-PR-goedkeuring is het echte pad.",
+        "7) Bij vastgoed: verifieer de rode Chanote bij het Land Office met een advocaat — vertrouw niet op WhatsApp-foto’s van een blauw boekje. 8) Bij rijbewijs: check of je buitenlandse rijbewijs omgewisseld kan worden vóór je een volledig examen leert. 9) Bij roze ID: alleen Immigratie-PR-goedkeuring is het echte pad.",
         "Deze pagina is algemene informatie, geen juridisch of immigratieadvies. Eisen verschillen per nationaliteit, provincie en jaar. Twijfel je: check aan het officiële loket of bij een bevoegde Thaise advocaat of immigratiespecialist."
       ]
     },
     "visuals": {
-      "blueChanoteAlt": "Illustratie blauwe Chanote-titelakte",
-      "blueChanoteCaption": "Illustratie — blauwe Chanote-titelakte (Nor Sor 4 Jor). Geen officiële scan.",
+      "redChanoteAlt": "Illustratie rode Chanote-titelakte",
+      "redChanoteCaption": "Illustratie — rode Chanote (Nor Sor 4 Jor) met rode Garuda. Geen officiële scan.",
+      "blueBookAlt": "Illustratie blauw huisboek Tabien Baan",
+      "blueBookCaption": "Illustratie — blauw huisboek (Tabien Baan) voor Thaise burgers. Geen Chanote.",
       "yellowBookAlt": "Illustratie geel huisboek",
-      "yellowBookCaption": "Illustratie — geel huisboek (Tabien Baan). Geen officiële scan.",
+      "yellowBookCaption": "Illustratie — geel huisboek (Tabien Baan) voor buitenlanders. Geen officiële scan.",
       "pinkIdAlt": "Illustratie roze ID-kaart voor buitenlanders",
       "pinkIdCaption": "Illustratie — roze ID-kaart voor buitenlanders. Geen echte ID.",
       "drivingAlt": "Illustratie Thais rijbewijs",
-      "drivingCaption": "Illustratie — Thais rijbewijs. Geen echt rijbewijs.",
-      "chanoteBookAlt": "Illustratie Chanote-boekje",
-      "chanoteBookCaption": "Illustratie — Chanote-boekje. Alleen ter oriëntatie."
+      "drivingCaption": "Illustratie — Thais rijbewijs. Geen echt rijbewijs."
+    },
+    "bankingSchoolDrive": {
+      "title": "Bank, school & rijden — wat papieren ontsluiten",
+      "paras": [
+        "Geel huisboek en geldig visum zijn vaak de sleutel tot bankrekening, schooladministratie en DLT-rijbewijs. Zonder adresregistratie blijven loketten lastig.",
+        "Rijbewijs-aanvraag en examens staan hierboven; hoe Thailand rijdt (links, risico’s, Grab vs zelf rijden) staat in de transport- en wonen-gidsen.",
+        "Voor kosten, belasting en schoolkeuze: zie Wonen in Thailand. Voor zorgkosten bij ongevallen: gezondheidsgids."
+      ]
     }
   },
   "infoOfficialDownloads": {
@@ -1690,5 +1730,362 @@
       }
     ],
     "foodNote": "Alleen algemene informatie — geen medisch, voedings- of juridisch advies. Voedselveiligheid, allergierisico’s en drugswetten wijzigen. Bevestig bij klinieken, restaurants en officiële Thaise bronnen. ThaiPlot toont vastgoed en publiceert praktische gidsen."
+  },
+  "infoTransport": {
+    "metaTitle": "Vervoer in Thailand: verkeer, ongevallen & reizen | ThaiPlot",
+    "metaDescription": "Overzichtelijk gids over vervoer in Thailand: verkeerssterfte, ongevallen, auto, motor, scooter, taxi, Grab, Bolt, bus, minivan, trein, BTS, metro, binnenlandse vluchten, boten, ferries en boekingswebsites (zonder Booking.com).",
+    "eyebrow": "Reizen & verkeer",
+    "title": "Vervoer in Thailand — helder, veilig, lekker onderweg",
+    "subtitle": "Van BTS tot ferry, van Grab tot binnenlandse vlucht: hoe Thais verkeer écht werkt, waar de risico’s zitten, en waar je tickets boekt zonder gedoe.",
+    "hook": {
+      "eyebrow": "Eén gids. Alle modes.",
+      "title": "Thailand reist op lagen — leer ze lezen, en de reis voelt licht.",
+      "body": "Bangkok ademt metro en BTS. De kust leeft van minivans en ferries. Eilanden vragen boten. Het noorden houdt van nachttreinen. Kies bewust, boek slim, rij voorzichtig — dan blijft Thailand een snoepje in plaats van een stressverhaal."
+    },
+    "overview": {
+      "title": "Waarom deze gids ertoe doet",
+      "paras": [
+        "Thailand is makkelijk te bereizen — en makkelijk te onderschatten. Verkeer, snelheid, motoren, regenbuien en nachtritten vormen samen een ander risicoprofiel dan in West-Europa. Tegelijk zijn er uitstekende opties: BTS/MRT in Bangkok, goedkope binnenlandse vluchten, ferries naar eilanden, en apps als Grab en Bolt.",
+        "Deze pagina is voor bezoekers, long-stay expats en vastgoedkopers die willen weten: wat is veilig, wat is handig, wat kost tijd, en waar boek je. ThaiPlot is een marktplaats — geen vervoersbedrijf. Prijzen, routes en regels wijzigen; check altijd de operator.",
+        "We laten Booking.com bewust weg. Voor transport werken lokale apps, airline-sites, 12Go, SRT en vergelijkers vaak helderder voor treinen, bussen, ferries en vluchten."
+      ]
+    },
+    "mortality": {
+      "title": "Sterfte & verkeersveiligheid — de harde context",
+      "lead": "Geen paniekverhaal — wel eerlijke context zodat je betere keuzes maakt.",
+      "paras": [
+        "Thailand hoort al jaren bij landen met een relatief hoog aantal verkeersdoden per inwoner. Motorfietsen en scooters vormen een groot deel van ernstige ongevallen. Alcohol, te hoge snelheid, slechte verlichting, regen en rijden zonder helm of zonder geldig rijbewijs verhogen het risico sterk.",
+        "Voor buitenlanders telt vooral dit: een “kort ritje” op een gehuurde scooter voelt vakantieachtig, maar is statistisch een van de riskantste keuzes. Ziekenhuis- en evacuatiekosten bij ernstig trauma kunnen enorm oplopen — koppel dit aan onze gezondheidsgids en je verzekering.",
+        "Sterftecijfers en ranking verschillen per bron en jaar (WHO, Thaise autoriteiten, verkeersveiligheidsonderzoek). Gebruik officiële updates als je exacte actuele statistieken nodig hebt. Voor praktische veiligheid volstaat: helm, nuchter, daglicht, defensief rijden, of gewoon niet zelf rijden."
+      ],
+      "items": [
+        "Motor/scooter: hoog aandeel in ernstige letsels — helm altijd, ook als passagier",
+        "Nacht + regen + slechte wegmarkering = extra risico",
+        "Alcohol en rijden mengen slecht — politiecontroles zijn reëel",
+        "Geen Thais rijbewijs / geen dekking = claimproblemen bij ongeval",
+        "Kinderen: goedgekeurde zitjes/helm; niet “even op schoot” op de motor"
+      ]
+    },
+    "traffic": {
+      "title": "Verkeer & verkeersongevallen — hoe Thailand rijdt",
+      "lead": "Links rijden, snelle scooters, plotselinge U-turns, songthaews die stoppen waar ze willen.",
+      "paras": [
+        "In steden is congestie normaal; op provinciale wegen kan de snelheid juist hoog zijn. Verwacht motoren tussen de auto’s, tegenverkeer bij linksaf, en weinig “Dutch courtesy”. Flitsers en politiecontroles bestaan — vooral alcohol en snelheid.",
+        "Bij een ongeval: veiligheid eerst, bel 1669 (medische noodhulp) of 191 (politie) waar van toepassing, documenteer met foto’s, bel je verzekeraar/alarmcentrale, en ga naar een capabel (privé)ziekenhuis bij twijfel. Onderteken geen onduidelijke schikkingen als je gewond bent.",
+        "Als passagier in taxi, Grab of minivan: gordel waar aanwezig, helmen op de motor-taxi (GrabBike), en stap uit als de chauffeur duidelijk onveilig rijdt. Je rit is geen verplichting tot heldenrol."
+      ]
+    },
+    "road": {
+      "title": "Wegvervoer — auto, motor, bus & apps",
+      "lead": "De ruggengraat van Thailand. Kies mode op afstand, bagage, weer en alcoholplannen."
+    },
+    "rail": {
+      "title": "Trein, BTS & metro",
+      "lead": "In Bangkok is rail vaak sneller dan de auto. Landelijk is de trein traag maar sfeervol."
+    },
+    "air": {
+      "title": "Lucht — binnenlandse vluchten & terminals",
+      "lead": "Thailand is gebouwd op korte hops. Boek vroeg in high season."
+    },
+    "water": {
+      "title": "Water — boten, ferries & piers",
+      "lead": "Eilanden en rivieren: check weer, seizoen en officiële piers."
+    },
+    "modes": {
+      "car": {
+        "title": "Auto",
+        "body": "Handig buiten Bangkok, met kind of veel bagage. Huur via bekende merken; check verzekering, excess en of je internationale/Thaise rijbewijs wordt geaccepteerd. Links rijden + motoren vragen aanpassing."
+      },
+      "motorcycle": {
+        "title": "Motor",
+        "body": "Snel in de stad, maar statistisch riskant. Alleen met ervaring, geldig rijbewijs, helm, en dekking die motorongevallen niet uitsluit. ’s Nachts en in regen: liever niet."
+      },
+      "scooter": {
+        "title": "Scooter",
+        "body": "Populair bij toeristen — en een klassieke ongevalbron. Geen “even oefenen” op drukke wegen. Helm verplicht in de praktijk; paspoort als borg bij verhuur is gebruikelijk maar riskant — gebruik kopie waar mogelijk."
+      },
+      "taxi": {
+        "title": "Taxi’s",
+        "body": "In Bangkok: meter aan (of duidelijke vaste prijs). Luchthaven-taxi’s via officiële stand. Weiger ritten zonder meter als de prijs vaag blijft. Bewaar de taxinummerplaat mentaal of op foto."
+      },
+      "grabBolt": {
+        "title": "Grab & Bolt",
+        "body": "De comfortabele standaard voor veel expats: vaste prijs in de app, trackbaarheid, vaak schonere auto’s. GrabBike voor korte hops. Cash of app-betaling. Surge pricing bij regen en spits."
+      },
+      "minivan": {
+        "title": "Minivans",
+        "body": "Intercity-klassieker (bijv. Bangkok–Hua Hin). Snel en goedkoop, soms agressief rijgedrag. Kies gerenommeerde operators via 12Go of stationbalies; gordel vast, bagage labelen."
+      },
+      "bus": {
+        "title": "Public bus",
+        "body": "Stadsbussen en langeafstands-bussen (Bangkok Bus Terminal / provinciale stations). Goedkoop, langzamer, wisselende comfortniveaus. VIP/express-bussen zijn vaak beter voor nachtreizen."
+      },
+      "train": {
+        "title": "Trein (SRT)",
+        "body": "State Railway of Thailand: nachttreinen naar het noorden/zuiden, dagritten langs de kust. Boek slapende wagons vroeg. Check actuele dienstregelingen — spoorwerken komen voor."
+      },
+      "bts": {
+        "title": "BTS Skytrain",
+        "body": "Bangkok’s elevated rail — snel boven de files. Rabbit Card of tickets. Ideaal voor Sukhumvit, Silom, Siam. Combineer met MRT voor diepere wijken."
+      },
+      "metro": {
+        "title": "MRT / metro & Airport Rail Link",
+        "body": "MRT Blue/Purple en Airport Rail Link verbinden terminals, wijken en BTS. Airco, punctueel, toeristvriendelijk. Check eindstations vóór je overstapt met bagage."
+      },
+      "domestic": {
+        "title": "Binnenlandse vluchten",
+        "body": "AirAsia, Thai Airways, Bangkok Airways, Nok Air en anderen verbinden Bangkok, Chiang Mai, Phuket, Samui, Krabi, Hat Yai… Vaak goedkoper/sneller dan 10 uur bus. Let op bagagelimieten en aparte luchthavens (DMK vs BKK)."
+      },
+      "terminals": {
+        "title": "Luchthaven-terminals",
+        "body": "Suvarnabhumi (BKK), Don Mueang (DMK), Phuket, Chiang Mai, Samui, Krabi… Check welke terminal jouw ticket gebruikt. Transfer BKK↔DMK kost tijd in spits. Arriveer ruim op tijd bij high season."
+      },
+      "boats": {
+        "title": "Boten & longtails",
+        "body": "Eilandhoppen, kanalen, vissershavens. Draag een zwemvest als aangeboden; vermijd overvolle boten en stormweer. Spreek prijs af vóór vertrek bij private longtails."
+      },
+      "ferries": {
+        "title": "Ferries & piers",
+        "body": "Naar Samui, Phangan, Tao, Phi Phi, Phuket-kant… Boek via 12Go of operator; check pier-naam (Lomprayah, Seatran, Raja…). Seizoensgolven kunnen diensten annuleren — bouw buffer in."
+      }
+    },
+    "booking": {
+      "title": "Boeken — websites & apps die wél helpen",
+      "lead": "Kies het kanaal dat bij de mode past. We laten Booking.com bewust weg op deze transportpagina.",
+      "note": "Tip: voor hotels kun je Agoda of hotelsites gebruiken; voor treinen/bussen/ferries/vluchten zijn onderstaande kanalen relevanter. ThaiPlot is niet verbonden aan deze diensten.",
+      "links": {
+        "twelveGo": "12Go — trein, bus, ferry, sommige vluchten",
+        "grab": "Grab — auto, bike, bezorging",
+        "bolt": "Bolt — rides in steden",
+        "srt": "SRT — State Railway of Thailand",
+        "btsSite": "BTS Skytrain (officieel)",
+        "mrtSite": "MRT Bangkok (officieel)",
+        "airasia": "AirAsia",
+        "thaiAirways": "Thai Airways",
+        "bangkokAir": "Bangkok Airways",
+        "nokAir": "Nok Air",
+        "skyscanner": "Skyscanner — vluchtvergelijker",
+        "googleFlights": "Google Flights",
+        "rome2rio": "Rome2Rio — routeplan"
+      },
+      "footer": "Vergelijk altijd prijs + bagage + overstaptijd. Bij eilandferries: check of hoteltransfer is inbegrepen. Bij apps: update naar de laatste versie en bewaar offline tickets/QR."
+    },
+    "checklist": {
+      "title": "Checklist vóór je vertrekt",
+      "items": [
+        "Paspoort + digitale kopieën; eventueel Thais rijbewijs of internationale rijbewijsregels checken",
+        "Reis- of zorgverzekering met ongevallen / motor-uitsluitingen nagelopen",
+        "Helm, gordel, nuchter beleid — geen discussie",
+        "Tickets: pier/luchthaven/stationnaam exact noteren",
+        "Grab/Bolt geïnstalleerd + lokale SIM of eSIM met data",
+        "Nachtrit? Overweeg trein-slaapwagon of ochtendvlucht i.p.v. vermoeide minivan",
+        "Bagage: waterdicht bij ferry; gelabeld bij bus/minivan",
+        "Noodnummers: 1669 medisch, 191 politie; alarmnummer verzekeraar"
+      ]
+    },
+    "faqTitle": "Veelgestelde vragen",
+    "faqs": [
+      {
+        "q": "Is een scooter huren in Thailand veilig?",
+        "a": "Voor veel bezoekers is het een van de riskantste keuzes. Alleen met ervaring, helm, geldig rijbewijs en verzekering die motorongevallen dekt. Twijfel je: Grab, taxi of bus."
+      },
+      {
+        "q": "Grab of gewone taxi?",
+        "a": "Grab/Bolt geven vaste prijs en tracking. Taxi’s met meter kunnen goedkoper zijn in lichte verkeer, maar discussies over meter/route komen voor. Luchthaven: officiële stands."
+      },
+      {
+        "q": "Hoe boek ik trein of ferry?",
+        "a": "12Go is populair voor treinen, bussen en ferries. SRT heeft een eigen kanaal voor treinen. Check altijd vertrekpier of station in je bevestiging."
+      },
+      {
+        "q": "Waarom staat Booking.com hier niet bij?",
+        "a": "Bewuste keuze op deze transportpagina. Voor vervoer zijn airline-sites, 12Go, SRT en ride-apps relevanter. Hotels boeken kan via andere kanalen naar jouw voorkeur."
+      },
+      {
+        "q": "BKK of DMK voor binnenlandse vluchten?",
+        "a": "Beide worden gebruikt. Low-cost zit vaak op Don Mueang (DMK); internationale + veel full-service op Suvarnabhumi (BKK). Check je ticket — transfer tussen beide kost tijd."
+      }
+    ],
+    "disclaimer": "Algemene informatie — geen juridisch, medisch of veiligheidsadvies. Verkeersstatistieken, routes, tarieven en app-dekking wijzigen. Bevestig bij operators, officiële sites en je verzekeraar. ThaiPlot is geen vervoerder."
+  },
+  "infoLiving": {
+    "metaTitle": "Wonen in Thailand: kosten, belasting, bank, school & rijden | ThaiPlot",
+    "metaDescription": "Praktische gids wonen in Thailand: kosten van levensonderhoud, belastingen voor buitenlanders, bankrekening openen, internationale scholen, rijden en rijbewijs — naast visa, zorg en vastgoed.",
+    "eyebrow": "Wonen & geld",
+    "title": "Wonen in Thailand — kosten, belasting, bank, school & rijden",
+    "subtitle": "De lagen onder het vakantiegevoel: wat kost het écht, hoe werkt de fiscus, hoe open je een rekening, waar gaan kinderen naar school, en hoe rij je veilig links.",
+    "hook": {
+      "eyebrow": "Niet alleen een huis. Een leven.",
+      "title": "Vastgoed is één puzzelstuk — wonen is de rest van het bord.",
+      "body": "Wie koopt of long-stay plant, botst al snel op huur versus kopen, baht-budget, bankbrieven voor visa, schoolkeuze en links rijden. Deze gids maakt die stukken overzichtelijk — modern, eerlijk, zonder juridische beloftes."
+    },
+    "overview": {
+      "title": "Hoe je deze gids gebruikt",
+      "paras": [
+        "ThaiPlot is een vastgoedmarktplaats. Deze pagina vult de gaten die kopers en long-stay bewoners het vaakst zoeken: kosten van levensonderhoud, belastingen, bankzaken, scholen en rijden — onderwerpen die eerder niet als eigen gids live stonden.",
+        "Cijfers zijn indicatief in Thaise baht en verschillen per stad (Bangkok ≠ Hua Hin ≠ eiland). Wisselkoersen, inflatie en schoolfees wijzigen. Bevestig altijd bij bank, Revenue Department, school of DLT.",
+        "Combineer met onze gidsen over visa, gezondheid, papieren, transport en land kopen. Voor officiële checks: Revenue Department, Bank of Thailand, DLT en schoolwebsites."
+      ]
+    },
+    "topics": {
+      "cost": {
+        "nav": "Levensonderhoud",
+        "title": "Kosten van levensonderhoud",
+        "lead": "Comfortabel wonen kan goedkoper zijn dan in West-Europa — luxe expat-stijl niet automatisch.",
+        "paras": [
+          "Grote posten: huisvesting (huur of onderhoud + service van condo/villa), eten (straat vs internationale restaurants), vervoer (Grab vs eigen auto), zorgverzekering, schoolfees, en reizen naar huis.",
+          "Hua Hin / Cha-am / Pranburi: vaak rustiger en goedkoper dan centrale Bangkok of Phuket-hotspots, maar internationale producten en scholen kosten nog steeds “expat-tarief”.",
+          "Bouw een buffer voor verlenging van visa, medische verrassingen, airco-reparaties in het warme seizoen, en baht-schommelingen t.o.v. euro/dollar."
+        ],
+        "items": [
+          "Studio/1-bed condo huur buiten Bangkok-centrum: vaak ฿15.000–฿40.000+/maand afhankelijk van ligging",
+          "Villa met zwembad: huur of eigenaarslasten + tuin/pool-onderhoud lopen snel op",
+          "Eten lokaal: dagelijks goedkoop; westerse boodschappen en wijn: merkbaar duurder",
+          "Utilities: airco is de energieslokop — budgeteer elektriciteit realistisch",
+          "Zorgverzekering: zie onze gezondheidsgids — dit is vaak de grootste “verborgen” jaarkost",
+          "SIM/data, fitness, golf, huishoudhulp: optioneel maar typisch in expat-budgetten"
+        ]
+      },
+      "taxes": {
+        "nav": "Belastingen",
+        "title": "Belastingen voor buitenlanders (hoog niveau)",
+        "lead": "Geen vervanging van een fiscalist — wel de kaart van het terrein.",
+        "paras": [
+          "Thaise inkomstenbelasting, bronbelasting, BTW/BTW-achtige heffingen en lokale heffingen op vastgoed (waar van toepassing) zijn aparte werelden. Of je in Thailand belastingplichtig bent hangt af van verblijfsdagen, inkomenstypen, bronland-verdragen en actuele regels van de Revenue Department.",
+          "Bij vastgoed: transfer fees, specific business tax of zegelrecht, withholding tax bij verkoop/overdracht — zie ook onze koopgids. Onderwaarderen om belasting te drukken is illegaal en risicovol later.",
+          "Pensioen, huurinkomsten, crypto, remote work en bedrijfswinsten kunnen verschillend behandeld worden. Regels en handhaving evolueren — check actuele RD-guidance en een bevoegde Thai + thuisland-adviseur.",
+          "Officieel startpunt: Revenue Department (rd.go.th) voor tax ID (waar nodig) en aangifte-informatie. ThaiPlot geeft geen fiscaal advies."
+        ],
+        "items": [
+          "Vraag of je tax ID nodig hebt vóór je een Thaise structuur of huurinkomen opzet",
+          "Bewaar alle land-overdracht- en huurbewijzen",
+          "Check dubbelbelastingverdragen met jouw paspoortland",
+          "Bedrijfs-BV / Thai company: jaarlijkse compliance is geen “papieren truc”",
+          "Bij twijfel: Thai CPA/advocaat + adviseur in je thuisland — niet Facebook-groepen alleen"
+        ]
+      },
+      "banking": {
+        "nav": "Bankzaken",
+        "title": "Bankrekening & geldzaken",
+        "lead": "Een rekening opent deuren — maar banken kiezen wie ze aannemen.",
+        "paras": [
+          "Grote banken (Bangkok Bank, Kasikorn, SCB, Krungsri/BAY, Krungthai en anderen) verschillen per filiaal in hoe soepel ze buitenlanders helpen. Long-stay visum, adresbewijs (geel boek), telefoonnummer en soms een introductiebrief of werkgever/advocaat helpen.",
+          "Toeristen krijgen vaak géén volwaardige rekening. Pensioen- of Non-Immigrant status maakt het realistischer. Neem paspoort, visum/verlenging, TM30/adresbewijs en eventueel bankbrieven uit je thuisland mee.",
+          "PromptPay, mobile banking en QR-betalingen zijn standaard. Internationale overboekingen: let op koersen, limieten en AML-vragen. Grote vastgoedbetalingen: liever traceerbare bankoverschrijvingen dan cash.",
+          "Visa-financiële eisen (deposito’s, maandinkomen) zijn Immigratie-regels — niet hetzelfde als “een rekening hebben”. Stem bankbrieven af op actuele Immigratie-eisen (zie pensioenvisum-gids)."
+        ],
+        "items": [
+          "Vraag vooraf welk filiaal buitenlanders aanneemt",
+          "Activeer app-banking en 2FA; bewaar geen PIN in je telefoonhoes",
+          "Vergelijk wisselkoersen voor grote transfers (bank vs gespecialiseerde diensten)",
+          "Huur/koop: altijd officieel ontvangstbewijs",
+          "Dode rekeningen / verlopen visa: banken kunnen toegang beperken — plan verlengingen"
+        ]
+      },
+      "schools": {
+        "nav": "Scholen",
+        "title": "Scholen & onderwijs",
+        "lead": "Internationale scholen zijn een lifestyle- én budgetkeuze.",
+        "paras": [
+          "Expat-gezinnen kiezen vaak internationale scholen (Brits, IB, Amerikaans curriculum) in Bangkok, Phuket, Chiang Mai, Hua Hin en andere hubs. Fees, inschrijfgeld en buskosten zijn hoog vergeleken met lokale Thaise scholen.",
+          "Thaise overheidsscholen en tweetalige programma’s zijn goedkoper maar vragen meestal sterke Thai-taalvaardigheid en een ander ritme. Sommige gezinnen combineren: early years lokaal, later internationaal.",
+          "Rond Hua Hin / Cha-am bestaan internationale opties die meespelen in vastgoedvraag (gezinnen willen reistijd naar school kort houden). Bezoek scholen, check accreditatie, wachtlijsten en wat “all-in” is (uniform, lunch, trips).",
+          "Homeschooling / online curricula bestaan in niches maar hebben visa- en toezichtkaders — check actuele regels voordat je daarop bouwt."
+        ],
+        "items": [
+          "Budget: jaarlijkse tuition + enrollment + transport + activiteiten",
+          "Ligging t.o.v. woning = dagelijkse files of juist rust",
+          "Taal: Engels vs Thai vs tweetalig — impact op vriendengroep en vervolgstudie",
+          "Special needs / extra support: vraag expliciet naar capaciteit",
+          "Schoolkalender (noordelijk vs tropisch) beïnvloedt reizen naar Europa"
+        ]
+      },
+      "driving": {
+        "nav": "Rijden",
+        "title": "Rijden in Thailand",
+        "lead": "Links rijden, motoren overal, en papieren die kloppen.",
+        "paras": [
+          "Je rijdt links. Scooters filteren tussen auto’s; verwachte “Europese hoffelijkheid” ontbreekt vaak. Snelheid op provinciale wegen + regen + slechte markering = risico. Zie ook onze transportgids voor modes en ongevallencontext.",
+          "Rijbewijs: voor long-stay is een Thais rijbewijs via DLT meestal de juiste route (omwisselen of examen). Alleen een Internationaal Rijbewijs is geen langetermijnoplossing voor residents. Details: papieren-gids (DLT, examen).",
+          "Auto huren: bekende merken, full insurance + excess checken, en of je licence geaccepteerd wordt. Motor/scooter: statistisch riskant — helm, nuchter, ervaring, verzekering zonder motor-uitsluiting.",
+          "Parkeren, tolwegen rond Bangkok, en alcoholcontroles zijn reëel. Bij ongeval: veiligheid, 1669/191, documenteer, bel verzekeraar — zie transport- en gezondheidsgids."
+        ],
+        "items": [
+          "Nooit drinken en rijden",
+          "Helm op motor/scooter — ook als passagier",
+          "Nacht + regen: liever Grab/taxi",
+          "Kinderslot / zitje waar mogelijk",
+          "Houd digitale + papieren kopieën van rijbewijs en verzekering"
+        ]
+      }
+    },
+    "budget": {
+      "title": "Voorbeeld-budgetlagen (indicatief)",
+      "lead": "Geen belofte — een gevoel voor ordes van grootte per maand voor één huishouden, exclusief schoolfees en grote medische verrassingen.",
+      "cards": [
+        {
+          "title": "Lean local",
+          "body": "Lokaal eten, bescheiden huur/condo, weinig Grab, beperkt nightlife. Vaak haalbaar voor zuinige singles/stellen buiten de duurste wijken — zolang zorgverzekering niet wordt “vergeten”."
+        },
+        {
+          "title": "Comfort expat",
+          "body": "Goede condo/villa-huur of eigen huis-lasten, mix lokaal/westers eten, Grab + af en toe binnenlandse trip, solide verzekering. Typisch “long-stay comfort” in Hua Hin / vergelijkbare steden."
+        },
+        {
+          "title": "Family + school",
+          "body": "Internationale schoolfees domineren het jaar. Woning dichter bij school, grotere auto of vaste driver, hogere zorgdekking. Plan dit vóór je een afgelegen perceel koopt."
+        },
+        {
+          "title": "Property owner",
+          "body": "Naast levensonderhoud: onderhoud, tuin/pool, common fees, periodieke belastingen/fees, leegstandsrisico bij verhuur. Koopprijs ≠ totale kosten van bezit."
+        }
+      ]
+    },
+    "official": {
+      "title": "Officiële startpunten",
+      "lead": "Altijd het .go.th-domein checken. ThaiPlot is niet verbonden aan deze instanties.",
+      "links": {
+        "revenue": "Revenue Department — belastingen",
+        "bot": "Bank of Thailand",
+        "dlt": "Department of Land Transport — rijbewijs",
+        "moe": "Ministry of Education"
+      }
+    },
+    "checklist": {
+      "title": "Checklist vóór je “voor altijd” plant",
+      "items": [
+        "Maandelijks baht-budget incl. verzekering en reis naar huis",
+        "Visumpad + bankbrieven / deposito’s op een rij",
+        "Schoolopties bezocht (of bewust geen kinderen meenemen)",
+        "Rijstrategie: Thais rijbewijs vs Grab-first",
+        "Belastingvraag uitgezet bij adviseur (Thai + thuisland)",
+        "Noodfonds voor medische/visa-verrassingen",
+        "Vastgoed: totale ownership-kosten, niet alleen m²-prijs"
+      ]
+    },
+    "faqTitle": "Veelgestelde vragen",
+    "faqs": [
+      {
+        "q": "Is Thailand goedkoop om te wonen?",
+        "a": "Lokaal leven kan voordelig zijn. Expat-comfort, internationale scholen en goede zorgverzekering tillen de kosten snel naar West-Europese niveaus — soms hoger op specifieke posten."
+      },
+      {
+        "q": "Moet ik belasting betalen in Thailand?",
+        "a": "Dat hangt af van jouw situatie, verblijf en inkomenstypen. Gebruik de Revenue Department en een bevoegde adviseur — geen algemene blogbelofte."
+      },
+      {
+        "q": "Kan ik als toerist een bankrekening openen?",
+        "a": "Meestal moeilijk tot onmogelijk bij grote banken. Long-stay documenten verbeteren je kansen sterk; beleid verschilt per filiaal."
+      },
+      {
+        "q": "Zijn er internationale scholen buiten Bangkok?",
+        "a": "Ja, in meerdere hubs inclusief gebieden rond Hua Hin. Capaciteit, fees en curriculum verschillen — bezoek en vergelijk."
+      },
+      {
+        "q": "Heb ik een Thais rijbewijs nodig?",
+        "a": "Voor residents is dat meestal ja op termijn. Zie papieren-gids (DLT) en transportgids voor risico’s van scooter/motor."
+      }
+    ],
+    "disclaimer": "Algemene informatie — geen fiscaal, juridisch, financieel, onderwijs- of veiligheidsadvies. Regels, fees en bankpolicies wijzigen. Bevestig bij officiële instanties en bevoegde professionals. ThaiPlot is een marktplaats."
   }
 }

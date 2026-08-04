@@ -52,7 +52,7 @@ export default function ListingsPageClient({
   )
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
 
       <InfoHero
@@ -73,7 +73,7 @@ export default function ListingsPageClient({
         </div>
       </section>
 
-      <section className="bg-[#FAF7F0] py-12 md:py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+      <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 md:p-12 text-center">

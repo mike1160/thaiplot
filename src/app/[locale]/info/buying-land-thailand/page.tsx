@@ -48,6 +48,7 @@ export default async function BuyingLandPage({ params }: Props) {
         section('titles'),
         section('dueDiligence'),
         section('costs'),
+        section('livingAfter'),
         section('faq'),
       ]}
       bottomSlot={
@@ -58,6 +59,7 @@ export default async function BuyingLandPage({ params }: Props) {
               { href: '/info/chanote-title-deed', label: tp('chanote') },
               { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
               { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/living-thailand', label: tp('linkLiving') },
               { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
             ]}
           />

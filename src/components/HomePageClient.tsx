@@ -56,65 +56,52 @@ export default function HomePageClient({ listings }: Props) {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <HomeNavbar />
 
-      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[88vh] flex items-end md:items-center justify-center overflow-hidden">
         <img
           src={HERO_PHOTOS.home}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%] animate-hero-drift"
         />
-        {/* Top gradient — header readability */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.10) 35%, rgba(0, 0, 0, 0.00) 60%)',
+              'linear-gradient(115deg, rgba(20,32,56,0.72) 0%, rgba(20,32,56,0.35) 48%, rgba(20,32,56,0.68) 100%), linear-gradient(to top, rgba(20,32,56,0.88) 0%, rgba(20,32,56,0.25) 55%, rgba(20,32,56,0.35) 100%)',
           }}
         />
-        {/* Bottom gradient — text readability */}
         <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.20) 50%, rgba(0, 0, 0, 0.00) 100%)',
-          }}
+          className="pointer-events-none absolute -right-16 top-1/3 h-72 w-72 rounded-full opacity-35 blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(200,151,58,0.5), transparent 70%)' }}
+          aria-hidden
         />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 text-center text-white animate-fade-in-up">
-          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white/15 border border-white/25 backdrop-blur-sm mb-6">
-            {t('eyebrow')}
-          </span>
-          <h1
-            className="text-4xl md:text-6xl font-bold leading-tight mb-5"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('heroTitle')}
-          </h1>
-          <p
-            className="inline-block text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8"
-            style={{
-              color: '#F0E2C0',
-              background: 'rgba(0, 0, 0, 0.28)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              borderRadius: '999px',
-              padding: '10px 22px',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-            }}
-          >
-            {t('heroSubtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/listings" className="tp-btn-accent min-h-[48px] px-7">
-              {t('ctaBrowse')}
-            </Link>
-            <Link
-              href="/list-property"
-              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold bg-white text-[#1A2744] border border-white hover:bg-[#FAF7F0] transition-colors"
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 pb-28 animate-fade-in-up">
+          <div className="tp-hero-glass mx-auto text-center" style={{ maxWidth: '40rem' }}>
+            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+              {t('eyebrow')}
+            </p>
+            <h1
+              className="relative z-[1] text-4xl md:text-6xl font-bold leading-[1.08] mb-4 text-white"
+              style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
             >
-              {t('ctaList')}
-            </Link>
+              {t('heroTitle')}
+            </h1>
+            <p className="relative z-[1] text-base md:text-lg leading-relaxed text-white/88 mb-8 max-w-xl mx-auto">
+              {t('heroSubtitle')}
+            </p>
+            <div className="relative z-[1] flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link href="/listings" className="tp-btn-accent min-h-[48px] px-7">
+                {t('ctaBrowse')}
+              </Link>
+              <Link
+                href="/list-property"
+                className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold bg-white/95 text-[#142038] border border-white/80 hover:bg-white transition-colors"
+              >
+                {t('ctaList')}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -131,10 +118,7 @@ export default function HomePageClient({ listings }: Props) {
 
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-center mb-10"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
+          <h2 className="tp-section-title text-center mb-10 mx-auto max-w-xl">
             {t('featuredTitle')}
           </h2>
 
@@ -218,10 +202,7 @@ export default function HomePageClient({ listings }: Props) {
 
       <section className="pb-8 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="max-w-3xl mx-auto">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-center mb-8"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
+          <h2 className="tp-section-title text-center mb-8 mx-auto max-w-md">
             {t('agentTitle')}
           </h2>
           <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] overflow-hidden">
@@ -275,10 +256,7 @@ export default function HomePageClient({ listings }: Props) {
 
       <section className="px-4 sm:px-6 lg:px-8 pb-14 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
-          <h2
-            className="text-2xl md:text-3xl font-bold text-[#1A2744] text-center mb-2"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
+          <h2 className="tp-section-title text-center mb-2 mx-auto max-w-lg">
             {t('guidesTitle')}
           </h2>
           <p className="text-center text-[#5C5247] text-sm md:text-base mb-8 max-w-2xl mx-auto">
@@ -290,9 +268,11 @@ export default function HomePageClient({ listings }: Props) {
                 { href: '/info/buying-land-thailand', key: 'guideBuying' as const },
                 { href: '/info/chanote-title-deed', key: 'guideChanote' as const },
                 { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
+                { href: '/info/transport-thailand', key: 'guideTransport' as const },
                 { href: '/info/food-thailand', key: 'guideFood' as const },
                 { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
                 { href: '/info/visa-retirement-thailand', key: 'guideVisa' as const },
+                { href: '/info/living-thailand', key: 'guideLiving' as const },
                 { href: '/info/thim-app', key: 'guideThim' as const },
                 { href: '/info/thailand-digital-arrival-card', key: 'guideTdac' as const },
                 { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' as const },

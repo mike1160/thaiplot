@@ -490,7 +490,7 @@ export default function ListPropertyPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
 
       <InfoHero
@@ -501,14 +501,11 @@ export default function ListPropertyPage() {
         size="main"
       />
 
-      <section className="bg-[#FAF7F0] py-12 md:py-20 px-6">
+      <section className="py-12 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
           {status === 'success' ? (
-            <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 md:p-10 text-center">
-              <h2
-                className="text-[#1A2744] text-2xl md:text-3xl font-bold mb-3"
-                style={{ fontFamily: 'Playfair Display, serif' }}
-              >
+            <div className="bg-white/80 border border-white/70 rounded-[14px] p-8 md:p-10 text-center shadow-[0_12px_32px_rgba(20,32,56,0.06)] backdrop-blur-md">
+              <h2 className="tp-section-title mb-3">
                 {t('successTitle')}
               </h2>
               <p className="text-[#5C5247] text-sm md:text-base">{t('successMessage')}</p>
@@ -531,11 +528,8 @@ export default function ListPropertyPage() {
                 </ol>
               </div>
 
-              <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                <h2
-                  className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
+              <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
                   {t('sectionCategory')}
                 </h2>
                 <fieldset>
@@ -568,11 +562,8 @@ export default function ListPropertyPage() {
                 </fieldset>
               </div>
 
-              <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                <h2
-                  className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
+              <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
                   {t('sectionContact')}
                 </h2>
 
@@ -725,13 +716,10 @@ export default function ListPropertyPage() {
               </div>
 
               {category === 'Land & Property' && (
-                <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                  <h2
-                    className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {t('sectionProperty')}
-                  </h2>
+                <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
+                  {t('sectionProperty')}
+                </h2>
 
                   <div>
                     <label htmlFor="type" className={labelClass}>
@@ -969,13 +957,10 @@ export default function ListPropertyPage() {
               )}
 
               {category === 'Vehicle' && (
-                <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                  <h2
-                    className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {t('sectionVehicle')}
-                  </h2>
+                <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
+                  {t('sectionVehicle')}
+                </h2>
 
                   <div>
                     <label htmlFor="vehicleType" className={labelClass}>
@@ -1087,13 +1072,10 @@ export default function ListPropertyPage() {
               )}
 
               {category === 'Boat' && (
-                <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                  <h2
-                    className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {t('sectionBoat')}
-                  </h2>
+                <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
+                  {t('sectionBoat')}
+                </h2>
 
                   <div>
                     <label htmlFor="boatType" className={labelClass}>
@@ -1198,13 +1180,10 @@ export default function ListPropertyPage() {
               )}
 
               {category === 'Business' && (
-                <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                  <h2
-                    className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {t('sectionBusiness')}
-                  </h2>
+                <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
+                  {t('sectionBusiness')}
+                </h2>
 
                   <div>
                     <label htmlFor="businessType" className={labelClass}>
@@ -1283,13 +1262,10 @@ export default function ListPropertyPage() {
               )}
 
               {category === 'Other' && (
-                <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                  <h2
-                    className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {t('sectionOther')}
-                  </h2>
+                <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
+                  {t('sectionOther')}
+                </h2>
 
                   <div>
                     <label htmlFor="itemName" className={labelClass}>
@@ -1360,11 +1336,8 @@ export default function ListPropertyPage() {
                 </div>
               )}
 
-              <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 space-y-5">
-                <h2
-                  className="text-[#1A2744] text-xl md:text-2xl font-bold"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
+              <div className="bg-white/75 border border-white/70 rounded-[14px] p-6 md:p-8 space-y-5 shadow-[0_10px_28px_rgba(20,32,56,0.05)] backdrop-blur-sm">
+                <h2 className="tp-section-title">
                   {t('previewTitle')}
                 </h2>
                 <p className="text-sm text-[#5C5247]">{t('previewSubtitle')}</p>

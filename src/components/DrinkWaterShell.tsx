@@ -37,11 +37,19 @@ export default async function DrinkWaterShell({ children }: Props) {
   const photo = (await fetchHeroPhoto()) || HERO_PHOTOS.visa
 
   return (
-    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+    <main className="min-h-screen text-[#142038]">
       <BreadcrumbNav />
       <InfoHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} image={photo} />
 
-      <div className="mx-auto max-w-3xl px-6 pb-16 pt-8 md:pt-10">
+      <div className="relative mx-auto max-w-3xl px-6 pb-16 pt-8 md:pt-10">
+        <div
+          className="pointer-events-none absolute inset-x-3 top-4 bottom-4 -z-10 rounded-[20px] md:inset-x-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(239,230,214,0.45) 100%)',
+          }}
+          aria-hidden
+        />
         <DrinkWaterSubnav />
         <article className="tp-body">{children}</article>
 

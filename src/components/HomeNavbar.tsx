@@ -7,7 +7,7 @@ import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from './LanguageSwitcher'
 import PortalAccountLink from './PortalAccountLink'
 import BrandHomeLink from '@/components/BrandHomeLink'
-import { GUIDE_LINKS } from '@/content/guide-links'
+import { GUIDE_LINKS, isExternalGuideLink } from '@/content/guide-links'
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
 
@@ -50,11 +50,11 @@ export default function HomeNavbar() {
     <nav
       className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] ${
         solid
-          ? 'tp-frost-bar border-b border-black/5 shadow-[0_1px_12px_rgba(0,0,0,0.08)]'
-          : 'bg-[rgba(0,0,0,0.30)] border-b border-transparent shadow-none backdrop-blur-[10px]'
+          ? 'tp-frost-bar border-b border-[#C8973A]/25 shadow-[0_12px_32px_rgba(20,32,56,0.1)]'
+          : 'bg-[rgba(15,26,46,0.42)] border-b border-white/10 shadow-none backdrop-blur-[14px]'
       }`}
       style={{
-        WebkitBackdropFilter: solid ? undefined : 'blur(10px)',
+        WebkitBackdropFilter: solid ? undefined : 'blur(14px)',
       }}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6">
@@ -117,17 +117,31 @@ export default function HomeNavbar() {
                   style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
                   role="menu"
                 >
-                  {GUIDE_LINKS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      role="menuitem"
-                      onClick={() => setGuideOpen(false)}
-                      className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
-                    >
-                      {t(item.key)}
-                    </Link>
-                  ))}
+                  {GUIDE_LINKS.map((item) =>
+                    isExternalGuideLink(item) ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        role="menuitem"
+                        onClick={() => setGuideOpen(false)}
+                        className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                      >
+                        {t(item.key)}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        role="menuitem"
+                        onClick={() => setGuideOpen(false)}
+                        className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                      >
+                        {t(item.key)}
+                      </Link>
+                    )
+                  )}
                 </div>
               ) : null}
             </div>
@@ -241,16 +255,29 @@ export default function HomeNavbar() {
           <p className="px-6 pt-4 pb-2 text-[11px] uppercase tracking-wider text-[#C8973A] font-semibold">
             {t('guide')}
           </p>
-          {GUIDE_LINKS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={closeMenu}
-              className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
-            >
-              {t(item.key)}
-            </Link>
-          ))}
+          {GUIDE_LINKS.map((item) =>
+            isExternalGuideLink(item) ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
+              >
+                {t(item.key)}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
+              >
+                {t(item.key)}
+              </Link>
+            )
+          )}
           <div className="px-6 py-3 border-b border-[#E8E2D6]">
             <PortalAccountLink
               solid

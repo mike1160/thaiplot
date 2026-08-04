@@ -46,6 +46,7 @@ export default async function VisaRetirementPage({ params }: Props) {
         section('elite'),
         section('ltr'),
         section('finance'),
+        section('bankingLiving'),
         section('insurance'),
       ]}
       bottomSlot={
@@ -56,6 +57,7 @@ export default async function VisaRetirementPage({ params }: Props) {
               { href: '/info/thim-app', label: tp('linkThim') },
               { href: '/info/thailand-digital-arrival-card', label: tp('linkTdac') },
               { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
+              { href: '/info/living-thailand', label: tp('linkLiving') },
               { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
               { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
             ]}

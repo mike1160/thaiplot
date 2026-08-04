@@ -6,7 +6,7 @@ import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import BrandHomeLink from '@/components/BrandHomeLink'
-import { GUIDE_LINKS } from '@/content/guide-links'
+import { GUIDE_LINKS, isExternalGuideLink } from '@/content/guide-links'
 
 const INFO_PAGES: Record<string, string> = {
   'buying-land-thailand': 'pages.buyingLand',
@@ -14,12 +14,14 @@ const INFO_PAGES: Record<string, string> = {
   'hua-hin-property-market': 'pages.huaHinMarket',
   'pranburi-property': 'pages.pranburi',
   'visa-retirement-thailand': 'pages.visa',
+  'living-thailand': 'pages.living',
   'paperwork-thailand': 'pages.paperwork',
   'official-thai-downloads': 'pages.officialDownloads',
   'thim-app': 'pages.thimApp',
   'thailand-digital-arrival-card': 'pages.tdac',
   'drinking-water-thailand': 'pages.drinkWater',
   'health-accidents-thailand': 'pages.health',
+  'transport-thailand': 'pages.transport',
   'food-thailand': 'pages.food',
 }
 
@@ -123,19 +125,19 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
   return (
     <>
       {/* Reserves space so content is never hidden behind fixed header */}
-      <div className="h-12 w-full shrink-0" aria-hidden />
+      <div className="h-14 w-full shrink-0" aria-hidden />
 
       <nav
         aria-label="Breadcrumb"
-        className={`fixed top-0 left-0 z-[100] w-full border-b transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
+        className={`fixed top-0 left-0 z-[100] w-full border-b transition-all duration-[400ms] ease-[ease] tp-frost-bar ${
           scrolled
-            ? 'border-stone-200/80 shadow-[0_1px_12px_rgba(0,0,0,0.08)]'
-            : 'border-stone-200/70 shadow-none'
+            ? 'border-[#C8973A]/25 shadow-[0_12px_32px_rgba(20,32,56,0.1)]'
+            : 'border-[#C8973A]/15 shadow-none'
         } ${className}`}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-12 flex items-center gap-2 sm:gap-3">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-2 sm:gap-3">
           <BrandHomeLink
-            className="flex-shrink-0 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#1A2744] hover:text-[#C8973A] transition-colors"
+            className="flex-shrink-0 text-[13px] font-semibold tracking-[0.16em] uppercase text-[#142038] hover:text-[#C8973A] transition-colors"
             style={{ fontFamily: 'Playfair Display, serif' }}
             onNavigate={() => setGuideOpen(false)}
           >
@@ -203,21 +205,35 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
                   style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
                   role="menu"
                 >
-                  {GUIDE_LINKS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      role="menuitem"
-                      onClick={() => setGuideOpen(false)}
-                      className={`block px-4 py-2.5 text-sm transition-colors ${
-                        pathname === item.href || pathname.startsWith(`${item.href}/`)
-                          ? 'text-[#C8973A] bg-[#FAF7F0] font-medium'
-                          : 'text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0]'
-                      }`}
-                    >
-                      {tn(item.key)}
-                    </Link>
-                  ))}
+                  {GUIDE_LINKS.map((item) =>
+                    isExternalGuideLink(item) ? (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        role="menuitem"
+                        onClick={() => setGuideOpen(false)}
+                        className="block px-4 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                      >
+                        {tn(item.key)}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        role="menuitem"
+                        onClick={() => setGuideOpen(false)}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
+                          pathname === item.href || pathname.startsWith(`${item.href}/`)
+                            ? 'text-[#C8973A] bg-[#FAF7F0] font-medium'
+                            : 'text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0]'
+                        }`}
+                      >
+                        {tn(item.key)}
+                      </Link>
+                    )
+                  )}
                 </div>
               ) : null}
             </div>

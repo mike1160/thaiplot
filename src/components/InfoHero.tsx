@@ -8,7 +8,7 @@ type InfoHeroProps = {
   size?: 'main' | 'secondary'
 }
 
-/** Shared full-bleed hero for all info / guide / legal subpages. */
+/** Shared full-bleed hero — exclusive glass title plate on all subpages. */
 export default function InfoHero({
   eyebrow,
   title,
@@ -16,12 +16,12 @@ export default function InfoHero({
   image,
   size = 'secondary',
 }: InfoHeroProps) {
-  const minHeight = size === 'main' ? 'min-h-[62vh]' : 'min-h-[46vh]'
+  const minHeight = size === 'main' ? 'min-h-[68vh]' : 'min-h-[52vh]'
 
   return (
     <section
       className={`relative ${minHeight} flex items-end overflow-hidden ${
-        image ? '' : 'bg-[#1A2744]'
+        image ? '' : 'bg-[#142038]'
       }`}
     >
       {image ? (
@@ -29,59 +29,63 @@ export default function InfoHero({
           <img
             src={image}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center animate-hero-drift"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to top, rgba(26,39,68,0.94) 0%, rgba(26,39,68,0.55) 48%, rgba(26,39,68,0.28) 100%)',
+                'linear-gradient(115deg, rgba(20,32,56,0.78) 0%, rgba(20,32,56,0.45) 45%, rgba(20,32,56,0.72) 100%), linear-gradient(to top, rgba(20,32,56,0.92) 0%, rgba(20,32,56,0.35) 55%, rgba(20,32,56,0.2) 100%)',
             }}
           />
         </>
       ) : (
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage: `url('/thai-pattern.svg')`,
-            backgroundRepeat: 'repeat',
-            backgroundSize: '80px 80px',
-          }}
-          aria-hidden
-        />
+        <>
+          <div
+            className="absolute inset-0 opacity-50"
+            style={{
+              backgroundImage: `url('/thai-pattern.svg')`,
+              backgroundRepeat: 'repeat',
+              backgroundSize: '72px 72px',
+            }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(800px 400px at 20% 80%, rgba(200,151,58,0.22), transparent 60%), linear-gradient(160deg, #0f1a2e 0%, #1a2744 55%, #142038 100%)',
+            }}
+          />
+        </>
       )}
 
-      {/* Soft frost veil at the text band */}
+      {/* Ambient gold glow */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] z-[1]"
-        style={{
-          background:
-            'linear-gradient(to top, rgba(250,247,240,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 100%)',
-          backdropFilter: 'blur(1.5px)',
-        }}
+        className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full opacity-40 blur-3xl"
+        style={{ background: 'radial-gradient(circle, rgba(200,151,58,0.45), transparent 70%)' }}
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-14 pt-28 md:pb-16 md:pt-32">
-        {eyebrow ? (
-          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#C8973A] md:text-xs animate-fade-in-up">
-            {eyebrow}
-          </p>
-        ) : null}
-        <h1
-          className="mb-4 max-w-3xl text-3xl font-bold leading-[1.15] text-white md:text-5xl animate-fade-in-up"
-          style={{ fontFamily: 'Playfair Display, Georgia, serif', animationDelay: '0.06s' }}
-        >
-          {title}
-        </h1>
-        {subtitle ? (
-          <p
-            className="max-w-2xl text-sm leading-relaxed text-white/85 md:text-base animate-fade-in-up"
-            style={{ animationDelay: '0.12s' }}
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-12 pt-28 md:pb-16 md:pt-32">
+        <div className="tp-hero-glass animate-fade-in-up">
+          {eyebrow ? (
+            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+              {eyebrow}
+            </p>
+          ) : null}
+          <h1
+            className="relative z-[1] mb-3 max-w-3xl text-3xl font-bold leading-[1.12] text-white md:text-5xl"
+            style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
           >
-            {subtitle}
-          </p>
-        ) : null}
+            {title}
+          </h1>
+          {subtitle ? (
+            <p className="relative z-[1] max-w-2xl text-sm leading-relaxed text-white/88 md:text-base">
+              {subtitle}
+            </p>
+          ) : null}
+        </div>
       </div>
     </section>
   )

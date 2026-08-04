@@ -171,6 +171,7 @@ export default async function FoodThailandPage({ params }: Props) {
               links={[
                 { href: '/info/drinking-water-thailand', label: tp('linkDrinkWater') },
                 { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
+                { href: '/info/transport-thailand', label: tp('linkTransport') },
                 { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
                 { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
               ]}
