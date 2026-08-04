@@ -32,13 +32,13 @@ export default function InfoHero({
           <img
             src={image}
             alt={imageAlt}
-            className="absolute inset-0 h-full w-full object-cover object-center animate-hero-drift"
+            className="absolute inset-0 h-full w-full object-cover object-center animate-hero-drift brightness-[1.08]"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(115deg, rgba(20,32,56,0.78) 0%, rgba(20,32,56,0.45) 45%, rgba(20,32,56,0.72) 100%), linear-gradient(to top, rgba(20,32,56,0.92) 0%, rgba(20,32,56,0.35) 55%, rgba(20,32,56,0.2) 100%)',
+                'linear-gradient(115deg, rgba(20,32,56,0.38) 0%, rgba(20,32,56,0.12) 48%, rgba(20,32,56,0.28) 100%), linear-gradient(to top, rgba(20,32,56,0.55) 0%, rgba(20,32,56,0.12) 50%, rgba(20,32,56,0.08) 100%)',
             }}
           />
         </>

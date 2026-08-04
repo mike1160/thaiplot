@@ -67,12 +67,16 @@ function PhotoBand({
 }) {
   return (
     <div className="relative w-full h-[38vh] min-h-[220px] max-h-[360px] overflow-hidden">
-      <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+      <img
+        src={src}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.08]"
+      />
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(115deg, rgba(20,32,56,0.75) 0%, rgba(20,32,56,0.4) 50%, rgba(20,32,56,0.7) 100%)',
+            'linear-gradient(115deg, rgba(20,32,56,0.35) 0%, rgba(20,32,56,0.12) 50%, rgba(20,32,56,0.3) 100%)',
         }}
       />
       <CloudFade position="top" />

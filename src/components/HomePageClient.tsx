@@ -64,13 +64,13 @@ export default function HomePageClient({ listings }: Props) {
         <img
           src={HERO_PHOTOS.home}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%] animate-hero-drift"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%] animate-hero-drift brightness-[1.08]"
         />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(115deg, rgba(20,32,56,0.72) 0%, rgba(20,32,56,0.35) 48%, rgba(20,32,56,0.68) 100%), linear-gradient(to top, rgba(20,32,56,0.88) 0%, rgba(20,32,56,0.25) 55%, rgba(20,32,56,0.35) 100%)',
+              'linear-gradient(115deg, rgba(20,32,56,0.35) 0%, rgba(20,32,56,0.1) 50%, rgba(20,32,56,0.3) 100%), linear-gradient(to top, rgba(20,32,56,0.5) 0%, rgba(20,32,56,0.1) 55%, rgba(20,32,56,0.12) 100%)',
           }}
         />
         <div
