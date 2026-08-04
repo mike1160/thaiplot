@@ -294,6 +294,14 @@ export default function HomePageClient({ listings }: Props) {
                 </Link>
               </li>
             ))}
+            <li>
+              <a href="/waiair.html" className="tp-link-card">
+                <span className="text-[#C8973A]" aria-hidden>
+                  →
+                </span>
+                {tn('guideWaiair')}
+              </a>
+            </li>
           </ul>
         </div>
       </section>

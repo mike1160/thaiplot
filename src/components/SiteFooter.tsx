@@ -70,6 +70,14 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <a
+                  href="/waiair.html"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideWaiair')}
+                </a>
+              </li>
+              <li>
                 <Link
                   href="/info/thailand-digital-arrival-card"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"

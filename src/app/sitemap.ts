@@ -121,5 +121,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   )
 
-  return [...staticEntries, ...listingEntries]
+  return [...staticEntries, ...listingEntries, {
+    url: `${SITE_URL}/waiair.html`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }]
 }
