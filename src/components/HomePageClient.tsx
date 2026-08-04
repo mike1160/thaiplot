@@ -79,7 +79,7 @@ export default function HomePageClient({ listings }: Props) {
         />
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 pb-28 animate-fade-in-up">
           <div className="tp-hero-glass mx-auto text-center" style={{ maxWidth: '40rem' }}>
-            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E8C56A] md:text-xs">
               {t('eyebrow')}
             </p>
             <h1
@@ -88,7 +88,7 @@ export default function HomePageClient({ listings }: Props) {
             >
               {t('heroTitle')}
             </h1>
-            <p className="relative z-[1] text-base md:text-lg leading-relaxed text-white/88 mb-8 max-w-xl mx-auto">
+            <p className="tp-hero-subtitle relative z-[1] text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto">
               {t('heroSubtitle')}
             </p>
             <div className="relative z-[1] flex flex-col sm:flex-row items-center justify-center gap-3">

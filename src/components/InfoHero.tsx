@@ -70,7 +70,7 @@ export default function InfoHero({
       <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-12 pt-28 md:pb-16 md:pt-32">
         <div className="tp-hero-glass animate-fade-in-up">
           {eyebrow ? (
-            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+            <p className="relative z-[1] mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E8C56A] md:text-xs">
               {eyebrow}
             </p>
           ) : null}
@@ -81,7 +81,7 @@ export default function InfoHero({
             {title}
           </h1>
           {subtitle ? (
-            <p className="relative z-[1] max-w-2xl text-sm leading-relaxed text-white/88 md:text-base">
+            <p className="tp-hero-subtitle relative z-[1] max-w-2xl text-sm leading-relaxed md:text-base">
               {subtitle}
             </p>
           ) : null}

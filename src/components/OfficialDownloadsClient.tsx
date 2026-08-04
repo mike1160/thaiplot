@@ -80,7 +80,7 @@ function PhotoBand({
       <div className="relative z-[11] h-full flex flex-col justify-center items-center text-center px-6">
         <div className="tp-hero-glass text-center" style={{ maxWidth: '36rem' }}>
           {eyebrow ? (
-            <p className="relative z-[1] mb-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#DBB15A] md:text-xs">
+            <p className="relative z-[1] mb-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#E8C56A] md:text-xs">
               {eyebrow}
             </p>
           ) : null}

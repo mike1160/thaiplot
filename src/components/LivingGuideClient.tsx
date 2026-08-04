@@ -118,7 +118,7 @@ export default function LivingGuideClient({ relatedTitle, relatedLinks }: Props)
           >
             {t('hook.title')}
           </p>
-          <p className="relative z-[1] mt-3 text-sm leading-relaxed text-white/85 md:text-[15px]">
+          <p className="relative z-[1] mt-3 text-sm leading-relaxed md:text-[15px] tp-hero-subtitle">
             {t('hook.body')}
           </p>
         </aside>
