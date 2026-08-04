@@ -30,7 +30,8 @@
     "guideFood": "Food & drink",
     "guideThaiData": "ThaiData — registres publics",
     "guideTransport": "Transport & circulation",
-    "guideLiving": "Vivre: coûts & banque"
+    "guideLiving": "Vivre: coûts & banque",
+    "guideIslands": "Thai islands"
   },
   "languages": {
     "en": "English",
@@ -100,7 +101,8 @@
       "health": "Health & accidents",
       "food": "Food in Thailand",
       "transport": "Transport",
-      "living": "Vivre en Thaïlande"
+      "living": "Vivre en Thaïlande",
+      "islands": "Thai islands"
     }
   },
   "homepage": {
@@ -828,7 +830,8 @@
     "linkHealth": "Health, accidents & insurance",
     "linkFood": "Food, vegetarian & nightlife tips",
     "linkTransport": "Transport, circulation & voyages",
-    "linkLiving": "Vivre: coûts, impôts, banque, écoles"
+    "linkLiving": "Vivre: coûts, impôts, banque, écoles",
+    "linkIslands": "Thai islands — diving & snorkeling"
   },
   "regionHuaHin": {
     "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
@@ -1906,7 +1909,104 @@
         "a": "Both are used. Low-cost often flies Don Mueang (DMK); many full-service and international use Suvarnabhumi (BKK). Check your ticket — transfers between them take time."
       }
     ],
-    "disclaimer": "General information only — not legal, medical or safety advice. Traffic statistics, routes, fares and app coverage change. Confirm with operators, official sites and your insurer. ThaiPlot is not a carrier."
+    "disclaimer": "General information only — not legal, medical or safety advice. Traffic statistics, routes, fares and app coverage change. Confirm with operators, official sites and your insurer. ThaiPlot is not a carrier.",
+    "ferryDetail": {
+      "title": "Ferries & islands — operators, routes & prices",
+      "intro": "Thailand has two separate ferry networks: the Gulf of Thailand (east coast) and the Andaman Sea (west coast). There are no direct ferries between the two sides — travelling from Koh Samui to Koh Phi Phi requires routing via the mainland.",
+      "gulf": {
+        "title": "Gulf of Thailand — Koh Samui, Koh Phangan, Koh Tao",
+        "lead": "The three main Gulf islands form a classic triangle route. The mainland departure point is Surat Thani (Don Sak Pier).",
+        "routes": [
+          "Surat Thani → Koh Samui: 1.5 hrs · ฿200–250 · Raja Ferry or Seatran · multiple daily sailings",
+          "Koh Samui → Koh Phangan: 30–45 min · ฿200 · very frequent service",
+          "Koh Phangan → Koh Tao: 1.5–2 hrs · ฿300–350 · Lomprayah",
+          "Koh Tao → Chumphon (mainland): 1.5 hrs · ฿500–600"
+        ],
+        "operators": "Main operators: Lomprayah, Raja Ferry, Seatran Discovery"
+      },
+      "andaman": {
+        "title": "Andaman Sea — Phuket, Koh Phi Phi, Koh Lanta, Koh Lipe",
+        "lead": "The west coast has spectacular limestone scenery and clear water, but watch the season: between June and September the southwest monsoon regularly cancels services.",
+        "routes": [
+          "Phuket (Rassada Pier) → Koh Phi Phi: 1–2 hrs · ฿350–500 · Andaman Wave Master · 4–6 departures/day in peak season",
+          "Krabi → Koh Phi Phi: 1.5 hrs · ฿300–400",
+          "Koh Phi Phi → Koh Lanta: 1.5 hrs · ฿250–350",
+          "Koh Lanta → Koh Lipe: 4–5 hrs · ฿800–1,200 · Tigerline",
+          "Hat Yai / Pak Bara → Koh Lipe: 2 hrs · ฿500–700"
+        ],
+        "operators": "Main operators: Andaman Wave Master, Tigerline, Satun Pakbara Speedboat Club"
+      },
+      "east": {
+        "title": "East coast — Koh Chang, Koh Kood, Koh Mak",
+        "routes": [
+          "Trat (Laem Ngop Pier) → Koh Chang: 30 min · ฿100 · very frequent · Boonsiri",
+          "Trat (Laem Sok Pier) → Koh Kood: 2.5 hrs · ฿350–500"
+        ]
+      },
+      "season": {
+        "title": "Seasonal overview",
+        "headers": [
+          "Coast",
+          "Best period",
+          "Watch out"
+        ],
+        "rows": [
+          [
+            "Andaman Sea",
+            "November–April",
+            "June–September: cancellations likely"
+          ],
+          [
+            "Gulf of Thailand",
+            "Year-round (best Feb–Aug)",
+            "Lower Gulf (Chang/Kood): rougher June–October"
+          ],
+          [
+            "Koh Lipe",
+            "November–May",
+            "Closed to visitors May–October"
+          ]
+        ]
+      },
+      "longtails": {
+        "title": "Longtail boats",
+        "body": "The iconic wooden boats in every Thailand photo. No schedule — negotiate price at the pier. Ideal for: Railay Beach → Ao Nang, island tours around Koh Phi Phi, beach-hopping on Koh Lipe. Agree the price before boarding."
+      },
+      "book": {
+        "title": "Where to book",
+        "tip": "Tip: arrive 45–60 minutes before departure at the pier. For island ferries: check whether hotel transfer is included in your ticket.",
+        "links": [
+          {
+            "href": "https://12go.asia",
+            "label": "12Go — trains, buses, ferries — most comprehensive for Thai ferries"
+          },
+          {
+            "href": "https://www.lomprayah.com",
+            "label": "Lomprayah (official) — Koh Tao, Koh Phangan, Koh Samui"
+          },
+          {
+            "href": "https://www.rajaferryport.com",
+            "label": "Raja Ferry (official) — Surat Thani ↔ Koh Samui"
+          },
+          {
+            "href": "https://www.andamanwavemaster.com",
+            "label": "Andaman Wave Master — Phuket ↔ Koh Phi Phi"
+          },
+          {
+            "href": "https://www.ferrysamui.com",
+            "label": "FerrySamui — booking platform Gulf islands"
+          },
+          {
+            "href": "https://www.directferries.com/thailand.htm",
+            "label": "DirectFerries Thailand — route comparison"
+          },
+          {
+            "href": "https://thailandboattickets.com",
+            "label": "Thailand Boat Tickets — live schedules and prices"
+          }
+        ]
+      }
+    }
   },
   "infoLiving": {
     "metaTitle": "Vivre: coûts & banque | ThaiPlot",
@@ -2087,5 +2187,215 @@
       }
     ],
     "disclaimer": "General information only — not tax, legal, financial, education or safety advice. Rules, fees and bank policies change. Confirm with official agencies and licensed professionals. ThaiPlot is a marketplace."
+  },
+  "infoIslands": {
+    "metaTitle": "Thai islands | ThaiPlot",
+    "metaDescription": "Guide to Thailand's most popular islands: Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe and more. Diving, snorkeling, ferries and what to expect.",
+    "eyebrow": "Islands & beaches",
+    "title": "Thai Islands — Popular Destinations, Diving & Snorkeling",
+    "subtitle": "Two coasts, hundreds of islands, one clear guide. Gulf or Andaman — here is what to expect, where to go, and what is under the water.",
+    "intro": [
+      "Thailand has over 1,400 islands. Most are uninhabited. The ones that matter for visitors divide neatly between the Gulf of Thailand (east coast, calmer year-round) and the Andaman Sea (west coast, spectacular scenery, seasonal). This guide covers the most visited islands, their character, the best diving and snorkeling, and how to get there."
+    ],
+    "transportLinkLabel": "transport guide",
+    "gulf": {
+      "title": "Gulf of Thailand islands",
+      "lead": "The Gulf coast is the most accessible from Bangkok and central Thailand. Ferries run from Surat Thani (Don Sak Pier) or Chumphon to the main islands.",
+      "islands": [
+        {
+          "name": "Koh Samui",
+          "body": "Thailand's second-largest island. Developed, international, airport with direct flights. Good for families and comfort seekers. Chaweng and Lamai beaches are the busiest; Bang Po and Lipa Noi are quieter. Strong food scene, good hospitals, reliable infrastructure.",
+          "how": "Ferry from Surat Thani: 1.5 hrs · Direct flights from Bangkok: 1 hr (Bangkok Airways)"
+        },
+        {
+          "name": "Koh Phangan",
+          "body": "Famous for the Full Moon Party on Haad Rin beach (monthly). Beyond the party scene: quiet bays, yoga retreats, jungle interiors. Bottle Beach (Haad Khuat) is one of the most beautiful bays in the Gulf. More relaxed and cheaper than Samui.",
+          "how": "Ferry from Koh Samui: 30–45 min"
+        },
+        {
+          "name": "Koh Tao",
+          "body": "Thailand's #1 diving island. One of the cheapest places in the world to get PADI certified. Excellent for beginners and casual snorkelers — sea turtles and blacktip reef sharks visible in shallow water without diving deep. Hides a surprisingly thriving expat and health food scene. Small, walkable.",
+          "how": "Ferry from Koh Phangan: 1.5–2 hrs · Ferry from Chumphon: 1.5 hrs"
+        },
+        {
+          "name": "Koh Chang",
+          "body": "The \"big island\" of the eastern Gulf, near Trat and the Cambodian border. Jungle interior, waterfalls, quieter beaches. Less polished than Samui but more natural. Popular with Bangkokians for long weekends.",
+          "how": "Ferry from Trat (Laem Ngop Pier): 30 min"
+        },
+        {
+          "name": "Koh Kood & Koh Mak",
+          "body": "Less visited neighbours of Koh Chang. Beautiful clear water, minimal development, no ATMs everywhere. Good for those who want to genuinely switch off.",
+          "how": "Ferry from Trat: 2–2.5 hrs"
+        }
+      ]
+    },
+    "andaman": {
+      "title": "Andaman Sea islands",
+      "lead": "Thailand's west coast. Dramatic limestone karsts, turquoise water, and some of the best diving in Southeast Asia. High season: November–April. Many routes cancel or reduce in the monsoon (June–September).",
+      "islands": [
+        {
+          "name": "Phuket",
+          "body": "Thailand's largest island, connected to the mainland by road bridge. International airport. Full range of accommodation, nightlife, restaurants. Patong is the busiest beach; Kata, Karon and Nai Harn are quieter. Good base for Andaman diving day trips and liveaboards.",
+          "how": "Direct flights from most international hubs."
+        },
+        {
+          "name": "Koh Phi Phi",
+          "body": "Two islands (Don and Leh). Koh Phi Phi Don is inhabited, popular, and full of beach bars. Phi Phi Leh is the uninhabited one with Maya Bay (from The Beach). Day trips from Phuket or Krabi. Stunning scenery, good snorkeling, very busy in high season.",
+          "how": "Ferry from Phuket: 1–2 hrs · Ferry from Krabi: 1.5 hrs"
+        },
+        {
+          "name": "Koh Lanta",
+          "body": "Calmer, longer, more laid-back than Phi Phi. Two-lane road down the island, mangroves, national park on the southern tip. Good for families. Less party, more hammock.",
+          "how": "Ferry from Krabi: 1.5–2 hrs · Ferry from Koh Phi Phi: 1.5 hrs"
+        },
+        {
+          "name": "Koh Lipe",
+          "body": "Called the \"Maldives of Thailand.\" Far south, near the Malaysian border. Stunning coral just steps from Sunrise Beach. Quieter than Phi Phi, excellent snorkeling and diving. Open November–May only (Andaman monsoon closes it to visitors May–October).",
+          "how": "Ferry from Hat Yai / Pak Bara: 2 hrs"
+        },
+        {
+          "name": "Similan Islands",
+          "body": "A national marine park — no overnight accommodation on the islands. Day trips and liveaboards from Phuket and Khao Lak. Consistently ranked among the top 10 dive destinations in the world. Visibility often exceeds 20–30 metres. Manta rays, whale sharks, pristine hard coral.",
+          "how": "Open: November–May only. Entry fee: ฿500 for foreigners (2026)."
+        },
+        {
+          "name": "Surin Islands",
+          "body": "North of the Similans, less crowded, equally beautiful. Home to the Moken sea nomad community. Excellent snorkeling at Surin Reef and Rocky Bay.",
+          "how": "Open: November–May only."
+        }
+      ]
+    },
+    "diving": {
+      "title": "Diving & snorkeling — where to go",
+      "lead": "Thailand's underwater world splits neatly by skill level and what you want to see.",
+      "beginners": {
+        "title": "Best for beginners",
+        "items": [
+          "Koh Tao — shallow reefs, calm bays, turtles and reef sharks visible without going deep. Cheapest PADI certification in the world.",
+          "Koh Samui — easy entry snorkeling, calm water",
+          "Koh Lipe — shore snorkeling right off Sunrise Beach"
+        ]
+      },
+      "experienced": {
+        "title": "Best for experienced divers",
+        "items": [
+          "Similan Islands — world-class reefs, whale sharks, manta rays, visibility up to 30m",
+          "Surin Islands & Richelieu Rock — Richelieu Rock is Thailand's best whale shark site, accessible only by liveaboard",
+          "Hin Daeng / Hin Muang (near Koh Lanta) — dramatic walls, manta rays"
+        ]
+      },
+      "snorkel": {
+        "title": "Best snorkeling spots",
+        "body": "Gulf: Koh Tao, Koh Phangan (Bottle Beach), Koh Chang. Andaman: Similan Islands, Surin Islands, Koh Lipe, Koh Rok, Koh Haa."
+      },
+      "seasons": {
+        "title": "Seasons for diving",
+        "headers": [
+          "Area",
+          "Best season",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Andaman Sea",
+            "November–April",
+            "Jan–March clearest; June–Sept rough"
+          ],
+          [
+            "Gulf of Thailand",
+            "Year-round",
+            "Best Feb–August for Koh Tao"
+          ],
+          [
+            "Koh Lipe / Similans",
+            "November–May",
+            "Closed May–October"
+          ]
+        ]
+      },
+      "marine": {
+        "title": "Marine life highlights",
+        "items": [
+          "Sea turtles — Koh Tao, Similan Islands",
+          "Whale sharks — Koh Tao (seasonal), Richelieu Rock, north of Similans",
+          "Manta rays — Similan Islands, Hin Daeng/Hin Muang, around Phuket",
+          "Blacktip reef sharks — Koh Tao (shallow water)",
+          "Clownfish & reef fish — everywhere"
+        ]
+      }
+    },
+    "tips": {
+      "title": "Practical tips",
+      "items": [
+        "Respect marine parks: no touching coral, no standing on reefs, no feeding fish",
+        "National park fees for foreigners: ฿200–500 depending on park (Similans ฿500 in 2026)",
+        "Snorkeling gear: rent on the island (฿50–100/day) or bring your own mask for hygiene",
+        "Seasickness: Gulf crossings are usually calm; open-sea Andaman routes can be rough — take medication before, not after",
+        "Weather app: Windy.com is widely used by ferry operators and divers for sea conditions",
+        "Liveaboards: book weeks in advance for Similan/Surin in January–March"
+      ]
+    },
+    "booking": {
+      "title": "Getting to the islands — booking",
+      "links": [
+        {
+          "href": "https://12go.asia",
+          "label": "12Go — ferries, buses, trains"
+        },
+        {
+          "href": "https://www.lomprayah.com",
+          "label": "Lomprayah — Koh Tao, Koh Phangan, Koh Samui"
+        },
+        {
+          "href": "https://www.andamanwavemaster.com",
+          "label": "Andaman Wave Master — Phuket ↔ Phi Phi"
+        },
+        {
+          "href": "https://www.ferrysamui.com",
+          "label": "FerrySamui — Gulf islands booking"
+        },
+        {
+          "href": "https://www.directferries.com/thailand.htm",
+          "label": "DirectFerries Thailand — all routes"
+        },
+        {
+          "href": "https://www.airasia.com",
+          "label": "AirAsia — domestic flights"
+        },
+        {
+          "href": "https://www.bangkokair.com",
+          "label": "Bangkok Airways — Koh Samui flights"
+        },
+        {
+          "href": "https://www.skyscanner.net",
+          "label": "Skyscanner — flight comparison"
+        }
+      ]
+    },
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Which is better — Gulf or Andaman?",
+        "a": "Gulf (Samui/Phangan/Tao) is more accessible from Bangkok, calmer year-round, and better for budget travel. Andaman (Phuket/Phi Phi/Lanta/Lipe) has more dramatic scenery and better diving visibility, but a harder monsoon season. If you have two weeks: do both."
+      },
+      {
+        "q": "Best island for families?",
+        "a": "Koh Samui (services, hospital, airport), Koh Lanta (calm, relaxed), or Koh Chang (natural, cooler). Avoid Koh Phangan during Full Moon Party if you have young children."
+      },
+      {
+        "q": "Best island for diving?",
+        "a": "Koh Tao for budget and learning. Similan Islands for world-class conditions. Koh Lipe for relaxed Andaman diving without the crowds of Phuket."
+      },
+      {
+        "q": "Can I snorkel without diving experience?",
+        "a": "Yes. Thailand is excellent for snorkeling beginners. Koh Tao, Koh Samui, Koh Lipe and Koh Chang all have beginner-friendly shallow reefs. No certification needed."
+      },
+      {
+        "q": "When should I avoid the islands?",
+        "a": "Andaman coast: June–September. Lower Gulf (Koh Chang): June–October can be rough. Koh Lipe and Similans are officially closed May–October. Gulf islands (Samui/Phangan/Tao) are fine year-round but can have rain in October–December."
+      }
+    ],
+    "disclaimer": "General information only — routes, prices, park fees and seasonal conditions change. Always confirm with ferry operators and dive centres before booking. ThaiPlot is a property marketplace, not a travel agency.",
+    "transportLinkBefore": "For ferry routes, operators and prices, see our"
   }
 }

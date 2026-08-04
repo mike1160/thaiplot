@@ -11,6 +11,7 @@ export const GUIDE_LINKS = [
   { href: '/info/paperwork-thailand', key: 'guidePaperwork' },
   { href: '/info/living-thailand', key: 'guideLiving' },
   { href: '/info/transport-thailand', key: 'guideTransport' },
+  { href: '/info/thai-islands', key: 'guideIslands' },
   { href: '/info/health-accidents-thailand', key: 'guideHealth' },
   { href: '/info/food-thailand', key: 'guideFood' },
   { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' },

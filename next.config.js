@@ -7,6 +7,7 @@ const nextConfig = {
   async rewrites() {
     return [
       { source: '/', destination: '/en' },
+      { source: '/nl/info/thaise-eilanden', destination: '/nl/info/thai-islands' },
       { source: '/legal/:path*', destination: '/en/legal/:path*' },
       { source: '/info/:path*', destination: '/en/info/:path*' },
       { source: '/list-property', destination: '/en/list-property' },

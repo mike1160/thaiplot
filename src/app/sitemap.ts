@@ -31,6 +31,7 @@ const STATIC_ROUTES: Array<{
   { path: '/info/drinking-water-thailand', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/health-accidents-thailand', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/transport-thailand', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/info/thai-islands', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/living-thailand', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/food-thailand', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/options', priority: 0.5, changeFrequency: 'monthly' },
@@ -64,12 +65,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date()
 
   const staticEntries: MetadataRoute.Sitemap = LOCALES.flatMap((locale) =>
-    STATIC_ROUTES.map((route) => ({
-      url: sitemapUrl(locale, route.path),
-      lastModified,
-      changeFrequency: route.changeFrequency,
-      priority: route.priority,
-    }))
+    STATIC_ROUTES.map((route) => {
+      const path =
+        locale === 'nl' && route.path === '/info/thai-islands'
+          ? '/info/thaise-eilanden'
+          : route.path
+      return {
+        url: sitemapUrl(locale, path),
+        lastModified,
+        changeFrequency: route.changeFrequency,
+        priority: route.priority,
+      }
+    })
   )
 
   let listings: Awaited<ReturnType<typeof fetchApprovedListingsForSitemap>> = []

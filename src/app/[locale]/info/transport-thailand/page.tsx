@@ -47,6 +47,7 @@ export default async function TransportThailandPage({ params }: Props) {
       <TransportGuideClient
         relatedTitle={tp('relatedOnThaiPlot')}
         relatedLinks={[
+          { href: '/info/thai-islands', label: tp('linkIslands') },
           { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
           { href: '/info/living-thailand', label: tp('linkLiving') },
           { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },

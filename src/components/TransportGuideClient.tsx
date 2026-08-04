@@ -217,6 +217,128 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           />
         </Section>
 
+        <Section title={t('ferryDetail.title')} lead={t('ferryDetail.intro')}>
+          <div className="space-y-8">
+            <div>
+              <h3
+                className="mb-2 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.gulf.title')}
+              </h3>
+              <p className="mb-3">{t('ferryDetail.gulf.lead')}</p>
+              <ul className="list-disc space-y-1.5 pl-5">
+                {(t.raw('ferryDetail.gulf.routes') as string[]).map((r) => (
+                  <li key={r.slice(0, 48)}>{r}</li>
+                ))}
+              </ul>
+              <p className="mt-3 font-medium text-[#142038]">{t('ferryDetail.gulf.operators')}</p>
+            </div>
+
+            <div>
+              <h3
+                className="mb-2 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.andaman.title')}
+              </h3>
+              <p className="mb-3">{t('ferryDetail.andaman.lead')}</p>
+              <ul className="list-disc space-y-1.5 pl-5">
+                {(t.raw('ferryDetail.andaman.routes') as string[]).map((r) => (
+                  <li key={r.slice(0, 48)}>{r}</li>
+                ))}
+              </ul>
+              <p className="mt-3 font-medium text-[#142038]">{t('ferryDetail.andaman.operators')}</p>
+            </div>
+
+            <div>
+              <h3
+                className="mb-2 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.east.title')}
+              </h3>
+              <ul className="list-disc space-y-1.5 pl-5">
+                {(t.raw('ferryDetail.east.routes') as string[]).map((r) => (
+                  <li key={r.slice(0, 48)}>{r}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                className="mb-3 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.season.title')}
+              </h3>
+              <div className="overflow-x-auto rounded-[12px] border border-[#E8E2D6]">
+                <table className="w-full min-w-[480px] text-left text-sm">
+                  <thead className="bg-[#142038] text-white">
+                    <tr>
+                      {(t.raw('ferryDetail.season.headers') as string[]).map((h) => (
+                        <th key={h} className="px-3 py-2.5 font-semibold">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(t.raw('ferryDetail.season.rows') as string[][]).map((row) => (
+                      <tr key={row[0]} className="border-t border-[#E8E2D6] odd:bg-white/70 even:bg-[#FAF7F0]/80">
+                        {row.map((cell) => (
+                          <td key={cell} className="px-3 py-2.5 text-[#5C5247]">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h3
+                className="mb-2 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.longtails.title')}
+              </h3>
+              <p>{t('ferryDetail.longtails.body')}</p>
+            </div>
+
+            <div>
+              <h3
+                className="mb-3 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {t('ferryDetail.book.title')}
+              </h3>
+              <ul className="grid gap-2.5 sm:grid-cols-2">
+                {(
+                  t.raw('ferryDetail.book.links') as { href: string; label: string }[]
+                ).map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tp-link-card"
+                    >
+                      <span className="text-[#C8973A]" aria-hidden>
+                        →
+                      </span>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm text-[#5C5247]">{t('ferryDetail.book.tip')}</p>
+            </div>
+          </div>
+        </Section>
+
         <Section title={t('booking.title')} lead={t('booking.lead')}>
           <div className="rounded-[14px] border border-amber-600/30 bg-[#FFF8F0]/90 px-4 py-3 text-sm text-[#5C5247]">
             {t('booking.note')}

@@ -22,6 +22,7 @@ const INFO_PAGES: Record<string, string> = {
   'drinking-water-thailand': 'pages.drinkWater',
   'health-accidents-thailand': 'pages.health',
   'transport-thailand': 'pages.transport',
+  'thai-islands': 'pages.islands',
   'food-thailand': 'pages.food',
 }
 
@@ -109,6 +110,8 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
   const scrolled = useScrolledHeader()
   const [guideOpen, setGuideOpen] = useState(false)
   const guideRef = useRef<HTMLDivElement>(null)
+  const onListings =
+    pathname === '/listings' || pathname.startsWith('/listings/')
 
   useEffect(() => {
     setGuideOpen(false)
@@ -179,12 +182,14 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
           </ol>
 
           <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0 ml-auto md:ml-0">
-            <Link
-              href="/listings"
-              className="hidden sm:inline-flex px-2 py-1.5 text-[12px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors"
-            >
-              {tn('listings')}
-            </Link>
+            {!onListings ? (
+              <Link
+                href="/listings"
+                className="hidden sm:inline-flex px-2 py-1.5 text-[12px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors"
+              >
+                {tn('listings')}
+              </Link>
+            ) : null}
 
             <div ref={guideRef} className="relative">
               <button

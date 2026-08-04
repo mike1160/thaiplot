@@ -30,7 +30,8 @@
     "guideFood": "Eten & drinken",
     "guideThaiData": "ThaiData — openbare registers",
     "guideTransport": "Vervoer & verkeer",
-    "guideLiving": "Wonen: kosten & bank"
+    "guideLiving": "Wonen: kosten & bank",
+    "guideIslands": "Thaise eilanden — duiken, snorkelen & bestemmingen"
   },
   "languages": {
     "en": "English",
@@ -100,7 +101,8 @@
       "health": "Gezondheid & ongevallen",
       "food": "Eten in Thailand",
       "transport": "Vervoer",
-      "living": "Wonen in Thailand"
+      "living": "Wonen in Thailand",
+      "islands": "Thaise eilanden"
     }
   },
   "homepage": {
@@ -582,7 +584,8 @@
     "linkHealth": "Gezondheid, ongevallen & verzekeringen",
     "linkFood": "Eten, vegetarisch & nightlife",
     "linkTransport": "Vervoer, verkeer & reizen",
-    "linkLiving": "Wonen: kosten, belasting, bank, school"
+    "linkLiving": "Wonen: kosten, belasting, bank, school",
+    "linkIslands": "Thaise eilanden — duiken & snorkelen"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -1906,7 +1909,104 @@
         "a": "Beide worden gebruikt. Low-cost zit vaak op Don Mueang (DMK); internationale + veel full-service op Suvarnabhumi (BKK). Check je ticket — transfer tussen beide kost tijd."
       }
     ],
-    "disclaimer": "Algemene informatie — geen juridisch, medisch of veiligheidsadvies. Verkeersstatistieken, routes, tarieven en app-dekking wijzigen. Bevestig bij operators, officiële sites en je verzekeraar. ThaiPlot is geen vervoerder."
+    "disclaimer": "Algemene informatie — geen juridisch, medisch of veiligheidsadvies. Verkeersstatistieken, routes, tarieven en app-dekking wijzigen. Bevestig bij operators, officiële sites en je verzekeraar. ThaiPlot is geen vervoerder.",
+    "ferryDetail": {
+      "title": "Ferries & eilanden — operators, routes & prijzen",
+      "intro": "Thailand heeft twee gescheiden ferry-netwerken: de Golf van Thailand (oostkust) en de Andamanzee (westkust). Er rijden geen directe ferries tussen beide kanten — wie van Koh Samui naar Koh Phi Phi wil, moet de route via het vasteland plannen.",
+      "gulf": {
+        "title": "Golf van Thailand — Koh Samui, Koh Phangan, Koh Tao",
+        "lead": "De drie grote Golfeilanden vormen een klassieke driehoeksroute. Vertrekpunt op het vasteland is Surat Thani (Don Sak Pier).",
+        "routes": [
+          "Surat Thani → Koh Samui: 1,5 uur · ฿200–250 · Raja Ferry of Seatran · meerdere dagelijkse afvaarten",
+          "Koh Samui → Koh Phangan: 30–45 min · ฿200 · zeer frequente service",
+          "Koh Phangan → Koh Tao: 1,5–2 uur · ฿300–350 · Lomprayah",
+          "Koh Tao → Chumphon (vasteland): 1,5 uur · ฿500–600"
+        ],
+        "operators": "Belangrijkste operators: Lomprayah, Raja Ferry, Seatran Discovery"
+      },
+      "andaman": {
+        "title": "Andamanzee — Phuket, Koh Phi Phi, Koh Lanta, Koh Lipe",
+        "lead": "De westkust heeft spectaculaire kalksteenformaties en helder water, maar let op het seizoen: tussen juni en september zorgt de zuidwestmoesson regelmatig voor annuleringen.",
+        "routes": [
+          "Phuket (Rassada Pier) → Koh Phi Phi: 1–2 uur · ฿350–500 · Andaman Wave Master · 4–6 afvaarten/dag in high season",
+          "Krabi → Koh Phi Phi: 1,5 uur · ฿300–400",
+          "Koh Phi Phi → Koh Lanta: 1,5 uur · ฿250–350",
+          "Koh Lanta → Koh Lipe: 4–5 uur · ฿800–1.200 · Tigerline",
+          "Hat Yai / Pak Bara → Koh Lipe: 2 uur · ฿500–700"
+        ],
+        "operators": "Belangrijkste operators: Andaman Wave Master, Tigerline, Satun Pakbara Speedboat Club"
+      },
+      "east": {
+        "title": "Oostkust — Koh Chang, Koh Kood, Koh Mak",
+        "routes": [
+          "Trat (Laem Ngop Pier) → Koh Chang: 30 min · ฿100 · zeer frequent · Boonsiri",
+          "Trat (Laem Sok Pier) → Koh Kood: 2,5 uur · ฿350–500"
+        ]
+      },
+      "season": {
+        "title": "Seizoenstip",
+        "headers": [
+          "Kust",
+          "Beste periode",
+          "Pas op"
+        ],
+        "rows": [
+          [
+            "Andamanzee",
+            "November–april",
+            "Juni–september: annuleringen mogelijk"
+          ],
+          [
+            "Golf van Thailand",
+            "Heel jaar door (best feb–aug)",
+            "Lagere Golf (Chang/Kood): juni–oktober ruwer"
+          ],
+          [
+            "Koh Lipe",
+            "November–mei",
+            "Gesloten voor bezoekers mei–oktober"
+          ]
+        ]
+      },
+      "longtails": {
+        "title": "Longtails",
+        "body": "De iconische houten boten die je op elke Thailand-foto ziet. Geen dienstregeling — prijs onderhandelen op de pier. Ideaal voor: Railay Beach → Ao Nang, eilandtours rond Koh Phi Phi, strandhoppen op Koh Lipe. Kom overeen vóór je instapt."
+      },
+      "book": {
+        "title": "Waar boeken",
+        "tip": "Tip: arriveer 45–60 minuten voor vertrek op de pier. Bij eilandferries: controleer of hoteltransfer is inbegrepen in je ticket.",
+        "links": [
+          {
+            "href": "https://12go.asia",
+            "label": "12Go — treinen, bussen, ferries — meest compleet voor Thaise ferries"
+          },
+          {
+            "href": "https://www.lomprayah.com",
+            "label": "Lomprayah (officieel) — Koh Tao, Koh Phangan, Koh Samui"
+          },
+          {
+            "href": "https://www.rajaferryport.com",
+            "label": "Raja Ferry (officieel) — Surat Thani ↔ Koh Samui"
+          },
+          {
+            "href": "https://www.andamanwavemaster.com",
+            "label": "Andaman Wave Master — Phuket ↔ Koh Phi Phi"
+          },
+          {
+            "href": "https://www.ferrysamui.com",
+            "label": "FerrySamui — boekingsplatform Golfeilanden"
+          },
+          {
+            "href": "https://www.directferries.com/thailand.htm",
+            "label": "DirectFerries Thailand — vergelijker alle routes"
+          },
+          {
+            "href": "https://thailandboattickets.com",
+            "label": "Thailand Boat Tickets — actuele schema’s en prijzen"
+          }
+        ]
+      }
+    }
   },
   "infoLiving": {
     "metaTitle": "Wonen in Thailand: kosten, belasting, bank, school & rijden | ThaiPlot",
@@ -2087,5 +2187,215 @@
       }
     ],
     "disclaimer": "Algemene informatie — geen fiscaal, juridisch, financieel, onderwijs- of veiligheidsadvies. Regels, fees en bankpolicies wijzigen. Bevestig bij officiële instanties en bevoegde professionals. ThaiPlot is een marktplaats."
+  },
+  "infoIslands": {
+    "metaTitle": "Thaise eilanden — duiken, snorkelen & populaire bestemmingen | ThaiPlot",
+    "metaDescription": "Gids over de populairste eilanden van Thailand: Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe en meer. Duiken, snorkelen, ferries en wat je kunt verwachten.",
+    "eyebrow": "Eilanden & stranden",
+    "title": "Thaise eilanden — populaire bestemmingen, duiken & snorkelen",
+    "subtitle": "Twee kusten, honderden eilanden, één heldere gids. Golf of Andaman — wat je kunt verwachten, waar je heen gaat, en wat er onder water leeft.",
+    "intro": [
+      "Thailand heeft meer dan 1.400 eilanden. De meeste zijn onbewoond. Voor bezoekers valt de keuze grotendeels tussen de Golf van Thailand (oostkust, het hele jaar rustiger) en de Andamanzee (westkust, spectaculaire natuur, seizoensgebonden). Deze gids behandelt de meest bezochte eilanden, hun karakter, het beste duiken en snorkelen, en hoe je er komt."
+    ],
+    "transportLinkLabel": "vervoersgids",
+    "gulf": {
+      "title": "Eilanden in de Golf van Thailand",
+      "lead": "De Golfkust is het best bereikbaar vanuit Bangkok en Centraal-Thailand. Ferries vertrekken vanaf Surat Thani (Don Sak Pier) of Chumphon naar de hoofdeilanden.",
+      "islands": [
+        {
+          "name": "Koh Samui",
+          "body": "Het op één na grootste eiland van Thailand. Ontwikkeld, internationaal, met luchthaven en directe vluchten. Goed voor gezinnen en comfortzoekers. Chaweng en Lamai zijn het drukst; Bang Po en Lipa Noi rustiger. Sterke foodscene, goede ziekenhuizen, betrouwbare infrastructuur.",
+          "how": "Ferry vanuit Surat Thani: 1,5 uur · Directe vluchten vanuit Bangkok: 1 uur (Bangkok Airways)"
+        },
+        {
+          "name": "Koh Phangan",
+          "body": "Bekend om de Full Moon Party op Haad Rin (maandelijks). Daarnaast: rustige baaien, yoga-retreats, jungle. Bottle Beach (Haad Khuat) is een van de mooiste baaien in de Golf. Ontspannener en goedkoper dan Samui.",
+          "how": "Ferry vanuit Koh Samui: 30–45 min"
+        },
+        {
+          "name": "Koh Tao",
+          "body": "Thailands #1 duikeiland. Een van de goedkoopste plekken ter wereld voor PADI-certificering. Uitstekend voor beginners en casual snorkelaars — zeeschildpadden en blacktip reef sharks in ondiep water. Verrassend levendige expat- en healthy-foodscene. Klein en begaanbaar te voet.",
+          "how": "Ferry vanuit Koh Phangan: 1,5–2 uur · Ferry vanuit Chumphon: 1,5 uur"
+        },
+        {
+          "name": "Koh Chang",
+          "body": "Het “grote eiland” van de oostelijke Golf, bij Trat en de Cambodjaanse grens. Jungle, watervallen, rustigere stranden. Minder gepolijst dan Samui, natuurlijker. Populair bij Bangkokianen voor lange weekenden.",
+          "how": "Ferry vanuit Trat (Laem Ngop Pier): 30 min"
+        },
+        {
+          "name": "Koh Kood & Koh Mak",
+          "body": "Minder bezochte buren van Koh Chang. Helder water, minimale ontwikkeling, niet overal pinautomaten. Ideaal als je echt wilt afschakelen.",
+          "how": "Ferry vanuit Trat: 2–2,5 uur"
+        }
+      ]
+    },
+    "andaman": {
+      "title": "Eilanden in de Andamanzee",
+      "lead": "De westkust van Thailand. Dramatische kalksteenformaties, turquoise water en tot de beste duikplekken van Zuidoost-Azië. High season: november–april. Veel routes vallen weg of verminderen in de moesson (juni–september).",
+      "islands": [
+        {
+          "name": "Phuket",
+          "body": "Het grootste eiland, verbonden met het vasteland via een brug. Internationale luchthaven. Volledig spectrum aan hotels, nightlife en restaurants. Patong is het drukst; Kata, Karon en Nai Harn rustiger. Goede uitvalsbasis voor Andaman-duiktrips en liveaboards.",
+          "how": "Directe vluchten vanuit de meeste internationale hubs."
+        },
+        {
+          "name": "Koh Phi Phi",
+          "body": "Twee eilanden (Don en Leh). Koh Phi Phi Don is bewoond, populair en vol beachbars. Phi Phi Leh is onbewoond met Maya Bay (The Beach). Dagtrips vanaf Phuket of Krabi. Spectaculaire natuur, goed snorkelen, zeer druk in high season.",
+          "how": "Ferry vanuit Phuket: 1–2 uur · Ferry vanuit Krabi: 1,5 uur"
+        },
+        {
+          "name": "Koh Lanta",
+          "body": "Rustiger, langer en laid-backer dan Phi Phi. Tweebaansweg over het eiland, mangroves, nationaal park op de zuidpunt. Goed voor gezinnen. Minder feest, meer hangmat.",
+          "how": "Ferry vanuit Krabi: 1,5–2 uur · Ferry vanuit Koh Phi Phi: 1,5 uur"
+        },
+        {
+          "name": "Koh Lipe",
+          "body": "De “Maldiven van Thailand”. Ver zuidelijk, dicht bij Maleisië. Prachtig koraal vlak bij Sunrise Beach. Rustiger dan Phi Phi, uitstekend snorkelen en duiken. Alleen open november–mei (Andaman-moesson sluit mei–oktober voor bezoekers).",
+          "how": "Ferry vanuit Hat Yai / Pak Bara: 2 uur"
+        },
+        {
+          "name": "Similan Islands",
+          "body": "Nationaal marinepark — geen overnachting op de eilanden. Dagtrips en liveaboards vanuit Phuket en Khao Lak. Structureel in top-10 duikbestemmingen wereldwijd. Zicht vaak 20–30 meter. Manta’s, walvishaaien, ongerept hard koraal.",
+          "how": "Open: alleen november–mei. Entree: ฿500 voor buitenlanders (2026)."
+        },
+        {
+          "name": "Surin Islands",
+          "body": "Ten noorden van de Similans, minder druk, even mooi. Thuisbasis van de Moken-zeenomaden. Uitstekend snorkelen bij Surin Reef en Rocky Bay.",
+          "how": "Open: alleen november–mei."
+        }
+      ]
+    },
+    "diving": {
+      "title": "Duiken & snorkelen — waarheen",
+      "lead": "Onder water splitst Thailand zich netjes naar niveau en wat je wilt zien.",
+      "beginners": {
+        "title": "Best voor beginners",
+        "items": [
+          "Koh Tao — ondiepe riffen, kalme baaien, schildpadden en reef sharks zonder diep te gaan. Goedkoopste PADI ter wereld.",
+          "Koh Samui — makkelijk instappen, kalm water",
+          "Koh Lipe — snorkelen vanaf Sunrise Beach"
+        ]
+      },
+      "experienced": {
+        "title": "Best voor ervaren duikers",
+        "items": [
+          "Similan Islands — world-class riffen, walvishaaien, manta’s, zicht tot 30 m",
+          "Surin Islands & Richelieu Rock — beste walvishaai-site van Thailand, alleen via liveaboard",
+          "Hin Daeng / Hin Muang (bij Koh Lanta) — dramatische wanden, manta’s"
+        ]
+      },
+      "snorkel": {
+        "title": "Beste snorkelplekken",
+        "body": "Golf: Koh Tao, Koh Phangan (Bottle Beach), Koh Chang. Andaman: Similan Islands, Surin Islands, Koh Lipe, Koh Rok, Koh Haa."
+      },
+      "seasons": {
+        "title": "Seizoenen voor duiken",
+        "headers": [
+          "Gebied",
+          "Beste periode",
+          "Let op"
+        ],
+        "rows": [
+          [
+            "Andamanzee",
+            "November–april",
+            "Jan–maart helderst; juni–sept ruw"
+          ],
+          [
+            "Golf van Thailand",
+            "Heel jaar",
+            "Best feb–augustus voor Koh Tao"
+          ],
+          [
+            "Koh Lipe / Similans",
+            "November–mei",
+            "Gesloten mei–oktober"
+          ]
+        ]
+      },
+      "marine": {
+        "title": "Marine highlights",
+        "items": [
+          "Zeeschildpadden — Koh Tao, Similan Islands",
+          "Walvishaaien — Koh Tao (seizoensgebonden), Richelieu Rock, noord van Similans",
+          "Manta’s — Similan Islands, Hin Daeng/Hin Muang, rond Phuket",
+          "Blacktip reef sharks — Koh Tao (ondiep water)",
+          "Clownvis & rifvissen — overal"
+        ]
+      }
+    },
+    "tips": {
+      "title": "Praktische tips",
+      "items": [
+        "Respecteer marineparken: geen koraal aanraken, niet op riffen staan, geen vissen voeren",
+        "Parkentree voor buitenlanders: ฿200–500 afhankelijk van het park (Similans ฿500 in 2026)",
+        "Snorkelset: huur op het eiland (฿50–100/dag) of neem eigen masker mee voor hygiëne",
+        "Zeeziekte: Golf-oversteken meestal kalm; open Andaman-routes kunnen ruw zijn — medicatie vóór vertrek",
+        "Weer-app: Windy.com wordt veel gebruikt door ferry-operators en duikers",
+        "Liveaboards: boeken weken van tevoren voor Similan/Surin in januari–maart"
+      ]
+    },
+    "booking": {
+      "title": "Naar de eilanden — boeken",
+      "links": [
+        {
+          "href": "https://12go.asia",
+          "label": "12Go — ferries, bussen, treinen"
+        },
+        {
+          "href": "https://www.lomprayah.com",
+          "label": "Lomprayah — Koh Tao, Koh Phangan, Koh Samui"
+        },
+        {
+          "href": "https://www.andamanwavemaster.com",
+          "label": "Andaman Wave Master — Phuket ↔ Phi Phi"
+        },
+        {
+          "href": "https://www.ferrysamui.com",
+          "label": "FerrySamui — Golfeilanden boeken"
+        },
+        {
+          "href": "https://www.directferries.com/thailand.htm",
+          "label": "DirectFerries Thailand — alle routes"
+        },
+        {
+          "href": "https://www.airasia.com",
+          "label": "AirAsia — binnenlandse vluchten"
+        },
+        {
+          "href": "https://www.bangkokair.com",
+          "label": "Bangkok Airways — vluchten naar Koh Samui"
+        },
+        {
+          "href": "https://www.skyscanner.net",
+          "label": "Skyscanner — vluchtvergelijker"
+        }
+      ]
+    },
+    "faqTitle": "Veelgestelde vragen",
+    "faqs": [
+      {
+        "q": "Wat is beter — Golf of Andaman?",
+        "a": "De Golf (Samui/Phangan/Tao) is beter bereikbaar vanuit Bangkok, het hele jaar kalmer, en vriendelijker voor budgetreizen. Andaman (Phuket/Phi Phi/Lanta/Lipe) heeft dramatischer landschap en beter duikzicht, maar een zwaardere moesson. Met twee weken: doe beide."
+      },
+      {
+        "q": "Beste eiland voor gezinnen?",
+        "a": "Koh Samui (voorzieningen, ziekenhuis, luchthaven), Koh Lanta (kalm, relaxed) of Koh Chang (natuurlijker, koeler). Vermijd Koh Phangan rond Full Moon Party met jonge kinderen."
+      },
+      {
+        "q": "Beste eiland om te duiken?",
+        "a": "Koh Tao voor budget en leren. Similan Islands voor world-class omstandigheden. Koh Lipe voor relaxed Andaman-duiken zonder de drukte van Phuket."
+      },
+      {
+        "q": "Kan ik snorkelen zonder duikervaring?",
+        "a": "Ja. Thailand is uitstekend voor snorkel-beginners. Koh Tao, Koh Samui, Koh Lipe en Koh Chang hebben beginner-vriendelijke ondiepe riffen. Geen certificaat nodig."
+      },
+      {
+        "q": "Wanneer vermijd ik de eilanden?",
+        "a": "Andaman-kust: juni–september. Lagere Golf (Koh Chang): juni–oktober kan ruw zijn. Koh Lipe en Similans zijn mei–oktober officieel gesloten. Golfeilanden (Samui/Phangan/Tao) zijn het hele jaar oké, met regen in oktober–december."
+      }
+    ],
+    "disclaimer": "Algemene informatie — routes, prijzen, parkfees en seizoensomstandigheden wijzigen. Bevestig altijd bij ferry-operators en duikscholen vóór je boekt. ThaiPlot is een vastgoedmarktplaats, geen reisbureau.",
+    "transportLinkBefore": "Voor ferry-routes, operators en prijzen, zie onze"
   }
 }

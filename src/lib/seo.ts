@@ -34,6 +34,8 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
     'transport Thailand, traffic accidents Thailand, motorcycle safety Thailand, Grab Bolt taxi Thailand, BTS MRT Bangkok, domestic flights Thailand, ferry Thailand, 12Go Thailand, verkeersveiligheid Thailand, vervoer Thailand',
   infoLiving:
     'cost of living Thailand, taxes Thailand foreigners, open bank account Thailand, international schools Thailand, driving in Thailand, levensonderhoud Thailand, belasting Thailand, bankrekening Thailand, scholen Thailand',
+  infoIslands:
+    'Thai islands, Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands, diving Thailand, snorkeling Thailand, ferry Thailand islands, Thaise eilanden, duiken Thailand, snorkelen Thailand',
 }
 
 export function localizedPath(locale: string, path: string): string {

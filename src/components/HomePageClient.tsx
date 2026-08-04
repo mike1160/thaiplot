@@ -271,6 +271,7 @@ export default function HomePageClient({ listings }: Props) {
                 { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
                 { href: '/info/living-thailand', key: 'guideLiving' as const },
                 { href: '/info/transport-thailand', key: 'guideTransport' as const },
+                { href: '/info/thai-islands', key: 'guideIslands' as const },
                 { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
                 { href: '/info/food-thailand', key: 'guideFood' as const },
                 { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' as const },
