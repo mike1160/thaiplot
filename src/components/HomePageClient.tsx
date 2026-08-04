@@ -106,11 +106,7 @@ export default function HomePageClient({ listings }: Props) {
             {t('heroSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/listings"
-              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white transition-all hover:brightness-110"
-              style={{ background: '#C8973A' }}
-            >
+            <Link href="/listings" className="tp-btn-accent min-h-[48px] px-7">
               {t('ctaBrowse')}
             </Link>
             <Link
@@ -146,16 +142,10 @@ export default function HomePageClient({ listings }: Props) {
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-10 text-center">
               <p className="text-[#5C5247] mb-5">{t('featuredEmpty')}</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Link
-                  href="/listings"
-                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-[12px] text-sm font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors"
-                >
+                <Link href="/listings" className="tp-btn-primary">
                   {t('viewAllListings')}
                 </Link>
-                <Link
-                  href="/list-property"
-                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
-                >
+                <Link href="/list-property" className="tp-btn-outline-gold">
                   {t('ctaList')}
                 </Link>
               </div>
@@ -168,10 +158,7 @@ export default function HomePageClient({ listings }: Props) {
                 ))}
               </div>
               <div className="mt-10 text-center">
-                <Link
-                  href="/listings"
-                  className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
-                >
+                <Link href="/listings" className="tp-btn-outline-gold min-h-[48px] px-7">
                   {t('viewAllListings')}
                 </Link>
               </div>
@@ -220,7 +207,7 @@ export default function HomePageClient({ listings }: Props) {
               href="https://www.savedsouls-foundation.org/en/donate"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[56px] px-8 rounded-[12px] text-base font-semibold text-white bg-amber-600 hover:bg-amber-700 transition-colors shadow-[0_8px_24px_rgba(217,119,6,0.35)] self-center md:self-start"
+              className="tp-btn-accent min-h-[56px] px-8 text-base self-center md:self-start shadow-[0_8px_24px_rgba(200,151,58,0.35)]"
             >
               {t('donateSectionCta')}
             </a>
@@ -278,11 +265,7 @@ export default function HomePageClient({ listings }: Props) {
             >
               {t('ctaBarTitle')}
             </h2>
-            <Link
-              href="/list-property"
-              className="inline-flex items-center justify-center min-h-[48px] px-7 rounded-[12px] text-sm font-semibold text-white mb-4 transition-all hover:brightness-110"
-              style={{ background: '#C8973A' }}
-            >
+            <Link href="/list-property" className="tp-btn-accent min-h-[48px] px-7 mb-4">
               {t('ctaBarButton')}
             </Link>
             <p className="text-white/65 text-sm">{t('ctaBarNote')}</p>
@@ -316,7 +299,7 @@ export default function HomePageClient({ listings }: Props) {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="flex items-center gap-2 border border-[#E8E2D6] bg-white px-4 py-3.5 text-sm font-semibold text-[#1A2744] transition-colors hover:border-[#C8973A]/60 hover:text-[#C8973A]"
+                  className="tp-link-card"
                 >
                   <span className="text-[#C8973A]" aria-hidden>
                     →

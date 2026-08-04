@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/InfoHero'
 import ListingCard from '@/components/ListingCard'
 import type { PublicListing } from '@/lib/listings'
 import { absoluteAssetUrl, localizedPath } from '@/lib/seo'
@@ -95,14 +96,7 @@ function FaqJsonLd({ faqs, pageUrl }: { faqs: RegionFaq[]; pageUrl: string }) {
 }
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2
-      className="text-xl md:text-2xl font-bold text-[#1A2744] mb-4"
-      style={{ fontFamily: 'Playfair Display, serif' }}
-    >
-      {children}
-    </h2>
-  )
+  return <h2 className="tp-section-title">{children}</h2>
 }
 
 export default function RegionLandingPage({ locale, content, listings }: Props) {
@@ -112,17 +106,9 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
       <FaqJsonLd faqs={content.faqs} pageUrl={pageUrl} />
+      <InfoHero title={content.title} subtitle={content.intro} image="/hero.jpg" />
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-16 space-y-12">
-        <header>
-          <h1
-            className="text-3xl md:text-4xl font-bold text-[#1A2744] mb-5 leading-tight"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {content.title}
-          </h1>
-          <p className="text-[#5C5247] text-base md:text-lg leading-relaxed">{content.intro}</p>
-        </header>
 
         {content.areas && content.areas.length > 0 ? (
           <section>
@@ -165,12 +151,7 @@ export default function RegionLandingPage({ locale, content, listings }: Props) 
 
       <section className="border-y border-[#E8E2D6] bg-[#FAF7F0] py-12 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-2xl md:text-3xl font-bold text-[#1A2744] mb-8"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {content.listingsHeading}
-          </h2>
+          <h2 className="tp-section-title mb-8 border-0 pb-0">{content.listingsHeading}</h2>
 
           {listings.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 text-center">

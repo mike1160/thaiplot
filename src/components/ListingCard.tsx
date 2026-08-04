@@ -80,7 +80,7 @@ function emailToMailtoHref(email: string): string {
 }
 
 const contactBtnClass =
-  'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors'
+  'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold bg-[#1A2744] hover:bg-[#C8973A] text-white transition-colors'
 
 export default function ListingCard({ listing, contactHref }: ListingCardProps) {
   const t = useTranslations('listings')
@@ -387,7 +387,7 @@ export default function ListingCard({ listing, contactHref }: ListingCardProps) 
                   onClick={trackContactClick}
                   className={
                     sellerPhoneHref
-                      ? 'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold border border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white transition-colors'
+                      ? 'inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-[12px] text-sm font-semibold border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-colors'
                       : contactBtnClass
                   }
                 >

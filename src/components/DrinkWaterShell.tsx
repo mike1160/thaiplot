@@ -3,7 +3,9 @@ import { getTranslations } from 'next-intl/server'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import DrinkWaterSubnav from '@/components/DrinkWaterSubnav'
+import InfoHero from '@/components/InfoHero'
 import RelatedGuides from '@/components/RelatedGuides'
+import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = {
   children: ReactNode
@@ -23,11 +25,7 @@ async function fetchHeroPhoto() {
     const data = await res.json()
     if (!data.photos?.length) return null
     const photo = data.photos[Math.floor(Math.random() * Math.min(3, data.photos.length))]
-    return {
-      url: photo.src.large2x as string,
-      photographer: photo.photographer as string,
-      link: photo.url as string,
-    }
+    return photo.src.large2x as string
   } catch {
     return null
   }
@@ -36,76 +34,18 @@ async function fetchHeroPhoto() {
 export default async function DrinkWaterShell({ children }: Props) {
   const t = await getTranslations('infoDrinkWater')
   const tp = await getTranslations('partnerLinks')
-  const photo = await fetchHeroPhoto()
+  const photo = (await fetchHeroPhoto()) || HERO_PHOTOS.visa
 
   return (
-    <main className="min-h-screen bg-[#F5F0E8] text-[#1A2933]">
+    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
+      <InfoHero eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} image={photo} />
 
-      <section className="relative overflow-hidden text-white">
-
-        {/* Achtergrond: Pexels foto of fallback gradient */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={
-            photo
-              ? { backgroundImage: `url(${photo.url})` }
-              : { background: 'linear-gradient(160deg, #0A3D5C 0%, #1A7BA4 55%, #1A2744 100%)' }
-          }
-        />
-
-        {/* Donkere overlay zodat tekst altijd leesbaar is */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(160deg, rgba(10,61,92,0.82) 0%, rgba(26,123,164,0.58) 100%)',
-          }}
-        />
-
-        <div className="relative z-10 max-w-3xl mx-auto px-6 pt-20 pb-14 md:pt-24 md:pb-16 text-center">
-          <p className="text-[#8DB4C8] text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-4">
-            {t('eyebrow')}
-          </p>
-          <h1
-            className="text-3xl md:text-5xl font-light tracking-wide leading-tight mb-4"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('title')}
-          </h1>
-          <p className="text-base md:text-lg font-light opacity-90 max-w-xl mx-auto leading-relaxed">
-            {t('subtitle')}
-          </p>
-        </div>
-
-        {/* Pexels fotocredit */}
-        {photo && (
-          <a
-            href={photo.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute bottom-12 right-3 z-10 text-[0.65rem] text-white/50 hover:text-white/80 transition-colors"
-          >
-            📷 {photo.photographer} via Pexels
-          </a>
-        )}
-
-        <svg
-          className="relative block w-full h-10 md:h-12"
-          viewBox="0 0 1200 50"
-          preserveAspectRatio="none"
-          aria-hidden
-        >
-          <path d="M0,35 C300,65 900,5 1200,35 L1200,0 L0,0 Z" fill="#1A7BA4" opacity="0.35" />
-          <path d="M0,45 C400,15 800,60 1200,30 L1200,0 L0,0 Z" fill="#F5F0E8" />
-        </svg>
-      </section>
-
-      <div className="max-w-3xl mx-auto px-6 pb-16">
+      <div className="mx-auto max-w-3xl px-6 pb-16 pt-8 md:pt-10">
         <DrinkWaterSubnav />
-        <article>{children}</article>
+        <article className="tp-body">{children}</article>
 
-        <div className="mt-12 pt-6 border-t border-[#D4E4EC]">
+        <div className="mt-12 space-y-8 border-t border-[#E8E2D6] pt-8">
           <RelatedGuides
             title={t('relatedTitle')}
             links={[
@@ -116,8 +56,8 @@ export default async function DrinkWaterShell({ children }: Props) {
               { href: '/info/thim-app', label: tp('linkThim') },
             ]}
           />
-          <p className="text-xs text-[#8DB4C8] leading-relaxed mb-2 mt-8">{t('footerSources')}</p>
-          <p className="text-xs text-[#8DB4C8] mb-6">{t('footerNote')}</p>
+          <p className="text-xs leading-relaxed text-[#8A7F72]">{t('footerSources')}</p>
+          <p className="text-xs text-[#8A7F72]">{t('footerNote')}</p>
           <DisclaimerFooter />
         </div>
       </div>

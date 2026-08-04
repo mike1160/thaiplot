@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/InfoHero'
 import RelatedGuides from '@/components/RelatedGuides'
 import {
   CATEGORY_PHOTOS,
@@ -101,35 +102,12 @@ export default function OfficialDownloadsClient() {
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
       <BreadcrumbNav />
 
-      <section className="relative min-h-[52vh] flex items-end overflow-hidden">
-        <img
-          src={TH_PL_PHOTOS[6]}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(to top, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.45) 55%, rgba(26,39,68,0.25) 100%)',
-          }}
-        />
-        <CloudFade position="bottom" />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-16 pt-28">
-          <p className="text-[#C8973A] text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-3">
-            {t('eyebrow')}
-          </p>
-          <h1
-            className="text-white text-3xl md:text-5xl font-bold leading-tight mb-4 max-w-2xl"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t('title')}
-          </h1>
-          <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-xl">
-            {t('subtitle')}
-          </p>
-        </div>
-      </section>
+      <InfoHero
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        subtitle={t('subtitle')}
+        image={TH_PL_PHOTOS[6]}
+      />
 
       <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
         <aside
@@ -200,7 +178,7 @@ export default function OfficialDownloadsClient() {
                   href={PLAY_STORE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2.5 text-sm font-semibold bg-[#1A2744] text-white hover:bg-[#C8973A] transition-colors"
+                  className="tp-btn-primary"
                 >
                   {t('thim.android')}
                 </a>
@@ -208,7 +186,7 @@ export default function OfficialDownloadsClient() {
                   href={APP_STORE}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2.5 text-sm font-semibold border border-[#1A2744] text-[#1A2744] hover:border-[#C8973A] hover:text-[#C8973A] transition-colors"
+                  className="tp-btn-outline"
                 >
                   {t('thim.ios')}
                 </a>
@@ -216,7 +194,7 @@ export default function OfficialDownloadsClient() {
                   href={TDAC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2.5 text-sm font-semibold border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-colors"
+                  className="tp-btn-outline-gold"
                 >
                   {t('thim.tdacLink')}
                 </a>
@@ -367,15 +345,8 @@ export default function OfficialDownloadsClient() {
 function ThimSection({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section>
-      <h3
-        className="text-lg md:text-xl font-bold text-[#1A2744] mb-3 border-b border-[#E8E2D6] pb-2"
-        style={{ fontFamily: 'Playfair Display, serif' }}
-      >
-        {title}
-      </h3>
-      <div className="space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed">
-        {children}
-      </div>
+      <h3 className="tp-section-title text-lg md:text-xl">{title}</h3>
+      <div className="tp-body space-y-3">{children}</div>
     </section>
   )
 }

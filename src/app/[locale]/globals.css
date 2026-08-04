@@ -3,25 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --cream: #FAF7F0;
-  --navy: #1A2744;
-  --muted: #5C5247;
-  --gold: #C8973A;
-  --card-border: #E8E2D6;
+  --cream: #faf7f0;
+  --navy: #1a2744;
+  --muted: #5c5247;
+  --gold: #c8973a;
+  --card-border: #e8e2d6;
+  --soft: #f3eee4;
   --forest: #2d5016;
   --stone: #1c1917;
-  --ink: #1A2744;
+  --ink: #1a2744;
+  --radius: 12px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  /* clip avoids creating a scrollport that breaks position:fixed banners */
   overflow-x: clip;
   max-width: 100%;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--cream);
   color: var(--navy);
   max-width: 100%;
@@ -30,7 +32,7 @@ body {
 }
 
 .font-display {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .lang-tab.active {
@@ -42,57 +44,132 @@ body {
   .site-card {
     @apply bg-white p-6;
     border: 1px solid var(--card-border);
-    border-radius: 12px;
+    border-radius: var(--radius);
   }
 
-  .site-btn-primary {
-    @apply inline-flex items-center justify-center font-semibold text-white transition-all;
+  /* Unified CTAs — navy primary, gold accent, outline secondary */
+  .tp-btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold text-sm transition-all duration-300;
+    min-height: 44px;
+    padding: 0.625rem 1.125rem;
+    border-radius: var(--radius);
+    transition-timing-function: var(--ease);
+  }
+
+  .tp-btn-primary {
+    @apply tp-btn text-white;
+    background: var(--navy);
+  }
+  .tp-btn-primary:hover {
     background: var(--gold);
-    border-radius: 12px;
   }
 
-  .site-btn-primary:hover {
+  .tp-btn-accent {
+    @apply tp-btn text-white;
+    background: var(--gold);
+  }
+  .tp-btn-accent:hover {
     filter: brightness(1.08);
   }
 
-  .site-btn-secondary {
-    @apply inline-flex items-center justify-center font-semibold transition-all bg-white;
+  .tp-btn-outline {
+    @apply tp-btn bg-transparent;
     color: var(--navy);
-    border: 1px solid var(--gold);
-    border-radius: 12px;
+    border: 1px solid var(--navy);
+  }
+  .tp-btn-outline:hover {
+    color: var(--gold);
+    border-color: var(--gold);
   }
 
-  .site-btn-secondary:hover {
-    background: #F3EEE4;
+  .tp-btn-outline-gold {
+    @apply tp-btn bg-transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+  }
+  .tp-btn-outline-gold:hover {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  /* Legacy aliases → new system */
+  .site-btn-primary {
+    @apply tp-btn-primary;
+  }
+  .site-btn-secondary {
+    @apply tp-btn-outline-gold;
+  }
+
+  .tp-section-title {
+    @apply text-xl md:text-2xl font-bold text-[#1A2744] border-b border-[#E8E2D6] pb-2 mb-4;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .tp-body {
+    @apply text-sm md:text-[15px] text-[#5C5247] leading-relaxed;
+  }
+
+  .tp-link-card {
+    @apply flex items-center gap-2 border border-[#E8E2D6] bg-white px-4 py-3.5 text-sm font-semibold text-[#1A2744] transition-all duration-300;
+    border-radius: var(--radius);
+  }
+  .tp-link-card:hover {
+    border-color: color-mix(in srgb, var(--gold) 60%, transparent);
+    color: var(--gold);
   }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.5s ease forwards;
+  animation: fadeInUp 0.55s var(--ease) forwards;
 }
 
 .animate-stagger > * {
-  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  animation: fadeInUp 0.55s var(--ease) forwards;
 }
 
-.animate-stagger > *:nth-child(1) { animation-delay: 0.05s; }
-.animate-stagger > *:nth-child(2) { animation-delay: 0.10s; }
-.animate-stagger > *:nth-child(3) { animation-delay: 0.15s; }
-.animate-stagger > *:nth-child(4) { animation-delay: 0.20s; }
-.animate-stagger > *:nth-child(5) { animation-delay: 0.25s; }
-.animate-stagger > *:nth-child(6) { animation-delay: 0.30s; }
-.animate-stagger > *:nth-child(7) { animation-delay: 0.35s; }
-.animate-stagger > *:nth-child(8) { animation-delay: 0.40s; }
-.animate-stagger > *:nth-child(9) { animation-delay: 0.45s; }
+.animate-stagger > *:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.animate-stagger > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.animate-stagger > *:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.animate-stagger > *:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.animate-stagger > *:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.animate-stagger > *:nth-child(6) {
+  animation-delay: 0.24s;
+}
+.animate-stagger > *:nth-child(7) {
+  animation-delay: 0.28s;
+}
+.animate-stagger > *:nth-child(8) {
+  animation-delay: 0.32s;
+}
+.animate-stagger > *:nth-child(9) {
+  animation-delay: 0.36s;
+}
 
 /* Hide Cloudflare Turnstile error/debug "Troubleshoot" link from visitors */
-a[href*="developers.cloudflare.com/turnstile"],
-a[href*="cloudflare.com"][href*="troubleshoot"],
-.cf-turnstile ~ a[href*="cloudflare"] {
+a[href*='developers.cloudflare.com/turnstile'],
+a[href*='cloudflare.com'][href*='troubleshoot'],
+.cf-turnstile ~ a[href*='cloudflare'] {
   display: none !important;
 }

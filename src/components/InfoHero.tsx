@@ -8,6 +8,7 @@ type InfoHeroProps = {
   size?: 'main' | 'secondary'
 }
 
+/** Shared full-bleed hero for all info / guide / legal subpages. */
 export default function InfoHero({
   eyebrow,
   title,
@@ -15,11 +16,11 @@ export default function InfoHero({
   image,
   size = 'secondary',
 }: InfoHeroProps) {
-  const minHeight = size === 'main' ? 'min-h-[70vh]' : 'min-h-[50vh]'
+  const minHeight = size === 'main' ? 'min-h-[62vh]' : 'min-h-[46vh]'
 
   return (
     <section
-      className={`relative ${minHeight} flex items-center justify-center overflow-hidden py-16 md:py-24 px-6 ${
+      className={`relative ${minHeight} flex items-end overflow-hidden ${
         image ? '' : 'bg-[#1A2744]'
       }`}
     >
@@ -28,26 +29,45 @@ export default function InfoHero({
           <img
             src={image}
             alt=""
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to top, rgba(26,39,68,0.94) 0%, rgba(26,39,68,0.55) 48%, rgba(26,39,68,0.28) 100%)',
+            }}
+          />
         </>
-      ) : null}
+      ) : (
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `url('/thai-pattern.svg')`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: '80px 80px',
+          }}
+          aria-hidden
+        />
+      )}
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center w-full">
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-14 pt-28 md:pb-16 md:pt-32">
         {eyebrow ? (
-          <p className="text-[#C8973A] text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-4">
+          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#C8973A] md:text-xs animate-fade-in-up">
             {eyebrow}
           </p>
         ) : null}
         <h1
-          className="text-white text-3xl md:text-5xl font-bold leading-tight mb-4"
-          style={{ fontFamily: 'Playfair Display, serif' }}
+          className="mb-4 max-w-3xl text-3xl font-bold leading-[1.15] text-white md:text-5xl animate-fade-in-up"
+          style={{ fontFamily: 'Playfair Display, Georgia, serif', animationDelay: '0.06s' }}
         >
           {title}
         </h1>
         {subtitle ? (
-          <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+          <p
+            className="max-w-2xl text-sm leading-relaxed text-white/85 md:text-base animate-fade-in-up"
+            style={{ animationDelay: '0.12s' }}
+          >
             {subtitle}
           </p>
         ) : null}

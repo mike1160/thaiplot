@@ -109,7 +109,7 @@ export default function HomeNavbar() {
               </button>
               {guideOpen ? (
                 <div
-                  className="absolute top-full left-0 mt-2 min-w-[240px] bg-white rounded-[12px] py-2 z-50"
+                  className="absolute top-full left-0 mt-2 min-w-[260px] max-h-[70vh] overflow-y-auto bg-white rounded-[12px] py-2 z-50"
                   style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
                   role="menu"
                 >
@@ -129,32 +129,10 @@ export default function HomeNavbar() {
             </div>
 
             <Link
-              href="/info/paperwork-thailand"
-              className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'text-[#5C5247] hover:text-[#1A2744]'
-                  : 'text-white hover:text-white/85'
-              }`}
-            >
-              {t('guidePaperwork')}
-            </Link>
-
-            <Link
-              href="/info/official-thai-downloads"
-              className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'text-[#5C5247] hover:text-[#1A2744]'
-                  : 'text-white hover:text-white/85'
-              }`}
-            >
-              {t('guideOfficialDownloads')}
-            </Link>
-
-            <Link
               href="/list-property"
-              className={`ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border transition-all duration-[350ms] ease-[ease] ${
+              className={`ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border transition-all duration-[350ms] ease-[ease] ${
                 solid
-                  ? 'border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white'
+                  ? 'border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white'
                   : 'border-white text-white hover:bg-white/15'
               }`}
             >
@@ -162,7 +140,7 @@ export default function HomeNavbar() {
             </Link>
             <Link
               href="/contact"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-[350ms] ease-[ease]"
+              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-[350ms] ease-[ease]"
             >
               {t('contact')}
             </Link>
@@ -199,7 +177,7 @@ export default function HomeNavbar() {
               />
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center min-h-[36px] px-3 rounded-lg text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744]"
+                className="inline-flex items-center justify-center min-h-[36px] px-3 rounded-[12px] text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744] hover:bg-[#C8973A] hover:border-[#C8973A] transition-colors"
                 onClick={closeMenu}
               >
                 {t('contact')}
@@ -256,26 +234,10 @@ export default function HomeNavbar() {
           >
             {t('listings')}
           </Link>
-          <Link
-            href="/info/paperwork-thailand"
-            onClick={closeMenu}
-            className="flex items-center w-full px-6 min-h-[48px] text-[15px] font-semibold text-[#1A2744] border-b border-[#E8E2D6]"
-          >
-            {t('guidePaperwork')}
-          </Link>
-          <Link
-            href="/info/official-thai-downloads"
-            onClick={closeMenu}
-            className="flex items-center w-full px-6 min-h-[48px] text-[15px] font-semibold text-[#1A2744] border-b border-[#E8E2D6]"
-          >
-            {t('guideOfficialDownloads')}
-          </Link>
           <p className="px-6 pt-4 pb-2 text-[11px] uppercase tracking-wider text-[#C8973A] font-semibold">
             {t('guide')}
           </p>
-          {GUIDE_LINKS.filter(
-            (item) => item.key !== 'guidePaperwork' && item.key !== 'guideOfficialDownloads'
-          ).map((item) => (
+          {GUIDE_LINKS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -296,14 +258,14 @@ export default function HomeNavbar() {
           <Link
             href="/list-property"
             onClick={closeMenu}
-            className="flex items-center justify-center mx-4 mt-4 min-h-[48px] px-4 text-[15px] font-semibold rounded-lg border border-amber-600 text-amber-600"
+            className="tp-btn-outline-gold flex items-center justify-center mx-4 mt-4"
           >
             {t('listProperty')}
           </Link>
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="flex items-center justify-center mx-4 my-4 min-h-[48px] px-4 text-[15px] font-semibold rounded-lg bg-[#1A2744] text-white"
+            className="tp-btn-primary flex items-center justify-center mx-4 my-4"
           >
             {t('contact')}
           </Link>

@@ -20,8 +20,7 @@ export default function SiteFooter() {
             href="https://www.savedsouls-foundation.org/en/donate"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-shrink-0 text-white font-bold px-8 py-3 rounded-[12px] transition-all hover:brightness-110 text-sm whitespace-nowrap"
-            style={{ background: '#C8973A' }}
+            className="flex-shrink-0 tp-btn-accent px-8 py-3 text-sm whitespace-nowrap"
           >
             {t('donateCta')}
           </a>
