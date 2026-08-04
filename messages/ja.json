@@ -23,7 +23,10 @@
     "myAccount": "マイアカウント",
     "guideDrinkWater": "飲料水はどうする？",
     "guidePaperwork": "書類手続き",
-    "guideOfficialDownloads": "タイ公式サイト"
+    "guideOfficialDownloads": "タイ公式サイト",
+    "guideThim": "THIMアプリ",
+    "guideTdac": "Thailand Digital Arrival Card (TDAC)",
+    "guideHealth": "Health & accidents"
   },
   "languages": {
     "en": "English",
@@ -87,7 +90,10 @@
       "drinkWaterCosts": "費用比較",
       "drinkWaterAdvice": "アドバイス",
       "paperwork": "書類手続き",
-      "officialDownloads": "タイ公式サイト"
+      "officialDownloads": "タイ公式サイト",
+      "thimApp": "THIMアプリ",
+      "tdac": "TDAC",
+      "health": "Health & accidents"
     }
   },
   "homepage": {
@@ -120,7 +126,9 @@
     "viewAllListings": "すべての掲載を見る →",
     "featuredEmpty": "このプレビューに掲載がありません。一覧ページへ →",
     "footerPartner": "パートナーサイト",
-    "footerPartnerHuaHinLand": "Hua Hin Land"
+    "footerPartnerHuaHinLand": "Hua Hin Land",
+    "guidesTitle": "Practical guides for living & arriving in Thailand",
+    "guidesSubtitle": "Independent explainers on ThaiPlot — paperwork, official portals, THIM, TDAC and more."
   },
   "listings": {
     "pageTitle": "掲載一覧",
@@ -783,7 +791,18 @@
     "furtherReadingTitle": "Hua Hin Land でさらに読む",
     "dutch": "Voor Nederlanders",
     "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "relatedOnThaiPlot": "Related guides on ThaiPlot",
+    "linkThim": "THIM Immigration app",
+    "linkTdac": "Thailand Digital Arrival Card (TDAC)",
+    "linkOfficial": "Official Thai websites",
+    "linkPaperwork": "Paperwork for foreigners",
+    "linkVisa": "Retirement visa guide",
+    "linkDrinkWater": "Drinking water in Thailand",
+    "linkBuying": "Buying land in Thailand",
+    "linkHuaHin": "Hua Hin property market",
+    "linkPranburi": "Pranburi property",
+    "linkHealth": "Health, accidents & insurance"
   },
   "regionHuaHin": {
     "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
@@ -847,7 +866,11 @@
     "submitting": "送信中...",
     "successHeading": "ありがとうございます！",
     "successText": "リクエストを受け付けました。まもなくご連絡いたします。",
-    "close": "閉じる"
+    "close": "閉じる",
+    "guidesTitle": "Useful before you go",
+    "guideThim": "THIM app guide",
+    "guideTdac": "TDAC arrival card",
+    "guidePaperwork": "Thai paperwork"
   },
   "infoDrinkWater": {
     "metaTitle": "タイで安全な飲料水 | ThaiPlot",
@@ -869,7 +892,8 @@
       "option": "選択肢",
       "cost": "費用",
       "safety": "安全性"
-    }
+    },
+    "relatedTitle": "Related guides on ThaiPlot"
   },
   "infoPaperwork": {
     "metaTitle": "外国人のためのタイ書類手続き | ThaiPlot",
@@ -959,8 +983,8 @@
     }
   },
   "infoOfficialDownloads": {
-    "metaTitle": "タイ公式サイト＆ダウンロード | ThaiPlot",
-    "metaDescription": "タイ政府公式サイトへのリンクとプレースホルダー。ThaiPlotは外部サイトに責任を負いません。",
+    "metaTitle": "THIMアプリ・TDAC・タイ公式サイト | ThaiPlot",
+    "metaDescription": "外国人向けタイ公式サイトガイド：THIM入国管理アプリ、Thailand Digital Arrival Card（TDAC）など。ThaiPlotは外部サイトに責任を負いません。",
     "eyebrow": "Resources",
     "title": "タイ公式サイト＆ダウンロード",
     "subtitle": "外国人がよく使う公式ポータルの一覧。URL確認待ちはプレースホルダー表示。",
@@ -1057,30 +1081,431 @@
       "ssf": {
         "name": "Social Security / other forms",
         "desc": "Placeholder for additional downloadable forms sometimes requested by employers or offices."
+      },
+      "tdac": {
+        "name": "Thailand Digital Arrival Card (TDAC)",
+        "desc": "Official free arrival-card portal for foreign travellers (within 72 hours before arrival)."
+      },
+      "thimStore": {
+        "name": "THIM app (Google Play)",
+        "desc": "Official Thailand Immigration Management app — also available on the App Store."
       }
     },
     "thim": {
       "eyebrow": "新しい政府アプリ",
       "title": "THIM — Thai Immigration",
       "imageAlt": "THIM Thai Immigration app icon",
-      "paras": [
-        "THIM (Thailand Immigration Management) is the official mobile app of the Thai Immigration Bureau for foreign nationals travelling to Thailand. It sits alongside the mandatory Thailand Digital Arrival Card (TDAC) — it does not replace TDAC.",
-        "During the current voluntary pilot you may use THIM to prepare arrival details on your phone. According to Immigration / tourism communications, THIM is scheduled to become mandatory for arrival-card submission from August 2026. Exact rules can still shift — always check the latest Immigration notice for your travel date.",
-        "In practice you scan the passport biodata page, add trip and accommodation details linked to the TDAC workflow, and submit digitally instead of relying on paper forms at the airport. Group registration (useful for families) and trip reminders are part of the published feature set. Interfaces started in English, Russian, Japanese and Chinese, with more languages planned.",
-        "Longer term, Immigration has described THIM as growing into a broader platform for foreigners in Thailand — appointments, document requests, status tracking, and possibly services such as 90-day reporting. Those modules arrive in phases; do not assume every office task is already inside the app today."
+      "imageAlt2": "THIMアプリ画面：QRコードによるスムーズなデジタル入国",
+      "intro": [
+        "THIM (Thailand Immigration Management) is the official Immigration Bureau app for foreign nationals travelling to Thailand. It works alongside the mandatory Thailand Digital Arrival Card (TDAC) — it does not replace TDAC.",
+        "The app is in a voluntary pilot now. Public communications point to a broader mandatory role for arrival-card submission from August 2026. Rules can still change — always check Immigration notices for your travel date."
       ],
-      "bullets": [
-        "Official publisher: Immigration Bureau / Royal Thai Police ecosystem — install only from the official App Store or Google Play listing (Android package th.go.immigration.thim).",
-        "TDAC stays required: use THIM together with current arrival rules; it is not a substitute for a visa or for appearing in person when asked.",
-        "Pilot now → planned mandatory arrival-card use from August 2026 (confirm before you fly).",
-        "Core flow: passport scan (OCR), digital arrival details, group trips, notifications.",
-        "Security: treat your phone like a passport — lock it and do not share QR codes casually.",
-        "ThaiPlot is not the publisher and does not provide immigration advice — we only point you to the official app and public information."
-      ],
-      "note": "Always confirm the current App Store / Play Store listing and Immigration announcements before you travel — rollout timelines change.",
       "android": "Google Play →",
       "ios": "App Store →",
-      "storeNote": "Prefer the official listings above. If a search result does not look like “THIM – Thai Immigration Bureau”, do not install it."
+      "tdacLink": "TDAC portal →",
+      "storeNote": "Install only listings published under Royal Thai Police / Immigration. Fake “TDAC for a fee” sites are scams — the official TDAC is free.",
+      "whatTitle": "What is THIM?",
+      "whatParas": [
+        "THIM stands for Thailand Immigration Management. It was built with Digital Identity Co., Ltd. for the Immigration Bureau and runs on AWS infrastructure in the Asia Pacific (Bangkok) region, so traveller data stays under Thai jurisdiction as required.",
+        "Think of TDAC as the arrival-card duty, and THIM as the wider mobile platform around it: traveller profile, Digital ID / KYC checks, notifications, and links toward other government services. Over time Immigration wants THIM to cover more of the foreigner journey — not only the airport queue."
+      ],
+      "compareTitle": "THIM and TDAC — how they fit together",
+      "compareIntro": "The TDAC replaced the old paper TM6 arrival card (from 1 May 2025). Non-Thai travellers arriving by air, land or sea must complete the TDAC within 72 hours before arrival. THIM can help you do that digitally — it does not cancel the TDAC requirement.",
+      "table": {
+        "topic": "Topic",
+        "rows": [
+          {
+            "topic": "What it is",
+            "tdac": "Thailand Digital Arrival Card",
+            "thim": "Thailand Immigration Management app"
+          },
+          {
+            "topic": "Main job",
+            "tdac": "Submit required arrival information before entry",
+            "thim": "Broader platform: TDAC flow, profile, Digital ID, alerts, more services over time"
+          },
+          {
+            "topic": "Where",
+            "tdac": "Official web: tdac.immigration.go.th",
+            "thim": "iOS App Store and Google Play"
+          },
+          {
+            "topic": "Required for entry?",
+            "tdac": "Yes — for foreign travellers (current rules)",
+            "thim": "Alongside TDAC; does not replace it today"
+          },
+          {
+            "topic": "Repeat trips",
+            "tdac": "New submission each trip",
+            "thim": "Saved profile can make later submissions much faster"
+          }
+        ]
+      },
+      "scamWarning": "Until Immigration says otherwise: complete your TDAC before you travel, with or without THIM. The TDAC is free. Any site that charges for a “TDAC” is a scam — use only tdac.immigration.go.th or the official THIM app.",
+      "featuresTitle": "What THIM offers now",
+      "features": [
+        "TDAC-style arrival submission in the app, with passport scanning (OCR)",
+        "Group submission for several travellers in one flow (up to about 10)",
+        "Reusable traveller profile for passport and personal details",
+        "Digital ID / KYC-style identity checks against immigration records",
+        "Reminders for TDAC deadlines and travel dates",
+        "Ability to amend details if plans change (within the app’s rules)",
+        "Links toward other services (for example Tourist Police references in public materials)"
+      ],
+      "howtoTitle": "How the arrival card works in practice",
+      "howtoParas": [
+        "You can fill most fields early, but the health declaration typically unlocks only inside the 72-hour window before arrival. Until that step is done, your QR / submission is not finished.",
+        "If you forget at home, you can still complete it on your phone on the way to the airport — better than nothing, but finishing early is calmer. First setup (passport scan + identity checks) often takes a few minutes; later trips with a saved profile can be much quicker. Manual entry is available if you prefer not to use the camera."
+      ],
+      "tipsTitle": "Details that matter",
+      "tips": [
+        "Names must match the passport exactly, including middle names — one wrong character can mean redo or delay at the counter.",
+        "On a long-stay visa without a fixed exit date, use the “I cannot provide a departure date” option instead of guessing a date that conflicts with your stamp.",
+        "The health questions about countries visited in the prior 14 days mainly screen yellow-fever risk; from endemic countries you may need vaccination details or an upload.",
+        "District / subdistrict fields for accommodation confuse many people; a small mismatch there is usually less critical than a wrong passport name — copy the address from a reliable map listing if unsure."
+      ],
+      "downloadTitle": "How to download THIM",
+      "downloadSteps": [
+        "Open the App Store or Google Play on your phone.",
+        "Search “THIM” and confirm the publisher is Royal Thai Police / Immigration before installing.",
+        "Create your profile once with passport and personal details.",
+        "On later trips, mainly update flight, arrival date and accommodation."
+      ],
+      "downloadNote": "If Android shows “device not compatible” (seen on some older Android 10 devices), update Play Store and clear its cache. The TDAC website remains a full backup: tdac.immigration.go.th.",
+      "nextTitle": "What is planned next",
+      "nextIntro": "Immigration has described a wider rollout (including a stronger mandatory role from August 2026). Announced directions include:",
+      "nextItems": [
+        "Online queue / appointment booking at immigration offices",
+        "Visa extension paths via e-Extension-style services",
+        "90-day residence reporting for long-stay foreigners",
+        "Digital documents and stay certificates",
+        "More automated border processing for additional nationalities",
+        "Longer-term “super app” vision for tourists, expats and long-stay workers — modules arrive in phases"
+      ],
+      "beforeTitle": "Before you arrive — short checklist",
+      "beforeItems": [
+        "Complete TDAC within 72 hours of arrival via tdac.immigration.go.th or through THIM once the window is open.",
+        "Finish the health declaration — without it the submission is incomplete.",
+        "Keep a screenshot of your QR code as backup, even if officers often verify via passport scan.",
+        "Double-check every name field against your passport.",
+        "Use only the official portal or the official THIM app under Royal Thai Police — never pay a third-party “TDAC fee”."
+      ],
+      "note": "ThaiPlot is not Immigration and does not give immigration advice. We summarise public information so you know where to look — confirm everything on official channels before you fly.",
+      "fullGuideLink": "Full THIM guide on ThaiPlot →",
+      "tdacGuideLink": "TDAC guide on ThaiPlot →"
     }
+  },
+  "infoThim": {
+    "metaTitle": "THIM App Thailand — Thai Immigration Management Guide | ThaiPlot",
+    "metaDescription": "What is the THIM app (Thailand Immigration Management)? Official Immigration Bureau app for foreigners, how it works with TDAC, download links, pilot vs August 2026, and a clear checklist. Informational guide on ThaiPlot.",
+    "eyebrow": "公式入国管理アプリ",
+    "title": "THIM app (Thailand Immigration Management)",
+    "subtitle": "Clear guide to Thailand’s official THIM mobile app for foreign travellers — how it relates to the Thailand Digital Arrival Card (TDAC), what it offers now, and how to download it safely.",
+    "imageAlt": "THIM Thai Immigration app icon",
+    "imageAlt2": "THIM app screen: seamless digital arrival with QR code",
+    "intro": [
+      "Searching for the THIM app or Thailand Immigration Management? THIM is the official mobile platform of the Thai Immigration Bureau for foreign nationals travelling to Thailand.",
+      "It sits alongside the mandatory Thailand Digital Arrival Card (TDAC) and does not replace TDAC. ThaiPlot explains the app in plain language and links only to official download stores and government portals."
+    ],
+    "android": "Download THIM on Google Play →",
+    "ios": "Download THIM on the App Store →",
+    "tdacPageLink": "Thailand Digital Arrival Card (TDAC) guide →",
+    "storeNote": "Confirm the publisher is Royal Thai Police / Immigration before installing. Fake TDAC “pay to submit” websites are scams — TDAC is free.",
+    "whatTitle": "What is the THIM app?",
+    "whatParas": [
+      "THIM stands for Thailand Immigration Management. It was developed with Digital Identity Co., Ltd. for the Immigration Bureau and runs on AWS infrastructure in the Asia Pacific (Bangkok) region so traveller data stays under Thai jurisdiction.",
+      "Immigration describes THIM as a mobile-first platform for immigration-related services before arrival and, over time, during a stay in Thailand — traveller profiles, Digital ID / KYC, notifications, and connections toward other government services."
+    ],
+    "compareTitle": "THIM vs Thailand Digital Arrival Card (TDAC)",
+    "compareIntro": "The TDAC replaced the paper TM6 arrival card. Foreign travellers must complete the TDAC within 72 hours before arrival. THIM can support that digital flow — it does not cancel the TDAC requirement.",
+    "table": {
+      "topic": "Topic",
+      "rows": [
+        {
+          "topic": "What it is",
+          "tdac": "Thailand Digital Arrival Card",
+          "thim": "Thailand Immigration Management app"
+        },
+        {
+          "topic": "Main job",
+          "tdac": "Submit required arrival information before entry",
+          "thim": "Broader platform including TDAC-style flows, profile, Digital ID, alerts"
+        },
+        {
+          "topic": "Where",
+          "tdac": "tdac.immigration.go.th",
+          "thim": "App Store & Google Play"
+        },
+        {
+          "topic": "Required?",
+          "tdac": "Yes for foreign travellers (current rules)",
+          "thim": "Alongside TDAC; does not replace it today"
+        },
+        {
+          "topic": "Repeat trips",
+          "tdac": "New submission each trip",
+          "thim": "Saved profile can speed later submissions"
+        }
+      ]
+    },
+    "scamWarning": "Official TDAC is free at tdac.immigration.go.th. Any site charging a TDAC fee is a scam.",
+    "featuresTitle": "THIM features for travellers",
+    "features": [
+      "Digital arrival / TDAC-linked submission with passport scanning (OCR)",
+      "Group registration for multiple travellers",
+      "Reusable traveller profile",
+      "Digital ID / KYC-style checks",
+      "Reminders for deadlines and travel dates",
+      "Amend details if plans change (within app rules)"
+    ],
+    "howtoTitle": "How arrival registration works with THIM",
+    "howtoParas": [
+      "Most fields can be prepared early, but the health declaration usually unlocks only inside the 72-hour window before arrival. Until that step is finished, your QR / submission is incomplete.",
+      "First setup often takes a few minutes; later trips with a saved profile can be much faster. Manual entry is available if you prefer not to use the camera."
+    ],
+    "tipsTitle": "Tips so Immigration accepts your data",
+    "tips": [
+      "Names must match the passport exactly, including middle names.",
+      "Long-stay travellers without a fixed exit date should use the “cannot provide departure date” option instead of guessing.",
+      "Health questions about countries visited mainly screen yellow-fever risk.",
+      "Accommodation district fields confuse many people — prioritise correct passport names first."
+    ],
+    "faqTitle": "THIM FAQ",
+    "faqs": [
+      {
+        "q": "What is the THIM app?",
+        "a": "THIM (Thailand Immigration Management) is the official mobile app of the Thai Immigration Bureau for foreign nationals. It supports digital arrival registration and is designed to expand into more immigration services over time."
+      },
+      {
+        "q": "Does THIM replace the Thailand Digital Arrival Card (TDAC)?",
+        "a": "No. THIM works alongside TDAC. The TDAC arrival requirement remains. Use the official TDAC portal or complete arrival details through THIM according to current Immigration rules."
+      },
+      {
+        "q": "Is THIM mandatory now?",
+        "a": "THIM has been in a voluntary pilot. Public communications describe a stronger mandatory role for arrival-card submission from August 2026. Always confirm the latest Immigration notice for your travel date."
+      },
+      {
+        "q": "Where do I download THIM safely?",
+        "a": "Only from the official Google Play listing (th.go.immigration.thim) or the App Store listing published under Royal Thai Police / Immigration. Avoid lookalike apps."
+      },
+      {
+        "q": "Is the TDAC free?",
+        "a": "Yes. The official TDAC at tdac.immigration.go.th is free. Sites that charge a “TDAC fee” are scams."
+      }
+    ],
+    "beforeTitle": "Before you fly — THIM & TDAC checklist",
+    "beforeItems": [
+      "Complete TDAC within 72 hours via tdac.immigration.go.th or via official THIM guidance for your date.",
+      "Finish the health declaration inside the 72-hour window.",
+      "Save a QR screenshot as backup.",
+      "Download THIM only from official stores under Royal Thai Police / Immigration.",
+      "Never pay a third party for “TDAC processing”."
+    ],
+    "note": "ThaiPlot is not Immigration and does not give immigration advice. This page helps you find the official THIM app and TDAC information.",
+    "backOfficial": "← Official Thai websites directory"
+  },
+  "infoTdac": {
+    "metaTitle": "Thailand Digital Arrival Card (TDAC) Guide | ThaiPlot",
+    "metaDescription": "Thailand Digital Arrival Card (TDAC) explained: official free portal tdac.immigration.go.th, 72-hour rule, TM6 replacement, scams to avoid, and how TDAC relates to the THIM Immigration app. Guide on ThaiPlot.",
+    "eyebrow": "必須の到着カード",
+    "title": "Thailand Digital Arrival Card (TDAC)",
+    "subtitle": "Everything foreign travellers need to know about the official Thailand Digital Arrival Card — where to submit it for free, when to complete it, and how it connects to the THIM app.",
+    "intro": [
+      "The Thailand Digital Arrival Card (TDAC) is the official digital arrival declaration for most foreign nationals entering Thailand. It replaced the old paper TM6 card and is completed online before you arrive.",
+      "ThaiPlot publishes this guide so searches for “Thailand Digital Arrival Card”, “TDAC Thailand”, or “TM6 digital” lead to clear, independent information — with a direct link to the real government portal."
+    ],
+    "officialCta": "Open official TDAC portal →",
+    "thimPageLink": "THIM Immigration app guide →",
+    "scamWarning": "TDAC is free on tdac.immigration.go.th. Never pay a third-party website for “TDAC submission”.",
+    "whatTitle": "What is the Thailand Digital Arrival Card?",
+    "whatParas": [
+      "TDAC is Thailand’s mandatory digital arrival card system run by Immigration. Travellers submit identity, trip and accommodation details so officers can process arrivals faster than with paper forms.",
+      "Complete it only on the official site: https://tdac.immigration.go.th. Keep a confirmation / QR as instructed by the portal."
+    ],
+    "whoTitle": "Who must complete TDAC?",
+    "whoItems": [
+      "Most non-Thai citizens arriving by air, land or sea under current Immigration rules",
+      "Submit typically within 72 hours before arrival",
+      "Health declaration often unlocks only inside that 72-hour window — submission is incomplete until finished",
+      "Thai nationals generally follow different procedures — this guide is for foreign travellers"
+    ],
+    "howtoTitle": "How to complete the TDAC (official portal)",
+    "howtoSteps": [
+      "Go to https://tdac.immigration.go.th (bookmark the official domain).",
+      "Enter passport and personal details exactly as on the passport.",
+      "Add flight / arrival details and accommodation in Thailand.",
+      "Complete the health section when it becomes available in the 72-hour window.",
+      "Save or screenshot your confirmation / QR code before you travel."
+    ],
+    "tipsTitle": "Avoid delays at Immigration",
+    "tips": [
+      "Spell names exactly like the passport, including middle names.",
+      "Do not use unofficial “helpers” that charge fees.",
+      "If you also use the THIM app, still treat TDAC rules as binding unless Immigration states otherwise.",
+      "Wrong district for accommodation is less critical than a wrong passport name — fix names first."
+    ],
+    "faqTitle": "TDAC FAQ",
+    "faqs": [
+      {
+        "q": "What is the Thailand Digital Arrival Card (TDAC)?",
+        "a": "TDAC is Thailand’s mandatory digital arrival card for most foreign travellers. It replaced the old paper TM6 card and must be completed before arrival within the official time window."
+      },
+      {
+        "q": "Where do I fill in the TDAC?",
+        "a": "Use only the official government portal: https://tdac.immigration.go.th — or follow Immigration guidance for completing arrival details via the official THIM app."
+      },
+      {
+        "q": "When must I complete the TDAC?",
+        "a": "Typically within 72 hours before arrival. The health declaration often unlocks only inside that window — your submission is incomplete until that step is done."
+      },
+      {
+        "q": "Do I need THIM as well as TDAC?",
+        "a": "TDAC is the arrival-card requirement. THIM is the Immigration Bureau’s broader app that can help with digital arrival flows. See ThaiPlot’s THIM guide for the comparison."
+      },
+      {
+        "q": "Can websites charge for TDAC?",
+        "a": "No. Official TDAC is free. Paying a third party for “TDAC processing” is a common scam."
+      }
+    ],
+    "relatedTitle": "Related: THIM app",
+    "relatedBody": "The THIM (Thailand Immigration Management) app is Immigration’s broader mobile platform. It works with digital arrival flows but does not replace TDAC. Read our THIM guide for downloads and comparison.",
+    "officialDownloadsLink": "All official Thai websites →",
+    "note": "ThaiPlot is not Immigration. Always follow the official TDAC portal and Immigration announcements for your travel date."
+  },
+  "infoHealth": {
+    "metaTitle": "Health, Accidents & Insurance in Thailand | ThaiPlot",
+    "metaDescription": "Practical guide to healthcare in Thailand for expats and visitors: medical costs, private hospitals, accidents, prescriptions, OTC medicines, Thai and worldwide health insurance.",
+    "title": "Health, accidents & insurance in Thailand",
+    "subtitle": "What foreigners need to know about hospitals, medical costs, emergency care, pharmacies, over-the-counter medicine and insurance — before you travel, retire or buy property.",
+    "overview": {
+      "title": "Why health planning matters if you live or buy in Thailand",
+      "paras": [
+        "Thailand has excellent private hospitals in Bangkok, Phuket, Chiang Mai, Hua Hin and other hubs — and more basic public care outside major cities. Quality and price vary widely. Planning health cover is as important as choosing a visa or a Chanote plot.",
+        "This guide is for expats, retirees, long-stay visitors and property buyers who search for terms like health insurance Thailand, medical costs Thailand, accident cover Thailand, pharmacies and OTC medicine. It explains the system in plain language so you can ask better questions of insurers and doctors.",
+        "ThaiPlot is a property marketplace, not a clinic or insurer. Rules, prices and policy wording change. Always confirm with hospitals, licensed insurers and your doctor."
+      ]
+    },
+    "system": {
+      "title": "How the Thai medical system works for foreigners",
+      "paras": [
+        "Private hospitals (Bumrungrad, Bangkok Hospital, Samitivej, Bangkok Hospital Hua Hin, and many provincial private clinics) are where most foreigners go. English is common in large centres; smaller towns may need a Thai speaker or LINE translator.",
+        "Public hospitals and universal coverage schemes primarily serve Thai citizens and registered workers. Tourists and most visa holders pay out of pocket or via private insurance at private facilities.",
+        "Many hospitals ask for a deposit or guarantee letter from your insurer before elective treatment. Keep passport, visa pages, policy number and emergency contacts in your phone and a paper copy.",
+        "Telemedicine and hospital apps are growing, but serious accidents still mean go to the nearest capable ER — preferably a private hospital with an ICU if you can reach one safely."
+      ]
+    },
+    "costs": {
+      "title": "Typical medical costs (indicative only)",
+      "intro": "Figures below are rough ballparks in Thai baht for private care in popular expat areas. Exact quotes depend on hospital, city and case severity. Always ask for a cost estimate.",
+      "items": [
+        "GP / walk-in clinic visit: often ฿800–฿2,500 before labs",
+        "Basic blood panel: roughly ฿1,500–฿5,000",
+        "ER visit for a minor accident: commonly ฿3,000–฿15,000+",
+        "Overnight ward stay: can start around ฿8,000–฿25,000 per night before procedures",
+        "Major surgery, ICU or trauma: easily ฿100,000–฿1,000,000+ — this is why worldwide or IPMI cover matters",
+        "Dental cleaning: often cheaper than in Western Europe; complex implants vary widely",
+        "Ambulance between private hospitals: fees apply; clarify with hospital or insurer"
+      ]
+    },
+    "insuranceLocal": {
+      "title": "Thai and local health insurance",
+      "paras": [
+        "Local Thai health policies can be cheaper for residents who stay most of the year in Thailand. Check waiting periods, age limits, hospital networks and whether accidents (motorbike, water sports) are excluded.",
+        "Some retirement or long-stay visas historically required proof of health insurance or bank funds. Requirements change — verify current Immigration rules for your visa type (see our retirement visa guide).",
+        "Thai company group plans may cover employees but not spouses or parents unless added. Read exclusions for pre-existing conditions carefully.",
+        "Always get the policy schedule in English (or a certified translation) and confirm direct billing at your preferred hospital."
+      ]
+    },
+    "insuranceWorld": {
+      "title": "Worldwide / international medical insurance (IPMI)",
+      "paras": [
+        "International Private Medical Insurance (IPMI) and worldwide expat plans (examples of category: Cigna Global, Allianz Care, April International, William Russell, and similar — compare current offers yourself) are designed for people who live outside their passport country.",
+        "Look for: inpatient + outpatient, evacuation/repatriation, accident cover, maternity if relevant, dental options, and coverage while travelling outside Thailand. Ask whether Thailand is in the highest cost region and how that affects premiums.",
+        "Travel insurance is not the same as long-term health insurance. Short trip policies often cap medical spend and exclude living abroad, chronic conditions or motorcycle accidents without a licence.",
+        "Keep a digital wallet with: insurer 24/7 assistance number, membership ID, claim email, and preferred hospital list. Test the assistance line once after you buy the policy.",
+        "If you own land or a house in Thailand but still travel to Europe or elsewhere, a worldwide plan often fits better than a Thailand-only policy."
+      ]
+    },
+    "accidents": {
+      "title": "Accidents, emergencies and what to do",
+      "paras": [
+        "Road accidents (especially motorbikes) are a common cause of serious injury for foreigners. Wear a helmet, avoid night riding on unfamiliar roads, and check whether your policy covers riding as driver or passenger.",
+        "In an emergency dial 1669 for medical emergency services in Thailand (confirm locally — numbers can be promoted differently by province). Large private hospitals also run their own ambulance lines.",
+        "Tell staff your insurance status early. Without cover, you may need cash, card or a large deposit. Friends or agents sometimes help with translation and payment logistics — plan this before you need it.",
+        "After an accident: photograph the scene if safe, keep medical reports and receipts for claims, and notify your insurer within the policy deadline (often 24–48 hours for hospitalisation).",
+        "Water, heat and construction sites around property projects also cause accidents. Basic first-aid kits, tetanus status and sun/hydration discipline matter when you visit land plots."
+      ]
+    },
+    "prescriptions": {
+      "title": "Prescriptions and ongoing medication",
+      "paras": [
+        "Bring a letter from your home doctor listing active prescriptions, doses and generic names. Thai pharmacies and hospital doctors recognise many international brand and generic names.",
+        "Some medicines that require a prescription in Europe are easier to obtain in Thailand — and some controlled drugs are harder or illegal. Never assume; ask a licensed pharmacist or hospital doctor.",
+        "If you take blood pressure, thyroid, diabetes, anticoagulant or psychiatric medication, arrange enough supply for the first weeks and book a local specialist follow-up so refills are legal and continuous.",
+        "Keep medicines in original packaging with your name when flying. Declare large quantities if asked by customs."
+      ]
+    },
+    "otc": {
+      "title": "Over-the-counter (OTC) and pharmacy-shelf medicine",
+      "intro": "Thailand has a wide pharmacy culture. Many mild symptoms are treated with OTC products without a hospital visit — but that does not mean everything is safe or ‘free’.",
+      "items": [
+        "Paracetamol, oral rehydration salts, basic antacids and many topical creams are widely available",
+        "Antibiotics are not ‘free OTC’ in a responsible sense — misuse drives resistance; get medical advice for infections",
+        "Allergy tablets, motion sickness and diarrhoea remedies are common on shelves; check ingredients if you have heart, kidney or pregnancy constraints",
+        "Traditional Thai herbal products exist alongside modern brands — quality and interactions vary; tell your doctor what you take",
+        "‘Free’ samples or promotions are marketing, not a healthcare entitlement — budget for pharmacy costs like any household expense",
+        "When in doubt, pay for a quick private clinic consult rather than self-medicating for chest pain, high fever, severe allergy or head injury"
+      ]
+    },
+    "pharmacies": {
+      "title": "Pharmacies and how to use them",
+      "paras": [
+        "Chain pharmacies (Boots, Fascino, and hospital retail pharmacies) and independent chemists are everywhere in towns. Hospital pharmacies are best for specialist scripts after a consult.",
+        "Pharmacists can often suggest OTC options and may speak basic English in tourist and expat areas. Show packaging photos of your usual medicine.",
+        "Prices for generics are often lower than in Western Europe. Compare two pharmacies for long-term meds.",
+        "Store medicines away from heat and humidity — air-con rooms beat hot cars and beach bags."
+      ]
+    },
+    "checklist": {
+      "title": "Practical checklist before you go or settle",
+      "items": [
+        "Buy suitable insurance before you need care — travel vs long-stay vs worldwide IPMI",
+        "Save hospital GPS pins for your area (e.g. Hua Hin, Bangkok, Phuket)",
+        "Save insurer assistance number and policy ID offline",
+        "Pack a small kit: plasters, antiseptic, ORS, personal meds, insect repellent",
+        "Know your blood type and allergies; store in phone medical ID",
+        "Plan who can help translate or transfer money in an emergency",
+        "Review drinking-water hygiene (see our drinking-water guide) to reduce avoidable stomach illness",
+        "Re-read your visa insurance requirements if applying for long-stay status"
+      ]
+    },
+    "faqTitle": "FAQ — health & accidents Thailand",
+    "faqs": [
+      {
+        "q": "Is healthcare in Thailand good for foreigners?",
+        "a": "Private hospitals in major cities and resort hubs are often excellent and used by medical tourists. Rural public hospitals vary. Match your insurance and expected care level to where you live."
+      },
+      {
+        "q": "Do I need worldwide health insurance to live in Thailand?",
+        "a": "Not always legally required for every visa, but strongly recommended. Local policies can work if you stay in-country; worldwide/IPMI plans help if you travel home often or want higher limits and evacuation."
+      },
+      {
+        "q": "Are medicines free over the counter in Thailand?",
+        "a": "No — OTC products are usually paid retail items. Many mild remedies are sold without a prescription, but that is not the same as free public medicine. Antibiotics and controlled drugs need professional judgment."
+      },
+      {
+        "q": "What happens if I have a traffic accident without insurance?",
+        "a": "You typically pay hospital deposits and bills yourself. Serious trauma costs escalate quickly. Insurers and assistance lines exist to arrange payment guarantees — arrange cover before you ride or drive."
+      },
+      {
+        "q": "Can I use European prescriptions in Thailand?",
+        "a": "A foreign script helps a Thai doctor understand your history, but local prescribing rules apply. Expect a consult for ongoing refill of many medicines."
+      },
+      {
+        "q": "Does ThaiPlot sell insurance or medical advice?",
+        "a": "No. ThaiPlot lists property and publishes independent practical guides. For policies and treatment, use licensed insurers and qualified clinicians."
+      }
+    ],
+    "medicalNote": "Informational only — not medical, legal or insurance advice. Costs and cover change. Confirm with hospitals, licensed insurers and your doctor before you travel, retire or buy property in Thailand."
   }
 }

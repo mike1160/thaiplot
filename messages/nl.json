@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "ThaiPlot — Onafhankelijke marketplace in Thailand",
-    "description": "Onafhankelijke marketplace in Thailand — land, vastgoed, voertuigen en meer. Aangeboden door eigenaren en agenten."
+    "title": "ThaiPlot — Grond, huizen & vastgoed in Thailand",
+    "description": "Onafhankelijke marktplaats in Thailand voor grond, huizen, vastgoed en meer. Gidsen over grond kopen, Chanote, visa, zorgverzekering en wonen in Thailand."
   },
   "navigation": {
     "brandTitle": "ThaiPlot",
@@ -23,7 +23,10 @@
     "myAccount": "Mijn account",
     "guideDrinkWater": "Drinkwater Hoe?",
     "guidePaperwork": "Papieren",
-    "guideOfficialDownloads": "Officiële Thaise websites"
+    "guideOfficialDownloads": "Officiële Thaise websites",
+    "guideThim": "THIM-app",
+    "guideTdac": "Thailand Digital Arrival Card (TDAC)",
+    "guideHealth": "Gezondheid & ongevallen"
   },
   "languages": {
     "en": "English",
@@ -87,7 +90,10 @@
       "drinkWaterCosts": "Kostenvergelijk",
       "drinkWaterAdvice": "Advies",
       "paperwork": "Papieren",
-      "officialDownloads": "Officiële Thaise websites"
+      "officialDownloads": "Officiële Thaise websites",
+      "thimApp": "THIM-app",
+      "tdac": "TDAC",
+      "health": "Gezondheid & ongevallen"
     }
   },
   "homepage": {
@@ -120,7 +126,9 @@
     "donateSectionCta": "Doneer nu → savedsouls.org",
     "donateSectionNote": "Non-profit · Geregistreerd in Thailand · 100% gaat naar de honden",
     "viewAllListings": "Bekijk alle aanbod →",
-    "featuredEmpty": "Geen aanbod in dit overzicht. Bekijk de volledige listingspagina →"
+    "featuredEmpty": "Geen aanbod in dit overzicht. Bekijk de volledige listingspagina →",
+    "guidesTitle": "Praktische gidsen voor wonen & aankomen in Thailand",
+    "guidesSubtitle": "Onafhankelijke uitleg op ThaiPlot — papieren, officiële portalen, THIM, TDAC en meer."
   },
   "listings": {
     "pageTitle": "Advertenties",
@@ -553,7 +561,18 @@
     "furtherReadingTitle": "Verder lezen op Hua Hin Land",
     "dutch": "Voor Nederlanders",
     "scandinavians": "För Svenskar · For Danskere · Für Deutsche",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "relatedOnThaiPlot": "Gerelateerde gidsen op ThaiPlot",
+    "linkThim": "THIM Immigratie-app",
+    "linkTdac": "Thailand Digital Arrival Card (TDAC)",
+    "linkOfficial": "Officiële Thaise websites",
+    "linkPaperwork": "Papieren voor buitenlanders",
+    "linkVisa": "Pensioenvisum-gids",
+    "linkDrinkWater": "Drinkwater in Thailand",
+    "linkBuying": "Land kopen in Thailand",
+    "linkHuaHin": "Hua Hin vastgoedmarkt",
+    "linkPranburi": "Pranburi vastgoed",
+    "linkHealth": "Gezondheid, ongevallen & verzekeringen"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -847,7 +866,11 @@
     "submitting": "Versturen...",
     "successHeading": "Bedankt!",
     "successText": "We hebben uw verzoek ontvangen en nemen spoedig contact met u op.",
-    "close": "Sluiten"
+    "close": "Sluiten",
+    "guidesTitle": "Handig vóór je vertrekt",
+    "guideThim": "THIM-app gids",
+    "guideTdac": "TDAC aankomstkaart",
+    "guidePaperwork": "Thaise papieren"
   },
   "infoDrinkWater": {
     "metaTitle": "Veilig drinkwater in Thailand | ThaiPlot",
@@ -869,7 +892,8 @@
       "option": "Optie",
       "cost": "Kosten",
       "safety": "Veiligheid"
-    }
+    },
+    "relatedTitle": "Gerelateerde gidsen op ThaiPlot"
   },
   "infoPaperwork": {
     "metaTitle": "Thaise papieren voor buitenlanders | ThaiPlot",
@@ -959,8 +983,8 @@
     }
   },
   "infoOfficialDownloads": {
-    "metaTitle": "Officiële Thaise websites & downloads | ThaiPlot",
-    "metaDescription": "Links en placeholders naar officiële Thaise overheidswebsites en downloads voor buitenlanders. ThaiPlot is niet verantwoordelijk voor externe sites.",
+    "metaTitle": "THIM-app, TDAC & officiële Thaise websites | ThaiPlot",
+    "metaDescription": "Gids officiële Thaise websites voor buitenlanders: THIM Immigratie-app, Thailand Digital Arrival Card (TDAC), Immigratie, Land, DLT en meer. Disclaimer: ThaiPlot is niet verantwoordelijk voor externe sites.",
     "eyebrow": "Hulpmiddelen",
     "title": "Officiële Thaise websites & downloads",
     "subtitle": "Overzichtelijk directory van officiële portalen die buitenlanders vaak nodig hebben — met placeholders waar URL’s nog bevestigd moeten worden. Check altijd het overheidsdomein.",
@@ -1057,30 +1081,431 @@
       "ssf": {
         "name": "Sociale zekerheid / overige formulieren",
         "desc": "Placeholder voor extra downloadbare formulieren die werkgevers of kantoren soms vragen."
+      },
+      "tdac": {
+        "name": "Thailand Digital Arrival Card (TDAC)",
+        "desc": "Officieel gratis aankomstkaart-portaal voor buitenlandse reizigers (binnen 72 uur vóór aankomst)."
+      },
+      "thimStore": {
+        "name": "THIM-app (Google Play)",
+        "desc": "Officiële Thailand Immigration Management-app — ook in de App Store."
       }
     },
     "thim": {
       "eyebrow": "Nieuwe overheidsapp",
       "title": "THIM — Thai Immigration",
       "imageAlt": "Icoon van de THIM Thai Immigration-app",
-      "paras": [
-        "THIM (Thailand Immigration Management) is de officiële mobiele app van het Thaise Immigration Bureau voor buitenlanders die naar Thailand reizen. De app werkt naast de verplichte Thailand Digital Arrival Card (TDAC) — hij vervangt TDAC niet.",
-        "In de huidige vrijwillige pilot kun je met THIM aankomstgegevens op je telefoon voorbereiden. Volgens Immigratie- / toerismeberichten moet THIM vanaf augustus 2026 verplicht worden voor het indienen van de aankomstkaart. Exacte regels kunnen nog schuiven — check altijd het laatste Immigratiebericht voor jouw reisdatum.",
-        "In de praktijk scan je de paspoortpagina, vul je reis- en verblijfsgegevens in via de TDAC-workflow, en dien je digitaal in in plaats van op papieren formulieren op het vliegveld. Groepsregistratie (handig voor gezinnen) en reis-herinneringen horen bij de gepubliceerde functies. Interfaces starten in het Engels, Russisch, Japans en Chinees; meer talen zijn gepland.",
-        "Op langere termijn beschrijft Immigratie THIM als een breder platform voor buitenlanders in Thailand — afspraken, documenten, status volgen, en mogelijk diensten zoals de 90-dagenmelding. Die modules komen in fases; ga er niet van uit dat elke lokettaak vandaag al in de app zit."
+      "imageAlt2": "THIM-app scherm: naadloze digitale aankomst met QR-code",
+      "intro": [
+        "THIM (Thailand Immigration Management) is de officiële Immigratie-app voor buitenlanders die naar Thailand reizen. Hij werkt naast de verplichte Thailand Digital Arrival Card (TDAC) — hij vervangt TDAC niet.",
+        "Nu is er een vrijwillige pilot. Openbare berichten wijzen op een sterkere verplichte rol voor de aankomstkaart vanaf augustus 2026. Regels kunnen nog wijzigen — check altijd Immigratie voor jouw reisdatum."
       ],
-      "bullets": [
-        "Officiële uitgever: Immigration Bureau / Royal Thai Police-ecosysteem — installeer alleen via de officiële App Store- of Google Play-listing (Android-pakket th.go.immigration.thim).",
-        "TDAC blijft nodig: gebruik THIM naast de actuele aankomstregels; het is geen vervanging van een visum of van persoonlijke verschijning als dat gevraagd wordt.",
-        "Nu pilot → geplande verplichte aankomstkaart via THIM vanaf augustus 2026 (bevestig vóór vertrek).",
-        "Kernflow: paspoortscan (OCR), digitale aankomstgegevens, groepsreizen, meldingen.",
-        "Beveiliging: behandel je telefoon als een paspoort — vergrendel hem en deel QR-codes niet achteloos.",
-        "ThaiPlot is niet de uitgever en geeft geen immigratieadvies — wij wijzen alleen naar de officiële app en openbare informatie."
-      ],
-      "note": "Check altijd de actuele App Store- / Play Store-listing en Immigratie-aankondigingen vóór je reist — uitrolplanning wijzigt.",
       "android": "Google Play →",
       "ios": "App Store →",
-      "storeNote": "Gebruik bij voorkeur de officiële listings hierboven. Lijkt een zoekresultaat niet op “THIM – Thai Immigration Bureau”, installeer het niet."
+      "tdacLink": "TDAC-portaal →",
+      "storeNote": "Installeer alleen listings van Royal Thai Police / Immigratie. Nep-sites die geld vragen voor “TDAC” zijn oplichting — de officiële TDAC is gratis.",
+      "whatTitle": "Wat is THIM?",
+      "whatParas": [
+        "THIM staat voor Thailand Immigration Management. De app is ontwikkeld met Digital Identity Co., Ltd. voor het Immigration Bureau en draait op AWS in de regio Asia Pacific (Bangkok), zodat reizigersdata binnen Thaise jurisdictie blijft.",
+        "Zie TDAC als de aankomstkaart-plicht, en THIM als het bredere mobiele platform eromheen: profiel, Digital ID / KYC, meldingen, en koppelingen naar andere overheidsdiensten. Op termijn wil Immigratie meer van het traject van de buitenlander hierin zetten — niet alleen de rij op het vliegveld."
+      ],
+      "compareTitle": "THIM en TDAC — hoe ze samenhangen",
+      "compareIntro": "De TDAC verving de papieren TM6-aankomstkaart (vanaf 1 mei 2025). Niet-Thaise reizigers die per lucht, land of zee binnenkomen moeten de TDAC binnen 72 uur vóór aankomst invullen. THIM helpt digitaal — de TDAC-plicht blijft.",
+      "table": {
+        "topic": "Onderwerp",
+        "rows": [
+          {
+            "topic": "Wat is het",
+            "tdac": "Thailand Digital Arrival Card",
+            "thim": "Thailand Immigration Management-app"
+          },
+          {
+            "topic": "Hoofddoel",
+            "tdac": "Verplichte aankomstgegevens indienen vóór binnenkomst",
+            "thim": "Breder platform: TDAC-flow, profiel, Digital ID, alerts, later meer diensten"
+          },
+          {
+            "topic": "Waar",
+            "tdac": "Officieel web: tdac.immigration.go.th",
+            "thim": "iOS App Store en Google Play"
+          },
+          {
+            "topic": "Verplicht bij binnenkomst?",
+            "tdac": "Ja — voor buitenlandse reizigers (huidige regels)",
+            "thim": "Naast TDAC; vervangt die vandaag niet"
+          },
+          {
+            "topic": "Herhaalde reizen",
+            "tdac": "Elke reis opnieuw indienen",
+            "thim": "Opgeslagen profiel maakt latere inzendingen sneller"
+          }
+        ]
+      },
+      "scamWarning": "Tot Immigratie anders zegt: vul je TDAC in vóór vertrek, mét of zonder THIM. De TDAC is gratis. Elke site die geld vraagt voor een “TDAC” is fraude — gebruik alleen tdac.immigration.go.th of de officiële THIM-app.",
+      "featuresTitle": "Wat THIM nu biedt",
+      "features": [
+        "TDAC-achtige aankomstinzending in de app, met paspoortscan (OCR)",
+        "Groepsregistratie voor meerdere reizigers in één flow (tot ca. 10)",
+        "Herbruikbaar reisprofiel voor paspoort en persoonsgegevens",
+        "Digital ID / KYC-controles tegen immigratiegegevens",
+        "Herinneringen voor TDAC-deadlines en reisdata",
+        "Gegevens wijzigen als plannen veranderen (binnen de app-regels)",
+        "Koppelingen naar andere diensten (o.a. Tourist Police in openbare info)"
+      ],
+      "howtoTitle": "Hoe de aankomstkaart in de praktijk werkt",
+      "howtoParas": [
+        "Je kunt de meeste velden vroeg invullen, maar de gezondheidsverklaring opent meestal pas binnen het 72-uursvenster vóór aankomst. Zonder die stap is je QR / inzending niet af.",
+        "Vergeet je het thuis, dan kun je het nog op je telefoon doen onderweg naar het vliegveld — beter dan niets, maar vroeg afronden is rustiger. Eerste setup (paspoortscan + identiteitscheck) duurt vaak een paar minuten; latere reizen met profiel gaan sneller. Handmatig invoeren kan als je de camera niet wilt gebruiken."
+      ],
+      "tipsTitle": "Details die ertoe doen",
+      "tips": [
+        "Namen moeten exact overeenkomen met het paspoort, inclusief tweede naam — één verkeerd teken kan betekenen: opnieuw of oponthoud aan de balie.",
+        "Bij een long-stay visum zonder vaste vertrekdatum: gebruik de optie “I cannot provide a departure date” in plaats van een geschatte datum die botst met je stempel.",
+        "Vragen over landen in de 14 dagen vóór aankomst gaan vooral over gelekoortsrisico; kom je uit een endemisch land, dan kan vaccinatiebewijs of upload gevraagd worden.",
+        "District / subdistrict bij het verblijfsadres verwart veel mensen; een kleine mismatch daar is meestal minder kritisch dan een foute paspoortnaam — kopieer desnoods het adres uit een betrouwbare kaartlisting."
+      ],
+      "downloadTitle": "THIM downloaden",
+      "downloadSteps": [
+        "Open de App Store of Google Play op je telefoon.",
+        "Zoek “THIM” en check of de uitgever Royal Thai Police / Immigratie is vóór je installeert.",
+        "Maak één keer een profiel met paspoort en persoonsgegevens.",
+        "Bij latere reizen update je vooral vlucht, aankomstdatum en verblijf."
+      ],
+      "downloadNote": "Krijg je op Android “device not compatible” (soms op oudere Android 10-toestellen), update Play Store en leeg de cache. Het TDAC-web blijft een volledige back-up: tdac.immigration.go.th.",
+      "nextTitle": "Wat er gepland staat",
+      "nextIntro": "Immigratie schetst een bredere uitrol (inclusief een sterkere verplichte rol vanaf augustus 2026). Genoemde richtingen:",
+      "nextItems": [
+        "Online wachtrij / afspraken bij immigratiekantoren",
+        "Visumverlenging via e-Extension-achtige diensten",
+        "90-dagenmelding voor long-stay buitenlanders",
+        "Digitale documenten en verblijfsbewijzen",
+        "Meer geautomatiseerde grenspassage voor extra nationaliteiten",
+        "Langetermijnvisie “super app” voor toeristen, expats en long-stay — modules komen in fases"
+      ],
+      "beforeTitle": "Voor aankomst — korte checklist",
+      "beforeItems": [
+        "Vul TDAC in binnen 72 uur vóór aankomst via tdac.immigration.go.th of via THIM zodra het venster open is.",
+        "Rond de gezondheidsverklaring af — zonder die stap is de inzending incompleet.",
+        "Bewaar een screenshot van je QR-code als back-up, ook als ambtenaren vaak via paspoortscan verifiëren.",
+        "Controleer elk naamveld tegen je paspoort.",
+        "Gebruik alleen het officiële portaal of de officiële THIM-app onder Royal Thai Police — betaal nooit een derde partij voor “TDAC”."
+      ],
+      "note": "ThaiPlot is geen Immigratie en geeft geen immigratieadvies. Wij vatten openbare informatie samen zodat je weet waar je moet kijken — bevestig alles via officiële kanalen vóór je vertrekt.",
+      "fullGuideLink": "Volledige THIM-gids op ThaiPlot →",
+      "tdacGuideLink": "TDAC-gids op ThaiPlot →"
     }
+  },
+  "infoThim": {
+    "metaTitle": "THIM-app Thailand — Thai Immigration Management gids | ThaiPlot",
+    "metaDescription": "Wat is de THIM-app (Thailand Immigration Management)? Officiële Immigratie-app voor buitenlanders, relatie met TDAC, downloadlinks, pilot vs augustus 2026, en checklist. Informatieve gids op ThaiPlot.",
+    "eyebrow": "Officiële Immigratie-app",
+    "title": "THIM-app (Thailand Immigration Management)",
+    "subtitle": "Duidelijke gids over Thailand’s officiële THIM-app voor buitenlandse reizigers — relatie met de Thailand Digital Arrival Card (TDAC), wat hij nu biedt, en veilig downloaden.",
+    "imageAlt": "Icoon THIM Thai Immigration-app",
+    "imageAlt2": "THIM-app scherm: digitale aankomst met QR-code",
+    "intro": [
+      "Zoek je de THIM-app of Thailand Immigration Management? THIM is het officiële mobiele platform van het Thaise Immigration Bureau voor buitenlanders die naar Thailand reizen.",
+      "Hij werkt naast de verplichte Thailand Digital Arrival Card (TDAC) en vervangt TDAC niet. ThaiPlot legt de app uit in gewone taal en linkt alleen naar officiële stores en overheidsportalen."
+    ],
+    "android": "THIM downloaden op Google Play →",
+    "ios": "THIM downloaden in de App Store →",
+    "tdacPageLink": "Thailand Digital Arrival Card (TDAC) gids →",
+    "storeNote": "Check of de uitgever Royal Thai Police / Immigratie is. Nep-sites die geld vragen voor TDAC zijn fraude — TDAC is gratis.",
+    "whatTitle": "Wat is de THIM-app?",
+    "whatParas": [
+      "THIM staat voor Thailand Immigration Management. De app is ontwikkeld met Digital Identity Co., Ltd. voor het Immigration Bureau en draait op AWS in Asia Pacific (Bangkok), zodat reizigersdata binnen Thaise jurisdictie blijft.",
+      "Immigratie beschrijft THIM als een mobile-first platform voor immigratiediensten vóór aankomst en later tijdens verblijf — profielen, Digital ID / KYC, meldingen, en koppelingen naar andere overheidsdiensten."
+    ],
+    "compareTitle": "THIM vs Thailand Digital Arrival Card (TDAC)",
+    "compareIntro": "De TDAC verving de papieren TM6. Buitenlandse reizigers moeten de TDAC binnen 72 uur vóór aankomst invullen. THIM kan die digitale flow ondersteunen — de TDAC-plicht blijft.",
+    "table": {
+      "topic": "Onderwerp",
+      "rows": [
+        {
+          "topic": "Wat is het",
+          "tdac": "Thailand Digital Arrival Card",
+          "thim": "Thailand Immigration Management-app"
+        },
+        {
+          "topic": "Hoofddoel",
+          "tdac": "Verplichte aankomstgegevens vóór binnenkomst",
+          "thim": "Breder platform inclusief TDAC-achtige flows, profiel, Digital ID, alerts"
+        },
+        {
+          "topic": "Waar",
+          "tdac": "tdac.immigration.go.th",
+          "thim": "App Store & Google Play"
+        },
+        {
+          "topic": "Verplicht?",
+          "tdac": "Ja voor buitenlandse reizigers (huidige regels)",
+          "thim": "Naast TDAC; vervangt die vandaag niet"
+        },
+        {
+          "topic": "Herhaalde reizen",
+          "tdac": "Elke reis opnieuw",
+          "thim": "Opgeslagen profiel kan latere inzendingen versnellen"
+        }
+      ]
+    },
+    "scamWarning": "Officiële TDAC is gratis op tdac.immigration.go.th. Elke site die geld vraagt voor TDAC is fraude.",
+    "featuresTitle": "THIM-functies voor reizigers",
+    "features": [
+      "Digitale aankomst / TDAC-gekoppelde inzending met paspoortscan (OCR)",
+      "Groepsregistratie voor meerdere reizigers",
+      "Herbruikbaar reisprofiel",
+      "Digital ID / KYC-controles",
+      "Herinneringen voor deadlines en reisdata",
+      "Gegevens wijzigen als plannen veranderen (binnen app-regels)"
+    ],
+    "howtoTitle": "Hoe aankomstregistratie met THIM werkt",
+    "howtoParas": [
+      "De meeste velden kun je vroeg invullen, maar de gezondheidsverklaring opent meestal pas binnen 72 uur vóór aankomst. Zonder die stap is je QR / inzending incompleet.",
+      "Eerste setup duurt vaak een paar minuten; latere reizen met profiel gaan sneller. Handmatig invoeren kan zonder camera."
+    ],
+    "tipsTitle": "Tips zodat Immigratie je gegevens accepteert",
+    "tips": [
+      "Namen moeten exact overeenkomen met het paspoort, inclusief tweede naam.",
+      "Long-stay zonder vaste vertrekdatum: gebruik de optie zonder vertrekdatum in plaats van gokken.",
+      "Gezondheidsvragen over landen gaan vooral over gelekoortsrisico.",
+      "Districtvelden bij verblijf verwarren veel mensen — paspoortnamen eerst correct krijgen."
+    ],
+    "faqTitle": "THIM FAQ",
+    "faqs": [
+      {
+        "q": "Wat is de THIM-app?",
+        "a": "THIM (Thailand Immigration Management) is de officiële mobiele app van het Thaise Immigration Bureau voor buitenlanders. Hij ondersteunt digitale aankomstregistratie en groeit uit tot meer immigratiediensten."
+      },
+      {
+        "q": "Vervangt THIM de Thailand Digital Arrival Card (TDAC)?",
+        "a": "Nee. THIM werkt naast TDAC. De TDAC-plicht blijft. Gebruik het officiële TDAC-portaal of volg Immigratie voor aankomstgegevens via THIM."
+      },
+      {
+        "q": "Is THIM nu verplicht?",
+        "a": "THIM zit in een vrijwillige pilot. Openbare berichten noemen een sterkere verplichte rol vanaf augustus 2026. Check altijd het laatste Immigratiebericht voor jouw reisdatum."
+      },
+      {
+        "q": "Waar download ik THIM veilig?",
+        "a": "Alleen via de officiële Google Play-listing (th.go.immigration.thim) of App Store onder Royal Thai Police / Immigratie. Vermijd lookalike-apps."
+      },
+      {
+        "q": "Is de TDAC gratis?",
+        "a": "Ja. Officiële TDAC op tdac.immigration.go.th is gratis. Sites die een “TDAC-fee” vragen zijn oplichting."
+      }
+    ],
+    "beforeTitle": "Voor vertrek — THIM & TDAC checklist",
+    "beforeItems": [
+      "Vul TDAC in binnen 72 uur via tdac.immigration.go.th of via officiële THIM-richtlijnen voor jouw datum.",
+      "Rond de gezondheidsverklaring af binnen het 72-uursvenster.",
+      "Bewaar een QR-screenshot als back-up.",
+      "Download THIM alleen uit officiële stores onder Royal Thai Police / Immigratie.",
+      "Betaal nooit een derde partij voor “TDAC-verwerking”."
+    ],
+    "note": "ThaiPlot is geen Immigratie en geeft geen immigratieadvies. Deze pagina helpt je de officiële THIM-app en TDAC-info te vinden.",
+    "backOfficial": "← Directory officiële Thaise websites"
+  },
+  "infoTdac": {
+    "metaTitle": "Thailand Digital Arrival Card (TDAC) gids | ThaiPlot",
+    "metaDescription": "Thailand Digital Arrival Card (TDAC) uitgelegd: officieel gratis portaal tdac.immigration.go.th, 72-uursregel, TM6-vervanging, oplichting vermijden, en relatie met de THIM-app. Gids op ThaiPlot.",
+    "eyebrow": "Verplichte aankomstkaart",
+    "title": "Thailand Digital Arrival Card (TDAC)",
+    "subtitle": "Alles wat buitenlandse reizigers moeten weten over de officiële Thailand Digital Arrival Card — waar gratis indienen, wanneer invullen, en hoe het samenhangt met de THIM-app.",
+    "intro": [
+      "De Thailand Digital Arrival Card (TDAC) is de officiële digitale aankomstverklaring voor de meeste buitenlanders die Thailand binnenkomen. Hij verving de papieren TM6 en vul je online in vóór aankomst.",
+      "ThaiPlot publiceert deze gids zodat zoekopdrachten op “Thailand Digital Arrival Card”, “TDAC Thailand” of “TM6 digitaal” uitkomen bij duidelijke, onafhankelijke info — met een directe link naar het echte overheidsportaal."
+    ],
+    "officialCta": "Open officieel TDAC-portaal →",
+    "thimPageLink": "THIM Immigratie-app gids →",
+    "scamWarning": "TDAC is gratis op tdac.immigration.go.th. Betaal nooit een derde website voor “TDAC-indiening”.",
+    "whatTitle": "Wat is de Thailand Digital Arrival Card?",
+    "whatParas": [
+      "TDAC is Thailand’s verplichte digitale aankomstkaartsysteem van Immigratie. Reizigers dienen identiteit, reis- en verblijfsgegevens in zodat aankomst sneller verwerkt wordt dan met papier.",
+      "Vul hem alleen in op: https://tdac.immigration.go.th. Bewaar bevestiging / QR zoals het portaal aangeeft."
+    ],
+    "whoTitle": "Wie moet TDAC invullen?",
+    "whoItems": [
+      "De meeste niet-Thaise burgers die per lucht, land of zee aankomen onder de huidige regels",
+      "Meestal binnen 72 uur vóór aankomst indienen",
+      "Gezondheidsverklaring opent vaak pas binnen dat 72-uursvenster — zonder afronden is de inzending incompleet",
+      "Thaise staatsburgers volgen andere procedures — deze gids is voor buitenlandse reizigers"
+    ],
+    "howtoTitle": "TDAC invullen (officieel portaal)",
+    "howtoSteps": [
+      "Ga naar https://tdac.immigration.go.th (bookmark het officiële domein).",
+      "Vul paspoort- en persoonsgegevens exact in zoals in het paspoort.",
+      "Voeg vlucht / aankomst en verblijf in Thailand toe.",
+      "Rond het gezondheidsdeel af zodra het binnen 72 uur beschikbaar is.",
+      "Bewaar of screenshot je bevestiging / QR vóór vertrek."
+    ],
+    "tipsTitle": "Voorkom oponthoud bij Immigratie",
+    "tips": [
+      "Schrijf namen exact zoals in het paspoort, inclusief tweede naam.",
+      "Gebruik geen onofficiële “helpers” die geld vragen.",
+      "Gebruik je ook de THIM-app, behandel TDAC-regels als bindend tenzij Immigratie anders zegt.",
+      "Verkeerd district bij verblijf is minder kritisch dan een foute paspoortnaam — namen eerst goed."
+    ],
+    "faqTitle": "TDAC FAQ",
+    "faqs": [
+      {
+        "q": "Wat is de Thailand Digital Arrival Card (TDAC)?",
+        "a": "TDAC is Thailand’s verplichte digitale aankomstkaart voor de meeste buitenlandse reizigers. Hij verving de papieren TM6 en moet vóór aankomst binnen het officiële tijdvenster worden ingevuld."
+      },
+      {
+        "q": "Waar vul ik de TDAC in?",
+        "a": "Alleen via het officiële overheidsportaal: https://tdac.immigration.go.th — of volg Immigratie voor aankomstgegevens via de officiële THIM-app."
+      },
+      {
+        "q": "Wanneer moet ik de TDAC invullen?",
+        "a": "Meestal binnen 72 uur vóór aankomst. De gezondheidsverklaring opent vaak pas in dat venster — zonder die stap is je inzending niet af."
+      },
+      {
+        "q": "Heb ik THIM én TDAC nodig?",
+        "a": "TDAC is de aankomstkaart-plicht. THIM is de bredere Immigratie-app die digitale aankomstflows kan ondersteunen. Zie de THIM-gids op ThaiPlot voor de vergelijking."
+      },
+      {
+        "q": "Mogen websites geld vragen voor TDAC?",
+        "a": "Nee. Officiële TDAC is gratis. Betalen aan derden voor “TDAC-verwerking” is oplichting."
+      }
+    ],
+    "relatedTitle": "Gerelateerd: THIM-app",
+    "relatedBody": "De THIM-app (Thailand Immigration Management) is het bredere mobiele Immigratie-platform. Hij werkt met digitale aankomstflows maar vervangt TDAC niet. Lees onze THIM-gids voor downloads en vergelijking.",
+    "officialDownloadsLink": "Alle officiële Thaise websites →",
+    "note": "ThaiPlot is geen Immigratie. Volg altijd het officiële TDAC-portaal en Immigratie-berichten voor jouw reisdatum."
+  },
+  "infoHealth": {
+    "metaTitle": "Gezondheid, ongevallen & verzekeringen in Thailand | ThaiPlot",
+    "metaDescription": "Praktische gids over zorg in Thailand voor expats en bezoekers: medische kosten, privéklinieken, ongevallen, recepten, vrij verkrijgbare medicijnen, Thaise en wereldwijde zorgverzekeringen.",
+    "title": "Gezondheid, ongevallen & verzekeringen in Thailand",
+    "subtitle": "Wat buitenlanders moeten weten over ziekenhuizen, medische kosten, spoedzorg, apotheken, medicijnen zonder recept en verzekeringen — vóór je reist, met pensioen gaat of vastgoed koopt.",
+    "overview": {
+      "title": "Waarom gezondheidsplanning ertoe doet als je woont of koopt in Thailand",
+      "paras": [
+        "Thailand heeft uitstekende privéziekenhuizen in Bangkok, Phuket, Chiang Mai, Hua Hin en andere hubs — en eenvoudiger publieke zorg buiten de grote steden. Kwaliteit en prijs verschillen sterk. Zorgdekking regelen is net zo belangrijk als een visum of een Chanote-perceel kiezen.",
+        "Deze gids is voor expats, gepensioneerden, long-stay bezoekers en vastgoedkopers die zoeken op termen als zorgverzekering Thailand, medische kosten Thailand, ongevallen Thailand, apotheken en medicijnen. We leggen het systeem helder uit zodat je betere vragen stelt aan verzekeraars en artsen.",
+        "ThaiPlot is een vastgoedmarktplaats, geen kliniek of verzekeraar. Regels, prijzen en polisvoorwaarden wijzigen. Bevestig altijd bij ziekenhuizen, erkende verzekeraars en je arts."
+      ]
+    },
+    "system": {
+      "title": "Hoe het Thaise zorgsysteem werkt voor buitenlanders",
+      "paras": [
+        "Privéziekenhuizen (Bumrungrad, Bangkok Hospital, Samitivej, Bangkok Hospital Hua Hin en veel provinciale privéklinieken) zijn waar de meeste buitenlanders naartoe gaan. Engels is gebruikelijk in grote centra; in kleinere plaatsen heb je soms een Thaissprekende helper of LINE-vertaling nodig.",
+        "Publieke ziekenhuizen en universele dekkingen zijn vooral voor Thaise burgers en geregistreerde werknemers. Toeristen en de meeste visumhouders betalen zelf of via private verzekering bij privé-instellingen.",
+        "Veel ziekenhuizen vragen een depot of garantiebrief van je verzekeraar vóór electieve behandeling. Bewaar paspoort, visumpagina’s, polisnummer en noodcontacten op je telefoon én op papier.",
+        "Telemedicine en ziekenhuis-apps groeien, maar bij ernstige ongevallen ga je naar de dichtstbijzijnde capabele SEH — bij voorkeur een privéziekenhuis met ICU als je die veilig kunt bereiken."
+      ]
+    },
+    "costs": {
+      "title": "Typische medische kosten (indicatief)",
+      "intro": "Onderstaande bedragen zijn grove richtprijzen in Thaise baht voor private zorg in populaire expatgebieden. Exacte offertes hangen af van ziekenhuis, stad en ernst. Vraag altijd een kostenraming.",
+      "items": [
+        "Huisarts / walk-in consult: vaak ฿800–฿2.500 vóór lab",
+        "Basis bloedonderzoek: circa ฿1.500–฿5.000",
+        "SEH bij licht ongeval: vaak ฿3.000–฿15.000+",
+        "Overnachting op zaal: kan beginnen rond ฿8.000–฿25.000 per nacht vóór ingrepen",
+        "Grote operatie, ICU of trauma: makkelijk ฿100.000–฿1.000.000+ — daarom telt wereldwijde of IPMI-dekking",
+        "Gebitsreiniging: vaak goedkoper dan in West-Europa; complexe implantaten variëren sterk",
+        "Ambulance tussen privéziekenhuizen: tegen betaling; check met ziekenhuis of verzekeraar"
+      ]
+    },
+    "insuranceLocal": {
+      "title": "Thaise en lokale zorgverzekering",
+      "paras": [
+        "Lokale Thaise polissen kunnen voordeliger zijn voor inwoners die het grootste deel van het jaar in Thailand blijven. Check wachttijden, leeftijdsgrenzen, ziekenhuisnetwerken en of ongevallen (motor, watersport) zijn uitgesloten.",
+        "Sommige pensioen- of long-stayvisa vroegen historisch bewijs van zorgverzekering of banktegoeden. Eisen wijzigen — controleer actuele Immigratieregels voor jouw visumtype (zie onze pensioenvisum-gids).",
+        "Bedrijfscollectieven dekken soms werknemers maar niet partners of ouders tenzij bijgeschreven. Lees uitsluitingen voor bestaande aandoeningen zorgvuldig.",
+        "Vraag het polisschema in het Engels (of een gecertificeerde vertaling) en check direct billing bij jouw voorkeursziekenhuis."
+      ]
+    },
+    "insuranceWorld": {
+      "title": "Wereldwijde / internationale zorgverzekering (IPMI)",
+      "paras": [
+        "International Private Medical Insurance (IPMI) en wereldwijde expat-polissen (categorievoorbeelden: Cigna Global, Allianz Care, April International, William Russell en vergelijkbare — vergelijk zelf actuele aanbiedingen) zijn bedoeld voor mensen die buiten hun paspoortland wonen.",
+        "Let op: intramurale + ambulante zorg, evacuatie/repatriëring, ongevallendekking, eventueel kraamzorg, tandheelkunde, en dekking tijdens reizen buiten Thailand. Vraag of Thailand in de duurste regio valt en wat dat met de premie doet.",
+        "Reisverzekering is niet hetzelfde als langetermijn-zorgverzekering. Kortetermijnpolissen beperken medische kosten vaak en sluiten wonen in het buitenland, chronische aandoeningen of motorongevallen zonder rijbewijs uit.",
+        "Bewaar digitaal: 24/7 alarmnummer, lidmaatschaps-ID, claim-e-mail en voorkeursziekenhuizen. Test het alarmnummer één keer nadat je de polis hebt gekocht.",
+        "Als je grond of een huis in Thailand hebt maar ook naar Europa of elders reist, past een wereldwijde polis vaak beter dan alleen Thailand-dekking."
+      ]
+    },
+    "accidents": {
+      "title": "Ongevallen, spoedgevallen en wat te doen",
+      "paras": [
+        "Verkeersongevallen (vooral motorfietsen) zijn een veelvoorkomende oorzaak van ernstig letsel bij buitenlanders. Draag een helm, vermijd nachtrijden op onbekende wegen, en check of je polis rijden als bestuurder of passagier dekt.",
+        "Bel in een noodsituatie 1669 voor medische hulpdiensten in Thailand (bevestig lokaal — nummers kunnen per provincie anders worden gecommuniceerd). Grote privéziekenhuizen hebben ook eigen ambulance-lijnen.",
+        "Vertel vroeg je verzekeringsstatus. Zonder dekking heb je mogelijk contant, pin of een groot depot nodig. Vrienden of agenten helpen soms met vertalen en betalen — regel dit vóór je het nodig hebt.",
+        "Na een ongeval: fotografeer de plek indien veilig, bewaar medische rapporten en bonnen voor claims, en meld binnen de polisdeadline (vaak 24–48 uur bij opname).",
+        "Water, hitte en bouwlocaties rond vastgoedprojecten veroorzaken ook ongevallen. EHBO-kit, tetanusstatus en zon/hydratatie tellen als je percelen bezoekt."
+      ]
+    },
+    "prescriptions": {
+      "title": "Recepten en vaste medicatie",
+      "paras": [
+        "Neem een brief van je huisarts mee met actieve medicatie, doseringen en generieke namen. Thaise apotheken en ziekenhuisartsen herkennen veel internationale merk- en generieke namen.",
+        "Sommige middelen die in Europa op recept zijn, zijn in Thailand makkelijker verkrijgbaar — en sommige gecontroleerde middelen juist moeilijker of illegaal. Ga daar nooit van uit; vraag een bevoegde apotheker of arts.",
+        "Bij bloeddruk-, schildklier-, diabetes-, antistollings- of psychiatrische medicatie: neem genoeg mee voor de eerste weken en plan lokale specialistische follow-up zodat herhaalrecepten legaal en continu zijn.",
+        "Houd medicijnen in originele verpakking met je naam bij vliegen. Geef grote hoeveelheden aan als de douane ernaar vraagt."
+      ]
+    },
+    "otc": {
+      "title": "Vrij verkrijgbare (OTC) medicijnen",
+      "intro": "Thailand heeft een sterke apotheekcultuur. Veel milde klachten worden met OTC-producten behandeld zonder ziekenhuisbezoek — maar dat betekent niet dat alles veilig of ‘gratis’ is.",
+      "items": [
+        "Paracetamol, ORS, basis-maagzuurremmers en veel crèmes zijn ruim verkrijgbaar",
+        "Antibiotica zijn niet ‘gratis OTC’ in verantwoorde zin — misbruik voedt resistentie; vraag medisch advies bij infecties",
+        "Allergietabletten, reisziekte- en diarreemiddelen liggen vaak in de schappen; check bestanddelen bij hart-, nier- of zwangerschapsbeperkingen",
+        "Traditionele Thaise kruiden staan naast moderne merken — kwaliteit en interacties verschillen; vertel je arts wat je gebruikt",
+        "‘Gratis’ samples of acties zijn marketing, geen zorgrecht — begroot apotheekkosten als huishouduitgave",
+        "Twijfel je: betaal liever een kort privéconsult dan zelfmedicatie bij pijn op de borst, hoge koorts, ernstige allergie of hoofdletsel"
+      ]
+    },
+    "pharmacies": {
+      "title": "Apotheken en hoe je ze gebruikt",
+      "paras": [
+        "Ketenapotheken (Boots, Fascino en ziekenhuisapotheken) en zelfstandige drogisten vind je overal in steden. Ziekenhuisapotheken zijn het best voor specialistische recepten na een consult.",
+        "Apothekers kunnen vaak OTC-opties voorstellen en spreken basis-Engels in toeristen- en expatgebieden. Laat foto’s van je gebruikelijke verpakking zien.",
+        "Generieke middelen zijn vaak goedkoper dan in West-Europa. Vergelijk twee apotheken voor langetermijnmedicatie.",
+        "Bewaar medicijnen koel en droog — airco-kamers winnen van hete auto’s en strandtassen."
+      ]
+    },
+    "checklist": {
+      "title": "Praktische checklist vóór vertrek of vestiging",
+      "items": [
+        "Koop passende verzekering vóór je zorg nodig hebt — reis vs long-stay vs wereldwijde IPMI",
+        "Sla ziekenhuis-GPS-pins op voor jouw regio (bijv. Hua Hin, Bangkok, Phuket)",
+        "Sla alarmnummer en polis-ID offline op",
+        "Pak een kleine kit: pleisters, antisepticum, ORS, eigen medicatie, insectenwerend middel",
+        "Ken je bloedgroep en allergieën; zet ze in de medische ID van je telefoon",
+        "Bedenk wie kan helpen vertalen of geld overmaken in een noodsituatie",
+        "Lees onze drinkwatergids om vermijdbare maagklachten te beperken",
+        "Check opnieuw visum-verzekeringseisen bij long-stay status"
+      ]
+    },
+    "faqTitle": "FAQ — gezondheid & ongevallen Thailand",
+    "faqs": [
+      {
+        "q": "Is de zorg in Thailand goed voor buitenlanders?",
+        "a": "Privéziekenhuizen in grote steden en resortgebieden zijn vaak uitstekend en worden door medisch toerisme gebruikt. Publieke zorg op het platteland wisselt. Stem verzekering en zorgniveau af op waar je woont."
+      },
+      {
+        "q": "Heb ik een wereldwijde zorgverzekering nodig om in Thailand te wonen?",
+        "a": "Niet altijd wettelijk verplicht voor elk visum, wel sterk aanbevolen. Lokale polissen kunnen werken als je in Thailand blijft; wereldwijde/IPMI-polissen helpen als je vaak naar huis reist of hogere limieten en evacuatie wilt."
+      },
+      {
+        "q": "Zijn medicijnen gratis verkrijgbaar zonder recept in Thailand?",
+        "a": "Nee — OTC-producten zijn meestal betaalde winkelartikelen. Veel milde middelen gaan zonder recept over de toonbank, maar dat is geen gratis publieke geneeskunde. Antibiotica en gecontroleerde middelen vragen professioneel oordeel."
+      },
+      {
+        "q": "Wat als ik een verkeersongeval krijg zonder verzekering?",
+        "a": "Je betaalt doorgaans zelf depots en rekeningen. Ernstig trauma loopt snel in de kosten. Verzekeraars en alarmcentrales bestaan om betalingsgaranties te regelen — regel dekking vóór je rijdt."
+      },
+      {
+        "q": "Kan ik Europese recepten gebruiken in Thailand?",
+        "a": "Een buitenlands recept helpt een Thaise arts je voorgeschiedenis te begrijpen, maar lokale voorschrijfregels gelden. Reken op een consult voor herhaalrecepten van veel medicijnen."
+      },
+      {
+        "q": "Verkoopt ThaiPlot verzekeringen of medisch advies?",
+        "a": "Nee. ThaiPlot toont vastgoed en publiceert onafhankelijke praktische gidsen. Voor polissen en behandeling: erkende verzekeraars en bevoegde zorgverleners."
+      }
+    ],
+    "medicalNote": "Alleen informatief — geen medisch, juridisch of verzekeringsadvies. Kosten en dekking wijzigen. Bevestig bij ziekenhuizen, erkende verzekeraars en je arts vóór je reist, met pensioen gaat of vastgoed koopt in Thailand."
   }
 }

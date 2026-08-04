@@ -1,8 +1,11 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import RelatedGuides from '@/components/RelatedGuides'
 import {
   CATEGORY_PHOTOS,
   OFFICIAL_CATEGORIES,
@@ -16,6 +19,7 @@ const PLAY_STORE =
   'https://play.google.com/store/apps/details?id=th.go.immigration.thim'
 const APP_STORE =
   'https://apps.apple.com/app/thim-thai-immigration-bureau/id6759272559'
+const TDAC_URL = 'https://tdac.immigration.go.th'
 
 function CloudFade({
   position,
@@ -91,6 +95,7 @@ function PhotoBand({
 
 export default function OfficialDownloadsClient() {
   const t = useTranslations('infoOfficialDownloads')
+  const tp = useTranslations('partnerLinks')
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
@@ -149,28 +154,45 @@ export default function OfficialDownloadsClient() {
       </div>
 
       {/* THIM featured */}
+      <div id="thim" className="scroll-mt-20">
       <PhotoBand
         src={TH_PL_PHOTOS[2]}
         eyebrow={t('thim.eyebrow')}
         title={t('thim.title')}
       />
-      <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
+      <div className="max-w-4xl mx-auto px-6 py-10 md:py-14 space-y-12">
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start">
-          <img
-            src="/thim-app.png"
-            alt={t('thim.imageAlt')}
-            className="w-28 h-28 sm:w-36 sm:h-36 rounded-[22%] shadow-[0_8px_28px_rgba(26,39,68,0.18)] flex-shrink-0 object-cover"
-          />
+          <div className="flex flex-col gap-4 flex-shrink-0 w-full sm:w-auto sm:max-w-[220px]">
+            <img
+              src="/thim-app.png"
+              alt={t('thim.imageAlt')}
+              className="w-28 h-28 sm:w-36 sm:h-36 rounded-[22%] shadow-[0_8px_28px_rgba(26,39,68,0.18)] object-cover"
+            />
+            <img
+              src="/THIM-APP-2.png"
+              alt={t('thim.imageAlt2')}
+              className="w-full max-w-[220px] rounded-2xl shadow-[0_8px_28px_rgba(26,39,68,0.14)] object-cover"
+            />
+          </div>
           <div className="min-w-0 space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed">
-            {(t.raw('thim.paras') as string[]).map((p) => (
+            {(t.raw('thim.intro') as string[]).map((p) => (
               <p key={p.slice(0, 48)}>{p}</p>
             ))}
-            <ul className="list-disc pl-5 space-y-1.5 pt-1">
-              {(t.raw('thim.bullets') as string[]).map((item) => (
-                <li key={item.slice(0, 48)}>{item}</li>
-              ))}
-            </ul>
-            <p className="pt-2 text-[#1A2744] font-medium">{t('thim.note')}</p>
+            <p className="pt-2 text-sm">
+              <Link
+                href="/info/thim-app"
+                className="text-[#C8973A] font-semibold hover:underline"
+              >
+                {t('thim.fullGuideLink')}
+              </Link>
+              {' · '}
+              <Link
+                href="/info/thailand-digital-arrival-card"
+                className="text-[#C8973A] font-semibold hover:underline"
+              >
+                {t('thim.tdacGuideLink')}
+              </Link>
+            </p>
             <div className="flex flex-wrap gap-3 pt-3">
               <a
                 href={PLAY_STORE}
@@ -188,10 +210,106 @@ export default function OfficialDownloadsClient() {
               >
                 {t('thim.ios')}
               </a>
+              <a
+                href={TDAC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2.5 text-sm font-semibold border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-colors"
+              >
+                {t('thim.tdacLink')}
+              </a>
             </div>
             <p className="text-xs text-[#8A7F72] pt-1">{t('thim.storeNote')}</p>
           </div>
         </div>
+
+        <ThimSection title={t('thim.whatTitle')}>
+          {(t.raw('thim.whatParas') as string[]).map((p) => (
+            <p key={p.slice(0, 48)}>{p}</p>
+          ))}
+        </ThimSection>
+
+        <ThimSection title={t('thim.compareTitle')}>
+          <p className="mb-4">{t('thim.compareIntro')}</p>
+          <div className="overflow-x-auto border border-[#E8E2D6] bg-white">
+            <table className="w-full text-sm text-left border-collapse min-w-[520px]">
+              <thead>
+                <tr className="bg-[#1A2744] text-white">
+                  <th className="px-3 py-2.5 font-semibold">{t('thim.table.topic')}</th>
+                  <th className="px-3 py-2.5 font-semibold">TDAC</th>
+                  <th className="px-3 py-2.5 font-semibold">THIM</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(t.raw('thim.table.rows') as { topic: string; tdac: string; thim: string }[]).map(
+                  (row, i) => (
+                    <tr
+                      key={row.topic}
+                      className={i % 2 === 1 ? 'bg-[#FAF7F0]' : 'bg-white'}
+                    >
+                      <td className="px-3 py-2.5 font-medium text-[#1A2744] align-top border-t border-[#E8E2D6]">
+                        {row.topic}
+                      </td>
+                      <td className="px-3 py-2.5 align-top border-t border-[#E8E2D6]">{row.tdac}</td>
+                      <td className="px-3 py-2.5 align-top border-t border-[#E8E2D6]">{row.thim}</td>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-[#C0392B] font-medium">{t('thim.scamWarning')}</p>
+        </ThimSection>
+
+        <ThimSection title={t('thim.featuresTitle')}>
+          <ul className="list-disc pl-5 space-y-1.5">
+            {(t.raw('thim.features') as string[]).map((item) => (
+              <li key={item.slice(0, 48)}>{item}</li>
+            ))}
+          </ul>
+        </ThimSection>
+
+        <ThimSection title={t('thim.howtoTitle')}>
+          {(t.raw('thim.howtoParas') as string[]).map((p) => (
+            <p key={p.slice(0, 48)}>{p}</p>
+          ))}
+        </ThimSection>
+
+        <ThimSection title={t('thim.tipsTitle')}>
+          <ul className="list-disc pl-5 space-y-1.5">
+            {(t.raw('thim.tips') as string[]).map((item) => (
+              <li key={item.slice(0, 48)}>{item}</li>
+            ))}
+          </ul>
+        </ThimSection>
+
+        <ThimSection title={t('thim.downloadTitle')}>
+          <ol className="list-decimal pl-5 space-y-1.5">
+            {(t.raw('thim.downloadSteps') as string[]).map((item) => (
+              <li key={item.slice(0, 48)}>{item}</li>
+            ))}
+          </ol>
+          <p className="mt-3">{t('thim.downloadNote')}</p>
+        </ThimSection>
+
+        <ThimSection title={t('thim.nextTitle')}>
+          <p className="mb-3">{t('thim.nextIntro')}</p>
+          <ul className="list-disc pl-5 space-y-1.5">
+            {(t.raw('thim.nextItems') as string[]).map((item) => (
+              <li key={item.slice(0, 48)}>{item}</li>
+            ))}
+          </ul>
+        </ThimSection>
+
+        <ThimSection title={t('thim.beforeTitle')}>
+          <ul className="list-disc pl-5 space-y-1.5">
+            {(t.raw('thim.beforeItems') as string[]).map((item) => (
+              <li key={item.slice(0, 48)}>{item}</li>
+            ))}
+          </ul>
+          <p className="mt-4 text-[#1A2744] font-medium">{t('thim.note')}</p>
+        </ThimSection>
+      </div>
       </div>
 
       {OFFICIAL_CATEGORIES.map((cat) => (
@@ -213,11 +331,38 @@ export default function OfficialDownloadsClient() {
           </ul>
         </section>
 
+        <RelatedGuides
+          title={tp('relatedOnThaiPlot')}
+          links={[
+            { href: '/info/thim-app', label: tp('linkThim') },
+            { href: '/info/thailand-digital-arrival-card', label: tp('linkTdac') },
+            { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
+            { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
+            { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+          ]}
+        />
+
         <div className="pt-4 border-t border-[#E8E2D6]">
           <DisclaimerFooter />
         </div>
       </div>
     </main>
+  )
+}
+
+function ThimSection({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section>
+      <h3
+        className="text-lg md:text-xl font-bold text-[#1A2744] mb-3 border-b border-[#E8E2D6] pb-2"
+        style={{ fontFamily: 'Playfair Display, serif' }}
+      >
+        {title}
+      </h3>
+      <div className="space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed">
+        {children}
+      </div>
+    </section>
   )
 }
 

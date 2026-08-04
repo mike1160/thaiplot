@@ -5,19 +5,29 @@ import { routing } from '@/i18n/routing'
 export const SITE_URL = 'https://www.thaiplot.com'
 
 const DEFAULT_KEYWORDS =
-  'land for sale Thailand, Hua Hin property, chanote land, buy land Thailand foreigner, Pranburi land, Thailand real estate'
+  'land for sale Thailand, Hua Hin property, vastgoed Thailand, huizen te koop Thailand, real estate Thailand, grond kopen Thailand, buy land Thailand foreigner, houses for sale Thailand, Chanote land, Pranburi land, Thailand real estate marketplace, health insurance Thailand, medical costs Thailand'
 
 const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
   infoPaperwork:
     'Thai paperwork foreigners, Tabien Baan yellow book, blue Chanote, pink ID Thailand, Thai driving licence, TM30, 90 day report Thailand, Papieren Thailand',
+  infoThim:
+    'THIM app, THIM Thailand, Thailand Immigration Management, Thai Immigration app, THIM download, THIM Google Play, TDAC THIM, Royal Thai Police THIM',
+  infoTdac:
+    'Thailand Digital Arrival Card, TDAC Thailand, TDAC immigration, digital arrival card Thailand, TM6 Thailand, tdac.immigration.go.th, Thailand arrival card online',
   infoOfficialDownloads:
-    'official Thai websites, Thai government downloads, immigration.go.th, DLT Thailand, Department of Lands, Thai e-Visa, official forms Thailand',
+    'THIM Thai Immigration app, Thailand Digital Arrival Card, TDAC Thailand, tdac.immigration.go.th, official Thai websites, Thai government downloads, immigration.go.th, DLT Thailand, Department of Lands, Thai e-Visa, Officiële Thaise websites',
   infoDrinkWater:
-    'drinking water Thailand, Thai tap water, RO filter Thailand, water vending machine Thailand',
+    'drinking water Thailand, Thai tap water, RO filter Thailand, water vending machine Thailand, drinkwater Thailand',
   infoBuying:
-    'buy land Thailand foreigner, leasehold Thailand, Chanote, Thai company land',
-  infoChanote: 'Chanote title deed, Nor Sor 4 Jor, Thai land title',
-  infoVisa: 'Thailand retirement visa, OA visa, Elite visa, LTR visa',
+    'buy land Thailand foreigner, grond kopen Thailand, leasehold Thailand, Chanote, Thai company land, vastgoed kopen Thailand, real estate Thailand foreigners',
+  infoChanote: 'Chanote title deed, Nor Sor 4 Jor, Thai land title, eigendomsakte Thailand',
+  infoVisa: 'Thailand retirement visa, OA visa, Elite visa, LTR visa, pensioenvisum Thailand',
+  infoHuaHin:
+    'Hua Hin property market, Hua Hin real estate, huizen Hua Hin, vastgoed Hua Hin, land for sale Hua Hin',
+  infoPranburi:
+    'Pranburi property, Pranburi real estate, land for sale Pranburi, huizen Pranburi',
+  infoHealth:
+    'health insurance Thailand, medical costs Thailand, hospital Thailand foreigners, accident insurance Thailand, OTC medicine Thailand, pharmacy Thailand, worldwide health insurance Thailand, IPMI Thailand, zorgverzekering Thailand, medische kosten Thailand, ongevallen Thailand, apotheek Thailand',
 }
 
 export function localizedPath(locale: string, path: string): string {
@@ -40,10 +50,13 @@ export async function buildPageMetadata({
   locale,
   namespace,
   path,
+  ogImage,
 }: {
   locale: string
   namespace: string
   path: string
+  /** Optional Open Graph / Twitter image path (e.g. /thim-app.png) */
+  ogImage?: string
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace })
   const title = t('metaTitle')
@@ -58,6 +71,17 @@ export async function buildPageMetadata({
     title,
     description,
     keywords: KEYWORDS_BY_NAMESPACE[namespace] ?? DEFAULT_KEYWORDS,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
     alternates: {
       canonical,
       languages,
@@ -69,11 +93,15 @@ export async function buildPageMetadata({
       siteName: 'ThaiPlot',
       locale: locale === 'zh' ? 'zh_CN' : locale,
       type: 'article',
+      ...(ogImage
+        ? { images: [{ url: absoluteAssetUrl(ogImage), alt: title }] }
+        : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      ...(ogImage ? { images: [absoluteAssetUrl(ogImage)] } : {}),
     },
   }
 }

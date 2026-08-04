@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import DrinkWaterSubnav from '@/components/DrinkWaterSubnav'
+import RelatedGuides from '@/components/RelatedGuides'
 
 type Props = {
   children: ReactNode
@@ -34,6 +35,7 @@ async function fetchHeroPhoto() {
 
 export default async function DrinkWaterShell({ children }: Props) {
   const t = await getTranslations('infoDrinkWater')
+  const tp = await getTranslations('partnerLinks')
   const photo = await fetchHeroPhoto()
 
   return (
@@ -104,7 +106,17 @@ export default async function DrinkWaterShell({ children }: Props) {
         <article>{children}</article>
 
         <div className="mt-12 pt-6 border-t border-[#D4E4EC]">
-          <p className="text-xs text-[#8DB4C8] leading-relaxed mb-2">{t('footerSources')}</p>
+          <RelatedGuides
+            title={t('relatedTitle')}
+            links={[
+              { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
+              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
+              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
+              { href: '/info/thim-app', label: tp('linkThim') },
+            ]}
+          />
+          <p className="text-xs text-[#8DB4C8] leading-relaxed mb-2 mt-8">{t('footerSources')}</p>
           <p className="text-xs text-[#8DB4C8] mb-6">{t('footerNote')}</p>
           <DisclaimerFooter />
         </div>

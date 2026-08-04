@@ -59,6 +59,22 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/info/thim-app"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideThim')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/info/thailand-digital-arrival-card"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideTdac')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/info/official-thai-downloads"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
@@ -71,6 +87,30 @@ export default function SiteFooter() {
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
                   {tn('guidePaperwork')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/info/visa-retirement-thailand"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideVisa')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/info/drinking-water-thailand"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideDrinkWater')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/info/health-accidents-thailand"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideHealth')}
                 </Link>
               </li>
               <li>

@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import PartnerLinks from '@/components/PartnerLinks'
+import RelatedGuides from '@/components/RelatedGuides'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
@@ -48,19 +49,30 @@ export default async function HuaHinMarketPage({ params }: Props) {
         section('outlook'),
       ]}
       bottomSlot={
-        <PartnerLinks
-          title={tp('furtherReadingTitle')}
-          links={[
-            {
-              href: hhlUrl(HHL_PATHS.homepage, params.locale),
-              label: tp('homepage'),
-            },
-            {
-              href: hhlUrl(HHL_PATHS.faq, params.locale),
-              label: tp('faq'),
-            },
-          ]}
-        />
+        <div className="space-y-10">
+          <RelatedGuides
+            title={tp('relatedOnThaiPlot')}
+            links={[
+              { href: '/info/buying-land-thailand', label: tp('linkBuying') },
+              { href: '/info/chanote-title-deed', label: tp('chanote') },
+              { href: '/info/pranburi-property', label: tp('linkPranburi') },
+              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+            ]}
+          />
+          <PartnerLinks
+            title={tp('furtherReadingTitle')}
+            links={[
+              {
+                href: hhlUrl(HHL_PATHS.homepage, params.locale),
+                label: tp('homepage'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.faq, params.locale),
+                label: tp('faq'),
+              },
+            ]}
+          />
+        </div>
       }
     />
   )

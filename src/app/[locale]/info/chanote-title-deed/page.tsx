@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import PartnerLinks from '@/components/PartnerLinks'
+import RelatedGuides from '@/components/RelatedGuides'
 import ThaiDataCard, { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
@@ -50,6 +51,14 @@ export default async function ChanotePage({ params }: Props) {
       ]}
       bottomSlot={
         <div className="space-y-6">
+          <RelatedGuides
+            title={tp('relatedOnThaiPlot')}
+            links={[
+              { href: '/info/buying-land-thailand', label: tp('linkBuying') },
+              { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
+              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
+            ]}
+          />
           <PartnerLinks
             title={tp('furtherReadingTitle')}
             links={[

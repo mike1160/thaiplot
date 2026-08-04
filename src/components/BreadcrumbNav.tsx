@@ -13,7 +13,10 @@ const INFO_PAGES: Record<string, string> = {
   'visa-retirement-thailand': 'pages.visa',
   'paperwork-thailand': 'pages.paperwork',
   'official-thai-downloads': 'pages.officialDownloads',
+  'thim-app': 'pages.thimApp',
+  'thailand-digital-arrival-card': 'pages.tdac',
   'drinking-water-thailand': 'pages.drinkWater',
+  'health-accidents-thailand': 'pages.health',
 }
 
 const DRINK_WATER_SUBPAGES: Record<string, string> = {

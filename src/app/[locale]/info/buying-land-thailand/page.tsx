@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import PartnerLinks from '@/components/PartnerLinks'
+import RelatedGuides from '@/components/RelatedGuides'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
@@ -50,19 +51,30 @@ export default async function BuyingLandPage({ params }: Props) {
         section('faq'),
       ]}
       bottomSlot={
-        <PartnerLinks
-          title={tp('furtherReadingTitle')}
-          links={[
-            {
-              href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
-              label: tp('foreignBuyers'),
-            },
-            {
-              href: hhlUrl(HHL_PATHS.chanote, params.locale),
-              label: tp('chanote'),
-            },
-          ]}
-        />
+        <div className="space-y-10">
+          <RelatedGuides
+            title={tp('relatedOnThaiPlot')}
+            links={[
+              { href: '/info/chanote-title-deed', label: tp('chanote') },
+              { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
+              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
+            ]}
+          />
+          <PartnerLinks
+            title={tp('furtherReadingTitle')}
+            links={[
+              {
+                href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
+                label: tp('foreignBuyers'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.chanote, params.locale),
+                label: tp('chanote'),
+              },
+            ]}
+          />
+        </div>
       }
     />
   )

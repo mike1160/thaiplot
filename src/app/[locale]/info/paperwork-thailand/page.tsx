@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
 import PartnerLinks from '@/components/PartnerLinks'
+import RelatedGuides from '@/components/RelatedGuides'
 import { buildPageMetadata } from '@/lib/seo'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
@@ -52,27 +53,38 @@ export default async function PaperworkThailandPage({ params }: Props) {
         section('checklist'),
       ]}
       bottomSlot={
-        <PartnerLinks
-          title={tp('furtherReadingTitle')}
-          links={[
-            {
-              href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
-              label: tp('foreignBuyers'),
-            },
-            {
-              href: hhlUrl(HHL_PATHS.chanote, params.locale),
-              label: tp('chanote'),
-            },
-            {
-              href: hhlUrl(HHL_PATHS.europeanRetirees, params.locale),
-              label: tp('europeanRetirees'),
-            },
-            {
-              href: hhlUrl(HHL_PATHS.dutch, params.locale),
-              label: tp('dutch'),
-            },
-          ]}
-        />
+        <div className="space-y-10">
+          <RelatedGuides
+            title={tp('relatedOnThaiPlot')}
+            links={[
+              { href: '/info/thim-app', label: tp('linkThim') },
+              { href: '/info/thailand-digital-arrival-card', label: tp('linkTdac') },
+              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
+              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+            ]}
+          />
+          <PartnerLinks
+            title={tp('furtherReadingTitle')}
+            links={[
+              {
+                href: hhlUrl(HHL_PATHS.foreignBuyers, params.locale),
+                label: tp('foreignBuyers'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.chanote, params.locale),
+                label: tp('chanote'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.europeanRetirees, params.locale),
+                label: tp('europeanRetirees'),
+              },
+              {
+                href: hhlUrl(HHL_PATHS.dutch, params.locale),
+                label: tp('dutch'),
+              },
+            ]}
+          />
+        </div>
       }
     />
   )

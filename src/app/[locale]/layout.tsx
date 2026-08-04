@@ -38,7 +38,7 @@ export async function generateMetadata({
     title,
     description,
     keywords:
-      'land for sale Thailand, Hua Hin property, chanote land, buy land Thailand foreigner, Pranburi land, Thailand real estate, Thai paperwork foreigners, Papieren Thailand',
+      'land for sale Thailand, Hua Hin property, vastgoed Thailand, huizen te koop Thailand, real estate Thailand, grond kopen Thailand, buy land Thailand foreigner, houses Thailand, Chanote land, Pranburi land, Thailand real estate, THIM app, Thailand Immigration Management, Thailand Digital Arrival Card, TDAC Thailand, Papieren Thailand, Officiële Thaise websites, health insurance Thailand, medische kosten Thailand, zorgverzekering Thailand, ongevallen Thailand',
     alternates: {
       canonical,
       languages,
@@ -65,6 +65,13 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
     },
   }
 }

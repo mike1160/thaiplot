@@ -5,15 +5,17 @@ Sitemap: https://www.thaiplot.com/sitemap.xml
 # LLM / AI discovery
 # https://www.thaiplot.com/llms.txt
 
-# Key guide pages (also in sitemap.xml)
-# /en/info/paperwork-thailand — Thai paperwork for foreigners (Papieren)
-# /en/info/official-thai-downloads — Official Thai websites & downloads (disclaimer)
+# Priority SEO landing pages for immigration search terms
+# /en/info/thim-app — THIM app (Thailand Immigration Management)
+# /en/info/thailand-digital-arrival-card — Thailand Digital Arrival Card (TDAC)
+# /en/info/official-thai-downloads — Official Thai websites directory
+# /en/info/paperwork-thailand — Papieren / paperwork for foreigners
+# Official TDAC portal (external): https://tdac.immigration.go.th
 # /en/info/buying-land-thailand
 # /en/info/chanote-title-deed
 # /en/info/visa-retirement-thailand
 # /en/info/drinking-water-thailand
-# /en/info/hua-hin-property-market
-# /en/info/pranburi-property
+# /en/info/health-accidents-thailand — health, accidents, insurance, medical costs, OTC
 
 User-agent: GPTBot
 Allow: /
@@ -38,3 +40,13 @@ Allow: /
 
 User-agent: Googlebot
 Allow: /
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /*/info/thim-app
+Allow: /*/info/thailand-digital-arrival-card
+Allow: /*/info/official-thai-downloads
+Allow: /*/info/paperwork-thailand
+Allow: /*/info/drinking-water-thailand
+Allow: /*/info/health-accidents-thailand
+Allow: /*/info/buying-land-thailand
+Allow: /*/listings

@@ -12,6 +12,8 @@ export const TH_PL_PHOTOS = {
 export type OfficialLinkId =
   | 'immigration'
   | 'evisa'
+  | 'tdac'
+  | 'thimStore'
   | 'tm30'
   | 'landDept'
   | 'dlt'
@@ -68,6 +70,18 @@ export const OFFICIAL_LINKS: OfficialLinkDef[] = [
     id: 'evisa',
     category: 'immigration',
     href: 'https://www.thaievisa.go.th',
+    photo: 2,
+  },
+  {
+    id: 'tdac',
+    category: 'immigration',
+    href: 'https://tdac.immigration.go.th',
+    photo: 2,
+  },
+  {
+    id: 'thimStore',
+    category: 'immigration',
+    href: 'https://play.google.com/store/apps/details?id=th.go.immigration.thim',
     photo: 2,
   },
   {

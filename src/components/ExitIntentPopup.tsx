@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import TurnstileWidget from '@/components/TurnstileWidget'
 
 const STORAGE_SHOWN = 'exitIntentShown'
@@ -232,6 +233,38 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
                 {t('successHeading')}
               </h2>
               <p className="text-[#5C5247] text-sm leading-relaxed mb-6">{t('successText')}</p>
+              <p className="text-[#1A2744] text-xs font-semibold uppercase tracking-wider mb-3">
+                {t('guidesTitle')}
+              </p>
+              <ul className="flex flex-col gap-2 mb-6 text-sm">
+                <li>
+                  <Link
+                    href="/info/thim-app"
+                    onClick={close}
+                    className="text-[#C8973A] font-semibold hover:underline"
+                  >
+                    {t('guideThim')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/info/thailand-digital-arrival-card"
+                    onClick={close}
+                    className="text-[#C8973A] font-semibold hover:underline"
+                  >
+                    {t('guideTdac')}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/info/paperwork-thailand"
+                    onClick={close}
+                    className="text-[#C8973A] font-semibold hover:underline"
+                  >
+                    {t('guidePaperwork')}
+                  </Link>
+                </li>
+              </ul>
               <button
                 type="button"
                 onClick={close}

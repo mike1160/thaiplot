@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: Props) {
     locale: params.locale,
     namespace: 'infoOfficialDownloads',
     path: '/info/official-thai-downloads',
+    ogImage: '/THIM-APP-2.png',
   })
 }
 

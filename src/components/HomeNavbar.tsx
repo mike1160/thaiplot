@@ -15,7 +15,10 @@ const GUIDE_LINKS = [
   { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
   { href: '/info/paperwork-thailand', key: 'guidePaperwork' },
   { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' },
+  { href: '/info/thim-app', key: 'guideThim' },
+  { href: '/info/thailand-digital-arrival-card', key: 'guideTdac' },
   { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' },
+  { href: '/info/health-accidents-thailand', key: 'guideHealth' },
 ] as const
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'

@@ -8,6 +8,7 @@ import ListingCard from '@/components/ListingCard'
 import LineButton from '@/components/LineButton'
 import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
+import DisclaimerFooter from '@/components/DisclaimerFooter'
 import { TitleVerifyCta } from '@/components/ThaiDataCard'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
@@ -41,6 +42,7 @@ function listingsHref(filters: ListingFiltersState): string {
 
 export default function HomePageClient({ listings }: Props) {
   const t = useTranslations('homepage')
+  const tn = useTranslations('navigation')
   const router = useRouter()
   const [filters, setFilters] = useState<ListingFiltersState>(DEFAULT_FILTERS)
 
@@ -288,9 +290,54 @@ export default function HomePageClient({ listings }: Props) {
         </div>
       </section>
 
+      <section className="px-4 sm:px-6 lg:px-8 pb-14 overflow-x-hidden">
+        <div className="max-w-5xl mx-auto">
+          <h2
+            className="text-2xl md:text-3xl font-bold text-[#1A2744] text-center mb-2"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('guidesTitle')}
+          </h2>
+          <p className="text-center text-[#5C5247] text-sm md:text-base mb-8 max-w-2xl mx-auto">
+            {t('guidesSubtitle')}
+          </p>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {(
+              [
+                { href: '/info/thim-app', key: 'guideThim' as const },
+                { href: '/info/thailand-digital-arrival-card', key: 'guideTdac' as const },
+                { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' as const },
+                { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
+                { href: '/info/visa-retirement-thailand', key: 'guideVisa' as const },
+                { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' as const },
+                { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
+              ] as const
+            ).map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-2 border border-[#E8E2D6] bg-white px-4 py-3.5 text-sm font-semibold text-[#1A2744] transition-colors hover:border-[#C8973A]/60 hover:text-[#C8973A]"
+                >
+                  <span className="text-[#C8973A]" aria-hidden>
+                    →
+                  </span>
+                  {tn(item.key)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="px-4 sm:px-6 lg:px-8 pb-16 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
           <TitleVerifyCta />
+        </div>
+      </section>
+
+      <section className="px-4 sm:px-6 lg:px-8 pb-10 overflow-x-hidden">
+        <div className="max-w-5xl mx-auto">
+          <DisclaimerFooter />
         </div>
       </section>
 
