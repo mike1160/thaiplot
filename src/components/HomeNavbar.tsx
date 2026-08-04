@@ -46,10 +46,10 @@ export default function HomeNavbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[100] w-full bg-white transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
         scrolled || menuOpen
-          ? 'border-b border-[#E8E2D6] shadow-[0_2px_8px_rgba(20,32,56,0.04)]'
-          : 'border-b border-[#E8E2D6] shadow-none'
+          ? 'tp-frost-bar-scrolled border-b border-[#C8973A]/25'
+          : 'bg-white border-b border-[#E8E2D6] shadow-none'
       }`}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6">
