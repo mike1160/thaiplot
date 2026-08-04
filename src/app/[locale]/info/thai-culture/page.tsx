@@ -6,16 +6,12 @@ import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
-const PATH = '/info/thai-culture'
-const OG =
-  'https://images.pexels.com/photos/1031458/pexels-photo-1031458.jpeg?auto=compress&cs=tinysrgb&w=1200'
-
 export async function generateMetadata({ params }: Props) {
   return buildPageMetadata({
     locale: params.locale,
     namespace: 'infoCulture',
     path: PATH,
-    ogImage: OG,
+    ogImage: HERO_PHOTOS.culture,
   })
 }
 

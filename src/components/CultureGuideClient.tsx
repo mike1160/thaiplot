@@ -33,16 +33,16 @@ const SECTION_PHOTOS = {
     alt: 'Bangkok street market Thailand',
   },
   temples: {
-    src: PEXELS('1586298/pexels-photo-1586298.jpeg'),
+    src: '/th-pl-1.JPG',
     alt: 'Thai temple Buddha Thailand',
   },
   modern: {
-    src: PEXELS('3769138/pexels-photo-3769138.jpeg'),
-    alt: 'Modern Bangkok urban life Thailand',
+    src: '/nene-podium.png',
+    alt: 'Live music on stage at a Thai night market — modern Thailand',
   },
   eating: {
-    src: PEXELS('1640774/pexels-photo-1640774.jpeg'),
-    alt: 'Thai food shared meal Thailand',
+    src: '/bite-burger-street.png',
+    alt: 'Thai street food stall serving a customer — eating together in Thailand',
   },
   contrast: {
     src: PEXELS('2356045/pexels-photo-2356045.jpeg'),
