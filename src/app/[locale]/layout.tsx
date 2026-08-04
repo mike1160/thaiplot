@@ -89,7 +89,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <HtmlLang />
-      <div className="w-full max-w-full overflow-x-hidden px-4 sm:px-0">
+      <div className="w-full max-w-full px-4 sm:px-0">
         {children}
       </div>
       <LegalFooterBar />

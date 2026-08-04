@@ -1192,7 +1192,9 @@
       ],
       "note": "ThaiPlot is not Immigration and does not give immigration advice. We summarise public information so you know where to look — confirm everything on official channels before you fly.",
       "fullGuideLink": "Full THIM guide on ThaiPlot →",
-      "tdacGuideLink": "TDAC guide on ThaiPlot →"
+      "tdacGuideLink": "TDAC guide on ThaiPlot →",
+      "officialSiteLink": "Official Immigration Bureau website",
+      "imageCaption2": "THIM app — digital arrival preview"
     }
   },
   "infoThim": {
@@ -1302,7 +1304,9 @@
       "Never pay a third party for “TDAC processing”."
     ],
     "note": "ThaiPlot is not Immigration and does not give immigration advice. This page helps you find the official THIM app and TDAC information.",
-    "backOfficial": "← Official Thai websites directory"
+    "backOfficial": "← Official Thai websites directory",
+    "officialSiteLink": "Official Immigration Bureau website",
+    "imageCaption2": "THIM app — digital arrival preview"
   },
   "infoTdac": {
     "metaTitle": "Thailand Digital Arrival Card (TDAC) Guide | ThaiPlot",

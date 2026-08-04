@@ -69,12 +69,12 @@ export default function LanguageSwitcher({
   }
 
   return (
-    <div ref={rootRef} className={`relative ${className}`}>
+    <div ref={rootRef} className={`relative flex-shrink-0 ${className}`}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         className={`flex items-center font-medium rounded-[12px] transition-all duration-[350ms] ease-[ease] flex-shrink-0 ${
-          compact ? 'gap-1 px-2 py-1 text-[12px] min-h-[36px]' : 'gap-1.5 px-3 py-1.5 text-[13px]'
+          compact ? 'gap-1 px-2 py-1 text-[12px] min-h-[36px]' : 'gap-1.5 px-2.5 sm:px-3 py-1.5 text-[12px] sm:text-[13px] min-h-[36px]'
         } ${
           variant === 'ghost'
             ? 'text-white bg-white/10 border border-white/30 hover:bg-white/20'
@@ -86,15 +86,13 @@ export default function LanguageSwitcher({
       >
         <span aria-hidden="true">{current.flag}</span>
         <span>{current.code.toUpperCase()}</span>
-        {!compact ? (
-          <span
-            className={`text-[9px] transition-transform ${open ? 'rotate-180' : ''} ${
-              variant === 'ghost' ? 'text-white/80' : 'text-[#5C5247]'
-            }`}
-          >
-            ▾
-          </span>
-        ) : null}
+        <span
+          className={`text-[9px] transition-transform ${open ? 'rotate-180' : ''} ${
+            variant === 'ghost' ? 'text-white/80' : 'text-[#5C5247]'
+          } ${compact ? 'hidden sm:inline' : ''}`}
+        >
+          ▾
+        </span>
       </button>
 
       {open && (

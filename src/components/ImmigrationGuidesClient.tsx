@@ -94,49 +94,63 @@ export function ThimGuideClient() {
       </section>
 
       <div className="max-w-4xl mx-auto px-6 py-10 md:py-14 space-y-12">
-        <div className="flex flex-col sm:flex-row gap-8 items-start">
-          <div className="flex flex-col gap-4 flex-shrink-0 sm:max-w-[220px]">
-            <img
-              src="/thim-app.png"
-              alt={t('imageAlt')}
-              className="w-28 h-28 sm:w-36 sm:h-36 rounded-[22%] shadow-[0_8px_28px_rgba(26,39,68,0.18)] object-cover"
-            />
+        <div className="space-y-8">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
+            <a
+              href="https://www.immigration.go.th"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 rounded-[22%] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8973A] focus-visible:ring-offset-2"
+              title={t('officialSiteLink')}
+            >
+              <img
+                src="/thim-app.png"
+                alt={t('imageAlt')}
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-[22%] shadow-[0_8px_28px_rgba(26,39,68,0.18)] object-cover transition-transform hover:scale-[1.03]"
+              />
+            </a>
+            <div className="space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed min-w-0 flex-1">
+              {(t.raw('intro') as string[]).map((p) => (
+                <p key={p.slice(0, 40)}>{p}</p>
+              ))}
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href={PLAY}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-4 py-2.5 text-sm font-semibold bg-[#1A2744] text-white hover:bg-[#C8973A] transition-colors"
+                >
+                  {t('android')}
+                </a>
+                <a
+                  href={APP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex px-4 py-2.5 text-sm font-semibold border border-[#1A2744] text-[#1A2744] hover:border-[#C8973A] hover:text-[#C8973A] transition-colors"
+                >
+                  {t('ios')}
+                </a>
+                <Link
+                  href="/info/thailand-digital-arrival-card"
+                  className="inline-flex px-4 py-2.5 text-sm font-semibold border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-colors"
+                >
+                  {t('tdacPageLink')}
+                </Link>
+              </div>
+              <p className="text-xs text-[#8A7F72]">{t('storeNote')}</p>
+            </div>
+          </div>
+
+          <figure className="mx-auto w-full max-w-[260px] sm:max-w-[300px]">
             <img
               src="/THIM-APP-2.png"
               alt={t('imageAlt2')}
-              className="w-full max-w-[220px] rounded-2xl shadow-[0_8px_28px_rgba(26,39,68,0.14)] object-cover"
+              className="w-full rounded-2xl shadow-[0_12px_40px_rgba(26,39,68,0.16)] object-cover"
             />
-          </div>
-          <div className="space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed min-w-0">
-            {(t.raw('intro') as string[]).map((p) => (
-              <p key={p.slice(0, 40)}>{p}</p>
-            ))}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href={PLAY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex px-4 py-2.5 text-sm font-semibold bg-[#1A2744] text-white hover:bg-[#C8973A] transition-colors"
-              >
-                {t('android')}
-              </a>
-              <a
-                href={APP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex px-4 py-2.5 text-sm font-semibold border border-[#1A2744] text-[#1A2744] hover:border-[#C8973A] hover:text-[#C8973A] transition-colors"
-              >
-                {t('ios')}
-              </a>
-              <Link
-                href="/info/thailand-digital-arrival-card"
-                className="inline-flex px-4 py-2.5 text-sm font-semibold border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-colors"
-              >
-                {t('tdacPageLink')}
-              </Link>
-            </div>
-            <p className="text-xs text-[#8A7F72]">{t('storeNote')}</p>
-          </div>
+            <figcaption className="mt-3 text-center text-xs text-[#8A7F72]">
+              {t('imageCaption2')}
+            </figcaption>
+          </figure>
         </div>
 
         <Section title={t('whatTitle')}>
