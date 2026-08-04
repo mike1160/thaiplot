@@ -28,6 +28,8 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
     'Pranburi property, Pranburi real estate, land for sale Pranburi, huizen Pranburi',
   infoHealth:
     'health insurance Thailand, medical costs Thailand, hospital Thailand foreigners, accident insurance Thailand, OTC medicine Thailand, pharmacy Thailand, worldwide health insurance Thailand, IPMI Thailand, zorgverzekering Thailand, medische kosten Thailand, ongevallen Thailand, apotheek Thailand',
+  infoFood:
+    'food Thailand, Thai street food, vegetarian Thailand, vegan Thailand, gluten free Thailand, Thai restaurant phrases, alcohol Thailand, cannabis Thailand law, eten Thailand, vegetarisch Thailand, glutenvrij Thailand',
 }
 
 export function localizedPath(locale: string, path: string): string {

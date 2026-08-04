@@ -11,7 +11,7 @@
     "contact": "Contact",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
-    "guide": "Guide",
+    "guide": "Menu",
     "guideBuying": "Acheter un terrain en Thaïlande",
     "guideChanote": "Titre Chanote",
     "guideHuaHin": "Marché Hua Hin 2026",
@@ -26,7 +26,8 @@
     "guideOfficialDownloads": "Sites officiels thaïlandais",
     "guideThim": "App THIM",
     "guideTdac": "Thailand Digital Arrival Card (TDAC)",
-    "guideHealth": "Health & accidents"
+    "guideHealth": "Health & accidents",
+    "guideFood": "Food & drink"
   },
   "languages": {
     "en": "English",
@@ -45,7 +46,7 @@
     "contactThanathip": "Contacter Thanathip",
     "legalFooterDisclaimer": "Avertissement juridique",
     "legalFooterPrivacy": "Politique de confidentialité",
-    "disclaimerFooter": "Les informations de ce site sont fournies à titre informatif général uniquement et ne constituent pas un conseil juridique, financier ou fiscal. Demandez toujours un avis juridique indépendant avant toute transaction immobilière en Thaïlande.",
+    "disclaimerFooter": "The information on this site is for general informational purposes only and does not constitute legal, financial, tax, medical or lifestyle advice. Always seek independent professional advice before property transactions or health decisions in Thailand.",
     "disclaimerFooterLink": "→ Lire notre avertissement complet",
     "globalLegalBar": "Les informations immobilières sont fournies à titre général uniquement et ne constituent pas un conseil juridique ou financier. Demandez toujours un avis juridique indépendant avant toute transaction en Thaïlande.",
     "globalLegalBarLink": "→ Lire l’avertissement complet"
@@ -93,7 +94,8 @@
       "officialDownloads": "Sites officiels thaïlandais",
       "thimApp": "App THIM",
       "tdac": "TDAC",
-      "health": "Health & accidents"
+      "health": "Health & accidents",
+      "food": "Food in Thailand"
     }
   },
   "homepage": {
@@ -802,7 +804,8 @@
     "linkBuying": "Buying land in Thailand",
     "linkHuaHin": "Hua Hin property market",
     "linkPranburi": "Pranburi property",
-    "linkHealth": "Health, accidents & insurance"
+    "linkHealth": "Health, accidents & insurance",
+    "linkFood": "Food, vegetarian & nightlife tips"
   },
   "regionHuaHin": {
     "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
@@ -980,6 +983,18 @@
         "7) For property: verify Chanote at the Land Office with a lawyer — do not rely on WhatsApp photos of a blue cover. 8) For driving: confirm whether your foreign licence can be exchanged before studying for a full exam. 9) For pink ID: treat only Immigration PR approval as the real path.",
         "This page is general information, not legal or immigration advice. Requirements differ by nationality, province and year. When in doubt, confirm at the official counter or with a licensed Thai lawyer or immigration specialist."
       ]
+    },
+    "visuals": {
+      "blueChanoteAlt": "Illustrative blue Chanote title deed pages",
+      "blueChanoteCaption": "Illustration — blue Chanote title deed (Nor Sor 4 Jor). Not an official scan.",
+      "yellowBookAlt": "Illustrative yellow house registration book",
+      "yellowBookCaption": "Illustration — yellow house book (Tabien Baan). Not an official scan.",
+      "pinkIdAlt": "Illustrative pink foreigner ID card",
+      "pinkIdCaption": "Illustration — pink ID card for foreigners. Not a real ID.",
+      "drivingAlt": "Illustrative Thai driving licence",
+      "drivingCaption": "Illustration — Thai driving licence. Not a real licence.",
+      "chanoteBookAlt": "Illustrative Chanote booklet cover",
+      "chanoteBookCaption": "Illustration — Chanote booklet style cover. For orientation only."
     }
   },
   "infoOfficialDownloads": {
@@ -1511,5 +1526,169 @@
       }
     ],
     "medicalNote": "Informational only — not medical, legal or insurance advice. Costs and cover change. Confirm with hospitals, licensed insurers and your doctor before you travel, retire or buy property in Thailand."
+  },
+  "infoFood": {
+    "metaTitle": "Food in Thailand: tastes, risks, vegetarian & gluten-free | ThaiPlot",
+    "metaDescription": "Practical guide to eating in Thailand: great dishes, food-safety tips, vegetarian and gluten-free options, Thai restaurant phrases, plus a calm note on alcohol and cannabis laws.",
+    "title": "Eating in Thailand — flavours, care and clear words",
+    "subtitle": "What is delicious, what to watch for, how to order vegetarian or gluten-free in Thai, and a practical heads-up on alcohol and drugs — without the lecture.",
+    "tasty": {
+      "title": "The delicious side",
+      "paras": [
+        "Thai food is one of the best reasons to visit or live here: fragrant herbs, lime, chilli, coconut, grilled seafood, northern sausages, Isaan salads, southern curries and endless noodle bowls.",
+        "Street food and markets are part of daily life. Fresh stir-fries cooked in front of you, fruit smoothies, mango sticky rice, boat noodles, khao soi, som tum and grilled chicken are easy wins when stalls look busy and clean.",
+        "Hua Hin, Bangkok, Chiang Mai, Phuket and smaller towns all have strong local scenes. Follow the lunch rush — high turnover usually means fresher oil and ingredients."
+      ]
+    },
+    "risks": {
+      "title": "Food risks (keep it practical)",
+      "intro": "Most travellers eat well and feel fine. Still, a few habits cut the chance of a ruined week:",
+      "items": [
+        "Busy stalls with high turnover are usually safer than empty trays sitting in the sun",
+        "Ice is often commercially made and fine in tourist areas — still, skip ice if your stomach is already fragile",
+        "Raw shellfish, undercooked pork and buffet food left warm for hours carry higher risk",
+        "Very spicy food can upset an untrained stomach; ask for mâi pèt (not spicy)",
+        "Peanut, shellfish and soy allergies are common triggers — say it clearly and early",
+        "Tap water is not drinking water; use sealed bottles or treated water (see our drinking-water guide)",
+        "If you get sick: oral rehydration, rest, and a clinic if fever, blood or severe dehydration appears"
+      ]
+    },
+    "vegetarian": {
+      "title": "Vegetarian & vegan options",
+      "paras": [
+        "Thailand is workable for vegetarians, especially in cities and tourist hubs. Look for jay (เจ) restaurants during festivals and year-round in larger towns — often marked with a yellow-and-red logo.",
+        "Important nuance: Thai “vegetarian” can still include fish sauce, shrimp paste or oyster sauce unless you say so. “No meat” is not always “no fish sauce”.",
+        "Safe bets: tofu stir-fries, vegetable curries made coconut-based without paste from seafood, fruit, rice, and dishes at dedicated jay kitchens. Indian and Western cafés also fill gaps.",
+        "Carry the Thai lines below on your phone. Showing the text is often clearer than pronunciation alone."
+      ]
+    },
+    "gluten": {
+      "title": "Gluten-free realities",
+      "paras": [
+        "Rice and rice noodles are naturally gluten-free, which helps. Wheat shows up in soy sauce, some dumpling skins, breaded snacks and bakery items.",
+        "Cross-contact in woks and shared oil is common at street stalls. For coeliac disease, prefer kitchens that understand allergies, hotel restaurants, or cook at home when possible.",
+        "Say you have a gluten allergy and ask for no wheat flour and no soy sauce with wheat. Confirm sauces — fish sauce is usually gluten-free; many soy sauces are not."
+      ]
+    },
+    "phrases": {
+      "title": "Useful Thai for the restaurant",
+      "intro": "Show these lines on your phone or practise the romanisation. Staff often appreciate the effort — and the Thai script reduces misunderstandings.",
+      "items": [
+        {
+          "th": "มังสวิรัติ",
+          "roman": "mang-sa-wi-rat",
+          "meaning": "Vegetarian (formal)"
+        },
+        {
+          "th": "ฉันไม่กินเนื้อ",
+          "roman": "chǎn mâi gin néua",
+          "meaning": "I don't eat meat"
+        },
+        {
+          "th": "ไม่มีเนื้อ ไม่มีไก่ ไม่มีหมู ไม่มีปลา",
+          "roman": "mâi mii néua, mâi mii gài, mâi mii mǒo, mâi mii bplaa",
+          "meaning": "No beef, no chicken, no pork, no fish"
+        },
+        {
+          "th": "ไม่มีน้ำปลา",
+          "roman": "mâi mii nám bplaa",
+          "meaning": "No fish sauce please"
+        },
+        {
+          "th": "ไม่มีกุ้ง ไม่มีปู",
+          "roman": "mâi mii gûng, mâi mii bpuu",
+          "meaning": "No shrimp, no crab"
+        },
+        {
+          "th": "เจ",
+          "roman": "jay",
+          "meaning": "Strict vegan Buddhist style (no meat, fish, garlic, onion)"
+        },
+        {
+          "th": "แพ้กลูเตน / ไม่มีแป้งสาลี",
+          "roman": "páe gluten / mâi mii bpâeng sǎa-lii",
+          "meaning": "Gluten allergy / no wheat flour"
+        },
+        {
+          "th": "ไม่เผ็ด",
+          "roman": "mâi pèt",
+          "meaning": "Not spicy"
+        },
+        {
+          "th": "เผ็ดน้อย",
+          "roman": "pèt nói",
+          "meaning": "A little spicy"
+        },
+        {
+          "th": "แพ้อาหารทะเล",
+          "roman": "páe aa-hǎan tá-lay",
+          "meaning": "Seafood allergy"
+        },
+        {
+          "th": "น้ำเปล่า ไม่ใส่น้ำแข็ง",
+          "roman": "nám bplào mâi sài nám kǎeng",
+          "meaning": "Plain water, no ice"
+        },
+        {
+          "th": "เช็คบิลครับ / ค่ะ",
+          "roman": "chék bin khráp / khâ",
+          "meaning": "The bill please (male / female polite ending)"
+        }
+      ]
+    },
+    "alcohol": {
+      "title": "Alcohol — enjoy carefully",
+      "paras": [
+        "Beer, wine and spirits are widely available in restaurants, bars and shops (with local sale-time rules that can vary). Tourism culture can push “one more round” fast.",
+        "This is not a sermon — just context: heat, dehydration and strong drinks stack quickly. Pace yourself, drink water, and do not drive or ride after drinking. Thailand enforces drink-driving rules and accidents on scooters are a major risk for foreigners.",
+        "Watch for over-service in nightlife areas, spiked drinks in rare scam settings, and cheap unmarked spirits. Stick to sealed bottles and busy, reputable places.",
+        "If alcohol is becoming a problem for you or someone you travel with, get help early — local clinics and international helplines exist. ThaiPlot is not a treatment service."
+      ]
+    },
+    "drugs": {
+      "title": "Drugs & cannabis — know the law",
+      "paras": [
+        "Thailand’s rules on cannabis and other drugs have changed in recent years and can keep changing. What you saw on social media is not a legal opinion.",
+        "Cannabis is not a free-for-all. Sales, public use, import/export and use around minors can still create legal trouble. Always check current official rules for your province and never take cannabis products through airports or across borders.",
+        "Other illicit drugs (including many “party drugs”) carry severe penalties in Thailand. Do not assume tourist status protects you.",
+        "We are not the morality police — we are a property marketplace sharing practical safety context. For legal status, follow Thai government announcements and licensed counsel, not a blog tip or a shop sign."
+      ]
+    },
+    "checklist": {
+      "title": "Quick checklist",
+      "items": [
+        "Save Thai allergy / vegetarian lines on your phone",
+        "Choose busy food stalls; watch cooking heat and hygiene",
+        "Keep oral rehydration salts in your bag",
+        "Drink safe water; be careful with ice if your stomach is sensitive",
+        "Never drink and ride",
+        "Skip illegal drugs; treat cannabis rules as evolving and local",
+        "Read our drinking-water and health guides if you stay long-term"
+      ]
+    },
+    "faqTitle": "FAQ — food, drink and nightlife in Thailand",
+    "faqs": [
+      {
+        "q": "Is street food safe in Thailand?",
+        "a": "Often yes when turnover is high and food is cooked fresh. Use common sense: heat, cleanliness and busy queues matter more than fancy signs."
+      },
+      {
+        "q": "How do I order vegetarian food in Thai?",
+        "a": "Use มังสวิรัติ (mang-sa-wi-rat) and spell out no meat, fish, shrimp or fish sauce. For strict plant-based Buddhist style, look for เจ (jay)."
+      },
+      {
+        "q": "Can I eat gluten-free easily?",
+        "a": "Rice-based meals help, but sauces and cross-contact are the hard part. For coeliac needs, be explicit and prefer kitchens that understand allergies."
+      },
+      {
+        "q": "Is cannabis legal in Thailand?",
+        "a": "The framework has changed and continues to evolve. It is not unrestricted. Check current official rules and never travel with products across borders."
+      },
+      {
+        "q": "Does ThaiPlot give medical or legal advice on food and drugs?",
+        "a": "No. This page is general information for travellers and residents. For health or legal questions, use qualified professionals and official sources."
+      }
+    ],
+    "foodNote": "General information only — not medical, nutritional or legal advice. Food safety, allergy risks and drug laws change. Verify with clinics, restaurants and official Thai sources. ThaiPlot lists property and publishes practical guides."
   }
 }

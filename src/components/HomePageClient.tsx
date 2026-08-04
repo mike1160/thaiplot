@@ -287,13 +287,16 @@ export default function HomePageClient({ listings }: Props) {
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {(
               [
+                { href: '/info/buying-land-thailand', key: 'guideBuying' as const },
+                { href: '/info/chanote-title-deed', key: 'guideChanote' as const },
+                { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
+                { href: '/info/food-thailand', key: 'guideFood' as const },
+                { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
+                { href: '/info/visa-retirement-thailand', key: 'guideVisa' as const },
                 { href: '/info/thim-app', key: 'guideThim' as const },
                 { href: '/info/thailand-digital-arrival-card', key: 'guideTdac' as const },
                 { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' as const },
-                { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
-                { href: '/info/visa-retirement-thailand', key: 'guideVisa' as const },
                 { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' as const },
-                { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
               ] as const
             ).map((item) => (
               <li key={item.href}>

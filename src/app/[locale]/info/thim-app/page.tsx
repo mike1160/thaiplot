@@ -43,7 +43,6 @@ export default async function ThimAppPage({ params }: Props) {
         locale={params.locale}
         items={[
           { name: tb('home'), path: '/' },
-          { name: tb('pages.guide'), path: '/info/buying-land-thailand' },
           { name: tb('pages.thimApp') },
         ]}
       />

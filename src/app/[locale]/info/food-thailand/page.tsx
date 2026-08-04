@@ -7,6 +7,8 @@ import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
+type Phrase = { th: string; roman: string; meaning: string }
+
 function SectionBody({ paras }: { paras: string[] }) {
   return (
     <>
@@ -17,24 +19,11 @@ function SectionBody({ paras }: { paras: string[] }) {
   )
 }
 
-function FaqBody({ faqs }: { faqs: { q: string; a: string }[] }) {
-  return (
-    <dl className="space-y-5">
-      {faqs.map((faq) => (
-        <div key={faq.q}>
-          <dt className="font-semibold text-[#1A2744] mb-1">{faq.q}</dt>
-          <dd>{faq.a}</dd>
-        </div>
-      ))}
-    </dl>
-  )
-}
-
 function ListBody({ intro, items }: { intro?: string; items: string[] }) {
   return (
     <>
       {intro ? <p>{intro}</p> : null}
-      <ul className="list-disc pl-5 space-y-1.5">
+      <ul className="list-disc space-y-1.5 pl-5">
         {items.map((item) => (
           <li key={item.slice(0, 48)}>{item}</li>
         ))}
@@ -43,30 +32,71 @@ function ListBody({ intro, items }: { intro?: string; items: string[] }) {
   )
 }
 
+function PhrasesBody({
+  intro,
+  phrases,
+}: {
+  intro: string
+  phrases: Phrase[]
+}) {
+  return (
+    <>
+      <p>{intro}</p>
+      <ul className="mt-4 space-y-3">
+        {phrases.map((p) => (
+          <li
+            key={p.th}
+            className="rounded-[12px] border border-[#E8E2D6] bg-white/80 px-4 py-3 backdrop-blur-sm"
+          >
+            <p className="text-base font-semibold text-[#1A2744]" lang="th">
+              {p.th}
+            </p>
+            <p className="mt-0.5 text-sm text-[#C8973A]">{p.roman}</p>
+            <p className="mt-1 text-sm text-[#5C5247]">{p.meaning}</p>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
+
+function FaqBody({ faqs }: { faqs: { q: string; a: string }[] }) {
+  return (
+    <dl className="space-y-5">
+      {faqs.map((faq) => (
+        <div key={faq.q}>
+          <dt className="mb-1 font-semibold text-[#1A2744]">{faq.q}</dt>
+          <dd>{faq.a}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
 export async function generateMetadata({ params }: Props) {
   return buildPageMetadata({
     locale: params.locale,
-    namespace: 'infoHealth',
-    path: '/info/health-accidents-thailand',
+    namespace: 'infoFood',
+    path: '/info/food-thailand',
   })
 }
 
-export default async function HealthAccidentsPage({ params }: Props) {
+export default async function FoodThailandPage({ params }: Props) {
   setRequestLocale(params.locale)
-  const t = await getTranslations('infoHealth')
+  const t = await getTranslations('infoFood')
   const tp = await getTranslations('partnerLinks')
   const tb = await getTranslations('breadcrumb')
   const faqs = t.raw('faqs') as { q: string; a: string }[]
-  const pageUrl = localizedPath(params.locale, '/info/health-accidents-thailand')
+  const pageUrl = localizedPath(params.locale, '/info/food-thailand')
 
   return (
     <>
       <ArticleJsonLd
         locale={params.locale}
-        path="/info/health-accidents-thailand"
+        path="/info/food-thailand"
         title={t('metaTitle')}
         description={t('metaDescription')}
-        image={HERO_PHOTOS.health}
+        image={HERO_PHOTOS.food}
       />
       <FaqJsonLd
         faqs={faqs.map((f) => ({ question: f.q, answer: f.a }))}
@@ -76,56 +106,51 @@ export default async function HealthAccidentsPage({ params }: Props) {
         locale={params.locale}
         items={[
           { name: tb('home'), path: '/' },
-          { name: tb('pages.health') },
+          { name: tb('pages.food') },
         ]}
       />
       <InfoPageShell
         title={t('title')}
         subtitle={t('subtitle')}
-        heroImage={HERO_PHOTOS.health}
+        heroImage={HERO_PHOTOS.food}
         sections={[
           {
-            title: t('overview.title'),
-            body: <SectionBody paras={t.raw('overview.paras') as string[]} />,
+            title: t('tasty.title'),
+            body: <SectionBody paras={t.raw('tasty.paras') as string[]} />,
           },
           {
-            title: t('system.title'),
-            body: <SectionBody paras={t.raw('system.paras') as string[]} />,
-          },
-          {
-            title: t('costs.title'),
+            title: t('risks.title'),
             body: (
               <ListBody
-                intro={t('costs.intro')}
-                items={t.raw('costs.items') as string[]}
+                intro={t('risks.intro')}
+                items={t.raw('risks.items') as string[]}
               />
             ),
           },
           {
-            title: t('insuranceLocal.title'),
-            body: <SectionBody paras={t.raw('insuranceLocal.paras') as string[]} />,
+            title: t('vegetarian.title'),
+            body: <SectionBody paras={t.raw('vegetarian.paras') as string[]} />,
           },
           {
-            title: t('insuranceWorld.title'),
-            body: <SectionBody paras={t.raw('insuranceWorld.paras') as string[]} />,
+            title: t('gluten.title'),
+            body: <SectionBody paras={t.raw('gluten.paras') as string[]} />,
           },
           {
-            title: t('accidents.title'),
-            body: <SectionBody paras={t.raw('accidents.paras') as string[]} />,
-          },
-          {
-            title: t('prescriptions.title'),
-            body: <SectionBody paras={t.raw('prescriptions.paras') as string[]} />,
-          },
-          {
-            title: t('otc.title'),
+            title: t('phrases.title'),
             body: (
-              <ListBody intro={t('otc.intro')} items={t.raw('otc.items') as string[]} />
+              <PhrasesBody
+                intro={t('phrases.intro')}
+                phrases={t.raw('phrases.items') as Phrase[]}
+              />
             ),
           },
           {
-            title: t('pharmacies.title'),
-            body: <SectionBody paras={t.raw('pharmacies.paras') as string[]} />,
+            title: t('alcohol.title'),
+            body: <SectionBody paras={t.raw('alcohol.paras') as string[]} />,
+          },
+          {
+            title: t('drugs.title'),
+            body: <SectionBody paras={t.raw('drugs.paras') as string[]} />,
           },
           {
             title: t('checklist.title'),
@@ -138,14 +163,14 @@ export default async function HealthAccidentsPage({ params }: Props) {
         ]}
         bottomSlot={
           <div className="space-y-6">
-            <p className="text-sm text-[#5C5247] leading-relaxed border-l-2 border-[#C8973A] pl-4">
-              {t('medicalNote')}
+            <p className="border-l-2 border-[#C8973A] pl-4 text-sm leading-relaxed text-[#5C5247]">
+              {t('foodNote')}
             </p>
             <RelatedGuides
               title={tp('relatedOnThaiPlot')}
               links={[
-                { href: '/info/food-thailand', label: tp('linkFood') },
                 { href: '/info/drinking-water-thailand', label: tp('linkDrinkWater') },
+                { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
                 { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
                 { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
               ]}

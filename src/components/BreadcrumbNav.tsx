@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import BrandHomeLink from '@/components/BrandHomeLink'
 import { GUIDE_LINKS } from '@/content/guide-links'
 
 const INFO_PAGES: Record<string, string> = {
@@ -19,6 +20,7 @@ const INFO_PAGES: Record<string, string> = {
   'thailand-digital-arrival-card': 'pages.tdac',
   'drinking-water-thailand': 'pages.drinkWater',
   'health-accidents-thailand': 'pages.health',
+  'food-thailand': 'pages.food',
 }
 
 const DRINK_WATER_SUBPAGES: Record<string, string> = {
@@ -73,7 +75,6 @@ function buildCrumbs(pathname: string) {
     return crumbs
   }
   if (section === 'info') {
-    crumbs.push({ labelKey: 'pages.guide', href: '/info/buying-land-thailand' })
     if (pageSlug === 'drinking-water-thailand') {
       crumbs.push({
         labelKey: 'pages.drinkWater',
@@ -126,20 +127,20 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
 
       <nav
         aria-label="Breadcrumb"
-        className={`fixed top-0 left-0 z-[100] w-full border-b transition-all duration-[350ms] ease-[ease] ${
+        className={`fixed top-0 left-0 z-[100] w-full border-b transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
           scrolled
-            ? 'bg-[rgba(255,255,255,0.93)] border-stone-200/80 shadow-[0_1px_12px_rgba(0,0,0,0.08)] backdrop-blur-[14px]'
-            : 'bg-stone-50 border-stone-200 shadow-none'
+            ? 'border-stone-200/80 shadow-[0_1px_12px_rgba(0,0,0,0.08)]'
+            : 'border-stone-200/70 shadow-none'
         } ${className}`}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-12 flex items-center gap-2 sm:gap-3">
-          <Link
-            href="/"
-            className="flex-shrink-0 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#1A2744] hover:text-amber-600 transition-colors"
+          <BrandHomeLink
+            className="flex-shrink-0 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#1A2744] hover:text-[#C8973A] transition-colors"
             style={{ fontFamily: 'Playfair Display, serif' }}
+            onNavigate={() => setGuideOpen(false)}
           >
             {tn('brandTitle')}
-          </Link>
+          </BrandHomeLink>
 
           <ol className="hidden md:flex flex-1 min-w-0 items-center justify-end gap-1.5 text-xs text-stone-500 overflow-hidden">
             {crumbs.map((crumb, index) => {

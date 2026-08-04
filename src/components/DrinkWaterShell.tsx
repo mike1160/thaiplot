@@ -49,9 +49,11 @@ export default async function DrinkWaterShell({ children }: Props) {
           <RelatedGuides
             title={t('relatedTitle')}
             links={[
-              { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
-              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/drinking-water-thailand', label: tp('linkDrinkWater') },
+              { href: '/info/food-thailand', label: tp('linkFood') },
               { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
+              { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
               { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
               { href: '/info/thim-app', label: tp('linkThim') },
             ]}

@@ -6,6 +6,7 @@ import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from './LanguageSwitcher'
 import PortalAccountLink from './PortalAccountLink'
+import BrandHomeLink from '@/components/BrandHomeLink'
 import { GUIDE_LINKS } from '@/content/guide-links'
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
@@ -49,16 +50,19 @@ export default function HomeNavbar() {
     <nav
       className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] ${
         solid
-          ? 'bg-[rgba(255,255,255,0.93)] border-b border-black/5 shadow-[0_1px_12px_rgba(0,0,0,0.08)] backdrop-blur-[14px]'
+          ? 'tp-frost-bar border-b border-black/5 shadow-[0_1px_12px_rgba(0,0,0,0.08)]'
           : 'bg-[rgba(0,0,0,0.30)] border-b border-transparent shadow-none backdrop-blur-[10px]'
       }`}
       style={{
-        WebkitBackdropFilter: solid ? 'blur(14px)' : 'blur(10px)',
+        WebkitBackdropFilter: solid ? undefined : 'blur(10px)',
       }}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6">
         <div className={`${HEADER_HEIGHT_CLASS} flex items-center justify-between gap-2 sm:gap-4`}>
-          <Link href="/" className="group flex-shrink-0 leading-tight min-w-0" onClick={closeMenu}>
+          <BrandHomeLink
+            className="group flex-shrink-0 leading-tight min-w-0"
+            onNavigate={closeMenu}
+          >
             <span
               className={`block text-[16px] sm:text-[18px] font-semibold tracking-wide transition-colors duration-[350ms] ease-[ease] ${
                 solid
@@ -76,7 +80,7 @@ export default function HomeNavbar() {
             >
               {t('brandSubtitle')}
             </span>
-          </Link>
+          </BrandHomeLink>
 
           <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             <Link

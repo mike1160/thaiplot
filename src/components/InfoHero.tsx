@@ -51,6 +51,17 @@ export default function InfoHero({
         />
       )}
 
+      {/* Soft frost veil at the text band */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] z-[1]"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(250,247,240,0.18) 0%, rgba(255,255,255,0.06) 40%, transparent 100%)',
+          backdropFilter: 'blur(1.5px)',
+        }}
+        aria-hidden
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-14 pt-28 md:pb-16 md:pt-32">
         {eyebrow ? (
           <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#C8973A] md:text-xs animate-fade-in-up">

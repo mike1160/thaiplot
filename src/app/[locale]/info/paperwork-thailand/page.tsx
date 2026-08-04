@@ -31,9 +31,19 @@ export default async function PaperworkThailandPage({ params }: Props) {
   const t = await getTranslations('infoPaperwork')
   const tp = await getTranslations('partnerLinks')
 
-  const section = (key: string) => ({
+  const section = (
+    key: string,
+    visual?: { image: string; altKey: string; captionKey: string }
+  ) => ({
     title: t(`${key}.title`),
     body: <SectionBody paras={t.raw(`${key}.paras`) as string[]} />,
+    ...(visual
+      ? {
+          image: visual.image,
+          imageAlt: t(visual.altKey),
+          imageCaption: t(visual.captionKey),
+        }
+      : {}),
   })
 
   return (
@@ -42,12 +52,32 @@ export default async function PaperworkThailandPage({ params }: Props) {
       subtitle={t('subtitle')}
       heroImage={HERO_PHOTOS.paperwork}
       sections={[
-        section('overview'),
+        section('overview', {
+          image: '/paperwork/paperwork-chanote.png',
+          altKey: 'visuals.chanoteBookAlt',
+          captionKey: 'visuals.chanoteBookCaption',
+        }),
         section('reality'),
-        section('blueChanote'),
-        section('yellowBook'),
-        section('pinkId'),
-        section('drivingWhere'),
+        section('blueChanote', {
+          image: '/paperwork/paperwork-blue-deed.png',
+          altKey: 'visuals.blueChanoteAlt',
+          captionKey: 'visuals.blueChanoteCaption',
+        }),
+        section('yellowBook', {
+          image: '/paperwork/paperwork-yellow-book.png',
+          altKey: 'visuals.yellowBookAlt',
+          captionKey: 'visuals.yellowBookCaption',
+        }),
+        section('pinkId', {
+          image: '/paperwork/paperwork-pink-id.png',
+          altKey: 'visuals.pinkIdAlt',
+          captionKey: 'visuals.pinkIdCaption',
+        }),
+        section('drivingWhere', {
+          image: '/paperwork/paperwork-driving-licence.png',
+          altKey: 'visuals.drivingAlt',
+          captionKey: 'visuals.drivingCaption',
+        }),
         section('drivingExam'),
         section('otherDocs'),
         section('checklist'),
@@ -57,10 +87,10 @@ export default async function PaperworkThailandPage({ params }: Props) {
           <RelatedGuides
             title={tp('relatedOnThaiPlot')}
             links={[
-              { href: '/info/thim-app', label: tp('linkThim') },
-              { href: '/info/thailand-digital-arrival-card', label: tp('linkTdac') },
-              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
+              { href: '/info/buying-land-thailand', label: tp('linkBuying') },
+              { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
               { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
+              { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
             ]}
           />
           <PartnerLinks

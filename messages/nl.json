@@ -11,7 +11,7 @@
     "contact": "Contact",
     "webdesignBy": "Webdesign by Allesis.nl",
     "webdesignTag": "websites · SEO · apps",
-    "guide": "Gids",
+    "guide": "Menu",
     "guideBuying": "Land kopen in Thailand",
     "guideChanote": "Chanote-titelakte",
     "guideHuaHin": "Hua Hin markt 2026",
@@ -26,7 +26,8 @@
     "guideOfficialDownloads": "Officiële Thaise websites",
     "guideThim": "THIM-app",
     "guideTdac": "Thailand Digital Arrival Card (TDAC)",
-    "guideHealth": "Gezondheid & ongevallen"
+    "guideHealth": "Gezondheid & ongevallen",
+    "guideFood": "Eten & drinken"
   },
   "languages": {
     "en": "English",
@@ -45,7 +46,7 @@
     "contactThanathip": "Contact Thanathip",
     "legalFooterDisclaimer": "Juridische disclaimer",
     "legalFooterPrivacy": "Privacybeleid",
-    "disclaimerFooter": "De informatie op deze site is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel of fiscaal advies. Raadpleeg altijd onafhankelijk juridisch advies vóór een vastgoedtransactie in Thailand.",
+    "disclaimerFooter": "De informatie op deze site is uitsluitend bedoeld als algemene informatie en vormt geen juridisch, financieel, fiscaal, medisch of lifestyle-advies. Raadpleeg altijd onafhankelijk professioneel advies vóór vastgoedtransacties of gezondheidskeuzes in Thailand.",
     "disclaimerFooterLink": "→ Lees onze volledige disclaimer",
     "globalLegalBar": "Vastgoedinformatie wordt alleen voor algemene doeleinden verstrekt en vormt geen juridisch of financieel advies. Zoek altijd onafhankelijk juridisch advies vóór een vastgoedtransactie in Thailand.",
     "globalLegalBarLink": "→ Lees de volledige disclaimer"
@@ -93,7 +94,8 @@
       "officialDownloads": "Officiële Thaise websites",
       "thimApp": "THIM-app",
       "tdac": "TDAC",
-      "health": "Gezondheid & ongevallen"
+      "health": "Gezondheid & ongevallen",
+      "food": "Eten in Thailand"
     }
   },
   "homepage": {
@@ -337,7 +339,7 @@
     "disclaimerSections": [
       {
         "title": "Algemeen",
-        "body": "Informatie op thaiplot.com is uitsluitend informatief en vormt geen juridisch, financieel, fiscaal of beleggingsadvies. ThaiPlot is een onafhankelijk listingplatform en geen advocatenkantoor, bank of vergunde financieel adviseur."
+        "body": "Informatie op thaiplot.com is uitsluitend informatief en vormt geen juridisch, financieel, fiscaal, beleggings-, medisch of lifestyle-advies. ThaiPlot is een onafhankelijk listingplatform en geen advocatenkantoor, kliniek, bank of vergunninghoudende adviseur."
       },
       {
         "title": "Vastgoedaanbod",
@@ -572,7 +574,8 @@
     "linkBuying": "Land kopen in Thailand",
     "linkHuaHin": "Hua Hin vastgoedmarkt",
     "linkPranburi": "Pranburi vastgoed",
-    "linkHealth": "Gezondheid, ongevallen & verzekeringen"
+    "linkHealth": "Gezondheid, ongevallen & verzekeringen",
+    "linkFood": "Eten, vegetarisch & nightlife"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -980,6 +983,18 @@
         "7) Bij vastgoed: verifieer Chanote bij het Land Office met een advocaat — vertrouw niet op WhatsApp-foto’s van een blauwe kaft. 8) Bij rijbewijs: check of je buitenlandse rijbewijs omgewisseld kan worden vóór je een volledig examen leert. 9) Bij roze ID: alleen Immigratie-PR-goedkeuring is het echte pad.",
         "Deze pagina is algemene informatie, geen juridisch of immigratieadvies. Eisen verschillen per nationaliteit, provincie en jaar. Twijfel je: check aan het officiële loket of bij een bevoegde Thaise advocaat of immigratiespecialist."
       ]
+    },
+    "visuals": {
+      "blueChanoteAlt": "Illustratie blauwe Chanote-titelakte",
+      "blueChanoteCaption": "Illustratie — blauwe Chanote-titelakte (Nor Sor 4 Jor). Geen officiële scan.",
+      "yellowBookAlt": "Illustratie geel huisboek",
+      "yellowBookCaption": "Illustratie — geel huisboek (Tabien Baan). Geen officiële scan.",
+      "pinkIdAlt": "Illustratie roze ID-kaart voor buitenlanders",
+      "pinkIdCaption": "Illustratie — roze ID-kaart voor buitenlanders. Geen echte ID.",
+      "drivingAlt": "Illustratie Thais rijbewijs",
+      "drivingCaption": "Illustratie — Thais rijbewijs. Geen echt rijbewijs.",
+      "chanoteBookAlt": "Illustratie Chanote-boekje",
+      "chanoteBookCaption": "Illustratie — Chanote-boekje. Alleen ter oriëntatie."
     }
   },
   "infoOfficialDownloads": {
@@ -1511,5 +1526,169 @@
       }
     ],
     "medicalNote": "Alleen informatief — geen medisch, juridisch of verzekeringsadvies. Kosten en dekking wijzigen. Bevestig bij ziekenhuizen, erkende verzekeraars en je arts vóór je reist, met pensioen gaat of vastgoed koopt in Thailand."
+  },
+  "infoFood": {
+    "metaTitle": "Eten in Thailand: smaken, risico’s, vegetarisch & glutenvrij | ThaiPlot",
+    "metaDescription": "Praktische gids over eten in Thailand: lekkere gerechten, voedselveiligheid, vegetarische en glutenvrije opties, Thaise restaurantzinnen, plus een nuchtere noot over alcohol en cannabiswetgeving.",
+    "title": "Eten in Thailand — smaken, zorg en duidelijke woorden",
+    "subtitle": "Wat lekker is, waar je op let, hoe je vegetarisch of glutenvrij bestelt in het Thais, en een praktische waarschuwing over alcohol en drugs — zonder moralistisch vingertje.",
+    "tasty": {
+      "title": "De lekkere kant",
+      "paras": [
+        "Thais eten is een van de beste redenen om hier te komen of te wonen: geurige kruiden, limoen, chili, kokos, gegrilde seafood, noordelijke worsten, Isaan-salades, zuidelijke curry’s en eindeloze noedelkommen.",
+        "Straateten en markten horen bij het dagelijks leven. Verse wokgerechten voor je neus, fruitshakes, mango sticky rice, boat noodles, khao soi, som tum en gegrilde kip zijn sterke keuzes als kraampjes druk en proper ogen.",
+        "Hua Hin, Bangkok, Chiang Mai, Phuket en kleinere steden hebben sterke lokale scenes. Volg de lunchdrukte — hoge omzet betekent meestal verse olie en ingrediënten."
+      ]
+    },
+    "risks": {
+      "title": "Risico’s bij eten (praktisch gehouden)",
+      "intro": "De meeste reizigers eten goed en voelen zich fine. Een paar gewoontes verkleinen de kans op een verknalde week:",
+      "items": [
+        "Drukke kraampjes met hoge omzet zijn meestal veiliger dan bakken die uren in de zon staan",
+        "IJs is in toeristische gebieden vaak industrieel gemaakt en oké — sla ijs over als je maag al kwetsbaar is",
+        "Rauwe schelpdieren, halfgare pork en buffet dat uren warm staat geven hoger risico",
+        "Heel pittig eten kan een ongetrainde maag raken; vraag mâi pèt (niet pittig)",
+        "Pinda-, schaal- en soja-allergieën zijn veelvoorkomende triggers — zeg het vroeg en duidelijk",
+        "Kraanwater is geen drinkwater; gebruik verzegelde flessen of behandeld water (zie onze drinkwatergids)",
+        "Bij ziekte: ORS, rust, en een kliniek bij koorts, bloed of ernstige uitdroging"
+      ]
+    },
+    "vegetarian": {
+      "title": "Vegetarische & vegan opties",
+      "paras": [
+        "Thailand is doenbaar voor vegetariërs, vooral in steden en toeristische hubs. Zoek naar jay (เจ)-restaurants tijdens festivals en het hele jaar in grotere plaatsen — vaak met een geel-rood logo.",
+        "Belangrijke nuance: Thais “vegetarisch” kan nog steeds vissaus, garnalenpasta of oestersaus bevatten tenzij je dat uitsluit. “Geen vlees” is niet automatisch “geen vissaus”.",
+        "Veilige keuzes: tofu-wok, groentecurry’s op kokosbasis zonder seafood-pasta, fruit, rijst, en gerechten in echte jay-keukens. Indiase en westerse cafés vullen gaten.",
+        "Bewaar de Thaise zinnen hieronder op je telefoon. De tekst tonen is vaak duidelijker dan alleen uitspraak."
+      ]
+    },
+    "gluten": {
+      "title": "Glutenvrij in de praktijk",
+      "paras": [
+        "Rijst en rijstnoedels zijn van nature glutenvrij — dat helpt. Tarwe zit in sojasaus, sommige dumplingvelletjes, gepaneerde snacks en bakkerij.",
+        "Kruisbesmetting in woks en gedeelde olie is gewoon op straat. Bij coeliakie: kies keukens die allergieën snappen, hotelrestaurants, of kook soms zelf.",
+        "Zeg dat je glutenallergie hebt en vraag geen tarwemeel en geen sojasaus met tarwe. Check sauzen — vissaus is meestal glutenvrij; veel sojasauzen niet."
+      ]
+    },
+    "phrases": {
+      "title": "Handige Thaise zinnen in het restaurant",
+      "intro": "Toon deze regels op je telefoon of oefen de romanisatie. Personeel waardeert de moeite — en Thais schrift voorkomt misverstanden.",
+      "items": [
+        {
+          "th": "มังสวิรัติ",
+          "roman": "mang-sa-wi-rat",
+          "meaning": "Vegetarisch (formeel)"
+        },
+        {
+          "th": "ฉันไม่กินเนื้อ",
+          "roman": "chǎn mâi gin néua",
+          "meaning": "Ik eet geen vlees"
+        },
+        {
+          "th": "ไม่มีเนื้อ ไม่มีไก่ ไม่มีหมู ไม่มีปลา",
+          "roman": "mâi mii néua, mâi mii gài, mâi mii mǒo, mâi mii bplaa",
+          "meaning": "Geen rund, geen kip, geen varken, geen vis"
+        },
+        {
+          "th": "ไม่มีน้ำปลา",
+          "roman": "mâi mii nám bplaa",
+          "meaning": "Geen vissaus alstublieft"
+        },
+        {
+          "th": "ไม่มีกุ้ง ไม่มีปู",
+          "roman": "mâi mii gûng, mâi mii bpuu",
+          "meaning": "Geen garnalen, geen krab"
+        },
+        {
+          "th": "เจ",
+          "roman": "jay",
+          "meaning": "Strikt boeddhistisch vegan (geen vlees, vis, knoflook, ui)"
+        },
+        {
+          "th": "แพ้กลูเตน / ไม่มีแป้งสาลี",
+          "roman": "páe gluten / mâi mii bpâeng sǎa-lii",
+          "meaning": "Glutenallergie / geen tarwemeel"
+        },
+        {
+          "th": "ไม่เผ็ด",
+          "roman": "mâi pèt",
+          "meaning": "Niet pittig"
+        },
+        {
+          "th": "เผ็ดน้อย",
+          "roman": "pèt nói",
+          "meaning": "Een beetje pittig"
+        },
+        {
+          "th": "แพ้อาหารทะเล",
+          "roman": "páe aa-hǎan tá-lay",
+          "meaning": "Allergie voor zeevruchten"
+        },
+        {
+          "th": "น้ำเปล่า ไม่ใส่น้ำแข็ง",
+          "roman": "nám bplào mâi sài nám kǎeng",
+          "meaning": "Water, zonder ijs"
+        },
+        {
+          "th": "เช็คบิลครับ / ค่ะ",
+          "roman": "chék bin khráp / khâ",
+          "meaning": "De rekening alstublieft (mannelijk / vrouwelijk beleefd)"
+        }
+      ]
+    },
+    "alcohol": {
+      "title": "Alcohol — geniet met mate",
+      "paras": [
+        "Bier, wijn en sterke drank zijn breed beschikbaar in restaurants, bars en winkels (met lokale verkooptijden die kunnen verschillen). De toerismecultuur kan snel “nog eentje” pushen.",
+        "Dit is geen preek — wel context: hitte, uitdroging en sterke drank stapelen snel. Doseer, drink water, en rij of motor niet na alcohol. Thailand handhaaft alcohol in het verkeer; scooterongevallen zijn een groot risico voor buitenlanders.",
+        "Let op doordrinken in nightlife-wijken, zeldzame spike-dranken in scamsettings, en goedkope ongemerkte spirits. Blijf bij verzegelde flessen en drukke, betrouwbare plekken.",
+        "Wordt alcohol een probleem voor jou of een reisgenoot: zoek vroeg hulp — lokale klinieken en internationale hulplijnen bestaan. ThaiPlot is geen behandeldienst."
+      ]
+    },
+    "drugs": {
+      "title": "Drugs & cannabis — ken de wet",
+      "paras": [
+        "De Thaise regels rond cannabis en andere drugs zijn de laatste jaren veranderd en kunnen blijven wijzigen. Wat je op social media zag, is geen juridisch advies.",
+        "Cannabis is geen vrijbrief. Verkoop, gebruik in het openbaar, import/export en gebruik rond minderjarigen kunnen nog steeds juridische problemen geven. Check actuele officiële regels per provincie en neem nooit cannabisproducten mee door luchthavens of over grenzen.",
+        "Andere illegale drugs (inclusief veel “partydrugs”) kennen zware straffen in Thailand. Ga er niet van uit dat toeristenstatus je beschermt.",
+        "Wij zijn geen moraliteitsbrigade — wel een vastgoedmarktplaats die praktische veiligheidscontext deelt. Voor juridische status: volg Thaise overheidsberichten en bevoegd advies, geen blogtip of winkelschild."
+      ]
+    },
+    "checklist": {
+      "title": "Korte checklist",
+      "items": [
+        "Bewaar Thaise allergie-/vegetarische zinnen op je telefoon",
+        "Kies drukke eetkraampjes; let op hitte en hygiëne",
+        "Neem ORS mee in je tas",
+        "Drink veilig water; wees voorzichtig met ijs bij een gevoelige maag",
+        "Nooit drinken en rijden",
+        "Sla illegale drugs over; behandel cannabisregels als lokaal en veranderlijk",
+        "Lees onze drinkwater- en gezondheidsgidsen bij langer verblijf"
+      ]
+    },
+    "faqTitle": "FAQ — eten, drinken en nightlife in Thailand",
+    "faqs": [
+      {
+        "q": "Is straateten veilig in Thailand?",
+        "a": "Vaak wel bij hoge omzet en vers gekookt eten. Gebruik gezond verstand: hitte, netheid en drukte tellen meer dan een fancy bordje."
+      },
+      {
+        "q": "Hoe bestel ik vegetarisch in het Thais?",
+        "a": "Gebruik มังสวิรัติ (mang-sa-wi-rat) en sluit vlees, vis, garnalen en vissaus uit. Voor strikt plantaardig boeddhistisch: zoek เจ (jay)."
+      },
+      {
+        "q": "Kan ik makkelijk glutenvrij eten?",
+        "a": "Rijstgerechten helpen, maar sauzen en kruisbesmetting zijn lastig. Bij coeliakie: wees expliciet en kies keukens die allergieën begrijpen."
+      },
+      {
+        "q": "Is cannabis legaal in Thailand?",
+        "a": "Het kader is veranderd en blijft evolueren. Het is niet onbeperkt. Check actuele officiële regels en reis nooit met producten over grenzen."
+      },
+      {
+        "q": "Geeft ThaiPlot medisch of juridisch advies over eten en drugs?",
+        "a": "Nee. Deze pagina is algemene informatie voor reizigers en inwoners. Voor gezondheid of recht: bevoegde professionals en officiële bronnen."
+      }
+    ],
+    "foodNote": "Alleen algemene informatie — geen medisch, voedings- of juridisch advies. Voedselveiligheid, allergierisico’s en drugswetten wijzigen. Bevestig bij klinieken, restaurants en officiële Thaise bronnen. ThaiPlot toont vastgoed en publiceert praktische gidsen."
   }
 }

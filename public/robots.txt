@@ -16,6 +16,7 @@ Sitemap: https://www.thaiplot.com/sitemap.xml
 # /en/info/visa-retirement-thailand
 # /en/info/drinking-water-thailand
 # /en/info/health-accidents-thailand — health, accidents, insurance, medical costs, OTC
+# /en/info/food-thailand — food, vegetarian, gluten-free, Thai phrases, alcohol & cannabis context
 
 User-agent: GPTBot
 Allow: /
@@ -48,5 +49,6 @@ Allow: /*/info/official-thai-downloads
 Allow: /*/info/paperwork-thailand
 Allow: /*/info/drinking-water-thailand
 Allow: /*/info/health-accidents-thailand
+Allow: /*/info/food-thailand
 Allow: /*/info/buying-land-thailand
 Allow: /*/listings

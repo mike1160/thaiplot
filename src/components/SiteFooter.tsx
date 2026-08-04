@@ -114,10 +114,18 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/info/food-thailand"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideFood')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/info/buying-land-thailand"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >
-                  {tn('guide')}
+                  {tn('guideBuying')}
                 </Link>
               </li>
             </ul>
