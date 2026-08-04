@@ -4,6 +4,8 @@ type InfoHeroProps = {
   subtitle?: string
   /** Background image URL (local path or absolute). */
   image?: string
+  /** Accessible description when the hero image is meaningful. */
+  imageAlt?: string
   /** Main pages use taller heroes. */
   size?: 'main' | 'secondary'
 }
@@ -14,6 +16,7 @@ export default function InfoHero({
   title,
   subtitle,
   image,
+  imageAlt = '',
   size = 'secondary',
 }: InfoHeroProps) {
   const minHeight = size === 'main' ? 'min-h-[68vh]' : 'min-h-[52vh]'
@@ -28,7 +31,7 @@ export default function InfoHero({
         <>
           <img
             src={image}
-            alt=""
+            alt={imageAlt}
             className="absolute inset-0 h-full w-full object-cover object-center animate-hero-drift"
           />
           <div

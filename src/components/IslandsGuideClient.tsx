@@ -12,20 +12,52 @@ import { HERO_PHOTOS } from '@/lib/hero-photos'
 const PEXELS = (id: string, w = 900) =>
   `https://images.pexels.com/photos/${id}?auto=compress&cs=tinysrgb&w=${w}`
 
-const ISLAND_PHOTOS: Record<string, string> = {
-  'Koh Samui': PEXELS('2474690/pexels-photo-2474690.jpeg'),
-  'Koh Phangan': PEXELS('1851481/pexels-photo-1851481.jpeg'),
-  'Koh Tao': PEXELS('3254729/pexels-photo-3254729.jpeg'),
-  'Koh Chang': PEXELS('4534200/pexels-photo-4534200.jpeg'),
-  Phuket: PEXELS('1174732/pexels-photo-1174732.jpeg'),
-  'Koh Phi Phi': PEXELS('2161467/pexels-photo-2161467.jpeg'),
-  'Koh Lanta': PEXELS('3601425/pexels-photo-3601425.jpeg'),
-  'Koh Lipe': PEXELS('3601430/pexels-photo-3601430.jpeg'),
-  'Similan Islands': PEXELS('3483098/pexels-photo-3483098.jpeg'),
+const ISLAND_PHOTOS: Record<string, { src: string; alt: string }> = {
+  'Koh Samui': {
+    src: PEXELS('5567082/pexels-photo-5567082.jpeg'),
+    alt: 'Tropical coastline of Koh Samui, Thailand',
+  },
+  'Koh Phangan': {
+    src: PEXELS('4206645/pexels-photo-4206645.jpeg'),
+    alt: 'Beach in Koh Phangan, Gulf of Thailand',
+  },
+  'Koh Tao': {
+    src: PEXELS('37914438/pexels-photo-37914438.jpeg'),
+    alt: 'Aerial view of Koh Tao island at sunset, Thailand',
+  },
+  'Koh Chang': {
+    src: PEXELS('15249164/pexels-photo-15249164.jpeg'),
+    alt: 'Tropical beach with palm trees, Koh Chang Thailand',
+  },
+  'Koh Kood & Koh Mak': {
+    src: PEXELS('13162586/pexels-photo-13162586.jpeg'),
+    alt: 'Secluded beach with coconut palms, eastern Gulf Thailand',
+  },
+  Phuket: {
+    src: PEXELS('14512239/pexels-photo-14512239.jpeg'),
+    alt: 'Aerial coastal view of Phuket, Thailand',
+  },
+  'Koh Phi Phi': {
+    src: PEXELS('33782657/pexels-photo-33782657.jpeg'),
+    alt: 'Limestone cliffs and turquoise water, Koh Phi Phi Thailand',
+  },
+  'Koh Lanta': {
+    src: PEXELS('12932889/pexels-photo-12932889.jpeg'),
+    alt: 'Peaceful coastline of Koh Lanta, Andaman Sea Thailand',
+  },
+  'Koh Lipe': {
+    src: PEXELS('6010843/pexels-photo-6010843.jpeg'),
+    alt: 'Boats on turquoise water, Koh Lipe Thailand',
+  },
+  'Similan Islands': {
+    src: PEXELS('33240623/pexels-photo-33240623.jpeg'),
+    alt: 'Crystal clear lagoon, Similan Islands Thailand',
+  },
 }
 
 const INTRO_MAP = PEXELS('3889843/pexels-photo-3889843.jpeg', 600)
 const DIVING_PHOTO = PEXELS('3369569/pexels-photo-3369569.jpeg', 1400)
+const TIPS_PHOTO = PEXELS('33948713/pexels-photo-33948713.jpeg')
 
 const MARINE_EMOJIS = ['🐢', '🦈', '🐠', '🦈', '🐡'] as const
 
@@ -77,12 +109,12 @@ function IslandCards({
           >
             {photo ? (
               <img
-                src={photo}
-                alt={`${island.name} Thailand`}
+                src={photo.src}
+                alt={photo.alt}
                 width={900}
-                height={280}
+                height={260}
                 loading="lazy"
-                className="h-[280px] w-full object-cover"
+                className="h-[260px] w-full object-cover"
               />
             ) : null}
             <div className="p-4 md:p-5">
@@ -129,6 +161,7 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
         title={t('title')}
         subtitle={t('subtitle')}
         image={HERO_PHOTOS.islands}
+        imageAlt="Aerial view of Koh Phi Phi Islands, Thailand"
         size="main"
       />
 
@@ -181,7 +214,7 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
         <div className="animate-fade-in-up">
           <img
             src={DIVING_PHOTO}
-            alt="Coral reef diving Thailand"
+            alt="Coral reef underwater Thailand"
             width={1400}
             height={340}
             loading="lazy"
@@ -272,6 +305,14 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
         </Section>
 
         <Section title={t('tips.title')}>
+          <img
+            src={TIPS_PHOTO}
+            alt="Hillside coastline view Koh Samui Thailand"
+            width={900}
+            height={320}
+            loading="lazy"
+            className="mb-4 h-[320px] w-full rounded-[8px] object-cover"
+          />
           <ul className="list-disc space-y-1.5 pl-5">
             {(t.raw('tips.items') as string[]).map((item) => (
               <li key={item.slice(0, 40)}>{item}</li>
