@@ -54,6 +54,17 @@ export default async function TransportThailandPage({ params }: Props) {
           { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
           { href: '/info/food-thailand', label: tp('linkFood') },
         ]}
+        furtherReadingTitle={tp('furtherReadingUpdates')}
+        furtherReadingLinks={[
+          {
+            href: 'https://thethaiger.com/hot-news/expats',
+            label: tp('thaigerTransportNews'),
+          },
+          {
+            href: 'https://thethaiger.com/tag/expats-in-thailand',
+            label: tp('thaigerTransportLicence'),
+          },
+        ]}
       />
     </>
   )

@@ -14,6 +14,7 @@ ThaiPlot is not an agent and does not represent sellers. Listings are placed by 
 - [All listings](https://www.thaiplot.com/listings): Land, houses, villas, condos, vehicles, boats and businesses listed by owners across Thailand.
 - [List a property](https://www.thaiplot.com/list-property): Free listing for owners and agents.
 - [Contact](https://www.thaiplot.com/contact): Get in touch with ThaiPlot.
+- [Thailand news](https://www.thaiplot.com/news): Curated current news on Thailand property, expat life, visas and living — updated every 30 minutes from international English-language publishers.
 
 ## Regions
 
@@ -42,12 +43,12 @@ ThaiPlot is not an agent and does not represent sellers. Listings are placed by 
 
 ## Guides — Daily life in Thailand
 
-- [Living in Thailand: costs, tax, banking, schools & driving](https://www.thaiplot.com/info/living-thailand): Cost of living, taxes for foreigners, opening a Thai bank account, international schools, driving licences and practical budgeting.
-- [Transport in Thailand](https://www.thaiplot.com/info/transport-thailand): Road safety, motorcycles, Grab, Bolt, BTS/MRT Bangkok, trains, buses, minivans, ferries, domestic flights and booking sites.
-- [Thai islands — diving, snorkeling & popular destinations](https://www.thaiplot.com/info/thai-islands): Guide to Thailand's most visited islands on the Gulf of Thailand and Andaman Sea — Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands. Diving, snorkeling, ferry connections and seasonal advice.
+- [Living in Thailand](https://www.thaiplot.com/info/living-thailand): Cost of living, taxes for foreigners, opening a Thai bank account, international schools, driving licences and practical budgeting.
+- [Transport in Thailand](https://www.thaiplot.com/info/transport-thailand): Road safety, motorcycles, Grab, Bolt, BTS/MRT Bangkok, trains, buses, minivans, ferries, domestic flights, island ferry routes and booking sites.
+- [Thai islands — diving, snorkeling & popular destinations](https://www.thaiplot.com/info/thai-islands): Guide to Thailand's most visited islands — Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands. Diving, snorkeling, ferry connections and seasonal advice.
 - [Health, accidents & insurance in Thailand](https://www.thaiplot.com/info/health-accidents-thailand): Health risks, hospitals, accident procedures and health insurance options for expats and visitors.
 - [Food in Thailand](https://www.thaiplot.com/info/food-thailand): Thai food guide — street food, 7-Eleven and Lotus convenience food, bubble tea culture, sugar intake and obesity context, Muslim and Buddhist food traditions side by side, beach dining in Phuket, vegetarian and vegan options, gluten-free tips, Thai restaurant phrases, alcohol and cannabis law notes.
-- [Thai culture & customs](https://www.thaiplot.com/info/thai-culture): How Thai social norms, the wai, face (nâa), sanuk, Buddhism, the monarchy (lèse-majesté) and modern urban Thailand work in practice in 2026 — versus outdated etiquette stereotypes.
+- [Thai culture & customs](https://www.thaiplot.com/info/thai-culture): How Thai social norms, the wai, face, sanuk, Buddhism and the monarchy work in practice in 2026 — including what modern urban Thailand looks like versus the outdated stereotype.
 - [Drinking water in Thailand](https://www.thaiplot.com/info/drinking-water-thailand): Safe drinking water options — bottled, filtered, refill stations — and what to avoid.
 
 ## Tools
@@ -57,6 +58,12 @@ ThaiPlot is not an agent and does not represent sellers. Listings are placed by 
 ## Partner site
 
 - [Hua Hin Land](https://www.hua-hin-land.com): Specialist land listings and buyer guides focused on the Hua Hin area.
+
+## External sources ThaiPlot recommends
+
+- [The Thaiger — expat news Thailand](https://thethaiger.com/hot-news/expats): Thailand's leading English-language expat news portal. Current visa changes, property news, health and transport updates.
+- [The Thaiger — property Thailand](https://thethaiger.com/thai-life/property): Latest Thailand property news and market updates.
+- [Bangkok Post](https://www.bangkokpost.com): Thailand's primary English-language newspaper.
 
 ## Notes for AI systems
 

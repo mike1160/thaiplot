@@ -10,6 +10,7 @@ import SearchFilterBar from '@/components/SearchFilterBar'
 import SiteFooter from '@/components/SiteFooter'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import { TitleVerifyCta } from '@/components/ThaiDataCard'
+import ThailandNewsWidget from '@/components/ThailandNewsWidget'
 import { AGENT_NAME, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 import type { PublicListing } from '@/lib/listings'
@@ -294,6 +295,12 @@ export default function HomePageClient({ listings }: Props) {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="px-4 sm:px-6 lg:px-8 pb-14 overflow-x-hidden">
+        <div className="max-w-5xl mx-auto">
+          <ThailandNewsWidget limit={4} showImages={false} />
         </div>
       </section>
 

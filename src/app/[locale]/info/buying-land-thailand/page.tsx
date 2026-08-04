@@ -107,6 +107,10 @@ export default async function BuyingLandPage({ params }: Props) {
                   href: hhlUrl(HHL_PATHS.chanote, params.locale),
                   label: tp('chanote'),
                 },
+                {
+                  href: 'https://thethaiger.com/thai-life/property',
+                  label: tp('thaigerProperty'),
+                },
               ]}
             />
           </div>

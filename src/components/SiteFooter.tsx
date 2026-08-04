@@ -57,6 +57,11 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/news" className="text-white/70 hover:text-[#C8973A] transition-colors">
+                  {tn('news')}
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="/info/thim-app"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"

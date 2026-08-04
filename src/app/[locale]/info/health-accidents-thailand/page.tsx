@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import InfoPageShell from '@/components/InfoPageShell'
+import PartnerLinks from '@/components/PartnerLinks'
 import RelatedGuides from '@/components/RelatedGuides'
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from '@/components/SeoJsonLd'
 import { buildPageMetadata, localizedPath } from '@/lib/seo'
@@ -204,6 +205,23 @@ export default async function HealthAccidentsPage({ params }: Props) {
             <p className="text-sm text-[#5C5247] leading-relaxed border-l-2 border-[#C8973A] pl-4">
               {t('medicalNote')}
             </p>
+            <PartnerLinks
+              title={tp('furtherReadingUpdates')}
+              links={[
+                {
+                  href: 'https://thethaiger.com/expat-guide-thailand',
+                  label: tp('thaigerHealthGuide'),
+                },
+                {
+                  href: 'https://thethaiger.com/tag/expats-in-thailand',
+                  label: tp('thaigerHealthMoving'),
+                },
+                {
+                  href: 'https://thethaiger.com/travel/thailand-travel/what-expats-in-thailand-wish-they-knew-before-moving-here',
+                  label: tp('thaigerHealthWish'),
+                },
+              ]}
+            />
             <RelatedGuides
               title={tp('relatedOnThaiPlot')}
               links={[

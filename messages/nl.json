@@ -32,7 +32,8 @@
     "guideTransport": "Vervoer & verkeer",
     "guideLiving": "Wonen: kosten & bank",
     "guideIslands": "Thaise eilanden — duiken, snorkelen & bestemmingen",
-    "guideCulture": "Thai culture & customs"
+    "guideCulture": "Thai culture & customs",
+    "news": "Thailand nieuws"
   },
   "languages": {
     "en": "English",
@@ -104,7 +105,8 @@
       "transport": "Vervoer",
       "living": "Wonen in Thailand",
       "islands": "Thaise eilanden",
-      "culture": "Thai culture"
+      "culture": "Thai culture",
+      "news": "Nieuws"
     }
   },
   "homepage": {
@@ -588,7 +590,20 @@
     "linkTransport": "Vervoer, verkeer & reizen",
     "linkLiving": "Wonen: kosten, belasting, bank, school",
     "linkIslands": "Thaise eilanden — duiken & snorkelen",
-    "linkCulture": "Thai culture & customs"
+    "linkCulture": "Thai culture & customs",
+    "furtherReadingUpdates": "Verder lezen — actuele informatie",
+    "thaigerVisaExpats": "Thailand pensioenvisum — laatste regels (The Thaiger)",
+    "thaigerVisaFavourite": "Thailand blijft expat-favoriet, nieuwe regels 2026 (The Thaiger)",
+    "thaigerVisaWish": "Wat expats wensen dat ze wisten vóór de verhuizing (The Thaiger)",
+    "thaigerLivingRealities": "Expat-leven in Thailand — lange termijn realiteit (The Thaiger)",
+    "thaigerLivingEverything": "Alles over wonen in Thailand als expat (The Thaiger)",
+    "thaigerLivingEdge": "Heeft Thailand zijn voordeel verloren? Vergelijking SE Azië (The Thaiger)",
+    "thaigerHealthGuide": "Gezondheid in Thailand — expat gids (The Thaiger)",
+    "thaigerHealthMoving": "Verhuizen naar Thailand — gezondheidszaken voor expats (The Thaiger)",
+    "thaigerHealthWish": "Wat expats wensen dat ze wisten — gezondheid & verzekering (The Thaiger)",
+    "thaigerTransportNews": "Thailand expat nieuws — vervoer & rijden (The Thaiger)",
+    "thaigerTransportLicence": "Thais rijbewijs online verlengen (The Thaiger)",
+    "thaigerProperty": "Thailand vastgoednieuws (The Thaiger)"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -2629,5 +2644,9 @@
       }
     ],
     "disclaimer": "General information only — cultural norms evolve and vary by region, age and individual. This guide reflects general patterns, not universal rules. ThaiPlot is a property marketplace."
+  },
+  "newsPage": {
+    "metaTitle": "Thailand nieuws — vastgoed, expat & wonen | ThaiPlot",
+    "metaDescription": "Actueel nieuws uit Thailand over vastgoed, expat-leven, visa, vervoer en wonen — samengesteld voor kopers en long-stay bewoners."
   }
 }

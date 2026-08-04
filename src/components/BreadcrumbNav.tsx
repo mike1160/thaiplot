@@ -62,6 +62,10 @@ function buildCrumbs(pathname: string) {
     }
     return crumbs
   }
+  if (section === 'news') {
+    crumbs.push({ labelKey: 'pages.news' })
+    return crumbs
+  }
   if (section === 'list-property') {
     crumbs.push({ labelKey: 'pages.listProperty' })
     return crumbs

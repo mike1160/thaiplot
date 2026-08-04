@@ -1,40 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.thaiplot.com/sitemap.xml
+Disallow: /portal/
+Disallow: /api/
 
-# LLM / AI discovery
-# https://www.thaiplot.com/llms.txt
-
-# Priority SEO landing pages & search terms
-# /en/info/thim-app — THIM app (Thailand Immigration Management)
-# /en/info/thailand-digital-arrival-card — Thailand Digital Arrival Card (TDAC)
-# /en/info/official-thai-downloads — Official Thai websites directory
-# /en/info/paperwork-thailand — Papieren / paperwork for foreigners
-# Official TDAC portal (external): https://tdac.immigration.go.th
-# /en/info/buying-land-thailand
-# /en/info/chanote-title-deed
-# /en/info/visa-retirement-thailand
-# /en/info/drinking-water-thailand
-# /en/info/health-accidents-thailand — health, accidents, insurance, medical costs, OTC
-# /en/info/food-thailand — Thai street food, 7-Eleven Thailand, bubble tea Thailand,
-#   sugar obesity Thailand, halal food Thailand, Muslim Buddhist food Thailand,
-#   beach dining Phuket, vegetarian Thailand, gluten free Thailand
-# /en/info/thai-culture — Thai culture, wai, face, sanuk, monarchy, Buddhism Thailand
-# /en/info/thai-islands — Koh Samui, Koh Phangan, Koh Tao, Phi Phi, diving Thailand
-# /nl/info/thaise-eilanden — Thaise eilanden (NL alias)
-# /en/info/transport-thailand — ferry Thailand, Grab Bolt, BTS MRT, road safety
-# /en/info/living-thailand — cost of living, bank account, schools, driving Thailand
-
+# AI crawlers — expliciet toegestaan
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
 Allow: /
 
 User-agent: ClaudeBot
@@ -46,23 +16,11 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot
+User-agent: Applebot-Extended
 Allow: /
-Allow: /llms.txt
-Allow: /sitemap.xml
-Allow: /*/info/thim-app
-Allow: /*/info/thailand-digital-arrival-card
-Allow: /*/info/official-thai-downloads
-Allow: /*/info/paperwork-thailand
-Allow: /*/info/drinking-water-thailand
-Allow: /*/info/health-accidents-thailand
-Allow: /*/info/food-thailand
-Allow: /*/info/thai-culture
-Allow: /*/info/thai-islands
-Allow: /*/info/thaise-eilanden
-Allow: /*/info/transport-thailand
-Allow: /*/info/living-thailand
-Allow: /*/info/visa-retirement-thailand
-Allow: /*/info/buying-land-thailand
-Allow: /*/info/chanote-title-deed
-Allow: /*/listings
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap
+Sitemap: https://www.thaiplot.com/sitemap.xml

@@ -32,7 +32,8 @@
     "guideTransport": "การเดินทางและจราจร",
     "guideLiving": "ใช้ชีวิต: ค่าครองชีพ",
     "guideIslands": "Thai islands",
-    "guideCulture": "Thai culture & customs"
+    "guideCulture": "Thai culture & customs",
+    "news": "Thailand news"
   },
   "languages": {
     "en": "English",
@@ -104,7 +105,8 @@
       "transport": "การเดินทาง",
       "living": "ใช้ชีวิตในไทย",
       "islands": "Thai islands",
-      "culture": "Thai culture"
+      "culture": "Thai culture",
+      "news": "News"
     }
   },
   "homepage": {
@@ -834,7 +836,20 @@
     "linkTransport": "การเดินทาง จราจร และการจอง",
     "linkLiving": "ใช้ชีวิต: ค่าครองชีพ ภาษี ธนาคาร โรงเรียน",
     "linkIslands": "Thai islands — diving & snorkeling",
-    "linkCulture": "Thai culture & customs"
+    "linkCulture": "Thai culture & customs",
+    "furtherReadingUpdates": "Further reading — current updates",
+    "thaigerVisaExpats": "Thailand retirement visa — latest rules (The Thaiger)",
+    "thaigerVisaFavourite": "Thailand still an expat favourite, new rules 2026 (The Thaiger)",
+    "thaigerVisaWish": "What expats wish they knew before moving (The Thaiger)",
+    "thaigerLivingRealities": "Expat life in Thailand — long-term realities (The Thaiger)",
+    "thaigerLivingEverything": "Everything to know about living in Thailand (The Thaiger)",
+    "thaigerLivingEdge": "Has Thailand lost its edge? Comparing expat life across SE Asia (The Thaiger)",
+    "thaigerHealthGuide": "Health in Thailand — expat guide (The Thaiger)",
+    "thaigerHealthMoving": "Moving to Thailand — health challenges expats face (The Thaiger)",
+    "thaigerHealthWish": "What expats wish they knew — health & insurance (The Thaiger)",
+    "thaigerTransportNews": "Thailand expat news — transport & driving (The Thaiger)",
+    "thaigerTransportLicence": "Thai driving licence online renewal (The Thaiger)",
+    "thaigerProperty": "Thailand property news (The Thaiger)"
   },
   "regionHuaHin": {
     "metaTitle": "Land for Sale in Hua Hin, Thailand | ThaiPlot",
@@ -2629,5 +2644,9 @@
       }
     ],
     "disclaimer": "General information only — cultural norms evolve and vary by region, age and individual. This guide reflects general patterns, not universal rules. ThaiPlot is a property marketplace."
+  },
+  "newsPage": {
+    "metaTitle": "Thailand News — Property, expat & living updates | ThaiPlot",
+    "metaDescription": "Latest news from Thailand on property, expat life, visas, transport and living — curated for buyers and long-stay residents."
   }
 }

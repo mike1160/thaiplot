@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import InfoHero from '@/components/InfoHero'
+import PartnerLinks from '@/components/PartnerLinks'
 import RelatedGuides from '@/components/RelatedGuides'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 
@@ -123,9 +124,16 @@ function Section({
 type Props = {
   relatedTitle: string
   relatedLinks: { href: string; label: string }[]
+  furtherReadingTitle?: string
+  furtherReadingLinks?: { href: string; label: string }[]
 }
 
-export default function LivingGuideClient({ relatedTitle, relatedLinks }: Props) {
+export default function LivingGuideClient({
+  relatedTitle,
+  relatedLinks,
+  furtherReadingTitle,
+  furtherReadingLinks,
+}: Props) {
   const t = useTranslations('infoLiving')
 
   const topicLabels = TOPIC_IDS.map((id) => ({
@@ -264,6 +272,10 @@ export default function LivingGuideClient({ relatedTitle, relatedLinks }: Props)
         <p className="border-l-2 border-[#C8973A] pl-4 text-sm leading-relaxed text-[#5C5247]">
           {t('disclaimer')}
         </p>
+
+        {furtherReadingTitle && furtherReadingLinks ? (
+          <PartnerLinks title={furtherReadingTitle} links={furtherReadingLinks} />
+        ) : null}
 
         <RelatedGuides title={relatedTitle} links={relatedLinks} />
 

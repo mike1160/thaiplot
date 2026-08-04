@@ -54,6 +54,21 @@ export default async function LivingThailandPage({ params }: Props) {
           { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
           { href: '/info/buying-land-thailand', label: tp('linkBuying') },
         ]}
+        furtherReadingTitle={tp('furtherReadingUpdates')}
+        furtherReadingLinks={[
+          {
+            href: 'https://thethaiger.com/guides/best-of/lifestyle/expat-living-in-thailand-lifestyle-realities',
+            label: tp('thaigerLivingRealities'),
+          },
+          {
+            href: 'https://thethaiger.com/thai-life/everything-to-know-about-living-in-thailand-as-an-expat',
+            label: tp('thaigerLivingEverything'),
+          },
+          {
+            href: 'https://thethaiger.com/travel/thailand-travel/has-thailand-lost-its-edge-comparing-expat-life-across-southeast-asia',
+            label: tp('thaigerLivingEdge'),
+          },
+        ]}
       />
     </>
   )
