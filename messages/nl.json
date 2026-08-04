@@ -971,7 +971,6 @@
       "Wij zijn niet verantwoordelijk voor de juistheid, beschikbaarheid, inhoud, kosten, malware-risico of gevolgen van enige externe website of download. Overheids-URL’s, formulieren en procedures wijzigen zonder aankondiging.",
       "Vul nooit wachtwoorden of paspoortgegevens in op sites zonder officieel .go.th-domein (of een duidelijk geverifieerd domein). Twijfel je: vraag aan het loket of bij een bevoegde advocaat — niet via een willekeurige social-media-“agent”."
     ],
-    "photoCaption": "Beelden uit Thailand — sfeer, geen officiële formulieren.",
     "placeholderBadge": "Placeholder",
     "officialBadge": "Officieel",
     "placeholderUrl": "URL TBD — bevestig op de site / aan het loket",
@@ -1059,6 +1058,29 @@
         "name": "Sociale zekerheid / overige formulieren",
         "desc": "Placeholder voor extra downloadbare formulieren die werkgevers of kantoren soms vragen."
       }
+    },
+    "thim": {
+      "eyebrow": "Nieuwe overheidsapp",
+      "title": "THIM — Thai Immigration",
+      "imageAlt": "Icoon van de THIM Thai Immigration-app",
+      "paras": [
+        "THIM (Thailand Immigration Management) is de officiële mobiele app van het Thaise Immigration Bureau voor buitenlanders die naar Thailand reizen. De app werkt naast de verplichte Thailand Digital Arrival Card (TDAC) — hij vervangt TDAC niet.",
+        "In de huidige vrijwillige pilot kun je met THIM aankomstgegevens op je telefoon voorbereiden. Volgens Immigratie- / toerismeberichten moet THIM vanaf augustus 2026 verplicht worden voor het indienen van de aankomstkaart. Exacte regels kunnen nog schuiven — check altijd het laatste Immigratiebericht voor jouw reisdatum.",
+        "In de praktijk scan je de paspoortpagina, vul je reis- en verblijfsgegevens in via de TDAC-workflow, en dien je digitaal in in plaats van op papieren formulieren op het vliegveld. Groepsregistratie (handig voor gezinnen) en reis-herinneringen horen bij de gepubliceerde functies. Interfaces starten in het Engels, Russisch, Japans en Chinees; meer talen zijn gepland.",
+        "Op langere termijn beschrijft Immigratie THIM als een breder platform voor buitenlanders in Thailand — afspraken, documenten, status volgen, en mogelijk diensten zoals de 90-dagenmelding. Die modules komen in fases; ga er niet van uit dat elke lokettaak vandaag al in de app zit."
+      ],
+      "bullets": [
+        "Officiële uitgever: Immigration Bureau / Royal Thai Police-ecosysteem — installeer alleen via de officiële App Store- of Google Play-listing (Android-pakket th.go.immigration.thim).",
+        "TDAC blijft nodig: gebruik THIM naast de actuele aankomstregels; het is geen vervanging van een visum of van persoonlijke verschijning als dat gevraagd wordt.",
+        "Nu pilot → geplande verplichte aankomstkaart via THIM vanaf augustus 2026 (bevestig vóór vertrek).",
+        "Kernflow: paspoortscan (OCR), digitale aankomstgegevens, groepsreizen, meldingen.",
+        "Beveiliging: behandel je telefoon als een paspoort — vergrendel hem en deel QR-codes niet achteloos.",
+        "ThaiPlot is niet de uitgever en geeft geen immigratieadvies — wij wijzen alleen naar de officiële app en openbare informatie."
+      ],
+      "note": "Check altijd de actuele App Store- / Play Store-listing en Immigratie-aankondigingen vóór je reist — uitrolplanning wijzigt.",
+      "android": "Google Play →",
+      "ios": "App Store →",
+      "storeNote": "Gebruik bij voorkeur de officiële listings hierboven. Lijkt een zoekresultaat niet op “THIM – Thai Immigration Bureau”, installeer het niet."
     }
   }
 }

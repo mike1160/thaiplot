@@ -12,6 +12,83 @@ import {
   type OfficialLinkId,
 } from '@/content/official-downloads'
 
+const PLAY_STORE =
+  'https://play.google.com/store/apps/details?id=th.go.immigration.thim'
+const APP_STORE =
+  'https://apps.apple.com/app/thim-thai-immigration-bureau/id6759272559'
+
+function CloudFade({
+  position,
+  fill = '#FAF7F0',
+}: {
+  position: 'top' | 'bottom'
+  fill?: string
+}) {
+  const flip = position === 'top'
+  return (
+    <div
+      className={`pointer-events-none absolute left-0 right-0 z-10 leading-[0] ${
+        flip ? 'top-0' : 'bottom-0'
+      }`}
+      aria-hidden
+    >
+      <svg
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        className={`block w-full h-12 md:h-16 ${flip ? 'rotate-180' : ''}`}
+      >
+        <path
+          fill={fill}
+          d="M0,48 C180,78 320,12 480,36 C640,60 780,88 960,40 C1120,4 1280,28 1440,52 L1440,80 L0,80 Z"
+        />
+        <path
+          fill={fill}
+          opacity="0.55"
+          d="M0,56 C220,20 400,72 560,48 C720,24 900,8 1080,44 C1240,72 1360,60 1440,40 L1440,80 L0,80 Z"
+        />
+      </svg>
+    </div>
+  )
+}
+
+function PhotoBand({
+  src,
+  title,
+  eyebrow,
+}: {
+  src: string
+  title: string
+  eyebrow?: string
+}) {
+  return (
+    <div className="relative w-full h-[38vh] min-h-[220px] max-h-[360px] overflow-hidden">
+      <img src={src} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(26,39,68,0.55) 0%, rgba(26,39,68,0.15) 50%, rgba(26,39,68,0.25) 100%)',
+        }}
+      />
+      <CloudFade position="top" />
+      <CloudFade position="bottom" />
+      <div className="relative z-[11] h-full flex flex-col justify-center items-center text-center px-6">
+        {eyebrow ? (
+          <p className="text-[#C8973A] text-[11px] md:text-xs font-medium uppercase tracking-[0.2em] mb-2">
+            {eyebrow}
+          </p>
+        ) : null}
+        <h2
+          className="text-white text-2xl md:text-4xl font-bold drop-shadow-sm"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          {title}
+        </h2>
+      </div>
+    </div>
+  )
+}
+
 export default function OfficialDownloadsClient() {
   const t = useTranslations('infoOfficialDownloads')
 
@@ -32,7 +109,8 @@ export default function OfficialDownloadsClient() {
               'linear-gradient(to top, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.45) 55%, rgba(26,39,68,0.25) 100%)',
           }}
         />
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-14 pt-28">
+        <CloudFade position="bottom" />
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-16 pt-28">
           <p className="text-[#C8973A] text-xs md:text-sm font-medium uppercase tracking-[0.2em] mb-3">
             {t('eyebrow')}
           </p>
@@ -48,8 +126,7 @@ export default function OfficialDownloadsClient() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-6 py-10 md:py-14 space-y-14">
-        {/* Disclaimer */}
+      <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
         <aside
           className="border border-[#C0392B]/35 bg-[#FFF8F6] px-5 py-5 md:px-7 md:py-6 rounded-[4px]"
           role="note"
@@ -69,28 +146,60 @@ export default function OfficialDownloadsClient() {
             ))}
           </div>
         </aside>
+      </div>
 
-        {/* Photo strip */}
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-2">
-          {([1, 2, 3, 4, 5, 6] as const).map((n) => (
-            <div key={n} className="relative aspect-[3/4] overflow-hidden bg-[#E8E2D6]">
-              <img
-                src={TH_PL_PHOTOS[n]}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+      {/* THIM featured */}
+      <PhotoBand
+        src={TH_PL_PHOTOS[2]}
+        eyebrow={t('thim.eyebrow')}
+        title={t('thim.title')}
+      />
+      <div className="max-w-4xl mx-auto px-6 py-10 md:py-12">
+        <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start">
+          <img
+            src="/thim-app.png"
+            alt={t('thim.imageAlt')}
+            className="w-28 h-28 sm:w-36 sm:h-36 rounded-[22%] shadow-[0_8px_28px_rgba(26,39,68,0.18)] flex-shrink-0 object-cover"
+          />
+          <div className="min-w-0 space-y-3 text-sm md:text-[15px] text-[#5C5247] leading-relaxed">
+            {(t.raw('thim.paras') as string[]).map((p) => (
+              <p key={p.slice(0, 48)}>{p}</p>
+            ))}
+            <ul className="list-disc pl-5 space-y-1.5 pt-1">
+              {(t.raw('thim.bullets') as string[]).map((item) => (
+                <li key={item.slice(0, 48)}>{item}</li>
+              ))}
+            </ul>
+            <p className="pt-2 text-[#1A2744] font-medium">{t('thim.note')}</p>
+            <div className="flex flex-wrap gap-3 pt-3">
+              <a
+                href={PLAY_STORE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2.5 text-sm font-semibold bg-[#1A2744] text-white hover:bg-[#C8973A] transition-colors"
+              >
+                {t('thim.android')}
+              </a>
+              <a
+                href={APP_STORE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2.5 text-sm font-semibold border border-[#1A2744] text-[#1A2744] hover:border-[#C8973A] hover:text-[#C8973A] transition-colors"
+              >
+                {t('thim.ios')}
+              </a>
             </div>
-          ))}
+            <p className="text-xs text-[#8A7F72] pt-1">{t('thim.storeNote')}</p>
+          </div>
         </div>
+      </div>
 
-        <p className="text-center text-sm text-[#5C5247] -mt-8">{t('photoCaption')}</p>
+      {OFFICIAL_CATEGORIES.map((cat) => (
+        <CategoryBlock key={cat} category={cat} />
+      ))}
 
-        {/* Categories */}
-        {OFFICIAL_CATEGORIES.map((cat) => (
-          <CategoryBlock key={cat} category={cat} />
-        ))}
-
-        <section className="border-t border-[#E8E2D6] pt-10">
+      <div className="max-w-4xl mx-auto px-6 py-10 md:py-14 space-y-10">
+        <section>
           <h2
             className="text-xl md:text-2xl font-bold mb-3"
             style={{ fontFamily: 'Playfair Display, serif' }}
@@ -119,26 +228,16 @@ function CategoryBlock({ category }: { category: OfficialCategoryId }) {
 
   return (
     <section>
-      <div className="grid grid-cols-1 md:grid-cols-[140px_minmax(0,1fr)] gap-5 md:gap-8 items-start">
-        <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[160px] overflow-hidden bg-[#E8E2D6]">
-          <img src={photo} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-        <div>
-          <h2
-            className="text-xl md:text-2xl font-bold text-[#1A2744] mb-1"
-            style={{ fontFamily: 'Playfair Display, serif' }}
-          >
-            {t(`categories.${category}.title`)}
-          </h2>
-          <p className="text-sm text-[#5C5247] mb-5 leading-relaxed">
-            {t(`categories.${category}.intro`)}
-          </p>
-          <ul className="space-y-3">
-            {links.map((link) => (
-              <LinkRow key={link.id} id={link.id} href={link.href} />
-            ))}
-          </ul>
-        </div>
+      <PhotoBand src={photo} title={t(`categories.${category}.title`)} />
+      <div className="max-w-4xl mx-auto px-6 py-8 md:py-10">
+        <p className="text-sm md:text-[15px] text-[#5C5247] mb-6 leading-relaxed">
+          {t(`categories.${category}.intro`)}
+        </p>
+        <ul className="space-y-3">
+          {links.map((link) => (
+            <LinkRow key={link.id} id={link.id} href={link.href} />
+          ))}
+        </ul>
       </div>
     </section>
   )

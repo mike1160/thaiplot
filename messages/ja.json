@@ -971,7 +971,6 @@
       "We are not responsible for the accuracy, availability, content, fees, malware risk or outcomes of any external website or download. Government URLs, forms and procedures change without notice.",
       "Never enter passwords or passport data on sites that do not use an official .go.th (or clearly verified) domain. When in doubt, ask at the office counter or a licensed lawyer — not a random social-media “agent”."
     ],
-    "photoCaption": "Visuals from Thailand — atmosphere, not official forms.",
     "placeholderBadge": "Placeholder",
     "officialBadge": "Official",
     "placeholderUrl": "URL TBD — confirm on site / at the office",
@@ -1059,6 +1058,29 @@
         "name": "Social Security / other forms",
         "desc": "Placeholder for additional downloadable forms sometimes requested by employers or offices."
       }
+    },
+    "thim": {
+      "eyebrow": "新しい政府アプリ",
+      "title": "THIM — Thai Immigration",
+      "imageAlt": "THIM Thai Immigration app icon",
+      "paras": [
+        "THIM (Thailand Immigration Management) is the official mobile app of the Thai Immigration Bureau for foreign nationals travelling to Thailand. It sits alongside the mandatory Thailand Digital Arrival Card (TDAC) — it does not replace TDAC.",
+        "During the current voluntary pilot you may use THIM to prepare arrival details on your phone. According to Immigration / tourism communications, THIM is scheduled to become mandatory for arrival-card submission from August 2026. Exact rules can still shift — always check the latest Immigration notice for your travel date.",
+        "In practice you scan the passport biodata page, add trip and accommodation details linked to the TDAC workflow, and submit digitally instead of relying on paper forms at the airport. Group registration (useful for families) and trip reminders are part of the published feature set. Interfaces started in English, Russian, Japanese and Chinese, with more languages planned.",
+        "Longer term, Immigration has described THIM as growing into a broader platform for foreigners in Thailand — appointments, document requests, status tracking, and possibly services such as 90-day reporting. Those modules arrive in phases; do not assume every office task is already inside the app today."
+      ],
+      "bullets": [
+        "Official publisher: Immigration Bureau / Royal Thai Police ecosystem — install only from the official App Store or Google Play listing (Android package th.go.immigration.thim).",
+        "TDAC stays required: use THIM together with current arrival rules; it is not a substitute for a visa or for appearing in person when asked.",
+        "Pilot now → planned mandatory arrival-card use from August 2026 (confirm before you fly).",
+        "Core flow: passport scan (OCR), digital arrival details, group trips, notifications.",
+        "Security: treat your phone like a passport — lock it and do not share QR codes casually.",
+        "ThaiPlot is not the publisher and does not provide immigration advice — we only point you to the official app and public information."
+      ],
+      "note": "Always confirm the current App Store / Play Store listing and Immigration announcements before you travel — rollout timelines change.",
+      "android": "Google Play →",
+      "ios": "App Store →",
+      "storeNote": "Prefer the official listings above. If a search result does not look like “THIM – Thai Immigration Bureau”, do not install it."
     }
   }
 }
