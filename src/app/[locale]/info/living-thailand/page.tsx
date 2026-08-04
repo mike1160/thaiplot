@@ -11,6 +11,8 @@ export async function generateMetadata({ params }: Props) {
     locale: params.locale,
     namespace: 'infoLiving',
     path: '/info/living-thailand',
+    ogImage:
+      'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200',
   })
 }
 

@@ -11,6 +11,8 @@ export async function generateMetadata({ params }: Props) {
     locale: params.locale,
     namespace: 'infoTransport',
     path: '/info/transport-thailand',
+    ogImage:
+      'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&w=1200',
   })
 }
 

@@ -93,6 +93,7 @@ export default async function PaperworkThailandPage({ params }: Props) {
               { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
               { href: '/info/visa-retirement-thailand', label: tp('linkVisa') },
               { href: '/info/living-thailand', label: tp('linkLiving') },
+              { href: '/info/transport-thailand', label: tp('linkTransport') },
               { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
             ]}
           />
