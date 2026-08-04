@@ -9,6 +9,40 @@ import InfoHero from '@/components/InfoHero'
 import RelatedGuides from '@/components/RelatedGuides'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 
+const PEXELS = (id: string, w = 900) =>
+  `https://images.pexels.com/photos/${id}?auto=compress&cs=tinysrgb&w=${w}`
+
+const ISLAND_PHOTOS: Record<string, string> = {
+  'Koh Samui': PEXELS('2474690/pexels-photo-2474690.jpeg'),
+  'Koh Phangan': PEXELS('1851481/pexels-photo-1851481.jpeg'),
+  'Koh Tao': PEXELS('3254729/pexels-photo-3254729.jpeg'),
+  'Koh Chang': PEXELS('4534200/pexels-photo-4534200.jpeg'),
+  Phuket: PEXELS('1174732/pexels-photo-1174732.jpeg'),
+  'Koh Phi Phi': PEXELS('2161467/pexels-photo-2161467.jpeg'),
+  'Koh Lanta': PEXELS('3601425/pexels-photo-3601425.jpeg'),
+  'Koh Lipe': PEXELS('3601430/pexels-photo-3601430.jpeg'),
+  'Similan Islands': PEXELS('3483098/pexels-photo-3483098.jpeg'),
+}
+
+const INTRO_MAP = PEXELS('3889843/pexels-photo-3889843.jpeg', 600)
+const DIVING_PHOTO = PEXELS('3369569/pexels-photo-3369569.jpeg', 1400)
+
+const MARINE_EMOJIS = ['🐢', '🦈', '🐠', '🦈', '🐡'] as const
+
+function seasonCellClass(cell: string, colIndex: number): string {
+  if (colIndex === 0) return 'px-3 py-2.5 text-[#5C5247]'
+  const lower = cell.toLowerCase()
+  const caution =
+    /cancel|closed|rough|gesloten|annul|ruwer|june–sept|juni–sept|may–october|mei–oktober/.test(
+      lower
+    )
+  const good =
+    /november|year-round|heel jaar|feb|february|april|best/.test(lower) && !caution
+  if (caution) return 'px-3 py-2.5 text-[#5C5247] bg-[#fff3e0]'
+  if (good) return 'px-3 py-2.5 text-[#5C5247] bg-[#e8f5e9]'
+  return 'px-3 py-2.5 text-[#5C5247]'
+}
+
 function Section({
   title,
   children,
@@ -33,24 +67,41 @@ function IslandCards({
   islands: { name: string; body: string; how: string }[]
 }) {
   return (
-    <ul className="space-y-4">
-      {islands.map((island) => (
-        <li
-          key={island.name}
-          className="rounded-[14px] border border-white/75 bg-white/70 p-4 shadow-[0_10px_28px_rgba(20,32,56,0.06)] backdrop-blur-md md:p-5"
-        >
-          <h3
-            className="mb-2 text-lg font-bold text-[#142038]"
-            style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+    <ul className="grid gap-6 sm:grid-cols-2">
+      {islands.map((island) => {
+        const photo = ISLAND_PHOTOS[island.name]
+        return (
+          <li
+            key={island.name}
+            className="overflow-hidden rounded-[10px] border border-[#E8E2D6] bg-white/80 shadow-[0_10px_28px_rgba(20,32,56,0.06)]"
           >
-            {island.name}
-          </h3>
-          <p className="mb-2 text-sm leading-relaxed text-[#5C5247] md:text-[15px]">
-            {island.body}
-          </p>
-          <p className="text-sm font-medium text-[#C8973A]">{island.how}</p>
-        </li>
-      ))}
+            {photo ? (
+              <img
+                src={photo}
+                alt={`${island.name} Thailand`}
+                width={900}
+                height={280}
+                loading="lazy"
+                className="h-[280px] w-full object-cover"
+              />
+            ) : null}
+            <div className="p-4 md:p-5">
+              <h3
+                className="mb-2 text-lg font-bold text-[#142038]"
+                style={{ fontFamily: 'Playfair Display, Georgia, serif' }}
+              >
+                {island.name}
+              </h3>
+              <p className="mb-3 text-sm leading-relaxed text-[#5C5247] md:text-[15px]">
+                {island.body}
+              </p>
+              <span className="inline-block rounded-[8px] border border-[#C8973A]/35 bg-[#FAF7F0] px-2.5 py-1 text-xs font-medium text-[#8B6914]">
+                {island.how}
+              </span>
+            </div>
+          </li>
+        )
+      })}
     </ul>
   )
 }
@@ -68,6 +119,7 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
     body: string
     how: string
   }[]
+  const introParas = t.raw('intro') as string[]
 
   return (
     <main className="min-h-screen text-[#142038]">
@@ -90,18 +142,32 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
           aria-hidden
         />
 
-        <section className="tp-body space-y-3">
-          <p>{(t.raw('intro') as string[])[0]}</p>
-          <p>
-            {t('transportLinkBefore')}{' '}
-            <Link
-              href="/info/transport-thailand"
-              className="font-semibold text-[#C8973A] underline-offset-2 hover:underline"
-            >
-              {t('transportLinkLabel')}
-            </Link>
-            .
-          </p>
+        <section className="tp-body space-y-5">
+          <div className="grid items-start gap-6 md:grid-cols-2">
+            <div className="space-y-3">
+              {introParas.map((p) => (
+                <p key={p.slice(0, 40)}>{p}</p>
+              ))}
+              <p>
+                {t('transportLinkBefore')}{' '}
+                <Link
+                  href="/info/transport-thailand"
+                  className="font-semibold text-[#C8973A] underline-offset-2 hover:underline"
+                >
+                  {t('transportLinkLabel')}
+                </Link>
+                .
+              </p>
+            </div>
+            <img
+              src={INTRO_MAP}
+              alt="Thailand coastlines map"
+              width={600}
+              height={400}
+              loading="lazy"
+              className="h-full max-h-[280px] w-full rounded-[8px] object-cover shadow-[0_10px_28px_rgba(20,32,56,0.08)] md:max-h-none"
+            />
+          </div>
         </section>
 
         <Section title={t('gulf.title')} lead={t('gulf.lead')}>
@@ -111,6 +177,17 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
         <Section title={t('andaman.title')} lead={t('andaman.lead')}>
           <IslandCards islands={andamanIslands} />
         </Section>
+
+        <div className="animate-fade-in-up">
+          <img
+            src={DIVING_PHOTO}
+            alt="Coral reef diving Thailand"
+            width={1400}
+            height={340}
+            loading="lazy"
+            className="mb-6 h-[340px] w-full rounded-[8px] object-cover"
+          />
+        </div>
 
         <Section title={t('diving.title')} lead={t('diving.lead')}>
           <h3
@@ -164,12 +241,9 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
               </thead>
               <tbody>
                 {(t.raw('diving.seasons.rows') as string[][]).map((row) => (
-                  <tr
-                    key={row[0]}
-                    className="border-t border-[#E8E2D6] odd:bg-white/70 even:bg-[#FAF7F0]/80"
-                  >
-                    {row.map((cell) => (
-                      <td key={cell} className="px-3 py-2.5 text-[#5C5247]">
+                  <tr key={row[0]} className="border-t border-[#E8E2D6]">
+                    {row.map((cell, colIndex) => (
+                      <td key={`${row[0]}-${colIndex}`} className={seasonCellClass(cell, colIndex)}>
                         {cell}
                       </td>
                     ))}
@@ -185,9 +259,14 @@ export default function IslandsGuideClient({ relatedTitle, relatedLinks }: Props
           >
             {t('diving.marine.title')}
           </h3>
-          <ul className="list-disc space-y-1.5 pl-5">
-            {(t.raw('diving.marine.items') as string[]).map((item) => (
-              <li key={item.slice(0, 40)}>{item}</li>
+          <ul className="space-y-2 pl-0">
+            {(t.raw('diving.marine.items') as string[]).map((item, i) => (
+              <li key={item.slice(0, 40)} className="flex gap-2.5 text-[#5C5247]">
+                <span className="flex-shrink-0 text-lg leading-none" aria-hidden>
+                  {MARINE_EMOJIS[i] ?? '🐟'}
+                </span>
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </Section>

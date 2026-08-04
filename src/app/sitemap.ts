@@ -34,6 +34,7 @@ const STATIC_ROUTES: Array<{
   { path: '/info/thai-islands', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/living-thailand', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/food-thailand', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/info/thai-culture', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/options', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/vending', priority: 0.5, changeFrequency: 'monthly' },
   { path: '/info/drinking-water-thailand/costs', priority: 0.5, changeFrequency: 'monthly' },

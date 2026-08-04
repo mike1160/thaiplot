@@ -36,6 +36,8 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
     'cost of living Thailand, taxes Thailand foreigners, open bank account Thailand, international schools Thailand, driving in Thailand, levensonderhoud Thailand, belasting Thailand, bankrekening Thailand, scholen Thailand',
   infoIslands:
     'Thai islands, Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands, diving Thailand, snorkeling Thailand, ferry Thailand islands, Thaise eilanden, duiken Thailand, snorkelen Thailand',
+  infoCulture:
+    'Thai culture, Thai customs, Thai etiquette, wai Thailand, modern Thailand, Thai society, royal family Thailand, face Thailand, sanuk, Thai people today',
 }
 
 export function localizedPath(locale: string, path: string): string {

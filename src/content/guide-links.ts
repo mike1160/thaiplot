@@ -14,6 +14,7 @@ export const GUIDE_LINKS = [
   { href: '/info/thai-islands', key: 'guideIslands' },
   { href: '/info/health-accidents-thailand', key: 'guideHealth' },
   { href: '/info/food-thailand', key: 'guideFood' },
+  { href: '/info/thai-culture', key: 'guideCulture' },
   { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' },
   { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' },
   { href: '/info/thim-app', key: 'guideThim' },

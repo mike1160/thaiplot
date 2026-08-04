@@ -23,6 +23,7 @@ const INFO_PAGES: Record<string, string> = {
   'health-accidents-thailand': 'pages.health',
   'transport-thailand': 'pages.transport',
   'thai-islands': 'pages.islands',
+  'thai-culture': 'pages.culture',
   'food-thailand': 'pages.food',
 }
 

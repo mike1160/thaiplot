@@ -22,7 +22,8 @@ export const HERO_PHOTOS = {
   food: pexels('1640777/pexels-photo-1640777.jpeg'),
   transport: pexels('1034662/pexels-photo-1034662.jpeg'),
   living: pexels('1571460/pexels-photo-1571460.jpeg'),
-  islands: pexels('1483053/pexels-photo-1483053.jpeg'),
+  islands: pexels('1430677/pexels-photo-1430677.jpeg'),
+  culture: pexels('1031458/pexels-photo-1031458.jpeg'),
   homeCtaListProperty: pexels('1029599/pexels-photo-1029599.jpeg'),
   homeCtaVerifyTitle: pexels('4386431/pexels-photo-4386431.jpeg'),
 } as const

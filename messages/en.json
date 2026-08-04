@@ -31,7 +31,8 @@
     "guideThaiData": "ThaiData — public records",
     "guideTransport": "Transport & traffic",
     "guideLiving": "Living: costs & banking",
-    "guideIslands": "Thai islands — diving, snorkeling & destinations"
+    "guideIslands": "Thai islands — diving, snorkeling & destinations",
+    "guideCulture": "Thai culture & customs"
   },
   "languages": {
     "en": "English",
@@ -102,7 +103,8 @@
       "food": "Food in Thailand",
       "transport": "Transport",
       "living": "Living in Thailand",
-      "islands": "Thai islands"
+      "islands": "Thai islands",
+      "culture": "Thai culture"
     }
   },
   "homepage": {
@@ -585,7 +587,8 @@
     "linkFood": "Food, vegetarian & nightlife tips",
     "linkTransport": "Transport, traffic & travel",
     "linkLiving": "Living: costs, tax, banking, schools",
-    "linkIslands": "Thai islands — diving & snorkeling"
+    "linkIslands": "Thai islands — diving & snorkeling",
+    "linkCulture": "Thai culture & customs"
   },
   "infoBuying": {
     "metaTitle": "How to Buy Land in Thailand as a Foreigner | ThaiPlot",
@@ -2397,5 +2400,184 @@
     ],
     "disclaimer": "General information only — routes, prices, park fees and seasonal conditions change. Always confirm with ferry operators and dive centres before booking. ThaiPlot is a property marketplace, not a travel agency.",
     "transportLinkBefore": "For ferry routes, operators and prices, see our"
+  },
+  "infoCulture": {
+    "metaTitle": "Thai Culture & Customs — How Modern Thailand Really Works | ThaiPlot",
+    "metaDescription": "What Thai customs actually look like in 2026 — the wai, the royal family, face, sanuk, the monarchy, temples, and how modern Thais live today versus the outdated stereotype.",
+    "eyebrow": "Culture & daily life",
+    "title": "Thai Culture & Customs — How Modern Thailand Really Works",
+    "subtitle": "Not the sanitised version. A clear-eyed look at what Thai social norms actually mean in 2026 — and which ones most guides get wrong.",
+    "intro": [
+      "Most guides on Thai culture read like they were written in 1995 and never updated. They describe a society frozen in formal hierarchy, where everyone bows constantly, nobody ever shows frustration, and a foreigner's every move is judged against a rigid code of conduct.",
+      "The reality is different — and more interesting. Thailand in 2026 is a country where a Gen Z Thai in Bangkok orders coffee via app, posts political commentary on TikTok, and then goes home to leave offerings at the spirit house on the corner. Tradition and modernity don't cancel each other out here. They run in parallel.",
+      "This guide separates what still genuinely matters from what is outdated noise."
+    ],
+    "myths": {
+      "title": "What most guides get wrong",
+      "lead": "A few things repeated endlessly in Thailand etiquette content don't hold up against how Thailand actually functions today:",
+      "items": [
+        {
+          "title": "\"Always wai everyone.\"",
+          "body": "Not accurate. The wai is a gesture of respect, not a universal greeting for every interaction. Service staff, shop assistants and casual encounters don't require it. Offering one in the wrong context can read as overdone or even awkward rather than respectful. Return a wai when someone older or of higher status initiates — don't initiate one to a cashier or a child."
+        },
+        {
+          "title": "\"Never use your left hand.\"",
+          "body": "This custom carries real weight in parts of South Asia and the Middle East. In Thailand it is a minor courtesy at most — not a rule with serious social weight. You won't cause offence by handing someone something with your left hand."
+        },
+        {
+          "title": "\"Thai people never show emotion.\"",
+          "body": "An oversimplification. What is true is that public displays of frustration or anger are handled with more restraint than in Western Europe — not that emotion is absent. Thais laugh loudly, tease each other, and express warmth openly. What they avoid is public confrontation and visible loss of composure."
+        },
+        {
+          "title": "\"Every restaurant requires removing shoes.\"",
+          "body": "Only true for homestays, temples and some traditional-style restaurants. Standard table-seating restaurants almost never require it. Look for a pile of shoes at the entrance — that is your cue."
+        }
+      ]
+    },
+    "wai": {
+      "title": "The wai — what it actually is",
+      "lead": "The wai (ไหว้) is a pressed-palms greeting with a slight bow. It signals respect, gratitude, or acknowledgement. How high your hands go and how deep you bow signals relative status — higher hands, deeper bow = more respect to the other person.",
+      "practiceTitle": "In practice for foreigners:",
+      "items": [
+        "Return a wai if an older person or someone in a formal role initiates one",
+        "A slight nod or smile is perfectly fine in casual encounters",
+        "Don't wai children, service staff serving you, or people significantly younger",
+        "Monks: if you wai a monk, he will not wai back — that is correct, not rude"
+      ],
+      "note": "You will not cause serious offence by getting this slightly wrong. Thais generally appreciate the gesture of trying."
+    },
+    "royal": {
+      "title": "The Royal Family — this one is serious",
+      "lead": "Thailand's lèse-majesté law (Article 112) is one of the strictest in the world. Criticising, insulting or defaming the King, Queen, heir apparent or regent is a criminal offence carrying up to 15 years in prison per count. This applies to foreigners in Thailand.",
+      "practiceTitle": "In practice:",
+      "items": [
+        "Do not make negative comments about the royal family, publicly or online",
+        "Stand still and quiet when the national anthem plays in cinemas or public spaces at 8am and 6pm",
+        "Treat images of the King (on currency, posters, murals) with visible respect — do not stand on a coin that has rolled away, for example",
+        "Do not share, like or comment on content online that could be construed as critical"
+      ],
+      "note": "This is not a cultural quirk — it is a legal reality. Foreigners have been arrested and convicted. Take it seriously regardless of your personal views."
+    },
+    "face": {
+      "title": "Face (saving face) — the social lubricant",
+      "lead": "\"Face\" (หน้า — nâa) is the concept of social dignity and reputation. Causing someone to lose face — by publicly embarrassing them, contradicting them bluntly, or making them look incompetent in front of others — is a serious social harm in Thai culture.",
+      "practiceTitle": "What this looks like in practice:",
+      "items": [
+        "A Thai person may say \"yes\" or smile when they mean \"no\" or \"I don't know\" — to avoid the awkwardness of a direct negative",
+        "Blunt public criticism, even when you are right, can damage relationships more than the original problem",
+        "Disagreements are often handled indirectly — through a third party, a change of subject, or simply not following through rather than confronting directly",
+        "If you are wrong, a quiet acknowledgement works better than a dramatic apology"
+      ],
+      "note": "For expats and buyers: this matters in negotiations, business dealings and day-to-day interactions. \"No problem\" sometimes means there is a problem. Build relationships where people feel safe telling you the truth."
+    },
+    "sanuk": {
+      "title": "Sanuk — enjoying life",
+      "lead": "Sanuk (สนุก) means fun, enjoyment, lightness. It is a genuine Thai value — not a tourism slogan. Work that is not sanuk is harder to sustain. Social interactions that are not sanuk lose energy quickly.",
+      "whyTitle": "This is why:",
+      "items": [
+        "Thai colleagues may seem less driven by urgency than European ones — but are often more consistent and pleasant to work with long-term",
+        "A lighthearted approach to negotiation or problem-solving is not lack of seriousness — it is a cultural preference for keeping the atmosphere constructive",
+        "Bangkok was ranked #1 city in the world for Gen Z in 2025 partly because 84% of young residents said they felt happy there"
+      ],
+      "note": "Sanuk does not mean nothing gets done. It means the style of getting things done is different."
+    },
+    "temples": {
+      "title": "Temples & Buddhism — what still applies",
+      "lead": "Thailand is around 95% Theravada Buddhist. Buddhism shapes daily life visibly: monks in orange robes, spirit houses outside every building, temples (wats) in every neighbourhood.",
+      "atTemplesTitle": "At temples:",
+      "atTemples": [
+        "Dress modestly — shoulders and knees covered (sarongs available at most major temples if you forget)",
+        "Remove shoes before entering the main hall (bot)",
+        "Do not point your feet toward Buddha images or monks",
+        "Do not touch monks if you are a woman — hand objects via a cloth or a male intermediary",
+        "Photography is usually fine; check for signs and use common sense near people praying",
+        "Quiet behaviour is expected inside; outside grounds are often social spaces"
+      ],
+      "dailyTitle": "In daily life:",
+      "daily": [
+        "Spirit houses (san phra phum) outside homes and businesses receive daily offerings — they are active religious practice, not decoration. Treat them with respect; don't touch or block them.",
+        "Many Thais wear amulets with sacred significance — do not handle them without being invited to",
+        "Buddhist holidays (Makha Bucha, Visakha Bucha, Asanha Bucha) are alcohol-free days — bars and shops cannot legally sell alcohol. Plan accordingly."
+      ]
+    },
+    "modern": {
+      "title": "Modern Thai life — what has changed",
+      "lead": "The stereotype of Thailand as a country of extreme formality and total deference to hierarchy is increasingly out of date, especially in cities.",
+      "changedTitle": "What modern Thailand actually looks like:",
+      "changed": [
+        "Bangkok's Gen Z is politically engaged, social-media-native, and openly critical of institutions — through art, fashion and online platforms",
+        "Urban Thais dress in full international fashion; \"modest dress\" rules apply at temples, not at shopping malls or restaurants",
+        "Digital payments (PromptPay, QR codes) have largely replaced cash in cities — many younger Thais rarely carry notes",
+        "Co-working culture, freelance work and side businesses are mainstream among the under-35 generation",
+        "Same-sex couples are visible in public in Bangkok and major tourist areas; Thailand passed marriage equality legislation in 2024",
+        "English is widely spoken in Bangkok, Hua Hin, Phuket, Chiang Mai and tourist areas — much less so in rural provinces"
+      ],
+      "unchangedTitle": "What has not changed:",
+      "unchanged": [
+        "Respect for elders and parents remains genuinely strong — not just formal, but felt",
+        "The monarchy is not a topic for public criticism (see above)",
+        "Conflict avoidance in social situations remains a real norm — bluntness lands differently than in the Netherlands or Germany",
+        "Religious observance runs alongside modern life, not instead of it"
+      ]
+    },
+    "eating": {
+      "title": "Eating together",
+      "lead": "Food is central to Thai social life. Meals are usually shared — dishes ordered for the table, not per person. Eating alone is fine but eating together is better.",
+      "items": [
+        "Wait for the host or eldest person to start before eating",
+        "It is polite to serve others before yourself",
+        "Thais eat with a fork (left hand) and spoon (right hand) — the spoon is what goes in the mouth. Chopsticks for noodle dishes only.",
+        "Finishing everything on your plate is a compliment; leaving a little is also acceptable",
+        "Gifts are not opened in front of the giver — set them aside to open later"
+      ]
+    },
+    "dosDonts": {
+      "title": "Practical dos and don'ts",
+      "doTitle": "Do:",
+      "dos": [
+        "Smile — it is genuinely reciprocated and smooths almost any awkward moment",
+        "Remove shoes when you see others doing so at an entrance",
+        "Use two hands or your right hand when giving or receiving something important",
+        "Learn a few Thai words — khob khun (thank you), sawadee (hello/goodbye), mai pen rai (never mind / no problem). Effort is noticed and appreciated.",
+        "Be patient with indirect communication — the answer is often in what is not said"
+      ],
+      "dontTitle": "Don't:",
+      "donts": [
+        "Raise your voice or show public anger — it makes everyone uncomfortable and resolves nothing faster",
+        "Touch someone's head — it is the most sacred part of the body",
+        "Point your feet at people, Buddha images or monks",
+        "Talk negatively about the royal family in any public or semi-public setting",
+        "Assume \"yes\" always means yes — ask follow-up questions if something important depends on the answer",
+        "Expect German directness to be understood as efficient rather than rude"
+      ]
+    },
+    "faqTitle": "FAQ",
+    "faqs": [
+      {
+        "q": "Do I need to wai everyone?",
+        "a": "No. Return a wai if someone of higher status initiates one. A friendly nod or smile is fine in most everyday interactions."
+      },
+      {
+        "q": "Can I discuss politics in Thailand?",
+        "a": "General politics yes, though with care. The royal family: no. Article 112 (lèse-majesté) is actively enforced and applies to foreigners."
+      },
+      {
+        "q": "Is Thailand conservative or liberal?",
+        "a": "Both, depending on context. Urban Thailand — especially Bangkok — is socially open in many ways. Religious and royal institutions command genuine respect. Rural areas are more traditional. Read the room."
+      },
+      {
+        "q": "How important is Buddhism in daily life?",
+        "a": "Very. Not always in a formal way, but in values (kindness, karma, not causing harm), daily practice (temple visits, offerings), and the calendar (Buddhist holidays, alcohol restrictions)."
+      },
+      {
+        "q": "Do Thais really never get angry?",
+        "a": "They get angry. They express it differently — more indirectly, less publicly. A Thai who has lost patience may become very quiet rather than loud. That is often the clearer signal."
+      },
+      {
+        "q": "Is it true Bangkok is now the #1 city for young people?",
+        "a": "Time Out ranked Bangkok #1 city in the world for Gen Z in 2025 — based on happiness, affordability, social scene and quality of life. 84% of young Bangkok residents said they felt happy in the city."
+      }
+    ],
+    "disclaimer": "General information only — cultural norms evolve and vary by region, age and individual. This guide reflects general patterns, not universal rules. ThaiPlot is a property marketplace."
   }
 }

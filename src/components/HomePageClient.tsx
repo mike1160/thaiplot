@@ -274,6 +274,7 @@ export default function HomePageClient({ listings }: Props) {
                 { href: '/info/thai-islands', key: 'guideIslands' as const },
                 { href: '/info/health-accidents-thailand', key: 'guideHealth' as const },
                 { href: '/info/food-thailand', key: 'guideFood' as const },
+                { href: '/info/thai-culture', key: 'guideCulture' as const },
                 { href: '/info/drinking-water-thailand', key: 'guideDrinkWater' as const },
                 { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' as const },
                 { href: '/info/thim-app', key: 'guideThim' as const },

@@ -47,6 +47,7 @@ ThaiPlot is not an agent and does not represent sellers. Listings are placed by 
 - [Thai islands — diving, snorkeling & popular destinations](https://www.thaiplot.com/info/thai-islands): Guide to Thailand's most visited islands on the Gulf of Thailand and Andaman Sea — Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands. Diving, snorkeling, ferry connections and seasonal advice.
 - [Health, accidents & insurance in Thailand](https://www.thaiplot.com/info/health-accidents-thailand): Health risks, hospitals, accident procedures and health insurance options for expats and visitors.
 - [Food in Thailand](https://www.thaiplot.com/info/food-thailand): Thai food guide covering street food, vegetarian and vegan options, gluten-free, useful Thai phrases for restaurants, and a practical note on alcohol and cannabis laws.
+- [Thai culture & customs](https://www.thaiplot.com/info/thai-culture): How Thai social norms, the wai, face, sanuk, Buddhism and the monarchy work in practice in 2026 — including what modern urban Thailand looks like versus the outdated stereotype.
 - [Drinking water in Thailand](https://www.thaiplot.com/info/drinking-water-thailand): Safe drinking water options — bottled, filtered, refill stations — and what to avoid.
 
 ## Tools
