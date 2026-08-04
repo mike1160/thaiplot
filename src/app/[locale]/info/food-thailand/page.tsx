@@ -9,12 +9,72 @@ type Props = { params: { locale: string } }
 
 type Phrase = { th: string; roman: string; meaning: string }
 
-function SectionBody({ paras }: { paras: string[] }) {
+const FOOD_PHOTOS = {
+  tasty: {
+    src: '/food/street-vendors.png',
+    alt: 'Thai street food vendors at a busy stall',
+  },
+  streetFood: {
+    src: '/food/bite-burger-stall.png',
+    alt: 'Modern Thai street food stall Bite Burger at night',
+  },
+  sevenEleven: {
+    src: '/food/tesco-lotus.png',
+    alt: 'Lotus supermarket and food stalls — everyday convenience food Thailand',
+  },
+  bubbleTea: {
+    src: '/food/cameron-bubble-tea.png',
+    alt: 'Bubble tea stall Cameron Café Thailand',
+  },
+  sugarObesity: {
+    src: '/food/bakery-pastries.png',
+    alt: 'Sweet bakery pastries in a Thai supermarket',
+  },
+  muslimBuddhist: {
+    src: '/food/skewers-muslim.png',
+    alt: 'Street food skewers stall with Muslim vendor Thailand',
+  },
+  beachPhuket: {
+    src: '/food/beach-seafood.png',
+    alt: 'Eating seafood on the beach in Phuket Thailand',
+  },
+  vegetarian: {
+    src: '/food/beach-veggies.png',
+    alt: 'Vegetable stir-fry meal on a Thailand beach',
+  },
+  risks: {
+    src: '/food/tom-kha-beach.png',
+    alt: 'Tom kha soup at a beachside restaurant Thailand',
+  },
+} as const
+
+function SectionBody({
+  paras,
+  extraPhotos,
+}: {
+  paras: string[]
+  extraPhotos?: { src: string; alt: string }[]
+}) {
   return (
     <>
       {paras.map((p) => (
         <p key={p.slice(0, 48)}>{p}</p>
       ))}
+      {extraPhotos && extraPhotos.length > 0 ? (
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {extraPhotos.map((photo) => (
+            <img
+              key={photo.src}
+              src={photo.src}
+              alt={photo.alt}
+              width={900}
+              height={260}
+              loading="lazy"
+              className="h-[200px] w-full rounded-[8px] object-cover sm:h-[240px]"
+            />
+          ))}
+        </div>
+      ) : null}
     </>
   )
 }
@@ -116,10 +176,74 @@ export default async function FoodThailandPage({ params }: Props) {
         sections={[
           {
             title: t('tasty.title'),
+            image: FOOD_PHOTOS.tasty.src,
+            imageAlt: FOOD_PHOTOS.tasty.alt,
             body: <SectionBody paras={t.raw('tasty.paras') as string[]} />,
           },
           {
+            title: t('streetFood.title'),
+            image: FOOD_PHOTOS.streetFood.src,
+            imageAlt: FOOD_PHOTOS.streetFood.alt,
+            body: <SectionBody paras={t.raw('streetFood.paras') as string[]} />,
+          },
+          {
+            title: t('sevenEleven.title'),
+            image: FOOD_PHOTOS.sevenEleven.src,
+            imageAlt: FOOD_PHOTOS.sevenEleven.alt,
+            body: <SectionBody paras={t.raw('sevenEleven.paras') as string[]} />,
+          },
+          {
+            title: t('bubbleTea.title'),
+            image: FOOD_PHOTOS.bubbleTea.src,
+            imageAlt: FOOD_PHOTOS.bubbleTea.alt,
+            body: <SectionBody paras={t.raw('bubbleTea.paras') as string[]} />,
+          },
+          {
+            title: t('sugarObesity.title'),
+            image: FOOD_PHOTOS.sugarObesity.src,
+            imageAlt: FOOD_PHOTOS.sugarObesity.alt,
+            body: <SectionBody paras={t.raw('sugarObesity.paras') as string[]} />,
+          },
+          {
+            title: t('muslimBuddhist.title'),
+            image: FOOD_PHOTOS.muslimBuddhist.src,
+            imageAlt: FOOD_PHOTOS.muslimBuddhist.alt,
+            body: (
+              <SectionBody paras={t.raw('muslimBuddhist.paras') as string[]} />
+            ),
+          },
+          {
+            title: t('beachPhuket.title'),
+            image: FOOD_PHOTOS.beachPhuket.src,
+            imageAlt: FOOD_PHOTOS.beachPhuket.alt,
+            body: (
+              <SectionBody
+                paras={t.raw('beachPhuket.paras') as string[]}
+                extraPhotos={[
+                  {
+                    src: '/food/beach-veggies.png',
+                    alt: 'Vegetable meal on Phuket beach Thailand',
+                  },
+                  {
+                    src: '/food/tom-kha-beach.png',
+                    alt: 'Tom kha soup beach dining Thailand',
+                  },
+                  {
+                    src: '/food/phuket-old-town.png',
+                    alt: 'Phuket Old Town Sino-Portuguese architecture',
+                  },
+                  {
+                    src: '/food/beach-dog.png',
+                    alt: 'Phuket beach atmosphere Thailand',
+                  },
+                ]}
+              />
+            ),
+          },
+          {
             title: t('risks.title'),
+            image: FOOD_PHOTOS.risks.src,
+            imageAlt: FOOD_PHOTOS.risks.alt,
             body: (
               <ListBody
                 intro={t('risks.intro')}
@@ -129,6 +253,8 @@ export default async function FoodThailandPage({ params }: Props) {
           },
           {
             title: t('vegetarian.title'),
+            image: FOOD_PHOTOS.vegetarian.src,
+            imageAlt: FOOD_PHOTOS.vegetarian.alt,
             body: <SectionBody paras={t.raw('vegetarian.paras') as string[]} />,
           },
           {

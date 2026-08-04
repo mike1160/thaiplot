@@ -1575,7 +1575,7 @@
   },
   "infoFood": {
     "metaTitle": "Eten in Thailand: smaken, risico’s, vegetarisch & glutenvrij | ThaiPlot",
-    "metaDescription": "Praktische gids over eten in Thailand: lekkere gerechten, voedselveiligheid, vegetarische en glutenvrije opties, Thaise restaurantzinnen, plus een nuchtere noot over alcohol en cannabiswetgeving.",
+    "metaDescription": "Praktische gids over eten in Thailand: straateten, 7-Eleven, bubble thee, suiker en obesitas, moslim- en boeddhistische eetcultuur, eten op het strand in Phuket, vegetarisch en glutenvrij, Thaise zinnen, alcohol en cannabiswetgeving.",
     "title": "Eten in Thailand — smaken, zorg en duidelijke woorden",
     "subtitle": "Wat lekker is, waar je op let, hoe je vegetarisch of glutenvrij bestelt in het Thais, en een praktische waarschuwing over alcohol en drugs — zonder moralistisch vingertje.",
     "tasty": {
@@ -1735,7 +1735,57 @@
         "a": "Nee. Deze pagina is algemene informatie voor reizigers en inwoners. Voor gezondheid of recht: bevoegde professionals en officiële bronnen."
       }
     ],
-    "foodNote": "Alleen algemene informatie — geen medisch, voedings- of juridisch advies. Voedselveiligheid, allergierisico’s en drugswetten wijzigen. Bevestig bij klinieken, restaurants en officiële Thaise bronnen. ThaiPlot toont vastgoed en publiceert praktische gidsen."
+    "foodNote": "Alleen algemene informatie — geen medisch, voedings- of juridisch advies. Voedselveiligheid, allergierisico’s en drugswetten wijzigen. Bevestig bij klinieken, restaurants en officiële Thaise bronnen. ThaiPlot toont vastgoed en publiceert praktische gidsen.",
+    "streetFood": {
+      "title": "Straateten — het dagelijkse voedselsysteem",
+      "paras": [
+        "Straateten is in Thailand geen toeristisch bijzaakje — zo eten miljoenen mensen echt. Ontbijt, lunch en late snacks komen vaker van karren, nightmarkets en kleine kraampjes dan van restaurants met tafelbediening.",
+        "Wat werkt: drukke kraampjes, vers bereid, zichtbare ingrediënten, frisse sauzen. Wat je overslaat: bakken die uren warm staan, rauwe seafood in de hitte, en lege stalls terwijl alles eromheen vol zit.",
+        "Modern streetfood mengt klassiekers met fusion — Thai wagyu-burgers, saté/spiesjes, woknoedels en fruit. Prijzen blijven toegankelijk vergeleken met westers dineren; kwaliteit hangt meer van de buurt af dan van de stadsomvang."
+      ]
+    },
+    "sevenEleven": {
+      "title": "7-Eleven, Lotus & alledaags convenience-eten",
+      "paras": [
+        "7-Eleven hoort bij het Thaise eetlandschap: ijskoffie, ready meals, snacks, fruitcups en late-night calorieën op bijna elke hoek. Lotus's / Big C en vergelijkbare hypermarkten voegen bakkerijbalies, kipketens en snelle maaltijden bij de ingang toe.",
+        "Handig voor reizigers: verzegeld water, yoghurt, bananen, instant pap en magnetronbakjes als je iets voorspelbaars nodig hebt. Minder handig als volledig dieet — de schappen neigen naar zoete drankjes, bakkerij en bewerkte snacks.",
+        "Zie convenience stores als back-up, niet als je hoofdkuken. Combineer ze met markten en echte maaltijden zodat je niet op suiker en zout leeft."
+      ]
+    },
+    "bubbleTea": {
+      "title": "Bubble-thee cultuur",
+      "paras": [
+        "Bubble tea (parels, milk tea, fruit thee) is overal — malls, nightmarkets en aparte stalls. Startprijzen rond ฿25–60 maken het een dagelijkse gewoonte, geen traktatie.",
+        "Het drankje is leuk en sociaal. Het is ook vaak suikerrijk: siropen, condensmelk en tapioca-parels tellen snel op als je er twee of drie per dag van drinkt in de hitte.",
+        "Praktische tip: vraag minder suiker (half sugar) of een kleiner formaat. Veel stalls passen zoetheid aan als je vraagt. Geniet ervan — behandel het alleen niet als hydratatie."
+      ]
+    },
+    "sugarObesity": {
+      "title": "Suiker, frisdrank & stijgende obesitas",
+      "paras": [
+        "Thailand heeft nog steeds uitstekend vers fruit- en groentekoken — maar de suikerinname is hard gestegen via frisdrank, zoete ijsthee, bakkerijgangen, condensmelk en desserts. Stedelijke diëten en kantoorbanen versterken de verschuiving.",
+        "Volksgezondheidscijfers en ziekenhuisrapporten wijzen op meer overgewicht en type-2 diabetes, vooral in steden. Expats zijn niet immuun: hitte maakt zoete drankjes verleidelijk, en westerse bakkerijcultuur staat naast Thaise sweets in elke mall.",
+        "Geen dieetpreek nodig. Een simpele regel werkt: water of ongezoete thee als default, fruit vaker dan gebak, en bubble tea / bakkerij als uitzondering. Straat-wok met groenten is vaak gezonder dan de pastry-muur in de supermarkt."
+      ]
+    },
+    "muslimBuddhist": {
+      "title": "Moslim- & boeddhistische eetculturen naast elkaar",
+      "paras": [
+        "Thailand is grotendeels Theravada-boeddhistisch, met betekende moslimgemeenschappen — vooral in het zuiden, en op markten door het hele land. Eten is een plek waar je beide tradities elke dag parallel ziet.",
+        "Boeddhistische invloed zie je in jay (เจ)-kraampjes, tempelvoedsel, offers en alcoholvrije boeddhistische feestdagen. Veel Thai eten gewoon vlees; religieuze kalender en persoonlijke praktijk verschillen per persoon en regio.",
+        "Moslimverkopers zijn gewoon bij spiesjesstalls, roti-shops en zuidelijke keukens. Halal-opties bestaan op markten en in sommige malls; zoek naar borden of vraag. Varkensvlees is centraal in veel Centraal-Thaise keuken — vermijd je dat, zeg het duidelijk (mâi gin mǒo).",
+        "In de praktijk winkelen en eten mensen naast elkaar zonder drama. Respecteer vastenperiodes waar relevant (Ramadan), dring geen alcohol op, en behandel voedselregels als persoonlijk — geen discussieonderwerp bij het kraampje."
+      ]
+    },
+    "beachPhuket": {
+      "title": "Eten op het strand — vooral Phuket",
+      "paras": [
+        "Stranddineren is een kernervaring op Phuket (en de Andaman): plastic tafels op zand, longtails op de horizon, seafood, gewokte groenten en kokossoepen terwijl het licht zakt.",
+        "Reken op toeristenopslag bij de drukste stranden — en betere waarde iets landinwaarts of op lokale nightmarkets. Verse gegrilde vis, tom kha, pad pak en gefrituurde garnalen zijn klassiekers; vraag naar de vangst van de dag.",
+        "Phuket Old Town voegt een andere laag toe: Sino-Portugese straten, cafés en avondmarkten weg van het zand. Combineer beide — lunch op het strand, diner in Old Town — voor een voller beeld van het eiland.",
+        "Hygiënetip blijft gelden: drukke strandrestaurants met hoge omzet winnen van lege buffetten. Neem cash of PromptPay/QR mee; veel plekken op het zand zijn informeel."
+      ]
+    }
   },
   "infoTransport": {
     "metaTitle": "Vervoer in Thailand: verkeer, ongevallen & reizen | ThaiPlot",

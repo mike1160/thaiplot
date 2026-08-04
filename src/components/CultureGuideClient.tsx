@@ -25,12 +25,12 @@ const SECTION_PHOTOS = {
     alt: 'Thai flag official Thailand',
   },
   face: {
-    src: PEXELS('3184291/pexels-photo-3184291.jpeg'),
-    alt: 'People in conversation Thailand',
+    src: '/nene-european.png',
+    alt: 'Thai performer and European guest together — social life in Thailand',
   },
   sanuk: {
-    src: PEXELS('2403392/pexels-photo-2403392.jpeg'),
-    alt: 'Bangkok street market Thailand',
+    src: '/food/street-vendors.png',
+    alt: 'Smiling Thai street food vendors — sanuk and daily life',
   },
   temples: {
     src: '/th-pl-1.JPG',
@@ -41,7 +41,7 @@ const SECTION_PHOTOS = {
     alt: 'Live music on stage at a Thai night market — modern Thailand',
   },
   eating: {
-    src: '/bite-burger-street.png',
+    src: '/food/bite-burger-stall.png',
     alt: 'Thai street food stall serving a customer — eating together in Thailand',
   },
   contrast: {

@@ -1575,7 +1575,7 @@
   },
   "infoFood": {
     "metaTitle": "Food in Thailand: tastes, risks, vegetarian & gluten-free | ThaiPlot",
-    "metaDescription": "Practical guide to eating in Thailand: great dishes, food-safety tips, vegetarian and gluten-free options, Thai restaurant phrases, plus a calm note on alcohol and cannabis laws.",
+    "metaDescription": "Practical guide to eating in Thailand: street food, 7-Eleven, bubble tea, sugar and obesity context, Muslim and Buddhist food cultures, beach dining in Phuket, vegetarian and gluten-free options, Thai phrases, alcohol and cannabis laws.",
     "title": "Eating in Thailand — flavours, care and clear words",
     "subtitle": "What is delicious, what to watch for, how to order vegetarian or gluten-free in Thai, and a practical heads-up on alcohol and drugs — without the lecture.",
     "tasty": {
@@ -1735,7 +1735,57 @@
         "a": "No. This page is general information for travellers and residents. For health or legal questions, use qualified professionals and official sources."
       }
     ],
-    "foodNote": "General information only — not medical, nutritional or legal advice. Food safety, allergy risks and drug laws change. Verify with clinics, restaurants and official Thai sources. ThaiPlot lists property and publishes practical guides."
+    "foodNote": "General information only — not medical, nutritional or legal advice. Food safety, allergy risks and drug laws change. Verify with clinics, restaurants and official Thai sources. ThaiPlot lists property and publishes practical guides.",
+    "streetFood": {
+      "title": "Street food — the daily food system",
+      "paras": [
+        "Street food is not a tourist sideshow in Thailand — it is how millions of people actually eat. Breakfast, lunch and late-night snacks come from carts, night markets and small stalls more often than from sit-down restaurants.",
+        "What works well: busy stalls, food cooked to order, ingredients you can see, and sauces that look fresh. What to skip: trays that have sat warm for hours, raw seafood in heat, and places with no queue when everything else is packed.",
+        "Modern street food mixes classic dishes with fusion — Thai wagyu burgers, grilled skewers, wok noodles and fruit. Prices stay accessible compared with Western dining; quality varies by neighbourhood, not by city size alone."
+      ]
+    },
+    "sevenEleven": {
+      "title": "7-Eleven, Lotus & everyday convenience food",
+      "paras": [
+        "7-Eleven is part of the Thai food landscape: iced coffee, ready meals, snacks, fruit cups and late-night calories on almost every corner. Lotus's / Big C and similar hypermarkets add bakery counters, fried chicken franchises and quick meals at the entrance.",
+        "Useful for travellers: sealed water, yoghurt, bananas, instant porridge and microwave trays when you need something predictable. Less useful as a full diet — the shelves lean heavily toward sweet drinks, packaged bakery and processed snacks.",
+        "Think of convenience stores as backup, not your main kitchen. Pair them with markets and proper meals so you are not living on sugar and sodium."
+      ]
+    },
+    "bubbleTea": {
+      "title": "Bubble tea culture",
+      "paras": [
+        "Bubble tea (cha yen pearls, milk tea, fruit tea) is everywhere — malls, night markets and dedicated stalls. Starting prices around ฿25–60 make it an everyday habit, not a treat.",
+        "The drink is fun and social. It is also often high in sugar: syrups, condensed milk and tapioca pearls add up quickly if you have two or three a day in the heat.",
+        "Practical tip: ask for less sugar (nóoi wǎan / half sugar) or smaller sizes. Many stalls customise sweetness if you ask. Enjoy it — just do not treat it as hydration."
+      ]
+    },
+    "sugarObesity": {
+      "title": "Sugar, soft drinks & rising obesity",
+      "paras": [
+        "Thailand still has excellent fresh fruit and vegetable cooking — but sugar intake has risen hard through soft drinks, sweet iced teas, bakery aisles, condensed milk and desserts. Urban diets and desk jobs add to the shift.",
+        "Public-health data and hospital reports have flagged rising overweight and type-2 diabetes, especially in cities. Expats are not immune: heat makes sugary drinks tempting, and Western bakery culture sits next to Thai sweets in every mall.",
+        "You do not need a diet lecture. A simple rule works: water or unsweetened tea as default, fruit over pastries most days, and treat bubble tea / bakery as occasional. Street stir-fries with vegetables are often healthier than the supermarket pastry wall."
+      ]
+    },
+    "muslimBuddhist": {
+      "title": "Muslim & Buddhist food cultures side by side",
+      "paras": [
+        "Thailand is majority Theravada Buddhist, with significant Muslim communities — especially in the South, and in markets across the country. Food is one place you see both traditions working in parallel every day.",
+        "Buddhist influence shows in jay (เจ) stalls, temple food, merit-making offerings and alcohol-free Buddhist holidays. Many Thais still eat meat regularly; the religious calendar and personal practice vary by person and region.",
+        "Muslim vendors are common at skewer stalls, roti shops and southern kitchens. Halal options exist in markets and some malls; look for signage or ask. Pork is central to much Central Thai cooking, so if you avoid it, say so clearly (mâi gin mǒo).",
+        "In practice people shop and eat next to each other without drama. Respect fasting periods where relevant (Ramadan), do not push alcohol on those who decline, and treat food rules as personal — not a debate topic at the stall."
+      ]
+    },
+    "beachPhuket": {
+      "title": "Eating on the beach — especially Phuket",
+      "paras": [
+        "Beach dining is a core Phuket (and Andaman) experience: plastic tables on sand, longtail boats on the horizon, seafood, stir-fried vegetables and coconut soups as the light drops.",
+        "Expect tourist mark-ups near the busiest beaches — and better value a short walk inland or at local night markets. Fresh grilled fish, tom kha, pad pak and fried prawns are the classics; ask about the day's catch.",
+        "Phuket Old Town adds a different food layer: Sino-Portuguese streets, cafés, and evening markets away from the sand. Combine both — beach lunch, Old Town dinner — for a fuller picture of the island.",
+        "Hygiene tip still applies: busy beach restaurants with high turnover beat empty buffets. Bring cash or PromptPay/QR; many sand-side places are informal."
+      ]
+    }
   },
   "infoTransport": {
     "metaTitle": "Transport & circulation | ThaiPlot",

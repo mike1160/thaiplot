@@ -29,15 +29,15 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
   infoHealth:
     'health insurance Thailand, medical costs Thailand, hospital Thailand foreigners, accident insurance Thailand, OTC medicine Thailand, pharmacy Thailand, worldwide health insurance Thailand, IPMI Thailand, zorgverzekering Thailand, medische kosten Thailand, ongevallen Thailand, apotheek Thailand',
   infoFood:
-    'food Thailand, Thai street food, vegetarian Thailand, vegan Thailand, gluten free Thailand, Thai restaurant phrases, alcohol Thailand, cannabis Thailand law, eten Thailand, vegetarisch Thailand, glutenvrij Thailand',
+    'food Thailand, Thai street food, 7-Eleven Thailand, Lotus Thailand food, bubble tea Thailand, sugar Thailand, obesity Thailand, soft drinks Thailand, halal food Thailand, Muslim food Thailand, Buddhist jay food Thailand, beach dining Phuket, Phuket Old Town food, vegetarian Thailand, vegan Thailand, gluten free Thailand, Thai restaurant phrases, alcohol Thailand, cannabis Thailand law, eten Thailand, straateten Thailand, bubble thee Thailand, suiker Thailand, obesitas Thailand, vegetarisch Thailand, glutenvrij Thailand, eten strand Phuket',
   infoTransport:
     'transport Thailand, traffic accidents Thailand, motorcycle safety Thailand, Grab Bolt taxi Thailand, BTS MRT Bangkok, domestic flights Thailand, ferry Thailand, 12Go Thailand, verkeersveiligheid Thailand, vervoer Thailand',
   infoLiving:
     'cost of living Thailand, taxes Thailand foreigners, open bank account Thailand, international schools Thailand, driving in Thailand, levensonderhoud Thailand, belasting Thailand, bankrekening Thailand, scholen Thailand',
-  infoIslands:
-    'Thai islands, Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands, diving Thailand, snorkeling Thailand, ferry Thailand islands, Thaise eilanden, duiken Thailand, snorkelen Thailand',
   infoCulture:
-    'Thai culture, Thai customs, Thai etiquette, wai Thailand, modern Thailand, Thai society, royal family Thailand, face Thailand, sanuk, Thai people today',
+    'Thai culture, Thai customs, Thai etiquette, wai Thailand, modern Thailand, Thai society, royal family Thailand, face Thailand, sanuk, Thai people today, Buddhism Thailand, Muslim Buddhist Thailand, Thaise cultuur, wai Thailand, sanuk Thailand',
+  infoIslands:
+    'Thai islands, Koh Samui, Koh Phangan, Koh Tao, Koh Phi Phi, Koh Lanta, Koh Lipe, Similan Islands, diving Thailand, snorkeling Thailand, ferry Thailand islands, Thaise eilanden, duiken Thailand, snorkelen Thailand, Koh Chang, Koh Kood',
 }
 
 export function localizedPath(locale: string, path: string): string {
