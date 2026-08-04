@@ -8,6 +8,9 @@ import { HHL_PATHS, hhlUrl } from '@/lib/hua-hin-land'
 
 type Props = { params: { locale: string } }
 
+const PEXELS = (id: string, w = 900) =>
+  `https://images.pexels.com/photos/${id}?auto=compress&cs=tinysrgb&w=${w}`
+
 function SectionBody({ paras }: { paras: string[] }) {
   return (
     <>
@@ -23,6 +26,7 @@ export async function generateMetadata({ params }: Props) {
     locale: params.locale,
     namespace: 'infoVisa',
     path: '/info/visa-retirement-thailand',
+    ogImage: PEXELS('4922356/pexels-photo-4922356.jpeg', 1200),
   })
 }
 
@@ -31,8 +35,13 @@ export default async function VisaRetirementPage({ params }: Props) {
   const t = await getTranslations('infoVisa')
   const tp = await getTranslations('partnerLinks')
 
-  const section = (key: string) => ({
+  const section = (
+    key: string,
+    photo?: { src: string; alt: string }
+  ) => ({
     title: t(`${key}.title`),
+    image: photo?.src,
+    imageAlt: photo?.alt,
     body: <SectionBody paras={t.raw(`${key}.paras`) as string[]} />,
   })
 
@@ -41,13 +50,26 @@ export default async function VisaRetirementPage({ params }: Props) {
       title={t('title')}
       subtitle={t('subtitle')}
       heroImage={HERO_PHOTOS.visa}
+      heroImageAlt="Open passport with travel stamps — Thailand retirement visa"
       sections={[
-        section('oa'),
+        section('oa', {
+          src: PEXELS('5405598/pexels-photo-5405598.jpeg'),
+          alt: 'Travel documents and passport for Thailand visa application',
+        }),
         section('elite'),
         section('ltr'),
-        section('finance'),
-        section('bankingLiving'),
-        section('insurance'),
+        section('finance', {
+          src: PEXELS('7235900/pexels-photo-7235900.jpeg'),
+          alt: 'Passport and compass on world map — planning Thailand retirement',
+        }),
+        section('bankingLiving', {
+          src: PEXELS('4922086/pexels-photo-4922086.jpeg'),
+          alt: 'Hand holding passport with stamps — Thailand 90-day reporting',
+        }),
+        section('insurance', {
+          src: PEXELS('1571460/pexels-photo-1571460.jpeg'),
+          alt: 'Comfortable living room — expat life in Thailand',
+        }),
       ]}
       bottomSlot={
         <div className="space-y-10">

@@ -10,6 +10,40 @@ import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 const TOPIC_IDS = ['cost', 'taxes', 'banking', 'schools', 'driving'] as const
 
+const PEXELS = (id: string, w = 900) =>
+  `https://images.pexels.com/photos/${id}?auto=compress&cs=tinysrgb&w=${w}`
+
+const TOPIC_PHOTOS: Record<
+  (typeof TOPIC_IDS)[number],
+  { src: string; alt: string }
+> = {
+  cost: {
+    src: PEXELS('2253573/pexels-photo-2253573.jpeg'),
+    alt: 'Thai street food market — cost of living in Thailand',
+  },
+  taxes: {
+    src: PEXELS('6963944/pexels-photo-6963944.jpeg'),
+    alt: 'Tax documents and paperwork — taxes for foreigners in Thailand',
+  },
+  banking: {
+    src: PEXELS('4386431/pexels-photo-4386431.jpeg'),
+    alt: 'Online banking on phone — opening bank account Thailand',
+  },
+  schools: {
+    src: PEXELS('5212345/pexels-photo-5212345.jpeg'),
+    alt: 'Children in international school classroom Thailand',
+  },
+  driving: {
+    src: PEXELS('3806249/pexels-photo-3806249.jpeg'),
+    alt: 'Motorcycle rider with helmet — driving in Thailand',
+  },
+}
+
+const BUDGET_PHOTO = {
+  src: PEXELS('1029599/pexels-photo-1029599.jpeg', 1400),
+  alt: 'Thailand coastal view — expat lifestyle budget',
+}
+
 const OFFICIAL_LINKS = [
   { href: 'https://www.rd.go.th', key: 'revenue' as const },
   { href: 'https://www.bot.or.th', key: 'bot' as const },
@@ -43,20 +77,43 @@ function BulletList({ items }: { items: string[] }) {
   )
 }
 
+function SectionPhoto({ src, alt, wide }: { src: string; alt: string; wide?: boolean }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={wide ? 1400 : 900}
+      height={wide ? 340 : 260}
+      loading="lazy"
+      className={`w-full rounded-[8px] object-cover ${
+        wide ? 'my-6 h-[280px] sm:h-[340px]' : 'my-6 h-[200px] sm:h-[260px]'
+      }`}
+    />
+  )
+}
+
 function Section({
   id,
   title,
   children,
   lead,
+  photo,
+  widePhoto,
 }: {
   id?: string
   title: string
   children: ReactNode
   lead?: string
+  photo?: { src: string; alt: string }
+  widePhoto?: { src: string; alt: string }
 }) {
   return (
     <section id={id} className="scroll-mt-24 animate-fade-in-up space-y-4">
       <h2 className="tp-section-title">{title}</h2>
+      {widePhoto ? (
+        <SectionPhoto src={widePhoto.src} alt={widePhoto.alt} wide />
+      ) : null}
+      {photo ? <SectionPhoto src={photo.src} alt={photo.alt} /> : null}
       {lead ? <p className="tp-body px-0.5">{lead}</p> : null}
       <div className="tp-body space-y-3 px-0.5">{children}</div>
     </section>
@@ -137,6 +194,7 @@ export default function LivingGuideClient({ relatedTitle, relatedLinks }: Props)
             id={id}
             title={t(`topics.${id}.title`)}
             lead={t(`topics.${id}.lead`)}
+            photo={TOPIC_PHOTOS[id]}
           >
             {(t.raw(`topics.${id}.paras`) as string[]).map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
@@ -145,7 +203,7 @@ export default function LivingGuideClient({ relatedTitle, relatedLinks }: Props)
           </Section>
         ))}
 
-        <Section title={t('budget.title')} lead={t('budget.lead')}>
+        <Section title={t('budget.title')} lead={t('budget.lead')} widePhoto={BUDGET_PHOTO}>
           <ul className="grid gap-3 sm:grid-cols-2">
             {(t.raw('budget.cards') as { title: string; body: string }[]).map((card) => (
               <li

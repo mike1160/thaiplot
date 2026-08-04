@@ -18,6 +18,7 @@ type InfoPageShellProps = {
   sections: InfoSection[]
   bottomSlot?: ReactNode
   heroImage?: string
+  heroImageAlt?: string
 }
 
 export default function InfoPageShell({
@@ -27,6 +28,7 @@ export default function InfoPageShell({
   sections,
   bottomSlot,
   heroImage,
+  heroImageAlt = '',
 }: InfoPageShellProps) {
   return (
     <main className="min-h-screen text-[#142038]">
@@ -36,6 +38,7 @@ export default function InfoPageShell({
         title={title}
         subtitle={subtitle}
         image={heroImage}
+        imageAlt={heroImageAlt}
         size="secondary"
       />
 
@@ -55,11 +58,20 @@ export default function InfoPageShell({
           <section key={section.title} className="animate-fade-in-up">
             <h2 className="tp-section-title">{section.title}</h2>
             {section.image ? (
-              <figure className="mb-5 overflow-hidden rounded-[14px] border border-white/70 bg-white/40 shadow-[0_16px_40px_rgba(20,32,56,0.1)] backdrop-blur-sm">
+              <figure
+                className={`mb-5 overflow-hidden border border-white/70 bg-white/40 shadow-[0_16px_40px_rgba(20,32,56,0.1)] backdrop-blur-sm ${
+                  section.imageCaption ? 'rounded-[14px]' : 'my-6 rounded-[8px]'
+                }`}
+              >
                 <img
                   src={section.image}
                   alt={section.imageAlt || section.title}
-                  className="h-auto w-full object-cover max-h-[300px] md:max-h-[340px] transition-transform duration-700 hover:scale-[1.02]"
+                  loading="lazy"
+                  className={
+                    section.imageCaption
+                      ? 'h-auto w-full object-cover max-h-[300px] md:max-h-[340px] transition-transform duration-700 hover:scale-[1.02]'
+                      : 'h-[200px] w-full object-cover sm:h-[260px]'
+                  }
                 />
                 {section.imageCaption ? (
                   <figcaption className="border-t border-[#E8E2D6]/80 bg-[rgba(255,255,255,0.72)] px-4 py-2.5 text-xs text-[#8A7F72] backdrop-blur-md">

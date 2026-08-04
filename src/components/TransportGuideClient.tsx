@@ -8,6 +8,9 @@ import InfoHero from '@/components/InfoHero'
 import RelatedGuides from '@/components/RelatedGuides'
 import { HERO_PHOTOS } from '@/lib/hero-photos'
 
+const PEXELS = (id: string, w = 900) =>
+  `https://images.pexels.com/photos/${id}?auto=compress&cs=tinysrgb&w=${w}`
+
 type ModeCard = {
   id: string
   accent?: string
@@ -90,18 +93,36 @@ function ModeGrid({
   )
 }
 
+function SectionPhoto({ src, alt, wide }: { src: string; alt: string; wide?: boolean }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={wide ? 1400 : 900}
+      height={wide ? 340 : 260}
+      loading="lazy"
+      className={`w-full rounded-[8px] object-cover ${
+        wide ? 'my-6 h-[280px] sm:h-[340px]' : 'my-6 h-[200px] sm:h-[260px]'
+      }`}
+    />
+  )
+}
+
 function Section({
   title,
   children,
   lead,
+  photo,
 }: {
   title: string
   children: ReactNode
   lead?: string
+  photo?: { src: string; alt: string }
 }) {
   return (
     <section className="animate-fade-in-up space-y-4">
       <h2 className="tp-section-title">{title}</h2>
+      {photo ? <SectionPhoto src={photo.src} alt={photo.alt} /> : null}
       {lead ? <p className="tp-body px-0.5">{lead}</p> : null}
       <div className="tp-body space-y-3 px-0.5">{children}</div>
     </section>
@@ -168,7 +189,14 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           ))}
         </Section>
 
-        <Section title={t('mortality.title')} lead={t('mortality.lead')}>
+        <Section
+          title={t('mortality.title')}
+          lead={t('mortality.lead')}
+          photo={{
+            src: PEXELS('3806249/pexels-photo-3806249.jpeg'),
+            alt: 'Motorcycle rider with helmet — road safety Thailand',
+          }}
+        >
           {(t.raw('mortality.paras') as string[]).map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
           ))}
@@ -185,7 +213,14 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           ))}
         </Section>
 
-        <Section title={t('road.title')} lead={t('road.lead')}>
+        <Section
+          title={t('road.title')}
+          lead={t('road.lead')}
+          photo={{
+            src: PEXELS('2526127/pexels-photo-2526127.jpeg'),
+            alt: 'Bangkok traffic with motorcycles and cars, Thailand',
+          }}
+        >
           <ModeGrid
             modes={ROAD_MODES}
             titleOf={(id) => t(`modes.${id}.title`)}
@@ -193,7 +228,14 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           />
         </Section>
 
-        <Section title={t('rail.title')} lead={t('rail.lead')}>
+        <Section
+          title={t('rail.title')}
+          lead={t('rail.lead')}
+          photo={{
+            src: PEXELS('2026324/pexels-photo-2026324.jpeg'),
+            alt: 'BTS Skytrain elevated rail in Bangkok, Thailand',
+          }}
+        >
           <ModeGrid
             modes={RAIL_MODES}
             titleOf={(id) => t(`modes.${id}.title`)}
@@ -201,7 +243,14 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           />
         </Section>
 
-        <Section title={t('air.title')} lead={t('air.lead')}>
+        <Section
+          title={t('air.title')}
+          lead={t('air.lead')}
+          photo={{
+            src: PEXELS('1004584/pexels-photo-1004584.jpeg'),
+            alt: 'Airplane over tropical island — domestic flights Thailand',
+          }}
+        >
           <ModeGrid
             modes={AIR_MODES}
             titleOf={(id) => t(`modes.${id}.title`)}
@@ -217,7 +266,14 @@ export default function TransportGuideClient({ relatedTitle, relatedLinks }: Pro
           />
         </Section>
 
-        <Section title={t('ferryDetail.title')} lead={t('ferryDetail.intro')}>
+        <Section
+          title={t('ferryDetail.title')}
+          lead={t('ferryDetail.intro')}
+          photo={{
+            src: PEXELS('6010843/pexels-photo-6010843.jpeg'),
+            alt: 'Boats on turquoise water — Thailand island ferries',
+          }}
+        >
           <div className="space-y-8">
             <div>
               <h3
