@@ -53,7 +53,18 @@ export default function ThailandNewsWidget({
     )
   }
 
-  if (error || articles.length === 0) return null
+  if (error) return null
+
+  if (articles.length === 0) {
+    if (!showMoreLink) {
+      return (
+        <p className="py-4 text-sm text-[#5C5247]">
+          No headlines available right now. Please check back shortly.
+        </p>
+      )
+    }
+    return null
+  }
 
   return (
     <section className="mt-2">
