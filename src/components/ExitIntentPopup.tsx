@@ -8,6 +8,11 @@ import TurnstileWidget from '@/components/TurnstileWidget'
 const STORAGE_SHOWN = 'exitIntentShown'
 const STORAGE_SUBMITTED = 'exitIntentSubmitted'
 
+/** Wait before exit-intent / timed popup can fire — avoid interrupting early browsing. */
+const MIN_DWELL_MS = 25_000
+/** Mobile fallback when there is no mouse leave signal. */
+const MOBILE_DELAY_MS = 35_000
+
 const REGIONS = [
   'Any',
   'Bangkok',
@@ -80,8 +85,9 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
     }
 
     let shown = false
+    let armed = false
     const show = () => {
-      if (shown) return
+      if (shown || !armed) return
       shown = true
       try {
         sessionStorage.setItem(STORAGE_SHOWN, '1')
@@ -91,9 +97,16 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
       setOpen(true)
     }
 
+    const armTimer = window.setTimeout(() => {
+      armed = true
+    }, MIN_DWELL_MS)
+
     if (isMobileDevice()) {
-      const timer = window.setTimeout(show, 8000)
-      return () => window.clearTimeout(timer)
+      const timer = window.setTimeout(show, MOBILE_DELAY_MS)
+      return () => {
+        window.clearTimeout(armTimer)
+        window.clearTimeout(timer)
+      }
     }
 
     const onMouseOut = (e: MouseEvent) => {
@@ -103,7 +116,10 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
     }
 
     document.addEventListener('mouseout', onMouseOut)
-    return () => document.removeEventListener('mouseout', onMouseOut)
+    return () => {
+      window.clearTimeout(armTimer)
+      document.removeEventListener('mouseout', onMouseOut)
+    }
   }, [])
 
   useEffect(() => {

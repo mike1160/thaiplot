@@ -43,19 +43,16 @@ export default function HomeNavbar() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
-  // Light frosted header after scroll, or while mobile menu is open
-  const solid = scrolled || menuOpen
+  // Always light frosted header (readable on every page / hero)
+  const solid = true
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] ${
-        solid
-          ? 'tp-frost-bar border-b border-[#C8973A]/25 shadow-[0_12px_32px_rgba(20,32,56,0.1)]'
-          : 'bg-[rgba(15,26,46,0.42)] border-b border-white/10 shadow-none backdrop-blur-[14px]'
+      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
+        scrolled || menuOpen
+          ? 'border-b border-[#C8973A]/25 shadow-[0_8px_24px_rgba(20,32,56,0.06)]'
+          : 'border-b border-[#C8973A]/12 shadow-none'
       }`}
-      style={{
-        WebkitBackdropFilter: solid ? undefined : 'blur(14px)',
-      }}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6">
         <div className={`${HEADER_HEIGHT_CLASS} flex items-center justify-between gap-2 sm:gap-4`}>
@@ -64,20 +61,12 @@ export default function HomeNavbar() {
             onNavigate={closeMenu}
           >
             <span
-              className={`block text-[16px] sm:text-[18px] font-semibold tracking-wide transition-colors duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'text-[#1A2744] group-hover:text-[#C8973A]'
-                  : 'text-white group-hover:text-white/85'
-              }`}
+              className="block text-[16px] sm:text-[18px] font-semibold tracking-wide transition-colors duration-[350ms] ease-[ease] text-[#1A2744] group-hover:text-[#C8973A]"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               {t('brandTitle')}
             </span>
-            <span
-              className={`hidden sm:block text-[10px] tracking-wider uppercase mt-0.5 transition-colors duration-[350ms] ease-[ease] ${
-                solid ? 'text-[#5C5247]' : 'text-white/80'
-              }`}
-            >
+            <span className="hidden sm:block text-[10px] tracking-wider uppercase mt-0.5 transition-colors duration-[350ms] ease-[ease] text-[#5C5247]">
               {t('brandSubtitle')}
             </span>
           </BrandHomeLink>
@@ -85,11 +74,7 @@ export default function HomeNavbar() {
           <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             <Link
               href="/listings"
-              className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'text-[#5C5247] hover:text-[#1A2744]'
-                  : 'text-white hover:text-white/85'
-              }`}
+              className="px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] text-[#5C5247] hover:text-[#1A2744]"
             >
               {t('listings')}
             </Link>
@@ -98,11 +83,7 @@ export default function HomeNavbar() {
               <button
                 type="button"
                 onClick={() => setGuideOpen((v) => !v)}
-                className={`px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] inline-flex items-center gap-1 ${
-                  solid
-                    ? 'text-[#5C5247] hover:text-[#1A2744]'
-                    : 'text-white hover:text-white/85'
-                }`}
+                className="px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] inline-flex items-center gap-1 text-[#5C5247] hover:text-[#1A2744]"
                 aria-expanded={guideOpen}
                 aria-haspopup="true"
               >
