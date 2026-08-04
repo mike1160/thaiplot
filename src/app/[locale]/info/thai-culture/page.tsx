@@ -6,6 +6,8 @@ import { HERO_PHOTOS } from '@/lib/hero-photos'
 
 type Props = { params: { locale: string } }
 
+const PATH = '/info/thai-culture'
+
 export async function generateMetadata({ params }: Props) {
   return buildPageMetadata({
     locale: params.locale,
