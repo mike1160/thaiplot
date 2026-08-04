@@ -137,10 +137,10 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
 
       <nav
         aria-label="Breadcrumb"
-        className={`fixed top-0 left-0 z-[100] w-full border-b transition-all duration-[400ms] ease-[ease] tp-frost-bar ${
+        className={`fixed top-0 left-0 z-[100] w-full bg-white border-b border-[#E8E2D6] transition-all duration-[400ms] ease-[ease] tp-frost-bar ${
           scrolled
-            ? 'border-[#C8973A]/22 shadow-[0_8px_24px_rgba(20,32,56,0.05)]'
-            : 'border-[#C8973A]/12 shadow-none'
+            ? 'shadow-[0_2px_8px_rgba(20,32,56,0.04)]'
+            : 'shadow-none'
         } ${className}`}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-2 sm:gap-3">

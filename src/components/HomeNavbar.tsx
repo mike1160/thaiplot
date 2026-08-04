@@ -43,15 +43,13 @@ export default function HomeNavbar() {
   }, [])
 
   const closeMenu = () => setMenuOpen(false)
-  // Always light frosted header (readable on every page / hero)
-  const solid = true
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-[100] w-full transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
+      className={`fixed top-0 left-0 z-[100] w-full bg-white transition-all duration-[350ms] ease-[ease] tp-frost-bar ${
         scrolled || menuOpen
-          ? 'border-b border-[#C8973A]/25 shadow-[0_8px_24px_rgba(20,32,56,0.06)]'
-          : 'border-b border-[#C8973A]/12 shadow-none'
+          ? 'border-b border-[#E8E2D6] shadow-[0_2px_8px_rgba(20,32,56,0.04)]'
+          : 'border-b border-[#E8E2D6] shadow-none'
       }`}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6">
@@ -66,7 +64,7 @@ export default function HomeNavbar() {
             >
               {t('brandTitle')}
             </span>
-            <span className="hidden sm:block text-[10px] tracking-wider uppercase mt-0.5 transition-colors duration-[350ms] ease-[ease] text-[#5C5247]">
+            <span className="hidden sm:block text-[10px] tracking-wider uppercase mt-0.5 text-[#5C5247]">
               {t('brandSubtitle')}
             </span>
           </BrandHomeLink>
@@ -74,27 +72,60 @@ export default function HomeNavbar() {
           <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
             <Link
               href="/listings"
-              className="px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] text-[#5C5247] hover:text-[#1A2744]"
+              className="px-3 py-2 text-[13px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors"
             >
               {t('listings')}
             </Link>
+            <Link
+              href="/list-property"
+              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-all"
+            >
+              {t('listProperty')}
+            </Link>
+            <Link
+              href="/contact"
+              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-all"
+            >
+              {t('contact')}
+            </Link>
+          </div>
+
+          {/* Right cluster — same order as other pages: Guide, language, (menu) */}
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0 ml-auto lg:ml-0">
+            <div className="hidden md:flex flex-col items-end leading-tight mr-1">
+              <a
+                href="https://allesis.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] text-[#5C5247] hover:text-[#C8973A] transition-colors"
+              >
+                {t('webdesignBy')}
+              </a>
+              <span className="text-[9px] text-[#5C5247]">{t('webdesignTag')}</span>
+            </div>
+
+            <div className="hidden sm:block">
+              <PortalAccountLink solid />
+            </div>
 
             <div ref={guideRef} className="relative">
               <button
                 type="button"
                 onClick={() => setGuideOpen((v) => !v)}
-                className="px-3 py-2 text-[13px] font-medium transition-colors duration-[350ms] ease-[ease] inline-flex items-center gap-1 text-[#5C5247] hover:text-[#1A2744]"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-[12px] font-medium text-[#1A2744] bg-white border border-[#E8E2D6] rounded-[12px] hover:border-[#C8973A]/50 transition-colors min-h-[36px]"
                 aria-expanded={guideOpen}
                 aria-haspopup="true"
               >
                 {t('guide')}
-                <span className={`text-[9px] transition-transform ${guideOpen ? 'rotate-180' : ''}`}>
+                <span
+                  className={`text-[9px] text-[#5C5247] transition-transform ${guideOpen ? 'rotate-180' : ''}`}
+                >
                   ▾
                 </span>
               </button>
               {guideOpen ? (
                 <div
-                  className="absolute top-full left-0 mt-2 min-w-[260px] max-h-[70vh] overflow-y-auto bg-white rounded-[12px] py-2 z-50"
+                  className="absolute top-full right-0 mt-2 w-[min(100vw-2rem,280px)] max-h-[70vh] overflow-y-auto bg-white rounded-[12px] py-2 z-50"
                   style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}
                   role="menu"
                 >
@@ -107,7 +138,7 @@ export default function HomeNavbar() {
                         rel="noopener noreferrer"
                         role="menuitem"
                         onClick={() => setGuideOpen(false)}
-                        className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                        className="block px-4 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
                       >
                         {t(item.key)}
                       </a>
@@ -117,7 +148,7 @@ export default function HomeNavbar() {
                         href={item.href}
                         role="menuitem"
                         onClick={() => setGuideOpen(false)}
-                        className="block px-5 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
+                        className="block px-4 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"
                       >
                         {t(item.key)}
                       </Link>
@@ -127,71 +158,11 @@ export default function HomeNavbar() {
               ) : null}
             </div>
 
-            <Link
-              href="/list-property"
-              className={`ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border transition-all duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white'
-                  : 'border-white text-white hover:bg-white/15'
-              }`}
-            >
-              {t('listProperty')}
-            </Link>
-            <Link
-              href="/contact"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-[350ms] ease-[ease]"
-            >
-              {t('contact')}
-            </Link>
-          </div>
+            <LanguageSwitcher compact variant="solid" className="flex-shrink-0" />
 
-          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
-            <div className="hidden md:flex flex-col items-end leading-tight">
-              <a
-                href="https://allesis.nl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`text-[10px] transition-colors duration-[350ms] ease-[ease] ${
-                  solid ? 'text-[#5C5247] hover:text-[#C8973A]' : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {t('webdesignBy')}
-              </a>
-              <span
-                className={`text-[9px] transition-colors duration-[350ms] ease-[ease] ${
-                  solid ? 'text-[#5C5247]' : 'text-white/70'
-                }`}
-              >
-                {t('webdesignTag')}
-              </span>
-            </div>
-            <div className="hidden sm:block">
-              <PortalAccountLink solid={solid} />
-            </div>
-            {/* Mobile header: language + contact side by side */}
-            <div className="lg:hidden flex items-center gap-1.5">
-              <LanguageSwitcher
-                compact
-                variant={solid ? 'solid' : 'ghost'}
-              />
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center min-h-[36px] px-3 rounded-[12px] text-[12px] font-semibold bg-[#1A2744] text-white border border-[#1A2744] hover:bg-[#C8973A] hover:border-[#C8973A] transition-colors"
-                onClick={closeMenu}
-              >
-                {t('contact')}
-              </Link>
-            </div>
-            <div className="hidden lg:block">
-              <LanguageSwitcher variant={solid ? 'solid' : 'ghost'} />
-            </div>
             <button
               type="button"
-              className={`lg:hidden inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-lg transition-colors duration-[350ms] ease-[ease] ${
-                solid
-                  ? 'text-[#1A2744] hover:bg-black/5'
-                  : 'text-white hover:bg-white/10'
-              }`}
+              className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-[#1A2744] hover:bg-black/5 transition-colors"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls={mobilePanelId}
@@ -224,7 +195,7 @@ export default function HomeNavbar() {
       {menuOpen && (
         <div
           id={mobilePanelId}
-          className="lg:hidden border-t border-black/5 bg-[rgba(255,255,255,0.96)] backdrop-blur-[14px] max-h-[calc(100dvh-4rem)] overflow-y-auto"
+          className="lg:hidden border-t border-[#E8E2D6] bg-white max-h-[calc(100dvh-4rem)] overflow-y-auto"
         >
           <Link
             href="/listings"
@@ -233,32 +204,6 @@ export default function HomeNavbar() {
           >
             {t('listings')}
           </Link>
-          <p className="px-6 pt-4 pb-2 text-[11px] uppercase tracking-wider text-[#C8973A] font-semibold">
-            {t('guide')}
-          </p>
-          {GUIDE_LINKS.map((item) =>
-            isExternalGuideLink(item) ? (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-                className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
-              >
-                {t(item.key)}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMenu}
-                className="flex items-center w-full px-6 min-h-[44px] text-[14px] text-[#1A2744] border-b border-[#E8E2D6]"
-              >
-                {t(item.key)}
-              </Link>
-            )
-          )}
           <div className="px-6 py-3 border-b border-[#E8E2D6]">
             <PortalAccountLink
               solid
