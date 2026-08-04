@@ -48,6 +48,7 @@ export async function generateMetadata({
     },
     other: {
       'llms-txt': `${SITE_URL}/llms.txt`,
+      'p:domain_verify': '607976f15f114c1775ec4024af8f60e7',
     },
     openGraph: {
       title,
