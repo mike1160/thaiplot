@@ -206,8 +206,26 @@ export default function HomePageClient({ listings }: Props) {
           <h2 className="tp-section-title text-center mb-8 mx-auto max-w-md">
             {t('agentTitle')}
           </h2>
-          <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] overflow-hidden">
-            <div className="text-center p-6 md:p-8">
+          <div className="border border-[#C8973A]/40 bg-[#FAF7F0] rounded-[12px] overflow-hidden grid grid-cols-1 sm:grid-cols-[220px_minmax(0,1fr)] items-stretch">
+            <div className="relative min-h-[220px] sm:min-h-full overflow-hidden">
+              <img
+                src="/thanathip-cropped.jpg"
+                alt={AGENT_NAME}
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{ objectPosition: '50% 20%' }}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background: `
+                    linear-gradient(to bottom, transparent 0%, transparent 74%, rgba(250,247,240,0.18) 84%, rgba(250,247,240,0.55) 94%, #FAF7F0 100%),
+                    linear-gradient(to right, transparent 48%, rgba(250,247,240,0.22) 76%, rgba(250,247,240,0.68) 100%)
+                  `,
+                }}
+              />
+            </div>
+            <div className="text-center sm:text-left flex-1 p-6 md:p-8">
               <h3
                 className="text-2xl font-bold text-[#1A2744] mb-1"
                 style={{ fontFamily: 'Playfair Display, serif' }}
