@@ -96,15 +96,27 @@ export async function POST(req: NextRequest) {
       : 'Land & Property'
 
     if (!name || !email || !phone || !location || !consent) {
+      const missing = [
+        !name ? 'name' : null,
+        !email ? 'email' : null,
+        !phone ? 'phone' : null,
+        !location ? 'location' : null,
+        !consent ? 'consent' : null,
+      ].filter(Boolean)
       console.error('[list-property] missing required fields', {
         hasName: Boolean(name),
         hasEmail: Boolean(email),
         hasPhone: Boolean(phone),
         hasLocation: Boolean(location),
         hasConsent: Boolean(consent),
+        missing,
       })
       return NextResponse.json(
-        { error: 'Missing required fields', code: 'missing_fields' },
+        {
+          error: `Missing required fields: ${missing.join(', ')}`,
+          code: 'missing_fields',
+          missing,
+        },
         { status: 400 }
       )
     }

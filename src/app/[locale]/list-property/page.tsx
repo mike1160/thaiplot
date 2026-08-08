@@ -448,7 +448,7 @@ export default function ListPropertyPage() {
       type: String(data.get('type') || propertyType),
       transaction: transaction || 'For Sale',
       region: region || String(data.get('region') || ''),
-      location: location.trim(),
+      location: (location.trim() || String(data.get('location') || '').trim()),
       size: composedSize || sizeRaw,
       sizeUnit: sizeUnitValue,
       price: composedPrice,
@@ -1081,7 +1081,15 @@ export default function ListPropertyPage() {
                     <label htmlFor="location" className={labelClass}>
                       {t('locationThailand')} *
                     </label>
-                    <input id="location" name="location" type="text" required className={inputClass} />
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className={inputClass}
+                    />
                   </div>
 
                   <div>
@@ -1196,7 +1204,15 @@ export default function ListPropertyPage() {
                     <label htmlFor="location" className={labelClass}>
                       {t('locationMooring')} *
                     </label>
-                    <input id="location" name="location" type="text" required className={inputClass} />
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className={inputClass}
+                    />
                   </div>
 
                   <div>
@@ -1271,7 +1287,15 @@ export default function ListPropertyPage() {
                     <label htmlFor="location" className={labelClass}>
                       {t('location')} *
                     </label>
-                    <input id="location" name="location" type="text" required className={inputClass} />
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className={inputClass}
+                    />
                   </div>
 
                   <div>
@@ -1353,7 +1377,15 @@ export default function ListPropertyPage() {
                     <label htmlFor="location" className={labelClass}>
                       {t('location')} *
                     </label>
-                    <input id="location" name="location" type="text" required className={inputClass} />
+                    <input
+                      id="location"
+                      name="location"
+                      type="text"
+                      required
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className={inputClass}
+                    />
                   </div>
 
                   <div>
