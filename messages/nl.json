@@ -34,7 +34,8 @@
     "guideLiving": "Wonen: kosten & bank",
     "guideIslands": "Thaise eilanden — duiken, snorkelen & bestemmingen",
     "guideCulture": "Thai culture & customs",
-    "news": "Thailand nieuws"
+    "news": "Thailand nieuws",
+    "guideRetirementRanking": "Thailand pensioenranking #4"
   },
   "languages": {
     "en": "English",
@@ -107,7 +108,8 @@
       "living": "Wonen in Thailand",
       "islands": "Thaise eilanden",
       "culture": "Thai culture",
-      "news": "Nieuws"
+      "news": "Nieuws",
+      "retirementRanking": "Pensioenranking 2026"
     }
   },
   "homepage": {
@@ -604,7 +606,8 @@
     "thaigerHealthWish": "Wat expats wensen dat ze wisten — gezondheid & verzekering (The Thaiger)",
     "thaigerTransportNews": "Thailand expat nieuws — vervoer & rijden (The Thaiger)",
     "thaigerTransportLicence": "Thais rijbewijs online verlengen (The Thaiger)",
-    "thaigerProperty": "Thailand vastgoednieuws (The Thaiger)"
+    "thaigerProperty": "Thailand vastgoednieuws (The Thaiger)",
+    "linkRetirementRanking": "Thailand pensioenranking #4 (2026)"
   },
   "infoBuying": {
     "metaTitle": "Land kopen in Thailand als buitenlander | ThaiPlot",
@@ -2649,5 +2652,70 @@
   "newsPage": {
     "metaTitle": "Thailand nieuws — vastgoed, expat & wonen | ThaiPlot",
     "metaDescription": "Actueel nieuws uit Thailand over vastgoed, expat-leven, visa, vervoer en wonen — samengesteld voor kopers en long-stay bewoners."
+  },
+  "infoRetirementRanking": {
+    "metaTitle": "Thailand Ranked #4 Best Country to Retire | ThaiPlot",
+    "metaDescription": "A brand-new global index ranking 192 countries just placed Thailand fourth in the world for retirement. Here's what the numbers say — and what they don't.",
+    "eyebrow": "Retirement in Thailand",
+    "title": "Thailand Ranked #4 Best Country to Retire in the World",
+    "subtitle": "A brand-new global index just ranked Thailand fourth out of 192 countries for retirement. Here's what the data shows — and what every prospective retiree should know before packing their bags.",
+    "heroStat": {
+      "label": "RUMAVI Global Relocation Index 2026 — out of 192 countries",
+      "sub": "Only Malaysia, Panama and Portugal ranked higher worldwide."
+    },
+    "intro": {
+      "title": "Hard data, not just anecdotes",
+      "p1": "Thailand has long been a quiet favourite among retirees — affordable hospitals, warm weather, a low cost of living, and a culture built around hospitality. But anecdote is one thing. Hard data from an index covering 192 countries is another.",
+      "p2": "The <strong>RUMAVI Global Relocation Index 2026</strong>, published in July this year, is the most comprehensive retirement ranking yet released. It scores every UN member state on 24 separate metrics — from healthcare quality and visa accessibility to governance, climate, and community. Thailand came in fourth. Only Malaysia (1st), Panama (2nd) and Portugal (3rd) finished ahead of it."
+    },
+    "ranking": {
+      "title": "RUMAVI Global Relocation Index 2026 — Top 5"
+    },
+    "threeLists": {
+      "title": "Not just one list — three",
+      "intro": "What makes this result notable is that it's no outlier. Within the space of a few months in 2026, three separate international bodies ranked Thailand among the very best places on earth to retire:",
+      "item1": "<strong>RUMAVI Global Relocation Index:</strong> #4 worldwide (out of 192 countries)",
+      "item2": "<strong>Retirement Abroad Index (Expatriate Group, London):</strong> #2 worldwide",
+      "item3": "<strong>International Living Global Retirement Index:</strong> #9 worldwide, <em>#1 in Asia</em>",
+      "outro": "Different methodologies, different sample sizes — same basic conclusion. Thailand keeps showing up near the top."
+    },
+    "numbers": {
+      "title": "What the numbers actually measure",
+      "intro": "Rankings are only as useful as the criteria behind them. The International Living index, the most established of the three (now in its 35th year), scores countries across seven categories. Thailand's profile on that index gives a useful read on where it genuinely shines:",
+      "p1": "The cost-of-living score of 96 out of 100 is the headline. A retired couple can typically live comfortably on <strong>36,000–72,000 baht per month</strong> (roughly €900–€1,800), depending on location and lifestyle. Bangkok sits at the higher end; Hua Hin, Chiang Mai, and Pranburi tend to come in meaningfully lower.",
+      "p2": "Healthcare scored 18 out of 20 on the Expatriate Group's index — joint-highest in the entire ranking, alongside Spain and France. Private hospitals in Bangkok, Chiang Mai, and Phuket are internationally accredited and significantly cheaper than comparable facilities in Western Europe or North America."
+    },
+    "caveats": {
+      "title": "Where Thailand scores less well",
+      "intro": "No ranking tells the full story, and the RUMAVI index is candid about it. Thailand's weaker scores tend to cluster around <strong>regulatory transparency and property rights</strong> — two factors that matter more the longer you plan to stay.",
+      "calloutTitle": "Key practical considerations for retirees",
+      "item1": "Foreigners cannot own land freehold in Thailand — structures can be owned, but land title requires a Thai entity or long-term lease arrangement.",
+      "item2": "The <strong>Non-Immigrant O-A visa</strong> (retirement visa) requires proof of 800,000 baht in a Thai bank account, or a monthly income of 65,000 baht, and is renewed annually.",
+      "item3": "Health insurance of at least USD 100,000 per year is now mandatory for the retirement visa.",
+      "item4": "Since 2024, foreign income remitted to Thailand may be subject to Thai tax — worth discussing with a local adviser before transferring significant funds."
+    },
+    "huaHin": {
+      "title": "Why Hua Hin and Pranburi keep coming up",
+      "p1": "Within Thailand, the Gulf Coast corridor between Hua Hin and Pranburi has emerged as one of the most practical locations for longer-term living. It offers the infrastructure of an established expat town — international hospitals, supermarkets, golf courses, direct rail access to Bangkok — at a pace of life that feels genuinely unhurried.",
+      "p2": "Land and property prices in the area remain accessible relative to Phuket or Koh Samui, and the region has seen steady demand from European buyers looking to build rather than buy a finished villa. For that reason, plots with Chanote title deeds — the strongest form of land ownership in Thailand — are the most sought-after and the most straightforward to work with legally."
+    },
+    "cta": {
+      "title": "Browsing land in Thailand?",
+      "text": "ThaiPlot lists verified plots with Chanote title deeds across Hua Hin, Pranburi and beyond.",
+      "button": "View listings →"
+    },
+    "bottomLine": {
+      "title": "The bottom line",
+      "p1": "Thailand's fourth-place finish in the RUMAVI index is not a fluke. It reflects consistent performance across the metrics that matter most to fixed-income retirees: low cost of living, strong private healthcare, a workable visa pathway, and a quality of life that is genuinely hard to replicate in Western Europe at the same price point.",
+      "p2": "The caveats are real — property rights, regulatory complexity, and the 2024 tax changes all require careful navigation. But for those who go in with clear expectations and good local advice, the rankings are backed up by what people actually experience on the ground.",
+      "note": "Thailand consistently scores well on the metrics that make it attractive for a fixed-income retiree. Where it scores less well is on regulatory transparency and property rights — factors that matter more the longer you intend to stay."
+    },
+    "sources": {
+      "label": "Sources:",
+      "text": "RUMAVI Global Relocation Index 2026 (inaugural edition, 192 countries, 24 metrics, published July 2026) · International Living Global Retirement Index 2026 (35th edition) · Retirement Abroad Index 2026, Expatriate Group (London) · Numbeo Healthcare Index 2026 · Numbeo Cost of Living Index 2026.",
+      "disclaimer": "This article is for informational purposes only and does not constitute financial, legal or tax advice. Always seek independent professional advice before making property or visa decisions in Thailand.",
+      "disclaimerLink": "→ ThaiPlot disclaimer"
+    },
+    "meta": "August 2026 · ThaiPlot Editorial · 5 min read"
   }
 }

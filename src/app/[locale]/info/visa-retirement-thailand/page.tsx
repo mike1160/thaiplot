@@ -124,6 +124,7 @@ export default async function VisaRetirementPage({ params }: Props) {
                 { href: '/info/thailand-digital-arrival-card', label: tp('linkTdac') },
                 { href: '/info/health-accidents-thailand', label: tp('linkHealth') },
                 { href: '/info/living-thailand', label: tp('linkLiving') },
+                { href: '/info/thailand-retirement-ranking-2026', label: tp('linkRetirementRanking') },
                 { href: '/info/official-thai-downloads', label: tp('linkOfficial') },
                 { href: '/info/paperwork-thailand', label: tp('linkPaperwork') },
               ]}

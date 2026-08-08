@@ -269,6 +269,10 @@ export default function HomePageClient({ listings }: Props) {
                 { href: '/info/buying-land-thailand', key: 'guideBuying' as const },
                 { href: '/info/chanote-title-deed', key: 'guideChanote' as const },
                 { href: '/info/visa-retirement-thailand', key: 'guideVisa' as const },
+                {
+                  href: '/info/thailand-retirement-ranking-2026',
+                  key: 'guideRetirementRanking' as const,
+                },
                 { href: '/info/paperwork-thailand', key: 'guidePaperwork' as const },
                 { href: '/info/living-thailand', key: 'guideLiving' as const },
                 { href: '/info/transport-thailand', key: 'guideTransport' as const },

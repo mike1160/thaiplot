@@ -111,6 +111,14 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/info/thailand-retirement-ranking-2026"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideRetirementRanking')}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/info/drinking-water-thailand"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"
                 >

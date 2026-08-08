@@ -39,6 +39,7 @@ const STATIC_ROUTES: Array<{
   { path: '/info/buying-land-thailand', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
   { path: '/info/chanote-title-deed', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
   { path: '/info/visa-retirement-thailand', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
+  { path: '/info/thailand-retirement-ranking-2026', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
   { path: '/info/health-accidents-thailand', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
   { path: '/info/transport-thailand', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },
   { path: '/info/food-thailand', priority: 0.8, nlPriority: 0.7, changeFrequency: 'monthly' },

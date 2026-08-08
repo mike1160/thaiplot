@@ -22,6 +22,8 @@ const KEYWORDS_BY_NAMESPACE: Record<string, string> = {
     'buy land Thailand foreigner, grond kopen Thailand, leasehold Thailand, Chanote, Thai company land, vastgoed kopen Thailand, real estate Thailand foreigners',
   infoChanote: 'Chanote title deed, Nor Sor 4 Jor, Thai land title, eigendomsakte Thailand',
   infoVisa: 'Thailand retirement visa, OA visa, Elite visa, LTR visa, pensioenvisum Thailand',
+  infoRetirementRanking:
+    'Thailand retirement ranking 2026, best country to retire, RUMAVI Global Relocation Index, International Living, Hua Hin retirement, retire Thailand, pensioen Thailand ranking',
   infoHuaHin:
     'Hua Hin property market, Hua Hin real estate, huizen Hua Hin, vastgoed Hua Hin, land for sale Hua Hin',
   infoPranburi:

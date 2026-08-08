@@ -8,6 +8,10 @@ export const GUIDE_LINKS = [
     external: true,
   },
   { href: '/info/visa-retirement-thailand', key: 'guideVisa' },
+  {
+    href: '/info/thailand-retirement-ranking-2026',
+    key: 'guideRetirementRanking',
+  },
   { href: '/info/paperwork-thailand', key: 'guidePaperwork' },
   { href: '/info/living-thailand', key: 'guideLiving' },
   { href: '/info/transport-thailand', key: 'guideTransport' },

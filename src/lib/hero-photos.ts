@@ -18,6 +18,7 @@ export const HERO_PHOTOS = {
   huaHinMarket: pexels('2070033/pexels-photo-2070033.jpeg'),
   pranburi: pexels('1174732/pexels-photo-1174732.jpeg'),
   visa: pexels('4922356/pexels-photo-4922356.jpeg'),
+  retirementRanking: pexels('1174732/pexels-photo-1174732.jpeg'),
   health: pexels('4386466/pexels-photo-4386466.jpeg'),
   food: pexels('1640777/pexels-photo-1640777.jpeg'),
   transport: pexels('1034662/pexels-photo-1034662.jpeg'),
