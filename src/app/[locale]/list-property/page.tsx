@@ -430,7 +430,12 @@ export default function ListPropertyPage() {
     const sizeRaw = sizeValue || String(data.get('size') || '').trim()
     const sizeUnitValue = String(data.get('sizeUnit') || sizeUnit)
     const composedSize = composeSizeValue(sizeRaw, sizeUnitValue)
-    const composedPrice = composePriceValue(price, currency, priceType)
+    const formPriceRaw = String(data.get('price') || '').trim()
+    // Land uses composed ฿/unit price; other categories use a plain asking price from the form
+    const composedPrice =
+      category === 'Land & Property'
+        ? composePriceValue(price || formPriceRaw, currency, priceType)
+        : formPriceRaw || price.trim() || null
 
     const contactPrefs = [
       contactPhone ? 'phone' : null,
@@ -603,7 +608,10 @@ export default function ListPropertyPage() {
                           name="category"
                           value={opt.value}
                           checked={category === opt.value}
-                          onChange={() => setCategory(opt.value)}
+                          onChange={() => {
+                            setCategory(opt.value)
+                            setPrice('')
+                          }}
                           className="accent-amber-600"
                           required
                         />
@@ -1067,7 +1075,16 @@ export default function ListPropertyPage() {
                     <label htmlFor="price" className={labelClass}>
                       {t('priceRequired')} *
                     </label>
-                    <input id="price" name="price" type="text" required className={inputClass} />
+                    <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      required
+                      value={price}
+                      onChange={(e) => setPrice(formatPriceInput(e.target.value))}
+                      className={inputClass}
+                      placeholder="2,300,000"
+                    />
                   </div>
 
                   <ProvinceSelect
@@ -1190,7 +1207,16 @@ export default function ListPropertyPage() {
                     <label htmlFor="price" className={labelClass}>
                       {t('priceRequired')} *
                     </label>
-                    <input id="price" name="price" type="text" required className={inputClass} />
+                    <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      required
+                      value={price}
+                      onChange={(e) => setPrice(formatPriceInput(e.target.value))}
+                      className={inputClass}
+                      placeholder="2,300,000"
+                    />
                   </div>
 
                   <ProvinceSelect
@@ -1273,7 +1299,16 @@ export default function ListPropertyPage() {
                     <label htmlFor="price" className={labelClass}>
                       {t('askingPrice')} *
                     </label>
-                    <input id="price" name="price" type="text" required className={inputClass} />
+                    <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      required
+                      value={price}
+                      onChange={(e) => setPrice(formatPriceInput(e.target.value))}
+                      className={inputClass}
+                      placeholder="2,300,000"
+                    />
                   </div>
 
                   <ProvinceSelect
@@ -1363,7 +1398,16 @@ export default function ListPropertyPage() {
                     <label htmlFor="price" className={labelClass}>
                       {t('priceRequired')} *
                     </label>
-                    <input id="price" name="price" type="text" required className={inputClass} />
+                    <input
+                      id="price"
+                      name="price"
+                      type="text"
+                      required
+                      value={price}
+                      onChange={(e) => setPrice(formatPriceInput(e.target.value))}
+                      className={inputClass}
+                      placeholder="2,300,000"
+                    />
                   </div>
 
                   <ProvinceSelect

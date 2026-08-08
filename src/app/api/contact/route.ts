@@ -22,10 +22,13 @@ export async function POST(req: NextRequest) {
     }
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'Missing required fields', code: 'missing_fields' },
+        { status: 400 }
+      )
     }
 
-    await resend.emails.send({
+    const adminMail = await resend.emails.send({
       from: 'ThaiPlot <noreply@hua-hin-land.com>',
       to: 'kleinjansmike@gmail.com',
       reply_to: email,
@@ -45,23 +48,37 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     })
+    if (adminMail.error) {
+      console.error('[contact] admin email failed', adminMail.error)
+      return NextResponse.json(
+        { error: 'Failed to send', code: 'email_failed', detail: adminMail.error.message },
+        { status: 500 }
+      )
+    }
 
-    await resend.emails.send({
-      from: 'ThaiPlot <noreply@hua-hin-land.com>',
-      to: email,
-      subject: 'Thank you for your enquiry — ThaiPlot',
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
-          <h2 style="color: #C8973A; margin-bottom: 16px;">Thank you, ${escapeHtml(name)}.</h2>
-          <p style="color: #cbd5e1; line-height: 1.7;">We've received your enquiry and will be in touch within 24 hours.</p>
-          <p style="margin: 24px 0 0; color: #64748b; font-size: 12px;">ThaiPlot · thaiplot.com</p>
-        </div>
-      `,
-    })
+    try {
+      const confirmMail = await resend.emails.send({
+        from: 'ThaiPlot <noreply@hua-hin-land.com>',
+        to: email,
+        subject: 'Thank you for your enquiry — ThaiPlot',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
+            <h2 style="color: #C8973A; margin-bottom: 16px;">Thank you, ${escapeHtml(name)}.</h2>
+            <p style="color: #cbd5e1; line-height: 1.7;">We've received your enquiry and will be in touch within 24 hours.</p>
+            <p style="margin: 24px 0 0; color: #64748b; font-size: 12px;">ThaiPlot · thaiplot.com</p>
+          </div>
+        `,
+      })
+      if (confirmMail.error) {
+        console.error('[contact] confirmation email failed', confirmMail.error)
+      }
+    } catch (confirmError) {
+      console.error('[contact] confirmation email threw', confirmError)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
+    console.error('[contact] unhandled error', error)
+    return NextResponse.json({ error: 'Failed to send', code: 'unhandled' }, { status: 500 })
   }
 }

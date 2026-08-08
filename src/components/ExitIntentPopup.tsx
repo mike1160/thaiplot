@@ -60,6 +60,7 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
   const [open, setOpen] = useState(false)
   const [status, setStatus] = useState<FormStatus>('idle')
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0)
   const [securityError, setSecurityError] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
 
@@ -188,6 +189,8 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
         }
         setFormError(typeof json?.error === 'string' ? json.error : 'Failed to send')
         setStatus('error')
+        setTurnstileToken('')
+        setTurnstileResetKey((k) => k + 1)
         return
       }
 
@@ -199,9 +202,12 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
       setStatus('success')
       form.reset()
       setTurnstileToken('')
+      setTurnstileResetKey((k) => k + 1)
     } catch {
       setFormError('Failed to send')
       setStatus('error')
+      setTurnstileToken('')
+      setTurnstileResetKey((k) => k + 1)
     }
   }
 
@@ -377,7 +383,12 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
                   </p>
                 )}
 
-                <TurnstileWidget onToken={onToken} onError={onTurnstileError} />
+                <TurnstileWidget
+                  key={turnstileResetKey}
+                  resetKey={turnstileResetKey}
+                  onToken={onToken}
+                  onError={onTurnstileError}
+                />
 
                 <button
                   type="submit"

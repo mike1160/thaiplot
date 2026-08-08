@@ -20,7 +20,9 @@ export default function ContactPage() {
   const t = useTranslations('contact')
   const [status, setStatus] = useState<FormStatus>('idle')
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0)
   const [securityError, setSecurityError] = useState(false)
+  const [apiError, setApiError] = useState('')
 
   const onToken = useCallback((token: string) => {
     setTurnstileToken(token)
@@ -39,6 +41,7 @@ export default function ContactPage() {
     }
     setStatus('loading')
     setSecurityError(false)
+    setApiError('')
     const form = e.currentTarget
     const data = new FormData(form)
 
@@ -54,19 +57,30 @@ export default function ContactPage() {
           turnstileToken,
         }),
       })
-      const json = await res.json()
+      const json = await res.json().catch(() => ({}))
       if (!res.ok || !json.success) {
         if (json?.error === 'Security check failed') {
           setSecurityError(true)
         }
+        setApiError(
+          typeof json?.error === 'string' && json.error.trim()
+            ? json.error
+            : t('error')
+        )
         setStatus('error')
+        setTurnstileToken('')
+        setTurnstileResetKey((k) => k + 1)
         return
       }
       setStatus('success')
       form.reset()
       setTurnstileToken('')
+      setTurnstileResetKey((k) => k + 1)
     } catch {
+      setApiError(t('error'))
       setStatus('error')
+      setTurnstileToken('')
+      setTurnstileResetKey((k) => k + 1)
     }
   }
 
@@ -139,13 +153,20 @@ export default function ContactPage() {
                 />
               </div>
 
-              {(status === 'error' || securityError) && (
+              {(status === 'error' || securityError || apiError) && (
                 <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
-                  {securityError ? 'Security check failed' : t('error')}
+                  {securityError
+                    ? 'Security check failed — please complete the check again and retry.'
+                    : apiError || t('error')}
                 </p>
               )}
 
-              <TurnstileWidget onToken={onToken} onError={onTurnstileError} />
+              <TurnstileWidget
+                key={turnstileResetKey}
+                resetKey={turnstileResetKey}
+                onToken={onToken}
+                onError={onTurnstileError}
+              />
 
               <button
                 type="submit"

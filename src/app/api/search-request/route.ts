@@ -65,29 +65,37 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Failed to save request' }, { status: 500 })
     }
 
-    await resend.emails.send({
-      from: 'ThaiPlot <noreply@hua-hin-land.com>',
-      to: 'kleinjansmike@gmail.com',
-      reply_to: emailValue,
-      subject: 'Nieuwe zoekopdracht via ThaiPlot',
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
-          <h2 style="color: #C8973A; margin-bottom: 24px;">Nieuwe zoekopdracht via ThaiPlot</h2>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Name</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(nameValue)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Email</td><td style="padding: 8px 0; color: #C8973A;"><a href="mailto:${escapeHtml(emailValue)}" style="color: #C8973A;">${escapeHtml(emailValue)}</a></td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Looking for</td><td style="padding: 8px 0; color: #f0f4ff; white-space: pre-wrap;">${escapeHtml(descriptionValue)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Region</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(regionValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Budget</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(budgetValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Locale</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(localeValue)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Source</td><td style="padding: 8px 0; color: #f0f4ff;">${isAuthenticated ? 'Portal (authenticated)' : 'Exit-intent / public'}</td></tr>
-          </table>
-          <div style="margin-top: 24px; padding: 16px; background: #1e2a4a; border-radius: 8px;">
-            <p style="margin: 0; color: #64748b; font-size: 12px;">Sent from thaiplot.com · ${new Date().toISOString()}</p>
+    // Request is saved — email failure should not fail the user-facing submit
+    try {
+      const emailResult = await resend.emails.send({
+        from: 'ThaiPlot <noreply@hua-hin-land.com>',
+        to: 'kleinjansmike@gmail.com',
+        reply_to: emailValue,
+        subject: 'Nieuwe zoekopdracht via ThaiPlot',
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
+            <h2 style="color: #C8973A; margin-bottom: 24px;">Nieuwe zoekopdracht via ThaiPlot</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Name</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(nameValue)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Email</td><td style="padding: 8px 0; color: #C8973A;"><a href="mailto:${escapeHtml(emailValue)}" style="color: #C8973A;">${escapeHtml(emailValue)}</a></td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Looking for</td><td style="padding: 8px 0; color: #f0f4ff; white-space: pre-wrap;">${escapeHtml(descriptionValue)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Region</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(regionValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Budget</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(budgetValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Locale</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(localeValue)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Source</td><td style="padding: 8px 0; color: #f0f4ff;">${isAuthenticated ? 'Portal (authenticated)' : 'Exit-intent / public'}</td></tr>
+            </table>
+            <div style="margin-top: 24px; padding: 16px; background: #1e2a4a; border-radius: 8px;">
+              <p style="margin: 0; color: #64748b; font-size: 12px;">Sent from thaiplot.com · ${new Date().toISOString()}</p>
+            </div>
           </div>
-        </div>
-      `,
-    })
+        `,
+      })
+      if (emailResult.error) {
+        console.error('[search-request] resend error after insert', emailResult.error)
+      }
+    } catch (emailError) {
+      console.error('[search-request] resend threw after insert', emailError)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {
