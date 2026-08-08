@@ -141,8 +141,10 @@ export default function ListPropertyPage() {
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState<ListingCategory>('Land & Property')
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0)
   const [securityError, setSecurityError] = useState(false)
   const [photoError, setPhotoError] = useState(false)
+  const [apiError, setApiError] = useState('')
   const [language, setLanguage] = useState<(typeof LANG_OPTIONS)[number]>('EN')
   const [propertyType, setPropertyType] = useState('Land')
   const [sizeUnit, setSizeUnit] = useState('Rai')
@@ -299,6 +301,15 @@ export default function ListPropertyPage() {
     if (token) setSecurityError(false)
   }, [])
 
+  const onTurnstileError = useCallback(() => {
+    setSecurityError(true)
+  }, [])
+
+  function refreshTurnstile() {
+    setTurnstileToken('')
+    setTurnstileResetKey((k) => k + 1)
+  }
+
   function saveDraft() {
     const draft = {
       name,
@@ -377,6 +388,8 @@ export default function ListPropertyPage() {
     setPhotosUploading(false)
     setTurnstileToken('')
     setPhotoError(false)
+    setApiError('')
+    setTurnstileResetKey((k) => k + 1)
     localStorage.removeItem(LIST_PROPERTY_DRAFT_KEY)
   }
 
@@ -384,6 +397,7 @@ export default function ListPropertyPage() {
     e.preventDefault()
     if (!turnstileToken) {
       setSecurityError(true)
+      setApiError('')
       return
     }
 
@@ -391,12 +405,14 @@ export default function ListPropertyPage() {
     if (!isValidThaiPhone(phoneValue)) {
       setPhoneError(true)
       setStatus('error')
+      setApiError('')
       return
     }
 
     if (photosUploading) {
       setPhotoError(true)
       setStatus('error')
+      setApiError('')
       return
     }
 
@@ -404,6 +420,7 @@ export default function ListPropertyPage() {
     setSecurityError(false)
     setPhotoError(false)
     setPhoneError(false)
+    setApiError('')
 
     const form = e.currentTarget
     const data = new FormData(form)
@@ -464,28 +481,65 @@ export default function ListPropertyPage() {
       referralSource,
     }
 
+    const apiUrl = '/api/list-property'
+
     try {
-      const res = await fetch('/api/list-property', {
+      if (process.env.NODE_ENV === 'development') {
+        console.info('[list-property] submitting', {
+          apiUrl,
+          locale,
+          category: payload.category,
+          hasTurnstile: Boolean(payload.turnstileToken),
+          photoCount: finalPhotos.length,
+        })
+      }
+
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       })
-      const json = await res.json()
+      let json: { success?: boolean; error?: string; code?: string; detail?: string } = {}
+      try {
+        json = await res.json()
+      } catch {
+        json = { error: `Request failed (${res.status})` }
+      }
+
+      if (process.env.NODE_ENV === 'development') {
+        console.info('[list-property] response', { status: res.status, json })
+      }
+
       if (!res.ok || !json.success) {
-        if (json?.error === 'Security check failed') {
+        const message =
+          typeof json?.error === 'string' && json.error.trim()
+            ? json.detail
+              ? `${json.error}: ${json.detail}`
+              : json.error
+            : t('errorMessage')
+
+        if (json?.error === 'Security check failed' || json?.code === 'turnstile_failed') {
           setSecurityError(true)
         }
-        if (json?.error === 'Invalid Thai phone number') {
+        if (json?.error === 'Invalid Thai phone number' || json?.code === 'invalid_phone') {
           setPhoneError(true)
         }
+        setApiError(message)
         setStatus('error')
+        // Tokens are single-use — always mint a fresh challenge after any failed submit
+        refreshTurnstile()
         return
       }
       setStatus('success')
       form.reset()
       resetFormExtras()
-    } catch {
+    } catch (err) {
+      if (process.env.NODE_ENV === 'development') {
+        console.error('[list-property] network error', err)
+      }
+      setApiError(t('errorMessage'))
       setStatus('error')
+      refreshTurnstile()
     }
   }
 
@@ -1385,19 +1439,24 @@ export default function ListPropertyPage() {
                   <span className="text-sm text-[#1A2744] leading-relaxed">{t('consent')}</span>
                 </label>
 
-                {(status === 'error' || securityError || phoneError) && (
+                {(status === 'error' || securityError || phoneError || apiError) && (
                   <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
                     {securityError
-                      ? 'Security check failed'
+                      ? 'Security check failed — please complete the check again and retry.'
                       : phoneError
                         ? t('phoneInvalid')
                         : photoError
                           ? t('photosInvalid')
-                          : t('errorMessage')}
+                          : apiError || t('errorMessage')}
                   </p>
                 )}
 
-                <TurnstileWidget onToken={onToken} onError={() => setSecurityError(true)} />
+                <TurnstileWidget
+                  key={turnstileResetKey}
+                  resetKey={turnstileResetKey}
+                  onToken={onToken}
+                  onError={onTurnstileError}
+                />
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button

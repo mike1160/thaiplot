@@ -5,15 +5,15 @@
 export async function verifyTurnstileToken(
   token: unknown,
   remoteip?: string | null
-): Promise<{ ok: true } | { ok: false; error: string }> {
+): Promise<{ ok: true } | { ok: false; error: string; codes?: string[] }> {
   if (!token || typeof token !== 'string') {
-    return { ok: false, error: 'Security check failed' }
+    return { ok: false, error: 'Security check failed', codes: ['missing-input-response'] }
   }
 
   const secret = process.env.TURNSTILE_SECRET_KEY
   if (!secret) {
-    console.error('TURNSTILE_SECRET_KEY is not set')
-    return { ok: false, error: 'Security check failed' }
+    console.error('[turnstile] TURNSTILE_SECRET_KEY is not set')
+    return { ok: false, error: 'Security check failed', codes: ['missing-input-secret'] }
   }
 
   try {
@@ -30,20 +30,24 @@ export async function verifyTurnstileToken(
         cache: 'no-store',
       }
     )
-    const turnstileData = await turnstileResponse.json()
+    const turnstileData = (await turnstileResponse.json()) as {
+      success?: boolean
+      'error-codes'?: string[]
+      hostname?: string
+    }
     if (!turnstileData.success) {
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Turnstile verification failed', {
-          codes: turnstileData['error-codes'],
-          hostname: turnstileData.hostname,
-        })
-      }
-      return { ok: false, error: 'Security check failed' }
+      const codes = turnstileData['error-codes'] || []
+      console.error('[turnstile] verification failed', {
+        codes,
+        hostname: turnstileData.hostname,
+        hasRemoteIp: Boolean(remoteip),
+      })
+      return { ok: false, error: 'Security check failed', codes }
     }
     return { ok: true }
   } catch (error) {
-    console.error(error)
-    return { ok: false, error: 'Security check failed' }
+    console.error('[turnstile] siteverify request error', error)
+    return { ok: false, error: 'Security check failed', codes: ['internal-error'] }
   }
 }
 

@@ -27,6 +27,10 @@ export default function ContactPage() {
     if (token) setSecurityError(false)
   }, [])
 
+  const onTurnstileError = useCallback(() => {
+    setSecurityError(true)
+  }, [])
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     if (!turnstileToken) {
@@ -141,7 +145,7 @@ export default function ContactPage() {
                 </p>
               )}
 
-              <TurnstileWidget onToken={onToken} onError={() => setSecurityError(true)} />
+              <TurnstileWidget onToken={onToken} onError={onTurnstileError} />
 
               <button
                 type="submit"

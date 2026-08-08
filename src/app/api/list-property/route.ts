@@ -28,6 +28,15 @@ function isListingCategory(value: unknown): value is ListingCategory {
   return typeof value === 'string' && LISTING_CATEGORIES.includes(value as ListingCategory)
 }
 
+function parseCoord(value: unknown): number | null {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value === 'string' && value.trim()) {
+    const n = Number(value)
+    return Number.isFinite(n) ? n : null
+  }
+  return null
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -71,8 +80,15 @@ export async function POST(req: NextRequest) {
     } = body
 
     const turnstile = await verifyTurnstileToken(turnstileToken, requestClientIp(req))
-    if (!turnstile.ok) {
-      return NextResponse.json({ error: 'Security check failed' }, { status: 400 })
+    if (turnstile.ok === false) {
+      return NextResponse.json(
+        {
+          error: 'Security check failed',
+          code: 'turnstile_failed',
+          detail: turnstile.codes?.join(', ') || undefined,
+        },
+        { status: 400 }
+      )
     }
 
     const category: ListingCategory = isListingCategory(rawCategory)
@@ -80,7 +96,17 @@ export async function POST(req: NextRequest) {
       : 'Land & Property'
 
     if (!name || !email || !phone || !location || !consent) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+      console.error('[list-property] missing required fields', {
+        hasName: Boolean(name),
+        hasEmail: Boolean(email),
+        hasPhone: Boolean(phone),
+        hasLocation: Boolean(location),
+        hasConsent: Boolean(consent),
+      })
+      return NextResponse.json(
+        { error: 'Missing required fields', code: 'missing_fields' },
+        { status: 400 }
+      )
     }
 
     // Soft Thai mobile validation on server too
@@ -88,13 +114,19 @@ export async function POST(req: NextRequest) {
     const phoneOk =
       /^\+66[689]\d{8}$/.test(phoneClean) || /^0[689]\d{8}$/.test(phoneClean)
     if (!phoneOk) {
-      return NextResponse.json({ error: 'Invalid Thai phone number' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'Invalid Thai phone number', code: 'invalid_phone' },
+        { status: 400 }
+      )
     }
 
     const adminSecret = process.env.ADMIN_SECRET
     if (!adminSecret) {
-      console.error('ADMIN_SECRET is not set')
-      return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 })
+      console.error('[list-property] ADMIN_SECRET is not set')
+      return NextResponse.json(
+        { error: 'Server misconfigured', code: 'server_misconfigured' },
+        { status: 500 }
+      )
     }
 
     const photoList = Array.isArray(photos)
@@ -120,18 +152,8 @@ export async function POST(req: NextRequest) {
     const lineIdValue = typeof lineId === 'string' ? lineId.trim() : ''
     const whatsappValue = typeof whatsapp === 'string' ? whatsapp.trim() : ''
     const referralValue = typeof referralSource === 'string' ? referralSource.trim() : ''
-    const latValue =
-      typeof lat === 'number' && Number.isFinite(lat)
-        ? lat
-        : typeof lat === 'string' && lat.trim()
-          ? Number(lat)
-          : null
-    const lngValue =
-      typeof lng === 'number' && Number.isFinite(lng)
-        ? lng
-        : typeof lng === 'string' && lng.trim()
-          ? Number(lng)
-          : null
+    const latValue = parseCoord(lat)
+    const lngValue = parseCoord(lng)
 
     if (category === 'Vehicle') {
       propertyType = vehicleType || 'Vehicle'
@@ -267,8 +289,15 @@ export async function POST(req: NextRequest) {
     }
 
     if (insertError || !listing?.id) {
-      console.error(insertError)
-      return NextResponse.json({ error: 'Failed to save listing' }, { status: 500 })
+      console.error('[list-property] insert failed', insertError)
+      return NextResponse.json(
+        {
+          error: 'Failed to save listing',
+          code: 'insert_failed',
+          detail: insertError?.message || undefined,
+        },
+        { status: 500 }
+      )
     }
 
     const base = siteBaseUrl()
@@ -278,62 +307,80 @@ export async function POST(req: NextRequest) {
 
     const summaryType = propertyType || category
 
-    await resend.emails.send({
-      from: 'ThaiPlot <noreply@hua-hin-land.com>',
-      to: 'kleinjansmike@gmail.com',
-      reply_to: email,
-      subject: `New listing pending approval — ${category}: ${summaryType} in ${regionValue || location}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
-          <h2 style="color: #C8973A; margin-bottom: 8px;">New listing pending approval</h2>
-          <p style="color: #94a3b8; margin: 0 0 24px; font-size: 13px;">ID: ${escapeHtml(listing.id)} · ThaiPlot · ${escapeHtml(category)}</p>
+    // Listing is already saved — email failure must not fail the user-facing submit
+    try {
+      const emailResult = await resend.emails.send({
+        from: 'ThaiPlot <noreply@hua-hin-land.com>',
+        to: 'kleinjansmike@gmail.com',
+        reply_to: email,
+        subject: `New listing pending approval — ${category}: ${summaryType} in ${regionValue || location}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
+            <h2 style="color: #C8973A; margin-bottom: 8px;">New listing pending approval</h2>
+            <p style="color: #94a3b8; margin: 0 0 24px; font-size: 13px;">ID: ${escapeHtml(listing.id)} · ThaiPlot · ${escapeHtml(category)}</p>
 
-          <h3 style="color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 24px 0 12px;">Contact</h3>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Name</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(name)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Email</td><td style="padding: 8px 0; color: #C8973A;"><a href="mailto:${escapeHtml(email)}" style="color: #C8973A;">${escapeHtml(email)}</a></td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Phone / WhatsApp</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(phone)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Language</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(language)}</td></tr>
-          </table>
+            <h3 style="color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 24px 0 12px;">Contact</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Name</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(name)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Email</td><td style="padding: 8px 0; color: #C8973A;"><a href="mailto:${escapeHtml(email)}" style="color: #C8973A;">${escapeHtml(email)}</a></td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Phone / WhatsApp</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(phone)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Language</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(language)}</td></tr>
+            </table>
 
-          <h3 style="color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 24px 0 12px;">Listing</h3>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Category</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(category)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Type</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(propertyType)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Brand / engine</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleBrandValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Year</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleYearValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Mileage</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleMileageValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Condition</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(conditionValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Transaction</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(transactionType)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Region</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(regionValue)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Location</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(location)}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Slug</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(slugValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Coords</td><td style="padding: 8px 0; color: #f0f4ff;">${latValue != null && lngValue != null ? `${escapeHtml(latValue)}, ${escapeHtml(lngValue)}` : '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Referral</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(referralValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Contact prefs</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(prefs.join(', ') || '—')}${lineIdValue ? ` · LINE: ${escapeHtml(lineIdValue)}` : ''}${whatsappValue ? ` · WA: ${escapeHtml(whatsappValue)}` : ''}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Size / length</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(sizeValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Price</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(price) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Title / reason</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(titleDeedValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Description</td><td style="padding: 8px 0; color: #f0f4ff; white-space: pre-wrap;">${escapeHtml(descriptionValue) || '—'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Photos</td><td style="padding: 8px 0; color: #f0f4ff;">${photoList.length ? photoList.map((u: string) => escapeHtml(u)).join('<br/>') : '—'}</td></tr>
-          </table>
+            <h3 style="color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin: 24px 0 12px;">Listing</h3>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px 0; color: #94a3b8; width: 140px;">Category</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(category)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Type</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(propertyType)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Brand / engine</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleBrandValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Year</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleYearValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Mileage</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(vehicleMileageValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Condition</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(conditionValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Transaction</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(transactionType)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Region</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(regionValue)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Location</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(location)}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Slug</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(slugValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Coords</td><td style="padding: 8px 0; color: #f0f4ff;">${latValue != null && lngValue != null ? `${escapeHtml(latValue)}, ${escapeHtml(lngValue)}` : '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Referral</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(referralValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Contact prefs</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(prefs.join(', ') || '—')}${lineIdValue ? ` · LINE: ${escapeHtml(lineIdValue)}` : ''}${whatsappValue ? ` · WA: ${escapeHtml(whatsappValue)}` : ''}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Size / length</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(sizeValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Price</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(price) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8;">Title / reason</td><td style="padding: 8px 0; color: #f0f4ff;">${escapeHtml(titleDeedValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Description</td><td style="padding: 8px 0; color: #f0f4ff; white-space: pre-wrap;">${escapeHtml(descriptionValue) || '—'}</td></tr>
+              <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Photos</td><td style="padding: 8px 0; color: #f0f4ff;">${photoList.length ? photoList.map((u: string) => escapeHtml(u)).join('<br/>') : '—'}</td></tr>
+            </table>
 
-          <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="${approveUrl}" style="display: inline-block; padding: 14px 22px; background: #16a34a; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">✅ APPROVE</a>
-            <a href="${rejectUrl}" style="display: inline-block; padding: 14px 22px; background: #dc2626; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">❌ REJECT</a>
-            <a href="${deleteUrl}" style="display: inline-block; padding: 14px 22px; background: #64748b; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">🗑️ DELETE</a>
+            <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="${approveUrl}" style="display: inline-block; padding: 14px 22px; background: #16a34a; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">✅ APPROVE</a>
+              <a href="${rejectUrl}" style="display: inline-block; padding: 14px 22px; background: #dc2626; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">❌ REJECT</a>
+              <a href="${deleteUrl}" style="display: inline-block; padding: 14px 22px; background: #64748b; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold;">🗑️ DELETE</a>
+            </div>
+
+            <div style="margin-top: 24px; padding: 16px; background: #1e2a4a; border-radius: 8px;">
+              <p style="margin: 0; color: #64748b; font-size: 12px;">Sent from thaiplot.com · List on ThaiPlot · ${new Date().toISOString()}</p>
+            </div>
           </div>
+        `,
+      })
+      if (emailResult.error) {
+        console.error('[list-property] resend returned error after insert', {
+          listingId: listing.id,
+          error: emailResult.error,
+        })
+      }
+    } catch (emailError) {
+      console.error('[list-property] resend threw after insert', {
+        listingId: listing.id,
+        error: emailError,
+      })
+    }
 
-          <div style="margin-top: 24px; padding: 16px; background: #1e2a4a; border-radius: 8px;">
-            <p style="margin: 0; color: #64748b; font-size: 12px;">Sent from thaiplot.com · List on ThaiPlot · ${new Date().toISOString()}</p>
-          </div>
-        </div>
-      `,
-    })
-
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, id: listing.id })
   } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
+    console.error('[list-property] unhandled error', error)
+    const message = error instanceof Error ? error.message : 'Failed to send'
+    return NextResponse.json(
+      { error: message || 'Failed to send', code: 'unhandled' },
+      { status: 500 }
+    )
   }
 }

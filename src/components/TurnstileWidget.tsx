@@ -19,6 +19,7 @@ declare global {
         }
       ) => string
       remove: (widgetId: string) => void
+      reset?: (widgetId: string) => void
     }
   }
 }
@@ -27,6 +28,8 @@ type TurnstileWidgetProps = {
   onToken: (token: string) => void
   onError?: () => void
   className?: string
+  /** Change this value to force a fresh widget (e.g. after a failed submit). */
+  resetKey?: number | string
 }
 
 function loadTurnstileScript(): Promise<void> {
@@ -56,15 +59,25 @@ function loadTurnstileScript(): Promise<void> {
   })
 }
 
-/** Same managed/light Turnstile pattern as hua-hin-land.com */
+/**
+ * Managed/light Turnstile widget.
+ * Callbacks are stored in refs so parent re-renders do NOT remount the widget
+ * (remounting mid-form invalidates tokens and causes timeout-or-duplicate 400s).
+ */
 export default function TurnstileWidget({
   onToken,
   onError,
   className = '',
+  resetKey = 0,
 }: TurnstileWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const widgetIdRef = useRef<string>()
+  const onTokenRef = useRef(onToken)
+  const onErrorRef = useRef(onError)
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+
+  onTokenRef.current = onToken
+  onErrorRef.current = onError
 
   useEffect(() => {
     if (!siteKey || !containerRef.current) return
@@ -75,24 +88,31 @@ export default function TurnstileWidget({
       .then(() => {
         if (cancelled || !containerRef.current || !window.turnstile) return
 
+        // Clear previous instance before re-render (resetKey change)
+        if (widgetIdRef.current) {
+          window.turnstile.remove(widgetIdRef.current)
+          widgetIdRef.current = undefined
+        }
+        containerRef.current.innerHTML = ''
+
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
           sitekey: siteKey,
           theme: 'light',
           callback: (token: string) => {
-            onToken(token)
+            onTokenRef.current(token)
           },
           'error-callback': () => {
-            onToken('')
-            onError?.()
+            onTokenRef.current('')
+            onErrorRef.current?.()
           },
           'expired-callback': () => {
-            onToken('')
+            onTokenRef.current('')
           },
         })
       })
       .catch(() => {
-        onToken('')
-        onError?.()
+        onTokenRef.current('')
+        onErrorRef.current?.()
       })
 
     return () => {
@@ -102,7 +122,7 @@ export default function TurnstileWidget({
         widgetIdRef.current = undefined
       }
     }
-  }, [siteKey, onToken, onError])
+  }, [siteKey, resetKey])
 
   if (!siteKey) {
     return (

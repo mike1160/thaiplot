@@ -68,6 +68,10 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
     if (token) setSecurityError(false)
   }, [])
 
+  const onTurnstileError = useCallback(() => {
+    setSecurityError(true)
+  }, [])
+
   const close = useCallback(() => {
     setOpen(false)
   }, [])
@@ -373,7 +377,7 @@ export default function ExitIntentPopup({ locale: localeProp }: ExitIntentPopupP
                   </p>
                 )}
 
-                <TurnstileWidget onToken={onToken} onError={() => setSecurityError(true)} />
+                <TurnstileWidget onToken={onToken} onError={onTurnstileError} />
 
                 <button
                   type="submit"
