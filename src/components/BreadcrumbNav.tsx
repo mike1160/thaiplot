@@ -1,12 +1,12 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import BrandHomeLink from '@/components/BrandHomeLink'
-import { GUIDE_LINKS, isExternalGuideLink } from '@/content/guide-links'
+import { GUIDE_LINKS, isExternalGuideLink, resolveExternalGuideHref } from '@/content/guide-links'
 
 const INFO_PAGES: Record<string, string> = {
   'buying-land-thailand': 'pages.buyingLand',
@@ -110,6 +110,7 @@ function buildCrumbs(pathname: string) {
 export default function BreadcrumbNav({ className = '' }: { className?: string }) {
   const t = useTranslations('breadcrumb')
   const tn = useTranslations('navigation')
+  const locale = useLocale()
   const pathname = usePathname()
   const crumbs = buildCrumbs(pathname)
   const scrolled = useScrolledHeader()
@@ -219,9 +220,10 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
                     isExternalGuideLink(item) ? (
                       <a
                         key={item.href}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={resolveExternalGuideHref(item.href, locale)}
+                        {...(item.href.startsWith('http')
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
                         role="menuitem"
                         onClick={() => setGuideOpen(false)}
                         className="block px-4 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"

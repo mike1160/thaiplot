@@ -1,18 +1,19 @@
 'use client'
 
 import { useEffect, useId, useRef, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from './LanguageSwitcher'
 import PortalAccountLink from './PortalAccountLink'
 import BrandHomeLink from '@/components/BrandHomeLink'
-import { GUIDE_LINKS, isExternalGuideLink } from '@/content/guide-links'
+import { GUIDE_LINKS, isExternalGuideLink, resolveExternalGuideHref } from '@/content/guide-links'
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
 
 export default function HomeNavbar() {
   const t = useTranslations('navigation')
+  const locale = useLocale()
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [guideOpen, setGuideOpen] = useState(false)
@@ -133,9 +134,10 @@ export default function HomeNavbar() {
                     isExternalGuideLink(item) ? (
                       <a
                         key={item.href}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href={resolveExternalGuideHref(item.href, locale)}
+                        {...(item.href.startsWith('http')
+                          ? { target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
                         role="menuitem"
                         onClick={() => setGuideOpen(false)}
                         className="block px-4 py-2.5 text-sm text-[#1A2744] hover:text-[#C8973A] hover:bg-[#FAF7F0] transition-colors"

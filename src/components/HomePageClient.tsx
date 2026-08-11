@@ -324,6 +324,14 @@ export default function HomePageClient({ listings }: Props) {
                 {tn('guideWaiair')}
               </a>
             </li>
+            <li>
+              <a href="/koh-phangan-foreign-investors.html" className="tp-link-card">
+                <span className="text-[#C8973A]" aria-hidden>
+                  →
+                </span>
+                {tn('guideKohPhanganInvestors')}
+              </a>
+            </li>
           </ul>
         </div>
       </section>

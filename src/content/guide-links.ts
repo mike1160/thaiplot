@@ -16,6 +16,11 @@ export const GUIDE_LINKS = [
   { href: '/info/living-thailand', key: 'guideLiving' },
   { href: '/info/transport-thailand', key: 'guideTransport' },
   { href: '/info/thai-islands', key: 'guideIslands' },
+  {
+    href: '/koh-phangan-foreign-investors.html',
+    key: 'guideKohPhanganInvestors',
+    external: true,
+  },
   { href: '/info/health-accidents-thailand', key: 'guideHealth' },
   { href: '/info/food-thailand', key: 'guideFood' },
   { href: '/info/thai-culture', key: 'guideCulture' },
@@ -34,4 +39,14 @@ export function isExternalGuideLink(
   item: GuideLink
 ): item is GuideLink & { external: true } {
   return 'external' in item && item.external === true
+}
+
+/** Same-site HTML pages get ?lang=; absolute URLs stay as-is. */
+export function resolveExternalGuideHref(href: string, locale: string): string {
+  if (href.includes('koh-phangan-foreign-investors')) {
+    const articleLangs = ['nl', 'en', 'de', 'fr', 'ru', 'th']
+    const lang = articleLangs.includes(locale) ? locale : 'en'
+    return `/koh-phangan-foreign-investors.html?lang=${lang}`
+  }
+  return href
 }

@@ -29,6 +29,35 @@ function createMiddlewareSupabase(request: NextRequest, response: NextResponse) 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // Static HTML in /public must not go through locale routing
+  // e.g. /nl/koh-phangan-foreign-investors.html → /koh-phangan-foreign-investors.html
+  const localeHtml = pathname.match(
+    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/([a-z0-9][a-z0-9\-]*\.html)$/i
+  )
+  if (localeHtml) {
+    const url = request.nextUrl.clone()
+    url.pathname = `/${localeHtml[2]}`
+    return NextResponse.rewrite(url)
+  }
+
+  // Extensionless aliases for campaign HTML pages
+  const localeArticle = pathname.match(
+    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/(koh-phangan-foreign-investors|waiair)$/i
+  )
+  if (localeArticle) {
+    const url = request.nextUrl.clone()
+    url.pathname = `/${localeArticle[2].toLowerCase()}.html`
+    return NextResponse.rewrite(url)
+  }
+  if (
+    pathname === '/koh-phangan-foreign-investors' ||
+    pathname === '/waiair'
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = `${pathname}.html`
+    return NextResponse.rewrite(url)
+  }
+
   // Auth callback — no i18n rewrite
   if (pathname.startsWith('/auth')) {
     return NextResponse.next()

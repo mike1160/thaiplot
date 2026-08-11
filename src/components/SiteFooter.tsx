@@ -78,6 +78,14 @@ export default function SiteFooter() {
                 </a>
               </li>
               <li>
+                <a
+                  href="/koh-phangan-foreign-investors.html"
+                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                >
+                  {tn('guideKohPhanganInvestors')}
+                </a>
+              </li>
+              <li>
                 <Link
                   href="/info/thailand-digital-arrival-card"
                   className="text-white/70 hover:text-[#C8973A] transition-colors"

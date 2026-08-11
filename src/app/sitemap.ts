@@ -127,5 +127,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified,
     changeFrequency: 'monthly',
     priority: 0.7,
+  }, {
+    url: `${SITE_URL}/koh-phangan-foreign-investors.html`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.7,
   }]
 }
