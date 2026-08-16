@@ -337,13 +337,55 @@ export default function ThaiNewsWidget({ variant = 'home', homeLimit = 8 }: Prop
                               fontSize: 17,
                               fontWeight: 600,
                               margin: '0 0 4px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 8,
                             }}
                           >
-                            WaiAir — vluchttracker Zuidoost-Azië
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#ff6400"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                            WaiAir — vluchttracker
                           </p>
-                          <p style={{ color: '#8899aa', fontSize: 13, margin: 0 }}>
-                            Realtime vluchtstatus · 26 luchthavens · Thailand, Indonesië, Singapore
-                            en meer
+                          <p
+                            style={{
+                              color: '#8899aa',
+                              fontSize: 13,
+                              margin: 0,
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: 8,
+                            }}
+                          >
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                              style={{ flexShrink: 0, marginTop: 2 }}
+                            >
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                            <span>
+                              Realtime vluchtstatus voor 10.000+ luchthavens wereldwijd. Gratis.
+                            </span>
                           </p>
                         </div>
                         <a

@@ -56,17 +56,18 @@ export default function WaiairNavPill() {
       `}</style>
       <a href="/waiair" className="waiair-pill-btn" aria-label="WaiAir vluchttracker — nieuw">
         <svg
-          width="13"
-          height="13"
+          width="12"
+          height="12"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          aria-hidden
+          aria-hidden="true"
         >
-          <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
         <span className="pill-label">WaiAir</span>
         <span className="waiair-new">Nieuw</span>

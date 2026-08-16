@@ -12,7 +12,7 @@ export async function GET() {
 - Land and property listings in Thailand (Hua Hin, Pranburi, Phuket, Bangkok, Koh Samui)
 - Free guides: buying land, Chanote title deeds, retirement visa, living costs, health insurance
 - Thailand News: daily headlines from Bangkok Post, The Thaiger and Reddit r/Thailand
-- WaiAir: free iOS flight tracker app for 26 airports across Southeast Asia
+- WaiAir: free iOS flight tracker for 10,000+ airports worldwide
 - ThaiData: free Thai title deed and company verification tool
 
 ## Key pages

@@ -122,7 +122,10 @@ export default function SiteFooter() {
                 gap: 12,
               }}
             >
-              <div style={{ fontSize: 32 }}>✈️</div>
+              <div style={{ fontSize: 32, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span aria-hidden>🌍</span>
+                <span aria-hidden>✈️</span>
+              </div>
               <p
                 style={{
                   color: '#ff6400',
@@ -141,13 +144,54 @@ export default function SiteFooter() {
                   fontWeight: 600,
                   margin: 0,
                   lineHeight: 1.3,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
                 }}
               >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ff6400"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
                 WaiAir — vluchttracker
               </p>
-              <p style={{ color: '#9BA8BB', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
-                Realtime vertrekken, aankomsten en gate-info voor 26 luchthavens in Thailand,
-                Indonesië, Maleisië, Singapore, Vietnam en de Filipijnen.
+              <p
+                style={{
+                  color: '#9BA8BB',
+                  fontSize: 14,
+                  margin: 0,
+                  lineHeight: 1.6,
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 8,
+                }}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  style={{ flexShrink: 0, marginTop: 2 }}
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                <span>Realtime vluchtstatus voor 10.000+ luchthavens wereldwijd. Gratis.</span>
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 4 }}>
                 <a
@@ -184,8 +228,31 @@ export default function SiteFooter() {
                   Meer info →
                 </a>
               </div>
-              <p style={{ color: '#9BA8BB', fontSize: 11, margin: 0 }}>
-                26 luchthavens · 6 landen · Gratis
+              <p
+                style={{
+                  color: '#9BA8BB',
+                  fontSize: 11,
+                  margin: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                10.000+ luchthavens · wereldwijd · Gratis
               </p>
             </div>
           </div>

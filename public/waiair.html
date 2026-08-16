@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WaiAir — Flight tracker Southeast Asia | ThaiPlot</title>
-<meta name="description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports in Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines. Free on iOS and Android.">
+<title>WaiAir — Worldwide flight tracker | ThaiPlot</title>
+<meta name="description" content="Real-time flight tracking for 10,000+ airports worldwide. Free.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ThaiPlot">
-<meta property="og:title" content="WaiAir — Flight tracker Southeast Asia | ThaiPlot">
-<meta property="og:description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports in Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines. Free on iOS and Android.">
+<meta property="og:title" content="WaiAir — Worldwide flight tracker | ThaiPlot">
+<meta property="og:description" content="Real-time flight tracking for 10,000+ airports worldwide. Free.">
 <meta property="og:url" content="https://www.thaiplot.com/waiair">
 <meta property="og:image" content="https://www.thaiplot.com/waiair-logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WaiAir — Flight tracker Southeast Asia | ThaiPlot">
-<meta name="twitter:description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports. Free on iOS and Android.">
+<meta name="twitter:title" content="WaiAir — Worldwide flight tracker | ThaiPlot">
+<meta name="twitter:description" content="Real-time flight tracking for 10,000+ airports worldwide. Free.">
 <link rel="canonical" href="https://www.thaiplot.com/waiair">
 <link rel="icon" href="/waiair-logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,12 +93,16 @@ body {
 .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
 
 .plane-icon {
-  width: 72px;
-  height: 72px;
+  width: auto;
+  height: 48px;
   margin: 0 auto 22px;
   color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
-.plane-icon svg { width: 100%; height: 100%; display: block; }
+.plane-icon svg { width: 48px; height: 48px; display: block; }
 
 .pill {
   display: inline-flex;
@@ -291,33 +295,32 @@ footer.page-foot a:hover { text-decoration: underline; }
   <section class="hero">
     <div class="hero-inner">
       <div class="plane-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M62 32L38 20v-8a4 4 0 0 0-8 0v8L6 32l24 4v10l-6 4v4l10-2 10 2v-4l-6-4V36l24-4z" fill="currentColor"/>
         </svg>
       </div>
-      <div class="pill">WaiAir · Southeast Asia</div>
-      <h1>Track any flight across Southeast Asia</h1>
-      <p class="hero-sub">Real-time departures, arrivals and gate info for 26 airports across 6 countries. Free.</p>
+      <div class="pill">WaiAir · Worldwide</div>
+      <h1>Track any flight, worldwide</h1>
+      <p class="hero-sub">Real-time flight tracking for 10,000+ airports worldwide. Free.</p>
       <div class="store-btns">
         <a class="btn-store btn-apple" href="https://apps.apple.com/ph/app/waiair/id6798072839" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           <span class="btn-label"><small>Download on the</small>App Store</span>
         </a>
       </div>
-      <div class="airport-tags" aria-label="Airports covered">
+      <div class="airport-tags" aria-label="Coverage">
+        <span class="tag more"><strong>🌍 10,000+ airports worldwide</strong></span>
         <span class="tag"><strong>Bangkok</strong> BKK</span>
-        <span class="tag"><strong>Bangkok</strong> DMK</span>
-        <span class="tag"><strong>Phuket</strong> HKT</span>
-        <span class="tag"><strong>Chiang Mai</strong> CNX</span>
-        <span class="tag"><strong>Koh Samui</strong> USM</span>
         <span class="tag"><strong>Singapore</strong> SIN</span>
-        <span class="tag"><strong>Kuala Lumpur</strong> KUL</span>
-        <span class="tag"><strong>Jakarta</strong> CGK</span>
-        <span class="tag"><strong>Bali</strong> DPS</span>
-        <span class="tag"><strong>Manila</strong> MNL</span>
-        <span class="tag"><strong>Hanoi</strong> HAN</span>
-        <span class="tag"><strong>Ho Chi Minh</strong> SGN</span>
-        <span class="tag more">+ 14 more</span>
+        <span class="tag"><strong>New York</strong> JFK</span>
+        <span class="tag"><strong>London</strong> LHR</span>
+        <span class="tag"><strong>Tokyo</strong> HND</span>
+        <span class="tag"><strong>Dubai</strong> DXB</span>
+        <span class="tag more">+ worldwide</span>
       </div>
     </div>
   </section>
@@ -328,7 +331,7 @@ footer.page-foot a:hover { text-decoration: underline; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h16M8 15V9m4 6V7m4 8v-4"/></svg>
       </div>
       <h3>Live departures and arrivals</h3>
-      <p>Real-time status for all 26 airports — boards, ETAs and flight progress in one place.</p>
+      <p>Real-time status for 10,000+ airports worldwide — boards, ETAs and flight progress in one place.</p>
     </article>
     <article class="feature">
       <div class="feature-icon" aria-hidden="true">
@@ -341,8 +344,8 @@ footer.page-foot a:hover { text-decoration: underline; }
       <div class="feature-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
       </div>
-      <h3>26 airports, 6 countries</h3>
-      <p>Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines — covered.</p>
+      <h3>10,000+ airports worldwide</h3>
+      <p>Worldwide — from Bangkok to New York.</p>
     </article>
     <article class="feature">
       <div class="feature-icon" aria-hidden="true">
@@ -353,13 +356,8 @@ footer.page-foot a:hover { text-decoration: underline; }
     </article>
   </section>
 
-  <section class="countries" aria-label="Countries covered">
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Thailand</span>
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Indonesia</span>
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Malaysia</span>
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Singapore</span>
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Vietnam</span>
-    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Philippines</span>
+  <section class="countries" aria-label="Coverage">
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Worldwide — from Bangkok to New York</span>
   </section>
 
   <section class="cta-strip">

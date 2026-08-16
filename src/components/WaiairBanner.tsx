@@ -4,14 +4,25 @@ import { useTranslations } from 'next-intl'
 
 const APP_STORE_URL = 'https://apps.apple.com/ph/app/waiair/id6798072839'
 
-const COUNTRIES = [
-  'Thailand',
-  'Indonesia',
-  'Malaysia',
-  'Singapore',
-  'Vietnam',
-  'Philippines',
-] as const
+function GlobeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  )
+}
 
 export default function WaiairBanner() {
   const t = useTranslations('homepage.waiairBanner')
@@ -25,24 +36,20 @@ export default function WaiairBanner() {
               {t('badge')}
             </p>
             <h2
-              className="text-white text-lg sm:text-xl font-semibold leading-snug mb-2 group-hover:text-[#c9a84c] transition-colors"
+              className="text-white text-lg sm:text-xl font-semibold leading-snug mb-2 group-hover:text-[#c9a84c] transition-colors flex items-center gap-2"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
+              <GlobeIcon className="text-[#ff6400] flex-shrink-0" />
               {t('title')}
             </h2>
-            <p className="text-[#8899aa] text-sm leading-relaxed mb-3 max-w-xl">
-              {t('description')}
+            <p className="text-[#8899aa] text-sm leading-relaxed mb-3 max-w-xl flex items-start gap-2">
+              <GlobeIcon className="flex-shrink-0 mt-0.5" />
+              <span>{t('description')}</span>
             </p>
-            <div className="flex flex-wrap gap-x-3 gap-y-1">
-              {COUNTRIES.map((c) => (
-                <span key={c} className="text-[12px] text-[#8899aa]">
-                  <span className="text-[#22c55e] mr-1" aria-hidden>
-                    ✓
-                  </span>
-                  {c}
-                </span>
-              ))}
-            </div>
+            <p className="text-[12px] text-[#8899aa] flex items-center gap-2">
+              <GlobeIcon className="flex-shrink-0" />
+              <span>Worldwide — from Bangkok to New York</span>
+            </p>
           </a>
 
           <div className="flex flex-col items-stretch md:items-end gap-2 flex-shrink-0">
