@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import HomeDataWidgets from '@/components/HomeDataWidgets'
 import SiteFooter from '@/components/SiteFooter'
 import ThaiNewsWidget from '@/components/ThaiNewsWidget'
 import { buildPageMetadata, localizedPath, SITE_URL } from '@/lib/seo'
@@ -143,6 +144,10 @@ export default function NewsPage({ params }: Props) {
         </div>
 
         <ThaiNewsWidget variant="page" />
+
+        <div className="mt-10">
+          <HomeDataWidgets />
+        </div>
 
         <p className="mt-8 text-xs leading-relaxed text-[#5C5247]/80">
           Headlines are loaded from public RSS feeds. ThaiPlot is not responsible for third-party

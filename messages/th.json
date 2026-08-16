@@ -154,6 +154,25 @@
       "description": "ติดตามเที่ยวบินแบบเรียลไทม์ กว่า 10,000 สนามบินทั่วโลก ฟรี",
       "cta": "ดาวน์โหลดบน App Store",
       "note": "ฟรี · iOS App Store"
+    },
+    "widgets": {
+      "sectionAria": "ข้อมูลประเทศไทยแบบเรียลไทม์",
+      "propertyNews": "ข่าวอสังหาริมทรัพย์",
+      "propertyNewsSource": "Bangkok Post Property",
+      "propertyNewsEmpty": "ข่าวอสังหาริมทรัพย์ยังไม่พร้อมใช้งานชั่วคราว",
+      "exchangeRate": "อัตราแลกเปลี่ยน",
+      "exchangeEmpty": "อัตราแลกเปลี่ยนยังไม่พร้อมใช้งานชั่วคราว",
+      "updated": "อัปเดต",
+      "weather": "สภาพอากาศประเทศไทย",
+      "weatherEmpty": "ข้อมูลสภาพอากาศยังไม่พร้อมใช้งานชั่วคราว",
+      "humidity": "ความชื้น",
+      "marketData": "ข้อมูลตลาด",
+      "marketEmpty": "ยังไม่มีข้อมูลตลาด",
+      "totalListings": "ประกาศที่ใช้งาน",
+      "avgPrice": "ราคาเฉลี่ย",
+      "topRegion": "พื้นที่ยอดนิยม",
+      "newestListing": "ประกาศล่าสุด",
+      "byType": "ประกาศตามประเภท"
     }
   },
   "listings": {

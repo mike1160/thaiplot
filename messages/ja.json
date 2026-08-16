@@ -154,6 +154,25 @@
       "description": "世界中 10,000以上の空港のリアルタイム追跡。無料。",
       "cta": "App Store でダウンロード",
       "note": "無料 · App Store"
+    },
+    "widgets": {
+      "sectionAria": "Live Thailand data",
+      "propertyNews": "Property news",
+      "propertyNewsSource": "Bangkok Post Property",
+      "propertyNewsEmpty": "Property news is temporarily unavailable.",
+      "exchangeRate": "Exchange rate",
+      "exchangeEmpty": "Exchange rates are temporarily unavailable.",
+      "updated": "Updated",
+      "weather": "Thailand weather",
+      "weatherEmpty": "Weather data is temporarily unavailable.",
+      "humidity": "Humidity",
+      "marketData": "Market data",
+      "marketEmpty": "No market data available yet.",
+      "totalListings": "Active listings",
+      "avgPrice": "Average price",
+      "topRegion": "Top region",
+      "newestListing": "Latest listing",
+      "byType": "Listings by type"
     }
   },
   "listings": {

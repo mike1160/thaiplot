@@ -65,7 +65,7 @@ function buildCrumbs(pathname: string) {
     return crumbs
   }
   if (section === 'news') {
-    crumbs.push({ labelKey: 'pages.news' })
+    // Current page is shown via the green NewsNavPill — skip breadcrumb duplicate
     return crumbs
   }
   if (section === 'list-property') {

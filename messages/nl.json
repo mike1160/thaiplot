@@ -154,6 +154,25 @@
       "description": "Realtime vluchtstatus voor 10.000+ luchthavens wereldwijd. Gratis.",
       "cta": "Download in de App Store",
       "note": "Gratis · iOS App Store"
+    },
+    "widgets": {
+      "sectionAria": "Live Thailand data",
+      "propertyNews": "Vastgoed nieuws",
+      "propertyNewsSource": "Bangkok Post Property",
+      "propertyNewsEmpty": "Vastgoednieuws is tijdelijk niet beschikbaar.",
+      "exchangeRate": "Wisselkoers",
+      "exchangeEmpty": "Wisselkoersen zijn tijdelijk niet beschikbaar.",
+      "updated": "Bijgewerkt",
+      "weather": "Weer Thailand",
+      "weatherEmpty": "Weerdata is tijdelijk niet beschikbaar.",
+      "humidity": "Luchtvochtigheid",
+      "marketData": "Marktdata",
+      "marketEmpty": "Nog geen marktdata beschikbaar.",
+      "totalListings": "Actieve listings",
+      "avgPrice": "Gemiddelde prijs",
+      "topRegion": "Populairste regio",
+      "newestListing": "Nieuwste listing",
+      "byType": "Listings per type"
     }
   },
   "listings": {

@@ -154,6 +154,25 @@
       "description": "Suivi de vols en temps réel pour plus de 10 000 aéroports dans le monde. Gratuit.",
       "cta": "Télécharger sur l’App Store",
       "note": "Gratuit · App Store iOS"
+    },
+    "widgets": {
+      "sectionAria": "Live Thailand data",
+      "propertyNews": "Property news",
+      "propertyNewsSource": "Bangkok Post Property",
+      "propertyNewsEmpty": "Property news is temporarily unavailable.",
+      "exchangeRate": "Exchange rate",
+      "exchangeEmpty": "Exchange rates are temporarily unavailable.",
+      "updated": "Updated",
+      "weather": "Thailand weather",
+      "weatherEmpty": "Weather data is temporarily unavailable.",
+      "humidity": "Humidity",
+      "marketData": "Market data",
+      "marketEmpty": "No market data available yet.",
+      "totalListings": "Active listings",
+      "avgPrice": "Average price",
+      "topRegion": "Top region",
+      "newestListing": "Latest listing",
+      "byType": "Listings by type"
     }
   },
   "listings": {
