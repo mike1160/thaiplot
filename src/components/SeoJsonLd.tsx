@@ -1,4 +1,5 @@
 import { SITE_URL, localizedPath } from '@/lib/seo'
+import { listingPublicPath } from '@/lib/listings'
 
 type FaqItem = { question: string; answer: string }
 
@@ -122,6 +123,75 @@ export function SoftwareAppJsonLd({
     author: {
       '@type': 'Organization',
       name: 'Immigration Bureau of Thailand',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+export function WebSiteJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Thaiplot',
+    url: SITE_URL,
+    description: 'Thai land and property listings with Chanote title deeds',
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+function schemaPrice(price: string | null | undefined): string | undefined {
+  if (!price) return undefined
+  const digits = String(price).replace(/[^\d.]/g, '')
+  return digits || undefined
+}
+
+export function RealEstateListingJsonLd({
+  locale,
+  listing,
+}: {
+  locale: string
+  listing: {
+    id: string
+    slug?: string | null
+    location?: string | null
+    description?: string | null
+    price?: string | null
+    region?: string | null
+  }
+}) {
+  const path = listingPublicPath(listing)
+  const price = schemaPrice(listing.price)
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    name: listing.location || 'Thailand',
+    description: listing.description || undefined,
+    url: localizedPath(locale, path),
+    ...(price
+      ? {
+          offers: {
+            '@type': 'Offer',
+            price,
+            priceCurrency: 'THB',
+          },
+        }
+      : {}),
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: listing.region || listing.location || 'Thailand',
+      addressCountry: 'TH',
     },
   }
 

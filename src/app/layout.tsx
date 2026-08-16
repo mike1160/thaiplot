@@ -8,6 +8,7 @@ type Props = { children: ReactNode }
 export const metadata: Metadata = {
   other: {
     'llms-txt': 'https://www.thaiplot.com/llms.txt',
+    'google-site-verification': 'YOUR_VERIFICATION_CODE',
   },
 }
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Props) {
         />
         <meta name="p:domain_verify" content="607976f15f114c1775ec4024af8f60e7" />
         <meta name="llms-txt" content="https://www.thaiplot.com/llms.txt" />
+        <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
       </head>
       <body className="min-h-screen text-[#142038] antialiased">
         {children}

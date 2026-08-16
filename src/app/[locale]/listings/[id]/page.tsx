@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import ListingCard from '@/components/ListingCard'
+import { RealEstateListingJsonLd } from '@/components/SeoJsonLd'
 import { Link } from '@/i18n/navigation'
 import {
   listingPhotosForListing,
@@ -101,6 +102,7 @@ export default async function ListingDetailPage({ params }: Props) {
 
   return (
     <main className="min-h-screen text-[#142038]">
+      <RealEstateListingJsonLd locale={params.locale} listing={listing} />
       <BreadcrumbNav />
 
       <section className="px-4 sm:px-6 pt-8 pb-4">

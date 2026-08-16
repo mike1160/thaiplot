@@ -1,6 +1,7 @@
 import { unstable_noStore as noStore } from 'next/cache'
 import { setRequestLocale } from 'next-intl/server'
 import HomePageClient from '@/components/HomePageClient'
+import { WebSiteJsonLd } from '@/components/SeoJsonLd'
 import { fetchApprovedListings } from '@/lib/listings'
 
 export const dynamic = 'force-dynamic'
@@ -22,5 +23,10 @@ export default async function HomePage({ params }: Props) {
     titles: listings.map((l) => ({ id: l.id, title_deed: l.title_deed, location: l.location })),
   })
 
-  return <HomePageClient listings={listings} />
+  return (
+    <>
+      <WebSiteJsonLd />
+      <HomePageClient listings={listings} />
+    </>
+  )
 }
