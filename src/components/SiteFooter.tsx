@@ -35,7 +35,168 @@ export default function SiteFooter() {
           backgroundSize: '80px 80px',
         }}
       >
-        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="max-w-5xl mx-auto px-6 py-12">
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 16,
+              marginBottom: 48,
+              padding: '0',
+            }}
+          >
+            {/* Saved Souls Foundation */}
+            <div
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: 14,
+                padding: '24px 28px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+              }}
+            >
+              <div style={{ fontSize: 32 }}>🐾</div>
+              <p
+                style={{
+                  color: '#C8973A',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  margin: 0,
+                }}
+              >
+                GOED DOEL · THAILAND
+              </p>
+              <p
+                style={{
+                  color: '#fff',
+                  fontSize: 20,
+                  fontWeight: 600,
+                  margin: 0,
+                  lineHeight: 1.3,
+                }}
+              >
+                Saved Souls Foundation
+              </p>
+              <p style={{ color: '#9BA8BB', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
+                Duizenden honden leven op straat in Thailand zonder zorg of onderdak. Saved Souls
+                redt, behandelt en herplaatst ze. Elke donatie maakt direct verschil.
+              </p>
+              <a
+                href="https://www.savedsouls-foundation.org/en/donate"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  background: '#C8973A',
+                  color: '#fff',
+                  borderRadius: 10,
+                  padding: '10px 20px',
+                  fontSize: 13,
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  marginTop: 4,
+                  alignSelf: 'flex-start',
+                }}
+              >
+                🐕 Doneer nu → savedsouls.org
+              </a>
+              <p style={{ color: '#9BA8BB', fontSize: 11, margin: 0 }}>
+                Non-profit · Geregistreerd in Thailand · 100% naar de honden
+              </p>
+            </div>
+
+            {/* WaiAir */}
+            <div
+              style={{
+                background: 'rgba(0,0,0,0.3)',
+                border: '1.5px solid #ff6400',
+                borderRadius: 14,
+                padding: '24px 28px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+              }}
+            >
+              <div style={{ fontSize: 32 }}>✈️</div>
+              <p
+                style={{
+                  color: '#ff6400',
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  margin: 0,
+                }}
+              >
+                GRATIS APP · iOS
+              </p>
+              <p
+                style={{
+                  color: '#fff',
+                  fontSize: 20,
+                  fontWeight: 600,
+                  margin: 0,
+                  lineHeight: 1.3,
+                }}
+              >
+                WaiAir — vluchttracker
+              </p>
+              <p style={{ color: '#9BA8BB', fontSize: 14, margin: 0, lineHeight: 1.6 }}>
+                Realtime vertrekken, aankomsten en gate-info voor 26 luchthavens in Thailand,
+                Indonesië, Maleisië, Singapore, Vietnam en de Filipijnen.
+              </p>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 4 }}>
+                <a
+                  href="https://apps.apple.com/ph/app/waiair/id6798072839"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 7,
+                    background: '#fff',
+                    color: '#000',
+                    borderRadius: 10,
+                    padding: '10px 18px',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                  }}
+                >
+                  🍎 Download — App Store
+                </a>
+                <a
+                  href="/waiair"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    color: '#ff6400',
+                    fontSize: 13,
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    padding: '10px 4px',
+                  }}
+                >
+                  Meer info →
+                </a>
+              </div>
+              <p style={{ color: '#9BA8BB', fontSize: 11, margin: 0 }}>
+                26 luchthavens · 6 landen · Gratis
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10"
+            style={{
+              borderTop: '1px solid rgba(255,255,255,0.08)',
+              paddingTop: 40,
+            }}
+          >
           <div className="min-w-0">
             <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">
               {t('footerExplore')}
@@ -71,10 +232,13 @@ export default function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="/waiair.html"
-                  className="text-white/70 hover:text-[#C8973A] transition-colors"
+                  href="/waiair"
+                  className="inline-flex items-center gap-2 text-white/70 hover:text-[#C8973A] transition-colors"
                 >
-                  {tn('guideWaiair')}
+                  {tn('guideWaiairApp')}
+                  <span className="text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#c9a84c]/20 text-[#c9a84c]">
+                    {tn('guideWaiairNew')}
+                  </span>
                 </a>
               </li>
               <li>
@@ -310,6 +474,7 @@ export default function SiteFooter() {
               </li>
             </ul>
           </div>
+        </div>
         </div>
 
         <div className="border-t border-white/10">

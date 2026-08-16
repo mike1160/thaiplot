@@ -28,7 +28,7 @@ export const GUIDE_LINKS = [
   { href: '/info/official-thai-downloads', key: 'guideOfficialDownloads' },
   { href: '/info/thim-app', key: 'guideThim' },
   { href: '/info/thailand-digital-arrival-card', key: 'guideTdac' },
-  { href: '/waiair.html', key: 'guideWaiair', external: true },
+  { href: '/waiair', key: 'guideWaiair', external: true },
   { href: '/info/hua-hin-property-market', key: 'guideHuaHin' },
   { href: '/info/pranburi-property', key: 'guidePranburi' },
 ] as const

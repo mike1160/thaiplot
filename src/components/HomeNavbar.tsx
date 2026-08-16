@@ -7,6 +7,8 @@ import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from './LanguageSwitcher'
 import PortalAccountLink from './PortalAccountLink'
 import BrandHomeLink from '@/components/BrandHomeLink'
+import WaiairNavPill from '@/components/WaiairNavPill'
+import NewsNavPill from '@/components/NewsNavPill'
 import { GUIDE_LINKS, isExternalGuideLink, resolveExternalGuideHref } from '@/content/guide-links'
 
 const HEADER_HEIGHT_CLASS = 'h-14 sm:h-16'
@@ -77,18 +79,6 @@ export default function HomeNavbar() {
             >
               {t('listings')}
             </Link>
-            <Link
-              href="/list-property"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-all"
-            >
-              {t('listProperty')}
-            </Link>
-            <Link
-              href="/contact"
-              className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-[12px] border border-[#C8973A] text-[#C8973A] hover:bg-[#C8973A] hover:text-white transition-all"
-            >
-              {t('contact')}
-            </Link>
           </div>
 
           {/* Right cluster — same order as other pages: Guide, language, (menu) */}
@@ -108,6 +98,11 @@ export default function HomeNavbar() {
             <div className="hidden sm:block">
               <PortalAccountLink solid />
             </div>
+
+            <LanguageSwitcher compact variant="solid" className="flex-shrink-0" />
+
+            <NewsNavPill />
+            <WaiairNavPill />
 
             <div ref={guideRef} className="relative">
               <button
@@ -159,8 +154,6 @@ export default function HomeNavbar() {
                 </div>
               ) : null}
             </div>
-
-            <LanguageSwitcher compact variant="solid" className="flex-shrink-0" />
 
             <button
               type="button"

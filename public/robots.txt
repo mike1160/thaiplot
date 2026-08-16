@@ -3,7 +3,6 @@ Allow: /
 Disallow: /portal/
 Disallow: /api/
 
-# AI crawlers — expliciet toegestaan
 User-agent: GPTBot
 Allow: /
 
@@ -13,14 +12,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Googlebot
 Allow: /
 
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Sitemap
 Sitemap: https://www.thaiplot.com/sitemap.xml

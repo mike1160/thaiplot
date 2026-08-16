@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import './[locale]/globals.css'
 
 type Props = { children: ReactNode }
+
+export const metadata: Metadata = {
+  other: {
+    'llms-txt': 'https://www.thaiplot.com/llms.txt',
+  },
+}
 
 export default function RootLayout({ children }: Props) {
   return (
@@ -15,6 +22,7 @@ export default function RootLayout({ children }: Props) {
           rel="stylesheet"
         />
         <meta name="p:domain_verify" content="607976f15f114c1775ec4024af8f60e7" />
+        <meta name="llms-txt" content="https://www.thaiplot.com/llms.txt" />
       </head>
       <body className="min-h-screen text-[#142038] antialiased">
         {children}

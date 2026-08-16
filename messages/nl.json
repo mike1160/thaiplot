@@ -36,7 +36,9 @@
     "guideKohPhanganInvestors": "Buitenlandse investeerders Koh Phangan",
     "guideCulture": "Thai culture & customs",
     "news": "Thailand nieuws",
-    "guideRetirementRanking": "Thailand pensioenranking #4"
+    "guideRetirementRanking": "Thailand pensioenranking #4",
+    "guideWaiairApp": "WaiAir app",
+    "guideWaiairNew": "Nieuw"
   },
   "languages": {
     "en": "English",
@@ -145,7 +147,14 @@
     "viewAllListings": "Bekijk alle aanbod →",
     "featuredEmpty": "Geen aanbod in dit overzicht. Bekijk de volledige listingspagina →",
     "guidesTitle": "Praktische gidsen voor wonen & aankomen in Thailand",
-    "guidesSubtitle": "Onafhankelijke uitleg op ThaiPlot — papieren, officiële portalen, THIM, TDAC en meer."
+    "guidesSubtitle": "Onafhankelijke uitleg op ThaiPlot — papieren, officiële portalen, THIM, TDAC en meer.",
+    "waiairBanner": {
+      "badge": "NIEUW · GRATIS APP",
+      "title": "WaiAir — vluchttracker Zuidoost-Azië",
+      "description": "Realtime vertrekken, aankomsten en gate-info voor 26 luchthavens in 6 landen. Gratis op iOS en Android.",
+      "cta": "Download in de App Store",
+      "note": "Gratis · iOS App Store"
+    }
   },
   "listings": {
     "pageTitle": "Advertenties",
@@ -2651,8 +2660,8 @@
     "disclaimer": "General information only — cultural norms evolve and vary by region, age and individual. This guide reflects general patterns, not universal rules. ThaiPlot is a property marketplace."
   },
   "newsPage": {
-    "metaTitle": "Thailand nieuws — vastgoed, expat & wonen | ThaiPlot",
-    "metaDescription": "Actueel nieuws uit Thailand over vastgoed, expat-leven, visa, vervoer en wonen — samengesteld voor kopers en long-stay bewoners."
+    "metaTitle": "Thailand News — Property, expat & visa updates | ThaiPlot",
+    "metaDescription": "Dagelijks Thailand-nieuws voor expats en vastgoedkopers — Bangkok Post, The Thaiger en meer."
   },
   "infoRetirementRanking": {
     "metaTitle": "Thailand Ranked #4 Best Country to Retire | ThaiPlot",

@@ -29,6 +29,24 @@ function createMiddlewareSupabase(request: NextRequest, response: NextResponse) 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // Canonical WaiAir URL: /waiair.html → /waiair (301)
+  if (
+    pathname === '/waiair.html' ||
+    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/waiair\.html$/i.test(pathname) ||
+    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/waiair$/i.test(pathname)
+  ) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/waiair'
+    return NextResponse.redirect(url, 301)
+  }
+
+  // Serve static HTML for clean /waiair path
+  if (pathname === '/waiair') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/waiair.html'
+    return NextResponse.rewrite(url)
+  }
+
   // Static HTML in /public must not go through locale routing
   // e.g. /nl/koh-phangan-foreign-investors.html → /koh-phangan-foreign-investors.html
   const localeHtml = pathname.match(
@@ -42,17 +60,14 @@ export async function middleware(request: NextRequest) {
 
   // Extensionless aliases for campaign HTML pages
   const localeArticle = pathname.match(
-    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/(koh-phangan-foreign-investors|waiair)$/i
+    /^\/(nl|de|th|en|sv|da|fr|ru|zh|ja)\/(koh-phangan-foreign-investors)$/i
   )
   if (localeArticle) {
     const url = request.nextUrl.clone()
     url.pathname = `/${localeArticle[2].toLowerCase()}.html`
     return NextResponse.rewrite(url)
   }
-  if (
-    pathname === '/koh-phangan-foreign-investors' ||
-    pathname === '/waiair'
-  ) {
+  if (pathname === '/koh-phangan-foreign-investors') {
     const url = request.nextUrl.clone()
     url.pathname = `${pathname}.html`
     return NextResponse.rewrite(url)
@@ -137,6 +152,8 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/',
+    '/waiair',
+    '/waiair.html',
     '/(nl|de|th|en|sv|da|fr|ru|zh|ja)/:path*',
     '/admin/:path*',
     '/portal/:path*',

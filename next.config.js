@@ -30,6 +30,17 @@ const nextConfig = {
     return [
       { source: '/en', destination: '/', permanent: true },
       { source: '/en/:path*', destination: '/:path*', permanent: true },
+      { source: '/waiair.html', destination: '/waiair', permanent: true },
+      {
+        source: '/:locale(nl|de|th|sv|da|fr|ru|zh|ja)/waiair.html',
+        destination: '/waiair',
+        permanent: true,
+      },
+      {
+        source: '/:locale(nl|de|th|sv|da|fr|ru|zh|ja)/waiair',
+        destination: '/waiair',
+        permanent: true,
+      },
     ]
   },
   async headers() {

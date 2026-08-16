@@ -22,7 +22,7 @@ const STATIC_ROUTES: Array<{
   { path: '/listings', priority: 0.9, changeFrequency: 'daily' },
   { path: '/list-property', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/contact', priority: 0.5, changeFrequency: 'monthly' },
-  { path: '/news', priority: 0.6, changeFrequency: 'hourly' },
+  { path: '/news', priority: 0.9, changeFrequency: 'daily' },
 
   // Regio's
   { path: '/hua-hin', priority: 0.8, changeFrequency: 'weekly' },
@@ -123,10 +123,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   )
 
   return [...staticEntries, ...listingEntries, {
-    url: `${SITE_URL}/waiair.html`,
+    url: `${SITE_URL}/waiair`,
     lastModified,
     changeFrequency: 'monthly',
-    priority: 0.7,
+    priority: 0.8,
   }, {
     url: `${SITE_URL}/koh-phangan-foreign-investors.html`,
     lastModified,

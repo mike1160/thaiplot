@@ -6,6 +6,8 @@ import { Link, usePathname } from '@/i18n/navigation'
 import { useScrolledHeader } from '@/hooks/useScrolledHeader'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import BrandHomeLink from '@/components/BrandHomeLink'
+import WaiairNavPill from '@/components/WaiairNavPill'
+import NewsNavPill from '@/components/NewsNavPill'
 import { GUIDE_LINKS, isExternalGuideLink, resolveExternalGuideHref } from '@/content/guide-links'
 
 const INFO_PAGES: Record<string, string> = {
@@ -197,6 +199,11 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
               </Link>
             ) : null}
 
+            <LanguageSwitcher variant="solid" className="flex-shrink-0" />
+
+            <NewsNavPill />
+            <WaiairNavPill />
+
             <div ref={guideRef} className="relative">
               <button
                 type="button"
@@ -249,8 +256,6 @@ export default function BreadcrumbNav({ className = '' }: { className?: string }
                 </div>
               ) : null}
             </div>
-
-            <LanguageSwitcher variant="solid" className="flex-shrink-0" />
           </div>
         </div>
       </nav>

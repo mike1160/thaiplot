@@ -3,443 +3,377 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WaiAir — Never miss a flight in Southeast Asia</title>
+<title>WaiAir — Flight tracker Southeast Asia | ThaiPlot</title>
+<meta name="description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports in Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines. Free on iOS and Android.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ThaiPlot">
+<meta property="og:title" content="WaiAir — Flight tracker Southeast Asia | ThaiPlot">
+<meta property="og:description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports in Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines. Free on iOS and Android.">
+<meta property="og:url" content="https://www.thaiplot.com/waiair">
+<meta property="og:image" content="https://www.thaiplot.com/waiair-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WaiAir — Flight tracker Southeast Asia | ThaiPlot">
+<meta name="twitter:description" content="Track flights across Southeast Asia. Real-time departures, arrivals and gate info for 26 airports. Free on iOS and Android.">
+<link rel="canonical" href="https://www.thaiplot.com/waiair">
 <link rel="icon" href="/waiair-logo.png" type="image/png">
-<meta name="description" content="Know your flight status before the gate does. Live tracking across 26 airports in Southeast Asia.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --cream:   #F0EDE6;
-  --warm:    #FAF8F4;
-  --navy:    #0B1F3A;
-  --gold:    #A8905A;
-  --gold-lt: #C8AA72;
-  --dark:    #2C2820;
-  --gray:    #7A756C;
-  --border:  rgba(168,144,90,0.2);
-  --border-w: rgba(255,255,255,0.08);
+  --navy: #0d1b2e;
+  --navy-soft: #142536;
+  --border: #1e3550;
+  --gold: #c9a84c;
+  --gold-lt: #d4b65e;
+  --muted: #8899aa;
+  --icon: #378ADD;
+  --warm: #F7F4EE;
+  --text: #1A2744;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--warm); color: var(--dark); overflow-x: hidden; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 48px;
-  background: rgba(250,248,244,0.94); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--warm);
+  color: var(--text);
+  line-height: 1.6;
 }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; letter-spacing: 0.06em; color: var(--navy); text-decoration: none; }
-.nav-logo span { color: var(--gold); }
-.btn-outline { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); border: 1px solid var(--navy); padding: 8px 20px; text-decoration: none; font-weight: 500; transition: all 0.25s; }
-.btn-outline:hover { background: var(--navy); color: var(--warm); }
+
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.topnav a.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+.topnav a.brand span { color: var(--gold); }
+.topnav a.brand img { width: 32px; height: 32px; object-fit: contain; }
+.topnav a.back {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.topnav a.back:hover { color: var(--gold); }
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 20px 72px;
+}
 
 /* HERO */
-.hero { background: var(--navy); padding: 160px 48px 100px; min-height: 100vh; display: flex; align-items: center; }
-.hero-inner { max-width: 720px; margin: 0 auto; }
-.hero-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
-.hero-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-.hero-headline { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 300; line-height: 1.0; color: #fff; margin-bottom: 36px; letter-spacing: -0.02em; }
-.hero-headline em { font-style: italic; color: var(--gold-lt); }
-.hero-sub { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300; margin-bottom: 52px; max-width: 500px; }
-.hero-cta { display: flex; gap: 16px; align-items: center; }
-.btn-gold { background: var(--gold); color: var(--navy); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 36px; font-weight: 500; text-decoration: none; transition: background 0.25s; }
-.btn-gold:hover { background: var(--gold-lt); }
-.btn-ghost { color: rgba(255,255,255,0.4); font-size: 13px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 2px; transition: all 0.25s; }
-.btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
-
-/* MOMENTS — the emotional core */
-.moments { padding: 0; background: var(--warm); }
-.moment {
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 480px;
-}
-.moment:nth-child(even) { direction: rtl; }
-.moment:nth-child(even) > * { direction: ltr; }
-.moment-feel {
-  padding: 80px 64px;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.moment-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 20px; }
-.moment-headline { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; color: var(--navy); line-height: 1.1; margin-bottom: 20px; }
-.moment-headline em { font-style: italic; color: var(--gold); }
-.moment-copy { font-size: 16px; line-height: 1.85; color: var(--gray); font-weight: 300; max-width: 380px; }
-.moment-visual {
+.hero {
   background: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  padding: 48px; position: relative; overflow: hidden;
+  border-radius: 14px;
+  padding: 56px 40px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
 }
-.moment-visual.cream { background: var(--cream); }
-.moment-visual.mid { background: #0f2744; }
-
-/* Phone card inside moments */
-.mini-phone { width: 220px; }
-.mp-bar { height: 3px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-bottom: 20px; overflow: hidden; }
-.mp-bar-fill { height: 100%; background: var(--gold); border-radius: 2px; }
-.mp-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 16px; opacity: 0.7; }
-.mp-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
-.mp-route { font-size: 14px; color: #fff; font-weight: 500; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
-.mp-detail { font-size: 11px; color: rgba(255,255,255,0.35); }
-.badge { font-size: 9px; padding: 3px 8px; border-radius: 3px; font-weight: 500; }
-.ok   { background: rgba(74,222,128,0.12); color: #4ade80; }
-.warn { background: rgba(251,146,60,0.15); color: #fb923c; }
-.safe { background: rgba(168,144,90,0.15); color: var(--gold-lt); }
-
-.connection-visual { text-align: left; width: 240px; }
-.conn-title { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
-.conn-flight { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-.conn-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.conn-dot.green { background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.4); }
-.conn-dot.gold  { background: var(--gold-lt); box-shadow: 0 0 8px rgba(200,170,114,0.4); }
-.conn-info { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
-.conn-info b { color: #fff; font-weight: 500; }
-.conn-time { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #4ade80; margin: 20px 0 6px; }
-.conn-sub { font-size: 11px; color: rgba(255,255,255,0.3); }
-
-.radar-orb { position: relative; width: 180px; height: 180px; }
-.radar-ring { position: absolute; border: 1px solid rgba(168,144,90,0.15); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-.radar-sweep { position: absolute; top: 50%; left: 50%; width: 50%; height: 1px; background: linear-gradient(to right, var(--gold), transparent); transform-origin: left center; animation: sweep 3s linear infinite; }
-@keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.radar-plane { position: absolute; font-size: 12px; }
-.radar-plane:nth-child(1) { top: 25%; left: 55%; }
-.radar-plane:nth-child(2) { top: 60%; left: 30%; }
-.radar-plane:nth-child(3) { top: 45%; left: 70%; }
-
-/* STRIP */
-.strip { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px; display: flex; justify-content: center; }
-.strip-inner { display: flex; gap: 0; max-width: 960px; width: 100%; }
-.strip-item { flex: 1; text-align: center; padding: 0 24px; border-right: 1px solid var(--border); }
-.strip-item:last-child { border-right: none; }
-.strip-num { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--navy); line-height: 1; }
-.strip-text { font-size: 13px; color: var(--gray); font-weight: 300; margin-top: 8px; line-height: 1.6; }
-
-/* AIRPORTS */
-.airports-section { background: var(--navy); padding: 100px 48px; }
-.airports-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 48px; max-width: 700px; }
-.airport-chip {
-  font-size: 12px; letter-spacing: 0.12em; font-weight: 400;
-  padding: 8px 16px; border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.4); transition: all 0.2s;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.14), transparent 55%);
+  pointer-events: none;
 }
-.airport-chip:hover { border-color: var(--gold); color: var(--gold-lt); }
-.airport-chip.hero-chip { border-color: rgba(168,144,90,0.3); color: rgba(255,255,255,0.65); }
+.hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
 
-/* FOOTER CTA */
-.footer-cta { background: var(--cream); padding: 120px 48px; text-align: center; }
-.footer-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 300; color: var(--navy); line-height: 1.05; margin-bottom: 24px; }
-.footer-cta h2 em { font-style: italic; color: var(--gold); }
-.footer-cta p { font-size: 17px; color: var(--gray); font-weight: 300; margin-bottom: 48px; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.75; }
-
-footer { background: var(--navy); padding: 40px 48px; display: flex; justify-content: space-between; align-items: center; }
-.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
-.footer-logo span { color: var(--gold); }
-.footer-links { display: flex; gap: 24px; }
-.footer-links a { font-size: 11px; color: rgba(255,255,255,0.25); text-decoration: none; letter-spacing: 0.1em; transition: color 0.2s; }
-.footer-links a:hover { color: var(--gold-lt); }
-.footer-note { font-size: 11px; color: rgba(255,255,255,0.18); letter-spacing: 0.05em; }
-
-/* FROST */
-#frost {
-  position: fixed; inset: 0; z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  backdrop-filter: blur(20px) saturate(0.3) brightness(0.6);
-  -webkit-backdrop-filter: blur(20px) saturate(0.3) brightness(0.6);
-  background: rgba(11,31,58,0.45);
+.plane-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  color: var(--gold);
 }
-.frost-box { text-align: center; padding: 64px 56px; max-width: 500px; width: 92%; border: 1px solid rgba(168,144,90,0.2); background: rgba(11,31,58,0.6); backdrop-filter: blur(12px); }
-.frost-plane { font-size: 44px; display: inline-block; animation: soar 3.5s ease-in-out infinite; margin-bottom: 28px; }
-@keyframes soar { 0%,100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-14px) rotate(5deg); } }
-.frost-tag { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-lt); display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 22px; }
-.frost-tag::before, .frost-tag::after { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); }
-.frost-h { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 300; color: #fff; line-height: 1.0; margin-bottom: 12px; }
-.frost-h em { font-style: italic; color: var(--gold-lt); }
-.frost-p { font-size: 14px; color: rgba(255,255,255,0.38); font-weight: 300; line-height: 1.85; margin-bottom: 44px; }
-.frost-p b { color: rgba(255,255,255,0.65); font-weight: 400; }
+.plane-icon svg { width: 100%; height: 100%; display: block; }
 
-.countdown { display: flex; gap: 6px; justify-content: center; align-items: flex-start; margin-bottom: 44px; }
-.cd-b { text-align: center; min-width: 58px; }
-.cd-n { font-family: 'Cormorant Garamond', serif; font-size: 50px; font-weight: 300; color: #fff; line-height: 1; display: block; }
-.cd-l { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-top: 5px; display: block; }
-.cd-sep { font-family: 'Cormorant Garamond', serif; font-size: 42px; color: var(--gold); line-height: 1; padding-top: 1px; opacity: 0.4; animation: blink 1s step-end infinite; }
-@keyframes blink { 0%,100% { opacity: 0.4; } 50% { opacity: 0.05; } }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.45);
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 22px;
+  font-weight: 500;
+}
 
-.frost-form { display: flex; max-width: 320px; margin: 0 auto 16px; }
-.frost-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(168,144,90,0.25); border-right: none; color: #fff; font-family: 'Jost', sans-serif; font-size: 13px; padding: 13px 15px; outline: none; transition: border-color 0.2s; }
-.frost-input::placeholder { color: rgba(255,255,255,0.2); }
-.frost-input:focus { border-color: rgba(168,144,90,0.6); }
-.frost-btn { background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 20px; white-space: nowrap; transition: background 0.2s; }
-.frost-btn:hover { background: var(--gold-lt); }
-#frost-ok { display: none; font-size: 13px; color: var(--gold-lt); letter-spacing: 0.05em; margin-bottom: 16px; padding: 12px; border: 1px solid rgba(168,144,90,0.2); }
-.frost-small { font-size: 11px; color: rgba(255,255,255,0.16); margin-top: 24px; line-height: 1.9; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.75;
+}
 
-@media (max-width: 860px) {
-  nav { padding: 16px 20px; }
-  .hero { padding: 120px 24px 80px; }
-  .hero-headline { font-size: 54px; }
-  .moment { grid-template-columns: 1fr; direction: ltr !important; }
-  .moment-visual { min-height: 280px; }
-  .strip { padding: 36px 20px; }
-  .strip-inner { flex-wrap: wrap; gap: 24px; }
-  .strip-item { border-right: none; min-width: 45%; }
-  .airports-section { padding: 72px 24px; }
-  .footer-cta { padding: 80px 24px; }
-  .footer-cta h2 { font-size: 42px; }
-  footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
-  .frost-box { padding: 48px 28px; }
-  .frost-h { font-size: 44px; }
+.store-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.15s, opacity 0.15s;
+  min-height: 52px;
+}
+.btn-store:hover { transform: translateY(-1px); opacity: 0.95; }
+.btn-store svg { width: 22px; height: 22px; flex-shrink: 0; }
+.btn-store .btn-label { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.btn-store .btn-label small { font-size: 10px; font-weight: 500; opacity: 0.7; letter-spacing: 0.04em; }
+.btn-apple { background: #fff; color: var(--navy); }
+
+.airport-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.tag {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.03);
+}
+.tag strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+.tag.more { color: var(--gold); border-color: rgba(201,168,76,0.3); }
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+.feature {
+  background: #fff;
+  border: 1px solid rgba(13,27,46,0.08);
+  border-radius: 12px;
+  padding: 24px 22px;
+  box-shadow: 0 2px 12px rgba(13,27,46,0.04);
+}
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(55,138,221,0.1);
+  color: var(--icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.feature-icon svg { width: 22px; height: 22px; }
+.feature h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.feature p { font-size: 14px; color: #5C6570; line-height: 1.65; }
+
+/* COUNTRIES */
+.countries {
+  background: #fff;
+  border: 1px solid rgba(13,27,46,0.08);
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  justify-content: center;
+  align-items: center;
+}
+.country {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.12);
+  color: #22c55e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.check svg { width: 12px; height: 12px; }
+
+.cta-strip {
+  margin-top: 28px;
+  background: var(--navy);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  text-align: center;
+}
+.cta-strip h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cta-strip p { color: var(--muted); margin-bottom: 22px; font-size: 15px; }
+
+footer.page-foot {
+  text-align: center;
+  padding: 28px 20px 40px;
+  font-size: 12px;
+  color: #8A7F72;
+}
+footer.page-foot a { color: var(--gold); text-decoration: none; }
+footer.page-foot a:hover { text-decoration: underline; }
+
+@media (max-width: 720px) {
+  .hero { padding: 40px 22px 36px; }
+  .features { grid-template-columns: 1fr; }
+  .store-btns { flex-direction: column; align-items: stretch; }
+  .btn-store { justify-content: center; }
+  .countries { gap: 10px 18px; }
 }
 </style>
 </head>
 <body>
 
-<!-- FROST -->
-<div id="frost">
-  <div class="frost-box">
-    <img src="/waiair-logo.png" style="width:90px;height:90px;object-fit:contain;margin-bottom:20px;" alt="WaiAir" />
-    <div class="frost-tag">WaiAir · Southeast Asia</div>
-    <div class="frost-h">Almost<br><em>there.</em></div>
-    <p class="frost-p">
-      Stop refreshing the departures board.<br>
-      Stop asking people at the gate.<br>
-      Stop wondering if you'll make your connection.<br><br>
-      <b>WaiAir lands soon.</b>
-    </p>
-    <div class="countdown">
-      <div class="cd-b"><span class="cd-n" id="cd-d">00</span><span class="cd-l">days</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-b"><span class="cd-n" id="cd-h">00</span><span class="cd-l">hrs</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-b"><span class="cd-n" id="cd-m">00</span><span class="cd-l">min</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-b"><span class="cd-n" id="cd-s">00</span><span class="cd-l">sec</span></div>
-    </div>
-    <div class="frost-form">
-      <input class="frost-input" id="fe" type="email" placeholder="your@email.com" />
-      <button class="frost-btn" onclick="notifyMe()">Tell me first</button>
-    </div>
-    <div id="frost-ok">✓ &nbsp;We'll message you the moment we land.</div>
-    <div class="frost-small">
-      26 airports · Thailand · Indonesia · Malaysia · Singapore · Vietnam · Philippines<br>
-      iOS &amp; Android · 26 airports
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><img src="/waiair-logo.png" style="width:36px;height:36px;object-fit:contain;" alt="WaiAir" /><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:0.06em;color:var(--navy);">Wai<span style="color:var(--gold);">Air</span></span></a>
-  <a href="https://waiair.app" class="btn-outline">Get the App</a>
+<nav class="topnav">
+  <a class="brand" href="/waiair">
+    <img src="/waiair-logo.png" alt="WaiAir">
+    Wai<span>Air</span>
+  </a>
+  <a class="back" href="/">← ThaiPlot</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Southeast Asia · 26 airports</div>
-    <h1 class="hero-headline">Stop worrying<br>about your<br><em>flight.</em></h1>
-    <p class="hero-sub">Know what's happening before the gate does. Live flight tracking across Southeast Asia — wherever you go.</p>
-    <div class="hero-cta">
-      <a href="https://waiair.app" class="btn-gold">Download now</a>
-      <a href="#moments" class="btn-ghost">See how it helps →</a>
-    </div>
-  </div>
-</section>
-
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <div class="strip-item">
-      <div class="strip-num">26</div>
-      <div class="strip-text">Airports covered</div>
-    </div>
-    <div class="strip-item">
-      <div class="strip-num">3</div>
-      <div class="strip-text">Days to build</div>
-    </div>
-    <div class="strip-item">
-      <div class="strip-num">Free</div>
-      <div class="strip-text">Always</div>
-    </div>
-    <div class="strip-item">
-      <div class="strip-num">SEA</div>
-      <div class="strip-text">Only tracker built for this</div>
-    </div>
-  </div>
-</div>
-
-<!-- MOMENTS — emotional core -->
-<div class="moments" id="moments">
-
-  <!-- 1 -->
-  <div class="moment">
-    <div class="moment-feel">
-      <div class="moment-label">Delayed? You'll know first.</div>
-      <h2 class="moment-headline">Relax at the café.<br>We'll tell you when<br>to <em>move.</em></h2>
-      <p class="moment-copy">Your flight is delayed 40 minutes. You don't know yet — but WaiAir does. Get a notification, order another coffee, arrive at the gate exactly when you need to. No more hovering, no more guessing.</p>
-    </div>
-    <div class="moment-visual">
-      <div class="mini-phone">
-        <div class="mp-label">Flight update</div>
-        <div class="mp-card">
-          <div class="mp-route">BKK → CNX <span class="badge warn">+40 min</span></div>
-          <div class="mp-detail">New departure · 13:40 · Gate D8</div>
-        </div>
-        <div style="margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.25); line-height: 1.7;">
-          You have 52 minutes.<br>
-          <span style="color: var(--gold-lt);">Go get that coffee.</span>
-        </div>
+<main class="page">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="plane-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M62 32L38 20v-8a4 4 0 0 0-8 0v8L6 32l24 4v10l-6 4v4l10-2 10 2v-4l-6-4V36l24-4z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="pill">WaiAir · Southeast Asia</div>
+      <h1>Track any flight across Southeast Asia</h1>
+      <p class="hero-sub">Real-time departures, arrivals and gate info for 26 airports across 6 countries. Free.</p>
+      <div class="store-btns">
+        <a class="btn-store btn-apple" href="https://apps.apple.com/ph/app/waiair/id6798072839" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="btn-label"><small>Download on the</small>App Store</span>
+        </a>
+      </div>
+      <div class="airport-tags" aria-label="Airports covered">
+        <span class="tag"><strong>Bangkok</strong> BKK</span>
+        <span class="tag"><strong>Bangkok</strong> DMK</span>
+        <span class="tag"><strong>Phuket</strong> HKT</span>
+        <span class="tag"><strong>Chiang Mai</strong> CNX</span>
+        <span class="tag"><strong>Koh Samui</strong> USM</span>
+        <span class="tag"><strong>Singapore</strong> SIN</span>
+        <span class="tag"><strong>Kuala Lumpur</strong> KUL</span>
+        <span class="tag"><strong>Jakarta</strong> CGK</span>
+        <span class="tag"><strong>Bali</strong> DPS</span>
+        <span class="tag"><strong>Manila</strong> MNL</span>
+        <span class="tag"><strong>Hanoi</strong> HAN</span>
+        <span class="tag"><strong>Ho Chi Minh</strong> SGN</span>
+        <span class="tag more">+ 14 more</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 2 -->
-  <div class="moment">
-    <div class="moment-feel">
-      <div class="moment-label">Making a connection</div>
-      <h2 class="moment-headline">Will you make it?<br><em>Yes.</em> Here's why.</h2>
-      <p class="moment-copy">You land at 14:10, your connection leaves at 15:00. Is 50 minutes enough? WaiAir shows both flights live — your incoming, your outgoing — so you know if you're walking or sprinting before you even touch down.</p>
-    </div>
-    <div class="moment-visual mid">
-      <div class="connection-visual">
-        <div class="conn-title">Your connection · SIN</div>
-        <div class="conn-flight">
-          <div class="conn-dot green"></div>
-          <div class="conn-info"><b>KUL → SIN</b> · lands 14:08<br>On time · Gate B22</div>
-        </div>
-        <div class="conn-flight">
-          <div class="conn-dot gold"></div>
-          <div class="conn-info"><b>SIN → DPS</b> · departs 15:00<br>On time · Gate F4</div>
-        </div>
-        <div class="conn-time">52 min</div>
-        <div class="conn-sub">Transfer time · You're fine.</div>
+  <section class="features" aria-label="Features">
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5M4 19h16M8 15V9m4 6V7m4 8v-4"/></svg>
       </div>
-    </div>
-  </div>
-
-  <!-- 3 -->
-  <div class="moment">
-    <div class="moment-feel">
-      <div class="moment-label">Picking someone up</div>
-      <h2 class="moment-headline">Leave when they<br><em>actually</em> land.<br>Not an hour early.</h2>
-      <p class="moment-copy">Stop sitting in the car park for 45 minutes. Track their flight live — see exactly when wheels touch down, check the live radar as they approach. Leave the house at the right moment. Every time.</p>
-    </div>
-    <div class="moment-visual">
-      <div class="mini-phone">
-        <div class="mp-label">Incoming · BKK Suvarnabhumi</div>
-        <div class="mp-card">
-          <div class="mp-route">SIN → BKK <span class="badge ok">On approach</span></div>
-          <div class="mp-detail">TG412 · ETA 11:47 · Terminal 1</div>
-        </div>
-        <div class="mp-bar" style="margin-top: 16px;">
-          <div class="mp-bar-fill" style="width: 88%;"></div>
-        </div>
-        <div style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 6px;">88% of route complete</div>
-        <div style="margin-top: 16px; font-size: 12px; color: var(--gold-lt);">Leave now. They land in 9 min.</div>
+      <h3>Live departures and arrivals</h3>
+      <p>Real-time status for all 26 airports — boards, ETAs and flight progress in one place.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 0 0 2 2zm6-6V11a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2z"/></svg>
       </div>
-    </div>
-  </div>
-
-  <!-- 4 -->
-  <div class="moment">
-    <div class="moment-feel">
-      <div class="moment-label">Every airport in SEA</div>
-      <h2 class="moment-headline">One app for<br>every flight<br>you'll <em>ever</em> take here.</h2>
-      <p class="moment-copy">Bangkok, Phuket, Bali, Singapore, Kuala Lumpur, Manila, Hanoi, Ho Chi Minh — 26 airports in one app. Open it anywhere in Southeast Asia and it knows exactly where you are.</p>
-    </div>
-    <div class="moment-visual cream">
-      <div class="radar-orb">
-        <div class="radar-ring" style="width:60px;height:60px;"></div>
-        <div class="radar-ring" style="width:110px;height:110px;"></div>
-        <div class="radar-ring" style="width:160px;height:160px;"></div>
-        <div class="radar-sweep"></div>
-        <div class="radar-plane" style="color: var(--navy);">✈</div>
-        <div class="radar-plane" style="color: var(--navy); top:62%;left:28%;">✈</div>
-        <div class="radar-plane" style="color: var(--navy); top:40%;left:68%;">✈</div>
+      <h3>Gate and delay alerts</h3>
+      <p>Push notifications the moment your gate changes or your flight is delayed.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
       </div>
-    </div>
-  </div>
+      <h3>26 airports, 6 countries</h3>
+      <p>Thailand, Indonesia, Malaysia, Singapore, Vietnam and the Philippines — covered.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+      </div>
+      <h3>iOS and Android</h3>
+      <p>Free on the App Store. Open it when you land — it already knows.</p>
+    </article>
+  </section>
 
-</div>
+  <section class="countries" aria-label="Countries covered">
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Thailand</span>
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Indonesia</span>
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Malaysia</span>
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Singapore</span>
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Vietnam</span>
+    <span class="country"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6l3 3 5-5"/></svg></span>Philippines</span>
+  </section>
 
-<!-- AIRPORTS -->
-<section class="airports-section">
-  <div style="max-width:800px; margin: 0 auto;">
-    <div style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px;">
-      <span style="display:block;width:24px;height:1px;background:var(--gold);"></span>26 airports
+  <section class="cta-strip">
+    <h2>Your next flight. Without the stress.</h2>
+    <p>Available free on iOS and Android via WaiAir.</p>
+    <div class="store-btns">
+      <a class="btn-store btn-apple" href="https://apps.apple.com/ph/app/waiair/id6798072839" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+      <a class="btn-store btn-apple" href="mailto:support@waiair.app">Contact</a>
     </div>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:#fff;line-height:1.1;margin-bottom:16px;">Wherever you fly<br>in <em style="font-style:italic;color:var(--gold-lt);">Southeast Asia.</em></h2>
-    <p style="font-size:16px;color:rgba(255,255,255,0.35);font-weight:300;margin-bottom:48px;max-width:480px;line-height:1.8;">We cover every major airport so you never have to switch apps mid-trip.</p>
-    <div class="airports-grid">
-      <div class="airport-chip hero-chip">BKK · Bangkok Suvarnabhumi</div>
-      <div class="airport-chip hero-chip">DMK · Bangkok Don Mueang</div>
-      <div class="airport-chip hero-chip">HKT · Phuket</div>
-      <div class="airport-chip hero-chip">CNX · Chiang Mai</div>
-      <div class="airport-chip hero-chip">SIN · Singapore Changi</div>
-      <div class="airport-chip hero-chip">KUL · Kuala Lumpur</div>
-      <div class="airport-chip hero-chip">DPS · Bali Ngurah Rai</div>
-      <div class="airport-chip hero-chip">MNL · Manila</div>
-      <div class="airport-chip hero-chip">SGN · Ho Chi Minh</div>
-      <div class="airport-chip hero-chip">HAN · Hanoi</div>
-      <div class="airport-chip">USM · Koh Samui</div>
-      <div class="airport-chip">HHQ · Hua Hin</div>
-      <div class="airport-chip">KBV · Krabi</div>
-      <div class="airport-chip">CEI · Chiang Rai</div>
-      <div class="airport-chip">URT · Surat Thani</div>
-      <div class="airport-chip">CGK · Jakarta</div>
-      <div class="airport-chip">SUB · Surabaya</div>
-      <div class="airport-chip">JOG · Yogyakarta</div>
-      <div class="airport-chip">PEN · Penang</div>
-      <div class="airport-chip">BKI · Kota Kinabalu</div>
-      <div class="airport-chip">CEB · Cebu</div>
-      <div class="airport-chip">DAD · Da Nang</div>
-      <div class="airport-chip">PNH · Phnom Penh</div>
-      <div class="airport-chip">REP · Siem Reap</div>
-      <div class="airport-chip">VTE · Vientiane</div>
-      <div class="airport-chip">RGN · Yangon</div>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<!-- FOOTER CTA -->
-<section class="footer-cta">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <h2>Your next flight.<br><em>Without the stress.</em></h2>
-    <p>Available on iOS and Android. Open it when you land — it already knows which airport you're in.</p>
-    <div style="display:flex;gap:16px;justify-content:center;">
-      <a href="https://waiair.app" class="btn-gold">Download WaiAir</a>
-      <a href="mailto:support@waiair.app" class="btn-outline">Contact</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div style="display:flex;align-items:center;gap:10px;"><img src="/waiair-logo.png" style="width:28px;height:28px;object-fit:contain;opacity:0.7;" alt="WaiAir" /><span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:rgba(255,255,255,0.35);letter-spacing:0.06em;">Wai<span style="color:var(--gold);">Air</span></span></div>
-  <div class="footer-links">
-    <a href="https://waiair.app/privacy.html">Privacy</a>
-    <a href="https://waiair.app/terms.html">Terms</a>
-    <a href="mailto:support@waiair.app">support@waiair.app</a>
-  </div>
-  <div class="footer-note">© 2026 WaiAir</div>
+<footer class="page-foot">
+  <p>© 2026 <a href="/waiair">WaiAir</a> · Partner of <a href="/">ThaiPlot.com</a> · <a href="https://waiair.app/privacy.html">Privacy</a> · <a href="https://waiair.app/terms.html">Terms</a></p>
 </footer>
-
-<script>
-const launch = new Date('2026-09-01T00:00:00Z');
-function tick() {
-  const diff = Math.max(0, launch - new Date());
-  document.getElementById('cd-d').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
-  document.getElementById('cd-h').textContent = String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
-  document.getElementById('cd-m').textContent = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
-  document.getElementById('cd-s').textContent = String(Math.floor(diff%60000/1000)).padStart(2,'0');
-}
-tick(); setInterval(tick, 1000);
-
-function notifyMe() {
-  const v = document.getElementById('fe').value;
-  if (!v || !v.includes('@')) { document.getElementById('fe').focus(); return; }
-  document.querySelector('.frost-form').style.display = 'none';
-  document.getElementById('frost-ok').style.display = 'block';
-}
-</script>
 </body>
 </html>

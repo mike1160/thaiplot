@@ -1,9 +1,4 @@
-/**
- * LLM-friendly site summary for ChatGPT, Perplexity, Claude, etc.
- * https://www.thaiplot.com/llms.txt
- */
-export async function GET() {
-  const body = `# ThaiPlot — LLM index
+# ThaiPlot — LLM index
 
 > ThaiPlot is an independent Thailand real estate marketplace and 
 > information platform for expats, property buyers and long-stay residents.
@@ -34,12 +29,3 @@ https://www.thaiplot.com/contact
 ## Partner
 - https://www.hua-hin-land.com — Hua Hin land specialist
 - https://www.savedsouls-foundation.org — Saved Souls Foundation (dog rescue Thailand)
-`
-
-  return new Response(body, {
-    headers: {
-      'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-    },
-  })
-}

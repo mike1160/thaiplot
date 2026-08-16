@@ -36,7 +36,9 @@
     "guideKohPhanganInvestors": "Investisseurs étrangers Koh Phangan",
     "guideCulture": "Thai culture & customs",
     "news": "Thailand news",
-    "guideRetirementRanking": "Classement retraite Thaïlande #4"
+    "guideRetirementRanking": "Classement retraite Thaïlande #4",
+    "guideWaiairApp": "App WaiAir",
+    "guideWaiairNew": "Nouveau"
   },
   "languages": {
     "en": "English",
@@ -145,7 +147,14 @@
     "footerPartner": "Site partenaire",
     "footerPartnerHuaHinLand": "Hua Hin Land",
     "guidesTitle": "Practical guides for living & arriving in Thailand",
-    "guidesSubtitle": "Independent explainers on ThaiPlot — paperwork, official portals, THIM, TDAC and more."
+    "guidesSubtitle": "Independent explainers on ThaiPlot — paperwork, official portals, THIM, TDAC and more.",
+    "waiairBanner": {
+      "badge": "NOUVEAU · APP GRATUITE",
+      "title": "WaiAir — suivi de vols en Asie du Sud-Est",
+      "description": "Départs, arrivées et portes en temps réel pour 26 aéroports dans 6 pays. Gratuit sur iOS et Android.",
+      "cta": "Télécharger sur l’App Store",
+      "note": "Gratuit · App Store iOS"
+    }
   },
   "listings": {
     "pageTitle": "Annonces",
@@ -2651,8 +2660,8 @@
     "disclaimer": "General information only — cultural norms evolve and vary by region, age and individual. This guide reflects general patterns, not universal rules. ThaiPlot is a property marketplace."
   },
   "newsPage": {
-    "metaTitle": "Thailand News — Property, expat & living updates | ThaiPlot",
-    "metaDescription": "Latest news from Thailand on property, expat life, visas, transport and living — curated for buyers and long-stay residents."
+    "metaTitle": "Thailand News — Property, expat & visa updates | ThaiPlot",
+    "metaDescription": "Daily Thailand news for expats and property buyers — Bangkok Post, The Thaiger and more."
   },
   "infoRetirementRanking": {
     "metaTitle": "Thailand Ranked #4 Best Country to Retire | ThaiPlot",
